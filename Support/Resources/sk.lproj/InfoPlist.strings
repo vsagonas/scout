@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout komunikuje so Spotify, Hudbou, Správami a Poznámkami, len keď tieto funkcie používate: aby zobrazil a ovládal, čo hrá, odoslal vami napísanú odpoveď alebo uložil poznámku.";
+"NSAppleEventsUsageDescription~appstore" = "Scout komunikuje s Hudbou a Spotify, len keď zapnete ovládanie prehrávania, aby zobrazil a ovládal, čo hrá.";
+"NSAppleMusicUsageDescription" = "Scout zobrazuje, čo hrá v Hudbe.";
+"NSAudioCaptureUsageDescription" = "Scout počúva zvuk prehrávajúcej aplikácie, aby animoval hudobný vizualizér a nastavil hlasitosť pre jednotlivé aplikácie. Zvuk sa nikdy neukladá ani neodosiela.";
+"NSBluetoothAlwaysUsageDescription" = "Scout zobrazuje vaše AirPods a ďalšie zariadenia po pripojení, vrátane ich batérie.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout zobrazuje vaše AirPods a ďalšie zariadenia Bluetooth ich názvom po pripojení.";
+"NSCalendarsFullAccessUsageDescription" = "Scout zobrazuje vaše nadchádzajúce udalosti vo výreze a pridáva udalosti, ktoré vytvoríte.";
+"NSCalendarsUsageDescription" = "Scout zobrazuje vaše nadchádzajúce udalosti vo výreze a pridáva udalosti, ktoré vytvoríte.";
+"NSCameraUsageDescription" = "Scout zobrazuje vašu kameru v Zrkadle, aby ste sa mohli pred hovorom skontrolovať. Video zostáva vo vašom Macu a nikdy sa nenahráva.";
+"NSContactsUsageDescription" = "Scout zobrazuje mená a fotografie ľudí, ktorí vám píšu. Kontakty sa čítajú len na tomto Macu.";
+"NSDownloadsFolderUsageDescription" = "Scout sleduje váš priečinok Stiahnuté, aby zobrazil priebeh každého sťahovania. Čítajú sa iba názvy a veľkosti súborov.";
+"NSLocationUsageDescription" = "Scout používa vašu približnú polohu pre miestnu predpoveď počasia.";
+"NSLocationWhenInUseUsageDescription" = "Scout používa vašu približnú polohu pre miestnu predpoveď počasia.";
+"NSMicrophoneUsageDescription" = "Scout používa mikrofón len preto, aby Teleprompter mohol sledovať váš hlas. Nič sa nikam neodosiela.";
+"NSSpeechRecognitionUsageDescription" = "Scout prevádza váš hlas na slová na tomto Macu, aby Teleprompter držal vaše miesto v skripte.";

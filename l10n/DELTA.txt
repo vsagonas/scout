@@ -1,0 +1,5 @@
+Open the notch when an agent needs you, finishes a long task or fails => Open the notch when an agent needs you
+Listening on 127.0.0.1:%u => Listening on 127.0.0.1:%@
+Listening on 127.0.0.1:%u (%u was busy) => Listening on 127.0.0.1:%@ (%@ was busy)
+Start the radio again when Scout opens => Play the last station again when Scout opens
+Off by default. Scout always remembers the last station and the volume, and shows the station ready, never playing. => Only when it was still playing as Scout quit. Scout always remembers the last station and the volume.

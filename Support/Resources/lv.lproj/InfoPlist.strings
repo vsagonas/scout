@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout sazinās ar Spotify, Music, Messages un Notes tikai tad, kad izmanto šīs funkcijas: lai rādītu un vadītu, kas skan, nosūtītu tevis uzrakstītu atbildi vai saglabātu piezīmi.";
+"NSAppleEventsUsageDescription~appstore" = "Scout sazinās ar Music un Spotify tikai tad, kad ieslēdz atskaņošanas vadību, lai rādītu un vadītu, kas skan.";
+"NSAppleMusicUsageDescription" = "Scout rāda, kas skan lietotnē Music.";
+"NSAudioCaptureUsageDescription" = "Scout klausās atskaņojošās lietotnes skaņu, lai animētu mūzikas vizualizatoru un iestatītu skaļumu katrai lietotnei. Audio nekad netiek saglabāts vai nosūtīts.";
+"NSBluetoothAlwaysUsageDescription" = "Scout rāda tavus AirPods un citas ierīces, kad tās savienojas, kopā ar to akumulatoru.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout rāda tavus AirPods un citas Bluetooth ierīces pēc nosaukuma, kad tās savienojas.";
+"NSCalendarsFullAccessUsageDescription" = "Scout rāda tavus gaidāmos notikumus izgriezumā un pievieno notikumus, ko tu izveido.";
+"NSCalendarsUsageDescription" = "Scout rāda tavus gaidāmos notikumus izgriezumā un pievieno notikumus, ko tu izveido.";
+"NSCameraUsageDescription" = "Scout rāda tavu kameru Spogulī, lai varētu apskatīt sevi pirms zvana. Video paliek tavā Mac un nekad netiek ierakstīts.";
+"NSContactsUsageDescription" = "Scout rāda to cilvēku vārdus un fotoattēlus, kuri tev raksta. Kontakti tiek lasīti tikai šajā Mac.";
+"NSDownloadsFolderUsageDescription" = "Scout uzrauga tavu mapi Downloads, lai rādītu katras lejupielādes progresu. Tiek lasīti tikai failu nosaukumi un izmēri.";
+"NSLocationUsageDescription" = "Scout izmanto tavu aptuveno atrašanās vietu vietējai laika prognozei.";
+"NSLocationWhenInUseUsageDescription" = "Scout izmanto tavu aptuveno atrašanās vietu vietējai laika prognozei.";
+"NSMicrophoneUsageDescription" = "Scout izmanto mikrofonu tikai tāpēc, lai Prompters sekotu tavai balsij. Nekas netiek nosūtīts nekur.";
+"NSSpeechRecognitionUsageDescription" = "Scout pārvērš tavu balsi vārdos šajā Mac, lai Prompters sekotu tavai vietai skriptā.";

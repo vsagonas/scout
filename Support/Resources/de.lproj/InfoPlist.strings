@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout kommuniziert mit Spotify, Musik, Nachrichten und Notizen nur, wenn du diese Funktionen nutzt: um anzuzeigen und zu steuern, was gerade läuft, eine von dir getippte Antwort zu senden oder eine Notiz zu sichern.";
+"NSAppleEventsUsageDescription~appstore" = "Scout kommuniziert mit Musik und Spotify nur, wenn du die Wiedergabesteuerung einschaltest, um anzuzeigen und zu steuern, was gerade läuft.";
+"NSAppleMusicUsageDescription" = "Scout zeigt, was in Musik läuft.";
+"NSAudioCaptureUsageDescription" = "Scout hört auf den Ton der laufenden App, um den Musik-Visualizer zu animieren und die Lautstärke pro App einzustellen. Audio wird nie gespeichert oder gesendet.";
+"NSBluetoothAlwaysUsageDescription" = "Scout zeigt deine AirPods und andere Geräte beim Verbinden samt Akkustand.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout zeigt deine AirPods und andere Bluetooth-Geräte beim Verbinden mit ihrem Namen.";
+"NSCalendarsFullAccessUsageDescription" = "Scout zeigt deine kommenden Termine in der Notch und fügt die Termine hinzu, die du erstellst.";
+"NSCalendarsUsageDescription" = "Scout zeigt deine kommenden Termine in der Notch und fügt die Termine hinzu, die du erstellst.";
+"NSCameraUsageDescription" = "Scout zeigt deine Kamera im Spiegel, damit du dich vor einem Anruf kontrollieren kannst. Das Video bleibt auf deinem Mac und wird nie aufgezeichnet.";
+"NSContactsUsageDescription" = "Scout zeigt Namen und Fotos von Personen, die dir schreiben. Kontakte werden nur auf diesem Mac gelesen.";
+"NSDownloadsFolderUsageDescription" = "Scout beobachtet deinen Ordner „Downloads“, um den Fortschritt jedes Downloads zu zeigen. Es werden nur Dateinamen und Größen gelesen.";
+"NSLocationUsageDescription" = "Scout verwendet deinen ungefähren Standort für die lokale Wettervorhersage.";
+"NSLocationWhenInUseUsageDescription" = "Scout verwendet deinen ungefähren Standort für die lokale Wettervorhersage.";
+"NSMicrophoneUsageDescription" = "Scout verwendet das Mikrofon nur, damit der Teleprompter deiner Stimme folgen kann. Nichts wird irgendwohin gesendet.";
+"NSSpeechRecognitionUsageDescription" = "Scout wandelt deine Stimme auf diesem Mac in Wörter um, damit der Teleprompter deine Stelle im Skript behält.";

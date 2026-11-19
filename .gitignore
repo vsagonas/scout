@@ -1,0 +1,9 @@
+.build/
+build/
+.swiftpm/
+xcuserdata/
+.DS_Store
+/gallery/
+.build-appstore/
+.build-l10n/
+.build-l10n-appstore/

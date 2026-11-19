@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout communique avec Spotify, Musique, Messages et Notes uniquement lorsque vous utilisez ces fonctions : pour afficher et contrôler la lecture en cours, envoyer une réponse que vous avez saisie ou enregistrer une note.";
+"NSAppleEventsUsageDescription~appstore" = "Scout communique avec Musique et Spotify uniquement lorsque vous activez le contrôle de la lecture, pour afficher et contrôler la lecture en cours.";
+"NSAppleMusicUsageDescription" = "Scout affiche ce qui est lu dans Musique.";
+"NSAudioCaptureUsageDescription" = "Scout écoute le son de l’app en cours de lecture pour animer le visualiseur de musique et régler le volume par app. L’audio n’est jamais enregistré ni envoyé.";
+"NSBluetoothAlwaysUsageDescription" = "Scout affiche vos AirPods et autres appareils lorsqu’ils se connectent, avec leur niveau de batterie.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout affiche vos AirPods et autres appareils Bluetooth par leur nom lorsqu’ils se connectent.";
+"NSCalendarsFullAccessUsageDescription" = "Scout affiche vos prochains événements dans l’encoche et ajoute les événements que vous créez.";
+"NSCalendarsUsageDescription" = "Scout affiche vos prochains événements dans l’encoche et ajoute les événements que vous créez.";
+"NSCameraUsageDescription" = "Scout affiche votre caméra dans le Miroir pour que vous puissiez vous vérifier avant un appel. La vidéo reste sur votre Mac et n’est jamais enregistrée.";
+"NSContactsUsageDescription" = "Scout affiche les noms et les photos des personnes qui vous écrivent. Les contacts ne sont lus que sur ce Mac.";
+"NSDownloadsFolderUsageDescription" = "Scout surveille votre dossier Téléchargements pour afficher la progression de chaque téléchargement. Seuls les noms et les tailles des fichiers sont lus.";
+"NSLocationUsageDescription" = "Scout utilise votre position approximative pour les prévisions météo locales.";
+"NSLocationWhenInUseUsageDescription" = "Scout utilise votre position approximative pour les prévisions météo locales.";
+"NSMicrophoneUsageDescription" = "Scout utilise le micro uniquement pour que le Téléprompteur suive votre voix. Rien n’est envoyé nulle part.";
+"NSSpeechRecognitionUsageDescription" = "Scout transforme votre voix en mots sur ce Mac pour que le Téléprompteur garde votre place dans le script.";

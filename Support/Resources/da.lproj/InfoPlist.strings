@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout taler kun med Spotify, Musik, Beskeder og Noter, når du bruger de funktioner: for at vise og styre det, der spiller, sende et svar, du har skrevet, eller gemme en note.";
+"NSAppleEventsUsageDescription~appstore" = "Scout taler kun med Musik og Spotify, når du slår afspilningsstyring til, for at vise og styre det, der spiller.";
+"NSAppleMusicUsageDescription" = "Scout viser, hvad der spiller i Musik.";
+"NSAudioCaptureUsageDescription" = "Scout lytter til lyden fra den app, der spiller, for at animere musikvisualiseringen og indstille lydstyrke for hver app. Lyd gemmes eller sendes aldrig.";
+"NSBluetoothAlwaysUsageDescription" = "Scout viser dine AirPods og andre enheder, når de forbinder, med deres batteri.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout viser dine AirPods og andre Bluetooth-enheder med navn, når de forbinder.";
+"NSCalendarsFullAccessUsageDescription" = "Scout viser dine kommende begivenheder i notchen og tilføjer de begivenheder, du opretter.";
+"NSCalendarsUsageDescription" = "Scout viser dine kommende begivenheder i notchen og tilføjer de begivenheder, du opretter.";
+"NSCameraUsageDescription" = "Scout viser dit kamera i Spejlet, så du kan tjekke dig selv før et opkald. Video bliver på din Mac og optages aldrig.";
+"NSContactsUsageDescription" = "Scout viser navne og fotos på folk, der skriver til dig. Kontakter læses kun på denne Mac.";
+"NSDownloadsFolderUsageDescription" = "Scout holder øje med din mappe Overførsler for at vise forløbet af hver download. Kun filnavne og størrelser læses.";
+"NSLocationUsageDescription" = "Scout bruger din omtrentlige placering til den lokale vejrudsigt.";
+"NSLocationWhenInUseUsageDescription" = "Scout bruger din omtrentlige placering til den lokale vejrudsigt.";
+"NSMicrophoneUsageDescription" = "Scout bruger mikrofonen kun, så Prompter kan følge din stemme. Intet sendes nogen steder hen.";
+"NSSpeechRecognitionUsageDescription" = "Scout laver din stemme om til ord på denne Mac, så Prompter holder styr på din plads i scriptet.";

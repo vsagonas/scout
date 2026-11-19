@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout talks to Spotify, Music, Messages and Notes only when you use those features: to show and control what's playing, send a reply you typed, or save a note.";
+"NSAppleEventsUsageDescription~appstore" = "Scout talks to Music and Spotify only when you turn on playback control, to show and control what's playing.";
+"NSAppleMusicUsageDescription" = "Scout shows what's playing in Music.";
+"NSAudioCaptureUsageDescription" = "Scout listens to the playing app's sound to animate the music visualizer and set per-app volume. Audio is never saved or sent.";
+"NSBluetoothAlwaysUsageDescription" = "Scout shows your AirPods and other devices when they connect, with their battery.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout shows your AirPods and other Bluetooth devices by name when they connect.";
+"NSCalendarsFullAccessUsageDescription" = "Scout shows your upcoming events in the notch and adds the events you create.";
+"NSCalendarsUsageDescription" = "Scout shows your upcoming events in the notch and adds the events you create.";
+"NSCameraUsageDescription" = "Scout shows your camera in the Mirror so you can check yourself before a call. Video stays on your Mac and is never recorded.";
+"NSContactsUsageDescription" = "Scout shows the names and photos of people who message you. Contacts are only read on this Mac.";
+"NSDownloadsFolderUsageDescription" = "Scout watches your Downloads folder to show each download's progress. Only file names and sizes are read.";
+"NSLocationUsageDescription" = "Scout uses your approximate location for the local weather forecast.";
+"NSLocationWhenInUseUsageDescription" = "Scout uses your approximate location for the local weather forecast.";
+"NSMicrophoneUsageDescription" = "Scout uses the microphone only for the Prompter to follow your voice. Nothing is sent anywhere.";
+"NSSpeechRecognitionUsageDescription" = "Scout turns your voice into words on this Mac so the Prompter keeps your place in the script.";

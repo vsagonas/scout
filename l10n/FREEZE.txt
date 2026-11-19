@@ -1,0 +1,11 @@
+Localizable.strings keys=1397 sha256=f5937772940557805b6b883675879fc12e5de3eed4a7cc3dc075c5e553c2eba3
+InfoPlist.strings keys=16 sha256=2fcad137491f09fe1c57400e5e442d8d7b84c7b7a4cb1a0b7a78bb3d850580bb
+PIXEL-LABELS.txt keys=26 sha256=fbe4df23c500749ebdb378403d70c407f1029d691b403c80611b630bbdef9505
+frozen 2026-11-18T15:02:59+0200
+From now on no English key changes or is added; a key that must change gets one line 'old key => new key' in l10n/DELTA.txt.
+2026-11-18: two keys added for Settings › General › Language: "Same as the Mac", "Restart Scout to show it in the new language." (33 languages).
+2026-11-18: an agent that finishes or fails no longer opens the notch: "Open the notch when an agent needs you, finishes a long task or fails" => "Open the notch when an agent needs you"; "A long task is one that took %lld min or more" removed (33 languages).
+2026-11-18: the bridge port shows without a thousands separator: the two "Listening on 127.0.0.1:%u…" keys => "%@" (33 languages). See DELTA.txt.
+2026-11-18: "Show a card when an agent finishes" removed (33 languages).
+2026-11-18: Settings › Radio keys added and reworded (DELTA.txt). 33 languages.
+2026-11-18: "Height" removed (the notch height is automatic now). 33 languages.

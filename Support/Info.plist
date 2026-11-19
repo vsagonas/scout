@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Scout</string>
+	<key>CFBundleExecutable</key>
+	<string>Scout</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.vsag.Scout</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>ar</string>
+		<string>bg</string>
+		<string>cs</string>
+		<string>da</string>
+		<string>de</string>
+		<string>el</string>
+		<string>es</string>
+		<string>et</string>
+		<string>fi</string>
+		<string>fr</string>
+		<string>ga</string>
+		<string>hr</string>
+		<string>hu</string>
+		<string>it</string>
+		<string>ja</string>
+		<string>ko</string>
+		<string>lt</string>
+		<string>lv</string>
+		<string>mt</string>
+		<string>nb</string>
+		<string>nl</string>
+		<string>pl</string>
+		<string>pt-BR</string>
+		<string>pt-PT</string>
+		<string>ro</string>
+		<string>ru</string>
+		<string>sk</string>
+		<string>sl</string>
+		<string>sv</string>
+		<string>tr</string>
+		<string>uk</string>
+		<string>zh-Hans</string>
+		<string>zh-Hant</string>
+	</array>
+	<key>CFBundleName</key>
+	<string>Scout</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>__VERSION__</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.vsag.Scout</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>scout</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>__BUILD__</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.productivity</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>14.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsForMedia</key>
+		<true/>
+	</dict>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Scout talks to Spotify, Music, Messages and Notes only when you use those features: to show and control what's playing, send a reply you typed, or save a note.</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Scout shows what's playing in Music.</string>
+	<key>NSAudioCaptureUsageDescription</key>
+	<string>Scout listens to the playing app's sound to animate the music visualizer and set per-app volume. Audio is never saved or sent.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Scout shows your AirPods and other devices when they connect, with their battery.</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>Scout shows your upcoming events in the notch and adds the events you create.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Scout shows your upcoming events in the notch and adds the events you create.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Scout shows your camera in the Mirror so you can check yourself before a call. Video stays on your Mac and is never recorded.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Scout shows the names and photos of people who message you. Contacts are only read on this Mac.</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>Scout watches your Downloads folder to show each download's progress. Only file names and sizes are read.</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSLocationUsageDescription</key>
+	<string>Scout uses your approximate location for the local weather forecast.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Scout uses your approximate location for the local weather forecast.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Scout uses the microphone only for the Prompter to follow your voice. Nothing is sent anywhere.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Scout turns your voice into words on this Mac so the Prompter keeps your place in the script.</string>
+	<key>NSSupportsAutomaticTermination</key>
+	<false/>
+</dict>
+</plist>

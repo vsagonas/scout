@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scoutは、Spotify、ミュージック、メッセージ、メモの機能を使うときだけ、それらと通信します。再生中の内容の表示と操作、入力した返信の送信、メモの保存のために使います。";
+"NSAppleEventsUsageDescription~appstore" = "Scoutは、再生コントロールをオンにしたときだけ、ミュージックとSpotifyと通信し、再生中の内容を表示して操作します。";
+"NSAppleMusicUsageDescription" = "Scoutは、ミュージックで再生中の内容を表示します。";
+"NSAudioCaptureUsageDescription" = "Scoutは、再生中のAppの音を聞き取って、ミュージックビジュアライザをアニメーションさせ、Appごとの音量を設定します。音声が保存されたり送信されたりすることはありません。";
+"NSBluetoothAlwaysUsageDescription" = "Scoutは、AirPodsやほかのデバイスが接続されたときに、バッテリー残量とともに表示します。";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scoutは、AirPodsやほかのBluetoothデバイスが接続されたときに、名前を表示します。";
+"NSCalendarsFullAccessUsageDescription" = "Scoutは、今後のイベントをノッチに表示し、作成したイベントを追加します。";
+"NSCalendarsUsageDescription" = "Scoutは、今後のイベントをノッチに表示し、作成したイベントを追加します。";
+"NSCameraUsageDescription" = "Scoutは、通話の前に自分の姿を確認できるよう、ミラーにカメラの映像を表示します。映像はMacの中にとどまり、録画されることはありません。";
+"NSContactsUsageDescription" = "Scoutは、メッセージを送ってきた人の名前と写真を表示します。連絡先はこのMac上でのみ読み取られます。";
+"NSDownloadsFolderUsageDescription" = "Scoutは、各ダウンロードの進捗を表示するために、ダウンロードフォルダを監視します。読み取るのはファイル名とサイズだけです。";
+"NSLocationUsageDescription" = "Scoutは、現在地の天気予報のために、おおよその位置情報を使用します。";
+"NSLocationWhenInUseUsageDescription" = "Scoutは、現在地の天気予報のために、おおよその位置情報を使用します。";
+"NSMicrophoneUsageDescription" = "Scoutは、テレプロンプターが声に追従するためだけにマイクを使用します。何も外部には送信されません。";
+"NSSpeechRecognitionUsageDescription" = "Scoutは、テレプロンプターがスクリプトの位置を見失わないよう、このMac上で声を言葉に変換します。";

@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout взаємодіє зі Spotify, Музикою, Повідомленнями та Нотатками лише тоді, коли ви користуєтеся цими функціями: щоб показувати й керувати тим, що грає, надсилати введену вами відповідь або зберігати нотатку.";
+"NSAppleEventsUsageDescription~appstore" = "Scout взаємодіє з Музикою та Spotify лише тоді, коли ви вмикаєте керування відтворенням, щоб показувати й керувати тим, що грає.";
+"NSAppleMusicUsageDescription" = "Scout показує, що грає в Музиці.";
+"NSAudioCaptureUsageDescription" = "Scout слухає звук програми, що відтворює, щоб анімувати музичний візуалізатор і встановлювати гучність для кожної програми. Звук ніколи не зберігається й не надсилається.";
+"NSBluetoothAlwaysUsageDescription" = "Scout показує ваші AirPods та інші пристрої, коли вони підключаються, разом із їхньою батареєю.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout показує ваші AirPods та інші пристрої Bluetooth за назвою, коли вони підключаються.";
+"NSCalendarsFullAccessUsageDescription" = "Scout показує ваші найближчі події у вирізі та додає події, які ви створюєте.";
+"NSCalendarsUsageDescription" = "Scout показує ваші найближчі події у вирізі та додає події, які ви створюєте.";
+"NSCameraUsageDescription" = "Scout показує вашу камеру в Дзеркалі, щоб ви могли перевірити себе перед дзвінком. Відео залишається на вашому Mac і ніколи не записується.";
+"NSContactsUsageDescription" = "Scout показує імена та фото людей, які вам пишуть. Контакти читаються лише на цьому Mac.";
+"NSDownloadsFolderUsageDescription" = "Scout стежить за вашою папкою Завантаження, щоб показувати хід кожного завантаження. Читаються лише назви та розміри файлів.";
+"NSLocationUsageDescription" = "Scout використовує ваше приблизне розташування для місцевого прогнозу погоди.";
+"NSLocationWhenInUseUsageDescription" = "Scout використовує ваше приблизне розташування для місцевого прогнозу погоди.";
+"NSMicrophoneUsageDescription" = "Scout використовує мікрофон лише для того, щоб Телесуфлер слідував за вашим голосом. Нічого нікуди не надсилається.";
+"NSSpeechRecognitionUsageDescription" = "Scout перетворює ваш голос на слова на цьому Mac, щоб Телесуфлер тримав ваше місце в скрипті.";

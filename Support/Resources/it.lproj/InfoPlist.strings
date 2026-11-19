@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout comunica con Spotify, Musica, Messaggi e Note solo quando usi queste funzioni: per mostrare e controllare ciò che sta suonando, inviare una risposta che hai digitato o salvare una nota.";
+"NSAppleEventsUsageDescription~appstore" = "Scout comunica con Musica e Spotify solo quando attivi il controllo della riproduzione, per mostrare e controllare ciò che sta suonando.";
+"NSAppleMusicUsageDescription" = "Scout mostra ciò che sta suonando in Musica.";
+"NSAudioCaptureUsageDescription" = "Scout ascolta l’audio dell’app in riproduzione per animare il visualizzatore musicale e impostare il volume per app. L’audio non viene mai salvato né inviato.";
+"NSBluetoothAlwaysUsageDescription" = "Scout mostra i tuoi AirPods e altri dispositivi quando si collegano, con la loro batteria.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout mostra i tuoi AirPods e altri dispositivi Bluetooth per nome quando si collegano.";
+"NSCalendarsFullAccessUsageDescription" = "Scout mostra i tuoi prossimi eventi nel notch e aggiunge gli eventi che crei.";
+"NSCalendarsUsageDescription" = "Scout mostra i tuoi prossimi eventi nel notch e aggiunge gli eventi che crei.";
+"NSCameraUsageDescription" = "Scout mostra la tua fotocamera nello Specchio così puoi controllarti prima di una chiamata. Il video resta sul tuo Mac e non viene mai registrato.";
+"NSContactsUsageDescription" = "Scout mostra i nomi e le foto delle persone che ti scrivono. I contatti vengono letti solo su questo Mac.";
+"NSDownloadsFolderUsageDescription" = "Scout controlla la tua cartella Download per mostrare l’avanzamento di ogni download. Vengono letti solo nomi e dimensioni dei file.";
+"NSLocationUsageDescription" = "Scout usa la tua posizione approssimativa per le previsioni meteo locali.";
+"NSLocationWhenInUseUsageDescription" = "Scout usa la tua posizione approssimativa per le previsioni meteo locali.";
+"NSMicrophoneUsageDescription" = "Scout usa il microfono solo perché il Teleprompter segua la tua voce. Non viene inviato nulla da nessuna parte.";
+"NSSpeechRecognitionUsageDescription" = "Scout trasforma la tua voce in parole su questo Mac così il Teleprompter tiene il segno nel copione.";

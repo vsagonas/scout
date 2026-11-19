@@ -1,0 +1,29 @@
+# Keys drawn in the 5x7 pixel font (capital Latin letters, digits and . , : ; ! ? - + / ' ( ) %% & # @ * only). Translate them in capitals
+# and short; a translation with any other letter is not drawn (the English word is shown instead), so languages that do not
+# write Latin letters (el, ru, uk, ar, ja, ko, zh-Hans, zh-Hant) may keep the English word for these keys.
+%@ DONE ✓
+AGENT TV
+ALL DAY
+ASLEEP
+BYE %@
+CONNECTING
+DONE
+FAST ASK AI
+FAVOURITES
+FROZEN
+HELLO FROM SCOUT ♥
+LATEST
+LIST
+LISTS
+NEEDS YOU
+NO AGENTS
+NO SIGNAL
+PAUSED
+PLACES
+RADIO
+READY
+STARTING
+STOPPED
+WELCOME %@ ♥
+WORKFLOW
+WORKING

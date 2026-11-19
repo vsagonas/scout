@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "只有在你使用相關功能時，Scout 才會與 Spotify、「音樂」、「訊息」和「備忘錄」通訊：用於顯示和控制正在播放的內容、傳送你輸入的回覆，或儲存備忘錄。";
+"NSAppleEventsUsageDescription~appstore" = "只有在你開啟播放控制時，Scout 才會與「音樂」和 Spotify 通訊，用於顯示和控制正在播放的內容。";
+"NSAppleMusicUsageDescription" = "Scout 會顯示「音樂」中正在播放的內容。";
+"NSAudioCaptureUsageDescription" = "Scout 會聆聽正在播放的 App 的聲音，用來驅動音樂視覺化並設定各 App 的音量。音訊絕不會被儲存或傳送。";
+"NSBluetoothAlwaysUsageDescription" = "AirPods 和其他裝置連接時，Scout 會顯示它們及其電池電量。";
+"NSBluetoothAlwaysUsageDescription~appstore" = "AirPods 和其他藍牙裝置連接時，Scout 會依名稱顯示它們。";
+"NSCalendarsFullAccessUsageDescription" = "Scout 會在瀏海中顯示你即將到來的活動，並加入你建立的活動。";
+"NSCalendarsUsageDescription" = "Scout 會在瀏海中顯示你即將到來的活動，並加入你建立的活動。";
+"NSCameraUsageDescription" = "Scout 會在「鏡子」中顯示你的相機畫面，讓你在通話前查看自己。影片只留在你的 Mac 上，絕不會被錄製。";
+"NSContactsUsageDescription" = "Scout 會顯示傳訊息給你的人的姓名和照片。「聯絡人」只在這台 Mac 上讀取。";
+"NSDownloadsFolderUsageDescription" = "Scout 會監看你的「下載項目」資料夾，以顯示每個下載的進度。只會讀取檔案名稱和大小。";
+"NSLocationUsageDescription" = "Scout 使用你的大概位置來提供本地天氣預報。";
+"NSLocationWhenInUseUsageDescription" = "Scout 使用你的大概位置來提供本地天氣預報。";
+"NSMicrophoneUsageDescription" = "Scout 只在提詞機跟隨你的聲音時使用麥克風。不會向任何地方傳送內容。";
+"NSSpeechRecognitionUsageDescription" = "Scout 在這台 Mac 上把你的聲音轉成文字，讓提詞機記住你在腳本中的位置。";

@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout komunikuje się ze Spotify, Muzyką, Wiadomościami i Notatkami tylko wtedy, gdy korzystasz z tych funkcji: aby pokazać i sterować tym, co gra, wysłać wpisaną odpowiedź lub zachować notatkę.";
+"NSAppleEventsUsageDescription~appstore" = "Scout komunikuje się z Muzyką i Spotify tylko wtedy, gdy włączysz sterowanie odtwarzaniem, aby pokazać i sterować tym, co gra.";
+"NSAppleMusicUsageDescription" = "Scout pokazuje, co gra w Muzyce.";
+"NSAudioCaptureUsageDescription" = "Scout nasłuchuje dźwięku odtwarzającej aplikacji, aby animować wizualizator muzyki i ustawiać głośność dla poszczególnych aplikacji. Dźwięk nigdy nie jest zachowywany ani wysyłany.";
+"NSBluetoothAlwaysUsageDescription" = "Scout pokazuje Twoje AirPods i inne urządzenia po ich połączeniu, razem z poziomem baterii.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout pokazuje Twoje AirPods i inne urządzenia Bluetooth z nazwy po ich połączeniu.";
+"NSCalendarsFullAccessUsageDescription" = "Scout pokazuje nadchodzące wydarzenia w wycięciu i dodaje wydarzenia, które tworzysz.";
+"NSCalendarsUsageDescription" = "Scout pokazuje nadchodzące wydarzenia w wycięciu i dodaje wydarzenia, które tworzysz.";
+"NSCameraUsageDescription" = "Scout pokazuje obraz z kamery w Lustrze, abyś mógł się sprawdzić przed rozmową. Wideo zostaje na Twoim komputerze Mac i nigdy nie jest nagrywane.";
+"NSContactsUsageDescription" = "Scout pokazuje imiona i zdjęcia osób, które do Ciebie piszą. Kontakty są odczytywane tylko na tym komputerze Mac.";
+"NSDownloadsFolderUsageDescription" = "Scout obserwuje folder Pobrane, aby pokazywać postęp każdego pobierania. Odczytywane są tylko nazwy i rozmiary plików.";
+"NSLocationUsageDescription" = "Scout używa Twojej przybliżonej lokalizacji do lokalnej prognozy pogody.";
+"NSLocationWhenInUseUsageDescription" = "Scout używa Twojej przybliżonej lokalizacji do lokalnej prognozy pogody.";
+"NSMicrophoneUsageDescription" = "Scout używa mikrofonu tylko po to, aby Prompter podążał za Twoim głosem. Nic nie jest nigdzie wysyłane.";
+"NSSpeechRecognitionUsageDescription" = "Scout zamienia Twój głos na słowa na tym komputerze Mac, aby Prompter śledził Twoje miejsce w skrypcie.";

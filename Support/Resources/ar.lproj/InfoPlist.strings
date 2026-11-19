@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "يتحدث Scout مع Spotify والموسيقى والرسائل والملاحظات فقط عندما تستخدم هذه الميزات: لعرض ما يُشغَّل والتحكم فيه، أو إرسال ردّ كتبته، أو حفظ ملاحظة.";
+"NSAppleEventsUsageDescription~appstore" = "يتحدث Scout مع الموسيقى وSpotify فقط عندما تشغّل التحكم في التشغيل، لعرض ما يُشغَّل والتحكم فيه.";
+"NSAppleMusicUsageDescription" = "يعرض Scout ما يُشغَّل في الموسيقى.";
+"NSAudioCaptureUsageDescription" = "يستمع Scout إلى صوت التطبيق الذي يُشغَّل لتحريك مرئيات الموسيقى وضبط مستوى الصوت لكل تطبيق. لا يُحفظ الصوت ولا يُرسل أبدًا.";
+"NSBluetoothAlwaysUsageDescription" = "يعرض Scout AirPods والأجهزة الأخرى عند اتصالها، مع بطاريتها.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "يعرض Scout AirPods وأجهزة Bluetooth الأخرى بأسمائها عند اتصالها.";
+"NSCalendarsFullAccessUsageDescription" = "يعرض Scout أحداثك القادمة في النوتش ويضيف الأحداث التي تنشئها.";
+"NSCalendarsUsageDescription" = "يعرض Scout أحداثك القادمة في النوتش ويضيف الأحداث التي تنشئها.";
+"NSCameraUsageDescription" = "يعرض Scout الكاميرا في المرآة لتتفقد مظهرك قبل المكالمة. يبقى الفيديو على جهاز Mac ولا يُسجَّل أبدًا.";
+"NSContactsUsageDescription" = "يعرض Scout أسماء وصور من يراسلك. تُقرأ جهات الاتصال على جهاز Mac هذا فقط.";
+"NSDownloadsFolderUsageDescription" = "يراقب Scout مجلد التنزيلات لعرض تقدّم كل تنزيل. تُقرأ أسماء الملفات وأحجامها فقط.";
+"NSLocationUsageDescription" = "يستخدم Scout موقعك التقريبي لتوقعات الطقس المحلية.";
+"NSLocationWhenInUseUsageDescription" = "يستخدم Scout موقعك التقريبي لتوقعات الطقس المحلية.";
+"NSMicrophoneUsageDescription" = "يستخدم Scout الميكروفون فقط ليتبع الملقّن صوتك. لا يُرسل شيء إلى أي مكان.";
+"NSSpeechRecognitionUsageDescription" = "يحوّل Scout صوتك إلى كلمات على جهاز Mac هذا ليحفظ الملقّن مكانك في النص.";

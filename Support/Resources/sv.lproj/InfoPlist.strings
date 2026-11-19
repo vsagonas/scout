@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout kommunicerar med Spotify, Musik, Meddelanden och Anteckningar bara när du använder de funktionerna: för att visa och styra det som spelas, skicka ett svar du skrev eller spara en anteckning.";
+"NSAppleEventsUsageDescription~appstore" = "Scout kommunicerar med Musik och Spotify bara när du slår på uppspelningsstyrning, för att visa och styra det som spelas.";
+"NSAppleMusicUsageDescription" = "Scout visar det som spelas i Musik.";
+"NSAudioCaptureUsageDescription" = "Scout lyssnar på ljudet från appen som spelar för att animera musikvisualiseraren och ställa in volym per app. Ljud sparas eller skickas aldrig.";
+"NSBluetoothAlwaysUsageDescription" = "Scout visar dina AirPods och andra enheter när de ansluter, med deras batteri.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout visar dina AirPods och andra Bluetooth-enheter med namn när de ansluter.";
+"NSCalendarsFullAccessUsageDescription" = "Scout visar dina kommande händelser i notchen och lägger till händelser som du skapar.";
+"NSCalendarsUsageDescription" = "Scout visar dina kommande händelser i notchen och lägger till händelser som du skapar.";
+"NSCameraUsageDescription" = "Scout visar din kamera i Spegeln så att du kan kolla dig själv före ett samtal. Video stannar på din Mac och spelas aldrig in.";
+"NSContactsUsageDescription" = "Scout visar namn och foton på personer som skickar meddelanden till dig. Kontakter läses bara på den här Mac-datorn.";
+"NSDownloadsFolderUsageDescription" = "Scout bevakar mappen Hämtade filer för att visa förloppet för varje nedladdning. Bara filnamn och storlekar läses.";
+"NSLocationUsageDescription" = "Scout använder din ungefärliga plats för den lokala väderprognosen.";
+"NSLocationWhenInUseUsageDescription" = "Scout använder din ungefärliga plats för den lokala väderprognosen.";
+"NSMicrophoneUsageDescription" = "Scout använder mikrofonen bara för att Prompter ska följa din röst. Inget skickas någonstans.";
+"NSSpeechRecognitionUsageDescription" = "Scout gör om din röst till ord på den här Mac-datorn så att Prompter håller reda på var du är i skriptet.";

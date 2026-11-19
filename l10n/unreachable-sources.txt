@@ -1,0 +1,16 @@
+# Source files nothing in the app opens any more (the radial ring was removed 2026-11-16; its tools answer only to scout:// debug commands and to
+# a saved-window restore). A key whose every use is in a file listed here is left out of l10n/en/Localizable.strings: nobody can read it, so no
+# translator should spend time on it. Empty this file and re-run scripts/l10n/extract.sh --write to put them back.
+Sources/Scout/Ring/RingModel.swift
+Sources/Scout/Ring/RingTools.swift
+Sources/Scout/Ring/Tools/CalcParser.swift
+Sources/Scout/Ring/Tools/CalculatorPanel.swift
+Sources/Scout/Ring/Tools/ClockPanel.swift
+Sources/Scout/Ring/Tools/LinksAppsPanels.swift
+Sources/Scout/Ring/Tools/RemindersTool.swift
+Sources/Scout/Ring/Tools/SandboxedCapture.swift
+Sources/Scout/Ring/Tools/ScreenRecordTool.swift
+Sources/Scout/Ring/Tools/SystemTools.swift
+Sources/Scout/Ring/Tools/UnitsConverter.swift
+Sources/Scout/Ring/Tools/UnitsPanel.swift
+Sources/Scout/Ring/Tools/VoiceMemoTool.swift

@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout ottaa yhteyttä Spotify-, Musiikki-, Viestit- ja Muistiinpanot-sovelluksiin vain, kun käytät näitä ominaisuuksia: näyttääkseen ja ohjatakseen soivaa musiikkia, lähettääkseen kirjoittamasi vastauksen tai tallentaakseen muistiinpanon.";
+"NSAppleEventsUsageDescription~appstore" = "Scout ottaa yhteyttä Musiikki- ja Spotify-sovelluksiin vain, kun kytket toiston ohjauksen päälle, näyttääkseen ja ohjatakseen soivaa musiikkia.";
+"NSAppleMusicUsageDescription" = "Scout näyttää, mitä Musiikki-sovelluksessa soi.";
+"NSAudioCaptureUsageDescription" = "Scout kuuntelee soivan sovelluksen ääntä animoidakseen musiikin visualisoijan ja säätääkseen sovelluskohtaisen äänenvoimakkuuden. Ääntä ei koskaan tallenneta tai lähetetä.";
+"NSBluetoothAlwaysUsageDescription" = "Scout näyttää AirPods-kuulokkeesi ja muut laitteesi, kun ne yhdistyvät, akkutietoineen.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout näyttää AirPods-kuulokkeesi ja muut Bluetooth-laitteesi nimellä, kun ne yhdistyvät.";
+"NSCalendarsFullAccessUsageDescription" = "Scout näyttää tulevat tapahtumasi lovessa ja lisää luomasi tapahtumat.";
+"NSCalendarsUsageDescription" = "Scout näyttää tulevat tapahtumasi lovessa ja lisää luomasi tapahtumat.";
+"NSCameraUsageDescription" = "Scout näyttää kamerasi Peilissä, jotta voit tarkistaa itsesi ennen puhelua. Video pysyy Mac-koneellasi eikä sitä koskaan tallenneta.";
+"NSContactsUsageDescription" = "Scout näyttää sinulle viestejä lähettävien ihmisten nimet ja kuvat. Yhteystiedot luetaan vain tässä Mac-koneessa.";
+"NSDownloadsFolderUsageDescription" = "Scout seuraa Lataukset-kansiotasi näyttääkseen jokaisen latauksen edistymisen. Vain tiedostojen nimet ja koot luetaan.";
+"NSLocationUsageDescription" = "Scout käyttää likimääräistä sijaintiasi paikallista sääennustetta varten.";
+"NSLocationWhenInUseUsageDescription" = "Scout käyttää likimääräistä sijaintiasi paikallista sääennustetta varten.";
+"NSMicrophoneUsageDescription" = "Scout käyttää mikrofonia vain, jotta Prompter voi seurata ääntäsi. Mitään ei lähetetä minnekään.";
+"NSSpeechRecognitionUsageDescription" = "Scout muuttaa äänesi sanoiksi tässä Mac-koneessa, jotta Prompter pysyy perillä paikastasi skriptissä.";

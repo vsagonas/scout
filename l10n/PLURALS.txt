@@ -1,0 +1,2 @@
+# No key of the app needs plural forms: every counted word was rephrased in English ("Agents: 3", "Files: 3", "+3").
+# If one is ever unavoidable, add a line: key<TAB>English singular<TAB>English plural. scripts/l10n/check.py then asks for the plural forms of the language.

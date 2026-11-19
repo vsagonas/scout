@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout jitkellem ma' Spotify, Music, Messages u Notes biss meta tuża dawk il-funzjonijiet: biex juri u jikkontrolla dak li qed idoqq, jibgħat tweġiba li kont ktibt, jew isalva nota.";
+"NSAppleEventsUsageDescription~appstore" = "Scout jitkellem ma' Music u Spotify biss meta tixgħel il-kontroll tal-playback, biex juri u jikkontrolla dak li qed idoqq.";
+"NSAppleMusicUsageDescription" = "Scout juri dak li qed idoqq f'Music.";
+"NSAudioCaptureUsageDescription" = "Scout jisma' l-ħoss tal-app li qed iddoqq biex janima l-visualizer tal-mużika u jistabbilixxi l-volum għal kull app. L-awdjo qatt ma jiġi ssalvat jew mibgħut.";
+"NSBluetoothAlwaysUsageDescription" = "Scout juri l-AirPods u apparati oħra tiegħek meta jikkonnettjaw, bil-batterija tagħhom.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout juri l-AirPods u apparati Bluetooth oħra tiegħek b'isimhom meta jikkonnettjaw.";
+"NSCalendarsFullAccessUsageDescription" = "Scout juri l-avvenimenti li ġejjin tiegħek fin-notch u jżid l-avvenimenti li toħloq.";
+"NSCalendarsUsageDescription" = "Scout juri l-avvenimenti li ġejjin tiegħek fin-notch u jżid l-avvenimenti li toħloq.";
+"NSCameraUsageDescription" = "Scout juri l-kamera tiegħek fil-Mera biex tkun tista' tiċċekkja lilek innifsek qabel sejħa. Il-vidjo jibqa' fuq il-Mac tiegħek u qatt ma jiġi rreġistrat.";
+"NSContactsUsageDescription" = "Scout juri l-ismijiet u r-ritratti tal-persuni li jibagħtulek messaġġi. Il-Kuntatti jinqraw biss fuq dan il-Mac.";
+"NSDownloadsFolderUsageDescription" = "Scout josserva l-folder Downloads tiegħek biex juri l-progress ta' kull tniżżil. Jinqraw biss l-ismijiet u d-daqsijiet tal-fajls.";
+"NSLocationUsageDescription" = "Scout juża l-post approssimat tiegħek għall-previżjoni tat-temp lokali.";
+"NSLocationWhenInUseUsageDescription" = "Scout juża l-post approssimat tiegħek għall-previżjoni tat-temp lokali.";
+"NSMicrophoneUsageDescription" = "Scout juża l-mikrofonu biss biex il-Prompter isegwi leħnek. Xejn ma jintbagħat imkien.";
+"NSSpeechRecognitionUsageDescription" = "Scout ibiddel leħnek f'kliem fuq dan il-Mac biex il-Prompter iżomm postok fl-iscript.";

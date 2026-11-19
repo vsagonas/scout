@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "Scout bendrauja su Spotify, Music, Messages ir Notes tik tada, kai naudoji šias funkcijas: kad rodytų ir valdytų, kas groja, išsiųstų tavo parašytą atsakymą ar išsaugotų pastabą.";
+"NSAppleEventsUsageDescription~appstore" = "Scout bendrauja su Music ir Spotify tik tada, kai įjungi grojimo valdymą, kad rodytų ir valdytų, kas groja.";
+"NSAppleMusicUsageDescription" = "Scout rodo, kas groja programoje Music.";
+"NSAudioCaptureUsageDescription" = "Scout klausosi grojančios programos garso, kad animuotų muzikos vizualizatorių ir nustatytų kiekvienos programos garsumą. Garsas niekada nesaugomas ir nesiunčiamas.";
+"NSBluetoothAlwaysUsageDescription" = "Scout rodo tavo AirPods ir kitus įrenginius, kai jie prisijungia, su jų baterija.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "Scout rodo tavo AirPods ir kitus Bluetooth įrenginius pavadinimu, kai jie prisijungia.";
+"NSCalendarsFullAccessUsageDescription" = "Scout rodo tavo būsimus įvykius išpjovoje ir prideda tavo sukurtus įvykius.";
+"NSCalendarsUsageDescription" = "Scout rodo tavo būsimus įvykius išpjovoje ir prideda tavo sukurtus įvykius.";
+"NSCameraUsageDescription" = "Scout rodo tavo kamerą Veidrodyje, kad galėtum pasitikrinti prieš skambutį. Vaizdas lieka tavo Mac ir niekada neįrašomas.";
+"NSContactsUsageDescription" = "Scout rodo tau rašančių žmonių vardus ir nuotraukas. Kontaktai skaitomi tik šiame Mac.";
+"NSDownloadsFolderUsageDescription" = "Scout stebi tavo aplanką Downloads, kad rodytų kiekvieno atsisiuntimo eigą. Skaitomi tik failų pavadinimai ir dydžiai.";
+"NSLocationUsageDescription" = "Scout naudoja tavo apytikslę vietą vietinei orų prognozei.";
+"NSLocationWhenInUseUsageDescription" = "Scout naudoja tavo apytikslę vietą vietinei orų prognozei.";
+"NSMicrophoneUsageDescription" = "Scout naudoja mikrofoną tik tam, kad Prompteris sektų tavo balsą. Niekur nieko nesiunčiama.";
+"NSSpeechRecognitionUsageDescription" = "Scout paverčia tavo balsą žodžiais šiame Mac, kad Prompteris išlaikytų tavo vietą skripte.";

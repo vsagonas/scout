@@ -1,0 +1,25 @@
+# One-word English keys that may stand alone on a line of a pseudo-language picture without being a leak: brand names, and the names of apps
+# and of sample items the gallery shows as data (Quick Apps, the sample projects, the sample sounds). Lower case.
+scout
+claude
+codex
+openai
+anthropic
+safari
+notes
+calendar
+music
+messages
+mail
+passwords
+reminders
+finder
+airdrop
+radio
+zoom
+spotify
+glass
+reply
+agents
+8-bit
+meeting

@@ -1,0 +1,16 @@
+"CFBundleDisplayName" = "Scout";
+"NSAppleEventsUsageDescription" = "O Scout comunica com o Spotify, a Música, as Mensagens e as Notas apenas quando usa essas funcionalidades: para mostrar e controlar o que está a tocar, enviar uma resposta que escreveu ou guardar uma nota.";
+"NSAppleEventsUsageDescription~appstore" = "O Scout comunica com a Música e o Spotify apenas quando ativa o controlo de reprodução, para mostrar e controlar o que está a tocar.";
+"NSAppleMusicUsageDescription" = "O Scout mostra o que está a tocar na Música.";
+"NSAudioCaptureUsageDescription" = "O Scout escuta o som da app que está a reproduzir para animar o visualizador de música e definir o volume por app. O áudio nunca é guardado nem enviado.";
+"NSBluetoothAlwaysUsageDescription" = "O Scout mostra os seus AirPods e outros dispositivos quando ligam, com a respetiva bateria.";
+"NSBluetoothAlwaysUsageDescription~appstore" = "O Scout mostra os seus AirPods e outros dispositivos Bluetooth pelo nome quando ligam.";
+"NSCalendarsFullAccessUsageDescription" = "O Scout mostra os seus próximos eventos no notch e adiciona os eventos que criar.";
+"NSCalendarsUsageDescription" = "O Scout mostra os seus próximos eventos no notch e adiciona os eventos que criar.";
+"NSCameraUsageDescription" = "O Scout mostra a sua câmara no Espelho para que se possa ver antes de uma chamada. O vídeo fica no seu Mac e nunca é gravado.";
+"NSContactsUsageDescription" = "O Scout mostra os nomes e as fotografias das pessoas que lhe enviam mensagens. Os Contactos são lidos apenas neste Mac.";
+"NSDownloadsFolderUsageDescription" = "O Scout vigia a sua pasta Transferências para mostrar o progresso de cada transferência. Só são lidos nomes e tamanhos de ficheiros.";
+"NSLocationUsageDescription" = "O Scout usa a sua localização aproximada para a previsão meteorológica local.";
+"NSLocationWhenInUseUsageDescription" = "O Scout usa a sua localização aproximada para a previsão meteorológica local.";
+"NSMicrophoneUsageDescription" = "O Scout usa o microfone apenas para o Teleprompter seguir a sua voz. Nada é enviado para lado nenhum.";
+"NSSpeechRecognitionUsageDescription" = "O Scout transforma a sua voz em palavras neste Mac para o Teleprompter manter o seu lugar no guião.";
