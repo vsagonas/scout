@@ -10,9 +10,7 @@
 "%@ ended." = "%@: încheiat.";
 "%@ failed" = "%@: eșuat";
 "%@ finished after %lld min" = "%@: terminat după %lld min";
-"%@ finished in %@" = "%@: terminat în %@";
 "%@ free" = "%@ liber";
-"%@ has a question" = "%@ are o întrebare";
 "%@ has no sound" = "%@ nu are sunet";
 "%@ in %@" = "%@ în %@";
 "%@ installed" = "%@: instalat";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@ este prea mare pentru un fișier ZIP (limită 4 GB)";
 "%@ isn't installed" = "%@ nu este instalat";
 "%@ isn't supported on this Mac" = "%@ nu este acceptat pe acest Mac";
-"%@ isn't valid JSON, so Scout left it alone." = "%@ nu este JSON valid, așa că Scout nu l-a atins.";
 "%@ key" = "Cheie %@";
 "%@ left" = "Rămas: %@";
 "%@ needs you" = "%@ are nevoie de tine";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "Temporizatorul %@ s-a încheiat";
 "%@ to full" = "%@ până la plin";
 "%@ used" = "%@ folosit";
-"%@ wants to use %@" = "%@ vrea să folosească %@";
-"%@ wants to use a tool" = "%@ vrea să folosească un instrument";
 "%@ · %@ of %@" = "%@ · %@ din %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · %lld deschise în total";
@@ -71,7 +66,6 @@
 "%lld running" = "%lld rulează";
 "%lld working" = "%lld lucrează";
 "%lld wpm" = "%lld cuv./min";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+încă %lld";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Adaugă mai întâi cheia ta API %@ în Setări › Întreabă AI.";
 "Add your API key in Settings › Ask AI first." = "Adaugă mai întâi cheia ta API în Setări › Întreabă AI.";
 "Add your Claude API key in Settings › Ask AI first." = "Adaugă mai întâi cheia ta API Claude în Setări › Întreabă AI.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Adaugă hook-urile Scout în ~/.claude/settings.json (evenimente de progres, cereri de permisiune și întrebări) și nu le atinge pe ale tale. Mai întâi se face o copie de rezervă a fișierului.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Adaugă hook-urile Scout în ~/.codex/hooks.json. Codex îți cere prima dată să verifici hook-urile noi: scrie /hooks în Codex și acordă încredere celor din Scout.";
 "Agent" = "Agent";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Căsuța Agent TV";
@@ -164,15 +156,10 @@
 "Allow…" = "Permite…";
 "Also show it while an app is full screen" = "Afișează și când o aplicație este pe tot ecranul";
 "Also used for “%@”: only one of them will work." = "Folosită și pentru „%@”: va funcționa doar una dintre ele.";
-"Always allow" = "Permite întotdeauna";
-"Always allow %@" = "Permite întotdeauna %@";
-"Always allow adds: %@" = "Permite întotdeauna adaugă: %@";
 "Amber" = "Chihlimbar";
 "An agent tab cannot be kept as the opening tab" = "O filă de agent nu poate fi păstrată ca filă de deschidere";
 "Announcements" = "Anunțuri";
 "Answer copied" = "Răspuns copiat";
-"Answer in terminal" = "Răspunde în terminal";
-"Answer permissions and questions from the notch" = "Răspunde la permisiuni și întrebări din notch";
 "Answers" = "Răspunsuri";
 "Any country" = "Orice țară";
 "Appearance" = "Aspect";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Întreabă despre o imagine";
 "Ask about your screen" = "Întreabă despre ecran";
 "Ask anything" = "Întreabă";
-"Ask anything above. Questions go to %@. The answer shows here." = "Întreabă orice mai sus. Întrebările merg la %@. Răspunsul apare aici.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Întreabă orice.\nReturn trimite, ⌥Return adaugă o linie.\n\nÎntrebările tale merg la %@. Cu Ecran pornit, o imagine a ecranului tău merge odată cu ele.";
 "Ask before closing a tab that is still running" = "Întreabă înainte de a închide o filă care încă rulează";
-"Ask in terminal" = "Întreabă în terminal";
 "Ask the same question again on Claude Sonnet 5.5" = "Pune din nou aceeași întrebare în Claude Sonnet 5.5";
-"Asking a question" = "Pune o întrebare";
 "Asking you: %@" = "Te întreabă: %@";
 "Asleep" = "Doarme";
 "Attach a picture" = "Atașează o imagine";
@@ -241,7 +225,6 @@
 "Camera" = "Cameră";
 "Camera access is off" = "Accesul la cameră este dezactivat";
 "Camera access is off for Scout." = "Accesul la cameră este dezactivat pentru Scout.";
-"Can't listen (%@)" = "Nu se poate asculta (%@)";
 "Can't read %@ yet" = "%@ nu poate fi citit încă";
 "Can't tell which chat this is" = "Nu se poate stabili despre ce chat este vorba";
 "Cancel" = "Anulează";
@@ -265,7 +248,6 @@
 "Choose a script" = "Alege un script";
 "Choose image…" = "Alege imaginea…";
 "Choose shortcuts" = "Alege comenzile rapide";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Alege folderul %@ din folderul tău Acasă. Scout face acolo o copie de rezervă a %@ și adaugă hook-urile sale; nimic altceva nu se schimbă.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Alege folderul %@ ca Scout să poată vedea sesiunile tale %@. Scout doar îl citește.";
 "Choose the model" = "Alege modelul";
 "Choose…" = "Alege…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Șterge ultimele stații și locuri";
 "Clear shortcut" = "Șterge comanda rapidă";
 "Clear the clipboard history?" = "Ștergi istoricul clipboardului?";
-"Click Copy hooks." = "Apasă pe Copiază hook-urile.";
 "Click for %@ settings, drag to move" = "Clic pentru setările %@, trage pentru a muta";
 "Click one, or use the arrow keys. Press Return to go on." = "Fă clic pe una sau folosește tastele săgeată. Apasă Return ca să continui.";
 "Click one, or use the arrow keys. The window grows with it." = "Fă clic pe una sau folosește tastele săgeată. Fereastra crește odată cu ea.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Închide această filă (⌘W)";
 "Close this tab?" = "Închizi această filă?";
 "Cloudy" = "Noros";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex îți cere o dată să verifici hook-urile noi: scrie /hooks în Codex și acordă încredere celor din Scout.";
 "Color" = "Culoare";
 "Colors" = "Culori";
 "Command" = "Command";
 "Compact" = "Compact";
-"Connect" = "Conectează";
-"Connect %@?" = "Conectezi %@?";
-"Connect %@…" = "Conectează %@…";
-"Connect Claude Code" = "Conectează Claude Code";
-"Connect Claude Code…" = "Conectează Claude Code…";
-"Connect Codex" = "Conectează Codex";
-"Connect Codex…" = "Conectează Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Conectează îți cere o singură dată să alegi folderul %@; Scout face o copie de rezervă a %@, adaugă doar propriile intrări și le poate scoate din nou (Deconectează). Fiecare hook este o singură comandă curl către 127.0.0.1; cu Scout închis nu face nimic.";
 "Connected" = "Conectat";
-"Connected, but out of date" = "Conectat, dar depășit";
-"Connected. New sessions report to Scout." = "Conectat. Sesiunile noi raportează către Scout.";
 "Connecting" = "Se conectează";
 "Connecting…" = "Se conectează…";
 "Contacts" = "Contacte";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Copiile făcute cât timp una dintre aceste aplicații este în față nu sunt salvate niciodată.";
 "Copy" = "Copiază";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Copiază un link de pe YouTube, X, Instagram, TikTok, Vimeo sau Reddit, deschide Tava și Scout se oferă să-l descarce, sau lasă un link în Tavă. Descărcările folosesc yt-dlp, pe care îl instalezi tu; butonul de mai sus rulează doar când îl apeși. Citirea unui link copiat necesită „Permite” pentru Scout în Setări de sistem › Confidențialitate și securitate › Lipește din alte aplicații (macOS 15.4 și mai nou).";
-"Copy hooks" = "Copiază hook-urile";
-"Copy hooks instead" = "Copiază în schimb hook-urile";
 "Copy something and it shows up here." = "Copiază ceva și apare aici.";
 "Couldn't copy the picture" = "Nu s-a putut copia imaginea";
 "Couldn't copy the polaroid" = "Nu s-a putut copia polaroidul";
@@ -399,9 +367,6 @@
 "Delete note" = "Șterge notița";
 "Delete this chat" = "Șterge acest chat";
 "Delete this script" = "Șterge acest script";
-"Deny" = "Refuză";
-"Disconnect" = "Deconectează";
-"Disconnected. Your own hooks are untouched." = "Deconectat. Propriile tale hook-uri nu au fost atinse.";
 "Disk" = "Disc";
 "Dismiss" = "Închide";
 "Display" = "Afișaj";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Exportă ca %@…";
 "Exported %@" = "Exportat %@";
 "Extra large" = "Foarte mare";
-"FAST ASK AI" = "INTREBARE AI";
 "FAVOURITES" = "FAVORITE";
 "FROZEN" = "INGHETAT";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Uită filele anterioare";
 "Forget previous tabs" = "Uită filele anterioare";
 "Forget recent folders" = "Uită folderele recente";
-"Found automatically" = "Găsit automat";
 "Found · %@" = "Găsit · %@";
 "Free service, no key" = "Serviciu gratuit, fără cheie";
 "Freezing drizzle" = "Burniță înghețată";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "SALUT DE LA SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku pentru întrebări rapide, Sonnet pentru cele grele";
 "Haptic feedback" = "Feedback haptic";
-"Has a question" = "Are o întrebare";
 "Heavy rain" = "Ploaie puternică";
 "Heavy showers" = "Averse puternice";
 "Heavy snow" = "Ninsoare puternică";
@@ -533,9 +495,7 @@
 "Here" = "Aici";
 "Hide completed" = "Ascunde cele terminate";
 "Hide it while an app is full screen" = "Ascunde când o aplicație este pe tot ecranul";
-"Hide the answer" = "Ascunde răspunsul";
 "Hide the chats" = "Ascunde chaturile";
-"Hide the paste code" = "Ascunde codul de lipire";
 "History" = "Istoric";
 "History is paused" = "Istoricul este în pauză";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Ține apăsat ⌥⇧ cu o tastă de volum sau luminozitate pentru pași de un sfert.";
@@ -605,15 +565,11 @@
 "Links" = "Linkuri";
 "List" = "Listă";
 "List name" = "Numele listei";
-"Listen for AI agents on this Mac" = "Ascultă agenții AI de pe acest Mac";
-"Listening on 127.0.0.1:%@" = "Ascultă pe 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Ascultă pe 127.0.0.1:%@ (%@ era ocupat)";
 "Listening…" = "Ascultă…";
 "Lists" = "Liste";
 "Live" = "Live";
 "Live Activities" = "Activități live";
 "Loading…" = "Se încarcă…";
-"Local bridge" = "Punte locală";
 "Local weather. A chosen city works without it." = "Vremea locală. Un oraș ales funcționează și fără ea.";
 "Location" = "Locație";
 "Location access" = "Acces la locație";
@@ -662,7 +618,6 @@
 "Models" = "Modele";
 "More" = "Altele";
 "More agents: %lld" = "Mai mulți agenți: %lld";
-"More…" = "Altele…";
 "Most capable, slowest" = "Cel mai capabil, cel mai lent";
 "Most items to keep" = "Număr maxim de elemente păstrate";
 "Mostly clear" = "În mare parte senin";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Încă nesolicitat";
 "Not available on this Mac" = "Indisponibil pe acest Mac";
 "Not checked yet" = "Încă necontrolat";
-"Not connected" = "Neconectat";
 "Not found in your login shell's PATH" = "Negăsit în PATH-ul shell-ului tău de conectare";
 "Not found on this Mac" = "Negăsit pe acest Mac";
 "Not installed" = "Neinstalat";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Doar afișajele cu notch";
 "Only events with a video link" = "Doar evenimentele cu link video";
 "Only for the Prompter to follow your voice." = "Doar pentru ca Teleprompterul să-ți urmeze vocea.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Necesar doar pentru Permite, Refuză și răspunsuri la întrebări din notch; tot ce e mai sus funcționează și fără. Fiecare agent rulează un hook dintr-o linie care trimite către Scout pe acest Mac (doar 127.0.0.1, cu o cheie privată). Scout schimbă setările agentului tău doar când faci clic pe Conectează și alegi folderul lui (copie de rezervă mai întâi, doar intrările proprii ale aplicației Scout) sau când lipești tu hook-urile. Dacă Scout nu rulează, hook-ul nu face nimic, iar agentul întreabă în terminalul lui ca de obicei.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Necesar doar pentru Permite, Refuză și răspunsuri la întrebări din notch; tot ce e mai sus funcționează și fără. Fiecare hook este o comandă dintr-o linie care trimite către Scout pe acest Mac (doar 127.0.0.1, cu o cheie privată). Dacă Scout nu rulează, hook-ul nu face nimic, iar agentul întreabă în terminalul lui ca de obicei.";
-"Only the dot beside the notch" = "Doar punctul de lângă notch";
 "Only what you choose" = "Doar ce alegi tu";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Doar dacă încă mai cânta când Scout a fost închis. Scout ține minte mereu ultimul post și volumul.";
 "Open" = "Deschide";
 "Open %@" = "Deschide %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Deschide fișierul %@ (creează-l dacă nu există) și lipește. Dacă are deja o secțiune \"hooks\", adaugă aceste intrări în ea.";
 "Open %@ full size" = "Deschide %@ la dimensiune completă";
 "Open %@ to finish" = "Deschide %@ pentru a termina";
 "Open %@, full size" = "Deschide %@, dimensiune completă";
@@ -808,7 +758,6 @@
 "Open To-do" = "Deschide Sarcini";
 "Open a Scout window first, then share" = "Deschide mai întâi o fereastră Scout, apoi partajează";
 "Open a widget full size" = "Deschide un widget la dimensiune completă";
-"Open in Ask AI" = "Deschide în Întreabă AI";
 "Open or close the notch" = "Deschide sau închide notch-ul";
 "Open tasks in total: %lld" = "Sarcini deschise în total: %lld";
 "Open the Calendar with the To-dos, full size" = "Deschide Calendarul cu Sarcinile, la dimensiune completă";
@@ -817,7 +766,6 @@
 "Open the notch" = "Deschide notch-ul";
 "Open the notch on %@ (now: %@)" = "Deschide notch-ul pe %@ (acum: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Deschide notch-ul pe %@ de fiecare dată, nu pe tabloul de bord";
-"Open the notch on Agents" = "Deschide notch-ul pe Agenți";
 "Open the notch when an agent needs you" = "Deschide notch-ul când un agent are nevoie de tine";
 "Open the player" = "Deschide playerul";
 "Open the to-do calendar" = "Deschide calendarul de sarcini";
@@ -829,9 +777,7 @@
 "Opening" = "Se deschide";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Deschide notch-ul cu widgetul respectiv deja extins. Apasă din nou pentru a închide. Notch-ul în sine se deschide mereu pe tabloul de bord.";
 "Option" = "Option";
-"Optional: answer from the notch" = "Opțional: răspunde din notch";
 "Options" = "Opțiuni";
-"Or type your own answer" = "Sau scrie propriul răspuns";
 "Orange" = "Portocaliu";
 "Output" = "Ieșire";
 "Overcast" = "Înnorat";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Pop-up";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "Portul %u era ocupat, așa că acest bloc numește portul %u. Dacă Scout pornește din nou pe %u mai târziu, copiază-l din nou.";
 "Press a shortcut…" = "Apasă o comandă rapidă…";
 "Preview" = "Previzualizare";
 "Preview a card" = "Previzualizează un card";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Pune fișierele convertite în Tavă";
 "Put finished videos in the Tray" = "Pune videoclipurile terminate în Tavă";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Readuce fiecare opțiune la starea din prima zi. Notițele, clipboardul și fișierele tale rămân.";
-"Questions go to %@." = "Întrebările merg la %@.";
 "Questions go to %@. The answers stay here." = "Întrebările merg la %@. Răspunsurile rămân aici.";
 "Quick" = "Rapid";
 "Quick Apps" = "Aplicații rapide";
@@ -920,7 +864,6 @@
 "Reading" = "Se citește";
 "Ready" = "Gata";
 "Ready for the next focus session" = "Gata pentru următoarea sesiune de concentrare";
-"Ready for the next task" = "Gata pentru următoarea sarcină";
 "Rec" = "Înreg.";
 "Recent downloads" = "Descărcări recente";
 "Record Shortcut" = "Înregistrează comanda rapidă";
@@ -978,19 +921,15 @@
 "Save…" = "Salvează…";
 "Scout Settings" = "Setări Scout";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout întreabă macOS doar când pornești sau deschizi funcția care are nevoie. Nimic nu se cere la pornire.";
-"Scout can no longer open that folder. Connect again." = "Scout nu mai poate deschide acel folder. Conectează din nou.";
 "Scout can't match what it hears to the script" = "Scout nu poate potrivi ce aude cu scriptul";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout nu vede încă folderele agenților tăi. Permite o dată și fiecare sesiune Claude Code și Codex se mută singură.";
 "Scout can't use this microphone" = "Scout nu poate folosi acest microfon";
-"Scout could not open a local port." = "Scout nu a putut deschide un port local.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout nu ți-a putut vedea ecranul, așa că întrebarea a plecat fără imagine. Permite Scout la Înregistrare ecran.";
 "Scout couldn't take the picture this time, so that question went without it." = "Scout nu a putut face imaginea de data aceasta, așa că întrebarea a plecat fără ea.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout găsește singur sesiunile Claude Code și Codex";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout ascultă acum pe portul %u (sau hook-urile sale sunt dintr-o versiune mai veche). Actualizarea rescrie doar intrările Scout.";
 "Scout only watches for connections once you allow it." = "Scout urmărește conexiunile doar după ce permiți.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout citește evenimentele tale de pe acest Mac ca să umple widgetul Calendar și spațiul de lucru. Nimic nu este trimis nicăieri.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout ține minte ce copiezi ca să poți lipi din nou din notch sau din raftul de jos. Totul rămâne pe acest Mac.";
-"Scout will add its hooks to %@ after backing the file up." = "Scout va adăuga hook-urile sale în %@ după ce face o copie de rezervă a fișierului.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Codul, textele și pictograma proprii ale aplicației Scout sunt originale. Tot restul de aici este folosit sub propria licență.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Ferestrele proprii ale aplicației Scout (Întreabă AI, notițe, sarcini, calculatorul și celelalte) se redeschid unde erau, cu dimensiunea și textul lor, după o închidere, o actualizare sau o repornire. Când un afișaj nu mai există, se deschid pe cel principal.";
 "Scout: my AI agents in my notch. %@" = "Scout: agenții mei AI în notch-ul meu. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Caută pe web";
 "Searching the web…" = "Se caută pe web…";
 "See the month, your agenda and a Join button for video calls." = "Vezi luna, agenda ta și un buton Intră pentru apeluri video.";
-"See the whole conversation in the Ask AI tab" = "Vezi toată conversația în fila Întreabă AI";
 "See your day here" = "Vezi-ți ziua aici";
 "Select a note or start a new one" = "Selectează o notiță sau începe una nouă";
 "Select a note or start a new one." = "Selectează o notiță sau începe una nouă.";
 "Selected: %lld" = "Selectate: %lld";
 "Send" = "Trimite";
-"Send answers" = "Trimite răspunsurile";
 "Send to Apple Notes" = "Trimite în Notițe";
 "Send to a nearby device" = "Trimite către un dispozitiv din apropiere";
 "Sensitivity" = "Sensibilitate";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Afișează AirPods și bateria lor când se conectează";
 "Show Scout in the menu bar" = "Afișează Scout în bara de meniu";
 "Show a Join card when the meeting starts" = "Afișează un card Intră când începe ședința";
-"Show a card under the notch" = "Afișează un card sub notch";
 "Show a card when a download finishes" = "Afișează un card când se termină o descărcare";
 "Show a count next to the notch while the Tray holds files" = "Afișează un număr lângă notch cât timp Tava conține fișiere";
 "Show a countdown" = "Afișează o numărătoare inversă";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Afișează fiecare sarcină deschisă, indiferent de zi";
 "Show in Finder" = "Arată în Finder";
 "Show in full screen" = "Afișează pe tot ecranul";
-"Show me the paste code" = "Arată-mi codul de lipire";
 "Show music from" = "Afișează muzica din";
 "Show music next to the notch while it plays" = "Afișează muzica lângă notch cât timp se redă";
 "Show my calendar in the notch" = "Afișează calendarul meu în notch";
@@ -1107,9 +1042,7 @@
 "Square" = "Pătrat";
 "Start" = "Start";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Pornește Claude Code sau Codex și fiecare sesiune apare aici singură, cu progresul ei. Nimic de conectat.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Pornește Codex și scrie /hooks ca să acorzi încredere hook-urilor Scout prima dată. Apoi pornește o sesiune nouă.";
 "Start a %lld-minute focus timer for this task" = "Pornește un temporizator de concentrare (%lld min) pentru această sarcină";
-"Start a new Claude Code session. It appears in the notch." = "Pornește o sesiune nouă Claude Code. Apare în notch.";
 "Start again" = "Începe din nou";
 "Start folder" = "Folder de pornire";
 "Start the camera when the Mirror widget appears" = "Pornește camera când apare widgetul Oglindă";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Dimensiune text: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "Cheia API a fost respinsă. Verifică-o în Setări › Întreabă AI.";
 "That didn't work" = "Nu a mers";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "Acela nu este folderul %@ din folderul tău Acasă. Conectează din nou și alege-l.";
 "That one did not go through" = "Nu a trecut";
 "That's the end" = "Asta e tot";
 "The %@ uses the camera, so it never opens by itself" = "Funcția %@ folosește camera, deci nu se deschide niciodată singură";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Dezactivat";
 "Two-finger swipe on the notch" = "Glisare cu două degete pe notch";
 "Type a city, region or country, or pick a country." = "Scrie un oraș, o regiune sau o țară, sau alege o țară.";
-"Type your own…" = "Scrie-l pe al tău…";
 "Typing: the notch stays open" = "Scriere: notch-ul rămâne deschis";
 "Unknown format" = "Format necunoscut";
 "Unlicense (only if you install it)" = "Unlicense (doar dacă îl instalezi)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Până pornești, întrebările pleacă fără imagine.";
 "Untitled" = "Fără titlu";
 "Untitled script" = "Script fără titlu";
-"Update" = "Actualizează";
 "Updates" = "Actualizări";
 "Updating the to-do list" = "Se actualizează lista de sarcini";
 "Upload %@" = "Încarcă %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Te așteaptă";
 "Waiting for your OK" = "Așteaptă aprobarea ta";
 "Waiting for your voice" = "Așteaptă vocea ta";
-"Wants to use %@" = "Vrea să folosească %@";
-"Wants to use %@: %@" = "Vrea să folosească %@: %@";
-"Wants to use a tool" = "Vrea să folosească un instrument";
-"Wants to use a tool: %@" = "Vrea să folosească un instrument: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Hârtie caldă, text închis și accente vii. Ușor de citit ziua.";
 "Warn at" = "Avertizează la";
 "Warn when the battery is low" = "Avertizează când bateria este slabă";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "La ce poate ajunge Scout și de ce cere.";
 "What shows next to the notch while it is closed." = "Ce apare lângă notch cât timp este închis.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Când sosește un mesaj, un card coboară sub notch cu expeditorul, textul și o casetă de răspuns. Rămâne discret cât timp aplicația Mesaje este în față. Scout nu trimite niciodată nimic dacă nu scrii tu un răspuns și nu apeși Return.";
-"When an agent needs an answer" = "Când un agent are nevoie de un răspuns";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Când schimbi volumul cu tastele, din bara de meniu sau din altă aplicație, nivelul apare și lângă notch.";
 "Where stations come from" = "De unde vin stațiile";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Cât timp se redă muzică, rulează un temporizator sau se termină o descărcare, notch-ul crește ca să le arate. Pune cursorul pe el și se deschide Nook: widgeturi, fișiere, clipboard, calendar. Îndepărtează-te și se retrage la loc.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Zoom %@, înapoi la imaginea întreagă";
 "Zoom in" = "Mărește";
 "Zoom out" = "Micșorează";
-"all edits this session" = "toate editările din această sesiune";
 "charged" = "încărcat";
 "charging" = "se încarcă";
 "code" = "cod";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS nu a vrut să schimbe: %@";
 "me and my agents" = "eu și agenții mei";
 "min" = "min";
-"mode %@" = "mod %@";
 "model name" = "nume model";
 "needs you" = "are nevoie de tine";
 "no battery" = "fără baterie";

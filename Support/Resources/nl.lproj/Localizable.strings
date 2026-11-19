@@ -10,9 +10,7 @@
 "%@ ended." = "%@ is beëindigd.";
 "%@ failed" = "%@ mislukt";
 "%@ finished after %lld min" = "%@ klaar na %lld min";
-"%@ finished in %@" = "%@ klaar in %@";
 "%@ free" = "%@ vrij";
-"%@ has a question" = "%@ heeft een vraag";
 "%@ has no sound" = "%@ heeft geen geluid";
 "%@ in %@" = "%@ in %@";
 "%@ installed" = "%@ geïnstalleerd";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@ is te groot voor een ZIP-bestand (limiet van 4 GB)";
 "%@ isn't installed" = "%@ is niet geïnstalleerd";
 "%@ isn't supported on this Mac" = "%@ wordt niet ondersteund op deze Mac";
-"%@ isn't valid JSON, so Scout left it alone." = "%@ is geen geldige JSON, dus Scout heeft het met rust gelaten.";
 "%@ key" = "%@-sleutel";
 "%@ left" = "%@ over";
 "%@ needs you" = "%@ heeft je nodig";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "%@-timer klaar";
 "%@ to full" = "%@ tot vol";
 "%@ used" = "%@ gebruikt";
-"%@ wants to use %@" = "%@ wil %@ gebruiken";
-"%@ wants to use a tool" = "%@ wil een tool gebruiken";
 "%@ · %@ of %@" = "%@ · %@ van %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · %lld open in totaal";
@@ -71,7 +66,6 @@
 "%lld running" = "%lld actief";
 "%lld working" = "%lld aan het werk";
 "%lld wpm" = "%lld wpm";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+%lld meer";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Voeg eerst je %@ API-sleutel toe in Instellingen › Vraag AI.";
 "Add your API key in Settings › Ask AI first." = "Voeg eerst je API-sleutel toe in Instellingen › Vraag AI.";
 "Add your Claude API key in Settings › Ask AI first." = "Voeg eerst je Claude API-sleutel toe in Instellingen › Vraag AI.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Voegt de hooks van Scout toe aan ~/.claude/settings.json (voortgangsmeldingen, toestemmingsverzoeken en vragen) en laat je eigen hooks met rust. Er wordt eerst een back-up van het bestand gemaakt.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Voegt de hooks van Scout toe aan ~/.codex/hooks.json. Codex vraagt je de eerste keer nieuwe hooks te controleren: typ /hooks in Codex en vertrouw die van Scout.";
 "Agent" = "Agent";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Agent TV-hol";
@@ -164,15 +156,10 @@
 "Allow…" = "Sta toe…";
 "Also show it while an app is full screen" = "Toon het ook als een app op volledig scherm staat";
 "Also used for “%@”: only one of them will work." = "Ook gebruikt voor “%@”: maar één van beide werkt.";
-"Always allow" = "Sta altijd toe";
-"Always allow %@" = "Sta %@ altijd toe";
-"Always allow adds: %@" = "Met Sta altijd toe wordt toegevoegd: %@";
 "Amber" = "Amber";
 "An agent tab cannot be kept as the opening tab" = "Een agenttabblad kan niet als openingstabblad worden bewaard";
 "Announcements" = "Aankondigingen";
 "Answer copied" = "Antwoord gekopieerd";
-"Answer in terminal" = "Antwoord in terminal";
-"Answer permissions and questions from the notch" = "Beantwoord toestemmingen en vragen vanuit de notch";
 "Answers" = "Antwoorden";
 "Any country" = "Elk land";
 "Appearance" = "Uiterlijk";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Vraag iets over een afbeelding";
 "Ask about your screen" = "Vraag iets over je scherm";
 "Ask anything" = "Vraag maar";
-"Ask anything above. Questions go to %@. The answer shows here." = "Vraag hierboven van alles. Vragen gaan naar %@. Het antwoord verschijnt hier.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Vraag van alles.\nReturn verstuurt, ⌥Return voegt een regel toe.\n\nJe vragen gaan naar %@. Met Scherm aan gaat er een afbeelding van je scherm mee.";
 "Ask before closing a tab that is still running" = "Vraag het voordat je een tabblad sluit dat nog actief is";
-"Ask in terminal" = "Vraag in terminal";
 "Ask the same question again on Claude Sonnet 5.5" = "Stel dezelfde vraag opnieuw aan Claude Sonnet 5.5";
-"Asking a question" = "Een vraag stellen";
 "Asking you: %@" = "Vraagt je: %@";
 "Asleep" = "Slaapt";
 "Attach a picture" = "Voeg een afbeelding toe";
@@ -241,7 +225,6 @@
 "Camera" = "Camera";
 "Camera access is off" = "Cameratoegang staat uit";
 "Camera access is off for Scout." = "Cameratoegang staat uit voor Scout.";
-"Can't listen (%@)" = "Kan niet luisteren (%@)";
 "Can't read %@ yet" = "Kan %@ nog niet lezen";
 "Can't tell which chat this is" = "Kan niet zien welke chat dit is";
 "Cancel" = "Annuleer";
@@ -265,7 +248,6 @@
 "Choose a script" = "Kies een script";
 "Choose image…" = "Kies afbeelding…";
 "Choose shortcuts" = "Kies opdrachten";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Kies de map %@ in je persoonlijke map. Scout maakt daar een back-up van %@ en voegt zijn hooks toe; verder verandert er niets.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Kies de map %@ zodat Scout je %@-sessies kan zien. Scout leest de map alleen.";
 "Choose the model" = "Kies het model";
 "Choose…" = "Kies…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Wis laatste zenders en plaatsen";
 "Clear shortcut" = "Wis sneltoets";
 "Clear the clipboard history?" = "Klembordgeschiedenis wissen?";
-"Click Copy hooks." = "Klik op Kopieer hooks.";
 "Click for %@ settings, drag to move" = "Klik voor %@-instellingen, sleep om te verplaatsen";
 "Click one, or use the arrow keys. Press Return to go on." = "Klik op een optie of gebruik de pijltjestoetsen. Druk op Return om door te gaan.";
 "Click one, or use the arrow keys. The window grows with it." = "Klik op een optie of gebruik de pijltjestoetsen. Het venster groeit mee.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Sluit dit tabblad (⌘W)";
 "Close this tab?" = "Dit tabblad sluiten?";
 "Cloudy" = "Bewolkt";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex vraagt je één keer nieuwe hooks te controleren: typ /hooks in Codex en vertrouw die van Scout.";
 "Color" = "Kleur";
 "Colors" = "Kleuren";
 "Command" = "Command";
 "Compact" = "Compact";
-"Connect" = "Verbind";
-"Connect %@?" = "%@ verbinden?";
-"Connect %@…" = "%@ verbinden…";
-"Connect Claude Code" = "Claude Code verbinden";
-"Connect Claude Code…" = "Claude Code verbinden…";
-"Connect Codex" = "Codex verbinden";
-"Connect Codex…" = "Codex verbinden…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Als je op Verbind klikt, kies je één keer de map %@; Scout maakt een back-up van %@, voegt alleen zijn eigen regels toe en kan ze weer weghalen (Ontkoppel). Elke hook is één curl-opdracht naar 127.0.0.1; als Scout is afgesloten, doet hij niets.";
 "Connected" = "Verbonden";
-"Connected, but out of date" = "Verbonden, maar verouderd";
-"Connected. New sessions report to Scout." = "Verbonden. Nieuwe sessies melden zich bij Scout.";
 "Connecting" = "Verbinden";
 "Connecting…" = "Verbinden…";
 "Contacts" = "Contacten";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Kopieën die worden gemaakt terwijl een van deze apps vooraan staat, worden nooit bewaard.";
 "Copy" = "Kopieer";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Kopieer een link van YouTube, X, Instagram, TikTok, Vimeo of Reddit, open het Bakje en Scout biedt aan hem te downloaden, of zet een link op het Bakje. Downloads gebruiken yt-dlp, dat je zelf installeert; de knop hierboven werkt alleen als je erop drukt. Voor het lezen van een gekopieerde link is “Sta toe” voor Scout nodig onder Systeeminstellingen › Privacy en beveiliging › Plakken vanuit andere apps (macOS 15.4 en later).";
-"Copy hooks" = "Kopieer hooks";
-"Copy hooks instead" = "Kopieer in plaats daarvan hooks";
 "Copy something and it shows up here." = "Kopieer iets en het verschijnt hier.";
 "Couldn't copy the picture" = "Kon de afbeelding niet kopiëren";
 "Couldn't copy the polaroid" = "Kon de polaroid niet kopiëren";
@@ -399,9 +367,6 @@
 "Delete note" = "Verwijder notitie";
 "Delete this chat" = "Verwijder deze chat";
 "Delete this script" = "Verwijder dit script";
-"Deny" = "Weiger";
-"Disconnect" = "Ontkoppel";
-"Disconnected. Your own hooks are untouched." = "Ontkoppeld. Je eigen hooks zijn niet aangeraakt.";
 "Disk" = "Schijf";
 "Dismiss" = "Sluit";
 "Display" = "Scherm";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Exporteer als %@…";
 "Exported %@" = "%@ geëxporteerd";
 "Extra large" = "Extra groot";
-"FAST ASK AI" = "SNELLE VRAAG AI";
 "FAVOURITES" = "FAVORIETEN";
 "FROZEN" = "BEVROREN";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Vergeet eerdere tabbladen";
 "Forget previous tabs" = "Vergeet eerdere tabbladen";
 "Forget recent folders" = "Vergeet recente mappen";
-"Found automatically" = "Automatisch gevonden";
 "Found · %@" = "Gevonden · %@";
 "Free service, no key" = "Gratis dienst, geen sleutel";
 "Freezing drizzle" = "Aanvriezende motregen";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "HALLO VAN SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku voor snelle vragen, Sonnet voor moeilijke";
 "Haptic feedback" = "Haptische feedback";
-"Has a question" = "Heeft een vraag";
 "Heavy rain" = "Zware regen";
 "Heavy showers" = "Zware buien";
 "Heavy snow" = "Zware sneeuw";
@@ -533,9 +495,7 @@
 "Here" = "Hier";
 "Hide completed" = "Verberg voltooide";
 "Hide it while an app is full screen" = "Verberg het als een app op volledig scherm staat";
-"Hide the answer" = "Verberg het antwoord";
 "Hide the chats" = "Verberg de chats";
-"Hide the paste code" = "Verberg de plakcode";
 "History" = "Geschiedenis";
 "History is paused" = "Geschiedenis is gepauzeerd";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Houd ⌥⇧ ingedrukt met een volume- of helderheidstoets voor kwartstappen.";
@@ -605,15 +565,11 @@
 "Links" = "Links";
 "List" = "Lijst";
 "List name" = "Naam van lijst";
-"Listen for AI agents on this Mac" = "Luister naar AI-agents op deze Mac";
-"Listening on 127.0.0.1:%@" = "Luistert op 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Luistert op 127.0.0.1:%@ (%@ was bezet)";
 "Listening…" = "Luisteren…";
 "Lists" = "Lijsten";
 "Live" = "Live";
 "Live Activities" = "Live-activiteiten";
 "Loading…" = "Laden…";
-"Local bridge" = "Lokale brug";
 "Local weather. A chosen city works without it." = "Lokaal weer. Een gekozen stad werkt zonder.";
 "Location" = "Locatie";
 "Location access" = "Locatietoegang";
@@ -662,7 +618,6 @@
 "Models" = "Modellen";
 "More" = "Meer";
 "More agents: %lld" = "Meer agents: %lld";
-"More…" = "Meer…";
 "Most capable, slowest" = "Meest capabel, langzaamst";
 "Most items to keep" = "Meeste items om te bewaren";
 "Mostly clear" = "Overwegend helder";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Nog niet gevraagd";
 "Not available on this Mac" = "Niet beschikbaar op deze Mac";
 "Not checked yet" = "Nog niet gecontroleerd";
-"Not connected" = "Niet verbonden";
 "Not found in your login shell's PATH" = "Niet gevonden in het PATH van je login-shell";
 "Not found on this Mac" = "Niet gevonden op deze Mac";
 "Not installed" = "Niet geïnstalleerd";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Alleen schermen met een notch";
 "Only events with a video link" = "Alleen evenementen met een videolink";
 "Only for the Prompter to follow your voice." = "Alleen zodat de Prompter je stem kan volgen.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Alleen nodig om vanuit de notch toe te staan, te weigeren en vragen te beantwoorden; alles hierboven werkt zonder. Elke agent voert een hook van één regel uit die naar Scout op deze Mac post (alleen 127.0.0.1, met een privésleutel). Scout wijzigt de instellingen van je agent alleen als je op Verbind klikt en de map kiest (eerst een back-up, alleen de eigen regels van Scout), of als je de hooks zelf plakt. Als Scout niet draait, doet de hook niets en vraagt de agent het zoals gewoonlijk in zijn terminal.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Alleen nodig om vanuit de notch toe te staan, te weigeren en vragen te beantwoorden; alles hierboven werkt zonder. Elke hook is een opdracht van één regel die naar Scout op deze Mac post (alleen 127.0.0.1, met een privésleutel). Als Scout niet draait, doet de hook niets en vraagt de agent het zoals gewoonlijk in zijn terminal.";
-"Only the dot beside the notch" = "Alleen de stip naast de notch";
 "Only what you choose" = "Alleen wat je kiest";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Alleen als hij nog speelde toen Scout werd gesloten. Scout onthoudt altijd de laatste zender en het volume.";
 "Open" = "Open";
 "Open %@" = "Open %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Open %@ (maak het aan als het er niet is) en plak. Als er al een sectie \"hooks\" in staat, voeg deze regels er dan in toe.";
 "Open %@ full size" = "Open %@ op volle grootte";
 "Open %@ to finish" = "Open %@ om af te ronden";
 "Open %@, full size" = "Open %@, op volle grootte";
@@ -808,7 +758,6 @@
 "Open To-do" = "Open Taken";
 "Open a Scout window first, then share" = "Open eerst een venster van Scout en deel dan";
 "Open a widget full size" = "Open een widget op volle grootte";
-"Open in Ask AI" = "Open in Vraag AI";
 "Open or close the notch" = "Open of sluit de notch";
 "Open tasks in total: %lld" = "Open taken in totaal: %lld";
 "Open the Calendar with the To-dos, full size" = "Open de Agenda met de Taken, op volle grootte";
@@ -817,7 +766,6 @@
 "Open the notch" = "Open de notch";
 "Open the notch on %@ (now: %@)" = "Open de notch op %@ (nu: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Open de notch elke keer op %@, niet op het dashboard";
-"Open the notch on Agents" = "Open de notch op Agents";
 "Open the notch when an agent needs you" = "Open de notch als een agent je nodig heeft";
 "Open the player" = "Open de speler";
 "Open the to-do calendar" = "Open de takenagenda";
@@ -829,9 +777,7 @@
 "Opening" = "Openen";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Opent de notch met die widget al uitgeklapt. Druk er nog een keer op om te sluiten. De notch zelf opent altijd op het dashboard.";
 "Option" = "Option";
-"Optional: answer from the notch" = "Optioneel: antwoord vanuit de notch";
 "Options" = "Opties";
-"Or type your own answer" = "Of typ je eigen antwoord";
 "Orange" = "Oranje";
 "Output" = "Uitvoer";
 "Overcast" = "Zwaar bewolkt";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Pop-up";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "Poort %u was bezet, dus dit blok noemt poort %u. Als Scout later weer op %u start, kopieer het dan opnieuw.";
 "Press a shortcut…" = "Druk op een sneltoets…";
 "Preview" = "Voorbeeld";
 "Preview a card" = "Voorbeeld van een kaart";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Zet omgezette bestanden in het Bakje";
 "Put finished videos in the Tray" = "Zet voltooide video's in het Bakje";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Zet elke optie terug zoals op dag één. Je notities, klembord en bestanden blijven.";
-"Questions go to %@." = "Vragen gaan naar %@.";
 "Questions go to %@. The answers stay here." = "Vragen gaan naar %@. De antwoorden blijven hier.";
 "Quick" = "Snel";
 "Quick Apps" = "Snelle apps";
@@ -920,7 +864,6 @@
 "Reading" = "Lezen";
 "Ready" = "Gereed";
 "Ready for the next focus session" = "Klaar voor de volgende focussessie";
-"Ready for the next task" = "Klaar voor de volgende taak";
 "Rec" = "Opn";
 "Recent downloads" = "Recente downloads";
 "Record Shortcut" = "Neem sneltoets op";
@@ -978,19 +921,15 @@
 "Save…" = "Bewaar…";
 "Scout Settings" = "Scout-instellingen";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout vraagt macOS alleen om toegang als je de functie aanzet of opent die het nodig heeft. Bij het starten wordt niets gevraagd.";
-"Scout can no longer open that folder. Connect again." = "Scout kan die map niet meer openen. Verbind opnieuw.";
 "Scout can't match what it hears to the script" = "Scout kan niet koppelen wat hij hoort aan het script";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout kan de mappen van je agents nog niet zien. Sta het één keer toe en elke Claude Code- en Codex-sessie trekt er vanzelf in.";
 "Scout can't use this microphone" = "Scout kan deze microfoon niet gebruiken";
-"Scout could not open a local port." = "Scout kon geen lokale poort openen.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout kon je scherm niet zien, dus die vraag ging zonder afbeelding. Sta Scout toe onder Schermopname.";
 "Scout couldn't take the picture this time, so that question went without it." = "Scout kon deze keer de afbeelding niet maken, dus die vraag ging zonder.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout vindt Claude Code- en Codex-sessies zelf";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout luistert nu op poort %u (of de hooks zijn van een oudere versie). Bijwerken herschrijft alleen de regels van Scout.";
 "Scout only watches for connections once you allow it." = "Scout let pas op verbindingen als je dat toestaat.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout leest je evenementen op deze Mac om de widget Agenda en de werkruimte te vullen. Er wordt niets naar ergens verstuurd.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout onthoudt wat je kopieert, zodat je het opnieuw kunt plakken vanuit de notch of de onderste plank. Alles blijft op deze Mac.";
-"Scout will add its hooks to %@ after backing the file up." = "Scout voegt zijn hooks toe aan %@ nadat er een back-up van het bestand is gemaakt.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "De eigen code, woorden en het icoon van Scout zijn origineel. Al het andere hier wordt gebruikt onder zijn eigen licentie.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "De eigen vensters van Scout (Vraag AI, notities, taken, de rekenmachine en de andere) openen opnieuw waar ze waren, met hun formaat en hun tekst, na het afsluiten, een update of een herstart. Als een scherm er niet meer is, openen ze op het hoofdscherm.";
 "Scout: my AI agents in my notch. %@" = "Scout: mijn AI-agents in mijn notch. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Zoek op het web";
 "Searching the web…" = "Zoeken op het web…";
 "See the month, your agenda and a Join button for video calls." = "Zie de maand, je agenda en een knop Doe mee voor videogesprekken.";
-"See the whole conversation in the Ask AI tab" = "Zie het hele gesprek in het tabblad Vraag AI";
 "See your day here" = "Zie hier je dag";
 "Select a note or start a new one" = "Kies een notitie of begin een nieuwe";
 "Select a note or start a new one." = "Kies een notitie of begin een nieuwe.";
 "Selected: %lld" = "Geselecteerd: %lld";
 "Send" = "Verstuur";
-"Send answers" = "Verstuur antwoorden";
 "Send to Apple Notes" = "Stuur naar Notities";
 "Send to a nearby device" = "Stuur naar een apparaat in de buurt";
 "Sensitivity" = "Gevoeligheid";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Toon AirPods en hun batterij als ze verbinden";
 "Show Scout in the menu bar" = "Toon Scout in de menubalk";
 "Show a Join card when the meeting starts" = "Toon een kaart Doe mee als de vergadering begint";
-"Show a card under the notch" = "Toon een kaart onder de notch";
 "Show a card when a download finishes" = "Toon een kaart als een download klaar is";
 "Show a count next to the notch while the Tray holds files" = "Toon een teller naast de notch zolang het Bakje bestanden bevat";
 "Show a countdown" = "Toon een aftelling";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Toon elke open taak, op welke dag ook";
 "Show in Finder" = "Toon in Finder";
 "Show in full screen" = "Toon op volledig scherm";
-"Show me the paste code" = "Toon me de plakcode";
 "Show music from" = "Toon muziek van";
 "Show music next to the notch while it plays" = "Toon muziek naast de notch terwijl die speelt";
 "Show my calendar in the notch" = "Toon mijn agenda in de notch";
@@ -1107,9 +1042,7 @@
 "Square" = "Vierkant";
 "Start" = "Start";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Start Claude Code of Codex en elke sessie verschijnt hier vanzelf, met zijn voortgang. Niets om te verbinden.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Start Codex en typ /hooks om de hooks van Scout de eerste keer te vertrouwen. Start daarna een nieuwe sessie.";
 "Start a %lld-minute focus timer for this task" = "Start een focustimer van %lld minuten voor deze taak";
-"Start a new Claude Code session. It appears in the notch." = "Start een nieuwe Claude Code-sessie. Die verschijnt in de notch.";
 "Start again" = "Begin opnieuw";
 "Start folder" = "Beginmap";
 "Start the camera when the Mirror widget appears" = "Start de camera als de widget Spiegel verschijnt";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Tekstgrootte: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "Die API-sleutel is geweigerd. Controleer hem in Instellingen › Vraag AI.";
 "That didn't work" = "Dat werkte niet";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "Dat is niet de map %@ in je persoonlijke map. Verbind opnieuw en kies die.";
 "That one did not go through" = "Dat is niet gelukt";
 "That's the end" = "Dat was het";
 "The %@ uses the camera, so it never opens by itself" = "%@ gebruikt de camera en opent daarom nooit vanzelf";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Uitgezet";
 "Two-finger swipe on the notch" = "Veeg met twee vingers over de notch";
 "Type a city, region or country, or pick a country." = "Typ een stad, regio of land, of kies een land.";
-"Type your own…" = "Typ je eigen…";
 "Typing: the notch stays open" = "Typen: de notch blijft open";
 "Unknown format" = "Onbekend formaat";
 "Unlicense (only if you install it)" = "Unlicense (alleen als je het installeert)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Totdat het aan staat, gaan vragen zonder afbeelding.";
 "Untitled" = "Zonder titel";
 "Untitled script" = "Script zonder titel";
-"Update" = "Werk bij";
 "Updates" = "Updates";
 "Updating the to-do list" = "De takenlijst wordt bijgewerkt";
 "Upload %@" = "Upload %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Wacht op je";
 "Waiting for your OK" = "Wacht op je akkoord";
 "Waiting for your voice" = "Wacht op je stem";
-"Wants to use %@" = "Wil %@ gebruiken";
-"Wants to use %@: %@" = "Wil %@ gebruiken: %@";
-"Wants to use a tool" = "Wil een tool gebruiken";
-"Wants to use a tool: %@" = "Wil een tool gebruiken: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Warm papier, donkere tekst en heldere accenten. Goed leesbaar overdag.";
 "Warn at" = "Waarschuw bij";
 "Warn when the battery is low" = "Waarschuw als de batterij bijna leeg is";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "Waar Scout bij kan, en waarom het erom vraagt.";
 "What shows next to the notch while it is closed." = "Wat er naast de notch staat terwijl hij gesloten is.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Als er een bericht binnenkomt, valt er een kaart onder de notch met de afzender, de tekst en een antwoordvak. Het blijft stil terwijl de app Berichten vooraan staat. Scout verstuurt nooit iets, tenzij je een antwoord typt en op Return drukt.";
-"When an agent needs an answer" = "Als een agent een antwoord nodig heeft";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Als je het volume wijzigt met de toetsen, de menubalk of een andere app, verschijnt het niveau ook naast de notch.";
 "Where stations come from" = "Waar zenders vandaan komen";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Terwijl er muziek speelt, een timer loopt of een download klaar is, groeit de notch om het te tonen. Wijs ernaar en hij opent in je Nook: widgets, bestanden, klembord, agenda. Ga weg en hij schuift weer terug.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Zoom %@, terug naar het hele plaatje";
 "Zoom in" = "Zoom in";
 "Zoom out" = "Zoom uit";
-"all edits this session" = "alle wijzigingen deze sessie";
 "charged" = "opgeladen";
 "charging" = "wordt opgeladen";
 "code" = "code";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS wilde het niet wijzigen: %@";
 "me and my agents" = "ik en mijn agents";
 "min" = "min";
-"mode %@" = "modus %@";
 "model name" = "modelnaam";
 "needs you" = "heeft je nodig";
 "no battery" = "geen batterij";

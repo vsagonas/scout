@@ -90,12 +90,12 @@ enum MirrorPolaroid {
     }
 
     /// The agents that stand on the picture: those the notch shows (in its fixed order; with more than fit, the ones that need you).
-    static func agents(sessions: [AgentSession], pending: [AgentPending]) -> [PolaroidAgent] {
+    static func agents(sessions: [AgentSession]) -> [PolaroidAgent] {
         let ordered = AgentTileMetrics.ordered(sessions)
-        let shown = AgentTileMetrics.keepOrder(ordered, limit: maxAgents) { AgentTileMetrics.urgency($0, pending: pending) }
+        let shown = AgentTileMetrics.keepOrder(ordered, limit: maxAgents) { AgentTileMetrics.urgency($0) }
         let variants = AgentFaceArt.variants(for: sessions.map(\.id))
         return shown.map { s in
-            PolaroidAgent(id: s.id, project: s.project, kind: s.agent, mood: AgentFaceMood(AgentNookLook.of(s, pending: pending)), variant: variants[s.id] ?? 0)
+            PolaroidAgent(id: s.id, project: s.project, kind: s.agent, mood: AgentFaceMood(AgentNookLook.of(s)), variant: variants[s.id] ?? 0)
         }
     }
 

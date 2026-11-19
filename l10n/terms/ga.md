@@ -1,6 +1,6 @@
 # Irish (ga): term list
 
-Machine translation, no native reviewer yet: the weakest of the seven. Irish is not a macOS interface language, and most Irish speakers use their Mac in English, so the plainest standard terms (An Caighdeán Oifigiúil, the wording of Microsoft's Irish software and focloir.ie / tearma.ie as far as I know them) are used, and widely used English technical words are kept (notch, hooks, shell, Prompter, Nook, AI).
+Machine translation, no native reviewer yet: the weakest of the seven. Irish is not a macOS interface language, and most Irish speakers use their Mac in English, so the plainest standard terms (An Caighdeán Oifigiúil, the wording of Microsoft's Irish software and focloir.ie / tearma.ie as far as I know them) are used, and widely used English technical words are kept (notch, shell, Prompter, Nook, AI).
 Buttons and menu items are the imperative ("Oscail", "Dún", "Sábháil", "Cuir leis"); sentences speak to the user informally ("tú", "do"). Quotation marks “ ” (as in the English). No counted plural forms: "Gníomhairí: 3", "Oscailte: 3", "3 eile". Sentences are kept short and simple on purpose, to keep the mutations (séimhiú, urú) safe.
 
 | English | Irish |
@@ -9,7 +9,7 @@ Buttons and menu items are the imperative ("Oscail", "Dún", "Sábháil", "Cuir 
 | AI | AI (kept; intleacht shaorga) |
 | Ask AI | Ceist ar AI |
 | Ask anything (placeholder, 12 characters at most) | Cuir ceist |
-| Fast Ask AI | AI Tapa (pixel label TAPA AI) |
+| Fast Ask AI | AI Tapa |
 | widget / widgets | giuirléid / giuirléidí |
 | notch | notch (kept, as Irish speakers say it) |
 | dashboard | painéal |
@@ -23,7 +23,6 @@ Buttons and menu items are the imperative ("Oscail", "Dún", "Sábháil", "Cuir 
 | chat / chats | comhrá / comhráite |
 | API key, key | eochair API, eochair (key on the keyboard: eochair) |
 | clipboard | gearrthaisce |
-| hooks | hooks (Latin, a technical word; the command is /hooks) |
 | session | seisiún |
 | tab | cluaisín |
 | Prompter | Prompter (teleprompter = Prompter) |
@@ -34,8 +33,7 @@ Buttons and menu items are the imperative ("Oscail", "Dún", "Sábháil", "Cuir 
 | To-do / To-dos | Tasc / Tascanna |
 | timer / alarm | uaineadóir / aláram |
 | Light / Dark / System | Éadrom / Dorcha / Córas |
-| Allow / Deny / Always allow | Ceadaigh / Diúltaigh / Ceadaigh i gcónaí |
-| Connect / Disconnect | Ceangail / Dícheangail |
+| Allow | Ceadaigh |
 | Copy / Delete / Cancel / Close | Cóipeáil / Scrios / Cealaigh / Dún |
 | Join (meeting button) | Isteach |
 | Break (Pomodoro) | Sos |

@@ -1,6 +1,6 @@
 # Scout in Finnish (fi): term list
 
-Machine translation, no native reviewer yet. Informal "sinä" (as the Finnish App Store text does). Words match the App Store text, except Tray (see below) and the to-do word (see below). Brand names are never inflected: Finnish case endings are avoided with hyphen compounds ("Scout-hookit", "Mac-koneessa", "Claude-mallin kanssa", "Codex-sovelluksessa").
+Machine translation, no native reviewer yet. Informal "sinä" (as the Finnish App Store text does). Words match the App Store text, except Tray (see below) and the to-do word (see below). Brand names are never inflected: Finnish case endings are avoided with hyphen compounds ("Mac-koneessa", "Claude-mallin kanssa", "Codex-sovelluksessa").
 
 | English | Finnish |
 |---|---|
@@ -54,7 +54,7 @@ Machine translation, no native reviewer yet. Informal "sinä" (as the Finnish Ap
 | home folder | kotikansio |
 | Downloads (folder) | Lataukset |
 | Light / Dark / System / Automatic | Vaalea / Tumma / Järjestelmä / Automaattinen |
-| Allow / Deny / Always allow | Salli / Estä / Salli aina |
+| Allow | Salli |
 | Cancel / Delete / Close / Copy | Peruuta / Poista / Sulje / Kopioi |
 | Save | Tallenna |
 | Done | Valmis |

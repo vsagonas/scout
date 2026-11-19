@@ -50,21 +50,20 @@ struct AgentMiniRow: Identifiable, Equatable {
 
     var progress: String? { todoTotal > 0 ? "\(todoDone)/\(todoTotal)" : nil }
 
-    init(_ s: AgentSession, pending: [AgentPending]) {
-        let asks = AgentWingSummary.asks(s, pending: pending)
+    init(_ s: AgentSession) {
         id = s.id
         kind = s.agent
         project = s.project
-        look = AgentNookLook.of(s, needsYou: asks)
-        line = asks ? AgentNookText.firstSentence(AgentWingSummary.waitingLine(s, pending: pending)) : AgentNookText.sentence(s)
+        look = AgentNookLook.of(s)
+        line = AgentWingSummary.asks(s) ? AgentNookText.firstSentence(AgentWingSummary.waitingLine(s)) : AgentNookText.sentence(s)
         helpers = max(0, s.subagents)
         todoDone = s.todosDone
         todoTotal = s.todos.count
     }
 
     /// One row per agent, in the one fixed order (the first started on top).
-    static func rows(_ sessions: [AgentSession], pending: [AgentPending]) -> [AgentMiniRow] {
-        AgentTileMetrics.ordered(sessions, pending: pending).map { AgentMiniRow($0, pending: pending) }
+    static func rows(_ sessions: [AgentSession]) -> [AgentMiniRow] {
+        AgentTileMetrics.ordered(sessions).map(AgentMiniRow.init)
     }
 
     var accessibilityText: String {
@@ -131,7 +130,7 @@ struct AgentMiniPanel: View {
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width
-            let rows = AgentMiniRow.rows(store.sessions, pending: store.pending)
+            let rows = AgentMiniRow.rows(store.sessions)
             let plan = AgentMiniPanelLayout.plan(width: w, height: geo.size.height, count: rows.count)
             VStack(alignment: .leading, spacing: 0) {
                 if rows.isEmpty {
@@ -261,7 +260,7 @@ enum AgentMiniLayout {
 
 /// The Agents view in the minimal look: a list of the agents at the left (one row each, in the fixed order; a click picks one) and, at the
 /// right, the picked agent's whole history down to the island's bottom edge (the first agent while none is picked): its state and time, its
-/// latest message, the step it is on, its to-do list, its helpers, its steps, and the answer controls of a held request as plain buttons.
+/// latest message, the step it is on, its to-do list, its helpers and its steps.
 /// The rows and the card report their frames like the den does (`agentden` space).
 struct AgentMiniView: View {
     @ObservedObject var store: AgentsStore
@@ -285,7 +284,7 @@ struct AgentMiniView: View {
     var body: some View {
         GeometryReader { geo in
             let size = geo.size
-            let rows = AgentMiniRow.rows(store.sessions, pending: store.pending)
+            let rows = AgentMiniRow.rows(store.sessions)
             let shown = Self.shownID(rows, picked: detailID)
             let detail = shown.flatMap { id in store.sessions.first { $0.id == id } }
             let listWidth = Self.listWidth(for: size.width)
@@ -299,7 +298,7 @@ struct AgentMiniView: View {
                         list(rows, selected: shown)
                             .frame(width: listWidth, height: inner, alignment: .top)
                         if let detail {
-                            AgentMiniDetail(session: detail, store: store, banner: banner?.sessionID == detail.id ? banner : nil, fills: true, onClose: nil)
+                            AgentMiniDetail(session: detail, banner: banner?.sessionID == detail.id ? banner : nil, fills: true, onClose: nil)
                                 .frame(maxWidth: .infinity)
                                 .frame(height: inner, alignment: .top)
                                 .denFrame("window")
@@ -428,11 +427,9 @@ struct AgentMiniCard: View {
 }
 
 /// The plain detail card of one agent, beside the grid: a header with a close button, its state and time, the banner of an automatic
-/// opening, the latest message, the step it is on, its to-do list, its helpers, the last steps, and the held requests with their answer
-/// buttons (plain system-style buttons; the same ones the card under the notch uses).
+/// opening, the latest message, the step it is on, its to-do list, its helpers and the last steps.
 struct AgentMiniDetail: View {
     let session: AgentSession
-    @ObservedObject var store: AgentsStore
     var banner: AgentAnnouncement?
     /// Fills the height it is given and lists the whole history (all the steps and to-dos kept), scrolling inside.
     var fills = false
@@ -440,8 +437,7 @@ struct AgentMiniDetail: View {
     var onClose: (() -> Void)?
     @State private var contentHeight: CGFloat = 400
 
-    private var requests: [AgentPending] { store.pending.filter { $0.sessionID == session.id } }
-    private var look: AgentNookLook { AgentNookLook.of(session, pending: store.pending) }
+    private var look: AgentNookLook { AgentNookLook.of(session) }
     private var tint: Color { AgentMini.color(look) }
 
     private var message: String {
@@ -492,7 +488,6 @@ struct AgentMiniDetail: View {
         VStack(alignment: .leading, spacing: 9) {
             if let banner { AgentBanner(announcement: banner, session: session).denFrame("banner") }
             stateLine
-            if !requests.isEmpty { deck }   // a request that waits on you comes first: its answer buttons are always in view
             if banner == nil || session.lastMessage.isEmpty {
                 Text(message).font(.system(size: 12)).lineSpacing(2).foregroundStyle(NotchInk.primary).fixedSize(horizontal: false, vertical: true)
             }
@@ -577,16 +572,6 @@ struct AgentMiniDetail: View {
                 }
             }
         }
-    }
-
-    /// The answer controls on a plain tinted card.
-    private var deck: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            ForEach(requests) { request in PendingView(request: request, store: store, onDark: true, framed: true) }
-        }
-        .padding(10)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.orange.opacity(0.13)))
     }
 }
 

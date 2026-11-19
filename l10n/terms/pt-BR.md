@@ -4,7 +4,7 @@ Machine translation, no native reviewer yet. Words follow Apple's macOS in Brazi
 Style: você, short labels, infinitive for buttons and menu items (as macOS does), "clique" instead of "toque". Names of Apple apps and settings as macOS shows them.
 
 Pixel-font labels (l10n/PIXEL-LABELS.txt) are in CAPITALS without accents:
-AGENT TV = AGENTE TV, ALL DAY = DIA TODO, ASLEEP = DORMINDO, BYE = TCHAU, CONNECTING = CONECTANDO, DONE = FEITO, FAST ASK AI = PERGUNTA RAPIDA,
+AGENT TV = AGENTE TV, ALL DAY = DIA TODO, ASLEEP = DORMINDO, BYE = TCHAU, CONNECTING = CONECTANDO, DONE = FEITO,
 FAVOURITES = FAVORITOS, FROZEN = CONGELADO, HELLO FROM SCOUT = OLA DO SCOUT, LATEST = RECENTES, LIST = LISTA, LISTS = LISTAS, NEEDS YOU = SUA VEZ,
 NO AGENTS = SEM AGENTES, NO SIGNAL = SEM SINAL, PAUSED = PAUSADO, PLACES = LUGARES, RADIO = RADIO, READY = PRONTO, STARTING = INICIANDO,
 STOPPED = PARADO, WELCOME = OLA, WORKFLOW = FLUXO, WORKING = TRABALHANDO.
@@ -30,7 +30,6 @@ STOPPED = PARADO, WELCOME = OLA, WORKFLOW = FLUXO, WORKING = TRABALHANDO.
 | Mirror | Espelho |
 | Pulse | Pulso |
 | Tuner | Sintonizador |
-| hooks (Claude Code / Codex) | hooks |
 | Settings | Ajustes |
 | System Settings | Ajustes do Sistema |
 | Privacy & Security | Privacidade e Segurança |

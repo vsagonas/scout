@@ -10,9 +10,7 @@
 "%@ ended." = "%@ sona erdi.";
 "%@ failed" = "%@ başarısız oldu";
 "%@ finished after %lld min" = "%@ %lld dk sonra bitti";
-"%@ finished in %@" = "%@ %@ içinde bitti";
 "%@ free" = "%@ boş";
-"%@ has a question" = "%@ bir soru soruyor";
 "%@ has no sound" = "%@ sesi yok";
 "%@ in %@" = "%@, %@ içinde";
 "%@ installed" = "%@ yüklendi";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@ bir ZIP dosyası için çok büyük (4 GB sınırı)";
 "%@ isn't installed" = "%@ yüklü değil";
 "%@ isn't supported on this Mac" = "%@ bu Mac'te desteklenmiyor";
-"%@ isn't valid JSON, so Scout left it alone." = "%@ geçerli bir JSON değil, bu yüzden Scout ona dokunmadı.";
 "%@ key" = "%@ anahtarı";
 "%@ left" = "%@ kaldı";
 "%@ needs you" = "%@ sana ihtiyaç duyuyor";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "%@ zamanlayıcısı bitti";
 "%@ to full" = "Dolmasına %@";
 "%@ used" = "%@ dolu";
-"%@ wants to use %@" = "%@, %@ kullanmak istiyor";
-"%@ wants to use a tool" = "%@ bir araç kullanmak istiyor";
 "%@ · %@ of %@" = "%@ · %@ / %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · toplam %lld açık";
@@ -71,7 +66,6 @@
 "%lld running" = "%lld çalışıyor";
 "%lld working" = "%lld çalışıyor";
 "%lld wpm" = "%lld kel/dk";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+%lld daha";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Önce Ayarlar › YZ'ye Sor bölümüne %@ API anahtarını ekle.";
 "Add your API key in Settings › Ask AI first." = "Önce Ayarlar › YZ'ye Sor bölümüne API anahtarını ekle.";
 "Add your Claude API key in Settings › Ask AI first." = "Önce Ayarlar › YZ'ye Sor bölümüne Claude API anahtarını ekle.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Scout'un hook'larını ~/.claude/settings.json dosyasına ekler (ilerleme olayları, izin istekleri ve sorular) ve senin hook'larına dokunmaz. Dosyanın önce yedeği alınır.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Scout'un hook'larını ~/.codex/hooks.json dosyasına ekler. Codex yeni hook'ları bir kez incelemeni ister: Codex'te /hooks yaz ve Scout'un hook'larına güven.";
 "Agent" = "Ajan";
 "Agent TV" = "Ajan TV";
 "Agent TV den" = "Ajan TV evi";
@@ -164,15 +156,10 @@
 "Allow…" = "İzin ver…";
 "Also show it while an app is full screen" = "Bir uygulama tam ekranken de göster";
 "Also used for “%@”: only one of them will work." = "“%@” için de kullanılıyor: yalnızca biri çalışır.";
-"Always allow" = "Her zaman izin ver";
-"Always allow %@" = "%@ için her zaman izin ver";
-"Always allow adds: %@" = "“Her zaman izin ver” şunu ekler: %@";
 "Amber" = "Kehribar";
 "An agent tab cannot be kept as the opening tab" = "Ajan sekmesi açılış sekmesi olarak tutulamaz";
 "Announcements" = "Duyurular";
 "Answer copied" = "Yanıt kopyalandı";
-"Answer in terminal" = "Terminalde yanıtla";
-"Answer permissions and questions from the notch" = "İzinleri ve soruları çentikten yanıtla";
 "Answers" = "Yanıtlar";
 "Any country" = "Herhangi bir ülke";
 "Appearance" = "Görünüm";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Bir resim hakkında sor";
 "Ask about your screen" = "Ekranın hakkında sor";
 "Ask anything" = "Bir şey sor";
-"Ask anything above. Questions go to %@. The answer shows here." = "Yukarıdan istediğini sor. Sorular %@ hizmetine gider. Yanıt burada görünür.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "İstediğini sor.\nReturn gönderir, ⌥Return yeni satır ekler.\n\nSorular %@ hizmetine gider. Ekran açıksa ekranının bir görüntüsü de onlarla gider.";
 "Ask before closing a tab that is still running" = "Hâlâ çalışan bir sekmeyi kapatmadan önce sor";
-"Ask in terminal" = "Terminalde sor";
 "Ask the same question again on Claude Sonnet 5.5" = "Aynı soruyu Claude Sonnet 5.5 ile yeniden sor";
-"Asking a question" = "Soru soruyor";
 "Asking you: %@" = "Sana soruyor: %@";
 "Asleep" = "Uyuyor";
 "Attach a picture" = "Resim ekle";
@@ -241,7 +225,6 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Kamera erişimi kapalı";
 "Camera access is off for Scout." = "Scout için kamera erişimi kapalı.";
-"Can't listen (%@)" = "Dinlenemiyor (%@)";
 "Can't read %@ yet" = "%@ henüz okunamıyor";
 "Can't tell which chat this is" = "Bunun hangi sohbet olduğu anlaşılamıyor";
 "Cancel" = "İptal";
@@ -265,7 +248,6 @@
 "Choose a script" = "Bir metin seç";
 "Choose image…" = "Resim seç…";
 "Choose shortcuts" = "Kestirme seç";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Ana klasöründe %@ klasörünü seç. Scout %@ yedeğini orada alır ve hook'larını ekler; başka hiçbir şey değişmez.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Scout'un %@ oturumlarını görebilmesi için %@ klasörünü seç. Scout onu yalnızca okur.";
 "Choose the model" = "Modeli seç";
 "Choose…" = "Seç…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Son istasyonları ve yerleri temizle";
 "Clear shortcut" = "Kestirmeyi temizle";
 "Clear the clipboard history?" = "Pano geçmişi temizlensin mi?";
-"Click Copy hooks." = "“Hook'ları kopyala”ya tıkla.";
 "Click for %@ settings, drag to move" = "%@ ayarları için tıkla, taşımak için sürükle";
 "Click one, or use the arrow keys. Press Return to go on." = "Birine tıkla ya da ok tuşlarını kullan. Devam etmek için Return'e bas.";
 "Click one, or use the arrow keys. The window grows with it." = "Birine tıkla ya da ok tuşlarını kullan. Pencere onunla birlikte büyür.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Bu sekmeyi kapat (⌘W)";
 "Close this tab?" = "Bu sekme kapatılsın mı?";
 "Cloudy" = "Bulutlu";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex yeni hook'ları bir kez incelemeni ister: Codex'te /hooks yaz ve Scout'un hook'larına güven.";
 "Color" = "Renk";
 "Colors" = "Renkler";
 "Command" = "Command";
 "Compact" = "Kompakt";
-"Connect" = "Bağla";
-"Connect %@?" = "%@ bağlansın mı?";
-"Connect %@…" = "%@ bağla…";
-"Connect Claude Code" = "Claude Code'u bağla";
-"Connect Claude Code…" = "Claude Code'u bağla…";
-"Connect Codex" = "Codex'i bağla";
-"Connect Codex…" = "Codex'i bağla…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Bağla, %@ klasörünü bir kez seçmeni ister; Scout %@ yedeğini alır, yalnızca kendi girdilerini ekler ve onları yeniden kaldırabilir (Bağlantıyı kes). Her hook, 127.0.0.1 adresine tek bir curl komutudur; Scout kapalıyken hiçbir şey yapmaz.";
 "Connected" = "Bağlı";
-"Connected, but out of date" = "Bağlı, ama güncel değil";
-"Connected. New sessions report to Scout." = "Bağlı. Yeni oturumlar Scout'a bildirir.";
 "Connecting" = "Bağlanıyor";
 "Connecting…" = "Bağlanıyor…";
 "Contacts" = "Kişiler";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Bu uygulamalardan biri öndeyken yapılan kopyalar asla kaydedilmez.";
 "Copy" = "Kopyala";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "YouTube, X, Instagram, TikTok, Vimeo ya da Reddit'ten bir bağlantı kopyala, Tepsi'yi aç; Scout onu indirmeyi önerir. Ya da bir bağlantıyı Tepsi'ye bırak. İndirmeler, kendi kurduğun yt-dlp'yi kullanır; yukarıdaki düğme yalnızca sen basınca çalışır. Kopyalanan bağlantıyı okumak için Sistem Ayarları › Gizlilik ve Güvenlik › Diğer Uygulamalardan Yapıştır altında Scout için “İzin ver” gerekir (macOS 15.4 ve sonrası).";
-"Copy hooks" = "Hook'ları kopyala";
-"Copy hooks instead" = "Bunun yerine hook'ları kopyala";
 "Copy something and it shows up here." = "Bir şey kopyala, burada görünür.";
 "Couldn't copy the picture" = "Resim kopyalanamadı";
 "Couldn't copy the polaroid" = "Polaroid kopyalanamadı";
@@ -399,9 +367,6 @@
 "Delete note" = "Notu sil";
 "Delete this chat" = "Bu sohbeti sil";
 "Delete this script" = "Bu metni sil";
-"Deny" = "Reddet";
-"Disconnect" = "Bağlantıyı kes";
-"Disconnected. Your own hooks are untouched." = "Bağlantı kesildi. Senin hook'larına dokunulmadı.";
 "Disk" = "Disk";
 "Dismiss" = "Kapat";
 "Display" = "Ekran";
@@ -457,7 +422,6 @@
 "Export as %@…" = "%@ olarak dışa aktar…";
 "Exported %@" = "%@ dışa aktarıldı";
 "Extra large" = "Çok büyük";
-"FAST ASK AI" = "HIZLI YZ'YE SOR";
 "FAVOURITES" = "FAVORILER";
 "FROZEN" = "DONDU";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Önceki Sekmeleri Unut";
 "Forget previous tabs" = "Önceki sekmeleri unut";
 "Forget recent folders" = "Son klasörleri unut";
-"Found automatically" = "Otomatik bulundu";
 "Found · %@" = "Bulundu · %@";
 "Free service, no key" = "Ücretsiz hizmet, anahtar yok";
 "Freezing drizzle" = "Donan çise";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "SCOUT'TAN MERHABA ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Hızlı sorular için Haiku, zor sorular için Sonnet";
 "Haptic feedback" = "Dokunsal geri bildirim";
-"Has a question" = "Bir sorusu var";
 "Heavy rain" = "Şiddetli yağmur";
 "Heavy showers" = "Şiddetli sağanak";
 "Heavy snow" = "Yoğun kar";
@@ -533,9 +495,7 @@
 "Here" = "Burada";
 "Hide completed" = "Tamamlananları gizle";
 "Hide it while an app is full screen" = "Bir uygulama tam ekranken gizle";
-"Hide the answer" = "Yanıtı gizle";
 "Hide the chats" = "Sohbetleri gizle";
-"Hide the paste code" = "Yapıştırma kodunu gizle";
 "History" = "Geçmiş";
 "History is paused" = "Geçmiş duraklatıldı";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Çeyrek adımlar için ses ya da parlaklık tuşuyla birlikte ⌥⇧ tuşlarını basılı tut.";
@@ -605,15 +565,11 @@
 "Links" = "Linkler";
 "List" = "Liste";
 "List name" = "Liste adı";
-"Listen for AI agents on this Mac" = "Bu Mac'teki YZ ajanlarını dinle";
-"Listening on 127.0.0.1:%@" = "127.0.0.1:%@ üzerinde dinleniyor";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "127.0.0.1:%@ üzerinde dinleniyor (%@ meşguldü)";
 "Listening…" = "Dinleniyor…";
 "Lists" = "Listeler";
 "Live" = "Canlı";
 "Live Activities" = "Canlı Etkinlikler";
 "Loading…" = "Yükleniyor…";
-"Local bridge" = "Yerel köprü";
 "Local weather. A chosen city works without it." = "Yerel hava durumu. Seçilen bir şehir bunsuz da çalışır.";
 "Location" = "Konum";
 "Location access" = "Konum erişimi";
@@ -662,7 +618,6 @@
 "Models" = "Modeller";
 "More" = "Diğer";
 "More agents: %lld" = "Diğer ajanlar: %lld";
-"More…" = "Diğer…";
 "Most capable, slowest" = "En yetenekli, en yavaş";
 "Most items to keep" = "Tutulacak en fazla öğe";
 "Mostly clear" = "Çoğunlukla açık";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Henüz sorulmadı";
 "Not available on this Mac" = "Bu Mac'te kullanılamıyor";
 "Not checked yet" = "Henüz kontrol edilmedi";
-"Not connected" = "Bağlı değil";
 "Not found in your login shell's PATH" = "login shell'inin PATH'inde bulunamadı";
 "Not found on this Mac" = "Bu Mac'te bulunamadı";
 "Not installed" = "Yüklü değil";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Yalnızca çentiği olan ekranlar";
 "Only events with a video link" = "Yalnızca video bağlantısı olan etkinlikler";
 "Only for the Prompter to follow your voice." = "Yalnızca Teleprompter'ın sesini izlemesi için.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Yalnızca çentikten İzin ver, Reddet ve soruları yanıtlamak için gerekir; yukarıdaki her şey bunsuz da çalışır. Her ajan, bu Mac'teki Scout'a gönderen tek satırlık bir hook çalıştırır (yalnızca 127.0.0.1, özel bir anahtarla). Scout, ajanının ayarlarını yalnızca sen Bağla'ya tıklayıp klasörünü seçince (önce yedeği alınır, yalnızca Scout'un kendi girdileri) ya da hook'ları kendin yapıştırınca değiştirir. Scout çalışmıyorsa hook hiçbir şey yapmaz ve ajan her zamanki gibi terminalinde sorar.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Yalnızca çentikten İzin ver, Reddet ve soruları yanıtlamak için gerekir; yukarıdaki her şey bunsuz da çalışır. Her hook, bu Mac'teki Scout'a gönderen tek satırlık bir komuttur (yalnızca 127.0.0.1, özel bir anahtarla). Scout çalışmıyorsa hook hiçbir şey yapmaz ve ajan her zamanki gibi terminalinde sorar.";
-"Only the dot beside the notch" = "Yalnızca çentiğin yanındaki nokta";
 "Only what you choose" = "Yalnızca seçtiklerin";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Yalnızca Scout kapanırken hâlâ çalıyorsa. Scout son istasyonu ve ses düzeyini her zaman hatırlar.";
 "Open" = "Aç";
 "Open %@" = "%@ aç";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "%@ dosyasını aç (yoksa oluştur) ve yapıştır. İçinde zaten bir \"hooks\" bölümü varsa bu girdileri onun içine ekle.";
 "Open %@ full size" = "%@ tam boyutta aç";
 "Open %@ to finish" = "Bitirmek için %@ aç";
 "Open %@, full size" = "%@ aç, tam boyut";
@@ -808,7 +758,6 @@
 "Open To-do" = "Yapılacaklar'ı aç";
 "Open a Scout window first, then share" = "Önce bir Scout penceresi aç, sonra paylaş";
 "Open a widget full size" = "Bir widget'ı tam boyutta aç";
-"Open in Ask AI" = "YZ'ye Sor'da aç";
 "Open or close the notch" = "Çentiği aç ya da kapat";
 "Open tasks in total: %lld" = "Toplam açık görev: %lld";
 "Open the Calendar with the To-dos, full size" = "Takvimi yapılacaklarla birlikte tam boyutta aç";
@@ -817,7 +766,6 @@
 "Open the notch" = "Çentiği aç";
 "Open the notch on %@ (now: %@)" = "Çentiği %@ üzerinde aç (şu an: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Çentiği her seferinde özet ekranında değil, %@ üzerinde aç";
-"Open the notch on Agents" = "Çentiği Ajanlar üzerinde aç";
 "Open the notch when an agent needs you" = "Bir ajan sana ihtiyaç duyduğunda çentiği aç";
 "Open the player" = "Oynatıcıyı aç";
 "Open the to-do calendar" = "Yapılacaklar takvimini aç";
@@ -829,9 +777,7 @@
 "Opening" = "Açılış";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Çentiği o widget zaten genişletilmiş olarak açar. Kapatmak için yeniden bas. Çentiğin kendisi her zaman özet ekranında açılır.";
 "Option" = "Option";
-"Optional: answer from the notch" = "İsteğe bağlı: çentikten yanıtla";
 "Options" = "Seçenekler";
-"Or type your own answer" = "Ya da kendi yanıtını yaz";
 "Orange" = "Turuncu";
 "Output" = "Çıkış";
 "Overcast" = "Çok bulutlu";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Açılır";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "%u bağlantı noktası meşguldü, bu yüzden bu blok %u noktasını belirtir. Scout daha sonra yeniden %u üzerinde başlarsa bloğu yeniden kopyala.";
 "Press a shortcut…" = "Bir kestirmeye bas…";
 "Preview" = "Önizleme";
 "Preview a card" = "Bir kartı önizle";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Dönüştürülen dosyaları Tepsi'ye koy";
 "Put finished videos in the Tray" = "Biten videoları Tepsi'ye koy";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Her seçeneği ilk günkü haline döndürür. Notların, panon ve dosyaların kalır.";
-"Questions go to %@." = "Sorular %@ hizmetine gider.";
 "Questions go to %@. The answers stay here." = "Sorular %@ hizmetine gider. Yanıtlar burada kalır.";
 "Quick" = "Hızlı";
 "Quick Apps" = "Hızlı Uygulamalar";
@@ -920,7 +864,6 @@
 "Reading" = "Okunuyor";
 "Ready" = "Hazır";
 "Ready for the next focus session" = "Sonraki odak oturumuna hazır";
-"Ready for the next task" = "Sonraki göreve hazır";
 "Rec" = "Kayıt";
 "Recent downloads" = "Son indirilenler";
 "Record Shortcut" = "Kestirmeyi Kaydet";
@@ -978,19 +921,15 @@
 "Save…" = "Kaydet…";
 "Scout Settings" = "Scout Ayarları";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout, macOS'a yalnızca buna ihtiyaç duyan özelliği sen açtığında ya da kullandığında sorar. Açılışta hiçbir şey sorulmaz.";
-"Scout can no longer open that folder. Connect again." = "Scout artık o klasörü açamıyor. Yeniden bağla.";
 "Scout can't match what it hears to the script" = "Scout duyduğunu metinle eşleştiremiyor";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout henüz ajanlarının klasörlerini göremiyor. Bir kez izin ver; her Claude Code ve Codex oturumu kendiliğinden taşınır.";
 "Scout can't use this microphone" = "Scout bu mikrofonu kullanamıyor";
-"Scout could not open a local port." = "Scout yerel bir bağlantı noktası açamadı.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout ekranını göremedi, bu yüzden o soru resimsiz gitti. Ekran Kaydı altında Scout'a izin ver.";
 "Scout couldn't take the picture this time, so that question went without it." = "Scout bu sefer resim çekemedi, bu yüzden o soru resimsiz gitti.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout, Claude Code ve Codex oturumlarını kendisi bulur";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout artık %u bağlantı noktasında dinliyor (ya da hook'ları eski bir sürümden). Güncelle yalnızca Scout'un girdilerini yeniden yazar.";
 "Scout only watches for connections once you allow it." = "Scout, bağlantıları yalnızca sen izin verdikten sonra izler.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout, Takvim widget'ını ve çalışma alanını doldurmak için etkinliklerini bu Mac'te okur. Hiçbir şey hiçbir yere gönderilmez.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout kopyaladıklarını hatırlar; böylece çentikten ya da alt raftan yeniden yapıştırabilirsin. Her şey bu Mac'te kalır.";
-"Scout will add its hooks to %@ after backing the file up." = "Scout, dosyanın yedeğini aldıktan sonra hook'larını %@ dosyasına ekler.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Scout'un kendi kodu, sözcükleri ve simgesi özgündür. Buradaki diğer her şey kendi lisansı altında kullanılır.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Scout'un kendi pencereleri (YZ'ye Sor, notlar, yapılacaklar, hesap makinesi ve diğerleri) çıkıştan, güncellemeden ya da yeniden başlatmadan sonra boyutları ve metinleriyle bulundukları yerde yeniden açılır. Bir ekran artık yoksa ana ekranda açılırlar.";
 "Scout: my AI agents in my notch. %@" = "Scout: çentiğimdeki YZ ajanlarım. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Web'de ara";
 "Searching the web…" = "Web'de aranıyor…";
 "See the month, your agenda and a Join button for video calls." = "Ayı, gündemini ve görüntülü aramalar için Katıl düğmesini gör.";
-"See the whole conversation in the Ask AI tab" = "Konuşmanın tamamını YZ'ye Sor sekmesinde gör";
 "See your day here" = "Gününü burada gör";
 "Select a note or start a new one" = "Bir not seç ya da yenisini başlat";
 "Select a note or start a new one." = "Bir not seç ya da yenisini başlat.";
 "Selected: %lld" = "Seçilen: %lld";
 "Send" = "Gönder";
-"Send answers" = "Yanıtları gönder";
 "Send to Apple Notes" = "Apple Notlar'a gönder";
 "Send to a nearby device" = "Yakındaki bir aygıta gönder";
 "Sensitivity" = "Hassasiyet";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Bağlandıklarında AirPods'u ve pilini göster";
 "Show Scout in the menu bar" = "Scout'u menü çubuğunda göster";
 "Show a Join card when the meeting starts" = "Toplantı başlayınca bir Katıl kartı göster";
-"Show a card under the notch" = "Çentiğin altında bir kart göster";
 "Show a card when a download finishes" = "Bir indirme bitince kart göster";
 "Show a count next to the notch while the Tray holds files" = "Tepsi dosya tutarken çentiğin yanında bir sayı göster";
 "Show a countdown" = "Geri sayım göster";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Günü ne olursa olsun her açık yapılacağı göster";
 "Show in Finder" = "Finder'da göster";
 "Show in full screen" = "Tam ekranda göster";
-"Show me the paste code" = "Yapıştırma kodunu göster";
 "Show music from" = "Müziği şuradan göster";
 "Show music next to the notch while it plays" = "Müzik çalarken çentiğin yanında göster";
 "Show my calendar in the notch" = "Takvimimi çentikte göster";
@@ -1107,9 +1042,7 @@
 "Square" = "Kare";
 "Start" = "Başla";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Claude Code ya da Codex'i başlat; her oturum ilerlemesiyle birlikte buraya kendiliğinden gelir. Bağlanacak bir şey yok.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Codex'i başlat ve Scout'un hook'larına ilk kez güvenmek için /hooks yaz. Sonra yeni bir oturum başlat.";
 "Start a %lld-minute focus timer for this task" = "Bu görev için %lld dakikalık bir odak zamanlayıcısı başlat";
-"Start a new Claude Code session. It appears in the notch." = "Yeni bir Claude Code oturumu başlat. Çentikte görünür.";
 "Start again" = "Yeniden başla";
 "Start folder" = "Başlangıç klasörü";
 "Start the camera when the Mirror widget appears" = "Ayna widget'ı göründüğünde kamerayı başlat";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Metin boyutu: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "Bu API anahtarı reddedildi. Ayarlar › YZ'ye Sor'dan kontrol et.";
 "That didn't work" = "Olmadı";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "Bu, ana klasöründeki %@ klasörü değil. Yeniden bağla ve onu seç.";
 "That one did not go through" = "O gitmedi";
 "That's the end" = "Bu kadar";
 "The %@ uses the camera, so it never opens by itself" = "%@ kamerayı kullanır, bu yüzden kendiliğinden asla açılmaz";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Kapatıldı";
 "Two-finger swipe on the notch" = "Çentikte iki parmakla kaydırma";
 "Type a city, region or country, or pick a country." = "Bir şehir, bölge ya da ülke yaz ya da bir ülke seç.";
-"Type your own…" = "Kendi yanıtını yaz…";
 "Typing: the notch stays open" = "Yazarken: çentik açık kalır";
 "Unknown format" = "Bilinmeyen biçim";
 "Unlicense (only if you install it)" = "Unlicense (yalnızca yüklersen)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Açılana kadar sorular resimsiz gider.";
 "Untitled" = "Adsız";
 "Untitled script" = "Adsız metin";
-"Update" = "Güncelle";
 "Updates" = "Güncellemeler";
 "Updating the to-do list" = "Yapılacaklar listesi güncelleniyor";
 "Upload %@" = "%@ yükle";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Seni bekliyor";
 "Waiting for your OK" = "Onayını bekliyor";
 "Waiting for your voice" = "Sesini bekliyor";
-"Wants to use %@" = "%@ kullanmak istiyor";
-"Wants to use %@: %@" = "%@ kullanmak istiyor: %@";
-"Wants to use a tool" = "Bir araç kullanmak istiyor";
-"Wants to use a tool: %@" = "Bir araç kullanmak istiyor: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Sıcak kâğıt, koyu metin ve parlak vurgular. Gündüz okuması kolay.";
 "Warn at" = "Şunda uyar";
 "Warn when the battery is low" = "Pil azaldığında uyar";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "Scout'un neye erişebildiği ve neden sorduğu.";
 "What shows next to the notch while it is closed." = "Çentik kapalıyken yanında görünenler.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Bir mesaj geldiğinde çentiğin altına gönderen, metin ve yanıt kutusuyla bir kart düşer. Mesajlar uygulaması öndeyken sessiz kalır. Scout, sen bir yanıt yazıp Return'e basmadıkça hiçbir şey göndermez.";
-"When an agent needs an answer" = "Bir ajanın yanıta ihtiyacı olduğunda";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Sesi tuşlarla, menü çubuğuyla ya da başka bir uygulamayla değiştirdiğinde, düzey çentiğin yanında da görünür.";
 "Where stations come from" = "İstasyonlar nereden geliyor";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Müzik çalarken, bir zamanlayıcı çalışırken ya da bir indirme bittiğinde çentik bunu göstermek için büyür. Üzerine gel, Nook'una açılır: widget'lar, dosyalar, pano, takvim. Uzaklaş, yeniden içeri çekilir.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "%@ yakınlaştır, tüm görünüme dön";
 "Zoom in" = "Yakınlaştır";
 "Zoom out" = "Uzaklaştır";
-"all edits this session" = "bu oturumdaki tüm düzenlemeler";
 "charged" = "şarj oldu";
 "charging" = "şarj oluyor";
 "code" = "kod";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS bunu değiştirmedi: %@";
 "me and my agents" = "ben ve ajanlarım";
 "min" = "dk";
-"mode %@" = "mod %@";
 "model name" = "model adı";
 "needs you" = "sana ihtiyacı var";
 "no battery" = "pil yok";

@@ -23,7 +23,6 @@ Style: 합니다/하세요 in sentences, short noun phrase or imperative for men
 | Mirror | 거울 |
 | Pulse | 펄스 |
 | Tuner | 튜너 |
-| hooks (Claude Code / Codex) | 훅 |
 | Settings | 설정 |
 | System Settings | 시스템 설정 |
 | Privacy & Security | 개인정보 보호 및 보안 |

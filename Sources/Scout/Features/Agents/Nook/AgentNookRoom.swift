@@ -1,7 +1,7 @@
 import AppKit
 import SwiftUI
 
-/// Which rows a room has space for (pure arithmetic, so the self-test can check it). The scout comes first and every scout on a screen has
+/// Which rows a room has space for (pure arithmetic, so the self-test can check it). The agent comes first and every agent on a screen has
 /// the SAME pixel size, the biggest that fits (with one small row kept free under it when any room of the screen has helpers or a
 /// counter). The helpers' bunk and the to-do counter are made to fit under it: normal size, then small, then both on one row; the
 /// counter drops its blocks and keeps its number before it goes (a counter is never clipped). The one-line sentence comes last.
@@ -12,11 +12,11 @@ enum AgentNookRoomRows {
         var sentence = false
         /// The bunk and the shelf share one row.
         var combined = false
-        /// A very wide room puts the scout on the left, big, and the bunk, the shelf and the sentence in a column on the right.
+        /// A very wide room puts the agent on the left, big, and the bunk, the shelf and the sentence in a column on the right.
         var side = false
-        /// The rows are small (a helper 8 pixels, the counter 7) to leave the scout its size.
+        /// The rows are small (a helper 8 pixels, the counter 7) to leave the agent its size.
         var tight = false
-        /// One pixel of the scout, in points: a multiple of half a point, the same for every room of a screen.
+        /// One pixel of the agent, in points: a multiple of half a point, the same for every room of a screen.
         var px: CGFloat = 1
     }
 
@@ -40,10 +40,10 @@ enum AgentNookRoomRows {
     static let sideFrom: CGFloat = 236
     static let sideColumn: CGFloat = 108
 
-    /// The pixel size of the scouts of a screen whose rooms are `size`: the biggest that fits the plate and the scene, keeping one small
+    /// The pixel size of the agents of a screen whose rooms are `size`: the biggest that fits the plate and the scene, keeping one small
     /// row under it when `needsRow` (some room has helpers or a counter).
-    /// `helpers`: some room of the screen has helpers. In a very wide room the helpers stand under the scout too (not in the column at the
-    /// right), so that room keeps the row free under the scout then.
+    /// `helpers`: some room of the screen has helpers. In a very wide room the helpers stand under the agent too (not in the column at the
+    /// right), so that room keeps the row free under the agent then.
     static func scoutPixel(style: AgentNookLayout.Style, size: CGSize, needsRow: Bool, helpers: Bool = false) -> CGFloat {
         let m = metrics(style)
         let side = style == .roomy && size.width >= sideFrom
@@ -59,7 +59,7 @@ enum AgentNookRoomRows {
         plan.px = scoutPixel(style: style, size: size, needsRow: needsRow ?? (helpers > 0 || todos > 0), helpers: screenHelpers ?? (helpers > 0))
         if style == .roomy, size.width >= sideFrom {
             plan.side = true; plan.bunk = helpers > 0; plan.shelf = todos > 0; plan.sentence = true
-            // The helpers' row stands under the scout: the full-size one when the room is tall enough, else the small one (the row kept free).
+            // The helpers' row stands under the agent: the full-size one when the room is tall enough, else the small one (the row kept free).
             plan.tight = size.height - 2 * m.pad - m.plate - m.gap - CGFloat(scene.h) * plan.px < m.bunk + m.gap
             return plan
         }
@@ -255,7 +255,7 @@ extension AgentNookBunk {
     }
 }
 
-/// One helper: an 8 x 8 scout, eyes open while awake and shut while asleep.
+/// One helper: an 8 x 8 agent, eyes open while awake and shut while asleep.
 struct AgentNookMini: View {
     var kind: AgentKind = .claude
     var awake: Bool
@@ -344,9 +344,9 @@ struct AgentNookShelf: View {
     }
 }
 
-/// One room: the light, the name plate (pixel capitals), the scout in its pose, the helpers' bunk, the to-do counter and (where there is
+/// One room: the light, the name plate (pixel capitals), the agent in its pose, the helpers' bunk, the to-do counter and (where there is
 /// room) the first sentence of the latest message in the system font. Hovering may only brighten its edge; clicking is the panel's business.
-/// `reserveRow` says some room of the screen has helpers or a counter, so every scout of the screen gets the same pixel size.
+/// `reserveRow` says some room of the screen has helpers or a counter, so every agent of the screen gets the same pixel size.
 struct AgentNookRoom: View {
     var model: AgentNookRoomModel
     var style: AgentNookLayout.Style = .roomy
@@ -355,7 +355,7 @@ struct AgentNookRoom: View {
     var glow = false
     var hover = false
     var reserveRow: Bool?
-    /// Some room of the screen has helpers (a very wide room keeps the row for them under its scout then).
+    /// Some room of the screen has helpers (a very wide room keeps the row for them under its agent then).
     var reserveHelpers: Bool?
     /// Its agent's own skin (`AgentFaceArt.variants`).
     var variant = 0
@@ -385,7 +385,7 @@ struct AgentNookRoom: View {
                             .frame(height: m.plate, alignment: .leading)
                     }
                     if rows.side {
-                        // The helpers stand under the scout (in its own column); the column at the right keeps the sentence and the counter.
+                        // The helpers stand under the agent (in its own column); the column at the right keeps the sentence and the counter.
                         HStack(alignment: .bottom, spacing: 8) {
                             figure(rows, width: inner - AgentNookRoomRows.sideColumn - 8)
                             VStack(alignment: .leading, spacing: 5) {
@@ -433,8 +433,8 @@ struct AgentNookRoom: View {
         AgentNookCritter(kind: model.kind, variant: variant, pose: look.pose, prop: model.prop, clock: clock, crop: style == .compact, pixel: px)
     }
 
-    /// The scout and its helpers: the picture at its exact size, centred in a room `width` wide, and the helpers' row right under it,
-    /// centred on the figure (`AgentNookHelperPlace`). The block stands in the middle of the space the room gives it, as the scout alone did.
+    /// The agent and its helpers: the picture at its exact size, centred in a room `width` wide, and the helpers' row right under it,
+    /// centred on the figure (`AgentNookHelperPlace`). The block stands in the middle of the space the room gives it, as the agent alone did.
     private func figure(_ rows: AgentNookRoomRows.Plan, width: CGFloat) -> some View {
         let px = rows.px
         return VStack(spacing: 0) {
@@ -447,7 +447,7 @@ struct AgentNookRoom: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
-    /// The helpers' bunk under the scout (and, in a room that shares the row, the counter beside it, on the side with more room).
+    /// The helpers' bunk under the agent (and, in a room that shares the row, the counter beside it, on the side with more room).
     private func helperRow(_ rows: AgentNookRoomRows.Plan, width: CGFloat, px: CGFloat) -> AnyView {
         let z = bunkSizes(tight: rows.tight)
         let limit = rows.combined ? width * 0.62 : width

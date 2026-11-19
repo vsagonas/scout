@@ -9,7 +9,7 @@ Buttons and menu items are infinitives, as Lithuanian software writes them (Atid
 | AI | DI (dirbtinis intelektas) |
 | Ask AI | Klausti DI |
 | Ask anything (placeholder, 12 characters at most) | Klausk kažko |
-| Fast Ask AI | Greitas DI (pixel label GREITAS DI) |
+| Fast Ask AI | Greitas DI |
 | widget / widgets | valdiklis / valdikliai |
 | notch | išpjova (the camera cut-out) |
 | dashboard | skydelis |
@@ -23,7 +23,6 @@ Buttons and menu items are infinitives, as Lithuanian software writes them (Atid
 | chat / chats | pokalbis / pokalbiai |
 | API key, key | API raktas, raktas (key on the keyboard: klavišas) |
 | clipboard | iškarpinė |
-| hooks | hooks (Latin, a technical word; the command is /hooks) |
 | session | seansas |
 | tab | skirtukas |
 | Prompter | Prompteris (teleprompter = prompteris) |
@@ -34,8 +33,7 @@ Buttons and menu items are infinitives, as Lithuanian software writes them (Atid
 | To-do / To-dos | Užduotis / Užduotys |
 | timer / alarm | laikmatis / žadintuvas |
 | Light / Dark / System | Šviesus / Tamsus / Sistema |
-| Allow / Deny / Always allow | Leisti / Neleisti / Visada leisti |
-| Connect / Disconnect | Prijungti / Atjungti |
+| Allow | Leisti |
 | Copy / Delete / Cancel / Close | Kopijuoti / Ištrinti / Atšaukti / Uždaryti |
 | Join (meeting button) | Jungtis |
 | Break (Pomodoro) | Pertrauka (pause = Pauzė) |

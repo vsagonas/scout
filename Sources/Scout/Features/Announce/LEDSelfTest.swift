@@ -532,20 +532,20 @@ enum LEDSelfTest {
         let all = [finished, asking, working]
         watcher3.process(sessions: all, loaded: true)
         hub3.clear()
-        watcher3.processFlashes(["led-docs"], sessions: all, pending: [], loaded: true)
+        watcher3.processFlashes(["led-docs"], sessions: all, loaded: true)
         check("agents: a finished agent whose row was lit is announced (DOCS DONE ✓)", hub3.current?.text == "DOCS DONE \(LEDFont.check)")
         hub3.clear()
         clock3.advance(by: 30)
-        watcher3.processFlashes(["led-docs", "led-infra", "led-site"], sessions: all, pending: [], loaded: true)
+        watcher3.processFlashes(["led-docs", "led-infra", "led-site"], sessions: all, loaded: true)
         check("agents: an agent that needs you or still works gets no DONE", hub3.current == nil && hub3.queue.isEmpty)
-        watcher3.processFlashes(["led-docs", "led-infra", "led-site"], sessions: all, pending: [], loaded: true)
+        watcher3.processFlashes(["led-docs", "led-infra", "led-site"], sessions: all, loaded: true)
         check("agents: a row that stays lit is announced once", hub3.current == nil)
         check("agents: DONE counts only after the baseline", { () -> Bool in
             let c = Clock()
             let h = LEDAnnouncements(center: LiveActivityCenter(), env: c.env())
             var e = LEDAgentWatcher.Env(); e.now = { [unowned c] in c.now }; e.schedule = { [unowned c] seconds, work in c.schedule(seconds, work) }; e.isScripted = false
             let w = LEDAgentWatcher(announcements: h, env: e)
-            w.processFlashes(["led-docs"], sessions: all, pending: [], loaded: true)
+            w.processFlashes(["led-docs"], sessions: all, loaded: true)
             return h.current == nil
         }())
     }
@@ -564,7 +564,7 @@ enum LEDSelfTest {
         let folder = FileManager.default.temporaryDirectory.appendingPathComponent("led-selftest-\(UUID().uuidString)", isDirectory: true)
         try? FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
         defer { try? FileManager.default.removeItem(at: folder) }
-        let store = AgentsStore(directory: folder)   // its own, not the shared one: it never listens and never reads
+        let store = AgentsStore()   // its own, not the shared one: it never reads
         func settle() async { try? await Task.sleep(nanoseconds: 120_000_000) }
         func said() -> [String] { hub.log.filter { $0.kind == .shown }.map(\.text) }
 

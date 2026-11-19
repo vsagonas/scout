@@ -1,7 +1,6 @@
 import SwiftUI
 
-/// The frames of the den's parts in its own space (the self-test clicks them): the stations by agent id, "window", "banner", "close",
-/// and the window's answer keys as "key.Allow", "key.Deny" and so on.
+/// The frames of the den's parts in its own space (the self-test clicks them): the stations by agent id, "window", "banner" and "close".
 struct AgentDenFramesKey: PreferenceKey {
     static let defaultValue: [String: CGRect] = [:]
     static func reduce(value: inout [String: CGRect], nextValue: () -> [String: CGRect]) { value.merge(nextValue()) { $1 } }
@@ -89,7 +88,7 @@ struct AgentDenView: View {
     private var denBody: some View {
         GeometryReader { geo in
             let full = geo.size
-            let stations = AgentDenStation.stations(store.sessions, pending: store.pending)
+            let stations = AgentDenStation.stations(store.sessions)
             let detail = detailID.flatMap { id in store.sessions.first { $0.id == id } }
             let variants = AgentFaceArt.variants(for: store.sessions.map(\.id))
             // An open agent's window lies UNDER the den, across its whole width: the den keeps the top, its agents the whole rug. The den keeps
@@ -139,7 +138,7 @@ struct AgentDenView: View {
                 if let detail {
                     // Edge to edge under the den, down to the island's bottom (its rounded corners trim the window): an 8 pt margin showed a
                     // strip of the island under it, a black line on dark
-                    AgentDenWindow(session: detail, store: store, banner: banner?.sessionID == detail.id ? banner : nil, below: true) { onSelect(nil) }
+                    AgentDenWindow(session: detail, banner: banner?.sessionID == detail.id ? banner : nil, below: true) { onSelect(nil) }
                         .frame(width: full.width, height: max(80, full.height - size.height), alignment: .top)
                         .denFrame("window")
                         .transition(.opacity)

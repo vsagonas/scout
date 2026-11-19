@@ -31,7 +31,6 @@ Brand names are never declined: "aplicația Scout", "în Codex". "notch" takes t
 | den (the agents' room) | căsuță |
 | card / tab | card / filă |
 | shelf | raft |
-| hooks | hook-uri |
 | Keychain | Keychain (macOS Romanian says Breloc) |
 | Calendar / Notes / Messages / Music / Contacts | Calendar / Notițe / Mesaje / Muzică / Contacte |
 | Activity Monitor / Weather / Maps / Clock | Monitor de activitate / Vremea / Hărți / Ceas |
@@ -49,13 +48,13 @@ Brand names are never declined: "aplicația Scout", "în Codex". "notch" takes t
 | Home folder | Acasă |
 | menu bar | bară de meniu |
 | Light / Dark / System | Luminos / Întunecat / Sistem |
-| Allow / Deny / Always allow | Permite / Refuză / Permite întotdeauna |
-| Connect / Disconnect / Join | Conectează / Deconectează / Intră (short, for the Join pill) |
+| Allow | Permite |
+| Join | Intră (short, for the Join pill) |
 | Snooze | Amână |
 | Mute / Unmute | Fără sunet / Cu sunet |
 | modifier keys | Command, Option, Control, Shift |
 
-Pixel labels use capitals and no diacritics (the 5x7 font has none): TOATA ZIUA, DOARME, PA %@ (BYE), CONECTARE, GATA, INTREBARE AI, FAVORITE, INGHETAT, SALUT DE LA SCOUT, RECENTE, LISTA, LISTE, TE ASTEAPTA, NICIUN AGENT, FARA SEMNAL, PAUZA, LOCURI, PREGATIT, PORNESTE, OPRIT, BUN VENIT %@, FLUX, LUCREAZA.
+Pixel labels use capitals and no diacritics (the 5x7 font has none): TOATA ZIUA, DOARME, PA %@ (BYE), CONECTARE, GATA, FAVORITE, INGHETAT, SALUT DE LA SCOUT, RECENTE, LISTA, LISTE, TE ASTEAPTA, NICIUN AGENT, FARA SEMNAL, PAUZA, LOCURI, PREGATIT, PORNESTE, OPRIT, BUN VENIT %@, FLUX, LUCREAZA.
 
 Style: „ ” quotes, "…" as one character, no dashes as separators (a colon instead: "Concentrare: %@"), Western digits, "procente" for spoken percentages.
 

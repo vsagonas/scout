@@ -10,9 +10,7 @@
 "%@ ended." = "%@ ended.";
 "%@ failed" = "%@ failed";
 "%@ finished after %lld min" = "%@ finished after %lld min";
-"%@ finished in %@" = "%@ finished in %@";
 "%@ free" = "%@ free";
-"%@ has a question" = "%@ has a question";
 "%@ has no sound" = "%@ has no sound";
 "%@ in %@" = "%@ in %@";
 "%@ installed" = "%@ installed";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@ is too big for a ZIP file (4 GB limit)";
 "%@ isn't installed" = "%@ isn't installed";
 "%@ isn't supported on this Mac" = "%@ isn't supported on this Mac";
-"%@ isn't valid JSON, so Scout left it alone." = "%@ isn't valid JSON, so Scout left it alone.";
 "%@ key" = "%@ key";
 "%@ left" = "%@ left";
 "%@ needs you" = "%@ needs you";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "%@ timer finished";
 "%@ to full" = "%@ to full";
 "%@ used" = "%@ used";
-"%@ wants to use %@" = "%@ wants to use %@";
-"%@ wants to use a tool" = "%@ wants to use a tool";
 "%@ · %@ of %@" = "%@ · %@ of %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · %lld open in total";
@@ -71,7 +66,6 @@
 "%lld running" = "%lld running";
 "%lld working" = "%lld working";
 "%lld wpm" = "%lld wpm";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+%lld more";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Add your %@ API key in Settings › Ask AI first.";
 "Add your API key in Settings › Ask AI first." = "Add your API key in Settings › Ask AI first.";
 "Add your Claude API key in Settings › Ask AI first." = "Add your Claude API key in Settings › Ask AI first.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's.";
 "Agent" = "Agent";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Agent TV den";
@@ -164,15 +156,10 @@
 "Allow…" = "Allow…";
 "Also show it while an app is full screen" = "Also show it while an app is full screen";
 "Also used for “%@”: only one of them will work." = "Also used for “%@”: only one of them will work.";
-"Always allow" = "Always allow";
-"Always allow %@" = "Always allow %@";
-"Always allow adds: %@" = "Always allow adds: %@";
 "Amber" = "Amber";
 "An agent tab cannot be kept as the opening tab" = "An agent tab cannot be kept as the opening tab";
 "Announcements" = "Announcements";
 "Answer copied" = "Answer copied";
-"Answer in terminal" = "Answer in terminal";
-"Answer permissions and questions from the notch" = "Answer permissions and questions from the notch";
 "Answers" = "Answers";
 "Any country" = "Any country";
 "Appearance" = "Appearance";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Ask about a picture";
 "Ask about your screen" = "Ask about your screen";
 "Ask anything" = "Ask anything";
-"Ask anything above. Questions go to %@. The answer shows here." = "Ask anything above. Questions go to %@. The answer shows here.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them.";
 "Ask before closing a tab that is still running" = "Ask before closing a tab that is still running";
-"Ask in terminal" = "Ask in terminal";
 "Ask the same question again on Claude Sonnet 5.5" = "Ask the same question again on Claude Sonnet 5.5";
-"Asking a question" = "Asking a question";
 "Asking you: %@" = "Asking you: %@";
 "Asleep" = "Asleep";
 "Attach a picture" = "Attach a picture";
@@ -241,7 +225,6 @@
 "Camera" = "Camera";
 "Camera access is off" = "Camera access is off";
 "Camera access is off for Scout." = "Camera access is off for Scout.";
-"Can't listen (%@)" = "Can't listen (%@)";
 "Can't read %@ yet" = "Can't read %@ yet";
 "Can't tell which chat this is" = "Can't tell which chat this is";
 "Cancel" = "Cancel";
@@ -265,7 +248,6 @@
 "Choose a script" = "Choose a script";
 "Choose image…" = "Choose image…";
 "Choose shortcuts" = "Choose shortcuts";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it.";
 "Choose the model" = "Choose the model";
 "Choose…" = "Choose…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Clear latest stations and places";
 "Clear shortcut" = "Clear shortcut";
 "Clear the clipboard history?" = "Clear the clipboard history?";
-"Click Copy hooks." = "Click Copy hooks.";
 "Click for %@ settings, drag to move" = "Click for %@ settings, drag to move";
 "Click one, or use the arrow keys. Press Return to go on." = "Click one, or use the arrow keys. Press Return to go on.";
 "Click one, or use the arrow keys. The window grows with it." = "Click one, or use the arrow keys. The window grows with it.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Close this tab (⌘W)";
 "Close this tab?" = "Close this tab?";
 "Cloudy" = "Cloudy";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's.";
 "Color" = "Color";
 "Colors" = "Colors";
 "Command" = "Command";
 "Compact" = "Compact";
-"Connect" = "Connect";
-"Connect %@?" = "Connect %@?";
-"Connect %@…" = "Connect %@…";
-"Connect Claude Code" = "Connect Claude Code";
-"Connect Claude Code…" = "Connect Claude Code…";
-"Connect Codex" = "Connect Codex";
-"Connect Codex…" = "Connect Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing.";
 "Connected" = "Connected";
-"Connected, but out of date" = "Connected, but out of date";
-"Connected. New sessions report to Scout." = "Connected. New sessions report to Scout.";
 "Connecting" = "Connecting";
 "Connecting…" = "Connecting…";
 "Contacts" = "Contacts";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Copies made while one of these apps is in front are never saved.";
 "Copy" = "Copy";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later).";
-"Copy hooks" = "Copy hooks";
-"Copy hooks instead" = "Copy hooks instead";
 "Copy something and it shows up here." = "Copy something and it shows up here.";
 "Couldn't copy the picture" = "Couldn't copy the picture";
 "Couldn't copy the polaroid" = "Couldn't copy the polaroid";
@@ -399,9 +367,6 @@
 "Delete note" = "Delete note";
 "Delete this chat" = "Delete this chat";
 "Delete this script" = "Delete this script";
-"Deny" = "Deny";
-"Disconnect" = "Disconnect";
-"Disconnected. Your own hooks are untouched." = "Disconnected. Your own hooks are untouched.";
 "Disk" = "Disk";
 "Dismiss" = "Dismiss";
 "Display" = "Display";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Export as %@…";
 "Exported %@" = "Exported %@";
 "Extra large" = "Extra large";
-"FAST ASK AI" = "FAST ASK AI";
 "FAVOURITES" = "FAVOURITES";
 "FROZEN" = "FROZEN";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Forget Previous Tabs";
 "Forget previous tabs" = "Forget previous tabs";
 "Forget recent folders" = "Forget recent folders";
-"Found automatically" = "Found automatically";
 "Found · %@" = "Found · %@";
 "Free service, no key" = "Free service, no key";
 "Freezing drizzle" = "Freezing drizzle";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "HELLO FROM SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku for quick questions, Sonnet for hard ones";
 "Haptic feedback" = "Haptic feedback";
-"Has a question" = "Has a question";
 "Heavy rain" = "Heavy rain";
 "Heavy showers" = "Heavy showers";
 "Heavy snow" = "Heavy snow";
@@ -533,9 +495,7 @@
 "Here" = "Here";
 "Hide completed" = "Hide completed";
 "Hide it while an app is full screen" = "Hide it while an app is full screen";
-"Hide the answer" = "Hide the answer";
 "Hide the chats" = "Hide the chats";
-"Hide the paste code" = "Hide the paste code";
 "History" = "History";
 "History is paused" = "History is paused";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Hold ⌥⇧ with a volume or brightness key for quarter steps.";
@@ -605,15 +565,11 @@
 "Links" = "Links";
 "List" = "List";
 "List name" = "List name";
-"Listen for AI agents on this Mac" = "Listen for AI agents on this Mac";
-"Listening on 127.0.0.1:%@" = "Listening on 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Listening on 127.0.0.1:%@ (%@ was busy)";
 "Listening…" = "Listening…";
 "Lists" = "Lists";
 "Live" = "Live";
 "Live Activities" = "Live Activities";
 "Loading…" = "Loading…";
-"Local bridge" = "Local bridge";
 "Local weather. A chosen city works without it." = "Local weather. A chosen city works without it.";
 "Location" = "Location";
 "Location access" = "Location access";
@@ -662,7 +618,6 @@
 "Models" = "Models";
 "More" = "More";
 "More agents: %lld" = "More agents: %lld";
-"More…" = "More…";
 "Most capable, slowest" = "Most capable, slowest";
 "Most items to keep" = "Most items to keep";
 "Mostly clear" = "Mostly clear";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Not asked yet";
 "Not available on this Mac" = "Not available on this Mac";
 "Not checked yet" = "Not checked yet";
-"Not connected" = "Not connected";
 "Not found in your login shell's PATH" = "Not found in your login shell's PATH";
 "Not found on this Mac" = "Not found on this Mac";
 "Not installed" = "Not installed";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Only displays with a notch";
 "Only events with a video link" = "Only events with a video link";
 "Only for the Prompter to follow your voice." = "Only for the Prompter to follow your voice.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual.";
-"Only the dot beside the notch" = "Only the dot beside the notch";
 "Only what you choose" = "Only what you choose";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume.";
 "Open" = "Open";
 "Open %@" = "Open %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it.";
 "Open %@ full size" = "Open %@ full size";
 "Open %@ to finish" = "Open %@ to finish";
 "Open %@, full size" = "Open %@, full size";
@@ -808,7 +758,6 @@
 "Open To-do" = "Open To-do";
 "Open a Scout window first, then share" = "Open a Scout window first, then share";
 "Open a widget full size" = "Open a widget full size";
-"Open in Ask AI" = "Open in Ask AI";
 "Open or close the notch" = "Open or close the notch";
 "Open tasks in total: %lld" = "Open tasks in total: %lld";
 "Open the Calendar with the To-dos, full size" = "Open the Calendar with the To-dos, full size";
@@ -817,7 +766,6 @@
 "Open the notch" = "Open the notch";
 "Open the notch on %@ (now: %@)" = "Open the notch on %@ (now: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Open the notch on %@ every time, not the dashboard";
-"Open the notch on Agents" = "Open the notch on Agents";
 "Open the notch when an agent needs you" = "Open the notch when an agent needs you";
 "Open the player" = "Open the player";
 "Open the to-do calendar" = "Open the to-do calendar";
@@ -829,9 +777,7 @@
 "Opening" = "Opening";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard.";
 "Option" = "Option";
-"Optional: answer from the notch" = "Optional: answer from the notch";
 "Options" = "Options";
-"Or type your own answer" = "Or type your own answer";
 "Orange" = "Orange";
 "Output" = "Output";
 "Overcast" = "Overcast";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Pop-up";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again.";
 "Press a shortcut…" = "Press a shortcut…";
 "Preview" = "Preview";
 "Preview a card" = "Preview a card";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Put converted files in the Tray";
 "Put finished videos in the Tray" = "Put finished videos in the Tray";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Puts every option back to how it was on day one. Your notes, clipboard and files stay.";
-"Questions go to %@." = "Questions go to %@.";
 "Questions go to %@. The answers stay here." = "Questions go to %@. The answers stay here.";
 "Quick" = "Quick";
 "Quick Apps" = "Quick Apps";
@@ -920,7 +864,6 @@
 "Reading" = "Reading";
 "Ready" = "Ready";
 "Ready for the next focus session" = "Ready for the next focus session";
-"Ready for the next task" = "Ready for the next task";
 "Rec" = "Rec";
 "Recent downloads" = "Recent downloads";
 "Record Shortcut" = "Record Shortcut";
@@ -978,19 +921,15 @@
 "Save…" = "Save…";
 "Scout Settings" = "Scout Settings";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch.";
-"Scout can no longer open that folder. Connect again." = "Scout can no longer open that folder. Connect again.";
 "Scout can't match what it hears to the script" = "Scout can't match what it hears to the script";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself.";
 "Scout can't use this microphone" = "Scout can't use this microphone";
-"Scout could not open a local port." = "Scout could not open a local port.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording.";
 "Scout couldn't take the picture this time, so that question went without it." = "Scout couldn't take the picture this time, so that question went without it.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout finds Claude Code and Codex sessions by itself";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries.";
 "Scout only watches for connections once you allow it." = "Scout only watches for connections once you allow it.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac.";
-"Scout will add its hooks to %@ after backing the file up." = "Scout will add its hooks to %@ after backing the file up.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Scout's own code, words and icon are original. Everything else here is used under its own license.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one.";
 "Scout: my AI agents in my notch. %@" = "Scout: my AI agents in my notch. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Search the web";
 "Searching the web…" = "Searching the web…";
 "See the month, your agenda and a Join button for video calls." = "See the month, your agenda and a Join button for video calls.";
-"See the whole conversation in the Ask AI tab" = "See the whole conversation in the Ask AI tab";
 "See your day here" = "See your day here";
 "Select a note or start a new one" = "Select a note or start a new one";
 "Select a note or start a new one." = "Select a note or start a new one.";
 "Selected: %lld" = "Selected: %lld";
 "Send" = "Send";
-"Send answers" = "Send answers";
 "Send to Apple Notes" = "Send to Apple Notes";
 "Send to a nearby device" = "Send to a nearby device";
 "Sensitivity" = "Sensitivity";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Show AirPods and their battery when they connect";
 "Show Scout in the menu bar" = "Show Scout in the menu bar";
 "Show a Join card when the meeting starts" = "Show a Join card when the meeting starts";
-"Show a card under the notch" = "Show a card under the notch";
 "Show a card when a download finishes" = "Show a card when a download finishes";
 "Show a count next to the notch while the Tray holds files" = "Show a count next to the notch while the Tray holds files";
 "Show a countdown" = "Show a countdown";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Show every open to-do, whatever its day";
 "Show in Finder" = "Show in Finder";
 "Show in full screen" = "Show in full screen";
-"Show me the paste code" = "Show me the paste code";
 "Show music from" = "Show music from";
 "Show music next to the notch while it plays" = "Show music next to the notch while it plays";
 "Show my calendar in the notch" = "Show my calendar in the notch";
@@ -1107,9 +1042,7 @@
 "Square" = "Square";
 "Start" = "Start";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session.";
 "Start a %lld-minute focus timer for this task" = "Start a %lld-minute focus timer for this task";
-"Start a new Claude Code session. It appears in the notch." = "Start a new Claude Code session. It appears in the notch.";
 "Start again" = "Start again";
 "Start folder" = "Start folder";
 "Start the camera when the Mirror widget appears" = "Start the camera when the Mirror widget appears";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Text size: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "That API key was rejected. Check it in Settings › Ask AI.";
 "That didn't work" = "That didn't work";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "That isn't the %@ folder in your home folder. Connect again and choose it.";
 "That one did not go through" = "That one did not go through";
 "That's the end" = "That's the end";
 "The %@ uses the camera, so it never opens by itself" = "The %@ uses the camera, so it never opens by itself";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Turned off";
 "Two-finger swipe on the notch" = "Two-finger swipe on the notch";
 "Type a city, region or country, or pick a country." = "Type a city, region or country, or pick a country.";
-"Type your own…" = "Type your own…";
 "Typing: the notch stays open" = "Typing: the notch stays open";
 "Unknown format" = "Unknown format";
 "Unlicense (only if you install it)" = "Unlicense (only if you install it)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Until it is on, questions go without a picture.";
 "Untitled" = "Untitled";
 "Untitled script" = "Untitled script";
-"Update" = "Update";
 "Updates" = "Updates";
 "Updating the to-do list" = "Updating the to-do list";
 "Upload %@" = "Upload %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Waiting for you";
 "Waiting for your OK" = "Waiting for your OK";
 "Waiting for your voice" = "Waiting for your voice";
-"Wants to use %@" = "Wants to use %@";
-"Wants to use %@: %@" = "Wants to use %@: %@";
-"Wants to use a tool" = "Wants to use a tool";
-"Wants to use a tool: %@" = "Wants to use a tool: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Warm paper, dark text and bright accents. Easy to read by day.";
 "Warn at" = "Warn at";
 "Warn when the battery is low" = "Warn when the battery is low";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "What Scout can reach, and why it asks.";
 "What shows next to the notch while it is closed." = "What shows next to the notch while it is closed.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return.";
-"When an agent needs an answer" = "When an agent needs an answer";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch.";
 "Where stations come from" = "Where stations come from";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Zoom %@, back to the whole picture";
 "Zoom in" = "Zoom in";
 "Zoom out" = "Zoom out";
-"all edits this session" = "all edits this session";
 "charged" = "charged";
 "charging" = "charging";
 "code" = "code";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS would not change it: %@";
 "me and my agents" = "me and my agents";
 "min" = "min";
-"mode %@" = "mode %@";
 "model name" = "model name";
 "needs you" = "needs you";
 "no battery" = "no battery";

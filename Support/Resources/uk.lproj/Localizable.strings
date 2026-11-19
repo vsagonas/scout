@@ -10,9 +10,7 @@
 "%@ ended." = "%@: завершено.";
 "%@ failed" = "%@: не вдалося";
 "%@ finished after %lld min" = "%@: завершено через %lld хв";
-"%@ finished in %@" = "%@: завершено за %@";
 "%@ free" = "%@ вільно";
-"%@ has a question" = "%@ має запитання";
 "%@ has no sound" = "%@: немає звуку";
 "%@ in %@" = "%@ у %@";
 "%@ installed" = "%@: встановлено";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@ не вдасться запакувати у файл ZIP (ліміт 4 ГБ)";
 "%@ isn't installed" = "%@: не встановлено";
 "%@ isn't supported on this Mac" = "%@ не підтримується на цьому Mac";
-"%@ isn't valid JSON, so Scout left it alone." = "%@ не є дійсним JSON, тому Scout його не чіпав.";
 "%@ key" = "Ключ %@";
 "%@ left" = "Залишилось: %@";
 "%@ needs you" = "%@ потребує вас";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "Таймер %@ завершився";
 "%@ to full" = "%@ до повного заряду";
 "%@ used" = "Використано %@";
-"%@ wants to use %@" = "%@ хоче використати %@";
-"%@ wants to use a tool" = "%@ хоче використати інструмент";
 "%@ · %@ of %@" = "%@ · %@ з %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · усього відкрито: %lld";
@@ -71,7 +66,6 @@
 "%lld running" = "Виконується: %lld";
 "%lld working" = "Працює: %lld";
 "%lld wpm" = "%lld слів/хв";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+ще %lld";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Спершу додайте свій ключ API %@ у Параметрах › Запитайте ШІ.";
 "Add your API key in Settings › Ask AI first." = "Спершу додайте свій ключ API у Параметрах › Запитайте ШІ.";
 "Add your Claude API key in Settings › Ask AI first." = "Спершу додайте свій ключ API Claude у Параметрах › Запитайте ШІ.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Додає хуки Scout до ~/.claude/settings.json (події прогресу, запити дозволів і запитання) і не чіпає ваші власні хуки. Спершу створюється резервна копія файлу.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Додає хуки Scout до ~/.codex/hooks.json. Codex просить переглянути нові хуки під час першого запуску: введіть /hooks у Codex і довіряйте хукам Scout.";
 "Agent" = "Агент";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Будиночок Agent TV";
@@ -164,15 +156,10 @@
 "Allow…" = "Дозволити…";
 "Also show it while an app is full screen" = "Показувати також, коли програма на весь екран";
 "Also used for “%@”: only one of them will work." = "Також використовується для «%@»: працюватиме лише одне з них.";
-"Always allow" = "Завжди дозволяти";
-"Always allow %@" = "Завжди дозволяти %@";
-"Always allow adds: %@" = "Завжди дозволяти додає: %@";
 "Amber" = "Бурштиновий";
 "An agent tab cannot be kept as the opening tab" = "Вкладку агента не можна зробити початковою";
 "Announcements" = "Оголошення";
 "Answer copied" = "Відповідь скопійовано";
-"Answer in terminal" = "Відповісти в терміналі";
-"Answer permissions and questions from the notch" = "Відповідати на дозволи й запитання з вирізу";
 "Answers" = "Відповіді";
 "Any country" = "Будь-яка країна";
 "Appearance" = "Оформлення";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Запитати про зображення";
 "Ask about your screen" = "Запитати про екран";
 "Ask anything" = "Запитайте";
-"Ask anything above. Questions go to %@. The answer shows here." = "Запитуйте будь-що вище. Запитання надходять до %@. Відповідь з'являється тут.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Запитуйте будь-що.\nReturn надсилає, ⌥Return додає рядок.\n\nВаші запитання надходять до %@. Коли Екран увімкнено, разом із ними йде знімок вашого екрана.";
 "Ask before closing a tab that is still running" = "Запитувати перед закриттям вкладки, що ще працює";
-"Ask in terminal" = "Запитати в терміналі";
 "Ask the same question again on Claude Sonnet 5.5" = "Поставити те саме запитання ще раз у Claude Sonnet 5.5";
-"Asking a question" = "Ставить запитання";
 "Asking you: %@" = "Запитує вас: %@";
 "Asleep" = "Спить";
 "Attach a picture" = "Прикріпити зображення";
@@ -241,7 +225,6 @@
 "Camera" = "Камера";
 "Camera access is off" = "Доступ до камери вимкнено";
 "Camera access is off for Scout." = "Доступ до камери для Scout вимкнено.";
-"Can't listen (%@)" = "Не вдається слухати (%@)";
 "Can't read %@ yet" = "Поки що не вдається прочитати %@";
 "Can't tell which chat this is" = "Не вдається визначити, що це за чат";
 "Cancel" = "Скасувати";
@@ -265,7 +248,6 @@
 "Choose a script" = "Виберіть скрипт";
 "Choose image…" = "Вибрати зображення…";
 "Choose shortcuts" = "Виберіть команди";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Виберіть папку %@ у вашій домашній папці. Scout створює там резервну копію %@ і додає свої хуки; більше нічого не змінюється.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Виберіть папку %@, щоб Scout бачив ваші сесії %@. Scout лише читає її.";
 "Choose the model" = "Виберіть модель";
 "Choose…" = "Вибрати…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Очистити останні станції та місця";
 "Clear shortcut" = "Очистити комбінацію клавіш";
 "Clear the clipboard history?" = "Очистити історію буфера обміну?";
-"Click Copy hooks." = "Натисніть Копіювати хуки.";
 "Click for %@ settings, drag to move" = "Клацніть, щоб відкрити параметри %@, перетягніть, щоб перемістити";
 "Click one, or use the arrow keys. Press Return to go on." = "Клацніть на одному з них або скористайтеся стрілками. Натисніть Return, щоб продовжити.";
 "Click one, or use the arrow keys. The window grows with it." = "Клацніть на одному з них або скористайтеся стрілками. Вікно збільшується разом із ним.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Закрити цю вкладку (⌘W)";
 "Close this tab?" = "Закрити цю вкладку?";
 "Cloudy" = "Хмарно";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex один раз просить переглянути нові хуки: введіть /hooks у Codex і довіряйте хукам Scout.";
 "Color" = "Колір";
 "Colors" = "Кольори";
 "Command" = "Command";
 "Compact" = "Компактний";
-"Connect" = "Підключити";
-"Connect %@?" = "Підключити %@?";
-"Connect %@…" = "Підключити %@…";
-"Connect Claude Code" = "Підключити Claude Code";
-"Connect Claude Code…" = "Підключити Claude Code…";
-"Connect Codex" = "Підключити Codex";
-"Connect Codex…" = "Підключити Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Підключити просить один раз вибрати папку %@; Scout створює резервну копію %@, додає лише власні записи й може знову їх прибрати (Відключити). Кожен хук є однією командою curl до 127.0.0.1; коли Scout закрито, він нічого не робить.";
 "Connected" = "Підключено";
-"Connected, but out of date" = "Підключено, але застаріло";
-"Connected. New sessions report to Scout." = "Підключено. Нові сесії звітують до Scout.";
 "Connecting" = "Підключення";
 "Connecting…" = "Підключення…";
 "Contacts" = "Контакти";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Копії, зроблені, коли на передньому плані одна з цих програм, ніколи не зберігаються.";
 "Copy" = "Копіювати";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Скопіюйте посилання (YouTube, X, Instagram, TikTok, Vimeo або Reddit), відкрийте Лоток, і Scout запропонує завантажити його, або киньте посилання на Лоток. Завантаження використовує yt-dlp, який ви встановлюєте самі; кнопка вище запускається лише тоді, коли ви її натискаєте. Читання скопійованого посилання потребує «Дозволити» для Scout у Параметрах системи › Конфіденційність і безпека › Вставлення з інших програм (macOS 15.4 і новіші).";
-"Copy hooks" = "Копіювати хуки";
-"Copy hooks instead" = "Натомість копіювати хуки";
 "Copy something and it shows up here." = "Скопіюйте щось, і воно з'явиться тут.";
 "Couldn't copy the picture" = "Не вдалося скопіювати зображення";
 "Couldn't copy the polaroid" = "Не вдалося скопіювати Polaroid";
@@ -399,9 +367,6 @@
 "Delete note" = "Видалити нотатку";
 "Delete this chat" = "Видалити цей чат";
 "Delete this script" = "Видалити цей скрипт";
-"Deny" = "Відмовити";
-"Disconnect" = "Відключити";
-"Disconnected. Your own hooks are untouched." = "Відключено. Ваші власні хуки не зачеплено.";
 "Disk" = "Диск";
 "Dismiss" = "Закрити";
 "Display" = "Дисплей";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Експортувати як %@…";
 "Exported %@" = "Експортовано %@";
 "Extra large" = "Дуже великий";
-"FAST ASK AI" = "FAST ASK AI";
 "FAVOURITES" = "FAVOURITES";
 "FROZEN" = "FROZEN";
 "Fahrenheit (°F)" = "Фаренгейт (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Забути попередні вкладки";
 "Forget previous tabs" = "Забути попередні вкладки";
 "Forget recent folders" = "Забути нещодавні папки";
-"Found automatically" = "Знайдено автоматично";
 "Found · %@" = "Знайдено · %@";
 "Free service, no key" = "Безкоштовний сервіс, без ключа";
 "Freezing drizzle" = "Паморозна мряка";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "HELLO FROM SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku для швидких запитань, Sonnet для складних";
 "Haptic feedback" = "Тактильний відгук";
-"Has a question" = "Має запитання";
 "Heavy rain" = "Сильний дощ";
 "Heavy showers" = "Сильні зливи";
 "Heavy snow" = "Сильний сніг";
@@ -533,9 +495,7 @@
 "Here" = "Тут";
 "Hide completed" = "Приховати виконані";
 "Hide it while an app is full screen" = "Приховувати, коли програма на весь екран";
-"Hide the answer" = "Приховати відповідь";
 "Hide the chats" = "Приховати чати";
-"Hide the paste code" = "Приховати код вставлення";
 "History" = "Історія";
 "History is paused" = "Історію призупинено";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Утримуйте ⌥⇧ із клавішею гучності або яскравості для кроків у чверть.";
@@ -605,15 +565,11 @@
 "Links" = "Посилання";
 "List" = "Список";
 "List name" = "Назва списку";
-"Listen for AI agents on this Mac" = "Прослуховувати ШІ-агентів на цьому Mac";
-"Listening on 127.0.0.1:%@" = "Слухає на 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Слухає на 127.0.0.1:%@ (%@ було зайнято)";
 "Listening…" = "Слухає…";
 "Lists" = "Списки";
 "Live" = "Наживо";
 "Live Activities" = "Активності наживо";
 "Loading…" = "Завантаження…";
-"Local bridge" = "Локальний міст";
 "Local weather. A chosen city works without it." = "Місцева погода. Вибране місто працює й без цього.";
 "Location" = "Розташування";
 "Location access" = "Доступ до розташування";
@@ -662,7 +618,6 @@
 "Models" = "Моделі";
 "More" = "Більше";
 "More agents: %lld" = "Більше агентів: %lld";
-"More…" = "Більше…";
 "Most capable, slowest" = "Найпотужніша, найповільніша";
 "Most items to keep" = "Найбільше елементів для збереження";
 "Mostly clear" = "Здебільшого ясно";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Ще не запитано";
 "Not available on this Mac" = "Недоступно на цьому Mac";
 "Not checked yet" = "Ще не перевірено";
-"Not connected" = "Не підключено";
 "Not found in your login shell's PATH" = "Не знайдено в PATH вашої оболонки входу";
 "Not found on this Mac" = "Не знайдено на цьому Mac";
 "Not installed" = "Не встановлено";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Лише дисплеї з вирізом";
 "Only events with a video link" = "Лише події з посиланням на відео";
 "Only for the Prompter to follow your voice." = "Лише для того, щоб Телесуфлер слідував за вашим голосом.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Потрібно лише для кнопок Дозволити, Відмовити та відповідей на запитання з вирізу; усе вище працює й без цього. Кожен агент запускає однорядковий хук, який надсилає дані до Scout на цьому Mac (лише 127.0.0.1, із приватним ключем). Scout змінює параметри вашого агента лише тоді, коли ви клацаєте Підключити й вибираєте його папку (спершу резервна копія, лише власні записи Scout), або коли ви самі вставляєте хуки. Якщо Scout не запущено, хук нічого не робить, а агент запитує у своєму терміналі як зазвичай.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Потрібно лише для кнопок Дозволити, Відмовити та відповідей на запитання з вирізу; усе вище працює й без цього. Кожен хук є однорядковою командою, що надсилає дані до Scout на цьому Mac (лише 127.0.0.1, із приватним ключем). Якщо Scout не запущено, хук нічого не робить, а агент запитує у своєму терміналі як зазвичай.";
-"Only the dot beside the notch" = "Лише крапка поруч із вирізом";
 "Only what you choose" = "Лише те, що ви виберете";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Лише якщо воно ще грало, коли Scout закрили. Scout завжди пам’ятає останню станцію та гучність.";
 "Open" = "Відкрити";
 "Open %@" = "Відкрити %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Відкрийте файл %@ (створіть його, якщо його немає) і вставте. Якщо в ньому вже є розділ \"hooks\", додайте ці записи всередину.";
 "Open %@ full size" = "Відкрити %@ на повний розмір";
 "Open %@ to finish" = "Відкрийте %@, щоб завершити";
 "Open %@, full size" = "Відкрити %@ на повний розмір";
@@ -808,7 +758,6 @@
 "Open To-do" = "Відкрити Завдання";
 "Open a Scout window first, then share" = "Спершу відкрийте вікно Scout, потім діліться";
 "Open a widget full size" = "Відкрити віджет на повний розмір";
-"Open in Ask AI" = "Відкрити в Запитайте ШІ";
 "Open or close the notch" = "Відкрити або закрити виріз";
 "Open tasks in total: %lld" = "Усього відкритих завдань: %lld";
 "Open the Calendar with the To-dos, full size" = "Відкрити Календар із Завданнями на повний розмір";
@@ -817,7 +766,6 @@
 "Open the notch" = "Відкрити виріз";
 "Open the notch on %@ (now: %@)" = "Відкривати виріз на вкладці %@ (зараз: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Завжди відкривати виріз на вкладці %@, а не на огляді";
-"Open the notch on Agents" = "Відкрити виріз на вкладці Агенти";
 "Open the notch when an agent needs you" = "Відкривати виріз, коли агент потребує вас";
 "Open the player" = "Відкрити програвач";
 "Open the to-do calendar" = "Відкрити календар завдань";
@@ -829,9 +777,7 @@
 "Opening" = "Відкриття";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Відкриває виріз із уже розгорнутим віджетом. Натисніть ще раз, щоб закрити. Сам виріз завжди відкривається на огляді.";
 "Option" = "Option";
-"Optional: answer from the notch" = "Необов'язково: відповідати з вирізу";
 "Options" = "Опції";
-"Or type your own answer" = "Або введіть власну відповідь";
 "Orange" = "Помаранчевий";
 "Output" = "Вивід";
 "Overcast" = "Похмуро";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Спливне вікно";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "Порт %u був зайнятий, тому цей блок називає порт %u. Якщо Scout пізніше знову запуститься на %u, скопіюйте його ще раз.";
 "Press a shortcut…" = "Натисніть комбінацію клавіш…";
 "Preview" = "Перегляд";
 "Preview a card" = "Попередній перегляд картки";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Класти перетворені файли до Лотка";
 "Put finished videos in the Tray" = "Класти готові відео до Лотка";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Повертає кожен параметр до стану першого дня. Ваші нотатки, буфер обміну та файли залишаються.";
-"Questions go to %@." = "Запитання надходять до %@.";
 "Questions go to %@. The answers stay here." = "Запитання надходять до %@. Відповіді залишаються тут.";
 "Quick" = "Швидко";
 "Quick Apps" = "Швидкі програми";
@@ -920,7 +864,6 @@
 "Reading" = "Читання";
 "Ready" = "Готово";
 "Ready for the next focus session" = "Готово до наступного сеансу фокусу";
-"Ready for the next task" = "Готово до наступного завдання";
 "Rec" = "Зап.";
 "Recent downloads" = "Нещодавні завантаження";
 "Record Shortcut" = "Записати комбінацію клавіш";
@@ -978,19 +921,15 @@
 "Save…" = "Зберегти…";
 "Scout Settings" = "Параметри Scout";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout запитує macOS лише тоді, коли ви вмикаєте або відкриваєте функцію, якій це потрібно. Під час запуску нічого не запитується.";
-"Scout can no longer open that folder. Connect again." = "Scout більше не може відкрити цю папку. Підключіть знову.";
 "Scout can't match what it hears to the script" = "Scout не може зіставити те, що чує, зі скриптом";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout поки не бачить папки ваших агентів. Дозвольте один раз, і кожна сесія Claude Code та Codex оселиться сама.";
 "Scout can't use this microphone" = "Scout не може використовувати цей мікрофон";
-"Scout could not open a local port." = "Scout не зміг відкрити локальний порт.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout не побачив ваш екран, тому це запитання пішло без зображення. Дозвольте Scout у Записі екрана.";
 "Scout couldn't take the picture this time, so that question went without it." = "Цього разу Scout не зміг зробити знімок, тому це запитання пішло без нього.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout сам знаходить сесії Claude Code та Codex";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout тепер слухає на порту %u (або його хуки з давнішої версії). Оновлення переписує лише записи Scout.";
 "Scout only watches for connections once you allow it." = "Scout стежить за з'єднаннями, лише коли ви дозволите.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout читає ваші події на цьому Mac, щоб заповнити віджет Календар і робочий простір. Нічого нікуди не надсилається.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout запам'ятовує те, що ви копіюєте, щоб ви могли знову вставити це з вирізу або нижньої полиці. Усе залишається на цьому Mac.";
-"Scout will add its hooks to %@ after backing the file up." = "Scout додасть свої хуки до %@ після створення резервної копії файлу.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Власний код, тексти та піктограма Scout оригінальні. Усе інше тут використовується за власною ліцензією.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Власні вікна Scout (Запитайте ШІ, нотатки, завдання, калькулятор та інші) знову відкриваються там, де були, з тим самим розміром і текстом, після виходу, оновлення чи перезапуску. Якщо дисплея вже немає, вони відкриваються на основному.";
 "Scout: my AI agents in my notch. %@" = "Scout: мої ШІ-агенти в моєму вирізі. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Шукати в інтернеті";
 "Searching the web…" = "Пошук в інтернеті…";
 "See the month, your agenda and a Join button for video calls." = "Показує місяць, ваш розклад і кнопку Увійти для відеодзвінків.";
-"See the whole conversation in the Ask AI tab" = "Дивіться всю розмову на вкладці Запитайте ШІ";
 "See your day here" = "Тут ви бачите свій день";
 "Select a note or start a new one" = "Виберіть нотатку або створіть нову";
 "Select a note or start a new one." = "Виберіть нотатку або створіть нову.";
 "Selected: %lld" = "Вибрано: %lld";
 "Send" = "Надіслати";
-"Send answers" = "Надіслати відповіді";
 "Send to Apple Notes" = "Надіслати до Нотаток";
 "Send to a nearby device" = "Надіслати на пристрій поблизу";
 "Sensitivity" = "Чутливість";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Показувати AirPods та їхню батарею, коли вони підключаються";
 "Show Scout in the menu bar" = "Показувати Scout у рядку меню";
 "Show a Join card when the meeting starts" = "Показувати картку Увійти, коли починається зустріч";
-"Show a card under the notch" = "Показувати картку під вирізом";
 "Show a card when a download finishes" = "Показувати картку, коли завантаження завершується";
 "Show a count next to the notch while the Tray holds files" = "Показувати кількість поруч із вирізом, поки в Лотку є файли";
 "Show a countdown" = "Показувати зворотний відлік";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Показувати кожне відкрите завдання незалежно від дня";
 "Show in Finder" = "Показати у Finder";
 "Show in full screen" = "Показувати на весь екран";
-"Show me the paste code" = "Показати мені код вставлення";
 "Show music from" = "Показувати музику з";
 "Show music next to the notch while it plays" = "Показувати музику поруч із вирізом, поки вона грає";
 "Show my calendar in the notch" = "Показувати мій календар у вирізі";
@@ -1107,9 +1042,7 @@
 "Square" = "Квадрат";
 "Start" = "Старт";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Запустіть Claude Code або Codex, і кожна сесія з'явиться тут сама зі своїм прогресом. Нічого підключати не потрібно.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Запустіть Codex і введіть /hooks, щоб під час першого запуску довірити хуки Scout. Потім запустіть нову сесію.";
 "Start a %lld-minute focus timer for this task" = "Запустити таймер фокусу на %lld хв для цього завдання";
-"Start a new Claude Code session. It appears in the notch." = "Запустити нову сесію Claude Code. Вона з'явиться у вирізі.";
 "Start again" = "Почати знову";
 "Start folder" = "Початкова папка";
 "Start the camera when the Mirror widget appears" = "Запускати камеру, коли з'являється віджет Дзеркало";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Розмір тексту: %lld пт";
 "That API key was rejected. Check it in Settings › Ask AI." = "Цей ключ API відхилено. Перевірте його в Параметрах › Запитайте ШІ.";
 "That didn't work" = "Не вийшло";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "Це не папка %@ у вашій домашній папці. Підключіть знову й виберіть її.";
 "That one did not go through" = "Це не пройшло";
 "That's the end" = "Це кінець";
 "The %@ uses the camera, so it never opens by itself" = "Функція %@ використовує камеру, тому ніколи не відкривається сама";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Вимкнено";
 "Two-finger swipe on the notch" = "Проведення двома пальцями по вирізу";
 "Type a city, region or country, or pick a country." = "Введіть місто, регіон або країну чи виберіть країну.";
-"Type your own…" = "Введіть власне…";
 "Typing: the notch stays open" = "Введення: виріз залишається відкритим";
 "Unknown format" = "Невідомий формат";
 "Unlicense (only if you install it)" = "Unlicense (лише якщо ви його встановите)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Доки не ввімкнено, запитання йдуть без зображення.";
 "Untitled" = "Без назви";
 "Untitled script" = "Скрипт без назви";
-"Update" = "Оновити";
 "Updates" = "Оновлення";
 "Updating the to-do list" = "Оновлення списку завдань";
 "Upload %@" = "Вивантажити %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Чекає на вас";
 "Waiting for your OK" = "Чекає вашого підтвердження";
 "Waiting for your voice" = "Чекає на ваш голос";
-"Wants to use %@" = "Хоче використати %@";
-"Wants to use %@: %@" = "Хоче використати %@: %@";
-"Wants to use a tool" = "Хоче використати інструмент";
-"Wants to use a tool: %@" = "Хоче використати інструмент: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Теплий папір, темний текст і яскраві акценти. Легко читати вдень.";
 "Warn at" = "Попереджати при";
 "Warn when the battery is low" = "Попереджати, коли заряд батареї низький";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "До чого Scout може отримати доступ і чому він запитує.";
 "What shows next to the notch while it is closed." = "Що показується поруч із вирізом, поки він закритий.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Коли надходить повідомлення, під вирізом опускається картка з відправником, текстом і полем для відповіді. Вона мовчить, поки програма Повідомлення на передньому плані. Scout ніколи нічого не надсилає, якщо ви самі не введете відповідь і не натиснете Return.";
-"When an agent needs an answer" = "Коли агентові потрібна відповідь";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Коли ви змінюєте гучність клавішами, у рядку меню або іншою програмою, рівень показується й поруч із вирізом.";
 "Where stations come from" = "Звідки беруться станції";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Поки грає музика, працює таймер або завершується завантаження, виріз збільшується, щоб це показати. Наведіть на нього, і відкриється Nook: віджети, файли, буфер обміну, календар. Відійдіть, і він знову сховається.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Zoom %@, назад до всього зображення";
 "Zoom in" = "Збільшити";
 "Zoom out" = "Зменшити";
-"all edits this session" = "усі зміни цього сеансу";
 "charged" = "заряджено";
 "charging" = "заряджається";
 "code" = "код";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS не дозволив змінити: %@";
 "me and my agents" = "я та мої агенти";
 "min" = "хв";
-"mode %@" = "режим %@";
 "model name" = "назва моделі";
 "needs you" = "потребує вас";
 "no battery" = "без батареї";

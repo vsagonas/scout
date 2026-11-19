@@ -66,7 +66,7 @@ enum CalendarFeature {
         // The island itself: the Calendar tab on show, the To-dos entry (it opens the same view), a narrow island, and a taller one.
         func island(_ name: String, workspace: WorkspaceKind, width: CGFloat? = nil, height: CGFloat = 700, openHeight: CGFloat? = nil) {
             Gallery.register(name, size: CGSize(width: 1560, height: height)) {
-                let _ = DashGallery.seed(agents: 2, asking: false, playing: false, live: [])
+                let _ = DashGallery.seed(agents: 2, playing: false, live: [])
                 NotchScene(size: CGSize(width: 1560, height: height), open: true, workspace: workspace, live: NookLive(playing: false, openTodos: 0, agents: 2),
                            widthCap: width, openHeight: openHeight, showNotchRect: true)
             }

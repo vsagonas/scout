@@ -31,7 +31,6 @@ Brand names are never declined or merged with prepositions beyond the article: "
 | den (the agents' room) | cantinho |
 | card / tab | cartão / separador |
 | shelf | prateleira |
-| hooks | hooks |
 | Keychain | Keychain (macOS Portuguese says Acesso às Chaves) |
 | Calendar / Notes / Messages / Music / Contacts | Calendário / Notas / Mensagens / Música / Contactos |
 | Activity Monitor / Weather / Maps / Clock | Monitor de Atividade / Meteorologia / Mapas / Relógio |
@@ -49,13 +48,13 @@ Brand names are never declined or merged with prepositions beyond the article: "
 | Home folder | pasta pessoal |
 | menu bar | barra de menus |
 | Light / Dark / System | Claro / Escuro / Sistema |
-| Allow / Deny / Always allow | Permitir / Recusar / Permitir sempre |
-| Connect / Disconnect / Join | Ligar / Desligar / Entrar (short, for the Join pill) |
+| Allow | Permitir |
+| Join | Entrar (short, for the Join pill) |
 | Snooze | Adiar |
 | Mute / Unmute | Silenciar / Reativar som |
 | modifier keys | Command, Option, Control, Shift |
 
-Pixel labels use capitals and no accents (the 5x7 font has none): TODO O DIA, A DORMIR, ADEUS %@ (BYE), A LIGAR, FEITO, PERGUNTA IA, FAVORITOS, CONGELADO, OLA DO SCOUT, RECENTES, LISTA, LISTAS, PRECISA DE SI, SEM AGENTES, SEM SINAL, EM PAUSA, LOCAIS, PRONTO, A INICIAR, PARADO, BEM-VINDO %@, FLUXO, A TRABALHAR.
+Pixel labels use capitals and no accents (the 5x7 font has none): TODO O DIA, A DORMIR, ADEUS %@ (BYE), A LIGAR, FEITO, FAVORITOS, CONGELADO, OLA DO SCOUT, RECENTES, LISTA, LISTAS, PRECISA DE SI, SEM AGENTES, SEM SINAL, EM PAUSA, LOCAIS, PRONTO, A INICIAR, PARADO, BEM-VINDO %@, FLUXO, A TRABALHAR.
 
 Style: “ ” quotes, "…" as one character, no dashes as separators (a colon instead: "Foco: %@"), Western digits, "por cento" for spoken percentages.
 

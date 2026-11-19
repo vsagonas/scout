@@ -9,7 +9,7 @@ Buttons and menu items are infinitives, as Latvian software writes them (Atvērt
 | AI | MI (mākslīgais intelekts) |
 | Ask AI | Jautāt MI |
 | Ask anything (placeholder, 12 characters at most) | Jautā jebko |
-| Fast Ask AI | Ātrais MI (pixel label ATRAIS MI) |
+| Fast Ask AI | Ātrais MI |
 | widget / widgets | logrīks / logrīki |
 | notch | izgriezums (the camera cut-out) |
 | dashboard | panelis |
@@ -23,7 +23,6 @@ Buttons and menu items are infinitives, as Latvian software writes them (Atvērt
 | chat / chats | čats / čati |
 | API key, key | API atslēga, atslēga (key on the keyboard: taustiņš) |
 | clipboard | starpliktuve |
-| hooks | hooks (Latin, a technical word; the command is /hooks) |
 | session | sesija |
 | tab | cilne |
 | Prompter | Prompters (teleprompter = prompters) |
@@ -34,8 +33,7 @@ Buttons and menu items are infinitives, as Latvian software writes them (Atvērt
 | To-do / To-dos | Uzdevums / Uzdevumi |
 | timer / alarm | taimeris / modinātājs |
 | Light / Dark / System | Gaišs / Tumšs / Sistēma |
-| Allow / Deny / Always allow | Atļaut / Aizliegt / Vienmēr atļaut |
-| Connect / Disconnect | Savienot / Atvienot |
+| Allow | Atļaut |
 | Copy / Delete / Cancel / Close | Kopēt / Dzēst / Atcelt / Aizvērt |
 | Join (meeting button) | Ienākt |
 | Break (Pomodoro) | Atpūta (pause = Pauze) |

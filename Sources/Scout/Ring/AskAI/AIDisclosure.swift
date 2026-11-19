@@ -16,17 +16,9 @@ enum AIDisclosure {
         String(localized: "Screen: each question takes a picture of your screen and sends it to \(company(current(provider))) with the question")
     }
 
-    /// A few words for the small dashboard views.
-    static func goesTo(_ provider: AIProvider? = nil) -> String { String(localized: "Questions go to \(company(current(provider))).") }
-
     /// The dashboard widget's empty line: where the questions go, and that the answers stay in the widget.
     static func goesToAnswersStayHere(_ provider: AIProvider? = nil) -> String {
         String(localized: "Questions go to \(company(current(provider))). The answers stay here.")
-    }
-
-    /// The Fast Ask AI strip's empty line.
-    static func askAboveAnswerShowsHere(_ provider: AIProvider? = nil) -> String {
-        String(localized: "Ask anything above. Questions go to \(company(current(provider))). The answer shows here.")
     }
 
     /// The Ask AI panel's empty view (the hint and the disclosure, as two short paragraphs).

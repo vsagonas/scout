@@ -1,4 +1,3 @@
 Not built yet
 Off in the gallery
-Scripted run: this page works on a test folder, not on your real settings.
 Would run %@

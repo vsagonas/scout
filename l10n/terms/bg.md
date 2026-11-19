@@ -9,7 +9,7 @@ Informal "ти" imperative for buttons and menu items (Добави, Отвор�
 | AI | ИИ |
 | Ask AI | Питай ИИ |
 | Ask anything (placeholder, 12 characters at most) | Питай нещо |
-| Fast Ask AI | Бърз ИИ (pixel label FAST ASK AI stays English) |
+| Fast Ask AI | Бърз ИИ |
 | widget / widgets | уиджет / уиджети |
 | notch | изрез (the camera cut-out) |
 | dashboard | табло |
@@ -23,7 +23,6 @@ Informal "ти" imperative for buttons and menu items (Добави, Отвор�
 | chat / chats | чат / чатове |
 | API key, key | API ключ, ключ (key on the keyboard: клавиш) |
 | clipboard | клипборд |
-| hooks | hooks (Latin, a technical word; the command is /hooks) |
 | session | сесия |
 | tab | раздел |
 | Prompter | Промптер (teleprompter = промптер) |
@@ -36,8 +35,7 @@ Informal "ти" imperative for buttons and menu items (Добави, Отвор�
 | To-do / To-dos | Задача / Задачи |
 | timer / alarm | таймер / будилник |
 | Light / Dark / System | Светъл / Тъмен / Системен |
-| Allow / Deny / Always allow | Разреши / Откажи / Винаги разрешавай |
-| Connect / Disconnect | Свържи / Прекъсни връзката |
+| Allow | Разреши |
 | Copy / Delete / Cancel / Close | Копирай / Изтрий / Отказ / Затвори |
 | minute (short) / words per minute | мин / думи/мин |
 

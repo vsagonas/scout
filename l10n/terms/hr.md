@@ -31,7 +31,6 @@ Brand names are never declined: "aplikacije Scout", "u alatu Codex", "u Keychain
 | den (the agents' room) | kućica |
 | card / tab | kartica (both) |
 | shelf | polica |
-| hooks | hookovi |
 | Keychain | Keychain (macOS Croatian says Privjesak) |
 | Calendar / Notes / Messages / Music / Contacts | Kalendar / Bilješke / Poruke / Glazba / Kontakti |
 | Activity Monitor / Weather / Maps / Clock | Nadzor aktivnosti / Vrijeme / Karte / Sat |
@@ -48,13 +47,13 @@ Brand names are never declined: "aplikacije Scout", "u alatu Codex", "u Keychain
 | Downloads (macOS folder) / Movies | Preuzimanja / Filmovi |
 | menu bar | traka izbornika |
 | Light / Dark / System | Svijetli / Tamni / Sustav |
-| Allow / Deny / Always allow | Dopusti / Odbij / Uvijek dopusti |
-| Connect / Disconnect / Join | Poveži / Prekini vezu / Uđi (short, for the Join pill) |
+| Allow | Dopusti |
+| Join | Uđi (short, for the Join pill) |
 | Snooze | Odgodi |
 | Mute / Unmute | Utišaj / Uključi zvuk |
 | modifier keys | Command, Option, Control, Shift |
 
-Pixel labels use capitals and no diacritics (the 5x7 font has none): CIJELI DAN, SPAVA, CAO %@ (BYE), POVEZIVANJE, GOTOVO, BRZO PITANJE AI, OMILJENO, ZAMRZNUTO, SCOUT VAS POZDRAVLJA, NAJNOVIJE, POPIS, POPISI, TREBA VAS, NEMA AGENATA, NEMA SIGNALA, PAUZIRANO, MJESTA, SPREMNO, POKRECE SE, ZAUSTAVLJENO, DOBRODOSLI %@, TIJEK, RADI.
+Pixel labels use capitals and no diacritics (the 5x7 font has none): CIJELI DAN, SPAVA, CAO %@ (BYE), POVEZIVANJE, GOTOVO, OMILJENO, ZAMRZNUTO, SCOUT VAS POZDRAVLJA, NAJNOVIJE, POPIS, POPISI, TREBA VAS, NEMA AGENATA, NEMA SIGNALA, PAUZIRANO, MJESTA, SPREMNO, POKRECE SE, ZAUSTAVLJENO, DOBRODOSLI %@, TIJEK, RADI.
 
 Style: „ ” quotes, "…" as one character, no dashes as separators (a colon instead: "Fokus: %@"), Western digits, "posto" for spoken percentages.
 

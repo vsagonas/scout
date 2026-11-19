@@ -28,7 +28,7 @@ enum L10nSelfTest {
     /// Radio, Mirror and the closed notch. Names that do not exist in this build are skipped.
     static let sampleViews = [
         "dash-agents", "dash-expanded", "dash-header", "dash-live", "dash90-today", "dash90-pulse", "dash90-media", "widget-clipboard",
-        "settings-general", "settings-appearance", "settings-notch", "settings-nook", "settings-permissions", "settings-shortcuts", "settings-agents",
+        "settings-general", "settings-appearance", "settings-notch", "settings-nook", "settings-permissions", "settings-shortcuts", "agents-settings",
         "settings-askai", "settings-calendar", "settings-clipboard", "settings-prompter", "settings-radio", "settings-about",
         "agents-workspace", "agents-grid", "agents-widget", "askai-notch", "calendar-merged", "prompter-panel", "radio-boombox", "mirror-widget",
         "mirror-view", "notch-closed", "live-meeting", "live-timer", "live-downloads", "weather-widget", "tray-workspace", "tv-dash",

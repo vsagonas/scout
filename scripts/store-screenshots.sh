@@ -17,7 +17,7 @@ render() {
   if kill -0 "$pid" 2>/dev/null; then kill "$pid"; echo "Render timed out after 240 s" >&2; fi
   wait "$pid" 2>/dev/null || true
 }
-# Other scripts (live.sh) sometimes quit every running Scout, which cuts a render short: retry until all 16 images exist (8 frames, light and dark; the old answer frame 4 is gone with the feature).
+# Other scripts (live.sh) sometimes quit every running Scout, which cuts a render short: retry until all 16 images exist (8 frames, light and dark).
 COUNT=0
 for attempt in 1 2 3 4 5 6; do
   render

@@ -24,7 +24,6 @@ Style: 你 (informal, as in the store text), short labels. Full-width ，。：�
 | Mirror | 镜子 |
 | Pulse | 脉冲 |
 | Tuner | 调谐器 |
-| hooks (Claude Code / Codex) | 钩子 |
 | Settings | 设置 |
 | System Settings | 系统设置 |
 | Privacy & Security | 隐私与安全性 |

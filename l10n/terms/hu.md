@@ -31,7 +31,6 @@ Hungarian adds suffixes to words, so brand names are never declined: "a Scout ap
 | den (the agents' room) | kuckó |
 | card / tab | kártya / lap |
 | shelf | polc |
-| hooks | hookok |
 | Keychain | Keychain (macOS Hungarian says Kulcskarika) |
 | Shortcuts (Apple app) | Parancsok |
 | Calendar / Notes / Messages / Music / Contacts | Naptár / Jegyzetek / Üzenetek / Zene / Névjegyek |
@@ -50,13 +49,13 @@ Hungarian adds suffixes to words, so brand names are never declined: "a Scout ap
 | Home folder | Saját mappa |
 | menu bar | menüsor |
 | Light / Dark / System | Világos / Sötét / Rendszer |
-| Allow / Deny / Always allow | Engedélyez / Elutasít / Mindig engedélyez |
-| Connect / Disconnect / Join | Csatlakoztatás / Leválasztás / Belépés (short, for the Join pill) |
+| Allow | Engedélyez |
+| Join | Belépés (short, for the Join pill) |
 | Snooze | Szundi |
 | Mute / Unmute | Hang ki / Hang be (tooltips), Némítva |
 | modifier keys | Command, Option, Control, Shift |
 
-Pixel labels use capitals and no accents (the 5x7 font has none): EGESZ NAP, ALSZIK, VISZLAT %@ (BYE), KAPCSOLODAS, KESZ, GYORS KERDES AI, KEDVENCEK, ALLOKEP, SCOUT UDVOZOL, LEGUTOBBI, LISTA, ONRE VAR, NINCS UGYNOK, NINCS JEL, SZUNETEL, HELYEK, KESZEN ALL, INDUL, LEALLITVA, UDV %@, FOLYAMAT, DOLGOZIK.
+Pixel labels use capitals and no accents (the 5x7 font has none): EGESZ NAP, ALSZIK, VISZLAT %@ (BYE), KAPCSOLODAS, KESZ, KEDVENCEK, ALLOKEP, SCOUT UDVOZOL, LEGUTOBBI, LISTA, ONRE VAR, NINCS UGYNOK, NINCS JEL, SZUNETEL, HELYEK, KESZEN ALL, INDUL, LEALLITVA, UDV %@, FOLYAMAT, DOLGOZIK.
 
 Style: „ ” quotes, "…" as one character, no dashes as separators (a colon instead: "Fókusz: %@"), Western digits.
 

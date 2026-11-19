@@ -8,7 +8,7 @@ Menu items and buttons are infinitives or nouns the way macOS writes them (От�
 | agent / agents | агент / агенты (never "скаут", "бот") |
 | AI | ИИ |
 | Ask AI | Спросить ИИ (the store writes «Спросить ИИ») |
-| Fast Ask AI | Быстрый ИИ (pixel label FAST ASK AI stays English) |
+| Fast Ask AI | Быстрый ИИ |
 | widget / widgets | виджет / виджеты |
 | notch | вырез |
 | dashboard | дашборд |
@@ -21,9 +21,7 @@ Menu items and buttons are infinitives or nouns the way macOS writes them (От�
 | chat / chats | чат / чаты |
 | API key, key | ключ API, ключ |
 | clipboard | буфер обмена |
-| hooks | хуки |
-| Connect / Disconnect | Подключить / Отключить |
-| Allow / Deny | Разрешить / Запретить |
+| Allow | Разрешить |
 | tab | вкладка |
 | Prompter | Телесуфлёр |
 | Mirror | Зеркало |

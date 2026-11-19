@@ -1,6 +1,6 @@
 import SwiftUI
 
-// The scout's own little world in pixels: the five poses as pictures (the scout plus what it touches), the beanbag, the walls of a room.
+// The agent's own little world in pixels: the five poses as pictures (the agent plus what it touches), the beanbag, the walls of a room.
 // The den's furniture is in AgentDenArt. Same pixel grid for all of it.
 
 /// One moment of a big figure's face: the step on the wing's beat (`AgentFaceArt.tick`) and whether it lies in the couple of seconds after
@@ -36,13 +36,13 @@ enum AgentPixelWorld {
 
     // MARK: The five poses
 
-    /// A scout of `look` wearing `variant`'s face: the wing's frame of `face`'s step (it moves), or the face at rest when there is no step
+    /// An agent of `look` wearing `variant`'s face: the wing's frame of `face`'s step (it moves), or the face at rest when there is no step
     /// (`blink` shuts the resting eyes of a working or an asking one).
     private static func scout(_ look: AgentNookLook, blink: Bool = false, face: AgentFaceStep?, variant: Int) -> PixelSprite {
         AgentPixelSprites.figure(look, tick: face?.tick, burst: face?.burst ?? false, eyesShut: blink, variant: variant)
     }
 
-    /// Where the scout's figure stands in the picture of a look (`picture(look:...)`, furniture or not): the figure's left column and top row,
+    /// Where the agent's figure stands in the picture of a look (`picture(look:...)`, furniture or not): the figure's left column and top row,
     /// and its height in cells (a seated or sleeping one has no feet: 14 rows, the others 16). Its head, and so its middle, is column
     /// `AgentPixelSprites.figureWidth / 2` of the figure. A still picture's place: the finished one hops a row up in its second frame.
     /// The helpers stand right under this (`AgentDenLayout.helperSpot`, `AgentNookHelperPlace`).
@@ -66,8 +66,8 @@ enum AgentPixelWorld {
         }
     }
 
-    /// The scout and what it touches, for a look. `frame` is 0 or 1 (a second frame only while Reduce Motion is off), `blink` shuts the eyes.
-    /// With `furniture` false only the scout (and its bubble) is drawn.
+    /// The agent and what it touches, for a look. `frame` is 0 or 1 (a second frame only while Reduce Motion is off), `blink` shuts the eyes.
+    /// With `furniture` false only the agent (and its bubble) is drawn.
     /// `variant` is the agent's face from `AgentFaceArt.variants`: the figure's head is that face (the same headwear in the same colour).
     /// `face` is the step of that face: with one the head moves like the
     /// wing's face of that agent (glances, blinks, calls, laughs), without one (a still picture) it is at rest and `blink` applies.

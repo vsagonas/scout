@@ -111,7 +111,7 @@ final class LEDAgentWatcher {
             .sink { [weak self, weak store] flashed in
                 guard let self, let store else { return }
                 MainActor.assumeIsolated {
-                    self.processFlashes(flashed, sessions: store.sessions, pending: store.pending, loaded: self.env.loaded(store))
+                    self.processFlashes(flashed, sessions: store.sessions, loaded: self.env.loaded(store))
                 }
             }
             .store(in: &cancellables)
@@ -193,14 +193,14 @@ final class LEDAgentWatcher {
 
     /// The automatic opening lit a row because the notch was in use. A finished agent is announced on the board; one that needs
     /// you is not (the lit row says it, and the board says only the good news).
-    func processFlashes(_ flashed: Set<String>, sessions: [AgentSession], pending: [AgentPending], loaded: Bool, now: Date? = nil) {
+    func processFlashes(_ flashed: Set<String>, sessions: [AgentSession], loaded: Bool, now: Date? = nil) {
         let fresh = flashed.subtracting(flashedBefore)
         flashedBefore = flashed
         let now = now ?? env.now()
         guard isReady(loaded: loaded, now: now) else { return }
         for id in fresh.sorted() {
             guard let s = sessions.first(where: { $0.id == id }) else { continue }
-            if s.state == .working || AgentWingSummary.asks(s, pending: pending) { continue }
+            if s.state == .working || AgentWingSummary.asks(s) { continue }
             let name = Self.label(s.project)
             announcements.post(LEDAnnouncements.boardText(String(localized: "\(name) DONE ✓"), english: "\(name) DONE ✓"), tint: s.agent.tint, symbol: s.agent.symbol)
         }

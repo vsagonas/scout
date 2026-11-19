@@ -10,7 +10,7 @@ import SwiftUI
 enum AgentNookSelfTest {
     /// Called from `HeadlessChecks.registerAll()`.
     static func register() {
-        AgentTVSelfTest.register()   // agenttv.selftest: Agent TV and the den (channel, ON AIR, NO SIGNAL, widths, spots, clicks, the keys)
+        AgentTVSelfTest.register()   // agenttv.selftest: Agent TV and the den (channel, ON AIR, NO SIGNAL, widths, spots, clicks, the close key)
         DebugCommands.register("agentnook.selftest") { params in
             guard ScoutRuntime.isAutomation else { return }
             let out = params["out"].map { URL(fileURLWithPath: $0) } ?? AppPaths.file("agentnook-selftest.txt")
@@ -98,16 +98,15 @@ enum AgentNookSelfTest {
             r.check("look \(look.title): light, flag, pose, moon", look.light == light && look.flag == flag && look.pose == pose && look.hasMoon == moon,
                     "light \(look.light) flag \(String(describing: look.flag)) pose \(look.pose) moon \(look.hasMoon)")
         }
-        r.check("working session looks working", AgentNookLook.of(session(.working, steps: [step("Bash")]), needsYou: false) == .working)
-        r.check("a waiting session needs you", AgentNookLook.of(session(.waiting), needsYou: false) == .needsYou)
-        r.check("a held request makes any session need you", AgentNookLook.of(session(.working), needsYou: true) == .needsYou)
-        r.check("done looks finished", AgentNookLook.of(session(.done, steps: [step("Edit", done: true)]), needsYou: false) == .finished)
-        r.check("done after a failed step looks stopped", AgentNookLook.of(session(.done, steps: [step("Bash", done: true, failed: true)]), needsYou: false) == .stopped)
-        r.check("idle after a failed step looks stopped", AgentNookLook.of(session(.idle, steps: [step("Bash", done: true, failed: true)]), needsYou: false) == .stopped)
+        r.check("working session looks working", AgentNookLook.of(session(.working, steps: [step("Bash")])) == .working)
+        r.check("a waiting session needs you", AgentNookLook.of(session(.waiting)) == .needsYou)
+        r.check("done looks finished", AgentNookLook.of(session(.done, steps: [step("Edit", done: true)])) == .finished)
+        r.check("done after a failed step looks stopped", AgentNookLook.of(session(.done, steps: [step("Bash", done: true, failed: true)])) == .stopped)
+        r.check("idle after a failed step looks stopped", AgentNookLook.of(session(.idle, steps: [step("Bash", done: true, failed: true)])) == .stopped)
         r.check("a failed step earlier in the turn does not stop a working agent",
-                AgentNookLook.of(session(.working, steps: [step("Bash", done: true, failed: true), step("Edit")]), needsYou: false) == .working)
-        r.check("a later good step clears the failure", AgentNookLook.of(session(.done, steps: [step("Bash", done: true, failed: true), step("Edit", done: true)]), needsYou: false) == .finished)
-        r.check("idle looks idle", AgentNookLook.of(session(.idle), needsYou: false) == .idle)
+                AgentNookLook.of(session(.working, steps: [step("Bash", done: true, failed: true), step("Edit")])) == .working)
+        r.check("a later good step clears the failure", AgentNookLook.of(session(.done, steps: [step("Bash", done: true, failed: true), step("Edit", done: true)])) == .finished)
+        r.check("idle looks idle", AgentNookLook.of(session(.idle)) == .idle)
     }
 
     // MARK: Props
@@ -128,16 +127,16 @@ enum AgentNookSelfTest {
     private static func helpers(_ r: inout Report) {
         let expected: [(Int, Int, Int)] = [(0, 0, 0), (1, 1, 0), (3, 3, 0), (4, 4, 0), (5, 4, 1), (7, 4, 3), (12, 4, 8)]
         for (n, drawn, more) in expected {
-            let m = AgentNookRoomModel(session(.working, helpers: n), needsYou: false)
+            let m = AgentNookRoomModel(session(.working, helpers: n))
             r.check("\(n) helpers: \(drawn) drawn and \(more > 0 ? "+\(more)" : "no +N")", m.helpersDrawn == drawn && m.helpersMore == more, "drawn \(m.helpersDrawn) more \(m.helpersMore)")
         }
-        let narrow = AgentNookRoomModel(session(.working, helpers: 7), needsYou: false).helperSlots(available: 42, mini: 7.5, spacing: 2.5, label: 11)
+        let narrow = AgentNookRoomModel(session(.working, helpers: 7)).helperSlots(available: 42, mini: 7.5, spacing: 2.5, label: 11)
         r.check("a narrow compact room draws fewer helpers so +N stays whole", narrow.drawn == 3 && narrow.more == 4, "\(narrow)")
-        let roomy = AgentNookRoomModel(session(.working, helpers: 7), needsYou: false).helperSlots(available: 120, mini: 11, spacing: 3, label: 14)
+        let roomy = AgentNookRoomModel(session(.working, helpers: 7)).helperSlots(available: 120, mini: 11, spacing: 3, label: 14)
         r.check("a roomy room draws four helpers and +3", roomy.drawn == 4 && roomy.more == 3, "\(roomy)")
-        r.check("helpers are awake while the agent works", AgentNookRoomModel(session(.working, helpers: 2), needsYou: false).helpersAwake)
-        r.check("helpers sleep when it does not", !AgentNookRoomModel(session(.idle, helpers: 2), needsYou: false).helpersAwake
-                && !AgentNookRoomModel(session(.done, helpers: 2), needsYou: false).helpersAwake)
+        r.check("helpers are awake while the agent works", AgentNookRoomModel(session(.working, helpers: 2)).helpersAwake)
+        r.check("helpers sleep when it does not", !AgentNookRoomModel(session(.idle, helpers: 2)).helpersAwake
+                && !AgentNookRoomModel(session(.done, helpers: 2)).helpersAwake)
     }
 
     private static func todos(_ done: Int, _ total: Int) -> [AgentTodo] {
@@ -145,17 +144,17 @@ enum AgentNookSelfTest {
     }
 
     private static func blocks(_ r: inout Report) {
-        let working = AgentNookRoomModel(session(.working, todos: todos(2, 5)), needsYou: false)
+        let working = AgentNookRoomModel(session(.working, todos: todos(2, 5)))
         r.check("5 to-dos, 2 done: two filled, one current, two empty", working.blocks(cap: 8) == [.done, .done, .current, .todo, .todo] && working.progressText == "2/5",
                 "\(working.blocks(cap: 8)) \(String(describing: working.progressText))")
-        let finished = AgentNookRoomModel(session(.done, todos: todos(4, 4)), needsYou: false)
+        let finished = AgentNookRoomModel(session(.done, todos: todos(4, 4)))
         r.check("all done: every block filled", finished.blocks(cap: 8) == Array(repeating: .done, count: 4) && finished.progressText == "4/4")
-        let none = AgentNookRoomModel(session(.working), needsYou: false)
+        let none = AgentNookRoomModel(session(.working))
         r.check("no to-dos: no shelf", none.blocks(cap: 8).isEmpty && none.progressText == nil)
-        let long = AgentNookRoomModel(session(.working, todos: todos(10, 20)), needsYou: false)
+        let long = AgentNookRoomModel(session(.working, todos: todos(10, 20)))
         let longBlocks = long.blocks(cap: 8)
         r.check("20 to-dos, 10 done: eight blocks, half filled", longBlocks.count == 8 && longBlocks.filter { $0 == .done }.count == 4 && long.progressText == "10/20", "\(longBlocks)")
-        let waiting = AgentNookRoomModel(session(.waiting, todos: todos(1, 3)), needsYou: false)
+        let waiting = AgentNookRoomModel(session(.waiting, todos: todos(1, 3)))
         r.check("a room that is not working has no \"current\" block", !waiting.blocks(cap: 8).contains(.current))
     }
 
@@ -175,25 +174,26 @@ enum AgentNookSelfTest {
     private static func order(_ r: inout Report) {
         AgentFoundOrder.reset()
         let sessions = AgentNookSamples.sessions(9)
-        let held = AgentPending(sessionID: "nk-6", kind: .permission, tool: "Bash", summary: "terraform apply", detail: "", questions: [], rawToolInput: nil, agent: .codex)
-        let models = AgentNookPanelView.models(sessions, pending: [held])
+        let models = AgentNookPanelView.models(sessions)
         r.check("every agent gets a room", models.count == 9)
         let fixed = sessions.sorted { ($0.startedAt, $0.id) < ($1.startedAt, $1.id) }.map(\.id)
         r.check("the rooms stand in the fixed order: the first started on the left", models.map(\.id) == fixed, "\(models.map(\.id))")
         var changed = sessions
         for i in changed.indices { changed[i].state = changed[i].state == .working ? .waiting : .working }
-        r.check("  a change of state moves nobody", AgentNookPanelView.models(changed, pending: []).map(\.id) == fixed)
+        r.check("  a change of state moves nobody", AgentNookPanelView.models(changed).map(\.id) == fixed)
         let three = AgentTileMetrics.keepOrder(models, limit: 3) { AgentTileMetrics.need($0.look) }
         let needing = models.filter { $0.look == .needsYou }
         r.check("  when only three fit, the rooms that need you are among them, still in the fixed order",
                 three.count == 3 && needing.allSatisfy { m in three.contains { $0.id == m.id } } && three.map(\.id) == fixed.filter { id in three.contains { $0.id == id } },
                 "\(three.map(\.id)), needing \(needing.map(\.id))")
         let four = Array(sessions.prefix(4))
-        let faces = AgentWingSummary.make(sessions: four, pending: []).faces.map(\.id)
-        let rooms = AgentNookPanelView.models(four, pending: []).map(\.id)
-        let stations = AgentDenStation.stations(four, pending: []).map(\.id)
+        let faces = AgentWingSummary.make(sessions: four).faces.map(\.id)
+        let rooms = AgentNookPanelView.models(four).map(\.id)
+        let stations = AgentDenStation.stations(four).map(\.id)
         r.check("the faces, the TV's rooms and the den's stations stand in the same order", faces == rooms && rooms == stations, "faces \(faces) rooms \(rooms) stations \(stations)")
-        let six = AgentWingSummary.make(sessions: sessions, pending: [held])
+        var late = sessions   // the 6th stops on a question too, far from the front of the row
+        if let i = late.firstIndex(where: { $0.id == "nk-6" }) { late[i].state = .waiting; late[i].note = AgentNote.asking("Which region?"); late[i].finishedAt = nil }
+        let six = AgentWingSummary.make(sessions: late)
         r.check("  with more agents than faces, the one that needs you has a face, and the faces keep the order", six.faces.contains { $0.id == "nk-6" }
                 && six.faces.map(\.id) == fixed.filter { id in six.faces.contains { $0.id == id } } && six.moreFaces == 9 - six.faces.count, "\(six.faces.map(\.id)) +\(six.moreFaces)")
     }
@@ -231,7 +231,7 @@ enum AgentNookSelfTest {
     private static func rows(_ r: inout Report) {
         let big = CGSize(width: 140, height: 105)
         let all = AgentNookRoomRows.plan(helpers: 3, todos: 4, style: .roomy, size: big)
-        r.check("a roomy room keeps the scout its space", all.bunk && all.shelf, "\(all)")
+        r.check("a roomy room keeps the agent its space", all.bunk && all.shelf, "\(all)")
         let nothing = AgentNookRoomRows.plan(helpers: 0, todos: 0, style: .roomy, size: big)
         r.check("no helpers, no to-dos: no bunk, no shelf, the sentence fits", !nothing.bunk && !nothing.shelf && nothing.sentence, "\(nothing)")
         let compact = AgentNookRoomRows.plan(helpers: 2, todos: 3, style: .compact, size: CGSize(width: 78, height: 105))
@@ -239,7 +239,7 @@ enum AgentNookSelfTest {
         let wide = AgentNookRoomRows.plan(helpers: 2, todos: 3, style: .roomy, size: CGSize(width: 188, height: 105))
         r.check("a wide room puts the bunk and the shelf side by side", wide.combined && !wide.side, "\(wide)")
         let widest = AgentNookRoomRows.plan(helpers: 2, todos: 3, style: .roomy, size: CGSize(width: 280, height: 105))
-        r.check("a very wide room puts the column of details beside the scout", widest.side && widest.bunk && widest.shelf && widest.sentence, "\(widest)")
+        r.check("a very wide room puts the column of details beside the agent", widest.side && widest.bunk && widest.shelf && widest.sentence, "\(widest)")
         let sideNone = AgentNookRoomRows.plan(helpers: 0, todos: 0, style: .roomy, size: CGSize(width: 280, height: 105))
         r.check("no helpers, no to-dos: no bunk and no shelf even in the column", sideNone.side && !sideNone.bunk && !sideNone.shelf, "\(sideNone)")
     }
@@ -303,7 +303,7 @@ enum AgentNookSelfTest {
         let size = CGSize(width: 140, height: 105)
         for look in AgentNookLook.allCases {
             func room(_ helpers: Int) -> [UInt8]? {
-                let model = AgentNookRoomModel(AgentNookSamples.one(look, prop: .pencil, kind: .claude, project: "site", helpers: helpers, todos: 0, done: 0), needsYou: look == .needsYou)
+                let model = AgentNookRoomModel(AgentNookSamples.one(look, prop: .pencil, kind: .claude, project: "site", helpers: helpers, todos: 0, done: 0))
                 return rendered(AgentNookRoom(model: model, style: .roomy, reserveRow: true, shared: true), size: size, scale: 2)
             }
             let plan = AgentNookRoomRows.plan(helpers: 3, todos: 0, style: .roomy, size: size, needsRow: true)
@@ -316,17 +316,17 @@ enum AgentNookSelfTest {
     }
 
     private static func scale(_ r: inout Report) {
-        // One pixel size for every scout of a screen, a multiple of half a point.
+        // One pixel size for every agent of a screen, a multiple of half a point.
         for (style, size) in [(AgentNookLayout.Style.roomy, CGSize(width: 88, height: 75)), (.compact, CGSize(width: 54, height: 75)), (.compact, CGSize(width: 66, height: 100)), (.roomy, CGSize(width: 102, height: 100)), (.compact, CGSize(width: 83, height: 100))] {
             let px = AgentNookRoomRows.scoutPixel(style: style, size: size, needsRow: true)
             let withRow = AgentNookRoomRows.plan(helpers: 3, todos: 4, style: style, size: size, needsRow: true)
             let without = AgentNookRoomRows.plan(helpers: 0, todos: 0, style: style, size: size, needsRow: true)
-            r.check("\(style) room \(Int(size.width))x\(Int(size.height)): a room with helpers and a counter and one without have the same scout size (\(px) pt)",
+            r.check("\(style) room \(Int(size.width))x\(Int(size.height)): a room with helpers and a counter and one without have the same agent size (\(px) pt)",
                     withRow.px == without.px && withRow.px == px && AgentPixel.isCrisp(px) && withRow.bunk && withRow.shelf, "\(withRow.px) \(without.px)")
         }
-        r.check("the scout is as big as fits: bigger in a taller room", AgentNookRoomRows.scoutPixel(style: .roomy, size: CGSize(width: 102, height: 100), needsRow: true) > AgentNookRoomRows.scoutPixel(style: .roomy, size: CGSize(width: 88, height: 75), needsRow: true))
+        r.check("the agent is as big as fits: bigger in a taller room", AgentNookRoomRows.scoutPixel(style: .roomy, size: CGSize(width: 102, height: 100), needsRow: true) > AgentNookRoomRows.scoutPixel(style: .roomy, size: CGSize(width: 88, height: 75), needsRow: true))
         // A counter is never clipped: blocks go first, then the number stays, then both.
-        let model = AgentNookRoomModel(AgentNookSamples.sessions(1)[0], needsYou: false)
+        let model = AgentNookRoomModel(AgentNookSamples.sessions(1)[0])
         let text = model.progressText ?? "2/5"
         let number = RetroPixelLayout.width(text, pixel: 1)
         let full = AgentNookShelf.blocksThatFit(total: 5, text: text, cap: 5, block: 5, pixel: 1, available: 200)
@@ -350,7 +350,7 @@ enum AgentNookSelfTest {
     // MARK: The empty house and the clock
 
     private static func empty(_ r: inout Report) {
-        r.check("no agents, no rooms", AgentNookPanelView.models([], pending: []).isEmpty)
+        r.check("no agents, no rooms", AgentNookPanelView.models([]).isEmpty)
         let plan = AgentNookLayout.plan(panelWidth: AgentNookLayout.width(cells: 6), count: 0)
         r.check("the empty house shows no rooms and no door", plan.shown == 0 && plan.more == 0)
         r.check("the empty house says its line", AgentNookEmptyRoom.line == "Nobody home yet. Agents move in by themselves.")
@@ -465,11 +465,11 @@ enum AgentNookSelfTest {
             r.check("the face icon renders", false)
         }
         // The summary and the two wings.
-        let store = AgentsStore(directory: AppPaths.folder("agentface-test"))
+        let store = AgentsStore()
         var list = AgentSession.synthetic(6)
         list[2].lastMessage = "I changed the footer links, ran the linter and everything passes, so it is your move now to look at the page."
         store.loadSessions(list)
-        let summary = AgentWingSummary.make(sessions: store.sessions, pending: store.pending)
+        let summary = AgentWingSummary.make(sessions: store.sessions)
         r.check("the left wing has four faces and \"+2\" (six sessions, every one of them counts): the asking one among them, in the fixed order",
                 summary.faces.count == 4 && summary.moreFaces == 2 && summary.faces.contains { $0.mood == .asking && $0.agent == .codex }
                 && summary.faces.map(\.id) == AgentTileMetrics.ordered(store.sessions).map(\.id).filter { id in summary.faces.contains { $0.id == id } },
@@ -477,9 +477,9 @@ enum AgentNookSelfTest {
         let left = NSHostingView(rootView: AgentWingLeft(store: store, frozenAt: 0).fixedSize())
         r.check("  the left wing is as high as a face and well inside the 120 pt a wing can hold", left.fittingSize.height <= 19 && left.fittingSize.width <= 100, "\(left.fittingSize)")
         r.check("the right wing says what the asking agent asks (no timer anywhere)", { if case .message("Which region?", asks: true) = summary.right { return true } else { return false } }(), "\(summary.right)")
-        let waiting = AgentsStore(directory: AppPaths.folder("agentface-test-waiting"))
+        let waiting = AgentsStore()
         waiting.loadSessions([list[3], list[2]])
-        let turn = AgentWingSummary.make(sessions: waiting.sessions, pending: [])
+        let turn = AgentWingSummary.make(sessions: waiting.sessions)
         r.check("a working agent without a to-do list shows no timer: the message of the agent that waits takes its place",
                 { if case .message(let text, asks: false) = turn.right { return text.hasPrefix("I changed the footer links") } else { return false } }(), "\(turn.right)")
         AgentWingRight.lastRevealed = ""   // a fresh wing: nothing said yet
@@ -501,9 +501,9 @@ enum AgentNookSelfTest {
         let snug = AgentWingRight.usedWidth(long, width: longW)
         r.check("    no empty space: the box is the longer line itself (\(Int(snug)) of \(Int(longW)) pt)", longW - snug <= 2.5, "\(snug) / \(longW)")
         r.check("  a short one (\"Done.\") stays one narrow line", AgentWingRight.textWidth("Done.") < 40 && AgentWingRight.lines("Done.", width: AgentWingRight.textWidth("Done.")) == 1)
-        let quiet = AgentsStore(directory: AppPaths.folder("agentface-test-quiet"))
+        let quiet = AgentsStore()
         quiet.loadSessions([list[3]])
-        r.check("  with nobody waiting and no to-do list the right wing is empty (the timer is gone)", AgentWingSummary.make(sessions: quiet.sessions, pending: []).right == .none)
+        r.check("  with nobody waiting and no to-do list the right wing is empty (the timer is gone)", AgentWingSummary.make(sessions: quiet.sessions).right == .none)
     }
 
     /// Every sprite table is rectangular and uses only letters its palette has; a pixel is a multiple of half a point.
@@ -516,7 +516,7 @@ enum AgentNookSelfTest {
             r.check("sprite \(name) uses only its palette", missing.isEmpty, "\(Set(missing))")
         }
         let main = [AgentPixelSprites.scout, AgentPixelSprites.scoutBlink, AgentPixelSprites.scoutHappy, AgentPixelSprites.scoutDizzy, AgentPixelSprites.scoutSeated]
-        r.check("the main scout is 16 x 16 (up to 24 x 24)", main.allSatisfy { $0.width == 16 && $0.height >= 14 && $0.height <= 24 } && AgentPixelSprites.scoutAsleep.width <= 24,
+        r.check("the main agent is 16 x 16 (up to 24 x 24)", main.allSatisfy { $0.width == 16 && $0.height >= 14 && $0.height <= 24 } && AgentPixelSprites.scoutAsleep.width <= 24,
                 "\(main.map { "\($0.width)x\($0.height)" })")
         r.check("a helper is 8 x 8", AgentPixelSprites.miniAwake.width == 8 && AgentPixelSprites.miniAwake.height == 8 && AgentPixelSprites.miniAsleep.width == 8 && AgentPixelSprites.miniAsleep.height == 8)
         r.check("a prop is 8 x 8", AgentNookProp.allCases.allSatisfy { AgentPixelSprites.prop($0).width == 8 && AgentPixelSprites.prop($0).height == 8 })
@@ -728,8 +728,8 @@ enum AgentNookSelfTest {
         var drawn = true, detail = ""
         for look in looks {
             let session = AgentNookSamples.one(look, prop: .globe, kind: .claude, project: "site", helpers: 0, todos: 0, done: 0)
-            let model = AgentNookRoomModel(session, needsYou: look == .needsYou)
-            let station = AgentDenStation(session, needsYou: look == .needsYou)
+            let model = AgentNookRoomModel(session)
+            let station = AgentDenStation(session)
             func views(_ v: Int) -> [Int] {
                 [pinkPixels(rendered(AgentNookCritter(kind: .claude, variant: v, pose: look.pose, prop: .globe, pixel: 3), size: CGSize(width: 140, height: 105))),
                  pinkPixels(rendered(AgentNookRoom(model: model, style: .roomy, variant: v), size: CGSize(width: 140, height: 105))),
@@ -810,7 +810,7 @@ enum AgentNookSelfTest {
     private static func closedNotch(_ r: inout Report) async {
         let all = AgentSession.synthetic(6)
         for (count, rest) in [(1, true), (2, true), (4, true), (2, false)] {
-            let store = AgentsStore(directory: AppPaths.folder("agentnook-test-closed-\(count)-\(rest)"))
+            let store = AgentsStore()
             store.loadSessions(Array(all.prefix(count)))
             let size = CGSize(width: 560, height: 60)
             let model = NotchScreenModel(geometry: .sample16, panelSize: size)
@@ -867,7 +867,7 @@ enum AgentNookSelfTest {
     /// The open dashboard with the Agent TV first: a little bigger, the same shape, its glass rim about `cornerGap` from the island's left
     /// edge. The picture is saved next to the report for a look.
     private static func tvCorner(_ r: inout Report, out: URL) async {
-        let store = AgentsStore(directory: AppPaths.folder("agentnook-test-tvcorner"))
+        let store = AgentsStore()
         store.loadSessions(Array(AgentSession.synthetic(6).prefix(4)))
         let size = CGSize(width: 1300, height: 760)
         let model = NotchScreenModel(geometry: .sample16, panelSize: size)
@@ -994,10 +994,10 @@ enum AgentNookSelfTest {
         for cells in [3, 4, 6, 10, 16] {
             for count in [1, 3, 9] {
                 let width = AgentNookLayout.width(cells: cells)
-                let rig = Rig(store: AgentNookSamples.store("fit\(cells)-\(count)", AgentNookSamples.sessions(count)), width: width)
+                let rig = Rig(store: AgentNookSamples.store(AgentNookSamples.sessions(count)), width: width)
                 try? await Task.sleep(nanoseconds: 350_000_000)
                 let plan = AgentTVLayout.plan(panelWidth: width, count: count)
-                let fitted = AgentTileMetrics.keepOrder(AgentNookPanelView.models(rig.store.sessions, pending: rig.store.pending), limit: plan.shown) { AgentTileMetrics.need($0.look) }
+                let fitted = AgentTileMetrics.keepOrder(AgentNookPanelView.models(rig.store.sessions), limit: plan.shown) { AgentTileMetrics.need($0.look) }
                 let rooms = fitted.compactMap { rig.frames[$0.id] }
                 // The rooms stand on the glass of the set (the kit's set or the wide console), so they must stay on it.
                 let inside = !rooms.isEmpty && rooms.allSatisfy { $0.minX >= plan.glass.minX - 0.5 && $0.maxX <= plan.glass.maxX + 0.5 && $0.maxY <= plan.glass.maxY + 0.5 }
@@ -1010,11 +1010,11 @@ enum AgentNookSelfTest {
 
     private static func clicks(_ r: inout Report) async {
         let sessions = AgentNookSamples.sessions(9)
-        let store = AgentNookSamples.store("selftest", sessions)
+        let store = AgentNookSamples.store(sessions)
         let rig = Rig(store: store)
         defer { rig.close() }
         try? await Task.sleep(nanoseconds: 700_000_000)
-        let all = AgentNookPanelView.models(store.sessions, pending: store.pending)
+        let all = AgentNookPanelView.models(store.sessions)
         let plan = AgentTVLayout.plan(panelWidth: rig.size.width, count: all.count)
         let models = AgentTileMetrics.keepOrder(all, limit: plan.shown) { AgentTileMetrics.need($0.look) }   // the rooms that fit
         r.check("the rooms are on the panel, one per fitted agent", models.allSatisfy { rig.frames[$0.id] != nil } && (plan.more == 0 || rig.frames["door"] != nil),
@@ -1057,20 +1057,19 @@ enum AgentNookSelfTest {
         r.check("the style switch is off for these checks", !Retro.is8bit)
 
         let sessions = AgentNookSamples.sessions(9)
-        let held = AgentPending(sessionID: "nk-6", kind: .permission, tool: "Bash", summary: "terraform apply", detail: "terraform apply", questions: [], rawToolInput: nil, agent: .codex)
-        let rows = AgentMiniRow.rows(sessions, pending: [held])
+        let rows = AgentMiniRow.rows(sessions)
         r.check("every agent gets a row, in the fixed order (the TV's and the den's)", rows.count == 9 && rows.map(\.id) == AgentTileMetrics.ordered(sessions).map(\.id), "\(rows.map(\.id))")
         r.check("the rows follow the one rule for \"needs you\"", rows.allSatisfy { row in
             let s = sessions.first { $0.id == row.id }!
-            return (row.look == .needsYou) == AgentWingSummary.asks(s, pending: [held])
+            return (row.look == .needsYou) == AgentWingSummary.asks(s)
         })
-        let heldRow = rows.first { $0.id == "nk-6" }
-        r.check("a held request's row says what it wants", heldRow?.line == "Wants to use Bash: terraform apply", heldRow?.line ?? "-")
+        let askRow = rows.first { $0.id == "nk-3" }
+        r.check("an asking row says its question", askRow?.line == "Which region?", askRow?.line ?? "-")
         let working = rows.first { $0.id == "nk-1" }
         r.check("a working row says its latest sentence, its helpers and its to-do progress", working?.line == "I'll fix the three footer links, then run the linter." && working?.helpers == 2 && working?.progress == "2/5", "\(String(describing: working))")
         r.check("an agent without to-dos has no progress", rows.first { $0.id == "nk-3" }?.progress == nil)
         r.check("a state dot has one colour per state, five in all", Set(AgentNookLook.allCases.map { AgentMini.color($0) }).count == 5)
-        r.check("the panel's fact is the working count, else the agents", AgentMiniPanelLayout.fact(rows) == "4 working" && AgentMiniPanelLayout.fact(Array(rows.filter { $0.look == .idle })) == "Agents: 1", AgentMiniPanelLayout.fact(rows))
+        r.check("the panel's fact is the working count, else the agents", AgentMiniPanelLayout.fact(rows) == "5 working" && AgentMiniPanelLayout.fact(Array(rows.filter { $0.look == .idle })) == "Agents: 1", AgentMiniPanelLayout.fact(rows))
 
         // The panel follows the dashboard's grid (no title line, the grid's insets and "+N more"), so a 140 pt panel holds five one-line rows.
         let table: [(CGFloat, Int, Int, Int, Bool)] = [(150, 3, 3, 0, true), (150, 4, 3, 1, true), (150, 0, 0, 0, true), (300, 4, 4, 0, false), (300, 5, 5, 0, false), (300, 9, 4, 5, false), (800, 1, 1, 0, false)]
@@ -1090,10 +1089,10 @@ enum AgentNookSelfTest {
         // Drawn: every shown row has its frame inside the panel, the +N line is there when agents are left out, and a click picks an agent.
         for cells in [3, 6, 16] { for count in [0, 1, 3, 9] {
             let width = AgentNookLayout.width(cells: cells)
-            let rig = Rig(store: AgentNookSamples.store("min\(cells)-\(count)", AgentNookSamples.sessions(count)), width: width)
+            let rig = Rig(store: AgentNookSamples.store(AgentNookSamples.sessions(count)), width: width)
             try? await Task.sleep(nanoseconds: 350_000_000)
             let plan = AgentMiniPanelLayout.plan(width: width, count: count)
-            let list = AgentTileMetrics.keepOrder(AgentMiniRow.rows(rig.store.sessions, pending: rig.store.pending), limit: plan.shown) { AgentTileMetrics.need($0.look) }
+            let list = AgentTileMetrics.keepOrder(AgentMiniRow.rows(rig.store.sessions), limit: plan.shown) { AgentTileMetrics.need($0.look) }
             let shown = list.compactMap { rig.frames[$0.id] }
             let inside = shown.count == plan.shown && shown.allSatisfy { $0.minX >= -0.5 && $0.maxX <= width + 0.5 && $0.maxY <= NookMetrics.widgetHeight + 0.5 }
             let door = rig.frames["door"].map { $0.maxY <= NookMetrics.widgetHeight + 0.5 } ?? (plan.more == 0)
@@ -1102,12 +1101,12 @@ enum AgentNookSelfTest {
             r.check("  and the panel draws something", rig.litFraction() > 0.005, "lit \(rig.litFraction())")   // the panel is black now: only its words and dots light
             rig.close()
         } }
-        let store = AgentNookSamples.store("min-click", sessions)
+        let store = AgentNookSamples.store(sessions)
         let rig = Rig(store: store, width: AgentNookLayout.width(cells: 6))
         defer { rig.close() }
         try? await Task.sleep(nanoseconds: 700_000_000)
         let plan6 = AgentMiniPanelLayout.plan(width: AgentNookLayout.width(cells: 6), count: store.sessions.count)
-        let list = AgentTileMetrics.keepOrder(AgentMiniRow.rows(store.sessions, pending: store.pending), limit: plan6.shown) { AgentTileMetrics.need($0.look) }
+        let list = AgentTileMetrics.keepOrder(AgentMiniRow.rows(store.sessions), limit: plan6.shown) { AgentTileMetrics.need($0.look) }
         guard let second = list.dropFirst().first, let frame = rig.frames[second.id] else { r.check("a row can be clicked", false, "frames \(rig.frames.keys.sorted())"); return }
         rig.post(.mouseMoved, CGPoint(x: frame.midX, y: frame.midY))
         try? await Task.sleep(nanoseconds: 200_000_000)
@@ -1128,13 +1127,13 @@ enum AgentNookSelfTest {
         // The wing: the cpu symbol, the number at work and the number that need you (the summary's faces stay for the 8-bit wing).
         var list6 = AgentSession.synthetic(6)
         list6[2].lastMessage = "I changed the footer links."
-        let wings = AgentsStore(directory: AppPaths.folder("agentmini-wing"))
+        let wings = AgentsStore()
         wings.loadSessions(list6)
-        let summary = AgentWingSummary.make(sessions: wings.sessions, pending: wings.pending)
+        let summary = AgentWingSummary.make(sessions: wings.sessions)
         let wing = NSHostingView(rootView: AgentWingLeft(store: wings).fixedSize())
         r.check("the left wing is small: a symbol and two numbers, as high as a face and under 60 pt wide", wing.fittingSize.height <= 19 && wing.fittingSize.width <= 60 && wing.fittingSize.width >= 36, "\(wing.fittingSize)")
         r.check("  it counts the agents at work and those that need you", summary.working == 3 && summary.needs == 1 && summary.faces.count == 4, "working \(summary.working) needs \(summary.needs)")
-        let quiet = AgentsStore(directory: AppPaths.folder("agentmini-wing-quiet"))
+        let quiet = AgentsStore()
         quiet.loadSessions([])
         let glyph = NSHostingView(rootView: AgentWingLeft(store: quiet).fixedSize())
         r.check("  nobody home: only the symbol", glyph.fittingSize.width <= 18 && glyph.fittingSize.height <= 19, "\(glyph.fittingSize)")

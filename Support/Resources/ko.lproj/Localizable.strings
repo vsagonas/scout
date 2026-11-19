@@ -10,9 +10,7 @@
 "%@ ended." = "%@ 종료됨.";
 "%@ failed" = "%@ 실패";
 "%@ finished after %lld min" = "%@ 완료(%lld분 후)";
-"%@ finished in %@" = "%@이(가) %@에서 완료했습니다";
 "%@ free" = "%@ 사용 가능";
-"%@ has a question" = "%@의 질문이 있습니다";
 "%@ has no sound" = "%@에는 소리가 없습니다";
 "%@ in %@" = "%@(%@)";
 "%@ installed" = "%@ 설치됨";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@은(는) ZIP 파일에 넣기에 너무 큽니다(4GB 제한)";
 "%@ isn't installed" = "%@이(가) 설치되어 있지 않습니다";
 "%@ isn't supported on this Mac" = "%@은(는) 이 Mac에서 지원되지 않습니다";
-"%@ isn't valid JSON, so Scout left it alone." = "%@은(는) 유효한 JSON이 아니므로 Scout가 그대로 두었습니다.";
 "%@ key" = "%@ 키";
 "%@ left" = "%@ 남음";
 "%@ needs you" = "%@의 확인이 필요합니다";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "%@ 타이머 완료";
 "%@ to full" = "완전 충전까지 %@";
 "%@ used" = "%@ 사용 중";
-"%@ wants to use %@" = "%@이(가) %@을(를) 사용하려고 합니다";
-"%@ wants to use a tool" = "%@이(가) 도구를 사용하려고 합니다";
 "%@ · %@ of %@" = "%@ · %@/%@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · 총 %lld개 미완료";
@@ -71,7 +66,6 @@
 "%lld running" = "%lld개 실행 중";
 "%lld working" = "%lld개 작업 중";
 "%lld wpm" = "%lld wpm";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+%lld개 더";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "먼저 설정 › AI에게 질문에서 %@ API 키를 추가하세요.";
 "Add your API key in Settings › Ask AI first." = "먼저 설정 › AI에게 질문에서 API 키를 추가하세요.";
 "Add your Claude API key in Settings › Ask AI first." = "먼저 설정 › AI에게 질문에서 Claude API 키를 추가하세요.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Scout의 훅을 ~/.claude/settings.json에 추가합니다(진행 이벤트, 권한 요청, 질문). 내 훅은 그대로 둡니다. 파일은 먼저 백업됩니다.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Scout의 훅을 ~/.codex/hooks.json에 추가합니다. Codex는 처음에 새 훅을 검토하도록 요청합니다. Codex에서 /hooks를 입력하고 Scout의 훅을 신뢰하세요.";
 "Agent" = "에이전트";
 "Agent TV" = "에이전트 TV";
 "Agent TV den" = "에이전트 TV 방";
@@ -164,15 +156,10 @@
 "Allow…" = "허용…";
 "Also show it while an app is full screen" = "앱이 전체 화면일 때도 표시";
 "Also used for “%@”: only one of them will work." = "“%@”에도 사용 중입니다. 둘 중 하나만 작동합니다.";
-"Always allow" = "항상 허용";
-"Always allow %@" = "%@ 항상 허용";
-"Always allow adds: %@" = "‘항상 허용’으로 추가되는 항목: %@";
 "Amber" = "호박색";
 "An agent tab cannot be kept as the opening tab" = "에이전트 탭은 시작 탭으로 유지할 수 없습니다";
 "Announcements" = "공지";
 "Answer copied" = "답변이 복사됨";
-"Answer in terminal" = "터미널에서 답변";
-"Answer permissions and questions from the notch" = "노치에서 권한 요청과 질문에 답변";
 "Answers" = "답변";
 "Any country" = "모든 국가";
 "Appearance" = "모양";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "사진에 대해 질문";
 "Ask about your screen" = "화면에 대해 질문";
 "Ask anything" = "뭐든 질문";
-"Ask anything above. Questions go to %@. The answer shows here." = "위에 무엇이든 질문하세요. 질문은 %@에 전송됩니다. 답변이 여기에 표시됩니다.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "무엇이든 질문하세요.\nReturn은 전송, ⌥Return은 줄 바꿈입니다.\n\n질문은 %@에 전송됩니다. 화면을 켜면 화면 사진이 함께 전송됩니다.";
 "Ask before closing a tab that is still running" = "실행 중인 탭을 닫기 전에 확인";
-"Ask in terminal" = "터미널에서 질문";
 "Ask the same question again on Claude Sonnet 5.5" = "같은 질문을 Claude Sonnet 5.5로 다시 질문";
-"Asking a question" = "질문 중";
 "Asking you: %@" = "질문: %@";
 "Asleep" = "잠자는 중";
 "Attach a picture" = "사진 첨부";
@@ -241,7 +225,6 @@
 "Camera" = "카메라";
 "Camera access is off" = "카메라 접근이 꺼져 있습니다";
 "Camera access is off for Scout." = "Scout의 카메라 접근이 꺼져 있습니다.";
-"Can't listen (%@)" = "수신 대기할 수 없음(%@)";
 "Can't read %@ yet" = "%@을(를) 아직 읽을 수 없습니다";
 "Can't tell which chat this is" = "어떤 채팅인지 알 수 없습니다";
 "Cancel" = "취소";
@@ -265,7 +248,6 @@
 "Choose a script" = "스크립트 선택";
 "Choose image…" = "이미지 선택…";
 "Choose shortcuts" = "단축어 선택";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "홈 폴더에서 %@ 폴더를 선택하세요. Scout는 거기에서 %@을(를) 백업하고 훅을 추가하며, 그 외에는 아무것도 바뀌지 않습니다.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Scout가 %2$@ 세션을 볼 수 있도록 %1$@ 폴더를 선택하세요. Scout는 읽기만 합니다.";
 "Choose the model" = "모델 선택";
 "Choose…" = "선택…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "최근 방송국과 장소 지우기";
 "Clear shortcut" = "단축키 지우기";
 "Clear the clipboard history?" = "클립보드 기록을 지울까요?";
-"Click Copy hooks." = "‘훅 복사’를 클릭하세요.";
 "Click for %@ settings, drag to move" = "클릭하면 %@ 설정, 드래그하면 이동";
 "Click one, or use the arrow keys. Press Return to go on." = "하나를 클릭하거나 화살표 키를 사용하세요. Return을 누르면 계속합니다.";
 "Click one, or use the arrow keys. The window grows with it." = "하나를 클릭하거나 화살표 키를 사용하세요. 윈도우도 함께 커집니다.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "이 탭 닫기(⌘W)";
 "Close this tab?" = "이 탭을 닫을까요?";
 "Cloudy" = "흐림";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex는 새 훅을 한 번 검토하도록 요청합니다. Codex에서 /hooks를 입력하고 Scout의 훅을 신뢰하세요.";
 "Color" = "색상";
 "Colors" = "색상";
 "Command" = "Command";
 "Compact" = "간략히";
-"Connect" = "연결";
-"Connect %@?" = "%@에 연결할까요?";
-"Connect %@…" = "%@ 연결…";
-"Connect Claude Code" = "Claude Code 연결";
-"Connect Claude Code…" = "Claude Code 연결…";
-"Connect Codex" = "Codex 연결";
-"Connect Codex…" = "Codex 연결…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "‘연결’은 %@ 폴더를 한 번 선택하도록 요청합니다. Scout는 %@을(를) 백업하고, 자신의 항목만 추가하며, 나중에 다시 제거할 수 있습니다(‘연결 해제’). 모든 훅은 127.0.0.1로 보내는 curl 명령 하나이며, Scout가 종료되어 있으면 아무 일도 하지 않습니다.";
 "Connected" = "연결됨";
-"Connected, but out of date" = "연결됨, 하지만 오래됨";
-"Connected. New sessions report to Scout." = "연결됨. 새 세션이 Scout에 보고합니다.";
 "Connecting" = "연결 중";
 "Connecting…" = "연결 중…";
 "Contacts" = "연락처";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "이 앱 중 하나가 맨 앞에 있을 때 한 복사는 저장되지 않습니다.";
 "Copy" = "복사";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "YouTube, X, Instagram, TikTok, Vimeo 또는 Reddit의 링크를 복사한 뒤 트레이를 열면 Scout가 다운로드를 제안합니다. 링크를 트레이에 끌어다 놓아도 됩니다. 다운로드에는 직접 설치하는 yt-dlp를 사용하며, 위의 버튼은 누를 때만 실행됩니다. 복사한 링크를 읽으려면 시스템 설정 › 개인정보 보호 및 보안 › 다른 앱에서 붙여넣기에서 Scout를 ‘허용’해야 합니다(macOS 15.4 이상).";
-"Copy hooks" = "훅 복사";
-"Copy hooks instead" = "대신 훅 복사";
 "Copy something and it shows up here." = "무언가를 복사하면 여기에 나타납니다.";
 "Couldn't copy the picture" = "사진을 복사할 수 없습니다";
 "Couldn't copy the polaroid" = "폴라로이드를 복사할 수 없습니다";
@@ -399,9 +367,6 @@
 "Delete note" = "메모 삭제";
 "Delete this chat" = "이 채팅 삭제";
 "Delete this script" = "이 스크립트 삭제";
-"Deny" = "거부";
-"Disconnect" = "연결 해제";
-"Disconnected. Your own hooks are untouched." = "연결이 해제되었습니다. 내 훅은 그대로입니다.";
 "Disk" = "디스크";
 "Dismiss" = "닫기";
 "Display" = "디스플레이";
@@ -457,7 +422,6 @@
 "Export as %@…" = "내보내기: %@…";
 "Exported %@" = "%@ 내보내기 완료";
 "Extra large" = "매우 크게";
-"FAST ASK AI" = "FAST ASK AI";
 "FAVOURITES" = "FAVOURITES";
 "FROZEN" = "FROZEN";
 "Fahrenheit (°F)" = "화씨(°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "이전 탭 잊기";
 "Forget previous tabs" = "이전 탭 잊기";
 "Forget recent folders" = "최근 폴더 잊기";
-"Found automatically" = "자동으로 찾음";
 "Found · %@" = "찾음 · %@";
 "Free service, no key" = "무료 서비스, 키 필요 없음";
 "Freezing drizzle" = "어는 이슬비";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "HELLO FROM SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "간단한 질문에는 Haiku, 어려운 질문에는 Sonnet";
 "Haptic feedback" = "햅틱 피드백";
-"Has a question" = "질문이 있음";
 "Heavy rain" = "폭우";
 "Heavy showers" = "강한 소나기";
 "Heavy snow" = "폭설";
@@ -533,9 +495,7 @@
 "Here" = "여기";
 "Hide completed" = "완료 항목 숨기기";
 "Hide it while an app is full screen" = "앱이 전체 화면일 때는 숨기기";
-"Hide the answer" = "답변 숨기기";
 "Hide the chats" = "채팅 숨기기";
-"Hide the paste code" = "붙여넣기 코드 숨기기";
 "History" = "기록";
 "History is paused" = "기록이 일시 정지됨";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "⌥⇧를 누른 채 음량 또는 밝기 키를 누르면 4분의 1 단위로 조절됩니다.";
@@ -605,15 +565,11 @@
 "Links" = "링크";
 "List" = "목록";
 "List name" = "목록 이름";
-"Listen for AI agents on this Mac" = "이 Mac의 AI 에이전트 수신 대기";
-"Listening on 127.0.0.1:%@" = "127.0.0.1:%@에서 수신 대기 중";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "127.0.0.1:%@에서 수신 대기 중(%@ 포트는 사용 중이었음)";
 "Listening…" = "듣는 중…";
 "Lists" = "목록";
 "Live" = "라이브";
 "Live Activities" = "실시간 활동";
 "Loading…" = "로드 중…";
-"Local bridge" = "로컬 브리지";
 "Local weather. A chosen city works without it." = "현지 날씨용입니다. 도시를 직접 선택하면 필요하지 않습니다.";
 "Location" = "위치";
 "Location access" = "위치 접근";
@@ -662,7 +618,6 @@
 "Models" = "모델";
 "More" = "더 보기";
 "More agents: %lld" = "더 많은 에이전트: %lld";
-"More…" = "더 보기…";
 "Most capable, slowest" = "가장 뛰어남, 가장 느림";
 "Most items to keep" = "보관할 최대 항목 수";
 "Mostly clear" = "대체로 맑음";
@@ -736,7 +691,6 @@
 "Not asked yet" = "아직 요청하지 않음";
 "Not available on this Mac" = "이 Mac에서는 사용할 수 없음";
 "Not checked yet" = "아직 확인하지 않음";
-"Not connected" = "연결되지 않음";
 "Not found in your login shell's PATH" = "로그인 셸의 PATH에서 찾을 수 없음";
 "Not found on this Mac" = "이 Mac에서 찾을 수 없음";
 "Not installed" = "설치되지 않음";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "노치가 있는 디스플레이만";
 "Only events with a video link" = "비디오 링크가 있는 이벤트만";
 "Only for the Prompter to follow your voice." = "텔레프롬프터가 목소리를 따라가는 용도로만 사용합니다.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "‘허용’, ‘거부’와 노치에서 질문에 답변할 때만 필요하며, 위의 모든 기능은 이것 없이도 작동합니다. 각 에이전트는 이 Mac의 Scout로 전송하는 한 줄짜리 훅을 실행합니다(127.0.0.1만, 비공개 키 포함). Scout는 ‘연결’을 클릭하고 에이전트의 폴더를 선택할 때(먼저 백업되며 Scout 자신의 항목만), 또는 훅을 직접 붙여넣을 때만 에이전트의 설정을 변경합니다. Scout가 실행 중이 아니면 훅은 아무 일도 하지 않으며 에이전트는 평소처럼 터미널에서 묻습니다.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "‘허용’, ‘거부’와 노치에서 질문에 답변할 때만 필요하며, 위의 모든 기능은 이것 없이도 작동합니다. 각 훅은 이 Mac의 Scout로 전송하는 한 줄짜리 명령입니다(127.0.0.1만, 비공개 키 포함). Scout가 실행 중이 아니면 훅은 아무 일도 하지 않으며 에이전트는 평소처럼 터미널에서 묻습니다.";
-"Only the dot beside the notch" = "노치 옆의 점만";
 "Only what you choose" = "선택한 것만";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Scout를 종료할 때 아직 재생 중이었던 경우에만. Scout는 마지막 방송국과 음량을 항상 기억합니다.";
 "Open" = "열기";
 "Open %@" = "%@ 열기";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "%@을(를) 열고(없으면 만들어서) 붙여넣으세요. 이미 \"hooks\" 섹션이 있으면 그 안에 이 항목들을 추가하세요.";
 "Open %@ full size" = "%@ 전체 크기로 열기";
 "Open %@ to finish" = "%@을(를) 열어 마무리";
 "Open %@, full size" = "%@, 전체 크기로 열기";
@@ -808,7 +758,6 @@
 "Open To-do" = "할 일 열기";
 "Open a Scout window first, then share" = "먼저 Scout 윈도우를 연 다음 공유하세요";
 "Open a widget full size" = "위젯을 전체 크기로 열기";
-"Open in Ask AI" = "AI에게 질문에서 열기";
 "Open or close the notch" = "노치 열기 또는 닫기";
 "Open tasks in total: %lld" = "전체 미완료 할 일: %lld";
 "Open the Calendar with the To-dos, full size" = "할 일이 있는 캘린더를 전체 크기로 열기";
@@ -817,7 +766,6 @@
 "Open the notch" = "노치 열기";
 "Open the notch on %@ (now: %@)" = "%@에서 노치 열기(현재: %@)";
 "Open the notch on %@ every time, not the dashboard" = "대시보드 대신 항상 %@에서 노치 열기";
-"Open the notch on Agents" = "에이전트에서 노치 열기";
 "Open the notch when an agent needs you" = "에이전트가 확인을 필요로 하면 노치 열기";
 "Open the player" = "플레이어 열기";
 "Open the to-do calendar" = "할 일 캘린더 열기";
@@ -829,9 +777,7 @@
 "Opening" = "여는 중";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "해당 위젯이 이미 펼쳐진 상태로 노치를 엽니다. 다시 누르면 닫힙니다. 노치 자체는 항상 대시보드에서 열립니다.";
 "Option" = "Option";
-"Optional: answer from the notch" = "선택 사항: 노치에서 답변";
 "Options" = "옵션";
-"Or type your own answer" = "또는 직접 답변 입력";
 "Orange" = "주황";
 "Output" = "출력";
 "Overcast" = "잔뜩 흐림";
@@ -885,7 +831,6 @@
 "Pomo" = "포모";
 "Pomodoro" = "포모도로";
 "Pop-up" = "팝업";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "%u 포트가 사용 중이어서 이 블록에는 %u 포트가 적혀 있습니다. 나중에 Scout가 다시 %u에서 시작하면 다시 복사하세요.";
 "Press a shortcut…" = "단축키를 누르세요…";
 "Preview" = "미리보기";
 "Preview a card" = "카드 미리보기";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "변환된 파일을 트레이에 넣기";
 "Put finished videos in the Tray" = "완료된 비디오를 트레이에 넣기";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "모든 옵션을 처음 상태로 되돌립니다. 메모, 클립보드, 파일은 유지됩니다.";
-"Questions go to %@." = "질문은 %@에 전송됩니다.";
 "Questions go to %@. The answers stay here." = "질문은 %@에 전송됩니다. 답변은 여기에 남습니다.";
 "Quick" = "빠르게";
 "Quick Apps" = "빠른 앱";
@@ -920,7 +864,6 @@
 "Reading" = "읽기 방식";
 "Ready" = "준비됨";
 "Ready for the next focus session" = "다음 집중 세션 준비됨";
-"Ready for the next task" = "다음 작업 준비됨";
 "Rec" = "녹화";
 "Recent downloads" = "최근 다운로드";
 "Record Shortcut" = "단축키 기록";
@@ -978,19 +921,15 @@
 "Save…" = "저장…";
 "Scout Settings" = "Scout 설정";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout는 필요한 기능을 켜거나 열 때만 macOS에 요청합니다. 실행할 때는 아무것도 요청하지 않습니다.";
-"Scout can no longer open that folder. Connect again." = "Scout가 더 이상 그 폴더를 열 수 없습니다. 다시 연결하세요.";
 "Scout can't match what it hears to the script" = "Scout가 들리는 소리를 스크립트와 맞출 수 없습니다";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout가 아직 에이전트의 폴더를 볼 수 없습니다. 한 번 허용하면 모든 Claude Code와 Codex 세션이 스스로 입주합니다.";
 "Scout can't use this microphone" = "Scout가 이 마이크를 사용할 수 없습니다";
-"Scout could not open a local port." = "Scout가 로컬 포트를 열지 못했습니다.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout가 화면을 볼 수 없어서 그 질문은 사진 없이 전송되었습니다. 화면 기록에서 Scout를 허용하세요.";
 "Scout couldn't take the picture this time, so that question went without it." = "이번에는 Scout가 사진을 찍지 못해서 그 질문은 사진 없이 전송되었습니다.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout가 Claude Code와 Codex 세션을 스스로 찾습니다";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout가 이제 %u 포트에서 수신 대기합니다(또는 훅이 이전 버전의 것입니다). 업데이트는 Scout의 항목만 다시 씁니다.";
 "Scout only watches for connections once you allow it." = "Scout는 허용한 후에만 연결을 감시합니다.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout는 이 Mac에서 이벤트를 읽어 캘린더 위젯과 작업 공간을 채웁니다. 어디로도 전송되지 않습니다.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout는 복사한 내용을 기억하여 노치나 하단 선반에서 다시 붙여넣을 수 있게 합니다. 모든 것은 이 Mac에 남습니다.";
-"Scout will add its hooks to %@ after backing the file up." = "파일을 백업한 후 Scout가 %@에 훅을 추가합니다.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Scout의 코드, 문구, 아이콘은 모두 자체 제작입니다. 여기 있는 나머지는 각자의 라이선스에 따라 사용됩니다.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Scout의 자체 윈도우(AI에게 질문, 메모, 할 일, 계산기 등)는 종료, 업데이트 또는 재시작 후에도 크기와 텍스트를 유지한 채 원래 있던 곳에서 다시 열립니다. 디스플레이가 없어졌으면 주 디스플레이에서 열립니다.";
 "Scout: my AI agents in my notch. %@" = "Scout: 내 노치 속 AI 에이전트. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "웹 검색";
 "Searching the web…" = "웹 검색 중…";
 "See the month, your agenda and a Join button for video calls." = "월간 보기, 일정, 화상 통화용 참여 버튼을 확인하세요.";
-"See the whole conversation in the Ask AI tab" = "‘AI에게 질문’ 탭에서 전체 대화 보기";
 "See your day here" = "오늘 하루를 여기서 확인";
 "Select a note or start a new one" = "메모를 선택하거나 새로 만드세요";
 "Select a note or start a new one." = "메모를 선택하거나 새로 만드세요.";
 "Selected: %lld" = "선택됨: %lld";
 "Send" = "전송";
-"Send answers" = "답변 전송";
 "Send to Apple Notes" = "Apple 메모로 전송";
 "Send to a nearby device" = "근처 기기로 전송";
 "Sensitivity" = "민감도";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "AirPods가 연결될 때 배터리와 함께 표시";
 "Show Scout in the menu bar" = "메뉴 막대에 Scout 표시";
 "Show a Join card when the meeting starts" = "미팅이 시작되면 참여 카드 표시";
-"Show a card under the notch" = "노치 아래에 카드 표시";
 "Show a card when a download finishes" = "다운로드가 끝나면 카드 표시";
 "Show a count next to the notch while the Tray holds files" = "트레이에 파일이 있는 동안 노치 옆에 개수 표시";
 "Show a countdown" = "카운트다운 표시";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "날짜와 상관없이 모든 미완료 할 일 표시";
 "Show in Finder" = "Finder에서 보기";
 "Show in full screen" = "전체 화면으로 표시";
-"Show me the paste code" = "붙여넣기 코드 보기";
 "Show music from" = "음악 표시 대상";
 "Show music next to the notch while it plays" = "재생 중인 음악을 노치 옆에 표시";
 "Show my calendar in the notch" = "노치에 내 캘린더 표시";
@@ -1107,9 +1042,7 @@
 "Square" = "사각형";
 "Start" = "시작";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Claude Code 또는 Codex를 시작하면 모든 세션이 진행 상황과 함께 스스로 여기에 나타납니다. 연결할 것은 없습니다.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Codex를 시작하고 /hooks를 입력하여 처음에 Scout의 훅을 신뢰하세요. 그런 다음 새 세션을 시작하세요.";
 "Start a %lld-minute focus timer for this task" = "이 작업에 %lld분 집중 타이머 시작";
-"Start a new Claude Code session. It appears in the notch." = "새 Claude Code 세션을 시작합니다. 노치에 나타납니다.";
 "Start again" = "다시 시작";
 "Start folder" = "시작 폴더";
 "Start the camera when the Mirror widget appears" = "거울 위젯이 나타나면 카메라 시작";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "텍스트 크기: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "해당 API 키가 거부되었습니다. 설정 › AI에게 질문에서 확인하세요.";
 "That didn't work" = "작동하지 않았습니다";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "홈 폴더의 %@ 폴더가 아닙니다. 다시 연결하고 그 폴더를 선택하세요.";
 "That one did not go through" = "전송되지 않았습니다";
 "That's the end" = "여기까지입니다";
 "The %@ uses the camera, so it never opens by itself" = "%@은(는) 카메라를 사용하므로 저절로 열리지 않습니다";
@@ -1246,7 +1178,6 @@
 "Turned off" = "꺼짐";
 "Two-finger swipe on the notch" = "노치 위에서 두 손가락 스와이프";
 "Type a city, region or country, or pick a country." = "도시, 지역 또는 국가를 입력하거나 국가를 선택하세요.";
-"Type your own…" = "직접 입력…";
 "Typing: the notch stays open" = "입력 중: 노치가 열려 있습니다";
 "Unknown format" = "알 수 없는 형식";
 "Unlicense (only if you install it)" = "Unlicense(설치한 경우에만)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "켜기 전까지는 질문이 사진 없이 전송됩니다.";
 "Untitled" = "제목 없음";
 "Untitled script" = "제목 없는 스크립트";
-"Update" = "업데이트";
 "Updates" = "업데이트";
 "Updating the to-do list" = "할 일 목록 업데이트 중";
 "Upload %@" = "%@ 업로드";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "기다리는 중";
 "Waiting for your OK" = "승인 대기 중";
 "Waiting for your voice" = "목소리를 기다리는 중";
-"Wants to use %@" = "%@ 사용 요청";
-"Wants to use %@: %@" = "%@ 사용 요청: %@";
-"Wants to use a tool" = "도구 사용 요청";
-"Wants to use a tool: %@" = "도구 사용 요청: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "따뜻한 종이색, 어두운 글자, 밝은 강조 색상. 낮에 읽기 편합니다.";
 "Warn at" = "경고 기준";
 "Warn when the battery is low" = "배터리가 부족하면 경고";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "Scout가 접근할 수 있는 것과 요청하는 이유.";
 "What shows next to the notch while it is closed." = "노치가 닫혀 있는 동안 옆에 표시되는 것.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "메시지가 도착하면 보낸 사람, 텍스트, 답장 입력란이 있는 카드가 노치 아래로 내려옵니다. 메시지 앱이 맨 앞에 있는 동안에는 조용히 있습니다. Scout는 답장을 입력하고 Return을 누르지 않는 한 아무것도 보내지 않습니다.";
-"When an agent needs an answer" = "에이전트가 답변이 필요할 때";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "키, 메뉴 막대 또는 다른 앱으로 음량을 바꾸면 노치 옆에도 음량 수준이 표시됩니다.";
 "Where stations come from" = "방송국을 가져오는 곳";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "음악이 재생되거나, 타이머가 실행되거나, 다운로드가 끝나면 노치가 커져서 보여 줍니다. 포인터를 가져가면 Nook으로 열리며 위젯, 파일, 클립보드, 캘린더가 나타납니다. 포인터를 치우면 다시 들어갑니다.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "%@ 확대, 전체 보기로 돌아가기";
 "Zoom in" = "확대";
 "Zoom out" = "축소";
-"all edits this session" = "이 세션의 모든 편집";
 "charged" = "충전됨";
 "charging" = "충전 중";
 "code" = "코드";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS가 변경하지 않았습니다: %@";
 "me and my agents" = "나와 내 에이전트";
 "min" = "분";
-"mode %@" = "모드 %@";
 "model name" = "모델 이름";
 "needs you" = "확인 필요";
 "no battery" = "배터리 없음";

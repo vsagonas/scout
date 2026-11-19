@@ -9,7 +9,7 @@ Informal singular imperative for buttons and menu items (Ava, Sule, Salvesta, Li
 | AI | TI (tehisintellekt) |
 | Ask AI | Küsi TI-lt |
 | Ask anything (placeholder, 12 characters at most) | Küsi midagi |
-| Fast Ask AI | Kiire TI (pixel label KIIRE TI) |
+| Fast Ask AI | Kiire TI |
 | widget / widgets | vidin / vidinad |
 | notch | sälk (gen. sälgu) |
 | dashboard | armatuurlaud |
@@ -23,7 +23,6 @@ Informal singular imperative for buttons and menu items (Ava, Sule, Salvesta, Li
 | chat / chats | vestlus / vestlused |
 | API key, key | API võti, võti (key on the keyboard: klahv) |
 | clipboard | lõikelaud |
-| hooks | hooks (Latin, a technical word; the command is /hooks) |
 | session | seanss |
 | tab | vaheleht |
 | Prompter | Prompter (teleprompter = prompter) |
@@ -34,8 +33,7 @@ Informal singular imperative for buttons and menu items (Ava, Sule, Salvesta, Li
 | To-do / To-dos | Ülesanne / Ülesanded |
 | timer / alarm | taimer / äratus |
 | Light / Dark / System | Hele / Tume / Süsteem |
-| Allow / Deny / Always allow | Luba / Keela / Luba alati |
-| Connect / Disconnect | Ühenda / Katkesta ühendus |
+| Allow | Luba |
 | Copy / Delete / Cancel / Close | Kopeeri / Kustuta / Tühista / Sule |
 | minute (short) / words per minute | min / sõna/min |
 | Volume / Sound | Helitugevus / Heli |

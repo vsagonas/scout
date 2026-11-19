@@ -318,7 +318,7 @@ extension AgentDenArt {
             }
             sprite(AgentDenSprites.nightlight, 36, 19)
         }
-        // The helpers stand right under their agent, centred on its figure, as 8 x 8 scouts (asleep when their agent is). Four are drawn;
+        // The helpers stand right under their agent, centred on its figure, as 8 x 8 agents (asleep when their agent is). Four are drawn;
         // the rest are a "+N" in pixel digits at the row's right end, white with a dark outline, so it reads at every size.
         let row = AgentDenLayout.helperRow(count: st.room.helpers)
         if row.drawn > 0 {

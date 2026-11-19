@@ -1,7 +1,7 @@
 import SwiftUI
 
-// The face of a scout as a small square icon for the closed notch's wings.
-// 12 x 12 cells of 1.5 pt: an 18 pt square that lands on whole device pixels at 2x. The same palette letters as the scouts in the
+// The face of an agent as a small square icon for the closed notch's wings.
+// 12 x 12 cells of 1.5 pt: an 18 pt square that lands on whole device pixels at 2x. The same palette letters as the agents in the
 // den (`PixelPalette.world`), so a face wears its agent's colour: Claude Code sand-orange, Codex green. Our own drawing, no image files.
 
 /// How a face looks: what its agent is doing.
@@ -179,7 +179,7 @@ enum AgentFaceArt {
         return extra.isEmpty ? face : face.patched(extra)
     }
 
-    /// The head of a BIG figure (the scout at its desk in the den and in the TV's rooms) is THIS face: the same 12 x 12 cells, the same outline,
+    /// The head of a BIG figure (the agent at its desk in the den and in the TV's rooms) is THIS face: the same 12 x 12 cells, the same outline,
     /// highlight and cheeks, the same eyes and mouths, and the same headwear of `variant`.
     /// With a `tick` (the clock's step, `AgentFaceArt.tick`: the same beat and the same rules as the
     /// wing's faces) it IS the wing's frame of that step, `burst` for the couple of seconds after something happened: a working head glances and
@@ -279,7 +279,7 @@ struct AgentFaceIcon: View {
 }
 
 extension PixelPalette {
-    /// The kind's palette with the skin of `variant` (lighter or darker), cached: the faces and the den's scouts draw with it.
+    /// The kind's palette with the skin of `variant` (lighter or darker), cached: the faces and the den's agents draw with it.
     static func face(_ kind: AgentKind, variant: Int) -> PixelPalette {
         let key = "\(kind.rawValue)-\(AgentFaceArt.skin(variant))"   // the palette only follows the skin
         if let cached = faceCache[key] { return cached }

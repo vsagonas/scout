@@ -1,9 +1,9 @@
 import SwiftUI
 
 // Store/: the Mac App Store screenshots, rendered through the gallery as "store-*" items
-// (1440 x 900 points, 2x = 2880 x 1800). Nine frames: the first six lead with the agentic features (the Nook's Agents
-// dashboard, the Agents grid, the wings, answering from the notch, Ask AI and its Monitor), then the calendar, the clipboard
-// and the tray. (The ring's frame went with the ring, 2026-11-16.) The real views on sample data (the sessions are made up, see StoreAgentSamples.swift).
+// (1440 x 900 points, 2x = 2880 x 1800). Eight frames: the first five lead with the agentic features (the Nook's Agents
+// dashboard, the Agents room, the wings, Ask AI and its Monitor), then the calendar, the clipboard and the tray. (Two frame
+// numbers are unused: their frames went with features that were removed.) The real views on sample data (the sessions are made up, see StoreAgentSamples.swift).
 // Classic (black) notch: glass cannot be captured offscreen. Render with:  scripts/store-screenshots.sh
 // Heights are never chosen here: StoreNotch opens each view at the height the app itself gives it (180 pt for the dashboard,
 // NotchPrefs.minimumOpenHeight(for:), the height the view asks for), see StoreCanvas.swift.
@@ -33,7 +33,7 @@ enum StoreShots {
             }
         }
 
-        // 2. The Agents workspace: one live tile per session, found by Scout itself.
+        // 2. The Agents workspace: every session, found by Scout itself.
         Gallery.register("store-02-found", size: size, backdrop: .window) {
             let _ = StoreAgents.loadShared(StoreAgents.grid)
             StoreScene(tint: .mint, zoom: 1.25, menus: 2, extras: 1) { width in
@@ -47,7 +47,7 @@ enum StoreShots {
 
         // 3. The closed notch: a face per agent beside the camera, the question on the right (the list is the "details" hover setting).
         Gallery.register("store-03-wings", size: size, backdrop: .window) {
-            let store = StoreAgents.store("store-agents-wings", names: StoreAgents.live)
+            let store = StoreAgents.store(names: StoreAgents.live)
             StoreScene(tint: .peach, zoom: 1.9, menus: 3, extras: 1) { width in
                 StoreNotch(screenWidth: width, open: false, panelHeight: 300, detail: true) { center in
                     center.show(StoreAgents.wings(store))

@@ -10,9 +10,7 @@
 "%@ ended." = "%@ terminó.";
 "%@ failed" = "%@ falló";
 "%@ finished after %lld min" = "%@ terminó tras %lld min";
-"%@ finished in %@" = "%@ terminó en %@";
 "%@ free" = "%@ libre";
-"%@ has a question" = "%@ tiene una pregunta";
 "%@ has no sound" = "%@ no tiene sonido";
 "%@ in %@" = "%@ en %@";
 "%@ installed" = "%@ instalado";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@ es demasiado grande para un archivo ZIP (límite de 4 GB)";
 "%@ isn't installed" = "%@ no está instalado";
 "%@ isn't supported on this Mac" = "%@ no es compatible con este Mac";
-"%@ isn't valid JSON, so Scout left it alone." = "%@ no es un JSON válido, así que Scout lo dejó como estaba.";
 "%@ key" = "Clave de %@";
 "%@ left" = "Quedan %@";
 "%@ needs you" = "%@ te necesita";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "Temporizador de %@ terminado";
 "%@ to full" = "%@ hasta cargar";
 "%@ used" = "%@ usado";
-"%@ wants to use %@" = "%@ quiere usar %@";
-"%@ wants to use a tool" = "%@ quiere usar una herramienta";
 "%@ · %@ of %@" = "%@ · %@ de %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · %lld abiertas en total";
@@ -71,7 +66,6 @@
 "%lld running" = "%lld en marcha";
 "%lld working" = "%lld trabajando";
 "%lld wpm" = "%lld ppm";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+%lld más";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Añade primero tu clave de API de %@ en Ajustes › Preguntar a la IA.";
 "Add your API key in Settings › Ask AI first." = "Añade primero tu clave de API en Ajustes › Preguntar a la IA.";
 "Add your Claude API key in Settings › Ask AI first." = "Añade primero tu clave de API de Claude en Ajustes › Preguntar a la IA.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Añade los hooks de Scout a ~/.claude/settings.json (eventos de progreso, solicitudes de permiso y preguntas) y no toca tus propios hooks. Antes se hace una copia de seguridad del archivo.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Añade los hooks de Scout a ~/.codex/hooks.json. Codex te pide revisar los hooks nuevos la primera vez: escribe /hooks en Codex y confía en los de Scout.";
 "Agent" = "Agente";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Guarida de Agent TV";
@@ -164,15 +156,10 @@
 "Allow…" = "Permitir…";
 "Also show it while an app is full screen" = "Mostrarlo también cuando una app esté a pantalla completa";
 "Also used for “%@”: only one of them will work." = "También se usa para «%@»: solo uno de los dos funcionará.";
-"Always allow" = "Permitir siempre";
-"Always allow %@" = "Permitir siempre %@";
-"Always allow adds: %@" = "«Permitir siempre» añade: %@";
 "Amber" = "Ámbar";
 "An agent tab cannot be kept as the opening tab" = "Una pestaña de agente no puede ser la pestaña de apertura";
 "Announcements" = "Anuncios";
 "Answer copied" = "Respuesta copiada";
-"Answer in terminal" = "Responder en el terminal";
-"Answer permissions and questions from the notch" = "Responder a permisos y preguntas desde el notch";
 "Answers" = "Respuestas";
 "Any country" = "Cualquier país";
 "Appearance" = "Apariencia";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Preguntar sobre una imagen";
 "Ask about your screen" = "Preguntar sobre tu pantalla";
 "Ask anything" = "Pregunta";
-"Ask anything above. Questions go to %@. The answer shows here." = "Pregunta lo que quieras arriba. Las preguntas van a %@. La respuesta aparece aquí.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Pregunta lo que quieras.\nRetorno envía, ⌥Retorno añade una línea.\n\nTus preguntas van a %@. Con Pantalla activada, se envía también una imagen de tu pantalla.";
 "Ask before closing a tab that is still running" = "Preguntar antes de cerrar una pestaña que sigue en marcha";
-"Ask in terminal" = "Preguntar en el terminal";
 "Ask the same question again on Claude Sonnet 5.5" = "Hacer de nuevo la misma pregunta a Claude Sonnet 5.5";
-"Asking a question" = "Haciendo una pregunta";
 "Asking you: %@" = "Te pregunta: %@";
 "Asleep" = "Durmiendo";
 "Attach a picture" = "Adjuntar una imagen";
@@ -241,7 +225,6 @@
 "Camera" = "Cámara";
 "Camera access is off" = "El acceso a la cámara está desactivado";
 "Camera access is off for Scout." = "El acceso a la cámara está desactivado para Scout.";
-"Can't listen (%@)" = "No se puede escuchar (%@)";
 "Can't read %@ yet" = "Aún no se puede leer %@";
 "Can't tell which chat this is" = "No se sabe de qué chat se trata";
 "Cancel" = "Cancelar";
@@ -265,7 +248,6 @@
 "Choose a script" = "Elegir un guion";
 "Choose image…" = "Elegir imagen…";
 "Choose shortcuts" = "Elegir atajos";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Elige la carpeta %@ en tu carpeta de inicio. Scout hace allí una copia de seguridad de %@ y añade sus hooks; nada más cambia.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Elige la carpeta %@ para que Scout pueda ver tus sesiones de %@. Scout solo la lee.";
 "Choose the model" = "Elegir el modelo";
 "Choose…" = "Elegir…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Borrar las últimas emisoras y lugares";
 "Clear shortcut" = "Borrar atajo";
 "Clear the clipboard history?" = "¿Borrar el historial del portapapeles?";
-"Click Copy hooks." = "Haz clic en «Copiar hooks».";
 "Click for %@ settings, drag to move" = "Haz clic para los ajustes de %@, arrastra para mover";
 "Click one, or use the arrow keys. Press Return to go on." = "Haz clic en una opción o usa las flechas. Pulsa Retorno para continuar.";
 "Click one, or use the arrow keys. The window grows with it." = "Haz clic en una opción o usa las flechas. La ventana crece con ella.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Cerrar esta pestaña (⌘W)";
 "Close this tab?" = "¿Cerrar esta pestaña?";
 "Cloudy" = "Nublado";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex te pide revisar los hooks nuevos una vez: escribe /hooks en Codex y confía en los de Scout.";
 "Color" = "Color";
 "Colors" = "Colores";
 "Command" = "Comando";
 "Compact" = "Compacto";
-"Connect" = "Conectar";
-"Connect %@?" = "¿Conectar %@?";
-"Connect %@…" = "Conectar %@…";
-"Connect Claude Code" = "Conectar Claude Code";
-"Connect Claude Code…" = "Conectar Claude Code…";
-"Connect Codex" = "Conectar Codex";
-"Connect Codex…" = "Conectar Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "«Conectar» te pide elegir una vez la carpeta %@; Scout hace una copia de seguridad de %@, añade solo sus propias entradas y puede quitarlas de nuevo («Desconectar»). Cada hook es un único comando curl a 127.0.0.1; con Scout cerrado no hace nada.";
 "Connected" = "Conectado";
-"Connected, but out of date" = "Conectado, pero desactualizado";
-"Connected. New sessions report to Scout." = "Conectado. Las sesiones nuevas informan a Scout.";
 "Connecting" = "Conectando";
 "Connecting…" = "Conectando…";
 "Contacts" = "Contactos";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Las copias hechas mientras una de estas apps está al frente no se guardan nunca.";
 "Copy" = "Copiar";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Copia un enlace de YouTube, X, Instagram, TikTok, Vimeo o Reddit, abre la Bandeja y Scout se ofrece a descargarlo, o suelta un enlace en la Bandeja. Las descargas usan yt-dlp, que instalas tú mismo; el botón de arriba solo actúa cuando lo pulsas. Leer un enlace copiado requiere «Permitir» para Scout en Ajustes del Sistema › Privacidad y seguridad › Pegar desde otras apps (macOS 15.4 y posterior).";
-"Copy hooks" = "Copiar hooks";
-"Copy hooks instead" = "Copiar los hooks en su lugar";
 "Copy something and it shows up here." = "Copia algo y aparecerá aquí.";
 "Couldn't copy the picture" = "No se pudo copiar la imagen";
 "Couldn't copy the polaroid" = "No se pudo copiar la polaroid";
@@ -399,9 +367,6 @@
 "Delete note" = "Eliminar nota";
 "Delete this chat" = "Eliminar este chat";
 "Delete this script" = "Eliminar este guion";
-"Deny" = "Denegar";
-"Disconnect" = "Desconectar";
-"Disconnected. Your own hooks are untouched." = "Desconectado. Tus propios hooks no se han tocado.";
 "Disk" = "Disco";
 "Dismiss" = "Descartar";
 "Display" = "Pantalla";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Exportar como %@…";
 "Exported %@" = "%@ exportado";
 "Extra large" = "Extragrande";
-"FAST ASK AI" = "PREGUNTA RAPIDA";
 "FAVOURITES" = "FAVORITOS";
 "FROZEN" = "CONGELADO";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Olvidar pestañas anteriores";
 "Forget previous tabs" = "Olvidar pestañas anteriores";
 "Forget recent folders" = "Olvidar carpetas recientes";
-"Found automatically" = "Encontrado automáticamente";
 "Found · %@" = "Encontrado · %@";
 "Free service, no key" = "Servicio gratuito, sin clave";
 "Freezing drizzle" = "Llovizna helada";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "HOLA DESDE SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku para preguntas rápidas, Sonnet para las difíciles";
 "Haptic feedback" = "Respuesta háptica";
-"Has a question" = "Tiene una pregunta";
 "Heavy rain" = "Lluvia fuerte";
 "Heavy showers" = "Chubascos fuertes";
 "Heavy snow" = "Nevada fuerte";
@@ -533,9 +495,7 @@
 "Here" = "Aquí";
 "Hide completed" = "Ocultar las completadas";
 "Hide it while an app is full screen" = "Ocultarlo cuando una app esté a pantalla completa";
-"Hide the answer" = "Ocultar la respuesta";
 "Hide the chats" = "Ocultar los chats";
-"Hide the paste code" = "Ocultar el código para pegar";
 "History" = "Historial";
 "History is paused" = "El historial está en pausa";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Mantén ⌥⇧ con una tecla de volumen o brillo para pasos de un cuarto.";
@@ -605,15 +565,11 @@
 "Links" = "Enlaces";
 "List" = "Lista";
 "List name" = "Nombre de la lista";
-"Listen for AI agents on this Mac" = "Escuchar agentes de IA en este Mac";
-"Listening on 127.0.0.1:%@" = "Escuchando en 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Escuchando en 127.0.0.1:%@ (%@ estaba ocupado)";
 "Listening…" = "Escuchando…";
 "Lists" = "Listas";
 "Live" = "En vivo";
 "Live Activities" = "Actividades en vivo";
 "Loading…" = "Cargando…";
-"Local bridge" = "Puente local";
 "Local weather. A chosen city works without it." = "Clima local. Una ciudad elegida funciona sin esto.";
 "Location" = "Ubicación";
 "Location access" = "Acceso a la ubicación";
@@ -662,7 +618,6 @@
 "Models" = "Modelos";
 "More" = "Más";
 "More agents: %lld" = "Más agentes: %lld";
-"More…" = "Más…";
 "Most capable, slowest" = "El más capaz, el más lento";
 "Most items to keep" = "Máximo de elementos que conservar";
 "Mostly clear" = "Mayormente despejado";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Aún sin preguntar";
 "Not available on this Mac" = "No disponible en este Mac";
 "Not checked yet" = "Aún sin comprobar";
-"Not connected" = "No conectado";
 "Not found in your login shell's PATH" = "No se encontró en el PATH de tu shell de inicio de sesión";
 "Not found on this Mac" = "No se encontró en este Mac";
 "Not installed" = "No instalado";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Solo pantallas con notch";
 "Only events with a video link" = "Solo eventos con enlace de video";
 "Only for the Prompter to follow your voice." = "Solo para que el Teleprompter siga tu voz.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Solo hace falta para permitir, denegar y responder preguntas desde el notch; todo lo anterior funciona sin ello. Cada agente ejecuta un hook de una línea que envía a Scout en este Mac (solo 127.0.0.1, con una clave privada). Scout cambia los ajustes de tu agente solo cuando haces clic en «Conectar» y eliges su carpeta (con copia de seguridad previa, solo las entradas propias de Scout), o cuando pegas tú mismo los hooks. Si Scout no está en marcha, el hook no hace nada y el agente pregunta en su terminal como de costumbre.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Solo hace falta para permitir, denegar y responder preguntas desde el notch; todo lo anterior funciona sin ello. Cada hook es un comando de una línea que envía a Scout en este Mac (solo 127.0.0.1, con una clave privada). Si Scout no está en marcha, el hook no hace nada y el agente pregunta en su terminal como de costumbre.";
-"Only the dot beside the notch" = "Solo el punto junto al notch";
 "Only what you choose" = "Solo lo que elijas";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Solo si seguía sonando cuando se cerró Scout. Scout siempre recuerda la última emisora y el volumen.";
 "Open" = "Abrir";
 "Open %@" = "Abrir %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Abre %@ (créalo si no existe) y pega. Si ya tiene una sección «hooks», añade estas entradas dentro.";
 "Open %@ full size" = "Abrir %@ a tamaño completo";
 "Open %@ to finish" = "Abre %@ para terminar";
 "Open %@, full size" = "Abrir %@, a tamaño completo";
@@ -808,7 +758,6 @@
 "Open To-do" = "Abrir Tareas";
 "Open a Scout window first, then share" = "Abre primero una ventana de Scout y luego comparte";
 "Open a widget full size" = "Abrir un widget a tamaño completo";
-"Open in Ask AI" = "Abrir en Preguntar a la IA";
 "Open or close the notch" = "Abrir o cerrar el notch";
 "Open tasks in total: %lld" = "Tareas abiertas en total: %lld";
 "Open the Calendar with the To-dos, full size" = "Abrir el Calendario con las tareas, a tamaño completo";
@@ -817,7 +766,6 @@
 "Open the notch" = "Abrir el notch";
 "Open the notch on %@ (now: %@)" = "Abrir el notch en %@ (ahora: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Abrir siempre el notch en %@, no en el tablero";
-"Open the notch on Agents" = "Abrir el notch en Agentes";
 "Open the notch when an agent needs you" = "Abrir el notch cuando un agente te necesita";
 "Open the player" = "Abrir el reproductor";
 "Open the to-do calendar" = "Abrir el calendario de tareas";
@@ -829,9 +777,7 @@
 "Opening" = "Apertura";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Abre el notch con ese widget ya ampliado. Púlsalo de nuevo para cerrar. El notch en sí siempre se abre en el tablero.";
 "Option" = "Opción";
-"Optional: answer from the notch" = "Opcional: responder desde el notch";
 "Options" = "Opciones";
-"Or type your own answer" = "O escribe tu propia respuesta";
 "Orange" = "Naranja";
 "Output" = "Salida";
 "Overcast" = "Cubierto";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Emergente";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "El puerto %u estaba ocupado, así que este bloque indica el puerto %u. Si más tarde Scout vuelve a iniciarse en %u, cópialo de nuevo.";
 "Press a shortcut…" = "Pulsa un atajo…";
 "Preview" = "Vista previa";
 "Preview a card" = "Vista previa de una tarjeta";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Poner los archivos convertidos en la Bandeja";
 "Put finished videos in the Tray" = "Poner los videos terminados en la Bandeja";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Devuelve cada opción a como estaba el primer día. Tus notas, el portapapeles y tus archivos se quedan.";
-"Questions go to %@." = "Las preguntas van a %@.";
 "Questions go to %@. The answers stay here." = "Las preguntas van a %@. Las respuestas se quedan aquí.";
 "Quick" = "Rápido";
 "Quick Apps" = "Apps rápidas";
@@ -920,7 +864,6 @@
 "Reading" = "Lectura";
 "Ready" = "Listo";
 "Ready for the next focus session" = "Listo para la próxima sesión de concentración";
-"Ready for the next task" = "Listo para la próxima tarea";
 "Rec" = "Grab.";
 "Recent downloads" = "Descargas recientes";
 "Record Shortcut" = "Grabar atajo";
@@ -978,19 +921,15 @@
 "Save…" = "Guardar…";
 "Scout Settings" = "Ajustes de Scout";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout solo consulta a macOS cuando activas o abres la función que lo necesita. No se pregunta nada al iniciar.";
-"Scout can no longer open that folder. Connect again." = "Scout ya no puede abrir esa carpeta. Vuelve a conectar.";
 "Scout can't match what it hears to the script" = "Scout no logra relacionar lo que oye con el guion";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout aún no puede ver las carpetas de tus agentes. Permítelo una vez y cada sesión de Claude Code y Codex se mudará sola.";
 "Scout can't use this microphone" = "Scout no puede usar este micrófono";
-"Scout could not open a local port." = "Scout no pudo abrir un puerto local.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout no pudo ver tu pantalla, así que esa pregunta se envió sin imagen. Permite Scout en Grabación de pantalla.";
 "Scout couldn't take the picture this time, so that question went without it." = "Scout no pudo tomar la imagen esta vez, así que esa pregunta se envió sin ella.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout encuentra solo las sesiones de Claude Code y Codex";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout ahora escucha en el puerto %u (o sus hooks son de una versión anterior). «Actualizar» reescribe solo las entradas de Scout.";
 "Scout only watches for connections once you allow it." = "Scout solo vigila las conexiones cuando tú lo permites.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout lee tus eventos en este Mac para rellenar el widget Calendario y el espacio de trabajo. No se envía nada a ninguna parte.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout recuerda lo que copias para que puedas volver a pegarlo desde el notch o el estante inferior. Todo se queda en este Mac.";
-"Scout will add its hooks to %@ after backing the file up." = "Scout añadirá sus hooks a %@ después de hacer una copia de seguridad del archivo.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "El código, los textos y el icono de Scout son originales. Todo lo demás se usa bajo su propia licencia.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Las ventanas propias de Scout (Preguntar a la IA, notas, tareas, la calculadora y las demás) se reabren donde estaban, con su tamaño y su texto, tras salir, actualizar o reiniciar. Cuando una pantalla ya no está, se abren en la principal.";
 "Scout: my AI agents in my notch. %@" = "Scout: mis agentes de IA en mi notch. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Buscar en la web";
 "Searching the web…" = "Buscando en la web…";
 "See the month, your agenda and a Join button for video calls." = "Mira el mes, tu agenda y un botón Unirse para las videollamadas.";
-"See the whole conversation in the Ask AI tab" = "Mira toda la conversación en la pestaña Preguntar a la IA";
 "See your day here" = "Mira tu día aquí";
 "Select a note or start a new one" = "Selecciona una nota o empieza una nueva";
 "Select a note or start a new one." = "Selecciona una nota o empieza una nueva.";
 "Selected: %lld" = "Seleccionados: %lld";
 "Send" = "Enviar";
-"Send answers" = "Enviar respuestas";
 "Send to Apple Notes" = "Enviar a Notas";
 "Send to a nearby device" = "Enviar a un dispositivo cercano";
 "Sensitivity" = "Sensibilidad";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Mostrar los AirPods y su batería al conectarse";
 "Show Scout in the menu bar" = "Mostrar Scout en la barra de menús";
 "Show a Join card when the meeting starts" = "Mostrar una tarjeta Unirse cuando empieza la reunión";
-"Show a card under the notch" = "Mostrar una tarjeta bajo el notch";
 "Show a card when a download finishes" = "Mostrar una tarjeta cuando termina una descarga";
 "Show a count next to the notch while the Tray holds files" = "Mostrar un contador junto al notch mientras la Bandeja contiene archivos";
 "Show a countdown" = "Mostrar una cuenta atrás";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Mostrar todas las tareas abiertas, sea cual sea su día";
 "Show in Finder" = "Mostrar en el Finder";
 "Show in full screen" = "Mostrar a pantalla completa";
-"Show me the paste code" = "Mostrar el código para pegar";
 "Show music from" = "Mostrar música de";
 "Show music next to the notch while it plays" = "Mostrar la música junto al notch mientras suena";
 "Show my calendar in the notch" = "Mostrar mi calendario en el notch";
@@ -1107,9 +1042,7 @@
 "Square" = "Cuadrado";
 "Start" = "Iniciar";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Inicia Claude Code o Codex y cada sesión aparece aquí sola, con su progreso. Nada que conectar.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Inicia Codex y escribe /hooks para confiar en los hooks de Scout la primera vez. Después inicia una sesión nueva.";
 "Start a %lld-minute focus timer for this task" = "Iniciar un temporizador de concentración de %lld minutos para esta tarea";
-"Start a new Claude Code session. It appears in the notch." = "Inicia una sesión nueva de Claude Code. Aparece en el notch.";
 "Start again" = "Empezar de nuevo";
 "Start folder" = "Carpeta inicial";
 "Start the camera when the Mirror widget appears" = "Iniciar la cámara cuando aparezca el widget Espejo";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Tamaño del texto: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "Esa clave de API fue rechazada. Compruébala en Ajustes › Preguntar a la IA.";
 "That didn't work" = "Eso no funcionó";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "Esa no es la carpeta %@ de tu carpeta de inicio. Vuelve a conectar y elígela.";
 "That one did not go through" = "Ese intento no se completó";
 "That's the end" = "Es el final";
 "The %@ uses the camera, so it never opens by itself" = "%@ usa la cámara, así que nunca se abre solo";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Desactivado";
 "Two-finger swipe on the notch" = "Deslizar con dos dedos sobre el notch";
 "Type a city, region or country, or pick a country." = "Escribe una ciudad, región o país, o elige un país.";
-"Type your own…" = "Escribe el tuyo…";
 "Typing: the notch stays open" = "Al escribir: el notch sigue abierto";
 "Unknown format" = "Formato desconocido";
 "Unlicense (only if you install it)" = "Unlicense (solo si lo instalas)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Hasta que esté activado, las preguntas se envían sin imagen.";
 "Untitled" = "Sin título";
 "Untitled script" = "Guion sin título";
-"Update" = "Actualizar";
 "Updates" = "Actualizaciones";
 "Updating the to-do list" = "Actualizando la lista de tareas";
 "Upload %@" = "Subir %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Te espera";
 "Waiting for your OK" = "Espera tu visto bueno";
 "Waiting for your voice" = "Espera tu voz";
-"Wants to use %@" = "Quiere usar %@";
-"Wants to use %@: %@" = "Quiere usar %@: %@";
-"Wants to use a tool" = "Quiere usar una herramienta";
-"Wants to use a tool: %@" = "Quiere usar una herramienta: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Papel cálido, texto oscuro y acentos vivos. Fácil de leer de día.";
 "Warn at" = "Avisar en";
 "Warn when the battery is low" = "Avisar cuando la batería esté baja";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "A qué puede acceder Scout y por qué lo pide.";
 "What shows next to the notch while it is closed." = "Lo que se muestra junto al notch mientras está cerrado.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Cuando llega un mensaje, una tarjeta cae bajo el notch con el remitente, el texto y un cuadro de respuesta. Se queda en silencio mientras la app Mensajes está al frente. Scout nunca envía nada a menos que escribas una respuesta y pulses Retorno.";
-"When an agent needs an answer" = "Cuando un agente necesita una respuesta";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Cuando cambias el volumen con las teclas, la barra de menús u otra app, el nivel también se muestra junto al notch.";
 "Where stations come from" = "De dónde vienen las emisoras";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Mientras suena música, corre un temporizador o termina una descarga, el notch crece para mostrarlo. Apunta a él y se abre en tu Nook: widgets, archivos, portapapeles, calendario. Aléjate y se vuelve a recoger.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Zoom %@, volver a la imagen completa";
 "Zoom in" = "Acercar";
 "Zoom out" = "Alejar";
-"all edits this session" = "todas las ediciones de esta sesión";
 "charged" = "cargado";
 "charging" = "cargando";
 "code" = "código";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS no quiso cambiarlo: %@";
 "me and my agents" = "yo y mis agentes";
 "min" = "min";
-"mode %@" = "modo %@";
 "model name" = "nombre del modelo";
 "needs you" = "te necesita";
 "no battery" = "sin batería";

@@ -10,9 +10,7 @@
 "%@ ended." = "%@: τέλος.";
 "%@ failed" = "Το %@ απέτυχε";
 "%@ finished after %lld min" = "Το %@ ολοκληρώθηκε μετά από %lld λ";
-"%@ finished in %@" = "Το %@ ολοκληρώθηκε σε %@";
 "%@ free" = "%@ ελεύθερα";
-"%@ has a question" = "Το %@ έχει μια ερώτηση";
 "%@ has no sound" = "Το %@ δεν έχει ήχο";
 "%@ in %@" = "%@ σε %@";
 "%@ installed" = "Το %@ εγκαταστάθηκε";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "Το %@ είναι πολύ μεγάλο για αρχείο ZIP (όριο 4 GB)";
 "%@ isn't installed" = "Το %@ δεν είναι εγκατεστημένο";
 "%@ isn't supported on this Mac" = "Το %@ δεν υποστηρίζεται σε αυτό το Mac";
-"%@ isn't valid JSON, so Scout left it alone." = "Το %@ δεν είναι έγκυρο JSON, γι' αυτό το Scout το άφησε ως έχει.";
 "%@ key" = "Κλειδί %@";
 "%@ left" = "Απομένουν %@";
 "%@ needs you" = "Το %@ σε χρειάζεται";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "Ο χρονοδιακόπτης %@ ολοκληρώθηκε";
 "%@ to full" = "Γεμίζει σε %@";
 "%@ used" = "%@ σε χρήση";
-"%@ wants to use %@" = "Το %@ θέλει να χρησιμοποιήσει το %@";
-"%@ wants to use a tool" = "Το %@ θέλει να χρησιμοποιήσει ένα εργαλείο";
 "%@ · %@ of %@" = "%@ · %@ από %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · %lld ανοιχτές συνολικά";
@@ -71,7 +66,6 @@
 "%lld running" = "%lld σε εκτέλεση";
 "%lld working" = "%lld εργάζονται";
 "%lld wpm" = "%lld λέξ./λ";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+%lld ακόμα";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Πρόσθεσε πρώτα το κλειδί API του %@ στις Ρυθμίσεις › Ρώτα το AI.";
 "Add your API key in Settings › Ask AI first." = "Πρόσθεσε πρώτα το κλειδί API σου στις Ρυθμίσεις › Ρώτα το AI.";
 "Add your Claude API key in Settings › Ask AI first." = "Πρόσθεσε πρώτα το κλειδί API του Claude στις Ρυθμίσεις › Ρώτα το AI.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Προσθέτει τα hooks του Scout στο ~/.claude/settings.json (συμβάντα προόδου, αιτήματα άδειας και ερωτήσεις) και αφήνει ανέγγιχτα τα δικά σου hooks. Πρώτα δημιουργείται αντίγραφο ασφαλείας του αρχείου.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Προσθέτει τα hooks του Scout στο ~/.codex/hooks.json. Το Codex σου ζητά να ελέγξεις τα νέα hooks μία φορά: πληκτρολόγησε /hooks στο Codex και εμπιστεύσου αυτά του Scout.";
 "Agent" = "Πράκτορας";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Σπίτι του Agent TV";
@@ -164,15 +156,10 @@
 "Allow…" = "Επίτρεψε…";
 "Also show it while an app is full screen" = "Εμφάνιση και όταν μια εφαρμογή είναι σε πλήρη οθόνη";
 "Also used for “%@”: only one of them will work." = "Χρησιμοποιείται και για το «%@»: θα λειτουργήσει μόνο ένα από τα δύο.";
-"Always allow" = "Επίτρεψε πάντα";
-"Always allow %@" = "Επίτρεψε πάντα το %@";
-"Always allow adds: %@" = "Το «Επίτρεψε πάντα» προσθέτει: %@";
 "Amber" = "Κεχριμπαρί";
 "An agent tab cannot be kept as the opening tab" = "Μια καρτέλα πράκτορα δεν μπορεί να είναι η καρτέλα εκκίνησης";
 "Announcements" = "Ανακοινώσεις";
 "Answer copied" = "Η απάντηση αντιγράφηκε";
-"Answer in terminal" = "Απάντηση στο τερματικό";
-"Answer permissions and questions from the notch" = "Απάντα σε αιτήματα άδειας και ερωτήσεις από την εγκοπή";
 "Answers" = "Απαντήσεις";
 "Any country" = "Οποιαδήποτε χώρα";
 "Appearance" = "Εμφάνιση";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Ρώτα για μια εικόνα";
 "Ask about your screen" = "Ρώτα για την οθόνη σου";
 "Ask anything" = "Ρώτα κάτι";
-"Ask anything above. Questions go to %@. The answer shows here." = "Ρώτα ό,τι θέλεις παραπάνω. Οι ερωτήσεις πηγαίνουν στο %@. Η απάντηση εμφανίζεται εδώ.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Ρώτα ό,τι θέλεις.\nΤο Return στέλνει, το ⌥Return προσθέτει γραμμή.\n\nΟι ερωτήσεις σου πηγαίνουν στο %@. Με ενεργή την Οθόνη, μαζί τους στέλνεται μια εικόνα της οθόνης σου.";
 "Ask before closing a tab that is still running" = "Ερώτηση πριν κλείσει μια καρτέλα που εκτελείται ακόμα";
-"Ask in terminal" = "Ρώτα στο τερματικό";
 "Ask the same question again on Claude Sonnet 5.5" = "Ρώτα ξανά την ίδια ερώτηση στο Claude Sonnet 5.5";
-"Asking a question" = "Κάνει μια ερώτηση";
 "Asking you: %@" = "Σε ρωτά: %@";
 "Asleep" = "Κοιμάται";
 "Attach a picture" = "Επισύναψη εικόνας";
@@ -241,7 +225,6 @@
 "Camera" = "Κάμερα";
 "Camera access is off" = "Κάμερα: χωρίς πρόσβαση";
 "Camera access is off for Scout." = "Η πρόσβαση στην κάμερα είναι απενεργοποιημένη για το Scout.";
-"Can't listen (%@)" = "Αδυναμία ακρόασης (%@)";
 "Can't read %@ yet" = "Το %@ δεν διαβάζεται ακόμα";
 "Can't tell which chat this is" = "Δεν είναι δυνατός ο προσδιορισμός της συνομιλίας";
 "Cancel" = "Ακύρωση";
@@ -265,7 +248,6 @@
 "Choose a script" = "Διάλεξε ένα κείμενο";
 "Choose image…" = "Επιλογή εικόνας…";
 "Choose shortcuts" = "Επιλογή συντομεύσεων";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Διάλεξε τον φάκελο %@ στον αρχικό σου φάκελο. Το Scout δημιουργεί εκεί αντίγραφο ασφαλείας του %@ και προσθέτει τα hooks του· τίποτα άλλο δεν αλλάζει.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Διάλεξε τον φάκελο %@ για να βλέπει το Scout τις συνεδρίες %@ σου. Το Scout τον διαβάζει μόνο.";
 "Choose the model" = "Διάλεξε το μοντέλο";
 "Choose…" = "Επιλογή…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Εκκαθάριση πρόσφατων σταθμών και τοποθεσιών";
 "Clear shortcut" = "Εκκαθάριση συντόμευσης";
 "Clear the clipboard history?" = "Εκκαθάριση του ιστορικού Προχείρου;";
-"Click Copy hooks." = "Κάνε κλικ στο «Αντιγραφή hooks».";
 "Click for %@ settings, drag to move" = "Κάνε κλικ για τις ρυθμίσεις του %@, σύρε για μετακίνηση";
 "Click one, or use the arrow keys. Press Return to go on." = "Κάνε κλικ σε μία ή χρησιμοποίησε τα βελάκια. Πάτα Return για να συνεχίσεις.";
 "Click one, or use the arrow keys. The window grows with it." = "Κάνε κλικ σε μία ή χρησιμοποίησε τα βελάκια. Το παράθυρο μεγαλώνει μαζί της.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Κλείσιμο αυτής της καρτέλας (⌘W)";
 "Close this tab?" = "Κλείσιμο αυτής της καρτέλας;";
 "Cloudy" = "Νεφελώδης";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Το Codex σου ζητά να ελέγξεις τα νέα hooks μία φορά: πληκτρολόγησε /hooks στο Codex και εμπιστεύσου αυτά του Scout.";
 "Color" = "Χρώμα";
 "Colors" = "Χρώματα";
 "Command" = "Command";
 "Compact" = "Συμπαγές";
-"Connect" = "Σύνδεση";
-"Connect %@?" = "Σύνδεση του %@;";
-"Connect %@…" = "Σύνδεση του %@…";
-"Connect Claude Code" = "Σύνδεση του Claude Code";
-"Connect Claude Code…" = "Σύνδεση του Claude Code…";
-"Connect Codex" = "Σύνδεση του Codex";
-"Connect Codex…" = "Σύνδεση του Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Η Σύνδεση σου ζητά να διαλέξεις τον φάκελο %@ μία φορά· το Scout δημιουργεί αντίγραφο ασφαλείας του %@, προσθέτει μόνο τις δικές του εγγραφές και μπορεί να τις αφαιρέσει ξανά (Αποσύνδεση). Κάθε hook είναι μία εντολή curl προς το 127.0.0.1· όταν το Scout είναι κλειστό, δεν κάνει τίποτα.";
 "Connected" = "Συνδεδεμένο";
-"Connected, but out of date" = "Συνδεδεμένο, αλλά παλιό";
-"Connected. New sessions report to Scout." = "Συνδεδεμένο. Οι νέες συνεδρίες αναφέρονται στο Scout.";
 "Connecting" = "Γίνεται σύνδεση";
 "Connecting…" = "Γίνεται σύνδεση…";
 "Contacts" = "Επαφές";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Τα αντίγραφα που γίνονται ενώ μία από αυτές τις εφαρμογές είναι μπροστά δεν αποθηκεύονται ποτέ.";
 "Copy" = "Αντιγραφή";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Αντίγραψε έναν σύνδεσμο από YouTube, X, Instagram, TikTok, Vimeo ή Reddit, άνοιξε τη Θήκη και το Scout προτείνει να τον κατεβάσει, ή άφησε έναν σύνδεσμο στη Θήκη. Οι λήψεις χρησιμοποιούν το yt-dlp, που το εγκαθιστάς εσύ· το παραπάνω κουμπί λειτουργεί μόνο όταν το πατήσεις. Για να διαβαστεί ένας αντιγραμμένος σύνδεσμος χρειάζεται «Να επιτρέπεται» για το Scout στις Ρυθμίσεις συστήματος › Απόρρητο και ασφάλεια › Επικόλληση από άλλες εφαρμογές (macOS 15.4 και νεότερο).";
-"Copy hooks" = "Αντιγραφή hooks";
-"Copy hooks instead" = "Αντιγραφή hooks αντί γι' αυτό";
 "Copy something and it shows up here." = "Αντίγραψε κάτι και θα εμφανιστεί εδώ.";
 "Couldn't copy the picture" = "Δεν ήταν δυνατή η αντιγραφή της εικόνας";
 "Couldn't copy the polaroid" = "Δεν ήταν δυνατή η αντιγραφή του Polaroid";
@@ -399,9 +367,6 @@
 "Delete note" = "Διαγραφή σημείωσης";
 "Delete this chat" = "Διαγραφή αυτής της συνομιλίας";
 "Delete this script" = "Διαγραφή αυτού του κειμένου";
-"Deny" = "Απόρριψε";
-"Disconnect" = "Αποσύνδεση";
-"Disconnected. Your own hooks are untouched." = "Αποσυνδέθηκε. Τα δικά σου hooks δεν αγγίχτηκαν.";
 "Disk" = "Δίσκος";
 "Dismiss" = "Παράβλεψη";
 "Display" = "Οθόνη";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Εξαγωγή ως %@…";
 "Exported %@" = "Εξήχθη: %@";
 "Extra large" = "Πολύ μεγάλο";
-"FAST ASK AI" = "FAST ASK AI";
 "FAVOURITES" = "FAVOURITES";
 "FROZEN" = "FROZEN";
 "Fahrenheit (°F)" = "Φαρενάιτ (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Ξέχασε τις προηγούμενες καρτέλες";
 "Forget previous tabs" = "Ξέχασε τις προηγούμενες καρτέλες";
 "Forget recent folders" = "Ξέχασε τους πρόσφατους φακέλους";
-"Found automatically" = "Βρέθηκε αυτόματα";
 "Found · %@" = "Βρέθηκε · %@";
 "Free service, no key" = "Δωρεάν υπηρεσία, χωρίς κλειδί";
 "Freezing drizzle" = "Παγωμένη ψιχάλα";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "ΓΕΙΑ ΣΟΥ ΑΠΟ ΤΟ SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku για γρήγορες ερωτήσεις, Sonnet για δύσκολες";
 "Haptic feedback" = "Απτική ανάδραση";
-"Has a question" = "Έχει μια ερώτηση";
 "Heavy rain" = "Δυνατή βροχή";
 "Heavy showers" = "Δυνατές μπόρες";
 "Heavy snow" = "Έντονη χιονόπτωση";
@@ -533,9 +495,7 @@
 "Here" = "Εδώ";
 "Hide completed" = "Απόκρυψη ολοκληρωμένων";
 "Hide it while an app is full screen" = "Απόκρυψη όταν μια εφαρμογή είναι σε πλήρη οθόνη";
-"Hide the answer" = "Απόκρυψη της απάντησης";
 "Hide the chats" = "Απόκρυψη των συνομιλιών";
-"Hide the paste code" = "Απόκρυψη του κωδικού επικόλλησης";
 "History" = "Ιστορικό";
 "History is paused" = "Το ιστορικό είναι σε παύση";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Κράτα πατημένο το ⌥⇧ μαζί με ένα πλήκτρο έντασης ή φωτεινότητας για βήματα του ενός τετάρτου.";
@@ -605,15 +565,11 @@
 "Links" = "Σύνδεσμοι";
 "List" = "Λίστα";
 "List name" = "Όνομα λίστας";
-"Listen for AI agents on this Mac" = "Ακρόαση για πράκτορες AI σε αυτό το Mac";
-"Listening on 127.0.0.1:%@" = "Ακρόαση στο 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Ακρόαση στο 127.0.0.1:%@ (το %@ ήταν απασχολημένο)";
 "Listening…" = "Ακρόαση…";
 "Lists" = "Λίστες";
 "Live" = "Ζωντανά";
 "Live Activities" = "Ζωντανές δραστηριότητες";
 "Loading…" = "Φόρτωση…";
-"Local bridge" = "Τοπική γέφυρα";
 "Local weather. A chosen city works without it." = "Τοπικός καιρός. Μια πόλη που επιλέγεις λειτουργεί και χωρίς αυτό.";
 "Location" = "Τοποθεσία";
 "Location access" = "Πρόσβαση στην τοποθεσία";
@@ -662,7 +618,6 @@
 "Models" = "Μοντέλα";
 "More" = "Άλλα";
 "More agents: %lld" = "Περισσότεροι πράκτορες: %lld";
-"More…" = "Άλλα…";
 "Most capable, slowest" = "Το πιο ικανό, το πιο αργό";
 "Most items to keep" = "Μέγιστος αριθμός στοιχείων";
 "Mostly clear" = "Κυρίως αίθριος";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Δεν έχει ζητηθεί ακόμα";
 "Not available on this Mac" = "Δεν είναι διαθέσιμο σε αυτό το Mac";
 "Not checked yet" = "Δεν έχει ελεγχθεί ακόμα";
-"Not connected" = "Δεν είναι συνδεδεμένο";
 "Not found in your login shell's PATH" = "Δεν βρέθηκε στο PATH του login shell σου";
 "Not found on this Mac" = "Δεν βρέθηκε σε αυτό το Mac";
 "Not installed" = "Δεν είναι εγκατεστημένο";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Μόνο οθόνες με εγκοπή";
 "Only events with a video link" = "Μόνο γεγονότα με σύνδεσμο βίντεο";
 "Only for the Prompter to follow your voice." = "Μόνο για να ακολουθεί το Teleprompter τη φωνή σου.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Χρειάζεται μόνο για να Επιτρέπεις, να Απορρίπτεις και να απαντάς σε ερωτήσεις από την εγκοπή· όλα τα παραπάνω λειτουργούν και χωρίς αυτό. Κάθε πράκτορας εκτελεί ένα hook μίας γραμμής που στέλνει στο Scout σε αυτό το Mac (μόνο 127.0.0.1, με ιδιωτικό κλειδί). Το Scout αλλάζει τις ρυθμίσεις του πράκτορά σου μόνο όταν κάνεις κλικ στη Σύνδεση και διαλέγεις τον φάκελό του (πρώτα γίνεται αντίγραφο ασφαλείας, μόνο οι δικές του εγγραφές) ή όταν επικολλάς εσύ τα hooks. Αν το Scout δεν εκτελείται, το hook δεν κάνει τίποτα και ο πράκτορας ρωτά στο τερματικό του όπως πάντα.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Χρειάζεται μόνο για να Επιτρέπεις, να Απορρίπτεις και να απαντάς σε ερωτήσεις από την εγκοπή· όλα τα παραπάνω λειτουργούν και χωρίς αυτό. Κάθε hook είναι μια εντολή μίας γραμμής που στέλνει στο Scout σε αυτό το Mac (μόνο 127.0.0.1, με ιδιωτικό κλειδί). Αν το Scout δεν εκτελείται, το hook δεν κάνει τίποτα και ο πράκτορας ρωτά στο τερματικό του όπως πάντα.";
-"Only the dot beside the notch" = "Μόνο η τελεία δίπλα στην εγκοπή";
 "Only what you choose" = "Μόνο ό,τι διαλέξεις";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Μόνο αν έπαιζε ακόμα όταν έκλεισε το Scout. Το Scout θυμάται πάντα τον τελευταίο σταθμό και την ένταση.";
 "Open" = "Άνοιγμα";
 "Open %@" = "Άνοιγμα του %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Άνοιξε το %@ (δημιούργησέ το αν δεν υπάρχει) και επικόλλησε. Αν έχει ήδη ενότητα \"hooks\", πρόσθεσε αυτές τις εγγραφές μέσα της.";
 "Open %@ full size" = "Άνοιγμα του %@ σε πλήρες μέγεθος";
 "Open %@ to finish" = "Άνοιξε το %@ για να ολοκληρώσεις";
 "Open %@, full size" = "Άνοιγμα του %@, πλήρες μέγεθος";
@@ -808,7 +758,6 @@
 "Open To-do" = "Άνοιγμα Εργασιών";
 "Open a Scout window first, then share" = "Άνοιξε πρώτα ένα παράθυρο του Scout και μετά μοιράσου";
 "Open a widget full size" = "Άνοιγμα ενός widget σε πλήρες μέγεθος";
-"Open in Ask AI" = "Άνοιγμα στο Ρώτα το AI";
 "Open or close the notch" = "Άνοιγμα ή κλείσιμο της εγκοπής";
 "Open tasks in total: %lld" = "Συνολικά ανοιχτές εργασίες: %lld";
 "Open the Calendar with the To-dos, full size" = "Άνοιγμα του Ημερολογίου με τις Εργασίες, σε πλήρες μέγεθος";
@@ -817,7 +766,6 @@
 "Open the notch" = "Άνοιγμα της εγκοπής";
 "Open the notch on %@ (now: %@)" = "Άνοιγμα της εγκοπής στο %@ (τώρα: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Άνοιγμα της εγκοπής στο %@ κάθε φορά, όχι στον πίνακα ελέγχου";
-"Open the notch on Agents" = "Άνοιγμα της εγκοπής στους Πράκτορες";
 "Open the notch when an agent needs you" = "Άνοιγμα της εγκοπής όταν ένας πράκτορας σε χρειάζεται";
 "Open the player" = "Άνοιγμα αναπαραγωγής";
 "Open the to-do calendar" = "Άνοιγμα του ημερολογίου εργασιών";
@@ -829,9 +777,7 @@
 "Opening" = "Άνοιγμα";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Ανοίγει την εγκοπή με αυτό το widget ήδη αναπτυγμένο. Πάτα το ξανά για να κλείσει. Η ίδια η εγκοπή ανοίγει πάντα στον πίνακα ελέγχου.";
 "Option" = "Option";
-"Optional: answer from the notch" = "Προαιρετικά: απάντηση από την εγκοπή";
 "Options" = "Επιλογές";
-"Or type your own answer" = "Ή γράψε τη δική σου απάντηση";
 "Orange" = "Πορτοκαλί";
 "Output" = "Έξοδος";
 "Overcast" = "Συννεφιά";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Αναδυόμενο";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "Η θύρα %u ήταν απασχολημένη, γι' αυτό αυτό το μπλοκ αναφέρει τη θύρα %u. Αν το Scout ξεκινήσει ξανά αργότερα στη θύρα %u, αντίγραψέ το ξανά.";
 "Press a shortcut…" = "Πάτα μια συντόμευση…";
 "Preview" = "Προεπισκόπηση";
 "Preview a card" = "Προεπισκόπηση κάρτας";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Τοποθέτηση των αρχείων που μετατράπηκαν στη Θήκη";
 "Put finished videos in the Tray" = "Τοποθέτηση των ολοκληρωμένων βίντεο στη Θήκη";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Επαναφέρει κάθε επιλογή όπως ήταν την πρώτη ημέρα. Οι σημειώσεις, το Πρόχειρο και τα αρχεία σου μένουν.";
-"Questions go to %@." = "Οι ερωτήσεις πηγαίνουν στο %@.";
 "Questions go to %@. The answers stay here." = "Οι ερωτήσεις πηγαίνουν στο %@. Οι απαντήσεις μένουν εδώ.";
 "Quick" = "Γρήγορο";
 "Quick Apps" = "Γρήγορες εφαρμογές";
@@ -920,7 +864,6 @@
 "Reading" = "Ανάγνωση";
 "Ready" = "Έτοιμο";
 "Ready for the next focus session" = "Έτοιμο για την επόμενη συνεδρία εστίασης";
-"Ready for the next task" = "Έτοιμο για την επόμενη εργασία";
 "Rec" = "Εγγρ.";
 "Recent downloads" = "Πρόσφατες λήψεις";
 "Record Shortcut" = "Εγγραφή συντόμευσης";
@@ -978,19 +921,15 @@
 "Save…" = "Αποθήκευση…";
 "Scout Settings" = "Ρυθμίσεις του Scout";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Το Scout ρωτά το macOS μόνο όταν ενεργοποιείς ή ανοίγεις τη λειτουργία που το χρειάζεται. Δεν ζητείται τίποτα κατά την εκκίνηση.";
-"Scout can no longer open that folder. Connect again." = "Το Scout δεν μπορεί πια να ανοίξει αυτόν τον φάκελο. Συνδέσου ξανά.";
 "Scout can't match what it hears to the script" = "Το Scout δεν μπορεί να ταιριάξει αυτά που ακούει με το κείμενο";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Το Scout δεν βλέπει ακόμα τους φακέλους των πρακτόρων σου. Επίτρεψέ το μία φορά και κάθε συνεδρία Claude Code και Codex μετακομίζει μόνη της.";
 "Scout can't use this microphone" = "Το Scout δεν μπορεί να χρησιμοποιήσει αυτό το μικρόφωνο";
-"Scout could not open a local port." = "Το Scout δεν μπόρεσε να ανοίξει τοπική θύρα.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Το Scout δεν μπόρεσε να δει την οθόνη σου, οπότε αυτή η ερώτηση στάλθηκε χωρίς εικόνα. Επίτρεψε το Scout στην Εγγραφή οθόνης.";
 "Scout couldn't take the picture this time, so that question went without it." = "Το Scout δεν μπόρεσε να τραβήξει την εικόνα αυτή τη φορά, οπότε αυτή η ερώτηση στάλθηκε χωρίς αυτήν.";
 "Scout finds Claude Code and Codex sessions by itself" = "Το Scout βρίσκει μόνο του τις συνεδρίες Claude Code και Codex";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Το Scout ακούει τώρα στη θύρα %u (ή τα hooks του είναι από παλαιότερη έκδοση). Η Ενημέρωση ξαναγράφει μόνο τις εγγραφές του Scout.";
 "Scout only watches for connections once you allow it." = "Το Scout παρακολουθεί για συνδέσεις μόνο αφού το επιτρέψεις.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Το Scout διαβάζει τα γεγονότα σου σε αυτό το Mac για να γεμίσει το widget Ημερολόγιο και τον χώρο εργασίας. Τίποτα δεν στέλνεται πουθενά.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Το Scout θυμάται ό,τι αντιγράφεις για να μπορείς να το επικολλήσεις ξανά από την εγκοπή ή το κάτω ράφι. Όλα μένουν σε αυτό το Mac.";
-"Scout will add its hooks to %@ after backing the file up." = "Το Scout θα προσθέσει τα hooks του στο %@ αφού δημιουργήσει αντίγραφο ασφαλείας του αρχείου.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Ο κώδικας, τα κείμενα και το εικονίδιο του Scout είναι πρωτότυπα. Όλα τα υπόλοιπα εδώ χρησιμοποιούνται με τη δική τους άδεια.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Τα δικά του παράθυρα του Scout (Ρώτα το AI, σημειώσεις, εργασίες, η αριθμομηχανή και τα υπόλοιπα) ανοίγουν ξανά εκεί που ήταν, με το μέγεθος και το κείμενό τους, μετά από έξοδο, ενημέρωση ή επανεκκίνηση. Όταν μια οθόνη δεν υπάρχει πια, ανοίγουν στην κύρια.";
 "Scout: my AI agents in my notch. %@" = "Scout: οι πράκτορές μου AI στην εγκοπή μου. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Αναζήτηση στον ιστό";
 "Searching the web…" = "Αναζήτηση στον ιστό…";
 "See the month, your agenda and a Join button for video calls." = "Δες τον μήνα, το πρόγραμμά σου και ένα κουμπί Συμμετοχή για βιντεοκλήσεις.";
-"See the whole conversation in the Ask AI tab" = "Δες ολόκληρη τη συνομιλία στην καρτέλα Ρώτα το AI";
 "See your day here" = "Δες την ημέρα σου εδώ";
 "Select a note or start a new one" = "Επίλεξε μια σημείωση ή ξεκίνα μια νέα";
 "Select a note or start a new one." = "Επίλεξε μια σημείωση ή ξεκίνα μια νέα.";
 "Selected: %lld" = "Επιλεγμένα: %lld";
 "Send" = "Αποστολή";
-"Send answers" = "Αποστολή απαντήσεων";
 "Send to Apple Notes" = "Αποστολή στις Σημειώσεις της Apple";
 "Send to a nearby device" = "Αποστολή σε κοντινή συσκευή";
 "Sensitivity" = "Ευαισθησία";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Εμφάνιση των AirPods και της μπαταρίας τους όταν συνδέονται";
 "Show Scout in the menu bar" = "Εμφάνιση του Scout στη γραμμή μενού";
 "Show a Join card when the meeting starts" = "Εμφάνιση κάρτας Συμμετοχής όταν ξεκινά η συνάντηση";
-"Show a card under the notch" = "Εμφάνιση κάρτας κάτω από την εγκοπή";
 "Show a card when a download finishes" = "Εμφάνιση κάρτας όταν τελειώνει μια λήψη";
 "Show a count next to the notch while the Tray holds files" = "Εμφάνιση αριθμού δίπλα στην εγκοπή όσο η Θήκη έχει αρχεία";
 "Show a countdown" = "Εμφάνιση αντίστροφης μέτρησης";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Εμφάνιση κάθε ανοιχτής εργασίας, όποια κι αν είναι η ημέρα της";
 "Show in Finder" = "Εμφάνιση στο Finder";
 "Show in full screen" = "Εμφάνιση σε πλήρη οθόνη";
-"Show me the paste code" = "Εμφάνιση του κωδικού επικόλλησης";
 "Show music from" = "Εμφάνιση μουσικής από";
 "Show music next to the notch while it plays" = "Εμφάνιση μουσικής δίπλα στην εγκοπή όσο παίζει";
 "Show my calendar in the notch" = "Εμφάνιση του ημερολογίου μου στην εγκοπή";
@@ -1107,9 +1042,7 @@
 "Square" = "Τετράγωνο";
 "Start" = "Έναρξη";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Ξεκίνα το Claude Code ή το Codex και κάθε συνεδρία εμφανίζεται εδώ μόνη της, με την πρόοδό της. Δεν χρειάζεται σύνδεση.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Ξεκίνα το Codex και πληκτρολόγησε /hooks για να εμπιστευτείς τα hooks του Scout την πρώτη φορά. Μετά ξεκίνα μια νέα συνεδρία.";
 "Start a %lld-minute focus timer for this task" = "Έναρξη χρονοδιακόπτη εστίασης %lld λεπτών για αυτή την εργασία";
-"Start a new Claude Code session. It appears in the notch." = "Ξεκίνα μια νέα συνεδρία Claude Code. Εμφανίζεται στην εγκοπή.";
 "Start again" = "Έναρξη ξανά";
 "Start folder" = "Φάκελος εκκίνησης";
 "Start the camera when the Mirror widget appears" = "Εκκίνηση της κάμερας όταν εμφανίζεται το widget Καθρέφτης";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Μέγεθος κειμένου: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "Αυτό το κλειδί API απορρίφθηκε. Έλεγξέ το στις Ρυθμίσεις › Ρώτα το AI.";
 "That didn't work" = "Δεν λειτούργησε";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "Αυτός δεν είναι ο φάκελος %@ στον αρχικό σου φάκελο. Συνδέσου ξανά και διάλεξέ τον.";
 "That one did not go through" = "Αυτό δεν πέρασε";
 "That's the end" = "Αυτό ήταν το τέλος";
 "The %@ uses the camera, so it never opens by itself" = "Το %@ χρησιμοποιεί την κάμερα, γι' αυτό δεν ανοίγει ποτέ μόνο του";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Απενεργοποιήθηκε";
 "Two-finger swipe on the notch" = "Σάρωση με δύο δάχτυλα στην εγκοπή";
 "Type a city, region or country, or pick a country." = "Πληκτρολόγησε μια πόλη, περιοχή ή χώρα ή διάλεξε μια χώρα.";
-"Type your own…" = "Γράψε τη δική σου…";
 "Typing: the notch stays open" = "Πληκτρολόγηση: η εγκοπή μένει ανοιχτή";
 "Unknown format" = "Άγνωστη μορφή";
 "Unlicense (only if you install it)" = "Unlicense (μόνο αν το εγκαταστήσεις)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Μέχρι να ενεργοποιηθεί, οι ερωτήσεις στέλνονται χωρίς εικόνα.";
 "Untitled" = "Χωρίς τίτλο";
 "Untitled script" = "Κείμενο χωρίς τίτλο";
-"Update" = "Ενημέρωση";
 "Updates" = "Ενημερώσεις";
 "Updating the to-do list" = "Ενημέρωση της λίστας εργασιών";
 "Upload %@" = "Μεταφόρτωση του %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Σε περιμένει";
 "Waiting for your OK" = "Περιμένει την έγκρισή σου";
 "Waiting for your voice" = "Περιμένει τη φωνή σου";
-"Wants to use %@" = "Θέλει να χρησιμοποιήσει το %@";
-"Wants to use %@: %@" = "Θέλει να χρησιμοποιήσει το %@: %@";
-"Wants to use a tool" = "Θέλει να χρησιμοποιήσει ένα εργαλείο";
-"Wants to use a tool: %@" = "Θέλει να χρησιμοποιήσει ένα εργαλείο: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Ζεστό χαρτί, σκούρο κείμενο και έντονες πινελιές. Εύκολο στην ανάγνωση τη μέρα.";
 "Warn at" = "Όριο";
 "Warn when the battery is low" = "Προειδοποίηση όταν η μπαταρία είναι χαμηλή";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "Σε τι έχει πρόσβαση το Scout και γιατί ρωτά.";
 "What shows next to the notch while it is closed." = "Τι εμφανίζεται δίπλα στην εγκοπή όσο είναι κλειστή.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Όταν φτάνει ένα μήνυμα, μια κάρτα πέφτει κάτω από την εγκοπή με τον αποστολέα, το κείμενο και ένα πλαίσιο απάντησης. Μένει ήσυχη όσο η εφαρμογή Μηνύματα είναι μπροστά. Το Scout δεν στέλνει ποτέ τίποτα, εκτός αν πληκτρολογήσεις μια απάντηση και πατήσεις Return.";
-"When an agent needs an answer" = "Όταν ένας πράκτορας χρειάζεται απάντηση";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Όταν αλλάζεις την ένταση με τα πλήκτρα, τη γραμμή μενού ή άλλη εφαρμογή, το επίπεδο εμφανίζεται και δίπλα στην εγκοπή.";
 "Where stations come from" = "Από πού προέρχονται οι σταθμοί";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Όσο παίζει μουσική, τρέχει ένας χρονοδιακόπτης ή τελειώνει μια λήψη, η εγκοπή μεγαλώνει για να το δείξει. Δείξε την και ανοίγει στο Nook σου: widgets, αρχεία, Πρόχειρο, ημερολόγιο. Απομακρύνσου και μαζεύεται ξανά.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Ζουμ %@, πίσω στη συνολική εικόνα";
 "Zoom in" = "Μεγέθυνση";
 "Zoom out" = "Σμίκρυνση";
-"all edits this session" = "όλες οι αλλαγές σε αυτή τη συνεδρία";
 "charged" = "φορτισμένο";
 "charging" = "φορτίζει";
 "code" = "κώδικας";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "Το macOS δεν το άλλαξε: %@";
 "me and my agents" = "εγώ και οι πράκτορές μου";
 "min" = "λ";
-"mode %@" = "λειτουργία %@";
 "model name" = "όνομα μοντέλου";
 "needs you" = "σε χρειάζεται";
 "no battery" = "χωρίς μπαταρία";

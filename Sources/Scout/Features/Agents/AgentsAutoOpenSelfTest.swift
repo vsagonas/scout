@@ -6,7 +6,7 @@ import SwiftUI
 /// as its own build, offscreen:
 ///   build/Scout.app/Contents/MacOS/Scout --automation --headless --run "scout://auto.selftest?out=<file>" & PID=$!
 /// then wait for the file and `kill $PID`. A fake clock and a pretend pointer drive the presenter; the notch is the real one (real
-/// navigator, real `NotchRootView`, real Agents view) in an offscreen panel, and hooks arrive through the store's real `receive`.
+/// navigator, real `NotchRootView`, real Agents view) in an offscreen panel.
 /// Nothing reaches the screen, the pointer never moves and nothing is written to the owner's settings.
 @MainActor
 enum AgentsAutoOpenSelfTest {
@@ -16,12 +16,6 @@ enum AgentsAutoOpenSelfTest {
             let out = params["out"].map { URL(fileURLWithPath: $0) } ?? AppPaths.file("auto-selftest.txt")
             Task { @MainActor in await run(out: out) }
         }
-    }
-
-    // MARK: Synthetic data
-
-    private static func request(_ id: String) -> AgentPending {
-        AgentPending(sessionID: id, kind: .permission, tool: "Bash", summary: "terraform apply", detail: "terraform apply", questions: [], rawToolInput: nil, agent: .claude)
     }
 
     // MARK: The offscreen notch
@@ -99,7 +93,6 @@ enum AgentsAutoOpenSelfTest {
 
         settingsChecks(check)
         await ruleChecks(check)
-        await cardChecks(check)
 
         check.lines.append("auto selftest done: \(check.failed == 0 ? "all passed" : "\(check.failed) FAILED")")
         for line in check.lines { print(line) }
@@ -149,7 +142,7 @@ enum AgentsAutoOpenSelfTest {
         await settle(0.5)
 
         var list: [AgentSession] = []
-        var heldFor: [String] = []
+        var asking: [String] = []   // the agents that stop on a question right now (as the transcript shows it)
         func working(_ id: String, minutesIn: Double) -> AgentSession {
             var s = AgentSession(id: id, agent: .claude, cwd: "/Users/you/Dev/\(id)")
             s.title = "Synthetic task \(id)"
@@ -163,8 +156,18 @@ enum AgentsAutoOpenSelfTest {
         func put(_ s: AgentSession) {
             if let i = list.firstIndex(where: { $0.id == s.id }) { list[i] = s } else { list.append(s) }
         }
+        func asked() -> [AgentSession] {
+            list.map { s in
+                guard asking.contains(s.id) else { return s }
+                var question = s
+                question.state = .waiting
+                question.note = AgentNote.asking("Which region?")
+                question.finishedAt = nil
+                return question
+            }
+        }
         func apply() {
-            store.loadSessions(list, pending: heldFor.map(request))
+            store.loadSessions(asked())
             presenter.process()
         }
         func finish(_ id: String, after minutes: Double, failedStep: Bool = false) {
@@ -198,19 +201,19 @@ enum AgentsAutoOpenSelfTest {
         defer { NotchNavigator.shared.workspace = sharedWorkspaceBefore }
 
         // (a) needs you: from closed, on the Agents view with that agent in detail, the details in the banner.
-        heldFor = ["alpha"]
+        asking = ["alpha"]
         apply()
         let first = presenter.opened.last
         check("an agent starts needing you: the closed notch opens on the Agents view",
               first?.kind == .needsYou && first?.sessionID == "alpha" && nav.isOpen && nav.expanded == .agents,
               "opened \(presenter.opened.count), expanded \(String(describing: nav.expanded))")
         await settle(0.5)
-        check("  the Agents view shows THAT agent in detail (the real view took the request)", store.shownDetailID == "alpha" && store.focusID == nil && store.selectedID == "alpha",
+        check("  the Agents view shows THAT agent in detail (the real view took the focus)", store.shownDetailID == "alpha" && store.focusID == nil && store.selectedID == "alpha",
               "shown \(String(describing: store.shownDetailID)), focus \(String(describing: store.focusID))")
         check("  it says what happened (a banner for that agent), and never sets a preferred workspace or touches the saved one",
               store.announcement?.kind == .needsYou && store.announcement?.sessionID == "alpha" && nav.preferredWorkspace == nil
               && UserDefaults.standard.object(forKey: "notch.lastWorkspace") as? String == lastWorkspaceBefore)
-        check("  the view asked the island for room for the banner and the answer controls", (NotchNavigator.shared.workspaceHeight ?? 0) >= 320, "\(String(describing: NotchNavigator.shared.workspaceHeight))")
+        check("  the view asked the island for room for the banner", (NotchNavigator.shared.workspaceHeight ?? 0) >= 320, "\(String(describing: NotchNavigator.shared.workspaceHeight))")
         await later(19)
         check("  it stays open for about 20 s", nav.isOpen && presenter.isShowing)
         await later(2)
@@ -223,13 +226,13 @@ enum AgentsAutoOpenSelfTest {
         let countAfterFirst = presenter.opened.count
         presenter.process()
         presenter.process()
-        check("once per event: the same request, seen again, opens nothing", presenter.opened.count == countAfterFirst)
+        check("once per event: the same question, seen again, opens nothing", presenter.opened.count == countAfterFirst)
 
         // It was answered: no longer asking. Asking again later is a new event.
-        heldFor = []
+        asking = []
         apply()
         await later(1)
-        // (b) A finish never opens the notch, however long the task was: the small done card says it
+        // (b) A finish never opens the notch, however long the task was: the two-line message in the right wing says it
         let beforeFinish = presenter.opened.count
         finish("charlie", after: 12)
         await settle(0.3)
@@ -244,12 +247,12 @@ enum AgentsAutoOpenSelfTest {
         put(working("delta", minutesIn: 1)); put(working("echo", minutesIn: 14)); put(working("foxtrot", minutesIn: 1))
         apply()
         let t0 = world.now
-        heldFor = ["delta"]
+        asking = ["delta"]
         apply()
         let n0 = presenter.opened.count
         await later(5)
         finish("echo", after: 14)
-        heldFor = ["delta", "foxtrot"]
+        asking = ["delta", "foxtrot"]
         apply()
         await settle(0.3)
         check("a long finish within 20 s of an opening is not announced, and a second needs-you waits",
@@ -258,13 +261,13 @@ enum AgentsAutoOpenSelfTest {
         check("  (19 s after the opening: still waiting)", presenter.opened.count == n0)
         await later(1.5)
         await settle(0.4)
-        // The owner, 2026-11-16: an open notch is never switched or closed for an agent; the one that waited shows its card under it.
+        // The owner, 2026-11-16: an open notch is never switched or closed for an agent; the one that waited lights its row instead.
         check("  at 20 s, with the notch still open on the first agent, nothing switches to the one that waited, and the finish never opens",
               presenter.opened.count == n0 && !presenter.opened.contains { $0.sessionID == "echo" } && world.now.timeIntervalSince(t0) >= 20,
               "\(presenter.opened.suffix(2)), shown \(String(describing: store.shownDetailID))")
         await later(25)
         await reopenNothing()
-        heldFor = []
+        asking = []
         apply()
 
         // A needs-you wins over a finish in the same moment.
@@ -272,7 +275,7 @@ enum AgentsAutoOpenSelfTest {
         put(working("golf", minutesIn: 1)); put(working("hotel", minutesIn: 13))
         apply()
         let n1 = presenter.opened.count
-        heldFor = ["golf"]
+        asking = ["golf"]
         if var h = list.first(where: { $0.id == "hotel" }) {
             h.state = .waiting; h.note = "Finished: waiting for your next message"; h.finishedAt = h.turnStartedAt.addingTimeInterval(13 * 60); put(h)
         }
@@ -281,14 +284,14 @@ enum AgentsAutoOpenSelfTest {
               presenter.opened.count == n1 + 1 && presenter.opened.last?.sessionID == "golf")
         await later(25)
         check("  the needs-you closed itself and the finish did not come back", !nav.isOpen && presenter.opened.count == n1 + 1)
-        heldFor = []
+        asking = []
         apply()
         await later(1)
-        heldFor = ["golf"]
+        asking = ["golf"]
         apply()
         check("  asking again after it was answered is a new event", presenter.opened.count == n1 + 2 && presenter.opened.last?.sessionID == "golf", "\(presenter.opened.count - n1)")
         await later(25)
-        heldFor = []
+        asking = []
         apply()
         await reopenNothing()
 
@@ -299,7 +302,7 @@ enum AgentsAutoOpenSelfTest {
         let n2 = presenter.opened.count
         finish("india", after: 2, failedStep: true)
         await settle(0.3)
-        check("an agent that stopped with an error: the notch stays closed too (the done card says it)",
+        check("an agent that stopped with an error: the notch stays closed too (the right wing's two lines say it)",
               presenter.opened.count == n2 && !nav.isOpen && store.announcement == nil, "\(String(describing: presenter.opened.last))")
         await reopenNothing()
 
@@ -310,21 +313,21 @@ enum AgentsAutoOpenSelfTest {
         nav.open()
         world.inside = true
         let n3 = presenter.opened.count
-        heldFor = ["juliet"]
+        asking = ["juliet"]
         apply()
         check("the notch is open and the pointer is on it: nothing switches, the agent's row is lit",
               presenter.opened.count == n3 && nav.expanded == nil && store.flashed.contains("juliet") && store.announcement == nil,
               "expanded \(String(describing: nav.expanded)), flashed \(store.flashed)")
         world.inside = false
         world.typing = true
-        heldFor = ["juliet", "kilo"]
+        asking = ["juliet", "kilo"]
         apply()
         check("  a text field with the cursor counts as in use too", presenter.opened.count == n3 && nav.expanded == nil && store.flashed.contains("kilo"))
         world.typing = false
         store.clearFlashes()
         check("  the highlight can be taken away again", store.flashed.isEmpty)
         await reopenNothing()
-        heldFor = []
+        asking = []
         apply()
 
         // Hovered at the end of its time: it stays open and is handed over to the pointer.
@@ -332,7 +335,7 @@ enum AgentsAutoOpenSelfTest {
         put(working("lima", minutesIn: 1))
         apply()
         let n4 = presenter.opened.count
-        heldFor = ["lima"]
+        asking = ["lima"]
         apply()
         await later(18)
         world.inside = true
@@ -341,14 +344,14 @@ enum AgentsAutoOpenSelfTest {
         check("the pointer is on the island when the time is up: it stays open and is left to the pointer", presenter.opened.count == n4 + 1 && nav.isOpen && !presenter.isShowing)
         world.inside = false
         await reopenNothing()
-        heldFor = []
+        asking = []
         apply()
 
         // The person chose something else (another agent, from the dashboard's rows): hands off, the banner goes.
         await later(25)
         put(working("mike", minutesIn: 1)); put(working("nina", minutesIn: 1))
         apply()
-        heldFor = ["mike"]
+        asking = ["mike"]
         apply()
         await settle(0.4)
         store.focusID = "nina"
@@ -360,7 +363,7 @@ enum AgentsAutoOpenSelfTest {
         await later(30)
         check("  and it is not closed under them later", nav.isOpen)
         await reopenNothing()
-        heldFor = []
+        asking = []
         apply()
 
         // The switch off, a hidden notch, the minutes setting, scripted runs.
@@ -369,22 +372,22 @@ enum AgentsAutoOpenSelfTest {
         apply()
         let n5 = presenter.opened.count
         world.enabled = false
-        heldFor = ["oscar"]
+        asking = ["oscar"]
         apply()
         finish("papa", after: 20)
         check("the switch off: nothing happens (no opening, no highlight)", presenter.opened.count == n5 && !nav.isOpen && store.flashed.isEmpty)
         world.enabled = true
-        heldFor = []
+        asking = []
         apply()
         await later(25)
         put(working("quebec", minutesIn: 1))
         apply()
         world.hidden = true
-        heldFor = ["quebec"]
+        asking = ["quebec"]
         apply()
         check("the notch hidden behind a full-screen app: nothing opens", presenter.opened.count == n5 && !nav.isOpen)
         world.hidden = false
-        heldFor = []
+        asking = []
         apply()
         await later(25)
         put(working("romeo", minutesIn: 4)); put(working("sierra", minutesIn: 6))
@@ -398,11 +401,11 @@ enum AgentsAutoOpenSelfTest {
         put(working("tango", minutesIn: 1))
         apply()
         scripted.process()
-        heldFor = ["tango"]
-        store.loadSessions(list, pending: heldFor.map(request))
+        asking = ["tango"]
+        store.loadSessions(asked())
         scripted.process()
         scripted.start()
-        check("in scripted runs the presenter never opens anything", scripted.opened.isEmpty && !scripted.isShowing && !nav.isOpen && !store.defersCards)
+        check("in scripted runs the presenter never opens anything", scripted.opened.isEmpty && !scripted.isShowing && !nav.isOpen)
         await reopenNothing()
 
         check("through all of it: no preferred workspace was set and the saved last workspace was never written",
@@ -410,90 +413,5 @@ enum AgentsAutoOpenSelfTest {
         nav.open()
         check("the next plain open is the dashboard", nav.expanded == nil)
         nav.forceClose()
-    }
-
-    // MARK: 3. The card under the notch
-
-    /// A hook as the bridge would hand it to the store; nothing is sent anywhere.
-    private static func permission(_ store: AgentsStore, session: String, command: String) {
-        let json = "{\"session_id\":\"\(session)\",\"cwd\":\"/Users/you/Dev/\(session)\",\"hook_event_name\":\"PermissionRequest\",\"tool_name\":\"Bash\",\"tool_input\":{\"command\":\"\(command)\"}}"
-        guard let event = AgentEvent.parse(agent: .claude, data: Data(json.utf8)) else { return }
-        store.receive(event, mode: "permission", responder: HookResponder { _ in })
-    }
-
-    private static func cardChecks(_ check: Checker) async {
-        let world = World()
-        let store = AgentsStore.shared
-        let rig = Rig(open: false)
-        let savedCenter = store.cardCenter
-        let center = LiveActivityCenter()
-        store.cardCenter = center
-        let nav = rig.navigator
-        let presenter = AgentsAutoOpen(agents: store, navigator: nav, env: world.env())
-        defer {
-            presenter.stop()
-            rig.close()
-            store.cardCenter = savedCenter
-            store.loadSessions([])
-            store.announcement = nil
-            store.clearFlashes()
-        }
-        var seen = Set<String>()
-        var bag = Set<AnyCancellable>()
-        center.$cards.sink { cards in for card in cards { seen.insert(card.id) } }.store(in: &bag)
-        func cardIDs() -> Set<String> { Set(center.cards.map(\.id)) }
-
-        var carl = AgentSession(id: "carl", agent: .claude, cwd: "/Users/you/Dev/carl")
-        carl.state = .working
-        carl.turnStartedAt = world.now.addingTimeInterval(-120)
-        carl.lastEventAt = world.now
-        store.loadSessions([carl])
-        presenter.start()   // the baseline, and from now on a new request's card waits one turn of the main queue
-        check("the presenter is watching: a new request's card waits for it", store.defersCards)
-
-        // The automatic opening shows the request: its card never appears.
-        permission(store, session: "carl", command: "terraform apply")
-        let held = store.pending.first?.id
-        await settle(0.6)
-        check("a request arrives (a hook): the notch opens on that agent and shows the answer controls",
-              presenter.opened.last?.sessionID == "carl" && presenter.opened.last?.kind == .needsYou && nav.isOpen && nav.expanded == .agents && store.shownDetailID == "carl",
-              "opened \(presenter.opened.count), shown \(String(describing: store.shownDetailID))")
-        check("  and the card under the notch was never shown for it (the view has the controls)", held != nil && seen.isEmpty && center.cards.isEmpty, "seen \(seen)")
-        permission(store, session: "carl", command: "swift build")
-        await settle(0.4)
-        check("  while the opening is on, a second request of that agent gets no card either", seen.isEmpty && center.cards.isEmpty && store.pending.count == 2, "seen \(seen), pending \(store.pending.count)")
-
-        // The time is up and the notch closes: the requests still wait, so their cards come back.
-        world.now = world.now.addingTimeInterval(21)
-        presenter.tick()
-        await settle(0.4)
-        presenter.tick()
-        let back = Set(store.pending.map { "agent.pending.\($0.id)" })
-        check("the notch closed by itself and the requests still wait: both cards come back under it", !nav.isOpen && cardIDs() == back && back.count == 2, "cards \(cardIDs()), pending \(back)")
-
-        // Answering takes the card away.
-        if let id = store.pending.first?.id { store.decide(id, .allow) }
-        check("  answering one removes its card", cardIDs().count == 1)
-        if let id = store.pending.first?.id { store.decide(id, .deny) }
-        check("  and the other", cardIDs().isEmpty && store.pending.isEmpty)
-
-        // The person looks at that agent themselves (the auto-opening switched off): the cards step aside while the view shows it.
-        world.enabled = false
-        seen.removeAll()
-        permission(store, session: "carl", command: "make")
-        await settle(0.3)
-        check("with the switch off a request just gets its card, as before", presenter.opened.count == 1 && cardIDs().count == 1 && !nav.isOpen, "cards \(cardIDs())")
-        store.focusID = "carl"
-        nav.open(.agents)
-        await settle(0.5)
-        presenter.tick()
-        check("the person opens that agent's detail: its card steps aside (the same controls are in the view)", store.shownDetailID == "carl" && cardIDs().isEmpty, "shown \(String(describing: store.shownDetailID)), cards \(cardIDs())")
-        nav.forceClose()
-        await settle(0.4)
-        presenter.tick()
-        check("  and returns when the notch closes", cardIDs().count == 1, "cards \(cardIDs())")
-        if let id = store.pending.first?.id { store.decide(id, .allow) }
-        check("  answered: gone", cardIDs().isEmpty)
-        _ = bag
     }
 }

@@ -3,7 +3,7 @@ import AppKit
 /// Scout's own language (Settings › General): "Same as the Mac" (the default: the system's languages decide) or one of the languages Scout is
 /// translated into. The choice is written as the app's own `AppleLanguages`, the same value System Settings › General › Language & Region ›
 /// Applications writes. macOS reads it once, at launch, so a change needs a restart: `restart()` opens a new Scout and quits this one, and the
-/// new one waits in `ScoutMain.main()` until the old one is gone (so it never meets the old one's listener, hot keys or windows).
+/// new one waits in `ScoutMain.main()` until the old one is gone (so it never meets the old one's hot keys or windows).
 @MainActor
 enum AppLanguage {
     /// The chosen code, or "" for "Same as the Mac".

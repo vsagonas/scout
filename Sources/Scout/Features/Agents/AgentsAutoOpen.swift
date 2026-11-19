@@ -15,26 +15,22 @@ struct AgentAnnouncement: Equatable {
     var at: Date
 }
 
-/// The notch opens by itself when an agent starts NEEDING you (a permission, a question, a wait for an answer), and says the details.
+/// The notch opens by itself when an agent starts NEEDING you (a question, a plan waiting for approval), and says the details.
 /// An agent that FINISHES, or stops with an error, never opens it and drops no card: the two-line message in the right wing beside the
-/// camera says it
+/// camera says it.
 /// For a needs-you it opens the Agents view from the closed notch with THAT agent in detail and a banner on top: who, "needs you",
-/// the first sentence of its latest message, and the answer controls. It closes by itself after about 20 s unless the pointer is on the
-/// island, a text field has the cursor, or the person chose something else. A notch that is already open and in use is never switched:
+/// and the first sentence of its latest message. The person answers the agent in the agent's own window. It closes by itself after about 20 s
+/// unless the pointer is on the island, a text field has the cursor, or the person chose something else. A notch that is already open and in use is never switched:
 /// that agent's row on the dashboard lights up for a moment instead.
 ///
-/// Calm, by rule: once per agent per request (again only after it was answered), at most one opening every 20 s (a needs-you waits for
+/// Calm, by rule: once per agent per question (again only after it was answered), at most one opening every 20 s (a needs-you waits for
 /// its turn while the agent still asks), nothing in scripted runs, nothing while the notch is hidden in a full-screen app.
-///
-/// While the Agents view shows a request (this opening, or the person looking at that agent), the card under the notch for it is
-/// held back: the same answer controls would be there twice. When the view goes away and the request still waits, the card returns.
 ///
 /// The pieces a layout of the Agents panel and view reuses (all on `AgentsStore`, so any new layout gets them by reading it):
 ///   - `store.announcement` + `AgentBanner(announcement:session:)` : the banner for the agent in detail (the view clears it when it goes away);
 ///   - `store.flashed` + `.agentLit(_:)` : the lit row on the dashboard;
 ///   - `store.focusID` : the view takes it and shows that agent; `store.shownDetailID` : the view reports which agent it shows
-///     (nil for the grid), the presenter reads it to see whether the person chose something else, and to hold the cards;
-///   - the answer controls are `PendingView` (unchanged).
+///     (nil for the grid), the presenter reads it to see whether the person chose something else.
 /// A height the banner needs goes through `NotchNavigator.requestHeight(_:resizeMax:by: .agents)` (see `AgentsWorkspaceView`); this file
 /// never writes `workspaceHeight` or `resizeMax`.
 ///
@@ -131,7 +127,6 @@ final class AgentsAutoOpen {
     func start() {
         guard !started, !env.isScripted else { return }
         started = true
-        agents.defersCards = true
         Self.migrateOldSetting()
         agents.objectWillChange.sink { [weak self] _ in
             // `objectWillChange` fires BEFORE the change: look at the settled store on the next turn of the main queue.
@@ -150,8 +145,6 @@ final class AgentsAutoOpen {
         cancellables.removeAll()
         started = false
         showing = nil
-        agents.defersCards = false
-        agents.holdCards([])
     }
 
     // MARK: Noticing
@@ -160,44 +153,41 @@ final class AgentsAutoOpen {
     func process() {
         let now = env.now()
         let sessions = agents.sessions
-        let pending = agents.pending
         var events: [Event] = []
         var alive = Set<String>()
         for s in sessions {
             alive.insert(s.id)
-            let asks = AgentWingSummary.asks(s, pending: pending)
-            let held = pending.contains { $0.sessionID == s.id }
+            let asks = AgentWingSummary.asks(s)
             let known = wasWorking[s.id] != nil
             if asks {
-                if announcedAsking.insert(s.id).inserted, known || held {
-                    // A session first seen already asking (a scan at launch) is the baseline, unless a hook is holding a request for it.
+                if announcedAsking.insert(s.id).inserted, known {
+                    // A session first seen already asking (a scan at launch) is the baseline.
                     events.append(Event(sessionID: s.id, kind: .needsYou, at: now))
                 }
             } else {
                 announcedAsking.remove(s.id)
             }
-            // A finish or an error opens nothing: the small done card says it (see the type's comment).
+            // A finish or an error opens nothing: the two-line message in the right wing says it (see the type's comment).
             wasWorking[s.id] = s.state == .working
         }
         wasWorking = wasWorking.filter { alive.contains($0.key) }
         announcedAsking.formIntersection(alive)
         present(events, now: now)
-        syncCards()
     }
 
     // MARK: Showing
 
     private func present(_ events: [Event], now: Date) {
         guard !env.isScripted, env.enabled(), !env.hidden() else { waiting.removeAll(); return }
-        // An open notch is never switched or closed for an agent: the agent's row lights up and its card hangs under the open notch, which
-        // simply grows for it
+        // An open notch is never switched or closed for an agent: the agent's row lights up for a moment instead (`flash`), and the notch
+        // stays open as it is.
         if navigator.isOpen {
             for event in waiting + events { agents.flash(event.sessionID) }
             waiting.removeAll()
             return
         }
         waiting += events.filter { $0.kind == .needsYou }
-        let asking = Set(agents.sessions.filter { AgentWingSummary.asks($0, pending: agents.pending) }.map(\.id))
+        let asking = Set(agents.sessions.filter { AgentWingSummary.asks($0) }.map(\.id))
         waiting.removeAll { !asking.contains($0.sessionID) }   // answered meanwhile
         if let last = lastOpen, now.timeIntervalSince(last) < Self.cooldown { return }
         if !waiting.isEmpty { open(waiting.removeFirst(), now: now) }
@@ -212,26 +202,13 @@ final class AgentsAutoOpen {
         agents.selectedID = event.sessionID
         agents.focusID = event.sessionID   // the Agents view takes it and shows that agent in detail
         showing = Showing(sessionID: event.sessionID, openedAt: now, until: now.addingTimeInterval(Self.showForNeedsYou))
-        syncCards()   // before the notch opens: the card for this request never shows
         navigator.open(.agents)   // from closed or open; never `preferredWorkspace`
-    }
-
-    /// The cards under the notch for requests the Agents view shows right now stay away (see the type's comment).
-    private func syncCards() {
-        var held = Set<UUID>()
-        func hold(_ sessionID: String?) {
-            guard let sessionID else { return }
-            for request in agents.pending where request.sessionID == sessionID { held.insert(request.id) }
-        }
-        hold(showing?.sessionID)
-        if navigator.isOpen, navigator.workspace == .agents { hold(agents.shownDetailID) }
-        agents.holdCards(held)
     }
 
     /// Once a second: notices what changed, retries a needs-you that waited for its turn, and closes what it opened when its time is up.
     func tick() {
         process()
-        defer { syncCards(); dropStaleAnnouncement() }
+        defer { dropStaleAnnouncement() }
         guard var current = showing else { return }
         let now = env.now()
         // Someone chose something else, or closed it: hands off (the view had a moment to show the agent first).
@@ -276,8 +253,7 @@ extension View {
 
 /// What the notch says when it opens by itself for an agent, as a 90s pager: a little plastic body with an LCD that says who and what
 /// happened in pixel capitals ("INFRA NEEDS YOU", "SITE FINISHED AFTER 12 MIN", "API STOPPED WITH AN ERROR"), the failed step for an
-/// error, and the first words of the agent's latest message in the system font so they read easily. The answer controls of a request
-/// are the window's own, right under it.
+/// error, and the first words of the agent's latest message in the system font so they read easily.
 struct AgentBanner: View {
     let announcement: AgentAnnouncement
     let session: AgentSession

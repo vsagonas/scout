@@ -53,7 +53,7 @@ Machine translation, no native reviewer yet. Informal "du" (as the Norwegian App
 | home folder | hjemmemappe |
 | Downloads (folder) | Nedlastinger |
 | Light / Dark / System / Automatic | Lys / Mørk / System / Automatisk |
-| Allow / Deny / Always allow | Tillat / Avslå / Tillat alltid |
+| Allow | Tillat |
 | Reset | Nullstill |
 | Cancel / Delete / Close / Copy | Avbryt / Slett / Lukk / Kopier |
 | Save | Lagre |
@@ -63,7 +63,7 @@ Machine translation, no native reviewer yet. Informal "du" (as the Norwegian App
 | Pin / Unpin | Fest / Løsne |
 | Focus (macOS) | Fokus |
 
-Pixel labels use capitals and no æ ø å (the 5x7 font has none): a word without them or the usual ASCII spelling, e.g. HELE DAGEN, SOVER, HEI HEI %@ (for BYE), TRENGER DEG, RASK SPOER KI.
+Pixel labels use capitals and no æ ø å (the 5x7 font has none): a word without them or the usual ASCII spelling, e.g. HELE DAGEN, SOVER, HEI HEI %@ (for BYE), TRENGER DEG.
 "Ask anything" (dashboard field placeholder, at most 12 characters): "Spør løs".
 
 Style: du-form, short labels, imperative buttons as in macOS (Åpne, Lukk), "…" as one character, no dashes as separators. Words per minute: "ord/min".

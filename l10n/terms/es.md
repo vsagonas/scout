@@ -11,7 +11,7 @@ Machine translation, no native reviewer yet. Informal "tú" (as the Spanish App 
 | Settings | Ajustes |
 | Tray | Bandeja |
 | Ask AI | Preguntar a la IA |
-| Fast Ask AI | Pregunta rápida a la IA (pixel label PREGUNTA RAPIDA) |
+| Fast Ask AI | Pregunta rápida a la IA |
 | Nook | Nook (never translated) |
 | Pocket / Pockets | Pocket / Pockets (feature name, kept like Nook) |
 | helpers (sub-agents) | ayudantes |
@@ -38,7 +38,7 @@ Machine translation, no native reviewer yet. Informal "tú" (as the Spanish App 
 | Focus (macOS, Pomodoro) | Concentración |
 | menu bar | barra de menús |
 | Light / Dark / System | Claro / Oscuro / Sistema |
-| Allow / Deny / Always allow | Permitir / Denegar / Permitir siempre |
+| Allow | Permitir |
 | Save / saved | Guardar / guardado |
 | Delete / Clear / Remove | Eliminar / Borrar / Quitar |
 | Pin / Unpin | Fijar / Desfijar |

@@ -11,7 +11,7 @@ enum HeadlessChecks {
         NotchCardsSelfTest.register()   // notch.selftest.cards: a card hangs from the island as one shape and follows its width and place live (open, close, wings, stacked, clicks)
         NotchPersistSelfTest.register()   // notch.selftest.persist: layouts, panels, heights and settings come back after a restart
         LivePanelsSelfTest.register()   // live.selftest: which live panels show, in what order; timers come back after a restart
-        AgentsAutoOpenSelfTest.register()   // auto.selftest: the notch opens by itself on Agents (needs you, long task, error), cooldowns, in-use notch, the card
+        AgentsAutoOpenSelfTest.register()   // auto.selftest: the notch opens by itself on Agents only for an agent that needs you (a finish or an error opens nothing), cooldowns, in-use notch (the row lights up)
         AgentNookSelfTest.register()   // agentnook.selftest: the rooms, helpers, props, layout at 3 to 16 cells, the empty house, a real click
         WindowsFeature.registerSelfTests()
         AskAIQuickSelfTest.register()   // ai.selftest.quick: a dashboard question goes into Fast Ask AI, the open chat stays, the history stays short
@@ -24,7 +24,7 @@ enum HeadlessChecks {
         LookSelfTest.register()   // look.selftest: size and colours settings: defaults, the island grows by the factor and clicks still land, light preset pixels, the closed notch stays black, the tour writes its picks
         CalendarMergedSelfTest.register()   // calendar.selftest.merged: the Calendar and the To-dos are one tab: no To-dos key, every old To-dos entry opens the Calendar, heights, real clicks on a to-do
         RetroSelfTest.register()   // retro.selftest: the 90s kit (seven segments, pixel text columns, LED bar zones, bevel edges)
-        DebugCommandsSelfTest.register()   // debug.selftest: outside automation a scout:// link runs only the app's own commands and never writes to out=
+        DebugCommandsSelfTest.register()   // debug.selftest: outside automation a scout:// link runs nothing and never writes to out=
         AppLanguageSelfTest.register()   // language.selftest: Settings › General › Language (names, choosing, back to the Mac's); language.selftest.restart: the real restart
         L10nSelfTest.register()   // l10n.selftest: the translations (keys, placeholders, CFBundleLocalizations, lookups) and, in the pseudo build, no unwrapped English in sample views
         SettingsNotchSelfTest.register()   // settings.selftest.notch: the notch opens and stays held behind the Settings window, which floats above it; closing releases it

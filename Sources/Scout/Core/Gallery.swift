@@ -166,6 +166,7 @@ extension Gallery {
         window.appearance = NSAppearance(named: scheme == .dark ? .darkAqua : .aqua)
         window.isReleasedWhenClosed = false
         window.contentView = hosting
+        OffscreenWindows.mark(window)   // never a thumbnail in Mission Control, from its first moment
         window.orderFrontRegardless()
         // Let SwiftUI lay out, run onAppear and settle sample data.
         try? await Task.sleep(nanoseconds: 250_000_000)

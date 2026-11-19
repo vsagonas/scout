@@ -10,9 +10,7 @@
 "%@ ended." = "%@ avsluttet.";
 "%@ failed" = "%@ mislyktes";
 "%@ finished after %lld min" = "%@ ferdig etter %lld min";
-"%@ finished in %@" = "%@ ferdig på %@";
 "%@ free" = "%@ ledig";
-"%@ has a question" = "%@ har et spørsmål";
 "%@ has no sound" = "%@ har ingen lyd";
 "%@ in %@" = "%@ i %@";
 "%@ installed" = "%@ installert";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "Størrelsen på %@ overskrider grensen for en ZIP-fil (4 GB)";
 "%@ isn't installed" = "%@: ikke installert";
 "%@ isn't supported on this Mac" = "%@ støttes ikke på denne Mac-en";
-"%@ isn't valid JSON, so Scout left it alone." = "Filen %@ er ikke gyldig JSON, så Scout lot den være.";
 "%@ key" = "%@-nøkkel";
 "%@ left" = "%@ igjen";
 "%@ needs you" = "%@ trenger deg";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "%@-tidtakeren er ferdig";
 "%@ to full" = "%@ til full";
 "%@ used" = "%@ brukt";
-"%@ wants to use %@" = "%@ vil bruke %@";
-"%@ wants to use a tool" = "%@ vil bruke et verktøy";
 "%@ · %@ of %@" = "%@ · %@ av %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · %lld åpne totalt";
@@ -71,7 +66,6 @@
 "%lld running" = "%lld kjører";
 "%lld working" = "%lld jobber";
 "%lld wpm" = "%lld ord/min";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+%lld til";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Legg først til %@ API-nøkkelen din i Innstillinger › Spør KI.";
 "Add your API key in Settings › Ask AI first." = "Legg først til API-nøkkelen din i Innstillinger › Spør KI.";
 "Add your Claude API key in Settings › Ask AI first." = "Legg først til Claude API-nøkkelen din i Innstillinger › Spør KI.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Legger til hooks fra Scout i ~/.claude/settings.json (fremdriftshendelser, tillatelsesforespørsler og spørsmål) og lar dine egne hooks være. Filen sikkerhetskopieres først.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Legger til hooks fra Scout i ~/.codex/hooks.json. Codex ber deg gjennomgå nye hooks første gang: skriv /hooks i Codex og stol på hooks fra Scout.";
 "Agent" = "Agent";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Agent TV-hule";
@@ -164,15 +156,10 @@
 "Allow…" = "Tillat…";
 "Also show it while an app is full screen" = "Vis den også mens en app er i fullskjerm";
 "Also used for “%@”: only one of them will work." = "Brukes også for “%@”: bare én av dem fungerer.";
-"Always allow" = "Tillat alltid";
-"Always allow %@" = "Tillat alltid %@";
-"Always allow adds: %@" = "Tillat alltid legger til: %@";
 "Amber" = "Rav";
 "An agent tab cannot be kept as the opening tab" = "En agentfane kan ikke beholdes som åpningsfane";
 "Announcements" = "Oppslag";
 "Answer copied" = "Svar kopiert";
-"Answer in terminal" = "Svar i terminalen";
-"Answer permissions and questions from the notch" = "Svar på tillatelser og spørsmål fra notchen";
 "Answers" = "Svar";
 "Any country" = "Alle land";
 "Appearance" = "Utseende";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Spør om et bilde";
 "Ask about your screen" = "Spør om skjermen din";
 "Ask anything" = "Spør løs";
-"Ask anything above. Questions go to %@. The answer shows here." = "Spør om hva som helst ovenfor. Spørsmål sendes til %@. Svaret vises her.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Spør om hva som helst.\nReturn sender, ⌥Return legger til en linje.\n\nSpørsmålene dine sendes til %@. Med Skjerm på følger et bilde av skjermen din med.";
 "Ask before closing a tab that is still running" = "Spør før en fane som fortsatt kjører, lukkes";
-"Ask in terminal" = "Spør i terminalen";
 "Ask the same question again on Claude Sonnet 5.5" = "Still det samme spørsmålet igjen til Claude Sonnet 5.5";
-"Asking a question" = "Stiller et spørsmål";
 "Asking you: %@" = "Spør deg: %@";
 "Asleep" = "Sover";
 "Attach a picture" = "Legg ved et bilde";
@@ -241,7 +225,6 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Kameratilgang er av";
 "Camera access is off for Scout." = "Kameratilgang er av for Scout.";
-"Can't listen (%@)" = "Kan ikke lytte (%@)";
 "Can't read %@ yet" = "Kan ikke lese %@ ennå";
 "Can't tell which chat this is" = "Kan ikke se hvilken chat dette er";
 "Cancel" = "Avbryt";
@@ -265,7 +248,6 @@
 "Choose a script" = "Velg et skript";
 "Choose image…" = "Velg bilde…";
 "Choose shortcuts" = "Velg snarveier";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Velg mappen %@ i hjemmemappen din. Scout tar en sikkerhetskopi av %@ der og legger til sine hooks; ingenting annet endres.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Velg mappen %@ slik at Scout kan se %@-øktene dine. Scout leser den bare.";
 "Choose the model" = "Velg modellen";
 "Choose…" = "Velg…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Tøm siste stasjoner og steder";
 "Clear shortcut" = "Fjern tastatursnarvei";
 "Clear the clipboard history?" = "Tømme historikken for utklippstavlen?";
-"Click Copy hooks." = "Klikk på Kopier hooks.";
 "Click for %@ settings, drag to move" = "Klikk for innstillinger for %@, dra for å flytte";
 "Click one, or use the arrow keys. Press Return to go on." = "Klikk på en, eller bruk piltastene. Trykk Return for å gå videre.";
 "Click one, or use the arrow keys. The window grows with it." = "Klikk på en, eller bruk piltastene. Vinduet vokser med.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Lukk denne fanen (⌘W)";
 "Close this tab?" = "Lukke denne fanen?";
 "Cloudy" = "Skyet";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex ber deg gjennomgå nye hooks én gang: skriv /hooks i Codex og stol på hooks fra Scout.";
 "Color" = "Farge";
 "Colors" = "Farger";
 "Command" = "Command";
 "Compact" = "Kompakt";
-"Connect" = "Koble til";
-"Connect %@?" = "Koble til %@?";
-"Connect %@…" = "Koble til %@…";
-"Connect Claude Code" = "Koble til Claude Code";
-"Connect Claude Code…" = "Koble til Claude Code…";
-"Connect Codex" = "Koble til Codex";
-"Connect Codex…" = "Koble til Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Koble til ber deg velge mappen %@ én gang; Scout tar en sikkerhetskopi av %@, legger bare til sine egne poster og kan fjerne dem igjen (Koble fra). Hver hook er én enkelt curl-kommando til 127.0.0.1; når Scout er lukket, gjør den ingenting.";
 "Connected" = "Tilkoblet";
-"Connected, but out of date" = "Tilkoblet, men utdatert";
-"Connected. New sessions report to Scout." = "Tilkoblet. Nye økter rapporterer til Scout.";
 "Connecting" = "Kobler til";
 "Connecting…" = "Kobler til…";
 "Contacts" = "Kontakter";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Kopier som gjøres mens en av disse appene er i forgrunnen, lagres aldri.";
 "Copy" = "Kopier";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Kopier en lenke fra YouTube, X, Instagram, TikTok, Vimeo eller Reddit, åpne brettet, så tilbyr Scout å laste den ned, eller slipp en lenke på brettet. Nedlastinger bruker yt-dlp, som du installerer selv; knappen ovenfor kjører bare når du trykker på den. For å lese en kopiert lenke trenger Scout “Tillat” under Systeminnstillinger › Personvern og sikkerhet › Lim inn fra andre apper (macOS 15.4 og nyere).";
-"Copy hooks" = "Kopier hooks";
-"Copy hooks instead" = "Kopier hooks i stedet";
 "Copy something and it shows up here." = "Kopier noe, så dukker det opp her.";
 "Couldn't copy the picture" = "Kunne ikke kopiere bildet";
 "Couldn't copy the polaroid" = "Kunne ikke kopiere polaroiden";
@@ -399,9 +367,6 @@
 "Delete note" = "Slett notat";
 "Delete this chat" = "Slett denne chatten";
 "Delete this script" = "Slett dette skriptet";
-"Deny" = "Avslå";
-"Disconnect" = "Koble fra";
-"Disconnected. Your own hooks are untouched." = "Frakoblet. Dine egne hooks er urørt.";
 "Disk" = "Disk";
 "Dismiss" = "Lukk";
 "Display" = "Skjerm";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Eksporter som %@…";
 "Exported %@" = "Eksporterte %@";
 "Extra large" = "Ekstra stor";
-"FAST ASK AI" = "RASK SPOER KI";
 "FAVOURITES" = "FAVORITTER";
 "FROZEN" = "FRYST";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Glem tidligere faner";
 "Forget previous tabs" = "Glem tidligere faner";
 "Forget recent folders" = "Glem siste mapper";
-"Found automatically" = "Funnet automatisk";
 "Found · %@" = "Funnet · %@";
 "Free service, no key" = "Gratis tjeneste, ingen nøkkel";
 "Freezing drizzle" = "Underkjølt yr";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "HEI FRA SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku til raske spørsmål, Sonnet til vanskelige";
 "Haptic feedback" = "Haptisk tilbakemelding";
-"Has a question" = "Har et spørsmål";
 "Heavy rain" = "Kraftig regn";
 "Heavy showers" = "Kraftige byger";
 "Heavy snow" = "Kraftig snøfall";
@@ -533,9 +495,7 @@
 "Here" = "Her";
 "Hide completed" = "Skjul fullførte";
 "Hide it while an app is full screen" = "Skjul den mens en app er i fullskjerm";
-"Hide the answer" = "Skjul svaret";
 "Hide the chats" = "Skjul chattene";
-"Hide the paste code" = "Skjul innlimingskoden";
 "History" = "Historikk";
 "History is paused" = "Historikken er satt på pause";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Hold ⌥⇧ nede med en lydstyrke- eller lysstyrketast for kvartsteg.";
@@ -605,15 +565,11 @@
 "Links" = "Lenker";
 "List" = "Liste";
 "List name" = "Navn på liste";
-"Listen for AI agents on this Mac" = "Lytt etter KI-agenter på denne Mac-en";
-"Listening on 127.0.0.1:%@" = "Lytter på 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Lytter på 127.0.0.1:%@ (%@ var opptatt)";
 "Listening…" = "Lytter…";
 "Lists" = "Lister";
 "Live" = "Live";
 "Live Activities" = "Live-aktiviteter";
 "Loading…" = "Laster…";
-"Local bridge" = "Lokal bro";
 "Local weather. A chosen city works without it." = "Lokalt vær. En valgt by fungerer uten.";
 "Location" = "Posisjon";
 "Location access" = "Posisjonstilgang";
@@ -662,7 +618,6 @@
 "Models" = "Modeller";
 "More" = "Mer";
 "More agents: %lld" = "Flere agenter: %lld";
-"More…" = "Mer…";
 "Most capable, slowest" = "Mest kapabel, tregest";
 "Most items to keep" = "Flest elementer å beholde";
 "Mostly clear" = "For det meste klart";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Ikke spurt ennå";
 "Not available on this Mac" = "Ikke tilgjengelig på denne Mac-en";
 "Not checked yet" = "Ikke sjekket ennå";
-"Not connected" = "Ikke tilkoblet";
 "Not found in your login shell's PATH" = "Ikke funnet i PATH for påloggingsshellen din";
 "Not found on this Mac" = "Ikke funnet på denne Mac-en";
 "Not installed" = "Ikke installert";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Bare skjermer med notch";
 "Only events with a video link" = "Bare hendelser med en videolenke";
 "Only for the Prompter to follow your voice." = "Bare slik at Prompter kan følge stemmen din.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Trengs bare for å tillate, avslå og svare på spørsmål fra notchen; alt ovenfor fungerer uten. Hver agent kjører en hook på én linje som sender til Scout på denne Mac-en (bare 127.0.0.1, med en privat nøkkel). Scout endrer agentens innstillinger bare når du klikker på Koble til og velger mappen (sikkerhetskopi først, bare egne poster fra Scout), eller når du selv limer inn hooks. Hvis Scout ikke kjører, gjør hooken ingenting, og agenten spør i terminalen sin som vanlig.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Trengs bare for å tillate, avslå og svare på spørsmål fra notchen; alt ovenfor fungerer uten. Hver hook er en kommando på én linje som sender til Scout på denne Mac-en (bare 127.0.0.1, med en privat nøkkel). Hvis Scout ikke kjører, gjør hooken ingenting, og agenten spør i terminalen sin som vanlig.";
-"Only the dot beside the notch" = "Bare prikken ved siden av notchen";
 "Only what you choose" = "Bare det du velger";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Bare hvis den fortsatt spilte da Scout ble lukket. Scout husker alltid den siste stasjonen og volumet.";
 "Open" = "Åpne";
 "Open %@" = "Åpne %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Åpne %@ (opprett den hvis den ikke finnes) og lim inn. Hvis den allerede har en \"hooks\"-seksjon, legg disse postene inn i den.";
 "Open %@ full size" = "Åpne %@ i full størrelse";
 "Open %@ to finish" = "Åpne %@ for å fullføre";
 "Open %@, full size" = "Åpne %@, i full størrelse";
@@ -808,7 +758,6 @@
 "Open To-do" = "Åpne Oppgaver";
 "Open a Scout window first, then share" = "Åpne først et vindu i Scout, og del deretter";
 "Open a widget full size" = "Åpne en widget i full størrelse";
-"Open in Ask AI" = "Åpne i Spør KI";
 "Open or close the notch" = "Åpne eller lukk notchen";
 "Open tasks in total: %lld" = "Åpne oppgaver totalt: %lld";
 "Open the Calendar with the To-dos, full size" = "Åpne Kalender med Oppgaver i full størrelse";
@@ -817,7 +766,6 @@
 "Open the notch" = "Åpne notchen";
 "Open the notch on %@ (now: %@)" = "Åpne notchen på %@ (nå: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Åpne notchen på %@ hver gang, ikke oversikten";
-"Open the notch on Agents" = "Åpne notchen på Agenter";
 "Open the notch when an agent needs you" = "Åpne notchen når en agent trenger deg";
 "Open the player" = "Åpne spilleren";
 "Open the to-do calendar" = "Åpne oppgavekalenderen";
@@ -829,9 +777,7 @@
 "Opening" = "Åpner";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Åpner notchen med den widgeten allerede utvidet. Trykk igjen for å lukke. Selve notchen åpnes alltid på oversikten.";
 "Option" = "Option";
-"Optional: answer from the notch" = "Valgfritt: svar fra notchen";
 "Options" = "Alternativer";
-"Or type your own answer" = "Eller skriv ditt eget svar";
 "Orange" = "Oransje";
 "Output" = "Utdata";
 "Overcast" = "Overskyet";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Popup";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "Port %u var opptatt, så denne blokken oppgir port %u. Hvis Scout starter på %u igjen senere, kopier den på nytt.";
 "Press a shortcut…" = "Trykk en tastatursnarvei…";
 "Preview" = "Forhåndsvisning";
 "Preview a card" = "Forhåndsvis et kort";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Legg konverterte filer i brettet";
 "Put finished videos in the Tray" = "Legg ferdige videoer i brettet";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Setter alle alternativer tilbake som den første dagen. Notatene, utklippstavlen og filene dine blir.";
-"Questions go to %@." = "Spørsmål sendes til %@.";
 "Questions go to %@. The answers stay here." = "Spørsmål sendes til %@. Svarene blir her.";
 "Quick" = "Rask";
 "Quick Apps" = "Hurtigapper";
@@ -920,7 +864,6 @@
 "Reading" = "Leser";
 "Ready" = "Klar";
 "Ready for the next focus session" = "Klar for neste fokusøkt";
-"Ready for the next task" = "Klar for neste oppgave";
 "Rec" = "Opp.";
 "Recent downloads" = "Siste nedlastinger";
 "Record Shortcut" = "Ta opp tastatursnarvei";
@@ -978,19 +921,15 @@
 "Save…" = "Lagre…";
 "Scout Settings" = "Innstillinger for Scout";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout spør først macOS når du slår på eller åpner funksjonen som trenger det. Ingenting spørres om ved oppstart.";
-"Scout can no longer open that folder. Connect again." = "Scout kan ikke lenger åpne den mappen. Koble til igjen.";
 "Scout can't match what it hears to the script" = "Scout kan ikke matche det den hører med skriptet";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout kan ikke se agentenes mapper ennå. Tillat det én gang, så flytter hver Claude Code- og Codex-økt inn av seg selv.";
 "Scout can't use this microphone" = "Scout kan ikke bruke denne mikrofonen";
-"Scout could not open a local port." = "Scout kunne ikke åpne en lokal port.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout kunne ikke se skjermen din, så det spørsmålet gikk uten bilde. Tillat Scout under Skjermopptak.";
 "Scout couldn't take the picture this time, so that question went without it." = "Scout kunne ikke ta bildet denne gangen, så det spørsmålet gikk uten.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout finner Claude Code- og Codex-økter av seg selv";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout lytter nå på port %u (eller hooksene er fra en eldre versjon). Oppdater skriver bare om postene fra Scout.";
 "Scout only watches for connections once you allow it." = "Scout følger først med på tilkoblinger når du tillater det.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout leser hendelsene dine på denne Mac-en for å fylle widgeten Kalender og arbeidsområdet. Ingenting sendes noe sted.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout husker det du kopierer, slik at du kan lime det inn igjen fra notchen eller den nederste hyllen. Alt blir på denne Mac-en.";
-"Scout will add its hooks to %@ after backing the file up." = "Scout legger til hooks i %@ etter å ha tatt en sikkerhetskopi av filen.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Koden, ordene og ikonet i Scout er originale. Alt annet her brukes under sin egen lisens.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Vinduene i Scout (Spør KI, notater, oppgaver, kalkulatoren og de andre) åpnes igjen der de var, med størrelse og tekst, etter en avslutning, en oppdatering eller en omstart. Når en skjerm ikke lenger finnes, åpnes de på hovedskjermen.";
 "Scout: my AI agents in my notch. %@" = "Scout: KI-agentene mine i notchen min. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Søk på nettet";
 "Searching the web…" = "Søker på nettet…";
 "See the month, your agenda and a Join button for video calls." = "Se måneden, kalenderen din og en Delta-knapp for videosamtaler.";
-"See the whole conversation in the Ask AI tab" = "Se hele samtalen i fanen Spør KI";
 "See your day here" = "Se dagen din her";
 "Select a note or start a new one" = "Velg et notat, eller start et nytt";
 "Select a note or start a new one." = "Velg et notat, eller start et nytt.";
 "Selected: %lld" = "Valgt: %lld";
 "Send" = "Send";
-"Send answers" = "Send svar";
 "Send to Apple Notes" = "Send til Notater";
 "Send to a nearby device" = "Send til en enhet i nærheten";
 "Sensitivity" = "Følsomhet";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Vis AirPods og batteriet deres når de kobles til";
 "Show Scout in the menu bar" = "Vis Scout i menylinjen";
 "Show a Join card when the meeting starts" = "Vis et Delta-kort når møtet starter";
-"Show a card under the notch" = "Vis et kort under notchen";
 "Show a card when a download finishes" = "Vis et kort når en nedlasting er ferdig";
 "Show a count next to the notch while the Tray holds files" = "Vis et tall ved siden av notchen mens brettet inneholder filer";
 "Show a countdown" = "Vis en nedtelling";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Vis hver åpne oppgave, uansett dag";
 "Show in Finder" = "Vis i Finder";
 "Show in full screen" = "Vis i fullskjerm";
-"Show me the paste code" = "Vis meg innlimingskoden";
 "Show music from" = "Vis musikk fra";
 "Show music next to the notch while it plays" = "Vis musikk ved siden av notchen mens den spilles";
 "Show my calendar in the notch" = "Vis kalenderen min i notchen";
@@ -1107,9 +1042,7 @@
 "Square" = "Firkant";
 "Start" = "Start";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Start Claude Code eller Codex, så dukker hver økt opp her av seg selv, med fremdriften sin. Ingenting å koble til.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Start Codex og skriv /hooks for å stole på hooks fra Scout første gang. Start deretter en ny økt.";
 "Start a %lld-minute focus timer for this task" = "Start en fokustidtaker på %lld minutter for denne oppgaven";
-"Start a new Claude Code session. It appears in the notch." = "Start en ny Claude Code-økt. Den dukker opp i notchen.";
 "Start again" = "Start på nytt";
 "Start folder" = "Startmappe";
 "Start the camera when the Mirror widget appears" = "Start kameraet når widgeten Speil vises";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Tekststørrelse: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "Den API-nøkkelen ble avvist. Sjekk den i Innstillinger › Spør KI.";
 "That didn't work" = "Det fungerte ikke";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "Det er ikke mappen %@ i hjemmemappen din. Koble til igjen og velg den.";
 "That one did not go through" = "Det gikk ikke gjennom";
 "That's the end" = "Det var det";
 "The %@ uses the camera, so it never opens by itself" = "%@ bruker kameraet, så den åpnes aldri av seg selv";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Slått av";
 "Two-finger swipe on the notch" = "Sveip med to fingre på notchen";
 "Type a city, region or country, or pick a country." = "Skriv en by, region eller et land, eller velg et land.";
-"Type your own…" = "Skriv din egen…";
 "Typing: the notch stays open" = "Skriver: notchen forblir åpen";
 "Unknown format" = "Ukjent format";
 "Unlicense (only if you install it)" = "Unlicense (bare hvis du installerer den)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Til den er på, sendes spørsmål uten bilde.";
 "Untitled" = "Uten tittel";
 "Untitled script" = "Skript uten tittel";
-"Update" = "Oppdater";
 "Updates" = "Oppdateringer";
 "Updating the to-do list" = "Oppdaterer oppgavelisten";
 "Upload %@" = "Last opp %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Venter på deg";
 "Waiting for your OK" = "Venter på OK-en din";
 "Waiting for your voice" = "Venter på stemmen din";
-"Wants to use %@" = "Vil bruke %@";
-"Wants to use %@: %@" = "Vil bruke %@: %@";
-"Wants to use a tool" = "Vil bruke et verktøy";
-"Wants to use a tool: %@" = "Vil bruke et verktøy: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Varmt papir, mørk tekst og lyse aksenter. Lett å lese om dagen.";
 "Warn at" = "Advar ved";
 "Warn when the battery is low" = "Advar når batteriet er lavt";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "Hva Scout kan nå, og hvorfor den spør.";
 "What shows next to the notch while it is closed." = "Hva som vises ved siden av notchen mens den er lukket.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Når en melding kommer, faller et kort ned under notchen med avsenderen, teksten og et svarfelt. Det er stille mens appen Meldinger er i forgrunnen. Scout sender aldri noe med mindre du skriver et svar og trykker Return.";
-"When an agent needs an answer" = "Når en agent trenger et svar";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Når du endrer lydstyrken med tastene, menylinjen eller en annen app, vises nivået også ved siden av notchen.";
 "Where stations come from" = "Hvor stasjonene kommer fra";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Mens musikk spilles, en tidtaker kjører eller en nedlasting blir ferdig, vokser notchen for å vise det. Pek på den, så åpnes den til din Nook: widgeter, filer, utklippstavle, kalender. Flytt bort, så trekker den seg tilbake.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Zoom %@, tilbake til hele bildet";
 "Zoom in" = "Zoom inn";
 "Zoom out" = "Zoom ut";
-"all edits this session" = "alle endringer i denne økten";
 "charged" = "oppladet";
 "charging" = "lader";
 "code" = "kode";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS ville ikke endre det: %@";
 "me and my agents" = "meg og agentene mine";
 "min" = "min";
-"mode %@" = "modus %@";
 "model name" = "modellnavn";
 "needs you" = "trenger deg";
 "no battery" = "ingen batteri";

@@ -10,9 +10,7 @@
 "%@ ended." = "%@ 已结束。";
 "%@ failed" = "%@ 失败";
 "%@ finished after %lld min" = "%@ 在 %lld 分钟后完成";
-"%@ finished in %@" = "%@ 已在 %@ 中完成";
 "%@ free" = "%@ 可用";
-"%@ has a question" = "%@ 有一个问题";
 "%@ has no sound" = "%@ 没有声音";
 "%@ in %@" = "%@（%@）";
 "%@ installed" = "%@ 已安装";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@ 太大，无法放入 ZIP 文件（上限 4 GB）";
 "%@ isn't installed" = "%@ 未安装";
 "%@ isn't supported on this Mac" = "这台 Mac 不支持 %@";
-"%@ isn't valid JSON, so Scout left it alone." = "%@ 不是有效的 JSON，所以 Scout 没有改动它。";
 "%@ key" = "%@ 键";
 "%@ left" = "剩余 %@";
 "%@ needs you" = "%@ 需要你";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "%@ 计时器已完成";
 "%@ to full" = "距充满还需 %@";
 "%@ used" = "已用 %@";
-"%@ wants to use %@" = "%@ 想要使用 %@";
-"%@ wants to use a tool" = "%@ 想要使用工具";
 "%@ · %@ of %@" = "%@ · %@ / %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · 共 %lld 项未完成";
@@ -71,7 +66,6 @@
 "%lld running" = "%lld 个正在运行";
 "%lld working" = "%lld 个正在工作";
 "%lld wpm" = "%lld wpm";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "另有 %lld 项";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "请先在“设置 › 问 AI”中添加你的 %@ API 密钥。";
 "Add your API key in Settings › Ask AI first." = "请先在“设置 › 问 AI”中添加你的 API 密钥。";
 "Add your Claude API key in Settings › Ask AI first." = "请先在“设置 › 问 AI”中添加你的 Claude API 密钥。";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "将 Scout 的钩子添加到 ~/.claude/settings.json（进度事件、权限请求和问题），不会改动你自己的钩子。文件会先备份。";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "将 Scout 的钩子添加到 ~/.codex/hooks.json。Codex 会在首次使用时请你审核新钩子：在 Codex 中输入 /hooks 并信任 Scout 的钩子。";
 "Agent" = "智能体";
 "Agent TV" = "智能体 TV";
 "Agent TV den" = "智能体 TV 小窝";
@@ -164,15 +156,10 @@
 "Allow…" = "允许…";
 "Also show it while an app is full screen" = "App 全屏时也显示";
 "Also used for “%@”: only one of them will work." = "也用于“%@”：只有其中一个会生效。";
-"Always allow" = "始终允许";
-"Always allow %@" = "始终允许 %@";
-"Always allow adds: %@" = "“始终允许”会添加：%@";
 "Amber" = "琥珀色";
 "An agent tab cannot be kept as the opening tab" = "智能体标签页不能保留为启动标签页";
 "Announcements" = "公告";
 "Answer copied" = "已拷贝回答";
-"Answer in terminal" = "在终端中回答";
-"Answer permissions and questions from the notch" = "在刘海中回答权限请求和问题";
 "Answers" = "回答";
 "Any country" = "任何国家";
 "Appearance" = "外观";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "询问图片";
 "Ask about your screen" = "询问屏幕内容";
 "Ask anything" = "随便问";
-"Ask anything above. Questions go to %@. The answer shows here." = "在上方随便提问。问题会发送给 %@。回答会显示在这里。";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "随便提问。\n按 Return 发送，按 ⌥Return 换行。\n\n你的问题会发送给 %@。打开“屏幕”后，屏幕图片会一起发送。";
 "Ask before closing a tab that is still running" = "关闭仍在运行的标签页前先询问";
-"Ask in terminal" = "在终端中提问";
 "Ask the same question again on Claude Sonnet 5.5" = "用 Claude Sonnet 5.5 再问一次同样的问题";
-"Asking a question" = "正在提问";
 "Asking you: %@" = "询问你：%@";
 "Asleep" = "休眠中";
 "Attach a picture" = "附加图片";
@@ -241,7 +225,6 @@
 "Camera" = "相机";
 "Camera access is off" = "相机访问已关闭";
 "Camera access is off for Scout." = "Scout 的相机访问已关闭。";
-"Can't listen (%@)" = "无法监听（%@）";
 "Can't read %@ yet" = "暂时无法读取 %@";
 "Can't tell which chat this is" = "无法判断这是哪个聊天";
 "Cancel" = "取消";
@@ -265,7 +248,6 @@
 "Choose a script" = "选择脚本";
 "Choose image…" = "选择图片…";
 "Choose shortcuts" = "选择快捷指令";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "请在你的个人文件夹中选择 %@ 文件夹。Scout 会在那里备份 %@ 并添加它的钩子，其他内容都不会改动。";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "请选择 %1$@ 文件夹，Scout 才能看到你的 %2$@ 会话。Scout 只读取它。";
 "Choose the model" = "选择模型";
 "Choose…" = "选择…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "清除最近的电台和地点";
 "Clear shortcut" = "清除快捷键";
 "Clear the clipboard history?" = "清除剪贴板历史记录？";
-"Click Copy hooks." = "点击“拷贝钩子”。";
 "Click for %@ settings, drag to move" = "点击打开 %@ 设置，拖移可移动";
 "Click one, or use the arrow keys. Press Return to go on." = "点击其中一个，或使用方向键。按 Return 继续。";
 "Click one, or use the arrow keys. The window grows with it." = "点击其中一个，或使用方向键。窗口会随之变大。";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "关闭此标签页（⌘W）";
 "Close this tab?" = "要关闭此标签页吗？";
 "Cloudy" = "多云";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex 会请你审核一次新钩子：在 Codex 中输入 /hooks 并信任 Scout 的钩子。";
 "Color" = "颜色";
 "Colors" = "颜色";
 "Command" = "Command";
 "Compact" = "紧凑";
-"Connect" = "连接";
-"Connect %@?" = "要连接 %@ 吗？";
-"Connect %@…" = "连接 %@…";
-"Connect Claude Code" = "连接 Claude Code";
-"Connect Claude Code…" = "连接 Claude Code…";
-"Connect Codex" = "连接 Codex";
-"Connect Codex…" = "连接 Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "“连接”会请你选择一次 %@ 文件夹；Scout 会备份 %@，只添加它自己的条目，之后还能再移除（“断开连接”）。每个钩子都是一条发往 127.0.0.1 的 curl 命令；Scout 关闭时它什么也不做。";
 "Connected" = "已连接";
-"Connected, but out of date" = "已连接，但已过期";
-"Connected. New sessions report to Scout." = "已连接。新会话会向 Scout 汇报。";
 "Connecting" = "正在连接";
 "Connecting…" = "正在连接…";
 "Contacts" = "通讯录";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "当这些 App 位于最前面时进行的拷贝不会被保存。";
 "Copy" = "拷贝";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "拷贝 YouTube、X、Instagram、TikTok、Vimeo 或 Reddit 的链接后打开托盘，Scout 会提议下载它；也可以把链接拖到托盘上。下载使用 yt-dlp，需要你自己安装；上面的按钮只在你按下时才会运行。读取拷贝的链接需要在“系统设置 › 隐私与安全性 › 从其他 App 粘贴”中为 Scout 选择“允许”（macOS 15.4 及更高版本）。";
-"Copy hooks" = "拷贝钩子";
-"Copy hooks instead" = "改为拷贝钩子";
 "Copy something and it shows up here." = "拷贝一些内容，它就会出现在这里。";
 "Couldn't copy the picture" = "无法拷贝图片";
 "Couldn't copy the polaroid" = "无法拷贝拍立得";
@@ -399,9 +367,6 @@
 "Delete note" = "删除备忘录";
 "Delete this chat" = "删除此聊天";
 "Delete this script" = "删除此脚本";
-"Deny" = "拒绝";
-"Disconnect" = "断开连接";
-"Disconnected. Your own hooks are untouched." = "已断开连接。你自己的钩子保持原样。";
 "Disk" = "磁盘";
 "Dismiss" = "关闭";
 "Display" = "显示器";
@@ -457,7 +422,6 @@
 "Export as %@…" = "导出为 %@…";
 "Exported %@" = "已导出 %@";
 "Extra large" = "特大";
-"FAST ASK AI" = "FAST ASK AI";
 "FAVOURITES" = "FAVOURITES";
 "FROZEN" = "FROZEN";
 "Fahrenheit (°F)" = "华氏度（°F）";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "忘记之前的标签页";
 "Forget previous tabs" = "忘记之前的标签页";
 "Forget recent folders" = "忘记最近的文件夹";
-"Found automatically" = "自动找到";
 "Found · %@" = "找到 · %@";
 "Free service, no key" = "免费服务，无需密钥";
 "Freezing drizzle" = "冻毛毛雨";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "HELLO FROM SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku 用于简单问题，Sonnet 用于难题";
 "Haptic feedback" = "触感反馈";
-"Has a question" = "有一个问题";
 "Heavy rain" = "大雨";
 "Heavy showers" = "强阵雨";
 "Heavy snow" = "大雪";
@@ -533,9 +495,7 @@
 "Here" = "这里";
 "Hide completed" = "隐藏已完成项";
 "Hide it while an app is full screen" = "App 全屏时隐藏";
-"Hide the answer" = "隐藏回答";
 "Hide the chats" = "隐藏聊天";
-"Hide the paste code" = "隐藏粘贴代码";
 "History" = "历史记录";
 "History is paused" = "历史记录已暂停";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "按住 ⌥⇧ 的同时按音量键或亮度键，可按四分之一格调节。";
@@ -605,15 +565,11 @@
 "Links" = "链接";
 "List" = "列表";
 "List name" = "列表名称";
-"Listen for AI agents on this Mac" = "监听这台 Mac 上的 AI 智能体";
-"Listening on 127.0.0.1:%@" = "正在监听 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "正在监听 127.0.0.1:%@（%@ 已被占用）";
 "Listening…" = "正在聆听…";
 "Lists" = "列表";
 "Live" = "实时";
 "Live Activities" = "实时活动";
 "Loading…" = "正在载入…";
-"Local bridge" = "本地桥接";
 "Local weather. A chosen city works without it." = "本地天气。选定城市时无需此权限。";
 "Location" = "位置";
 "Location access" = "位置访问";
@@ -662,7 +618,6 @@
 "Models" = "模型";
 "More" = "更多";
 "More agents: %lld" = "更多智能体：%lld";
-"More…" = "更多…";
 "Most capable, slowest" = "能力最强，速度最慢";
 "Most items to keep" = "最多保留的项目数";
 "Mostly clear" = "大部晴朗";
@@ -736,7 +691,6 @@
 "Not asked yet" = "尚未询问";
 "Not available on this Mac" = "在这台 Mac 上不可用";
 "Not checked yet" = "尚未检查";
-"Not connected" = "未连接";
 "Not found in your login shell's PATH" = "在你的登录 Shell 的 PATH 中未找到";
 "Not found on this Mac" = "在这台 Mac 上未找到";
 "Not installed" = "未安装";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "仅限带刘海的显示器";
 "Only events with a video link" = "仅限带视频链接的事件";
 "Only for the Prompter to follow your voice." = "仅用于让提词器跟随你的声音。";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "只有在从刘海中“允许”“拒绝”和回答问题时才需要；上面的所有功能不需要它也能使用。每个智能体都会运行一个单行钩子，向这台 Mac 上的 Scout 发送内容（仅限 127.0.0.1，并带有私有密钥）。只有当你点击“连接”并选择其文件夹（会先备份，且只改 Scout 自己的条目），或自己粘贴钩子时，Scout 才会更改你的智能体的设置。如果 Scout 没有运行，钩子什么也不做，智能体会像往常一样在它的终端中询问。";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "只有在从刘海中“允许”“拒绝”和回答问题时才需要；上面的所有功能不需要它也能使用。每个钩子都是一条单行命令，向这台 Mac 上的 Scout 发送内容（仅限 127.0.0.1，并带有私有密钥）。如果 Scout 没有运行，钩子什么也不做，智能体会像往常一样在它的终端中询问。";
-"Only the dot beside the notch" = "仅刘海旁边的圆点";
 "Only what you choose" = "仅你选择的内容";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "仅当 Scout 退出时仍在播放。Scout 总会记住上一个电台和音量。";
 "Open" = "打开";
 "Open %@" = "打开 %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "打开 %@（如果没有就创建它）并粘贴。如果其中已有 \"hooks\" 部分，请把这些条目添加到里面。";
 "Open %@ full size" = "全尺寸打开 %@";
 "Open %@ to finish" = "打开 %@ 以完成";
 "Open %@, full size" = "打开 %@，全尺寸";
@@ -808,7 +758,6 @@
 "Open To-do" = "打开待办";
 "Open a Scout window first, then share" = "请先打开一个 Scout 窗口，再进行分享";
 "Open a widget full size" = "全尺寸打开小组件";
-"Open in Ask AI" = "在“问 AI”中打开";
 "Open or close the notch" = "打开或关闭刘海";
 "Open tasks in total: %lld" = "未完成的待办共计：%lld";
 "Open the Calendar with the To-dos, full size" = "全尺寸打开带待办的日历";
@@ -817,7 +766,6 @@
 "Open the notch" = "打开刘海";
 "Open the notch on %@ (now: %@)" = "在 %@ 上打开刘海（当前：%@）";
 "Open the notch on %@ every time, not the dashboard" = "每次都在 %@ 上打开刘海，而不是仪表板";
-"Open the notch on Agents" = "在“智能体”上打开刘海";
 "Open the notch when an agent needs you" = "当智能体需要你时打开刘海";
 "Open the player" = "打开播放器";
 "Open the to-do calendar" = "打开待办日历";
@@ -829,9 +777,7 @@
 "Opening" = "正在打开";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "打开刘海时，该小组件已处于展开状态。再按一次即可关闭。刘海本身始终在仪表板上打开。";
 "Option" = "Option";
-"Optional: answer from the notch" = "可选：在刘海中回答";
 "Options" = "选项";
-"Or type your own answer" = "或输入你自己的回答";
 "Orange" = "橙色";
 "Output" = "输出";
 "Overcast" = "阴天";
@@ -885,7 +831,6 @@
 "Pomo" = "番茄";
 "Pomodoro" = "番茄钟";
 "Pop-up" = "弹出窗口";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "端口 %u 已被占用，所以这段内容写的是端口 %u。如果之后 Scout 再次在 %u 上启动，请重新拷贝一次。";
 "Press a shortcut…" = "请按下快捷键…";
 "Preview" = "预览";
 "Preview a card" = "预览卡片";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "把转换后的文件放进托盘";
 "Put finished videos in the Tray" = "把完成的视频放进托盘";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "把所有选项恢复到第一天的样子。你的备忘录、剪贴板和文件会保留。";
-"Questions go to %@." = "问题会发送给 %@。";
 "Questions go to %@. The answers stay here." = "问题会发送给 %@。回答会保留在这里。";
 "Quick" = "快速";
 "Quick Apps" = "快捷 App";
@@ -920,7 +864,6 @@
 "Reading" = "阅读方式";
 "Ready" = "就绪";
 "Ready for the next focus session" = "已准备好下一个专注时段";
-"Ready for the next task" = "已准备好下一项任务";
 "Rec" = "录制";
 "Recent downloads" = "最近下载";
 "Record Shortcut" = "录制快捷键";
@@ -978,19 +921,15 @@
 "Save…" = "存储…";
 "Scout Settings" = "Scout 设置";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "只有在你打开或使用需要它的功能时，Scout 才会询问 macOS。启动时不会询问任何内容。";
-"Scout can no longer open that folder. Connect again." = "Scout 无法再打开那个文件夹。请重新连接。";
 "Scout can't match what it hears to the script" = "Scout 无法把听到的内容与脚本匹配";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout 还看不到你的智能体的文件夹。允许一次后，每个 Claude Code 和 Codex 会话都会自己搬进来。";
 "Scout can't use this microphone" = "Scout 无法使用这个麦克风";
-"Scout could not open a local port." = "Scout 无法打开本地端口。";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout 看不到你的屏幕，所以那个问题没有附带图片。请在“屏幕录制”中允许 Scout。";
 "Scout couldn't take the picture this time, so that question went without it." = "Scout 这次没能拍到图片，所以那个问题没有附带图片。";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout 会自己找到 Claude Code 和 Codex 会话";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout 现在监听端口 %u（或者它的钩子来自旧版本）。“更新”只会改写 Scout 的条目。";
 "Scout only watches for connections once you allow it." = "只有在你允许后，Scout 才会监视连接。";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout 在这台 Mac 上读取你的事件，用来填充“日历”小组件和工作区。不会向任何地方发送内容。";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout 会记住你拷贝的内容，这样你就可以从刘海或底部架再次粘贴。一切都保留在这台 Mac 上。";
-"Scout will add its hooks to %@ after backing the file up." = "备份文件后，Scout 会把它的钩子添加到 %@。";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Scout 自己的代码、文字和图标都是原创。这里的其他所有内容均按各自的许可使用。";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Scout 自己的窗口（问 AI、备忘录、待办、计算器等）在退出、更新或重新启动后，会带着原来的大小和文字，在原来的位置重新打开。如果某个显示器不在了，它们会在主显示器上打开。";
 "Scout: my AI agents in my notch. %@" = "Scout：我刘海里的 AI 智能体。%@";
@@ -1011,13 +950,11 @@
 "Search the web" = "搜索网页";
 "Searching the web…" = "正在搜索网页…";
 "See the month, your agenda and a Join button for video calls." = "查看本月、你的日程，以及视频通话的“加入”按钮。";
-"See the whole conversation in the Ask AI tab" = "在“问 AI”标签页中查看完整对话";
 "See your day here" = "在这里查看你的一天";
 "Select a note or start a new one" = "选择一条备忘录或新建一条";
 "Select a note or start a new one." = "选择一条备忘录或新建一条。";
 "Selected: %lld" = "已选：%lld";
 "Send" = "发送";
-"Send answers" = "发送回答";
 "Send to Apple Notes" = "发送到“备忘录”";
 "Send to a nearby device" = "发送到附近的设备";
 "Sensitivity" = "灵敏度";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "AirPods 连接时显示它和电池电量";
 "Show Scout in the menu bar" = "在菜单栏中显示 Scout";
 "Show a Join card when the meeting starts" = "会议开始时显示“加入”卡片";
-"Show a card under the notch" = "在刘海下方显示卡片";
 "Show a card when a download finishes" = "下载完成时显示卡片";
 "Show a count next to the notch while the Tray holds files" = "托盘中有文件时，在刘海旁边显示数量";
 "Show a countdown" = "显示倒计时";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "显示所有未完成的待办，不限日期";
 "Show in Finder" = "在访达中显示";
 "Show in full screen" = "全屏显示";
-"Show me the paste code" = "显示粘贴代码";
 "Show music from" = "音乐来源";
 "Show music next to the notch while it plays" = "音乐播放时在刘海旁显示音乐";
 "Show my calendar in the notch" = "在刘海中显示我的日历";
@@ -1107,9 +1042,7 @@
 "Square" = "方形";
 "Start" = "开始";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "启动 Claude Code 或 Codex，每个会话都会连同进度自己出现在这里。无需连接任何东西。";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "启动 Codex，并在首次使用时输入 /hooks 以信任 Scout 的钩子。然后开始一个新会话。";
 "Start a %lld-minute focus timer for this task" = "为此任务开始 %lld 分钟的专注计时";
-"Start a new Claude Code session. It appears in the notch." = "开始一个新的 Claude Code 会话。它会出现在刘海中。";
 "Start again" = "重新开始";
 "Start folder" = "起始文件夹";
 "Start the camera when the Mirror widget appears" = "“镜子”小组件出现时启动相机";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "文字大小：%lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "该 API 密钥被拒绝。请在“设置 › 问 AI”中检查。";
 "That didn't work" = "没有成功";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "那不是你个人文件夹中的 %@ 文件夹。请重新连接并选择它。";
 "That one did not go through" = "那个没有发送成功";
 "That's the end" = "到此结束";
 "The %@ uses the camera, so it never opens by itself" = "%@ 会使用相机，所以它不会自己打开";
@@ -1246,7 +1178,6 @@
 "Turned off" = "已关闭";
 "Two-finger swipe on the notch" = "在刘海上用两指轻扫";
 "Type a city, region or country, or pick a country." = "输入城市、地区或国家，或选择一个国家。";
-"Type your own…" = "自己输入…";
 "Typing: the notch stays open" = "输入时：刘海保持打开";
 "Unknown format" = "未知格式";
 "Unlicense (only if you install it)" = "Unlicense（仅在你安装时）";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "打开之前，提问不会附带图片。";
 "Untitled" = "未命名";
 "Untitled script" = "未命名的脚本";
-"Update" = "更新";
 "Updates" = "更新";
 "Updating the to-do list" = "正在更新待办列表";
 "Upload %@" = "上传 %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "正在等你";
 "Waiting for your OK" = "正在等你确认";
 "Waiting for your voice" = "正在等你开口";
-"Wants to use %@" = "想要使用 %@";
-"Wants to use %@: %@" = "想要使用 %@：%@";
-"Wants to use a tool" = "想要使用工具";
-"Wants to use a tool: %@" = "想要使用工具：%@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "暖纸色、深色文字和明亮的强调色。白天阅读轻松。";
 "Warn at" = "警告阈值";
 "Warn when the battery is low" = "电池电量低时发出警告";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "Scout 可以访问什么，以及为什么要询问。";
 "What shows next to the notch while it is closed." = "刘海合上时，旁边显示的内容。";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "消息到达时，会有一张卡片落在刘海下方，显示发件人、文字和回复框。“信息”App 位于最前面时，它会保持安静。除非你输入回复并按下 Return，否则 Scout 绝不会发送任何内容。";
-"When an agent needs an answer" = "当智能体需要回答时";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "当你用按键、菜单栏或其他 App 更改音量时，音量也会显示在刘海旁边。";
 "Where stations come from" = "电台的来源";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "音乐播放、计时器运行或下载完成时，刘海会变大来显示。把指针移上去，它会展开成你的 Nook：小组件、文件、剪贴板、日历。移开后，它就收回去了。";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "缩放 %@，返回完整画面";
 "Zoom in" = "放大";
 "Zoom out" = "缩小";
-"all edits this session" = "本次会话的所有编辑";
 "charged" = "已充满";
 "charging" = "正在充电";
 "code" = "代码";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS 没有更改它：%@";
 "me and my agents" = "我和我的智能体";
 "min" = "分钟";
-"mode %@" = "模式 %@";
 "model name" = "模型名称";
 "needs you" = "需要你";
 "no battery" = "无电池";

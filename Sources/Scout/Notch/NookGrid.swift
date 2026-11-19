@@ -308,8 +308,8 @@ final class NookStore: ObservableObject {
         fitting(row, in: width)
     }
 
-    /// How many rows of panels a grid `height` tall holds: one at the default 180 pt notch, more when the person sets the notch taller in
-    /// Settings › Notch.
+    /// How many rows of panels a grid `height` tall holds: one at the default 180 pt notch, one more for each further panel height, at
+    /// most `maxRows`.
     static func rowCount(height: CGFloat) -> Int {
         min(maxRows, max(1, Int((height + NookMetrics.spacing) / (NookMetrics.widgetHeight + NookMetrics.spacing))))
     }
@@ -429,20 +429,13 @@ struct NookGrid: View {
     #if !APPSTORE
     @ObservedObject private var tabs = AgentTabStore.shared
     #endif
-    /// A question asked in the dashboard's Ask AI field is answered here, in a strip under the row.
-    @ObservedObject private var quickAnswer = AskAIQuick.shared
-    @Environment(\.askAIQuickPreview) private var quickPreview
     @Environment(\.notchNavigator) private var navigator
 
     var body: some View {
         GeometryReader { geo in
-            // One row at the default height; a taller notch (Settings › Notch › Height) holds more rows, and what does not fit the first
-            // row goes on in the next ones. Editing, or with the quick answer strip under the row, there is one row.
-            // Automatic height:
-            // the panels that do not fit the first row go on in a second and a third row, and the grid asks the
-            // island for exactly that room (`rowsHeight`). With the quick answer strip under it, one row (the strip asks for its own room).
-            let quick = quickAnswer.showing || quickPreview != nil
-            let grid = store.rows(in: geo.size.width, maxRows: quick ? 1 : NookStore.maxRows)
+            // The panels that do not fit the first row go on in a second and a third row (at most `NookStore.maxRows`). The grid asks the
+            // island for exactly that room (`rowsHeight`).
+            let grid = store.rows(in: geo.size.width, maxRows: NookStore.maxRows)
             let fit = (shown: grid.rows.flatMap { $0 }, hidden: grid.hidden)
             let several = grid.rows.count > 1
             VStack(spacing: 10) {
@@ -466,16 +459,11 @@ struct NookGrid: View {
                         .frame(maxWidth: .infinity, alignment: (store.isEditing || several) ? .leading : .center)
                     }
                 }
-                .onChange(of: quick ? 0 : grid.rows.count, initial: true) { _, rows in
-                    guard !quick else { return }
+                .onChange(of: grid.rows.count, initial: true) { _, rows in
                     if rows > 1 { navigator.requestHeight(NookStore.rowsHeight(rows), resizeMax: nil, by: .nook) } else { navigator.releaseHeight(by: .nook) }
                 }
                 .animation(Theme.quick, value: store.layout)
                 .animation(Theme.quick, value: fit.shown)
-                if !store.isEditing, quickAnswer.showing || quickPreview != nil {
-                    AskAIQuickStrip(preview: quickPreview)
-                        .transition(.opacity)
-                }
                 if store.isEditing {
                     NookPalette(store: store, hidden: fit.hidden)
                         .transition(.opacity)

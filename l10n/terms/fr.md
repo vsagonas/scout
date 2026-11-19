@@ -12,7 +12,7 @@ Typography as macOS: narrow no-break space (U+202F) before ? ! : ; and inside «
 | Settings | Réglages |
 | Tray | Plateau |
 | Ask AI | Demander à l’IA |
-| Fast Ask AI | Demande rapide à l’IA (pixel label DEMANDE RAPIDE) |
+| Fast Ask AI | Demande rapide à l’IA |
 | Nook | Nook (never translated) |
 | Pocket / Pockets | Pocket / Pockets (feature name, kept like Nook) |
 | helpers (sub-agents) | assistants |
@@ -38,7 +38,7 @@ Typography as macOS: narrow no-break space (U+202F) before ? ! : ; and inside «
 | Focus (macOS, Pomodoro) | Concentration |
 | menu bar | barre des menus |
 | Light / Dark / System | Clair / Sombre / Système |
-| Allow / Deny / Always allow | Autoriser / Refuser / Toujours autoriser |
+| Allow | Autoriser |
 | Save / saved | Enregistrer / enregistré |
 | Delete / Clear / Remove | Supprimer / Effacer / Retirer |
 | Pin / Unpin | Épingler / Détacher |

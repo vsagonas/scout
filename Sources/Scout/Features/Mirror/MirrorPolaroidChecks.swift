@@ -81,7 +81,7 @@ enum MirrorPolaroidChecks {
         let photoBlue: RGB = (38, 89, 191)
         let sessions = AgentSession.synthetic(3)
         FeaturesSelfTest.add("mirror polaroid: 720 x 900 pixels (360 x 450 pt, twice over), a white frame with the thick margin at the bottom") {
-            guard let photo = flat(0.15, 0.35, 0.75), let image = MirrorPolaroid.image(photo: photo, agents: MirrorPolaroid.agents(sessions: sessions, pending: [])),
+            guard let photo = flat(0.15, 0.35, 0.75), let image = MirrorPolaroid.image(photo: photo, agents: MirrorPolaroid.agents(sessions: sessions)),
                   let cg = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else { print("  no image"); return false }
             let margin = MirrorPolaroid.photoRect.maxY
             // Empty spots of the white frame: the top and the sides, and the bottom margin where no word stands (left of "Scout").
@@ -96,7 +96,7 @@ enum MirrorPolaroidChecks {
         }
         FeaturesSelfTest.add("mirror polaroid: the agents' faces and their names are drawn along the bottom edge of the picture (3 and 6 agents)") {
             for count in [3, 6] {
-                let agents = MirrorPolaroid.agents(sessions: AgentSession.synthetic(count), pending: [])
+                let agents = MirrorPolaroid.agents(sessions: AgentSession.synthetic(count))
                 guard agents.count == count, let photo = flat(0.15, 0.35, 0.75), let cg = MirrorPolaroid.render(photo: photo, agents: agents) else { print("  \(count): no image or agents \(agents.count)"); return false }
                 let boxes = MirrorPolaroid.faceRects(count: count)
                 for (agent, box) in zip(agents, boxes) {
@@ -136,12 +136,12 @@ enum MirrorPolaroidChecks {
             return ok
         }
         FeaturesSelfTest.add("mirror polaroid: the words and the link (apps.v-sag.com/scout), up to six agents with their own names in capitals") {
-            let agents = MirrorPolaroid.agents(sessions: AgentSession.synthetic(6), pending: [])
-            let manyNames = MirrorPolaroid.agents(sessions: AgentSession.synthetic(6), pending: []).map { MirrorPolaroid.label($0.project, count: 6) }
+            let agents = MirrorPolaroid.agents(sessions: AgentSession.synthetic(6))
+            let manyNames = MirrorPolaroid.agents(sessions: AgentSession.synthetic(6)).map { MirrorPolaroid.label($0.project, count: 6) }
             let long = MirrorPolaroid.label("a-very-long-project-name", count: 6)
             let words = MirrorPolaroid.shareText == "Scout: my AI agents in my notch. https://apps.v-sag.com/scout"
                 && MirrorPolaroid.appLink == "https://apps.v-sag.com/scout" && MirrorPolaroid.printedLink == "apps.v-sag.com/scout" && MirrorPolaroid.appName == "Scout"
-            let tooMany = MirrorPolaroid.agents(sessions: AgentSession.synthetic(6) + AgentSession.samples(), pending: []).count
+            let tooMany = MirrorPolaroid.agents(sessions: AgentSession.synthetic(6) + AgentSession.samples()).count
             let ok = words && agents.count == 6 && tooMany == 6 && manyNames.allSatisfy { $0 == $0.uppercased() && $0.count <= MirrorPolaroid.nameLetters(count: 6) }
                 && long == "A-VERY." && MirrorPolaroid.fileName(date: Date(timeIntervalSince1970: 0)).hasSuffix(".png")
             if !ok { print("  words \(words), agents \(agents.count), capped \(tooMany), names \(manyNames), long \(long)") }

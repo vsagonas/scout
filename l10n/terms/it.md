@@ -11,7 +11,7 @@ Machine translation, no native reviewer yet. Informal "tu" (as the Italian App S
 | Settings | Impostazioni |
 | Tray | Vassoio |
 | Ask AI | Chiedi all’IA |
-| Fast Ask AI | Chiedi veloce all’IA (pixel label CHIEDI VELOCE) |
+| Fast Ask AI | Chiedi veloce all’IA |
 | Nook | Nook (never translated) |
 | Pocket / Pockets | Pocket / Pockets (feature name, kept like Nook) |
 | helpers (sub-agents) | aiutanti |
@@ -39,7 +39,7 @@ Machine translation, no native reviewer yet. Informal "tu" (as the Italian App S
 | Focus (macOS, Pomodoro) | Focus |
 | menu bar | barra dei menu |
 | Light / Dark / System | Chiaro / Scuro / Sistema |
-| Allow / Deny / Always allow | Consenti / Nega / Consenti sempre |
+| Allow | Consenti |
 | Save / saved | Salva / salvato |
 | Delete / Clear / Remove | Elimina / Cancella / Rimuovi |
 | Pin / Unpin | Fissa / Stacca |
@@ -59,4 +59,4 @@ Machine translation, no native reviewer yet. Informal "tu" (as the Italian App S
 | To-do (single) | Da fare |
 | modifier keys | Control, Opzione, Maiusc, Comando |
 
-Pixel labels use capitals and no accents (the 5x7 font has none): FATTO, PRONTO, TI CHIAMA, NESSUN SEGNALE, CHIEDI VELOCE.
+Pixel labels use capitals and no accents (the 5x7 font has none): FATTO, PRONTO, TI CHIAMA, NESSUN SEGNALE.

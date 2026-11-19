@@ -1,6 +1,6 @@
 # Scout in Swedish (sv): term list
 
-Machine translation, no native reviewer yet. Informal "du" (as the Swedish App Store text and macOS do). Words match the App Store text, except Tray (see below). Brand names are never declined: no genitive "Scouts" ("hooks från Scout", "fönstren i Scout").
+Machine translation, no native reviewer yet. Informal "du" (as the Swedish App Store text and macOS do). Words match the App Store text, except Tray (see below). Brand names are never declined: no genitive "Scouts" ("fönstren i Scout").
 
 | English | Swedish |
 |---|---|
@@ -52,16 +52,16 @@ Machine translation, no native reviewer yet. Informal "du" (as the Swedish App S
 | Lock Screen | Låsskärm |
 | home folder | hemmapp |
 | Light / Dark / System / Automatic | Ljust / Mörkt / System / Automatiskt |
-| Allow / Deny / Always allow | Tillåt / Neka / Tillåt alltid |
+| Allow | Tillåt |
 | Cancel / Delete / Close / Copy | Avbryt / Radera / Stäng / Kopiera |
 | Done | Klar |
-| Join (meeting button) | Delta (Connect = Anslut) |
+| Join (meeting button) | Delta |
 | Mac (never declined) | Mac / den här Mac-datorn |
 | Mute / Unmute / Muted | Tysta / Slå på ljud / Ljud av |
 | Pin / Unpin | Fäst / Lossa |
 | Focus (macOS) | Fokus |
 
-Pixel labels use capitals and no å ä ö (the 5x7 font has none): the plain Latin spelling, e.g. HELA DAGEN, SOVER, VI SES %@ (for BYE), BEHOVER DIG, SNABB FRAGA AI.
+Pixel labels use capitals and no å ä ö (the 5x7 font has none): the plain Latin spelling, e.g. HELA DAGEN, SOVER, VI SES %@ (for BYE), BEHOVER DIG.
 "Ask anything" (dashboard field placeholder, at most 12 characters): "Fråga något".
 
 Style: du-form, short labels, imperative buttons as in macOS (Visa, Öppna), "…" as one character, no dashes as separators. Words per minute: "ord/min".

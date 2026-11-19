@@ -18,7 +18,7 @@ enum AgentNookInk {
 }
 
 /// What moves, and when: seconds since some moment (nil = a still picture, which every state must read in), and whether the
-/// Mac allows movement. With Reduce Motion ON nothing moves, lamps and lights only fade; with it off the scout has a second frame
+/// Mac allows movement. With Reduce Motion ON nothing moves, lamps and lights only fade; with it off the agent has a second frame
 /// (a bob, typing hands, a wave) and blinks now and then.
 struct AgentNookClock: Equatable {
     var t: Double?
@@ -55,7 +55,7 @@ struct AgentNookClock: Equatable {
     }
 }
 
-/// The scout: a small round creature in its kind's colour, in 8-bit pixels. One picture per state, each readable in a still frame:
+/// The agent: a small round creature in its kind's colour, in 8-bit pixels. One picture per state, each readable in a still frame:
 /// at a chunky pixel computer with the step's prop on its screen; a hand up and a "?" bubble; happy eyes and a check mark;
 /// dizzy eyes and a plaster; asleep with Z's. It fills its frame with whole pixels (a multiple of half a point each).
 struct AgentNookCritter: View {
@@ -65,11 +65,11 @@ struct AgentNookCritter: View {
     var pose: AgentNookLook.Pose
     var prop: AgentNookProp?
     var clock: AgentNookClock = .still
-    /// Draws the desk, the computer and the beanbag; false is the scout alone.
+    /// Draws the desk, the computer and the beanbag; false is the agent alone.
     var furniture = true
     /// Kept for the compact rooms (the pictures are already tight).
     var crop = false
-    /// One pixel in points, chosen for the whole screen (every scout of a screen is the same size); nil fits the frame.
+    /// One pixel in points, chosen for the whole screen (every agent of a screen is the same size); nil fits the frame.
     var pixel: CGFloat?
 
     static func look(of pose: AgentNookLook.Pose) -> AgentNookLook {

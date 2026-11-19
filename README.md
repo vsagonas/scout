@@ -35,13 +35,13 @@ Scout sends nothing to its developer: no account, no analytics, no tracking, no 
 A few features contact an outside service, and only when you use them:
 
 - Ask AI talks straight to the provider you pick (Anthropic or OpenAI), with your own key. Pictures you attach to a question go to the provider too.
-- The weather widget asks Open-Meteo for the forecast of your place or the city you chose. Apple's place lookup names your location.
+- The weather widget asks Open-Meteo for the forecast of your place or the city you chose. A city name you type to find it goes to Open-Meteo's search. Apple's place lookup names your location.
 - The radio asks the Radio Browser directory and plays the station's own stream. A place you type is turned into coordinates by Apple's place lookup first.
-- The unit converter tool gets currency rates from Frankfurter (the app has no button for that tool today).
+- The unit converter tool gets currency rates from Frankfurter, and the links tool reads the title of a link you saved from that link's own site (the app has no button for either tool today).
 - The music widget can fetch the cover of what Spotify is playing.
-- The development edition (see below) asks LRCLIB for the lyrics of the song that is playing.
+- The development edition (see below) asks LRCLIB for the lyrics of the song that is playing. When you download a video there, yt-dlp contacts that video's site and Scout fetches the video's thumbnail. Its Settings can run `brew install` for yt-dlp and deno, only when you press the button.
 
-The app's About page credits the free data services it uses, such as Open-Meteo. macOS asks for a permission only when you use a feature that needs it (for example the calendar, your location for the weather, the camera for the mirror, the microphone for the teleprompter's voice mode, screen recording for Ask AI's Screen switch).
+The app's About page credits Open-Meteo and Frankfurter. macOS asks for a permission only when you use a feature that needs it (for example the calendar, your location for the weather, the camera for the mirror, the microphone for the teleprompter's voice mode, screen recording for Ask AI's Screen switch).
 
 ## Build it yourself
 
@@ -54,7 +54,7 @@ scripts/build-app.sh release appstore   # build/appstore/Scout.app
 open build/appstore/Scout.app
 ```
 
-That is the sandboxed edition, built from the same source as the download.
+That is the sandboxed edition, from the same source as the download. One difference: the download is archived with Xcode (that project file is not in this repository) and uses `Support/Info-AppStore.plist`, while this script puts `Support/Info.plist` into both editions, so a few permission texts read differently.
 
 - `scripts/build-app.sh` without arguments makes the development edition in `build/Scout.app` (see the table).
 - The script signs the app with your "Apple Development" identity when you have one, so macOS remembers the permissions you gave between builds. Without one it signs ad hoc and macOS asks again after each build. Set `SCOUT_SIGN_IDENTITY` to use another identity.
@@ -64,8 +64,20 @@ That is the sandboxed edition, built from the same source as the download.
 
 | Edition | Made with | What it is |
 |---|---|---|
-| App Store | `scripts/build-app.sh release appstore` | The released app. Sandboxed, built with `-D APPSTORE`. It only reads the agents' session files. |
-| Development (`full` in the script) | `scripts/build-app.sh` | Not sandboxed, and not what the download gives you. It has extras that are not in the released app: terminal tabs for agents (through [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm)), an experimental local listener on 127.0.0.1 (on by default) with optional hooks for agents (the Connect button changes your agents' settings files, after a backup and only when you click it), brightness and media keys (a private macOS framework and a key tap that needs Accessibility), a Messages reader that can also send a reply you typed (needs Full Disk Access), synced lyrics, and video download and file conversion through tools you install yourself (yt-dlp, ffmpeg, cwebp). The self-tests run in this edition. |
+| App Store | `scripts/build-app.sh release appstore` | The edition of the released app. Sandboxed, built with `-D APPSTORE`. It only reads the agents' session files. |
+| Development (`full` in the script) | `scripts/build-app.sh` | Not sandboxed, and not what the download gives you. It has extras that are not in the released app (the list below). The self-tests run in this edition. |
+
+The development edition's extras:
+
+- Terminal tabs for agents, through [SwiftTerm](https://github.com/migueldeicaza/SwiftTerm).
+- Brightness and media keys (a private macOS framework and a key tap that needs Accessibility).
+- A Messages reader that can also send a reply you typed. It needs Full Disk Access, and Contacts for names and photos.
+- Synced lyrics, and a heart button that marks the playing Music track as a favourite.
+- Battery levels of Bluetooth devices.
+- Sending a note straight to Apple Notes (the released app uses the share sheet).
+- Listing and running your Shortcuts through the system's `shortcuts` tool (the released app opens a shortcut by its name).
+- Video download through yt-dlp (with deno for YouTube), and WebP and MP3 conversion through cwebp and ffmpeg. You install these tools yourself, or let Settings install yt-dlp and deno with Homebrew.
+- An Anthropic key in a file you put in Scout's support folder (`import/anthropic.key`) is moved into the Keychain.
 
 ### Checks and pictures
 
@@ -76,9 +88,9 @@ scripts/build-app.sh
 SCOUT_SELFTEST=1 build/Scout.app/Contents/MacOS/Scout --automation --headless --gallery /tmp/scout-gallery --only zzz
 ```
 
-Each check prints `selftest ok` or `selftest FAIL`, and the last line reads `selftest done: N/N passed`.
+Each check prints `selftest ok` or `selftest FAIL`, then comes `selftest done: N/N passed`. `--only zzz` names a picture prefix that matches nothing, so only the checks run and no pictures are drawn.
 
-`scripts/gallery.sh <prefix> <folder>` empties `<folder>` and renders the app's views with sample data into it as PNG files (light and dark). Scripted runs use sample data, their own settings and no network.
+`scripts/gallery.sh [prefix] [folder]` renders the app's views with sample data as PNG files (light and dark) into the folder (`build/gallery` when you name none). It deletes that folder first, and refuses one that holds anything but earlier pictures. It needs a build from `scripts/build-app.sh`. Scripted runs use sample data, their own settings and no network.
 
 ### Where things are
 
@@ -89,11 +101,15 @@ Each check prints `selftest ok` or `selftest FAIL`, and the last line reads `sel
 | `Sources/Scout/Features` | Agents, Calendar, Radio, Mirror, Tray, Weather, Prompter and the other features |
 | `Sources/Scout/Productivity` | Clipboard history, notes, to-dos, timers |
 | `Sources/Scout/Ring/AskAI` | Ask AI |
+| `Sources/Scout/Ring/Tools` | Small tools that have no button today: calculator, units, links, reminders, voice memo, screen capture |
 | `Sources/Scout/Media` | What is playing, the music view, lyrics |
 | `Sources/Scout/System` | Volume, battery, Bluetooth |
 | `Sources/Scout/Core` | Shared pieces: the look, live activities, self-tests |
+| `Sources/Scout/Store` | The scenes of the App Store screenshots |
 | `Support` | Info.plist, entitlements, the icon, the translations (`Resources/*.lproj`) |
 | `l10n`, `scripts/l10n` | The translation tools |
+| `scripts` | Build, gallery, icon and screenshot scripts |
+| `docs/media` | The pictures in this README |
 
 ## Who made it
 

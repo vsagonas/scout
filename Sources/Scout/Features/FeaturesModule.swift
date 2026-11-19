@@ -36,6 +36,7 @@ enum FeaturesModule {
         AgentsFeature.registerSelfTests()
         RadioFeature.registerSelfTests()
         MirrorFeature.registerSelfTests()
+        OffscreenWindows.registerSelfTests()
         FeaturesSelfTest.runIfRequested()
         CalendarFeature.registerGallery()
         WeatherFeature.registerGallery()

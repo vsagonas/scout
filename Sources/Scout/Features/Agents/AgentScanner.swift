@@ -1,7 +1,7 @@
 import CoreServices
 import Foundation
 
-/// Finds the agent sessions running on this Mac without any hook: it watches the transcript folders Claude Code
+/// Finds the agent sessions running on this Mac by themselves: it watches the transcript folders Claude Code
 /// (`~/.claude/projects/<project>/<session>.jsonl`) and Codex (`~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl`) write while
 /// they work, and reads each recently changed file as it grows. READ ONLY: nothing is ever written there.
 ///
@@ -231,7 +231,7 @@ final class AgentScanner: @unchecked Sendable {
             let isOpen = open[t.sessionID] != nil
             guard let active = t.activity ?? (isOpen ? t.mtime : nil), isOpen || now.timeIntervalSince(active) <= activeWindow else { continue }
             // A finished agent (its turn over) with nothing new for five minutes is taken as closed and leaves; a new line brings it back.
-            // Without its hooks nothing tells Scout a session window was closed, so this is the sign.
+            // Nothing tells Scout that a session window was closed, so this is the sign.
             // One that died mid-turn
             // goes when its file is older than `activeWindow`.
             if t.state.turnEnded, !isOpen, now.timeIntervalSince(active) > Self.closedAfter { continue }

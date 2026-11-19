@@ -10,9 +10,7 @@
 "%@ ended." = "%@ se je končalo.";
 "%@ failed" = "%@ ni uspelo";
 "%@ finished after %lld min" = "%@: končano po %lld min";
-"%@ finished in %@" = "%@: končano v %@";
 "%@ free" = "Prosto: %@";
-"%@ has a question" = "%@ ima vprašanje";
 "%@ has no sound" = "%@ nima zvoka";
 "%@ in %@" = "%@ v %@";
 "%@ installed" = "Nameščeno: %@";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@ je prevelik za datoteko ZIP (omejitev 4 GB)";
 "%@ isn't installed" = "%@ ni nameščen";
 "%@ isn't supported on this Mac" = "%@ na tem Macu ni podprt";
-"%@ isn't valid JSON, so Scout left it alone." = "%@ ni veljaven JSON, zato ga Scout ni spremenil.";
 "%@ key" = "Ključ %@";
 "%@ left" = "Še %@";
 "%@ needs you" = "%@ te potrebuje";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "Časovnik %@ je končan";
 "%@ to full" = "%@ do polne";
 "%@ used" = "Porabljeno: %@";
-"%@ wants to use %@" = "%@ želi uporabiti: %@";
-"%@ wants to use a tool" = "%@ želi uporabiti orodje";
 "%@ · %@ of %@" = "%@ · %@ od %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · skupaj odprtih: %lld";
@@ -71,7 +66,6 @@
 "%lld running" = "Teče: %lld";
 "%lld working" = "Dela: %lld";
 "%lld wpm" = "%lld besed/min";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+še %lld";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Najprej dodaj svoj ključ API za %@ v Nastavitve › Vprašaj UI.";
 "Add your API key in Settings › Ask AI first." = "Najprej dodaj svoj ključ API v Nastavitve › Vprašaj UI.";
 "Add your Claude API key in Settings › Ask AI first." = "Najprej dodaj svoj ključ API za Claude v Nastavitve › Vprašaj UI.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Doda Scoutove hooks v ~/.claude/settings.json (dogodki napredka, zahteve za dovoljenja in vprašanja) in ne spreminja tvojih hooks. Datoteka se prej varnostno kopira.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Doda Scoutove hooks v ~/.codex/hooks.json. Codex te prvič prosi, da pregledaš nove hooks: vpiši /hooks v Codexu in zaupaj Scoutovim.";
 "Agent" = "Agent";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Brlog Agent TV";
@@ -164,15 +156,10 @@
 "Allow…" = "Dovoli…";
 "Also show it while an app is full screen" = "Prikaži tudi, ko je aplikacija v celozaslonskem načinu";
 "Also used for “%@”: only one of them will work." = "Uporablja se tudi za „%@“: delovala bo samo ena od njiju.";
-"Always allow" = "Vedno dovoli";
-"Always allow %@" = "Vedno dovoli %@";
-"Always allow adds: %@" = "Vedno dovoli doda: %@";
 "Amber" = "Jantarna";
 "An agent tab cannot be kept as the opening tab" = "Zavihka agenta ni mogoče obdržati kot začetni zavihek";
 "Announcements" = "Najave";
 "Answer copied" = "Odgovor kopiran";
-"Answer in terminal" = "Odgovori v terminalu";
-"Answer permissions and questions from the notch" = "Odgovarjaj na dovoljenja in vprašanja iz izreza";
 "Answers" = "Odgovori";
 "Any country" = "Katera koli država";
 "Appearance" = "Videz";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Vprašaj o sliki";
 "Ask about your screen" = "Vprašaj o svojem zaslonu";
 "Ask anything" = "Vprašaj kaj";
-"Ask anything above. Questions go to %@. The answer shows here." = "Vprašaj karkoli zgoraj. Vprašanja gredo na %@. Odgovor se prikaže tukaj.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Vprašaj karkoli.\nReturn pošlje, ⌥Return doda vrstico.\n\nTvoja vprašanja gredo na %@. Ko je Zaslon vklopljen, jim sledi slika tvojega zaslona.";
 "Ask before closing a tab that is still running" = "Vprašaj pred zapiranjem zavihka, ki še teče";
-"Ask in terminal" = "Vprašaj v terminalu";
 "Ask the same question again on Claude Sonnet 5.5" = "Ponovno postavi isto vprašanje v Claude Sonnet 5.5";
-"Asking a question" = "Postavlja vprašanje";
 "Asking you: %@" = "Sprašuje te: %@";
 "Asleep" = "Spi";
 "Attach a picture" = "Priloži sliko";
@@ -241,7 +225,6 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Dostop do kamere je izklopljen";
 "Camera access is off for Scout." = "Dostop do kamere je izklopljen za Scout.";
-"Can't listen (%@)" = "Ni mogoče poslušati (%@)";
 "Can't read %@ yet" = "%@ še ni mogoče prebrati";
 "Can't tell which chat this is" = "Ni mogoče ugotoviti, kateri klepet je to";
 "Cancel" = "Prekliči";
@@ -265,7 +248,6 @@
 "Choose a script" = "Izberi skript";
 "Choose image…" = "Izberi sliko…";
 "Choose shortcuts" = "Izberi ukaze";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Izberi mapo %@ v domači mapi. Scout tam varnostno kopira %@ in doda svoje hooks; nič drugega se ne spremeni.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Izberi mapo %@, da lahko Scout vidi tvoje seje %@. Scout jo samo bere.";
 "Choose the model" = "Izberi model";
 "Choose…" = "Izberi…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Počisti zadnje postaje in kraje";
 "Clear shortcut" = "Počisti bližnjico";
 "Clear the clipboard history?" = "Počisti zgodovino odložišča?";
-"Click Copy hooks." = "Klikni „Kopiraj hooks“.";
 "Click for %@ settings, drag to move" = "Klikni za nastavitve: %@, povleci za premik";
 "Click one, or use the arrow keys. Press Return to go on." = "Klikni enega ali uporabi smerne tipke. Za nadaljevanje pritisni Return.";
 "Click one, or use the arrow keys. The window grows with it." = "Klikni enega ali uporabi smerne tipke. Okno raste z njim.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Zapri ta zavihek (⌘W)";
 "Close this tab?" = "Zapri ta zavihek?";
 "Cloudy" = "Oblačno";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex te enkrat prosi, da pregledaš nove hooks: vpiši /hooks v Codexu in zaupaj Scoutovim.";
 "Color" = "Barva";
 "Colors" = "Barve";
 "Command" = "Command";
 "Compact" = "Kompaktno";
-"Connect" = "Poveži";
-"Connect %@?" = "Povezati %@?";
-"Connect %@…" = "Poveži %@…";
-"Connect Claude Code" = "Poveži Claude Code";
-"Connect Claude Code…" = "Poveži Claude Code…";
-"Connect Codex" = "Poveži Codex";
-"Connect Codex…" = "Poveži Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Povezava te samo enkrat prosi, da izbereš mapo %@; Scout varnostno kopira %@, doda samo svoje vnose in jih lahko spet odstrani (Prekini povezavo). Vsak hook je en sam ukaz curl na 127.0.0.1; ko je Scout zaprt, ne naredi nič.";
 "Connected" = "Povezano";
-"Connected, but out of date" = "Povezano, a zastarelo";
-"Connected. New sessions report to Scout." = "Povezano. Nove seje poročajo Scoutu.";
 "Connecting" = "Povezovanje";
 "Connecting…" = "Povezovanje…";
 "Contacts" = "Stiki";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Kopije, narejene, ko je v ospredju ena od teh aplikacij, se nikoli ne shranijo.";
 "Copy" = "Kopiraj";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Kopiraj povezavo z YouTube, X, Instagram, TikTok, Vimeo ali Reddit, odpri Pladenj in Scout ponudi prenos, ali povleci povezavo na Pladenj. Prenosi uporabljajo yt-dlp, ki ga namestiš sam; gumb zgoraj deluje samo, ko ga pritisneš. Za branje kopirane povezave je za Scout potreben „Allow“ v System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 in novejši).";
-"Copy hooks" = "Kopiraj hooks";
-"Copy hooks instead" = "Namesto tega kopiraj hooks";
 "Copy something and it shows up here." = "Nekaj kopiraj in se bo prikazalo tukaj.";
 "Couldn't copy the picture" = "Slike ni bilo mogoče kopirati";
 "Couldn't copy the polaroid" = "Polaroida ni bilo mogoče kopirati";
@@ -399,9 +367,6 @@
 "Delete note" = "Izbriši beležko";
 "Delete this chat" = "Izbriši ta klepet";
 "Delete this script" = "Izbriši ta skript";
-"Deny" = "Zavrni";
-"Disconnect" = "Prekini povezavo";
-"Disconnected. Your own hooks are untouched." = "Povezava prekinjena. Tvoji hooks so nedotaknjeni.";
 "Disk" = "Disk";
 "Dismiss" = "Opusti";
 "Display" = "Prikaz";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Izvozi kot %@…";
 "Exported %@" = "Izvoženo: %@";
 "Extra large" = "Zelo velik";
-"FAST ASK AI" = "HITRI UI";
 "FAVOURITES" = "PRILJUBLJENE";
 "FROZEN" = "ZAMRZNJENO";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Pozabi prejšnje zavihke";
 "Forget previous tabs" = "Pozabi prejšnje zavihke";
 "Forget recent folders" = "Pozabi nedavne mape";
-"Found automatically" = "Samodejno najdeno";
 "Found · %@" = "Najdeno · %@";
 "Free service, no key" = "Brezplačna storitev, brez ključa";
 "Freezing drizzle" = "Ledeno rosenje";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "POZDRAV IZ SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku za hitra vprašanja, Sonnet za težka";
 "Haptic feedback" = "Haptični odziv";
-"Has a question" = "Ima vprašanje";
 "Heavy rain" = "Močan dež";
 "Heavy showers" = "Močni nalivi";
 "Heavy snow" = "Močno sneženje";
@@ -533,9 +495,7 @@
 "Here" = "Tu";
 "Hide completed" = "Skrij opravljena";
 "Hide it while an app is full screen" = "Skrij, ko je aplikacija v celozaslonskem načinu";
-"Hide the answer" = "Skrij odgovor";
 "Hide the chats" = "Skrij klepete";
-"Hide the paste code" = "Skrij kodo za lepljenje";
 "History" = "Zgodovina";
 "History is paused" = "Zgodovina je začasno ustavljena";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Drži ⌥⇧ s tipko za glasnost ali svetlost za četrtinske korake.";
@@ -605,15 +565,11 @@
 "Links" = "Povezave";
 "List" = "Seznam";
 "List name" = "Ime seznama";
-"Listen for AI agents on this Mac" = "Poslušaj agente UI na tem Macu";
-"Listening on 127.0.0.1:%@" = "Posluša na 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Posluša na 127.0.0.1:%@ (%@ je bil zaseden)";
 "Listening…" = "Poslušam…";
 "Lists" = "Seznami";
 "Live" = "V živo";
 "Live Activities" = "Dejavnosti v živo";
 "Loading…" = "Nalaganje…";
-"Local bridge" = "Lokalni most";
 "Local weather. A chosen city works without it." = "Lokalno vreme. Izbrano mesto deluje tudi brez tega.";
 "Location" = "Lokacija";
 "Location access" = "Dostop do lokacije";
@@ -662,7 +618,6 @@
 "Models" = "Modeli";
 "More" = "Več";
 "More agents: %lld" = "Več agentov: %lld";
-"More…" = "Več…";
 "Most capable, slowest" = "Najzmogljivejši, najpočasnejši";
 "Most items to keep" = "Največ elementov za hrambo";
 "Mostly clear" = "Večinoma jasno";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Še ni vprašano";
 "Not available on this Mac" = "Na tem Macu ni na voljo";
 "Not checked yet" = "Še ni preverjeno";
-"Not connected" = "Ni povezano";
 "Not found in your login shell's PATH" = "Ni najdeno v PATH tvojega login shella";
 "Not found on this Mac" = "Na tem Macu ni najdeno";
 "Not installed" = "Ni nameščeno";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Samo zasloni z izrezom";
 "Only events with a video link" = "Samo dogodki z video povezavo";
 "Only for the Prompter to follow your voice." = "Samo da Prompter sledi tvojemu glasu.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Potrebno samo za Dovoli, Zavrni in odgovarjanje na vprašanja iz izreza; vse zgoraj deluje tudi brez tega. Vsak agent zažene hook z eno vrstico, ki objavi Scoutu na tem Macu (samo 127.0.0.1, z zasebnim ključem). Scout spremeni nastavitve tvojega agenta samo, ko klikneš Poveži in izbereš njegovo mapo (prej varnostna kopija, samo Scoutovi vnosi), ali sam prilepiš hooks. Če Scout ne teče, hook ne naredi nič in agent vpraša v svojem terminalu kot običajno.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Potrebno samo za Dovoli, Zavrni in odgovarjanje na vprašanja iz izreza; vse zgoraj deluje tudi brez tega. Vsak hook je ukaz z eno vrstico, ki objavi Scoutu na tem Macu (samo 127.0.0.1, z zasebnim ključem). Če Scout ne teče, hook ne naredi nič in agent vpraša v svojem terminalu kot običajno.";
-"Only the dot beside the notch" = "Samo pika ob izrezu";
 "Only what you choose" = "Samo to, kar izbereš";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Samo če je še igral, ko se je Scout zaprl. Scout si vedno zapomni zadnjo postajo in glasnost.";
 "Open" = "Odpri";
 "Open %@" = "Odpri %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Odpri %@ (ustvari ga, če ga ni) in prilepi. Če že ima razdelek „hooks“, dodaj te vnose vanj.";
 "Open %@ full size" = "Odpri %@ v polni velikosti";
 "Open %@ to finish" = "Odpri %@, da dokončaš";
 "Open %@, full size" = "Odpri %@, v polni velikosti";
@@ -808,7 +758,6 @@
 "Open To-do" = "Odpri Opravila";
 "Open a Scout window first, then share" = "Najprej odpri okno Scouta, nato deli";
 "Open a widget full size" = "Odpri pripomoček v polni velikosti";
-"Open in Ask AI" = "Odpri v Vprašaj UI";
 "Open or close the notch" = "Odpri ali zapri izrez";
 "Open tasks in total: %lld" = "Skupaj odprtih opravil: %lld";
 "Open the Calendar with the To-dos, full size" = "Odpri Koledar z Opravili v polni velikosti";
@@ -817,7 +766,6 @@
 "Open the notch" = "Odpri izrez";
 "Open the notch on %@ (now: %@)" = "Odpri izrez v pogledu %@ (zdaj: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Vsakič odpri izrez v pogledu %@, ne na nadzorni plošči";
-"Open the notch on Agents" = "Odpri izrez v pogledu Agenti";
 "Open the notch when an agent needs you" = "Odpri izrez, ko te agent potrebuje";
 "Open the player" = "Odpri predvajalnik";
 "Open the to-do calendar" = "Odpri koledar opravil";
@@ -829,9 +777,7 @@
 "Opening" = "Odpiranje";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Odpre izrez s tem pripomočkom že razširjenim. Pritisni znova, da zapreš. Izrez sam se vedno odpre na nadzorni plošči.";
 "Option" = "Option";
-"Optional: answer from the notch" = "Neobvezno: odgovori iz izreza";
 "Options" = "Možnosti";
-"Or type your own answer" = "Ali vpiši svoj odgovor";
 "Orange" = "Oranžna";
 "Output" = "Izhod";
 "Overcast" = "Zakrito";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Pojavno okno";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "Vrata %u so bila zasedena, zato ta blok navaja vrata %u. Če se Scout pozneje spet zažene na %u, ga kopiraj znova.";
 "Press a shortcut…" = "Pritisni bližnjico…";
 "Preview" = "Predogled";
 "Preview a card" = "Predogled kartice";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Daj pretvorjene datoteke v Pladenj";
 "Put finished videos in the Tray" = "Daj dokončane videe v Pladenj";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Vsako možnost vrne, kakršna je bila prvi dan. Tvoje beležke, odložišče in datoteke ostanejo.";
-"Questions go to %@." = "Vprašanja gredo na %@.";
 "Questions go to %@. The answers stay here." = "Vprašanja gredo na %@. Odgovori ostanejo tukaj.";
 "Quick" = "Hitro";
 "Quick Apps" = "Hitre aplikacije";
@@ -920,7 +864,6 @@
 "Reading" = "Branje";
 "Ready" = "Pripravljen";
 "Ready for the next focus session" = "Pripravljen na naslednjo fokusno sejo";
-"Ready for the next task" = "Pripravljen na naslednje opravilo";
 "Rec" = "Rec";
 "Recent downloads" = "Nedavni prenosi";
 "Record Shortcut" = "Posnemi bližnjico";
@@ -978,19 +921,15 @@
 "Save…" = "Shrani…";
 "Scout Settings" = "Nastavitve Scouta";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout vpraša macOS samo, ko vklopiš ali odpreš funkcijo, ki ga potrebuje. Ob zagonu se nič ne vpraša.";
-"Scout can no longer open that folder. Connect again." = "Scout te mape ne more več odpreti. Poveži znova.";
 "Scout can't match what it hears to the script" = "Scout ne more uskladiti slišanega s skriptom";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout še ne vidi map tvojih agentov. Dovoli to enkrat in vsaka seja Claude Code in Codex se vseli sama.";
 "Scout can't use this microphone" = "Scout ne more uporabljati tega mikrofona";
-"Scout could not open a local port." = "Scout ni mogel odpreti lokalnih vrat.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout ni videl tvojega zaslona, zato je bilo to vprašanje poslano brez slike. Dovoli Scout v Screen Recording.";
 "Scout couldn't take the picture this time, so that question went without it." = "Scout tokrat ni mogel narediti slike, zato je bilo to vprašanje poslano brez nje.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout sam najde seje Claude Code in Codex";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout zdaj posluša na vratih %u (ali pa so njegovi hooks iz starejše različice). Posodobitev prepiše samo Scoutove vnose.";
 "Scout only watches for connections once you allow it." = "Scout spremlja povezave šele, ko to dovoliš.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout bere tvoje dogodke na tem Macu, da zapolni pripomoček Koledar in delovni prostor. Nič se ne pošlje nikamor.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout si zapomni, kaj kopiraš, da lahko to znova prilepiš iz izreza ali spodnje police. Vse ostane na tem Macu.";
-"Scout will add its hooks to %@ after backing the file up." = "Scout bo dodal svoje hooks v %@, potem ko varnostno kopira datoteko.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Scoutova koda, besede in ikona so izvirne. Vse drugo tu se uporablja pod lastno licenco.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Scoutova okna (Vprašaj UI, beležke, opravila, kalkulator in druga) se po izhodu, posodobitvi ali ponovnem zagonu znova odprejo tam, kjer so bila, s svojo velikostjo in besedilom. Ko zaslona ni več, se odprejo na glavnem.";
 "Scout: my AI agents in my notch. %@" = "Scout: moji agenti UI v mojem izrezu. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Išči po spletu";
 "Searching the web…" = "Iskanje po spletu…";
 "See the month, your agenda and a Join button for video calls." = "Poglej mesec, svoj dnevni red in gumb Vstopi za video klice.";
-"See the whole conversation in the Ask AI tab" = "Poglej celoten pogovor v zavihku Vprašaj UI";
 "See your day here" = "Tu vidiš svoj dan";
 "Select a note or start a new one" = "Izberi beležko ali začni novo";
 "Select a note or start a new one." = "Izberi beležko ali začni novo.";
 "Selected: %lld" = "Izbrano: %lld";
 "Send" = "Pošlji";
-"Send answers" = "Pošlji odgovore";
 "Send to Apple Notes" = "Pošlji v Apple Notes";
 "Send to a nearby device" = "Pošlji napravi v bližini";
 "Sensitivity" = "Občutljivost";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Prikaži AirPods in njihovo baterijo, ko se povežejo";
 "Show Scout in the menu bar" = "Prikaži Scout v menijski vrstici";
 "Show a Join card when the meeting starts" = "Prikaži kartico Vstopi, ko se sestanek začne";
-"Show a card under the notch" = "Prikaži kartico pod izrezom";
 "Show a card when a download finishes" = "Prikaži kartico, ko se prenos konča";
 "Show a count next to the notch while the Tray holds files" = "Prikaži število ob izrezu, dokler so v Pladnju datoteke";
 "Show a countdown" = "Prikaži odštevanje";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Prikaži vsako odprto opravilo, ne glede na dan";
 "Show in Finder" = "Prikaži v Finderju";
 "Show in full screen" = "Prikaži v celozaslonskem načinu";
-"Show me the paste code" = "Pokaži mi kodo za lepljenje";
 "Show music from" = "Prikaži glasbo iz";
 "Show music next to the notch while it plays" = "Prikaži glasbo ob izrezu med predvajanjem";
 "Show my calendar in the notch" = "Prikaži moj koledar v izrezu";
@@ -1107,9 +1042,7 @@
 "Square" = "Kvadrat";
 "Start" = "Začni";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Zaženi Claude Code ali Codex in vsaka seja se tu pojavi sama, z napredkom. Ni kaj povezati.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Zaženi Codex in vpiši /hooks, da ob prvem zagonu zaupaš Scoutovim hooks. Nato začni novo sejo.";
 "Start a %lld-minute focus timer for this task" = "Začni %lld-minutni fokusni časovnik za to opravilo";
-"Start a new Claude Code session. It appears in the notch." = "Začni novo sejo Claude Code. Prikaže se v izrezu.";
 "Start again" = "Začni znova";
 "Start folder" = "Začetna mapa";
 "Start the camera when the Mirror widget appears" = "Zaženi kamero, ko se prikaže pripomoček Ogledalo";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Velikost besedila: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "Ta ključ API je bil zavrnjen. Preveri ga v Nastavitve › Vprašaj UI.";
 "That didn't work" = "To ni delovalo";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "To ni mapa %@ v tvoji domači mapi. Poveži znova in jo izberi.";
 "That one did not go through" = "To ni šlo skozi";
 "That's the end" = "To je konec";
 "The %@ uses the camera, so it never opens by itself" = "%@ uporablja kamero, zato se nikoli ne odpre samo";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Izklopljeno";
 "Two-finger swipe on the notch" = "Vlečenje z dvema prstoma po izrezu";
 "Type a city, region or country, or pick a country." = "Vpiši mesto, regijo ali državo ali izberi državo.";
-"Type your own…" = "Vpiši svoje…";
 "Typing: the notch stays open" = "Tipkanje: izrez ostane odprt";
 "Unknown format" = "Neznana oblika";
 "Unlicense (only if you install it)" = "Unlicense (samo če ga namestiš)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Dokler to ni vklopljeno, vprašanja gredo brez slike.";
 "Untitled" = "Brez naslova";
 "Untitled script" = "Skript brez naslova";
-"Update" = "Posodobi";
 "Updates" = "Posodobitve";
 "Updating the to-do list" = "Posodabljanje seznama opravil";
 "Upload %@" = "Naloži %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Čaka nate";
 "Waiting for your OK" = "Čaka na tvoj OK";
 "Waiting for your voice" = "Čaka na tvoj glas";
-"Wants to use %@" = "Želi uporabiti: %@";
-"Wants to use %@: %@" = "Želi uporabiti: %@ (%@)";
-"Wants to use a tool" = "Želi uporabiti orodje";
-"Wants to use a tool: %@" = "Želi uporabiti orodje: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Topel papir, temno besedilo in svetli poudarki. Ob dnevu enostavno za branje.";
 "Warn at" = "Opozori pri";
 "Warn when the battery is low" = "Opozori, ko je baterija skoraj prazna";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "Do česa lahko Scout dostopa in zakaj vpraša.";
 "What shows next to the notch while it is closed." = "Kaj se prikaže ob izrezu, ko je zaprt.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Ko prispe sporočilo, pod izrez pade kartica s pošiljateljem, besedilom in poljem za odgovor. Ostane tiha, medtem ko je aplikacija Messages v ospredju. Scout nikoli ničesar ne pošlje, razen če napišeš odgovor in pritisneš Return.";
-"When an agent needs an answer" = "Ko agent potrebuje odgovor";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Ko spremeniš glasnost s tipkami, menijsko vrstico ali drugo aplikacijo, se raven prikaže tudi ob izrezu.";
 "Where stations come from" = "Od kod so postaje";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Ko se predvaja glasba, teče časovnik ali se konča prenos, izrez zraste, da to pokaže. Pokaži nanj in odpre se v tvoj Nook: pripomočki, datoteke, odložišče, koledar. Odmakni se in se spet skrči.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Povečava %@, nazaj na celotno sliko";
 "Zoom in" = "Povečaj";
 "Zoom out" = "Pomanjšaj";
-"all edits this session" = "vse spremembe v tej seji";
 "charged" = "napolnjeno";
 "charging" = "polni se";
 "code" = "koda";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS tega ni spremenil: %@";
 "me and my agents" = "jaz in moji agenti";
 "min" = "min";
-"mode %@" = "način %@";
 "model name" = "ime modela";
 "needs you" = "te potrebuje";
 "no battery" = "brez baterije";

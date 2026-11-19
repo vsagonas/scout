@@ -20,7 +20,6 @@ enum AgentNookSamples {
         var s = AgentSession(id: id, agent: agent, cwd: "/Users/you/Dev/\(project)", title: "Work on \(project)", state: state,
                              startedAt: now.addingTimeInterval(-Double(abs(id.hashValue % 3000)) - 600), lastEventAt: now)
         s.turnStartedAt = now.addingTimeInterval(-300)
-        s.scanned = true
         s.steps = steps
         s.todos = list
         s.subagents = helpers
@@ -72,11 +71,10 @@ enum AgentNookSamples {
         return Array(list.prefix(count))
     }
 
-    /// A store of its own for a picture (never the shared one); a held request makes its agent ask.
-    static func store(_ name: String, _ sessions: [AgentSession], asking: String? = nil) -> AgentsStore {
-        let store = AgentsStore(directory: AppPaths.folder("agentnook-\(name)"))
-        let held = asking.map { [AgentPending(sessionID: $0, kind: .permission, tool: "Bash", summary: "terraform apply", detail: "terraform apply", questions: [], rawToolInput: nil, agent: .codex)] } ?? []
-        store.loadSessions(sessions, pending: held)
+    /// A store of its own for a picture (never the shared one).
+    static func store(_ sessions: [AgentSession]) -> AgentsStore {
+        let store = AgentsStore()
+        store.loadSessions(sessions)
         store.previewDoneToday(sessions.isEmpty ? 0 : 5)
         return store
     }
@@ -133,7 +131,7 @@ enum AgentNookGallery {
         Gallery.register("agentnook-\(name)", size: CGSize(width: width, height: height), backdrop: .window) { AgentNookSheet(content: content) }
     }
 
-    // MARK: The scout, large
+    // MARK: The agent, large
 
     private static func critters() {
         let poses: [(AgentNookLook, String)] = AgentNookLook.allCases.map { ($0, $0.title) }
@@ -179,8 +177,7 @@ enum AgentNookGallery {
     private static func models(_ looks: [AgentNookLook], kind: AgentKind = .claude) -> [AgentNookRoomModel] {
         looks.enumerated().map { i, look in
             let props: [AgentNookProp] = [.pencil, .wrench, .magnifier, .globe]
-            return AgentNookRoomModel(AgentNookSamples.one(look, prop: props[i % 4], kind: i % 2 == 0 ? kind : (kind == .claude ? .codex : .claude), project: ["site", "api", "notes", "worker", "sandbox"][i % 5], helpers: [2, 4, 0, 1, 0][i % 5]),
-                                      needsYou: look == .needsYou)
+            return AgentNookRoomModel(AgentNookSamples.one(look, prop: props[i % 4], kind: i % 2 == 0 ? kind : (kind == .claude ? .codex : .claude), project: ["site", "api", "notes", "worker", "sandbox"][i % 5], helpers: [2, 4, 0, 1, 0][i % 5]))
         }
     }
 
@@ -232,7 +229,7 @@ enum AgentNookGallery {
             HStack(alignment: .top, spacing: 8) {
                 ForEach([AgentNookLook.working, .needsYou, .finished]) { look in
                     VStack(spacing: 3) {
-                        AgentNookRoom(model: AgentNookRoomModel(AgentNookSamples.one(look, prop: .magnifier, kind: .codex, helpers: 6, todos: 7, done: 3), needsYou: look == .needsYou), style: .roomy)
+                        AgentNookRoom(model: AgentNookRoomModel(AgentNookSamples.one(look, prop: .magnifier, kind: .codex, helpers: 6, todos: 7, done: 3)), style: .roomy)
                             .frame(width: 188, height: 105)
                         AgentNookCaption("\(look.title) · wide room, 6 helpers")
                     }
@@ -246,7 +243,7 @@ enum AgentNookGallery {
             VStack(alignment: .leading, spacing: 8) {
                 ForEach(looks) { look in
                     HStack(spacing: 8) {
-                        let m = AgentNookRoomModel(AgentNookSamples.one(look, prop: .wrench, helpers: 2, todos: 4, done: 1), needsYou: look == .needsYou)
+                        let m = AgentNookRoomModel(AgentNookSamples.one(look, prop: .wrench, helpers: 2, todos: 4, done: 1))
                         ForEach(Array(moving.enumerated()), id: \.offset) { _, c in AgentNookRoom(model: m, style: .roomy, clock: c).frame(width: 140, height: 105) }
                     }
                 }
@@ -257,7 +254,7 @@ enum AgentNookGallery {
             VStack(alignment: .leading, spacing: 8) {
                 ForEach(looks) { look in
                     HStack(spacing: 8) {
-                        let m = AgentNookRoomModel(AgentNookSamples.one(look, prop: .wrench, helpers: 2, todos: 4, done: 1), needsYou: look == .needsYou)
+                        let m = AgentNookRoomModel(AgentNookSamples.one(look, prop: .wrench, helpers: 2, todos: 4, done: 1))
                         ForEach(Array(fading.enumerated()), id: \.offset) { _, c in AgentNookRoom(model: m, style: .roomy, clock: c).frame(width: 140, height: 105) }
                     }
                 }
@@ -276,7 +273,7 @@ enum AgentNookGallery {
                     HStack(alignment: .top, spacing: 8) {
                         ForEach(counts, id: \.self) { n in
                             VStack(spacing: 3) {
-                                AgentNookRoom(model: AgentNookRoomModel(AgentNookSamples.one(look, prop: .wrench, helpers: n, todos: 0, done: 0), needsYou: false), style: .roomy).frame(width: 140, height: 105)
+                                AgentNookRoom(model: AgentNookRoomModel(AgentNookSamples.one(look, prop: .wrench, helpers: n, todos: 0, done: 0)), style: .roomy).frame(width: 140, height: 105)
                                 AgentNookCaption("\(n) helper\(n == 1 ? "" : "s") · \(look == .working ? "awake" : "asleep")")
                             }
                         }
@@ -288,7 +285,7 @@ enum AgentNookGallery {
             HStack(alignment: .top, spacing: 8) {
                 ForEach(counts, id: \.self) { n in
                     VStack(spacing: 3) {
-                        AgentNookRoom(model: AgentNookRoomModel(AgentNookSamples.one(.working, prop: .wrench, helpers: n, todos: 3, done: 1), needsYou: false), style: .compact).frame(width: 78, height: 105)
+                        AgentNookRoom(model: AgentNookRoomModel(AgentNookSamples.one(.working, prop: .wrench, helpers: n, todos: 3, done: 1)), style: .compact).frame(width: 78, height: 105)
                         AgentNookCaption("\(n) helper\(n == 1 ? "" : "s")")
                     }
                 }
@@ -301,7 +298,7 @@ enum AgentNookGallery {
     private static func panels() {
         let counts = [1, 3, 6, 9]
         for cells in [3, 4, 6, 10, 16] {
-            let stores = counts.map { n in AgentNookSamples.store("p\(cells)-\(n)", AgentNookSamples.sessions(n), asking: n >= 6 ? "nk-6" : nil) }
+            let stores = counts.map { n in AgentNookSamples.store(AgentNookSamples.sessions(n)) }
             let width = AgentNookLayout.width(cells: cells) + 28
             sheet(String(format: "panels-c%02d", cells), width, 4 * (NookMetrics.widgetHeight + 24) + 28) {
                 VStack(alignment: .leading, spacing: 8) {
@@ -318,7 +315,7 @@ enum AgentNookGallery {
 
     private static func emptyHouse() {
         for cells in [3, 8, 16] {
-            let empty = AgentNookSamples.store("empty\(cells)", [])
+            let empty = AgentNookSamples.store([])
             sheet(String(format: "empty-c%02d", cells), AgentNookLayout.width(cells: cells) + 28, NookMetrics.widgetHeight + 50) {
                 VStack(alignment: .leading, spacing: 3) {
                     AgentNookCaption("The empty house · \(cells) cells")
@@ -329,7 +326,7 @@ enum AgentNookGallery {
     }
 
     private static func highlight() {
-        let store = AgentNookSamples.store("highlight", AgentNookSamples.sessions(4))
+        let store = AgentNookSamples.store(AgentNookSamples.sessions(4))
         sheet("highlighted", AgentNookLayout.width(cells: 8) + 28, NookMetrics.widgetHeight + 50) {
             VStack(alignment: .leading, spacing: 3) {
                 AgentNookCaption("The first room glows for a moment (a highlighted agent)")
@@ -341,8 +338,8 @@ enum AgentNookGallery {
     // MARK: Inside the real dashboard
 
     private static func dashboard() {
-        func scene(_ name: String, agents: Int, asking: Bool = false, layout: [WidgetKind], cap: CGFloat? = nil) {
-            let store = AgentNookSamples.store("dash-\(name)", AgentNookSamples.sessions(agents), asking: asking ? "nk-6" : nil)
+        func scene(_ name: String, agents: Int, layout: [WidgetKind], cap: CGFloat? = nil) {
+            let store = AgentNookSamples.store(AgentNookSamples.sessions(agents))
             let size = CGSize(width: DashGallery.wide, height: 290)
             Gallery.register("agentnook-dash-\(name)", size: size) {
                 let _ = DashPreview.seed(store)
@@ -353,7 +350,7 @@ enum AgentNookGallery {
             }
         }
         scene("3agents", agents: 3, layout: [.agents, .askAI, .pulse, .today])
-        scene("6agents-asking", agents: 6, asking: true, layout: [.agents, .askAI, .pulse, .today])
+        scene("6agents-asking", agents: 6, layout: [.agents, .askAI, .pulse, .today])
         scene("narrow", agents: 4, layout: [.agents, .askAI, .pulse, .today], cap: 640)
         scene("empty", agents: 0, layout: [.agents, .askAI, .pulse, .today])
     }
@@ -363,7 +360,7 @@ enum AgentNookGallery {
 @MainActor
 enum DashPreview {
     static func seed(_ store: AgentsStore) {
-        AgentsStore.shared.loadSessions(store.sessions, pending: store.pending)
+        AgentsStore.shared.loadSessions(store.sessions)
         AgentsStore.shared.previewDoneToday(store.sessions.isEmpty ? 0 : 5)
     }
 }

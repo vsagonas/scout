@@ -1,38 +1,24 @@
 import SwiftUI
 
-/// Sizes shared by the multi view and the height it asks the island for.
+/// The one order of every row of agents, and who shows when not everyone fits.
 enum AgentTileMetrics {
-    static let spacing: CGFloat = 8
-    static let base: CGFloat = 96
-    static let withRequest: CGFloat = 134
-    /// The header row, the open notch's own header and paddings, and this view's paddings (see NotchRootView.openContent).
-    static let chrome: CGFloat = 37 + 22 + 24 + 22
-    static let tallest: CGFloat = 470
-
-    /// 2 to 4 columns by width; a few sessions don't stretch into columns they cannot fill.
-    static func columns(width: CGFloat, count: Int) -> Int {
-        let byWidth = width >= 820 ? 4 : (width >= 560 ? 3 : 2)
-        return min(byWidth, max(2, count))
-    }
-
-    /// Every row of agents (the closed notch's faces, the header's faces, the TV's rooms, the den's stations, the grid, the plain list) in ONE
+    /// Every row of agents (the closed notch's faces, the header's faces, the TV's rooms, the den's stations, the plain list) in ONE
     /// fixed order: the order Scout found them in (`AgentFoundOrder`), the first found on the left (or on top), a new one joins on the right,
     /// and nobody changes places when its state changes.
     /// It used to sort by who needs you, so agents swapped places all day, and the faces sorted
     /// by their latest step.
-    static func ordered(_ sessions: [AgentSession], pending: [AgentPending] = []) -> [AgentSession] {
+    static func ordered(_ sessions: [AgentSession]) -> [AgentSession] {
         AgentFoundOrder.sorted(sessions)
     }
 
-    /// How much an agent needs you (lower = more): a held request, a question, at work, finished, asleep. It only chooses WHO shows when not
+    /// How much an agent needs you (lower = more): a question, at work, finished, asleep. It only chooses WHO shows when not
     /// everyone fits; the row keeps the fixed order.
-    static func urgency(_ s: AgentSession, pending: [AgentPending]) -> Int {
-        if pending.contains(where: { $0.sessionID == s.id }) { return 0 }
-        if AgentWingSummary.asks(s, pending: pending) { return 1 }
+    static func urgency(_ s: AgentSession) -> Int {
+        if AgentWingSummary.asks(s) { return 0 }
         switch s.state {
-        case .working: return 2
-        case .waiting, .done: return 3
-        case .idle: return 4
+        case .working: return 1
+        case .waiting, .done: return 2
+        case .idle: return 3
         }
     }
 
@@ -52,203 +38,6 @@ enum AgentTileMetrics {
         case .idle: return 3
         }
     }
-
-    static func height(of session: AgentSession, pending: [AgentPending]) -> CGFloat {
-        pending.contains { $0.sessionID == session.id } ? withRequest : base
-    }
-
-    /// The island height (header included) that shows every row of tiles, within reason.
-    static func islandHeight(sessions: [AgentSession], pending: [AgentPending], width: CGFloat) -> CGFloat {
-        let tiles = ordered(sessions, pending: pending)
-        guard !tiles.isEmpty else { return 0 }
-        let cols = columns(width: width, count: tiles.count)
-        var total: CGFloat = 0
-        var index = 0
-        var rows = 0
-        while index < tiles.count {
-            total += tiles[index..<min(index + cols, tiles.count)].map { height(of: $0, pending: pending) }.max() ?? base
-            index += cols
-            rows += 1
-        }
-        return min(contentHeight(sessions: sessions, pending: pending, width: width), tallest)
-    }
-
-    /// The island height that shows every row, with no cap (what the resize grip may reach).
-    static func contentHeight(sessions: [AgentSession], pending: [AgentPending], width: CGFloat) -> CGFloat {
-        let tiles = ordered(sessions, pending: pending)
-        guard !tiles.isEmpty else { return 0 }
-        let cols = columns(width: width, count: tiles.count)
-        var total: CGFloat = 0
-        var index = 0
-        var rows = 0
-        while index < tiles.count {
-            total += tiles[index..<min(index + cols, tiles.count)].map { height(of: $0, pending: pending) }.max() ?? base
-            index += cols
-            rows += 1
-        }
-        return chrome + total + spacing * CGFloat(max(0, rows - 1))
-    }
-}
-
-/// One live tile per session: who, what state, what it is doing now, how far it is.
-struct AgentTile: View {
-    let session: AgentSession
-    @ObservedObject var store: AgentsStore
-    var onOpen: () -> Void
-
-    private var requests: [AgentPending] { store.pending.filter { $0.sessionID == session.id } }
-    private var needsAnswer: Bool { !requests.isEmpty }
-    private var attention: Bool { needsAnswer || session.state == .waiting }
-    private var tint: Color { attention ? .orange : (session.state == .working ? Theme.accent : (session.state == .done ? .green : .gray)) }
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            HStack(spacing: 6) {
-                AgentGlyph(agent: session.agent, size: 12)
-                Text(session.project).font(.system(size: 12, weight: .semibold)).lineLimit(1)
-                Spacer(minLength: 2)
-                badge
-            }
-            activity
-            progress
-            if let request = requests.first { answer(request) }
-            Spacer(minLength: 0)
-            HStack(spacing: 6) {
-                if session.subagents > 0 {
-                    Label("Helpers: \(session.subagents)", systemImage: "person.2")
-                        .font(.system(size: 9.5, weight: .medium)).foregroundStyle(NotchInk.secondary)
-                }
-                Spacer(minLength: 0)
-                Text(session.agent.title).font(.system(size: 9.5)).foregroundStyle(NotchInk.tertiary)
-            }
-        }
-        .padding(9)
-        .frame(maxWidth: .infinity, alignment: .topLeading)
-        .frame(height: AgentTileMetrics.height(of: session, pending: store.pending))
-        .background(RoundedRectangle(cornerRadius: 13, style: .continuous).fill(tint.opacity(attention ? 0.16 : 0.08)))
-        .overlay(RoundedRectangle(cornerRadius: 13, style: .continuous).strokeBorder(tint.opacity(attention ? 0.55 : 0.18), lineWidth: 1))
-        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-        .contentShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-        .onTapGesture(perform: onOpen)
-    }
-
-    private var badge: some View {
-        HStack(spacing: 4) {
-            Circle().fill(needsAnswer ? Color.orange : session.state.color).frame(width: 6, height: 6)
-            Text(verbatim: needsAnswer ? String(localized: "Needs you") : session.state.title).font(.system(size: 10, weight: .medium)).foregroundStyle(attention ? Color.orange : NotchInk.secondary)
-            if session.state == .working || session.state == .waiting {
-                AgentElapsed(start: session.turnStartedAt).font(.system(size: 10)).foregroundStyle(NotchInk.tertiary)
-            } else if session.state == .done, let end = session.finishedAt {
-                AgentElapsed(start: session.turnStartedAt, end: end).font(.system(size: 10)).foregroundStyle(NotchInk.tertiary)
-            }
-        }
-    }
-
-    /// The tool running now (or what it waits for), on one line.
-    @ViewBuilder private var activity: some View {
-        if let request = requests.first {
-            Text(verbatim: request.kind == .permission && !request.tool.isEmpty ? "\(request.tool): \(request.summary)" : request.summary)
-                .font(.system(size: 11, design: request.kind == .permission ? .monospaced : .default)).foregroundStyle(Color.orange).lineLimit(1)
-        } else if session.state == .waiting {
-            (session.note.isEmpty ? Text("Waiting for you") : Text(verbatim: AgentNote.text(session.note))).font(.system(size: 11)).foregroundStyle(Color.orange).lineLimit(1)
-        } else if session.state == .working {
-            HStack(spacing: 5) {
-                AgentSpinner(size: 9)
-                if let step = session.currentStep {
-                    Text(step.tool).font(.system(size: 11, weight: .semibold))
-                    Text(step.summary).font(.system(size: 11, design: step.tool == "Bash" ? .monospaced : .default)).foregroundStyle(NotchInk.secondary).lineLimit(1)
-                } else {
-                    Text("Thinking…").font(.system(size: 11)).foregroundStyle(NotchInk.secondary)
-                }
-            }
-        } else {
-            Text(session.lastMessage.isEmpty ? (session.title.isEmpty ? session.state.title : session.title) : session.lastMessage)
-                .font(.system(size: 11)).foregroundStyle(NotchInk.secondary).lineLimit(1)
-        }
-    }
-
-    /// The agent's own to-do list as a bar and "2 of 5 · item"; the latest prompt when it has none.
-    @ViewBuilder private var progress: some View {
-        if !session.todos.isEmpty {
-            let total = session.todos.count, done = session.todosDone
-            HStack(spacing: 6) {
-                ZStack(alignment: .leading) {
-                    Capsule().fill(NotchInk.tileStrong)
-                    GeometryReader { g in Capsule().fill(tint).frame(width: g.size.width * CGFloat(done) / CGFloat(max(1, total))) }
-                }
-                .frame(width: 44, height: 4)
-                Text("\(done) of \(total)").font(.system(size: 10.5, weight: .semibold)).monospacedDigit()
-                (session.currentTodo.map { Text(verbatim: $0) } ?? (done == total ? Text("All done") : Text(verbatim: ""))).font(.system(size: 10.5)).foregroundStyle(NotchInk.secondary).lineLimit(1)
-            }
-        } else if !session.title.isEmpty {
-            HStack(spacing: 4) {
-                Image(systemName: "text.bubble").font(.system(size: 8.5)).foregroundStyle(NotchInk.tertiary)
-                Text(session.title).font(.system(size: 10.5)).foregroundStyle(NotchInk.secondary).lineLimit(1)
-            }
-        }
-    }
-
-    /// Answer in place (hooks connected): Allow / Deny, or the question's options.
-    @ViewBuilder private func answer(_ request: AgentPending) -> some View {
-        if request.kind == .permission {
-            HStack(spacing: 6) {
-                Button("Allow") { store.decide(request.id, .allow) }.buttonStyle(AgentPillStyle(prominent: true, onDark: true))
-                Button("Deny") { store.decide(request.id, .deny) }.buttonStyle(AgentPillStyle(onDark: true))
-                Spacer(minLength: 0)
-            }
-        } else if let q = request.questions.first {
-            let single = request.questions.count == 1 && !q.multiSelect
-            HStack(spacing: 5) {
-                ForEach(Array(q.options.prefix(3).enumerated()), id: \.offset) { _, option in
-                    Button(option.label) {
-                        if single { store.decide(request.id, .answers([q.question: option.label])) } else { onOpen() }
-                    }
-                    .buttonStyle(AgentPillStyle(onDark: true)).lineLimit(1)
-                }
-                if q.options.count > 3 || !single { Button("More…", action: onOpen).buttonStyle(.plain).font(.system(size: 10.5)).foregroundStyle(NotchInk.secondary) }
-                Spacer(minLength: 0)
-            }
-        }
-    }
-}
-
-/// The Agents workspace's first view: every session on the Mac, one tile each.
-struct AgentsGridView: View {
-    @ObservedObject var store: AgentsStore
-    let width: CGFloat
-    var onOpen: (String) -> Void
-
-    private var tiles: [AgentSession] { AgentTileMetrics.ordered(store.sessions, pending: store.pending) }
-
-    private var summary: String {
-        let needs = Set(store.pending.map(\.sessionID)).union(store.sessions.filter { $0.state == .waiting }.map(\.id)).count
-        let working = store.sessions.filter { $0.state == .working }.count
-        var parts = [String(localized: "Agents: \(store.sessions.count)")]
-        if needs > 0 { parts.append(String(localized: "Needs you: \(needs)")) }
-        if working > 0 { parts.append(String(localized: "Working: \(working)")) }
-        return parts.joined(separator: " · ")
-    }
-
-    var body: some View {
-        let cols = AgentTileMetrics.columns(width: width, count: tiles.count)
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(spacing: 8) {
-                Text(summary).font(.system(size: 11, weight: .semibold)).foregroundStyle(NotchInk.secondary)
-                Spacer(minLength: 0)
-                MachineLoadLine(style: .full)
-                if store.scanStatus.watching || store.sessions.contains(where: \.scanned) {
-                    Label("Found automatically", systemImage: "dot.radiowaves.left.and.right").labelStyle(.titleAndIcon)
-                        .font(.system(size: 10)).foregroundStyle(NotchInk.tertiary)
-                }
-            }
-            ScrollView(.vertical, showsIndicators: false) {
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: AgentTileMetrics.spacing, alignment: .topLeading), count: cols),
-                          alignment: .leading, spacing: AgentTileMetrics.spacing) {
-                    ForEach(tiles) { s in AgentTile(session: s, store: store) { onOpen(s.id) } }
-                }
-            }
-        }
-    }
 }
 
 /// The dashboard's centrepiece, the agentic panel: the cpu glyph and "Agents" with the totals, the Mac's own CPU and memory
@@ -262,8 +51,8 @@ struct AgentsWidgetView: View {
 
     @MainActor init(store: AgentsStore? = nil) { _store = ObservedObject(wrappedValue: store ?? AgentsStore.shared) }
 
-    private var rows: [AgentSession] { AgentTileMetrics.ordered(store.sessions, pending: store.pending) }
-    private func needsYou(_ s: AgentSession) -> Bool { s.state == .waiting || store.pending.contains { $0.sessionID == s.id } }
+    private var rows: [AgentSession] { AgentTileMetrics.ordered(store.sessions) }
+    private func needsYou(_ s: AgentSession) -> Bool { s.state == .waiting }
 
     /// The first sentence of the newest message; the step it is on while there is none; the prompt or state as a last resort.
     static func sentence(_ s: AgentSession) -> String {

@@ -10,9 +10,7 @@
 "%@ ended." = "%@ beidzās.";
 "%@ failed" = "%@: neizdevās";
 "%@ finished after %lld min" = "%@ pabeidza pēc %lld min";
-"%@ finished in %@" = "%@ pabeidza %@ laikā";
 "%@ free" = "Brīvs: %@";
-"%@ has a question" = "%@ uzdod jautājumu";
 "%@ has no sound" = "%@ nav skaņas";
 "%@ in %@" = "%@ šeit: %@";
 "%@ installed" = "Instalēts: %@";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@ ir par lielu ZIP failam (4 GB ierobežojums)";
 "%@ isn't installed" = "%@ nav instalēts";
 "%@ isn't supported on this Mac" = "%@ šajā Mac datorā netiek atbalstīts";
-"%@ isn't valid JSON, so Scout left it alone." = "%@ nav derīgs JSON, tāpēc Scout to neaiztika.";
 "%@ key" = "%@ atslēga";
 "%@ left" = "Atlicis: %@";
 "%@ needs you" = "%@ vajag tevi";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "%@ taimeris pabeigts";
 "%@ to full" = "%@ līdz pilnam";
 "%@ used" = "Izmantots: %@";
-"%@ wants to use %@" = "%@ vēlas izmantot: %@";
-"%@ wants to use a tool" = "%@ vēlas izmantot rīku";
 "%@ · %@ of %@" = "%@ · %@ no %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · kopā atvērti: %lld";
@@ -71,7 +66,6 @@
 "%lld running" = "Darbojas: %lld";
 "%lld working" = "Strādā: %lld";
 "%lld wpm" = "%lld vārdi/min";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+vēl %lld";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Vispirms pievieno savu %@ API atslēgu sadaļā Iestatījumi › Jautāt MI.";
 "Add your API key in Settings › Ask AI first." = "Vispirms pievieno savu API atslēgu sadaļā Iestatījumi › Jautāt MI.";
 "Add your Claude API key in Settings › Ask AI first." = "Vispirms pievieno savu Claude API atslēgu sadaļā Iestatījumi › Jautāt MI.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Pievieno Scout hooks failam ~/.claude/settings.json (progresa notikumi, atļauju pieprasījumi un jautājumi) un neaiztiek tavus hooks. Fails vispirms tiek dublēts.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Pievieno Scout hooks failam ~/.codex/hooks.json. Codex pirmajā reizē lūdz pārskatīt jaunos hooks: ieraksti /hooks programmā Codex un uzticies Scout hooks.";
 "Agent" = "Aģents";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Agent TV midzenis";
@@ -164,15 +156,10 @@
 "Allow…" = "Atļaut…";
 "Also show it while an app is full screen" = "Rādīt arī tad, kad lietotne ir pilnekrāna režīmā";
 "Also used for “%@”: only one of them will work." = "Izmanto arī darbībai „%@“: darbosies tikai viena no tām.";
-"Always allow" = "Vienmēr atļaut";
-"Always allow %@" = "Vienmēr atļaut %@";
-"Always allow adds: %@" = "Vienmēr atļaut pievieno: %@";
 "Amber" = "Dzintara";
 "An agent tab cannot be kept as the opening tab" = "Aģenta cilni nevar paturēt kā sākuma cilni";
 "Announcements" = "Paziņojumi";
 "Answer copied" = "Atbilde nokopēta";
-"Answer in terminal" = "Atbildēt terminālī";
-"Answer permissions and questions from the notch" = "Atbildi uz atļaujām un jautājumiem no izgriezuma";
 "Answers" = "Atbildes";
 "Any country" = "Jebkura valsts";
 "Appearance" = "Izskats";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Jautāt par attēlu";
 "Ask about your screen" = "Jautāt par savu ekrānu";
 "Ask anything" = "Jautā jebko";
-"Ask anything above. Questions go to %@. The answer shows here." = "Jautā jebko augstāk. Jautājumi tiek sūtīti: %@. Atbilde parādās šeit.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Jautā jebko.\nReturn sūta, ⌥Return pievieno rindu.\n\nTavi jautājumi tiek sūtīti: %@. Ja Ekrāns ir ieslēgts, līdzi tiek nosūtīts tava ekrāna attēls.";
 "Ask before closing a tab that is still running" = "Vaicāt pirms tādas cilnes aizvēršanas, kas vēl darbojas";
-"Ask in terminal" = "Jautāt terminālī";
 "Ask the same question again on Claude Sonnet 5.5" = "Uzdot to pašu jautājumu vēlreiz modelim Claude Sonnet 5.5";
-"Asking a question" = "Uzdod jautājumu";
 "Asking you: %@" = "Jautā tev: %@";
 "Asleep" = "Guļ";
 "Attach a picture" = "Pievienot attēlu";
@@ -241,7 +225,6 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Piekļuve kamerai ir izslēgta";
 "Camera access is off for Scout." = "Piekļuve kamerai Scout ir izslēgta.";
-"Can't listen (%@)" = "Nevar klausīties (%@)";
 "Can't read %@ yet" = "%@ vēl nevar nolasīt";
 "Can't tell which chat this is" = "Nevar noteikt, kurš čats tas ir";
 "Cancel" = "Atcelt";
@@ -265,7 +248,6 @@
 "Choose a script" = "Izvēlēties skriptu";
 "Choose image…" = "Izvēlēties attēlu…";
 "Choose shortcuts" = "Izvēlēties komandas";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Izvēlies mapi %@ savā mājas mapē. Scout tur dublē %@ un pievieno savus hooks; nekas cits nemainās.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Izvēlies mapi %@, lai Scout redzētu tavas %@ sesijas. Scout to tikai lasa.";
 "Choose the model" = "Izvēlēties modeli";
 "Choose…" = "Izvēlēties…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Notīrīt pēdējās stacijas un vietas";
 "Clear shortcut" = "Notīrīt īsinājumtaustiņu";
 "Clear the clipboard history?" = "Notīrīt starpliktuves vēsturi?";
-"Click Copy hooks." = "Klikšķini „Kopēt hooks“.";
 "Click for %@ settings, drag to move" = "Klikšķis: %@ iestatījumi, velc, lai pārvietotu";
 "Click one, or use the arrow keys. Press Return to go on." = "Klikšķini uz viena vai izmanto bulttaustiņus. Lai turpinātu, nospied Return.";
 "Click one, or use the arrow keys. The window grows with it." = "Klikšķini uz viena vai izmanto bulttaustiņus. Logs aug līdzi.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Aizvērt šo cilni (⌘W)";
 "Close this tab?" = "Aizvērt šo cilni?";
 "Cloudy" = "Mākoņains";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex lūdz vienreiz pārskatīt jaunos hooks: ieraksti /hooks programmā Codex un uzticies Scout hooks.";
 "Color" = "Krāsa";
 "Colors" = "Krāsas";
 "Command" = "Command";
 "Compact" = "Kompakts";
-"Connect" = "Savienot";
-"Connect %@?" = "Savienot %@?";
-"Connect %@…" = "Savienot %@…";
-"Connect Claude Code" = "Savienot Claude Code";
-"Connect Claude Code…" = "Savienot Claude Code…";
-"Connect Codex" = "Savienot Codex";
-"Connect Codex…" = "Savienot Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Savienošana lūdz tikai vienreiz izvēlēties mapi %@; Scout dublē %@, pievieno tikai savus ierakstus un var tos atkal noņemt (Atvienot). Katrs hook ir viena curl komanda uz 127.0.0.1; ja Scout ir aizvērts, tā neko nedara.";
 "Connected" = "Savienots";
-"Connected, but out of date" = "Savienots, bet novecojis";
-"Connected. New sessions report to Scout." = "Savienots. Jaunās sesijas ziņo Scout.";
 "Connecting" = "Savienošana";
 "Connecting…" = "Savieno…";
 "Contacts" = "Kontakti";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Kopijas, kas veiktas, kamēr priekšplānā ir kāda no šīm lietotnēm, netiek saglabātas nekad.";
 "Copy" = "Kopēt";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Nokopē saiti no YouTube, X, Instagram, TikTok, Vimeo vai Reddit, atver Paplāti, un Scout piedāvā to lejupielādēt, vai ievelc saiti Paplātē. Lejupielāde izmanto yt-dlp, ko instalē pats; augstāk esošā poga darbojas tikai tad, kad to nospied. Lai nolasītu nokopētu saiti, Scout vajag „Allow“ sadaļā System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 un jaunāks).";
-"Copy hooks" = "Kopēt hooks";
-"Copy hooks instead" = "Kopēt hooks tā vietā";
 "Copy something and it shows up here." = "Nokopē ko un tas parādīsies šeit.";
 "Couldn't copy the picture" = "Neizdevās nokopēt attēlu";
 "Couldn't copy the polaroid" = "Neizdevās nokopēt polaroid";
@@ -399,9 +367,6 @@
 "Delete note" = "Dzēst piezīmi";
 "Delete this chat" = "Dzēst šo čatu";
 "Delete this script" = "Dzēst šo skriptu";
-"Deny" = "Aizliegt";
-"Disconnect" = "Atvienot";
-"Disconnected. Your own hooks are untouched." = "Atvienots. Tavi paša hooks nav aiztikti.";
 "Disk" = "Disks";
 "Dismiss" = "Noraidīt";
 "Display" = "Rādīšana";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Eksportēt kā %@…";
 "Exported %@" = "Eksportēts: %@";
 "Extra large" = "Ļoti liels";
-"FAST ASK AI" = "ATRAIS MI";
 "FAVOURITES" = "IZLASE";
 "FROZEN" = "SASALIS";
 "Fahrenheit (°F)" = "Fārenheita (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Aizmirst iepriekšējās cilnes";
 "Forget previous tabs" = "Aizmirst iepriekšējās cilnes";
 "Forget recent folders" = "Aizmirst nesenās mapes";
-"Found automatically" = "Atrasts automātiski";
 "Found · %@" = "Atrasts · %@";
 "Free service, no key" = "Bezmaksas, bez atslēgas";
 "Freezing drizzle" = "Sasalstošs smalks lietus";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "SVEICIENS NO SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku īsiem jautājumiem, Sonnet grūtiem";
 "Haptic feedback" = "Haptiskā atgriezeniskā saite";
-"Has a question" = "Uzdod jautājumu";
 "Heavy rain" = "Spēcīgs lietus";
 "Heavy showers" = "Spēcīgas lietusgāzes";
 "Heavy snow" = "Stiprs sniegs";
@@ -533,9 +495,7 @@
 "Here" = "Šeit";
 "Hide completed" = "Paslēpt pabeigtos";
 "Hide it while an app is full screen" = "Paslēpt, kamēr lietotne ir pilnekrāna režīmā";
-"Hide the answer" = "Paslēpt atbildi";
 "Hide the chats" = "Paslēpt čatus";
-"Hide the paste code" = "Paslēpt ielīmēšanas kodu";
 "History" = "Vēsture";
 "History is paused" = "Vēsture ir apturēta";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Turi nospiestu ⌥⇧ kopā ar skaļuma vai spilgtuma taustiņu ceturtdaļsoļiem.";
@@ -605,15 +565,11 @@
 "Links" = "Saites";
 "List" = "Saraksts";
 "List name" = "Saraksta nosaukums";
-"Listen for AI agents on this Mac" = "Klausīties MI aģentus šajā Mac datorā";
-"Listening on 127.0.0.1:%@" = "Klausās uz 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Klausās uz 127.0.0.1:%@ (%@ bija aizņemts)";
 "Listening…" = "Klausās…";
 "Lists" = "Saraksti";
 "Live" = "Tiešraide";
 "Live Activities" = "Reāllaika aktivitātes";
 "Loading…" = "Ielādē…";
-"Local bridge" = "Vietējais tilts";
 "Local weather. A chosen city works without it." = "Vietējie laikapstākļi. Izvēlēta pilsēta darbojas arī bez tā.";
 "Location" = "Atrašanās vieta";
 "Location access" = "Piekļuve atrašanās vietai";
@@ -662,7 +618,6 @@
 "Models" = "Modeļi";
 "More" = "Vairāk";
 "More agents: %lld" = "Vairāk aģentu: %lld";
-"More…" = "Vairāk…";
 "Most capable, slowest" = "Spējīgākais, lēnākais";
 "Most items to keep" = "Visvairāk glabājamo vienumu";
 "Mostly clear" = "Pārsvarā skaidrs";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Vēl nav pajautāts";
 "Not available on this Mac" = "Šajā Mac nav pieejams";
 "Not checked yet" = "Vēl nav pārbaudīts";
-"Not connected" = "Nav savienots";
 "Not found in your login shell's PATH" = "Nav atrasts tava login shell PATH";
 "Not found on this Mac" = "Šajā Mac nav atrasts";
 "Not installed" = "Nav instalēts";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Tikai displeji ar izgriezumu";
 "Only events with a video link" = "Tikai notikumi ar video saiti";
 "Only for the Prompter to follow your voice." = "Tikai, lai Prompters sekotu tavai balsij.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Vajadzīgs tikai, lai no izgriezuma varētu Atļaut, Aizliegt un atbildēt uz jautājumiem; viss augstāk esošais darbojas arī bez tā. Katrs aģents palaiž vienas rindas hook, kas nosūta ziņu Scout šajā Mac datorā (tikai 127.0.0.1, ar privātu atslēgu). Scout maina tava aģenta iestatījumus tikai tad, kad noklikšķini Savienot un izvēlies tā mapi (vispirms tiek dublēts, tikai paša Scout ieraksti), vai pats ielīmē hooks. Ja Scout nedarbojas, hook neko nedara un aģents jautā savā terminālī kā parasti.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Vajadzīgs tikai, lai no izgriezuma varētu Atļaut, Aizliegt un atbildēt uz jautājumiem; viss augstāk esošais darbojas arī bez tā. Katrs hook ir vienas rindas komanda, kas nosūta ziņu Scout šajā Mac datorā (tikai 127.0.0.1, ar privātu atslēgu). Ja Scout nedarbojas, hook neko nedara un aģents jautā savā terminālī kā parasti.";
-"Only the dot beside the notch" = "Tikai punkts blakus izgriezumam";
 "Only what you choose" = "Tikai tas, ko izvēlies";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Tikai tad, ja tas vēl skanēja, kad Scout tika aizvērts. Scout vienmēr atceras pēdējo staciju un skaļumu.";
 "Open" = "Atvērt";
 "Open %@" = "Atvērt %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Atver %@ (izveido to, ja tā nav) un ielīmē. Ja tajā jau ir sadaļa „hooks“, pievieno šos ierakstus tās iekšienē.";
 "Open %@ full size" = "Atvērt %@ pilnā izmērā";
 "Open %@ to finish" = "Atver %@, lai pabeigtu";
 "Open %@, full size" = "Atvērt %@ pilnā izmērā";
@@ -808,7 +758,6 @@
 "Open To-do" = "Atvērt Uzdevumus";
 "Open a Scout window first, then share" = "Vispirms atver Scout logu, pēc tam kopīgo";
 "Open a widget full size" = "Atvērt logrīku pilnā izmērā";
-"Open in Ask AI" = "Atvērt sadaļā Jautāt MI";
 "Open or close the notch" = "Atvērt vai aizvērt izgriezumu";
 "Open tasks in total: %lld" = "Atvērtie uzdevumi kopā: %lld";
 "Open the Calendar with the To-dos, full size" = "Atvērt Kalendāru ar Uzdevumiem pilnā izmērā";
@@ -817,7 +766,6 @@
 "Open the notch" = "Atvērt izgriezumu";
 "Open the notch on %@ (now: %@)" = "Atvērt izgriezumu skatā %@ (tagad: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Katru reizi atvērt izgriezumu skatā %@, nevis panelī";
-"Open the notch on Agents" = "Atvērt izgriezumu skatā Aģenti";
 "Open the notch when an agent needs you" = "Atvērt izgriezumu, kad aģentam tevi vajag";
 "Open the player" = "Atvērt atskaņotāju";
 "Open the to-do calendar" = "Atvērt uzdevumu kalendāru";
@@ -829,9 +777,7 @@
 "Opening" = "Atver";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Atver izgriezumu ar šo logrīku jau izvērstu. Nospied vēlreiz, lai aizvērtu. Pats izgriezums vienmēr atveras panelī.";
 "Option" = "Option";
-"Optional: answer from the notch" = "Pēc izvēles: atbildi no izgriezuma";
 "Options" = "Opcijas";
-"Or type your own answer" = "Vai ieraksti savu atbildi";
 "Orange" = "Oranžs";
 "Output" = "Izvade";
 "Overcast" = "Apmācies";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Uznirstošais";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "Ports %u bija aizņemts, tāpēc šis bloks norāda portu %u. Ja Scout vēlāk atkal startē uz %u, nokopē to vēlreiz.";
 "Press a shortcut…" = "Nospied īsinājumtaustiņu…";
 "Preview" = "Priekšskats";
 "Preview a card" = "Kartes priekšskatījums";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Ievietot konvertētos failus Paplātē";
 "Put finished videos in the Tray" = "Ievietot pabeigtos video Paplātē";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Atgriež katru opciju tādu, kāda tā bija pirmajā dienā. Tavas piezīmes, starpliktuve un faili paliek.";
-"Questions go to %@." = "Jautājumi tiek sūtīti: %@.";
 "Questions go to %@. The answers stay here." = "Jautājumi tiek sūtīti: %@. Atbildes paliek šeit.";
 "Quick" = "Ātrs";
 "Quick Apps" = "Ātrās lietotnes";
@@ -920,7 +864,6 @@
 "Reading" = "Lasīšana";
 "Ready" = "Gatavs";
 "Ready for the next focus session" = "Gatavs nākamajai fokusa sesijai";
-"Ready for the next task" = "Gatavs nākamajam uzdevumam";
 "Rec" = "Rec";
 "Recent downloads" = "Nesenās lejupielādes";
 "Record Shortcut" = "Ierakstīt īsinājumtaustiņu";
@@ -978,19 +921,15 @@
 "Save…" = "Saglabāt…";
 "Scout Settings" = "Scout iestatījumi";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout jautā macOS tikai tad, kad ieslēdz vai atver funkciju, kurai tas vajadzīgs. Startējot nekas netiek jautāts.";
-"Scout can no longer open that folder. Connect again." = "Scout vairs nevar atvērt šo mapi. Savieno vēlreiz.";
 "Scout can't match what it hears to the script" = "Scout nevar saskaņot dzirdēto ar skriptu";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout vēl neredz tavu aģentu mapes. Atļauj to vienreiz, un katra Claude Code un Codex sesija ievācas pati.";
 "Scout can't use this microphone" = "Scout nevar izmantot šo mikrofonu";
-"Scout could not open a local port." = "Scout nevarēja atvērt lokālu portu.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout neredzēja tavu ekrānu, tāpēc šis jautājums tika nosūtīts bez attēla. Atļauj Scout sadaļā Screen Recording.";
 "Scout couldn't take the picture this time, so that question went without it." = "Scout šoreiz nevarēja uzņemt attēlu, tāpēc šis jautājums tika nosūtīts bez tā.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout pats atrod Claude Code un Codex sesijas";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout tagad klausās portu %u (vai tā hooks ir no vecākas versijas). Atjaunināšana pārraksta tikai Scout ierakstus.";
 "Scout only watches for connections once you allow it." = "Scout tikai tad uzrauga savienojumus, kad to atļauj.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout lasa tavus notikumus šajā Mac, lai aizpildītu Kalendāra logrīku un darbvietu. Nekas netiek nosūtīts nekur.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout atceras, ko kopē, lai varētu to ielīmēt vēlreiz no izgriezuma vai apakšējā plaukta. Viss paliek šajā Mac.";
-"Scout will add its hooks to %@ after backing the file up." = "Scout pievienos savus hooks failam %@ pēc tā dublēšanas.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Scout paša kods, vārdi un ikona ir oriģināli. Viss pārējais šeit tiek izmantots saskaņā ar savu licenci.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Scout paša logi (Jautāt MI, piezīmes, uzdevumi, kalkulators un citi) pēc iziešanas, atjauninājuma vai restartēšanas atveras atkal tur, kur bija, ar savu izmēru un tekstu. Ja displeja vairs nav, tie atveras galvenajā.";
 "Scout: my AI agents in my notch. %@" = "Scout: mani MI aģenti manā izgriezumā. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Meklēt tīmeklī";
 "Searching the web…" = "Meklē tīmeklī…";
 "See the month, your agenda and a Join button for video calls." = "Skaties mēnesi, savu dienas kārtību un pogu Ienākt video zvaniem.";
-"See the whole conversation in the Ask AI tab" = "Skaties visu sarunu cilnē Jautāt MI";
 "See your day here" = "Redzi savu dienu šeit";
 "Select a note or start a new one" = "Izvēlies piezīmi vai sāc jaunu";
 "Select a note or start a new one." = "Izvēlies piezīmi vai sāc jaunu.";
 "Selected: %lld" = "Izvēlēti: %lld";
 "Send" = "Sūtīt";
-"Send answers" = "Sūtīt atbildes";
 "Send to Apple Notes" = "Sūtīt uz Apple Notes";
 "Send to a nearby device" = "Sūtīt uz tuvumā esošu ierīci";
 "Sensitivity" = "Jutība";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Rādīt AirPods un to akumulatoru, kad tie savienojas";
 "Show Scout in the menu bar" = "Rādīt Scout izvēlņu joslā";
 "Show a Join card when the meeting starts" = "Rādīt kartīti Ienākt, kad sākas sapulce";
-"Show a card under the notch" = "Rādīt karti zem izgriezuma";
 "Show a card when a download finishes" = "Rādīt karti, kad lejupielāde beidzas";
 "Show a count next to the notch while the Tray holds files" = "Rādīt skaitli blakus izgriezumam, kamēr Paplātē ir faili";
 "Show a countdown" = "Rādīt atpakaļskaitīšanu";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Rādīt katru atvērto uzdevumu neatkarīgi no dienas";
 "Show in Finder" = "Rādīt programmā Finder";
 "Show in full screen" = "Rādīt pilnekrāna režīmā";
-"Show me the paste code" = "Parādīt ielīmēšanas kodu";
 "Show music from" = "Rādīt mūziku no";
 "Show music next to the notch while it plays" = "Rādīt mūziku blakus izgriezumam, kamēr tā skan";
 "Show my calendar in the notch" = "Rādīt manu kalendāru izgriezumā";
@@ -1107,9 +1042,7 @@
 "Square" = "Kvadrāts";
 "Start" = "Sākt";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Palaid Claude Code vai Codex, un katra sesija šeit parādās pati ar savu progresu. Nav ko savienot.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Palaid Codex un ieraksti /hooks, lai pirmajā reizē uzticētos Scout hooks. Pēc tam sāc jaunu sesiju.";
 "Start a %lld-minute focus timer for this task" = "Sākt %lld minūšu fokusa taimeri šim uzdevumam";
-"Start a new Claude Code session. It appears in the notch." = "Sākt jaunu Claude Code sesiju. Tā parādās izgriezumā.";
 "Start again" = "Sākt no sākuma";
 "Start folder" = "Sākuma mape";
 "Start the camera when the Mirror widget appears" = "Ieslēgt kameru, kad parādās Spoguļa logrīks";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Teksta izmērs: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "Šī API atslēga tika noraidīta. Pārbaudi to sadaļā Iestatījumi › Jautāt MI.";
 "That didn't work" = "Tas nesanāca";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "Tā nav mape %@ tavā mājas mapē. Savieno vēlreiz un izvēlies to.";
 "That one did not go through" = "Tas neizgāja cauri";
 "That's the end" = "Tas ir viss";
 "The %@ uses the camera, so it never opens by itself" = "%@ izmanto kameru, tāpēc tas nekad neatveras pats";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Izslēgts";
 "Two-finger swipe on the notch" = "Pārvilkšana ar diviem pirkstiem pa izgriezumu";
 "Type a city, region or country, or pick a country." = "Ieraksti pilsētu, reģionu vai valsti vai izvēlies valsti.";
-"Type your own…" = "Ieraksti savu…";
 "Typing: the notch stays open" = "Rakstīšana: izgriezums paliek atvērts";
 "Unknown format" = "Nezināms formāts";
 "Unlicense (only if you install it)" = "Unlicense (tikai ja to instalē)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Kamēr tas nav ieslēgts, jautājumi tiek sūtīti bez attēla.";
 "Untitled" = "Bez nosaukuma";
 "Untitled script" = "Skripts bez nosaukuma";
-"Update" = "Atjaunināt";
 "Updates" = "Atjauninājumi";
 "Updating the to-do list" = "Uzdevumu saraksta atjaunināšana";
 "Upload %@" = "Augšupielādēt %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Gaida tevi";
 "Waiting for your OK" = "Gaida tavu apstiprinājumu";
 "Waiting for your voice" = "Gaida tavu balsi";
-"Wants to use %@" = "Vēlas izmantot: %@";
-"Wants to use %@: %@" = "Vēlas izmantot: %@ (%@)";
-"Wants to use a tool" = "Vēlas izmantot rīku";
-"Wants to use a tool: %@" = "Vēlas izmantot rīku: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Silts papīrs, tumšs teksts un spilgti akcenti. Dienā viegli lasāms.";
 "Warn at" = "Brīdināt pie";
 "Warn when the battery is low" = "Brīdināt, kad akumulatora uzlāde ir zema";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "Kam Scout var piekļūt un kāpēc tas jautā.";
 "What shows next to the notch while it is closed." = "Kas tiek rādīts blakus izgriezumam, kamēr tas ir aizvērts.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Kad ierodas ziņa, zem izgriezuma nokrīt karte ar sūtītāju, tekstu un atbildes lauku. Tā paliek klusa, kamēr priekšplānā ir lietotne Messages. Scout nekad nenosūta neko, ja neuzraksti atbildi un nenospied Return.";
-"When an agent needs an answer" = "Kad aģentam vajag atbildi";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Kad maini skaļumu ar taustiņiem, izvēlņu joslu vai citu lietotni, līmenis tiek rādīts arī blakus izgriezumam.";
 "Where stations come from" = "No kurienes nāk stacijas";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Kamēr skan mūzika, darbojas taimeris vai beidzas lejupielāde, izgriezums aug, lai to parādītu. Norādi uz to, un tas atveras tavā Nook: logrīki, faili, starpliktuve, kalendārs. Attālinies, un tas atkal ievelkas.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Mērogs %@, atpakaļ pie visa skata";
 "Zoom in" = "Tuvināt";
 "Zoom out" = "Tālināt";
-"all edits this session" = "visas šīs sesijas izmaiņas";
 "charged" = "uzlādēts";
 "charging" = "lādējas";
 "code" = "kods";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS to nemainīja: %@";
 "me and my agents" = "es un mani aģenti";
 "min" = "min";
-"mode %@" = "režīms %@";
 "model name" = "modeļa nosaukums";
 "needs you" = "vajag tevi";
 "no battery" = "nav akumulatora";

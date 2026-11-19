@@ -9,7 +9,7 @@ Informal singular imperative for buttons, menu items and sentences (Odpri, Zapri
 | AI | UI (umetna inteligenca) |
 | Ask AI | Vprašaj UI |
 | Ask anything (placeholder, 12 characters at most) | Vprašaj kaj |
-| Fast Ask AI | Hitri UI (pixel label HITRI UI) |
+| Fast Ask AI | Hitri UI |
 | widget / widgets | pripomoček / pripomočki |
 | notch | izrez (the camera cut-out) |
 | dashboard | nadzorna plošča |
@@ -23,7 +23,6 @@ Informal singular imperative for buttons, menu items and sentences (Odpri, Zapri
 | chat / chats | klepet / klepeti |
 | API key, key | ključ API, ključ (key on the keyboard: tipka) |
 | clipboard | odložišče |
-| hooks | hooks (Latin, a technical word; the command is /hooks) |
 | session | seja |
 | tab | zavihek |
 | Prompter | Prompter (teleprompter = prompter) |
@@ -34,8 +33,7 @@ Informal singular imperative for buttons, menu items and sentences (Odpri, Zapri
 | To-do / To-dos | Opravilo / Opravila |
 | timer / alarm | časovnik / budilka |
 | Light / Dark / System | Svetla / Temna / Sistem |
-| Allow / Deny / Always allow | Dovoli / Zavrni / Vedno dovoli |
-| Connect / Disconnect | Poveži / Prekini povezavo |
+| Allow | Dovoli |
 | Copy / Delete / Cancel / Close | Kopiraj / Izbriši / Prekliči / Zapri |
 | Join (meeting button) | Vstopi |
 | Break (Pomodoro) | Odmor (pause = Premor, Paused = V premoru) |

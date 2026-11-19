@@ -21,16 +21,9 @@ enum AgentHelpersGallery {
         }
     }
 
-    private static func denStore(_ name: String, _ sessions: [AgentSession]) -> AgentsStore {
-        let store = AgentsStore(directory: AppPaths.folder("agentden-\(name)"))
-        store.loadSessions(sessions, pending: [])
-        store.previewDoneToday(5)
-        return store
-    }
-
     static func register() {
         for n in [1, 3, 7, 12] {
-            let store = denStore("helpers-\(n)", agents(helpers: n, prefix: "d\(n)"))
+            let store = AgentNookSamples.store(agents(helpers: n, prefix: "d\(n)"))
             let size = CGSize(width: 960, height: AgentDenLayout.baseHeight)
             Gallery.register("tv-helpers-den-\(n)", size: size, backdrop: .window) {
                 AgentDenView(store: store, detailID: nil, banner: nil, empty: AgentsWorkspaceView.emptyNote(store: store), fixedClock: .still, fixedLoad: (0.42, 0.66))
@@ -40,7 +33,7 @@ enum AgentHelpersGallery {
             }
         }
         // The same with the figures moving (a hop on the helpers' feet, the agent's second frame).
-        let moving = denStore("helpers-3-motion", agents(helpers: 3, prefix: "dm"))
+        let moving = AgentNookSamples.store(agents(helpers: 3, prefix: "dm"))
         Gallery.register("tv-helpers-den-3-motion", size: CGSize(width: 960, height: AgentDenLayout.baseHeight), backdrop: .window) {
             AgentDenView(store: moving, detailID: nil, banner: nil, empty: AgentsWorkspaceView.emptyNote(store: moving), fixedClock: AgentNookClock(t: 0.6, motion: true), fixedLoad: (0.42, 0.66))
                 .environment(\.agentDenTime, AgentTVGallery.day)
@@ -48,7 +41,7 @@ enum AgentHelpersGallery {
                 .background(Color.black)
         }
         // A den at night, and a narrow one (the stations shrink to the smallest pixels).
-        let night = denStore("helpers-7-night", agents(helpers: 7, prefix: "dn"))
+        let night = AgentNookSamples.store(agents(helpers: 7, prefix: "dn"))
         Gallery.register("tv-helpers-den-7-night", size: CGSize(width: 960, height: AgentDenLayout.baseHeight), backdrop: .window) {
             AgentDenView(store: night, detailID: nil, banner: nil, empty: AgentsWorkspaceView.emptyNote(store: night), fixedClock: .still, fixedLoad: (0.42, 0.66))
                 .environment(\.agentDenTime, AgentTVGallery.night)
@@ -57,9 +50,9 @@ enum AgentHelpersGallery {
         }
         // The dashboard's Agent TV: five rooms on a wide console (compact rooms), then the roomy ones.
         for n in [1, 3, 7, 12] {
-            let five = AgentNookSamples.store("helpers-tv5-\(n)", agents(helpers: n, prefix: "t\(n)"))
-            let three = AgentNookSamples.store("helpers-tv3-\(n)", agents(helpers: n, prefix: "u\(n)", only: [.working, .needsYou, .idle]))
-            let two = AgentNookSamples.store("helpers-tv2-\(n)", agents(helpers: n, prefix: "v\(n)", only: [.finished, .stopped]))
+            let five = AgentNookSamples.store(agents(helpers: n, prefix: "t\(n)"))
+            let three = AgentNookSamples.store(agents(helpers: n, prefix: "u\(n)", only: [.working, .needsYou, .idle]))
+            let two = AgentNookSamples.store(agents(helpers: n, prefix: "v\(n)", only: [.finished, .stopped]))
             let width = AgentTVLayout.width(cells: 16) + 28
             Gallery.register("tv-helpers-tv-\(n)", size: CGSize(width: width, height: 3 * (NookMetrics.widgetHeight + 24) + 28), backdrop: .window) {
                 AgentNookSheet {
@@ -83,7 +76,7 @@ enum AgentHelpersGallery {
                             HStack(spacing: 8) {
                                 ForEach(Array(looks.enumerated()), id: \.offset) { i, look in
                                     AgentTVCell(cells: 3) {
-                                        AgentNookPanelView(store: AgentNookSamples.store("helpers-tv1-\(n)-\(i)", agents(helpers: n, prefix: "w\(n)\(i)", only: [look]))).load(cpu: 0.42, memory: 0.66)
+                                        AgentNookPanelView(store: AgentNookSamples.store(agents(helpers: n, prefix: "w\(n)\(i)", only: [look]))).load(cpu: 0.42, memory: 0.66)
                                     }
                                 }
                             }

@@ -15,6 +15,7 @@ enum ScoutMain {
         AppLanguage.atLaunch()   // after a language restart: wait for the old Scout to quit, then note the language this run starts in
         let app = NSApplication.shared
         app.setActivationPolicy(.accessory)
+        OffscreenWindows.keepOutOfMissionControl()   // headless and gallery runs only: their far-away windows never show in Mission Control
         if let output = ScoutRuntime.galleryOutput {
             retainedDelegate = GalleryRunner(output: output)
         } else {

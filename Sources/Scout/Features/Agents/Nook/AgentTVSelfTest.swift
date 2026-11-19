@@ -6,7 +6,7 @@ import SwiftUI
 ///   build/Scout.app/Contents/MacOS/Scout --automation --headless --run "scout://agenttv.selftest?out=/path/agenttv.txt" & PID=$!
 /// then wait for the file and `kill $PID`. It checks the channel in focus, ON AIR, NO SIGNAL, the rooms on the glass at every width from 3
 /// to 16 cells, the den's spots for 1, 3, 6 and 9 agents, the window by the hour, and with real clicks: an agent in the den opens its
-/// window and the den stays, the automatic opening lands on its agent with the banner, and the answer keys answer.
+/// window and the den stays, and the automatic opening lands on its agent with the banner.
 @MainActor
 enum AgentTVSelfTest {
     /// Called from `AgentNookSelfTest.register()`.
@@ -46,7 +46,6 @@ enum AgentTVSelfTest {
         await clicks(&r)
         await stayPut(&r)
         await automatic(&r)
-        await answers(&r)
         await minimal(&r)
         r.lines.append("agenttv selftest done: \(r.failed == 0 ? "all passed" : "\(r.failed) FAILED")")
         try? r.lines.joined(separator: "\n").appending("\n").write(to: out, atomically: true, encoding: .utf8)
@@ -65,7 +64,7 @@ enum AgentTVSelfTest {
         case .stopped: s.state = .done; s.steps = [AgentStep(id: "f", tool: "Bash", summary: "x", at: Date(), done: true, failed: true)]
         case .idle: s.state = .idle
         }
-        return AgentNookRoomModel(s, needsYou: look == .needsYou)
+        return AgentNookRoomModel(s)
     }
 
     private static func channel(_ r: inout Report) {
@@ -98,25 +97,23 @@ enum AgentTVSelfTest {
 
     private static func oneRule(_ r: inout Report) {
         let finished = waiting("fin", finished: true), stopped = waiting("stop", finished: true, failed: true), asking = waiting("ask", finished: false)
-        let heldSession = waiting("held", finished: true)
-        let held = AgentPending(sessionID: "held", kind: .permission, tool: "Bash", summary: "x", detail: "x", questions: [], rawToolInput: nil, agent: .claude)
-        let sessions = [finished, stopped, asking, heldSession]
-        let expected: [(String, AgentNookLook)] = [("fin", .finished), ("stop", .stopped), ("ask", .needsYou), ("held", .needsYou)]
-        let models = AgentNookPanelView.models(sessions, pending: [held])
-        let stations = AgentDenStation.stations(sessions, pending: [held])
+        let sessions = [finished, stopped, asking]
+        let expected: [(String, AgentNookLook)] = [("fin", .finished), ("stop", .stopped), ("ask", .needsYou)]
+        let models = AgentNookPanelView.models(sessions)
+        let stations = AgentDenStation.stations(sessions)
         for (id, look) in expected {
             let name = look == .finished ? "a turn that ended (waiting with a finish time) FINISHED" : (look == .stopped ? "a turn that ended on a failed step STOPPED"
-                        : (id == "ask" ? "a wait with no finish time (a question) NEEDS YOU" : "a held request NEEDS YOU even with a finish time"))
+                        : "a wait with no finish time (a question) NEEDS YOU")
             let session = sessions.first { $0.id == id }!
             r.check("\(name): the set's room", models.first { $0.id == id }?.look == look, "\(String(describing: models.first { $0.id == id }?.look))")
             r.check("  the den's station", stations.first { $0.id == id }?.room.look == look, "\(String(describing: stations.first { $0.id == id }?.room.look))")
-            r.check("  the window", AgentDenWindow.look(session, pending: [held]) == look, "\(AgentDenWindow.look(session, pending: [held]))")
+            r.check("  the window", AgentNookLook.of(session) == look, "\(AgentNookLook.of(session))")
         }
         r.check("the set's rooms and the den's stations stand in the same fixed order, whatever each one is doing", models.map(\.id) == stations.map(\.id)
                 && models.map(\.id) == AgentTileMetrics.ordered(sessions).map(\.id), "\(models.map(\.id)) / \(stations.map(\.id))")
         r.check("ON AIR follows the one rule: a finished turn does not light it, a question does",
-                !AgentTVChannel.onAir(AgentNookPanelView.models([finished, stopped], pending: [])) && AgentTVChannel.onAir(AgentNookPanelView.models([finished, asking], pending: [])))
-        r.check("the room that needs you is in focus, not the finished one", AgentTVChannel.focus(AgentNookPanelView.models([finished, asking], pending: []))?.id == "ask")
+                !AgentTVChannel.onAir(AgentNookPanelView.models([finished, stopped])) && AgentTVChannel.onAir(AgentNookPanelView.models([finished, asking])))
+        r.check("the room that needs you is in focus, not the finished one", AgentTVChannel.focus(AgentNookPanelView.models([finished, asking]))?.id == "ask")
         let fin = stations.first { $0.id == "fin" }, stop = stations.first { $0.id == "stop" }
         r.check("a finished or stopped turn shows how long it took (about 12 min), the TV's counter", fin?.tookSeconds != nil && abs((fin?.tookSeconds ?? 0) - 12 * 60) < 5 && stop?.tookSeconds != nil)
         r.check("an asking one has no finished time on a TV", stations.first { $0.id == "ask" }?.tookSeconds == nil)
@@ -191,11 +188,7 @@ enum AgentTVSelfTest {
         r.check("three agents are one row, left to right in order", Set(three.map(\.row)) == [0] && three[0].rect.minX < three[1].rect.minX && three[1].rect.minX < three[2].rect.minX)
         r.check("the den's height holds the notch's rule: about 340 to 380 pt", AgentDenLayout.baseHeight >= 340 && AgentDenLayout.baseHeight <= 380
                 && AgentDenLayout.islandHeight() == AgentDenLayout.baseHeight + AgentDenLayout.chrome && AgentDenLayout.islandHeight() >= 320)
-        let held = AgentPending(sessionID: "x", kind: .permission, tool: "Bash", summary: "x", detail: "x", questions: [], rawToolInput: nil, agent: .claude)
-        let ask = AgentPending(sessionID: "x", kind: .question, tool: "Ask", summary: "x", detail: "",
-                               questions: [AgentQuestion(question: "a", header: "", options: [], multiSelect: false), AgentQuestion(question: "b", header: "", options: [], multiSelect: false)], rawToolInput: nil, agent: .claude)
-        r.check("a banner and a long question ask the island for more room", AgentDenLayout.extraHeight(pending: [held], banner: true) > AgentDenLayout.extraHeight(pending: [held], banner: false)
-                && AgentDenLayout.extraHeight(pending: [ask], banner: false) > AgentDenLayout.extraHeight(pending: [held], banner: false))
+        r.check("a banner asks the island for more room", AgentDenLayout.extraHeight(banner: true) > AgentDenLayout.extraHeight(banner: false))
     }
 
     // MARK: The window and the clock
@@ -217,11 +210,10 @@ enum AgentTVSelfTest {
 
     private static func pure(_ r: inout Report) {
         let sessions = AgentNookSamples.sessions(9)
-        let held = AgentPending(sessionID: "nk-6", kind: .permission, tool: "Bash", summary: "x", detail: "x", questions: [], rawToolInput: nil, agent: .codex)
-        let stations = AgentDenStation.stations(sessions, pending: [held])
+        let stations = AgentDenStation.stations(sessions)
         let fixed = sessions.sorted { ($0.startedAt, $0.id) < ($1.startedAt, $1.id) }.map(\.id)
-        r.check("every agent gets a station, in the fixed order (the first started on the left), the held one too", stations.count == 9
-                && stations.map(\.id) == fixed && stations.contains { $0.id == "nk-6" && $0.room.look == .needsYou }, "\(stations.map(\.id))")
+        r.check("every agent gets a station, in the fixed order (the first started on the left), the one that asks too", stations.count == 9
+                && stations.map(\.id) == fixed && stations.contains { $0.id == "nk-3" && $0.room.look == .needsYou }, "\(stations.map(\.id))")
         let done = stations.first { $0.room.look == .finished }
         r.check("a finished task knows how long it took", done?.tookSeconds != nil && (done?.tookSeconds ?? 0) > 0)
         r.check("a working agent has no time on a TV", stations.filter { $0.room.look == .working }.allSatisfy { $0.tookSeconds == nil })
@@ -249,7 +241,7 @@ enum AgentTVSelfTest {
     /// One station drawn at `px` points a cell, as RGBA pixels (a still clock: the first frame, no hop).
     @MainActor private static func stationPixels(_ look: AgentNookLook, helpers: Int, px: CGFloat) -> [UInt8]? {
         let session = AgentNookSamples.one(look, prop: .pencil, kind: .claude, project: "site", helpers: helpers, todos: 0, done: 0)
-        let station = AgentDenStation(session, needsYou: look == .needsYou)
+        let station = AgentDenStation(session)
         let view = Canvas { ctx, _ in
             var c = ctx
             AgentDenArt.drawStation(&c, station, kind: .claude, prop: .pencil, clock: .still, origin: .zero, px: px, selected: false, hover: false, glow: false)
@@ -411,7 +403,7 @@ enum AgentTVSelfTest {
 
     /// A day's window is bright, a night's dark; the empty den is empty (a note only when the folders cannot be read); the empty TV is switched off.
     private static func renders(_ r: inout Report) async {
-        let store = AgentNookSamples.store("tv-render", AgentNookSamples.sessions(3))
+        let store = AgentNookSamples.store(AgentNookSamples.sessions(3))
         var levels: [Double] = []
         for time in [AgentTVGallery.day, AgentTVGallery.night] {
             let rig = Rig(size: CGSize(width: 960, height: 360)) { rig in
@@ -422,7 +414,7 @@ enum AgentTVSelfTest {
             rig.close()
         }
         r.check("the window is brighter by day than by night", levels[0] > levels[1] + 0.12, "day \(levels[0]) night \(levels[1])")
-        let empty = AgentNookSamples.store("tv-render-empty", [])
+        let empty = AgentNookSamples.store([])
         let rig = Rig(size: CGSize(width: 960, height: 360)) { rig in AgentDenView(store: empty, fixedClock: .still, fixedLoad: (0.4, 0.6), onFrames: { rig.frames = $0 }) }
         await settle()
         let tv = AgentDenArt.emptyFrame(size: rig.size, px: AgentDenArt.roomCell)
@@ -435,7 +427,7 @@ enum AgentTVSelfTest {
         let floorMiddle = CGRect(x: rig.size.width / 2 - 90, y: wallBottom, width: 180, height: rig.size.height - wallBottom)
         r.check("nobody home: the den says NO AGENTS on its floor", rig.peak(floorMiddle) > 0.85, "brightest \(rig.peak(floorMiddle))")
         rig.close()
-        let denied = AgentNookSamples.store("tv-render-denied", [])
+        let denied = AgentNookSamples.store([])
         denied.previewScan(.init(access: [.claude: .denied, .codex: .missing], tracked: 0, sessions: 0, watching: false, lastSweep: Date()))
         let deniedRig = Rig(size: CGSize(width: 960, height: 360)) { rig in
             AgentDenView(store: denied, empty: AgentsWorkspaceView.emptyNote(store: denied), fixedClock: .still, fixedLoad: (0.4, 0.6), onFrames: { rig.frames = $0 })
@@ -462,11 +454,11 @@ enum AgentTVSelfTest {
     // MARK: Real clicks
 
     private static func clicks(_ r: inout Report) async {
-        let store = AgentNookSamples.store("tv-click", AgentNookSamples.sessions(6))
+        let store = AgentNookSamples.store(AgentNookSamples.sessions(6))
         let rig = Rig(size: CGSize(width: 960, height: 420)) { rig in AgentsWorkspaceView(store: store).reportingFrames { rig.frames = $0 } }
         defer { rig.close() }
         await settle(0.8)
-        let ids = AgentDenStation.stations(store.sessions, pending: store.pending).map(\.id)
+        let ids = AgentDenStation.stations(store.sessions).map(\.id)
         // The minimal look always shows one agent's history beside the list (the first while none is picked); the den shows none until a click.
         let minimal = !Retro.is8bit
         r.check(minimal ? "every agent has its row, and the first one's history shows beside the list" : "every agent has its spot in the den",
@@ -545,14 +537,14 @@ enum AgentTVSelfTest {
     /// for the window under the den, a click leaves every agent exactly where it stood.
     private static func stayPut(_ r: inout Report) async {
         guard Retro.is8bit else { return }
-        let store = AgentNookSamples.store("tv-stay", AgentNookSamples.sessions(5))
+        let store = AgentNookSamples.store(AgentNookSamples.sessions(5))
         let tall = AgentDenLayout.baseHeight + AgentDenLayout.drawerHeight
         let rig = Rig(size: CGSize(width: 960, height: tall)) { rig in
             AgentsWorkspaceView(store: store).reportingFrames { rig.frames = $0 }.environment(\.notchOpenMaxHeight, tall + AgentDenLayout.chrome + 40)
         }
         defer { rig.close() }
         await settle(0.8)
-        let ids = AgentDenStation.stations(store.sessions, pending: store.pending).map(\.id)
+        let ids = AgentDenStation.stations(store.sessions).map(\.id)
         let before = ids.compactMap { rig.frames[$0] }
         guard ids.count >= 3, let target = rig.frames[ids[1]] else { r.check("picking an agent keeps the others in place", false, "no frames"); return }
         rig.click(CGPoint(x: target.midX, y: target.minY + target.height * 0.4))
@@ -566,11 +558,9 @@ enum AgentTVSelfTest {
     // MARK: The automatic opening
 
     private static func automatic(_ r: inout Report) async {
-        let automatic: [(String, AgentAnnouncement.Kind, String)] = [("needs you", .needsYou, "nk-6"), ("finished after 12 min", .finished(minutes: 12), "nk-5"), ("stopped with an error", .error, "nk-7")]
+        let automatic: [(String, AgentAnnouncement.Kind, String)] = [("needs you", .needsYou, "nk-3"), ("finished after 12 min", .finished(minutes: 12), "nk-5"), ("stopped with an error", .error, "nk-7")]
         for (name, kind, id) in automatic {
-            let held = id == "nk-6" ? [AgentDenGallery.held("nk-6")] : []
-            let store = AgentNookSamples.store("tv-auto-\(id)", Array(AgentNookSamples.sessions(7)), asking: nil)
-            store.loadSessions(AgentNookSamples.sessions(7), pending: held)
+            let store = AgentNookSamples.store(Array(AgentNookSamples.sessions(7)))
             store.announcement = AgentAnnouncement(sessionID: id, kind: kind, at: Date())
             store.focusID = id
             let rig = Rig(size: CGSize(width: 960, height: 480)) { rig in AgentsWorkspaceView(store: store).reportingFrames { rig.frames = $0 } }
@@ -586,54 +576,10 @@ enum AgentTVSelfTest {
         r.check("the pager's LCD is amber for a question, green for a finish, red for an error", AgentBanner.lcd(.needsYou) != AgentBanner.lcd(.finished(minutes: 1)) && AgentBanner.lcd(.finished(minutes: 1)) != AgentBanner.lcd(.error))
     }
 
-    // MARK: The answer keys
-
-    private static func answers(_ r: inout Report) async {
-        // A permission: Allow, then Deny on a second one.
-        for (key, name) in [("Allow", "Allow"), ("Deny", "Deny"), ("Ask in terminal", "Ask in terminal")] {
-            let store = AgentsStore(directory: AppPaths.folder("agenttv-key-\(name)"))
-            store.loadSessions(AgentNookSamples.sessions(3), pending: [AgentDenGallery.held("nk-2")])
-            let rig = Rig(size: CGSize(width: 960, height: 420)) { rig in AgentsWorkspaceView(store: store, detail: "nk-2").reportingFrames { rig.frames = $0 } }
-            await settle(0.8)
-            r.check("the \(name) key is a chunky key in the window", rig.frames["key.\(key)"] != nil && store.pending.count == 1, "frames \(rig.frames.keys.sorted())")
-            if let frame = rig.frames["key.\(key)"] {
-                rig.click(frame)
-                await settle(0.4)
-                r.check("a real click on \(name) answers the request (it is gone)", store.pending.isEmpty, "pending \(store.pending.count)")
-            }
-            rig.close()
-        }
-        // A question: a click on an option answers it.
-        let store = AgentsStore(directory: AppPaths.folder("agenttv-key-question"))
-        store.loadSessions(AgentNookSamples.sessions(3), pending: [AgentDenGallery.question("nk-2")])
-        let rig = Rig(size: CGSize(width: 960, height: 460)) { rig in AgentsWorkspaceView(store: store, detail: "nk-2").reportingFrames { rig.frames = $0 } }
-        await settle(0.8)
-        r.check("the question's options are keys in the window", rig.frames["option.eu-west-1"] != nil && rig.frames["option.us-east-1"] != nil && rig.frames["key.Answer in terminal"] != nil, "frames \(rig.frames.keys.sorted())")
-        if let frame = rig.frames["option.us-east-1"] {
-            rig.click(frame)
-            await settle(0.4)
-            r.check("a real click on an option answers the question", store.pending.isEmpty, "pending \(store.pending.count)")
-        }
-        rig.close()
-        // With the window closed the den is just the den: the keys are not there.
-        let quiet = AgentsStore(directory: AppPaths.folder("agenttv-key-none"))
-        quiet.loadSessions(AgentNookSamples.sessions(3), pending: [AgentDenGallery.held("nk-2")])
-        let rig2 = Rig(size: CGSize(width: 960, height: 420)) { rig in AgentsWorkspaceView(store: quiet).reportingFrames { rig.frames = $0 } }
-        await settle(0.6)
-        if Retro.is8bit {
-            r.check("without a window open there are no answer keys in the den", rig2.frames["key.Allow"] == nil && quiet.pending.count == 1)
-        } else {
-            // The minimal look always shows one agent's history (the first while none is picked): keys only when that agent is the one asking.
-            let shown = AgentMiniView.shownID(AgentMiniRow.rows(quiet.sessions, pending: quiet.pending), picked: nil)
-            r.check("the answer keys show only in the history of the agent that asks", (rig2.frames["key.Allow"] != nil) == (shown == "nk-2") && quiet.pending.count == 1,
-                    "shown \(String(describing: shown)) keys \(rig2.frames["key.Allow"] != nil)")
-        }
-        rig2.close()
-    }
     // MARK: The minimal look (8-bit style off)
 
     /// The same real clicks in the minimal look (the style switch is turned off here and put back): a row in the list picks the agent whose
-    /// history fills the right side, the automatic opening lands on its agent with the flat banner, and the plain answer buttons answer.
+    /// history fills the right side, and the automatic opening lands on its agent with the flat banner.
     private static func minimal(_ r: inout Report) async {
         guard Retro.is8bit else { r.note("minimal look skipped: the look is forced by SCOUT_8BIT"); return }
         Pref.set(false, Retro.styleKey)
@@ -643,9 +589,8 @@ enum AgentTVSelfTest {
         r.check("the style switch is off for these checks", !Retro.is8bit)
         await clicks(&r)
         await automatic(&r)
-        await answers(&r)
         // The empty full view: a calm card with its line and, when there is something to do, a plain button.
-        let empty = AgentNookSamples.store("tv-min-empty", [])
+        let empty = AgentNookSamples.store([])
         let rig = Rig(size: CGSize(width: 960, height: 360)) { rig in AgentsWorkspaceView(store: empty).reportingFrames { rig.frames = $0 } }
         await settle(0.6)
         r.check("nobody home: one calm card and no agent cards", rig.frames["emptynote"] != nil && rig.frames.keys.filter { $0.hasPrefix("nk-") }.isEmpty, "frames \(rig.frames.keys.sorted())")
@@ -654,10 +599,10 @@ enum AgentTVSelfTest {
         // The list at the left and the history at the right, both down to the bottom edge; a taller notch gives both more
         var heights: [CGFloat] = []
         for height in [CGFloat(420), 640] {
-            let full = AgentNookSamples.store("tv-min-full-\(Int(height))", AgentNookSamples.sessions(6))
+            let full = AgentNookSamples.store(AgentNookSamples.sessions(6))
             let fullRig = Rig(size: CGSize(width: 960, height: height)) { rig in AgentsWorkspaceView(store: full).reportingFrames { rig.frames = $0 } }
             await settle(0.7)
-            let rowIDs = AgentMiniRow.rows(full.sessions, pending: full.pending).map(\.id)
+            let rowIDs = AgentMiniRow.rows(full.sessions).map(\.id)
             if let window = fullRig.frames["window"], let firstRow = rowIDs.first.flatMap({ fullRig.frames[$0] }) {
                 let rowsLeft = rowIDs.compactMap { fullRig.frames[$0] }.allSatisfy { $0.maxX <= window.minX + 1 }
                 r.check("height \(Int(height)): the history fills down to the bottom edge, the rows stand at its left in one column",
@@ -671,17 +616,6 @@ enum AgentTVSelfTest {
         }
         r.check("a taller notch gives the history all of it", heights.count == 2 && heights[1] >= heights[0] + 200, "\(heights)")
         r.check("the list column is about a third, 220 to 340 pt", AgentMiniView.listWidth(for: 960) >= 220 && AgentMiniView.listWidth(for: 960) <= 340 && AgentMiniView.listWidth(for: 500) == 220)
-        // The answer keys sit at the top of the detail card, inside it, so they are always in view.
-        let store = AgentsStore(directory: AppPaths.folder("agenttv-min-keys"))
-        store.loadSessions(AgentNookSamples.sessions(3), pending: [AgentDenGallery.held("nk-2")])
-        let keys = Rig(size: CGSize(width: 960, height: 420)) { rig in AgentsWorkspaceView(store: store, detail: "nk-2").reportingFrames { rig.frames = $0 } }
-        await settle(0.8)
-        if let window = keys.frames["window"], let allow = keys.frames["key.Allow"], let deny = keys.frames["key.Deny"] {
-            r.check("the Allow and Deny buttons stand inside the detail card, in view", window.contains(allow) && window.contains(deny) && allow.maxY <= window.maxY - 4, "\(window) \(allow)")
-        } else {
-            r.check("the Allow and Deny buttons stand inside the detail card, in view", false, "frames \(keys.frames.keys.sorted())")
-        }
-        keys.close()
         // The flat banner says the same words as the pager.
         let kinds: [AgentAnnouncement.Kind] = [.needsYou, .finished(minutes: 12), .error]
         let heads = kinds.map { AgentBanner.headline(AgentAnnouncement(sessionID: "x", kind: $0, at: Date()), project: "infra") }

@@ -8,7 +8,7 @@ Greek question mark ; . Quotation marks « ». Percent is written without a spac
 | agent / agents | πράκτορας / πράκτορες (never "scout", "bot") |
 | AI | AI (Latin, as in the store: «Ρώτα το AI», «πράκτορες AI») |
 | Ask AI | Ρώτα το AI |
-| Fast Ask AI | Γρήγορο Ρώτα το AI (pixel label FAST ASK AI stays English) |
+| Fast Ask AI | Γρήγορο Ρώτα το AI |
 | widget / widgets | widget / widgets (Latin, as in the store keywords; shorter than γραφικά στοιχεία for the small notch) |
 | notch | εγκοπή |
 | dashboard | πίνακας ελέγχου |
@@ -21,9 +21,7 @@ Greek question mark ; . Quotation marks « ». Percent is written without a spac
 | chat / chats | συνομιλία / συνομιλίες |
 | API key, key | κλειδί API, κλειδί |
 | clipboard | Πρόχειρο |
-| hooks | hooks (Latin, as in the file and the /hooks command) |
-| Connect / Disconnect | Σύνδεση / Αποσύνδεση |
-| Allow / Deny | Επίτρεψε / Απόρριψε (as in the store) |
+| Allow | Επίτρεψε (as in the store) |
 | tab | καρτέλα |
 | Prompter | Teleprompter (Latin, as in the store) |
 | Mirror | Καθρέφτης |

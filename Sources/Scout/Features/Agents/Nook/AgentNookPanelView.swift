@@ -50,13 +50,11 @@ struct AgentNookPanelView: View {
     // MARK: What it shows
 
     /// One model per agent, in the one fixed order (the first started on the left; `AgentTileMetrics.ordered`).
-    static func models(_ sessions: [AgentSession], pending: [AgentPending]) -> [AgentNookRoomModel] {
-        AgentTileMetrics.ordered(sessions, pending: pending).map { s in
-            AgentNookRoomModel(s, needsYou: AgentWingSummary.asks(s, pending: pending))
-        }
+    static func models(_ sessions: [AgentSession]) -> [AgentNookRoomModel] {
+        AgentTileMetrics.ordered(sessions).map(AgentNookRoomModel.init)
     }
 
-    private var rooms: [AgentNookRoomModel] { Self.models(store.sessions, pending: store.pending) }
+    private var rooms: [AgentNookRoomModel] { Self.models(store.sessions) }
 
     /// The open island's content size in its own space (nil in pictures without the island): the TV lines up with its corner.
     @Environment(\.notchContentSize) private var contentSize

@@ -1,7 +1,7 @@
 import SwiftUI
 
 // Made-up agent sessions for the App Store scenes (Claude Code and Codex, plausible project names, never a real
-// transcript). The scenes show the real views (the Nook's Agents dashboard, the grid, the wings, the cards) on
+// transcript). The scenes show the real views (the Nook's Agents dashboard, the grid, the wings) on
 // these sessions. Nothing here reads ~/.claude or ~/.codex.
 
 @MainActor
@@ -26,7 +26,6 @@ enum StoreAgents {
             var s = AgentSession(id: "store-\(name)", agent: agent, cwd: "/Users/you/Dev/\(name)", title: title, state: state,
                                  startedAt: now.addingTimeInterval(-started), lastEventAt: now)
             s.turnStartedAt = now.addingTimeInterval(-turn)
-            s.scanned = true
             return s
         }
         switch name {
@@ -83,34 +82,18 @@ enum StoreAgents {
 
     static func sessions(_ names: [String]) -> [AgentSession] { names.map(session) }
 
-    /// Claude Code asks to run a command (Allow, Always allow, Deny).
-    static func permission(for name: String = "website") -> AgentPending {
-        AgentPending(sessionID: "store-\(name)", kind: .permission, tool: "Bash", summary: "npm run build", detail: "npm run build", questions: [], rawToolInput: nil,
-                     agent: .claude,
-                     permissionSuggestions: Data("[{\"type\":\"addRules\",\"rules\":[{\"toolName\":\"Bash\",\"ruleContent\":\"npm run build\"}],\"behavior\":\"allow\",\"destination\":\"localSettings\"}]".utf8))
-    }
-
-    /// Claude Code asks which region (one tap on an option answers; only Claude Code asks questions through the hooks).
-    static func question(for name: String = "infra") -> AgentPending {
-        AgentPending(sessionID: "store-\(name)", kind: .question, tool: "AskUserQuestion", summary: "Which region?", detail: "",
-                     questions: [AgentQuestion(question: "Which region should the bucket move to?", header: "Region",
-                                               options: [.init(label: "eu-west-1", detail: ""), .init(label: "us-east-1", detail: ""), .init(label: "Keep as is", detail: "")],
-                                               multiSelect: false)],
-                     rawToolInput: nil, agent: .claude)
-    }
-
     /// The shared store (the Nook's dashboard and the Agents workspace read it) holds exactly these sessions.
-    static func loadShared(_ names: [String], pending: [AgentPending] = [], doneToday: Int = 6) {
+    static func loadShared(_ names: [String], doneToday: Int = 6) {
         let store = AgentsStore.shared
-        store.loadSessions(sessions(names), pending: pending)
+        store.loadSessions(sessions(names))
         store.previewDoneToday(doneToday)
         store.previewScan(.init(access: [.claude: .ok, .codex: .ok], tracked: names.count, sessions: names.count, watching: true, lastSweep: Date()))
     }
 
-    /// A store of its own for the wings and the cards.
-    static func store(_ folder: String, names: [String], pending: [AgentPending] = []) -> AgentsStore {
-        let store = AgentsStore(directory: AppPaths.folder(folder))
-        store.loadSessions(sessions(names), pending: pending)
+    /// A store of its own for the wings.
+    static func store(names: [String]) -> AgentsStore {
+        let store = AgentsStore()
+        store.loadSessions(sessions(names))
         store.previewDoneToday(6)
         return store
     }
@@ -124,13 +107,6 @@ enum StoreAgents {
             AgentWingRight(store: store)
         }).withDetail {
             AgentWingDetail(store: store)
-        }
-    }
-
-    /// A card under the closed notch for a request waiting on an answer.
-    static func card(_ request: AgentPending, store: AgentsStore) -> NotchCard {
-        NotchCard(id: "agent.pending.\(request.id)", kind: .agent, duration: 600) {
-            PendingView(request: request, store: store, compact: true)
         }
     }
 }

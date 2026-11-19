@@ -3,7 +3,7 @@ import SwiftUI
 
 // Candidates for a new app icon.
 // Three drawings, each a 1024 x 1024 macOS icon: the rounded square of the current icon (824 wide, 100 px margins,
-// a soft shadow), smooth shapes for the body and the notch, crisp square pixels for the scout. The scout's pixels sit on a grid of 32 px
+// a soft shadow), smooth shapes for the body and the notch, crisp square pixels for the agent. The agent's pixels sit on a grid of 32 px
 // (64 px in the third), so every Retina size of the icon (32, 64, 128, 256, 512, 1024 px) shows whole pixels.
 // CANDIDATES ONLY: nothing here touches `Support/AppIcon.icns`, the asset catalog or `Info.plist`. The owner chooses first.
 // Also here: three minimal menu-bar faces (one-colour template glyphs), candidates as well; the menu bar still shows the binoculars.
@@ -11,11 +11,11 @@ import SwiftUI
 
 /// The three candidates.
 enum AppIconCandidate: String, CaseIterable, Identifiable {
-    /// The open black island on an amber desktop, the whole scout standing inside in warm light.
+    /// The open black island on an amber desktop, the whole agent standing inside in warm light.
     case nook
-    /// The scout is the island: its face fills the notch, on a night-blue desktop.
+    /// The agent is the island: its face fills the notch, on a night-blue desktop.
     case island
-    /// The dark body of today's icon with its small glowing notch, and a big scout that peeks up from the bottom edge.
+    /// The dark body of today's icon with its small glowing notch, and a big agent that peeks up from the bottom edge.
     case peek
 
     var id: String { rawValue }
@@ -30,9 +30,9 @@ enum AppIconCandidate: String, CaseIterable, Identifiable {
 
     var idea: String {
         switch self {
-        case .nook: "a scout at home in the open black island"
-        case .island: "the scout is the notch: its face fills it"
-        case .peek: "a scout peeks up at its glowing notch"
+        case .nook: "an agent at home in the open black island"
+        case .island: "the agent is the notch: its face fills it"
+        case .peek: "an agent peeks up at its glowing notch"
         }
     }
 }
@@ -42,7 +42,7 @@ enum AppIconArt {
     static let canvas: CGFloat = 1024
     /// The rounded square: the macOS icon grid (824 of 1024, 100 px of air on every side for the shadow).
     static let bodyRect = CGRect(x: 100, y: 100, width: 824, height: 824)
-    /// One scout pixel in the 1024 square.
+    /// One agent pixel in the 1024 square.
     static let cell: CGFloat = 32
 
     // MARK: Shapes
@@ -72,11 +72,11 @@ enum AppIconArt {
 
     static func rgb(_ r: Double, _ g: Double, _ b: Double, _ a: Double = 1) -> Color { Color(.sRGB, red: r, green: g, blue: b, opacity: a) }
 
-    /// The scout's sand-orange.
+    /// The agent's sand-orange.
     static let scoutTint = rgb(0.93, 0.55, 0.38)
     static let notchBlack = rgb(0.03, 0.03, 0.04)
 
-    /// The scout's letters (the same as the den's) plus the few colours of the icon's room.
+    /// The agent's letters (the same as the den's) plus the few colours of the icon's room.
     static let palette: PixelPalette = {
         let t = scoutTint
         return PixelPalette(colors: [
@@ -87,16 +87,16 @@ enum AppIconArt {
         ])
     }()
 
-    /// The same colours with a near-black outline (for a scout that stands in front of light).
+    /// The same colours with a near-black outline (for an agent that stands in front of light).
     static let darkOutline: PixelPalette = {
         var p = palette
         p.colors["o"] = Retro.shade(scoutTint, -0.91)
         return p
     }()
 
-    // MARK: Sprites (frozen copies: the icon does not change when the den's scouts do)
+    // MARK: Sprites (frozen copies: the icon does not change when the den's agents do)
 
-    /// The scout: a round body, a sprout, a cream neckerchief, big eyes, two feet. 16 x 16.
+    /// The agent: a round body, a sprout, a cream neckerchief, big eyes, two feet. 16 x 16.
     static let scout = PixelSprite([
         "........ooo.....",
         ".......obbho....",
@@ -157,7 +157,7 @@ enum AppIconArt {
 
     // MARK: 1 · Nook
 
-    /// An amber desktop with soft hills; the open island hangs from the top, black as the notch, and the scout stands in it on a wooden
+    /// An amber desktop with soft hills; the open island hangs from the top, black as the notch, and the agent stands in it on a wooden
     /// floor with warm light on the wall behind.
     private static func drawNook(_ ctx: inout GraphicsContext) {
         body(&ctx, top: rgb(1.0, 0.80, 0.34), bottom: rgb(1.0, 0.60, 0.20), edge: rgb(1, 1, 1, 0.22), wallpaper: { c in
@@ -169,20 +169,20 @@ enum AppIconArt {
             c.fill(island, with: .color(notchBlack))
             var inside = c
             inside.clip(to: island)
-            // warm light on the back wall, brightest behind the scout and gone before the island's edge
+            // warm light on the back wall, brightest behind the agent and gone before the island's edge
             inside.fill(Path(ellipseIn: CGRect(x: 112, y: 20, width: 800, height: 800)),
                         with: .radialGradient(Gradient(colors: [rgb(1.0, 0.58, 0.24, 0.52), rgb(1.0, 0.58, 0.24, 0.26), rgb(1.0, 0.58, 0.24, 0)]),
                                               center: CGPoint(x: 512, y: 430), startRadius: 0, endRadius: 400))
             block(&inside, x: 6, y: 21, w: 20, h: 1, ink("l"))
             block(&inside, x: 6, y: 22, w: 20, h: 1, ink("n"))
-            // a darker outline here, so the scout stands clear of the light
+            // a darker outline here, so the agent stands clear of the light
             AgentPixel.draw(scout, in: &inside, at: CGPoint(x: 8 * cell, y: 6 * cell), px: cell, palette: darkOutline)
         })
     }
 
     // MARK: 2 · Island
 
-    /// A night-blue desktop; the notch is a window that the scout's face fills (big eyes, cheeks, a small mouth).
+    /// A night-blue desktop; the notch is a window that the agent's face fills (big eyes, cheeks, a small mouth).
     private static func drawIsland(_ ctx: inout GraphicsContext) {
         body(&ctx, top: rgb(0.33, 0.36, 0.90), bottom: rgb(0.15, 0.13, 0.46), edge: rgb(1, 1, 1, 0.20), wallpaper: { c in
             c.fill(Path(ellipseIn: CGRect(x: -140, y: 740, width: 1300, height: 620)), with: .color(rgb(0.46, 0.40, 0.95, 0.35)))
@@ -210,7 +210,7 @@ enum AppIconArt {
 
     // MARK: 3 · Peek
 
-    /// Today's dark body and small notch with its amber glow, and a big scout that looks up from the bottom edge (pixels of 48).
+    /// Today's dark body and small notch with its amber glow, and a big agent that looks up from the bottom edge (pixels of 48).
     private static func drawPeek(_ ctx: inout GraphicsContext) {
         body(&ctx, top: rgb(0.15, 0.16, 0.20), bottom: rgb(0.06, 0.06, 0.08), edge: rgb(1, 1, 1, 0.17), wallpaper: { c in
             c.fill(Path(ellipseIn: CGRect(x: 30, y: -120, width: 640, height: 640)),
@@ -224,7 +224,7 @@ enum AppIconArt {
             }
             c.fill(tab, with: .color(notchBlack))
             c.fill(Path(roundedRect: CGRect(x: 432, y: 204, width: 160, height: 6), cornerRadius: 3), with: .color(rgb(1.0, 0.69, 0.13, 0.80)))
-            // the scout from its neckerchief up, 16 cells of 48 wide, cut by the bottom edge
+            // the agent from its neckerchief up, 16 cells of 48 wide, cut by the bottom edge
             AgentPixel.draw(scout.droppingRows(12...15), in: &c, at: CGPoint(x: 128, y: 352), px: 48, palette: palette)
         })
     }
@@ -236,7 +236,7 @@ extension AppIconArt {
     @MainActor private static var bitmaps: [String: CGImage] = [:]
 
     /// The candidate as a bitmap of `pixels` x `pixels` with a clear background. 1024 and larger are drawn; a smaller one is the 1024
-    /// master with every block of its pixels averaged into one, so a scout pixel that covers whole pixels stays a sharp square.
+    /// master with every block of its pixels averaged into one, so an agent pixel that covers whole pixels stays a sharp square.
     @MainActor
     static func render(_ candidate: AppIconCandidate, pixels: Int) -> CGImage? {
         let key = "\(candidate.rawValue)-\(pixels)"
@@ -342,11 +342,11 @@ struct AppIconPicture: View {
 
 /// Three minimal faces for the menu bar.
 enum MenuBarFace: String, CaseIterable, Identifiable {
-    /// The scout's square face as the notch's wings show it, solid, with its eyes and mouth cut out.
+    /// The agent's square face as the notch's wings show it, solid, with its eyes and mouth cut out.
     case face
-    /// The scout drawn as a thin line: round head, sprout, two eyes, a mouth.
+    /// The agent drawn as a thin line: round head, sprout, two eyes, a mouth.
     case sprout
-    /// The notch with big eyes and two feet: the island that is a scout.
+    /// The notch with big eyes and two feet: the island that is an agent.
     case island
 
     var id: String { rawValue }

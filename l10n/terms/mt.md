@@ -1,6 +1,6 @@
 # Maltese (mt): term list
 
-Machine translation, no native reviewer yet: together with Irish the weakest of the seven. Maltese is not a macOS interface language, and Maltese speakers mostly use their Mac in English, so the plainest standard terms (Maltese software wording as far as I know it) are used, and widely used English technical words are kept (widget, notch, dashboard, chat, clipboard, tab, hooks, shell, Prompter, Nook, Pocket, AI, Mute, Play).
+Machine translation, no native reviewer yet: together with Irish the weakest of the seven. Maltese is not a macOS interface language, and Maltese speakers mostly use their Mac in English, so the plainest standard terms (Maltese software wording as far as I know it) are used, and widely used English technical words are kept (widget, notch, dashboard, chat, clipboard, tab, shell, Prompter, Nook, Pocket, AI, Mute, Play).
 Buttons and menu items are the informal singular imperative (Iftaħ, Agħlaq, Salva, Żid); sentences speak to the user informally (inti, -ek). Quotation marks “ ” (as in the English). No counted plural forms: "Aġenti: 3", "Miftuħ: 3", "3 oħra". Sentences are kept short and simple on purpose.
 
 | English | Maltese |
@@ -9,7 +9,7 @@ Buttons and menu items are the informal singular imperative (Iftaħ, Agħlaq, Sa
 | AI | AI (kept; intelliġenza artifiċjali) |
 | Ask AI | Staqsi lill-AI |
 | Ask anything (placeholder, 12 characters at most) | Staqsi… |
-| Fast Ask AI | AI Mgħaġġel (pixel label AI MGHAGGEL) |
+| Fast Ask AI | AI Mgħaġġel |
 | widget / widgets | widget / widgets (kept, as Maltese speakers say it) |
 | notch | notch (kept) |
 | dashboard | dashboard (kept) |
@@ -23,7 +23,6 @@ Buttons and menu items are the informal singular imperative (Iftaħ, Agħlaq, Sa
 | chat / chats | chat / chats |
 | API key, key | ċavetta API, ċavetta (key on the keyboard: tast) |
 | clipboard | clipboard |
-| hooks | hooks (Latin, a technical word; the command is /hooks) |
 | session | sessjoni |
 | tab | tab / tabs |
 | Prompter | Prompter (teleprompter = Prompter) |
@@ -34,8 +33,7 @@ Buttons and menu items are the informal singular imperative (Iftaħ, Agħlaq, Sa
 | To-do / To-dos | Kompitu / Kompiti |
 | timer / alarm | tajmer / alarm |
 | Light / Dark / System | Ċar / Skur / Sistema |
-| Allow / Deny / Always allow | Ippermetti / Ċaħad / Ippermetti dejjem |
-| Connect / Disconnect | Ikkonnettja / Skonnettja |
+| Allow | Ippermetti |
 | Copy / Delete / Cancel / Close | Ikkopja / Ħassar / Ikkanċella / Agħlaq |
 | Join (meeting button) | Ingħaqad |
 | Break (Pomodoro) | Mistrieħ |

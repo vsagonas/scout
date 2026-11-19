@@ -138,7 +138,7 @@ enum AgentBigFaceGallery {
     // MARK: The den: stations at the sizes the den draws (1.5 to 5 pt cells), one style a station
 
     private static func station(_ look: AgentNookLook, kind: AgentKind, helpers: Int = 2) -> AgentDenStation {
-        AgentDenStation(AgentNookSamples.one(look, prop: [.pencil, .wrench, .magnifier, .globe][abs(look.hashValue) % 4], kind: kind, project: "site", helpers: helpers), needsYou: look == .needsYou)
+        AgentDenStation(AgentNookSamples.one(look, prop: [.pencil, .wrench, .magnifier, .globe][abs(look.hashValue) % 4], kind: kind, project: "site", helpers: helpers))
     }
 
     private static func den() {
@@ -181,7 +181,7 @@ enum AgentBigFaceGallery {
 
     private static func tv() {
         func model(_ look: AgentNookLook, kind: AgentKind, helpers: Int = 0) -> AgentNookRoomModel {
-            AgentNookRoomModel(AgentNookSamples.one(look, prop: .pencil, kind: kind, project: "site", helpers: helpers, todos: 0, done: 0), needsYou: look == .needsYou)
+            AgentNookRoomModel(AgentNookSamples.one(look, prop: .pencil, kind: kind, project: "site", helpers: helpers, todos: 0, done: 0))
         }
         sheet("tv-roomy", 5 * 150 + 40, 4 * 112 + 40) {
             VStack(alignment: .leading, spacing: 6) {

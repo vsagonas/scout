@@ -10,9 +10,7 @@
 "%@ ended." = "%@ baigėsi.";
 "%@ failed" = "%@ nepavyko";
 "%@ finished after %lld min" = "%@ baigė po %lld min";
-"%@ finished in %@" = "%@ baigė per %@";
 "%@ free" = "Laisva: %@";
-"%@ has a question" = "%@ turi klausimą";
 "%@ has no sound" = "%@ neturi garso";
 "%@ in %@" = "%@ (%@)";
 "%@ installed" = "Įdiegta: %@";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@ per didelis ZIP failui (riba 4 GB)";
 "%@ isn't installed" = "%@ neįdiegtas";
 "%@ isn't supported on this Mac" = "%@ šiame Mac nepalaikomas";
-"%@ isn't valid JSON, so Scout left it alone." = "%@ nėra tinkamas JSON, todėl Scout jo nelietė.";
 "%@ key" = "%@ raktas";
 "%@ left" = "Liko: %@";
 "%@ needs you" = "%@ reikia tavęs";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "%@ laikmatis baigėsi";
 "%@ to full" = "%@ iki pilno";
 "%@ used" = "Panaudota: %@";
-"%@ wants to use %@" = "%@ nori naudoti: %@";
-"%@ wants to use a tool" = "%@ nori naudoti įrankį";
 "%@ · %@ of %@" = "%@ · %@ iš %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · iš viso atidaryta: %lld";
@@ -71,7 +66,6 @@
 "%lld running" = "Veikia: %lld";
 "%lld working" = "Dirba: %lld";
 "%lld wpm" = "%lld žodž./min";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+dar %lld";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Pirmiausia pridėk savo %@ API raktą skiltyje Nustatymai › Klausti DI.";
 "Add your API key in Settings › Ask AI first." = "Pirmiausia pridėk savo API raktą skiltyje Nustatymai › Klausti DI.";
 "Add your Claude API key in Settings › Ask AI first." = "Pirmiausia pridėk savo Claude API raktą skiltyje Nustatymai › Klausti DI.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Prideda Scout hooks į ~/.claude/settings.json (eigos įvykiai, leidimų užklausos ir klausimai) ir nelieta tavo paties hooks. Failas pirmiausia nukopijuojamas atsargai.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Prideda Scout hooks į ~/.codex/hooks.json. Codex pirmą kartą prašo peržiūrėti naujus hooks: įvesk /hooks programoje Codex ir pasitikėk Scout hooks.";
 "Agent" = "Agentas";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Agent TV irštva";
@@ -164,15 +156,10 @@
 "Allow…" = "Leisti…";
 "Also show it while an app is full screen" = "Rodyti ir tada, kai programa visame ekrane";
 "Also used for “%@”: only one of them will work." = "Taip pat naudojama „%@“: veiks tik vienas iš jų.";
-"Always allow" = "Visada leisti";
-"Always allow %@" = "Visada leisti %@";
-"Always allow adds: %@" = "Visada leisti prideda: %@";
 "Amber" = "Gintaro";
 "An agent tab cannot be kept as the opening tab" = "Agento skirtuko negalima palikti kaip pradinio skirtuko";
 "Announcements" = "Skelbimai";
 "Answer copied" = "Atsakymas nukopijuotas";
-"Answer in terminal" = "Atsakyti terminale";
-"Answer permissions and questions from the notch" = "Atsakyk į leidimus ir klausimus iš išpjovos";
 "Answers" = "Atsakymai";
 "Any country" = "Bet kuri šalis";
 "Appearance" = "Išvaizda";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Klausti apie paveikslėlį";
 "Ask about your screen" = "Klausti apie ekraną";
 "Ask anything" = "Klausk kažko";
-"Ask anything above. Questions go to %@. The answer shows here." = "Klausk ko nors aukščiau. Klausimai siunčiami: %@. Atsakymas rodomas čia.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Klausk ko nori.\nReturn siunčia, ⌥Return prideda eilutę.\n\nTavo klausimai siunčiami: %@. Kai Ekranas įjungtas, kartu siunčiamas ir tavo ekrano vaizdas.";
 "Ask before closing a tab that is still running" = "Paklausti prieš uždarant skirtuką, kuris dar veikia";
-"Ask in terminal" = "Klausti terminale";
 "Ask the same question again on Claude Sonnet 5.5" = "Užduoti tą patį klausimą dar kartą Claude Sonnet 5.5";
-"Asking a question" = "Užduoda klausimą";
 "Asking you: %@" = "Klausia tavęs: %@";
 "Asleep" = "Miega";
 "Attach a picture" = "Pridėti paveikslėlį";
@@ -241,7 +225,6 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Prieiga prie kameros išjungta";
 "Camera access is off for Scout." = "Prieiga prie kameros išjungta Scout.";
-"Can't listen (%@)" = "Negalima klausytis (%@)";
 "Can't read %@ yet" = "Dar negalima perskaityti %@";
 "Can't tell which chat this is" = "Neaišku, kuris tai pokalbis";
 "Cancel" = "Atšaukti";
@@ -265,7 +248,6 @@
 "Choose a script" = "Pasirinkti skriptą";
 "Choose image…" = "Pasirinkti paveikslėlį…";
 "Choose shortcuts" = "Pasirinkti komandas";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Pasirink aplanką %@ savo namų aplanke. Scout ten sukuria atsarginę %@ kopiją ir prideda savo hooks; daugiau nieko nekeičia.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Pasirink aplanką %@, kad Scout matytų tavo %@ seansus. Scout jį tik skaito.";
 "Choose the model" = "Pasirinkti modelį";
 "Choose…" = "Pasirinkti…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Išvalyti paskutines stotis ir vietas";
 "Clear shortcut" = "Išvalyti spartųjį klavišą";
 "Clear the clipboard history?" = "Išvalyti iškarpinės istoriją?";
-"Click Copy hooks." = "Spustelėk „Kopijuoti hooks“.";
 "Click for %@ settings, drag to move" = "Spustelėk: %@ nustatymai, vilk, kad perkeltum";
 "Click one, or use the arrow keys. Press Return to go on." = "Spustelėk vieną arba naudok rodykles. Paspausk Return, kad tęstum.";
 "Click one, or use the arrow keys. The window grows with it." = "Spustelėk vieną arba naudok rodykles. Langas auga kartu.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Uždaryti šį skirtuką (⌘W)";
 "Close this tab?" = "Uždaryti šį skirtuką?";
 "Cloudy" = "Debesuota";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex vieną kartą prašo peržiūrėti naujus hooks: įvesk /hooks programoje Codex ir pasitikėk Scout hooks.";
 "Color" = "Spalva";
 "Colors" = "Spalvos";
 "Command" = "Command";
 "Compact" = "Kompaktiškas";
-"Connect" = "Prijungti";
-"Connect %@?" = "Prijungti %@?";
-"Connect %@…" = "Prijungti %@…";
-"Connect Claude Code" = "Prijungti Claude Code";
-"Connect Claude Code…" = "Prijungti Claude Code…";
-"Connect Codex" = "Prijungti Codex";
-"Connect Codex…" = "Prijungti Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Prijungiant vieną kartą paprašoma pasirinkti aplanką %@; Scout sukuria atsarginę %@ kopiją, prideda tik savo įrašus ir gali juos vėl pašalinti (Atjungti). Kiekvienas hook yra viena curl komanda į 127.0.0.1; kai Scout uždarytas, ji nieko nedaro.";
 "Connected" = "Prijungta";
-"Connected, but out of date" = "Prijungta, bet pasenusi";
-"Connected. New sessions report to Scout." = "Prijungta. Nauji seansai praneša Scout.";
 "Connecting" = "Jungiamasi";
 "Connecting…" = "Jungiamasi…";
 "Contacts" = "Kontaktai";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Kopijos, padarytos, kai viena iš šių programų yra priekyje, niekada nesaugomos.";
 "Copy" = "Kopijuoti";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Nukopijuok nuorodą iš YouTube, X, Instagram, TikTok, Vimeo ar Reddit, atidaryk Dėklą, ir Scout pasiūlys ją atsisiųsti, arba numesk nuorodą ant Dėklo. Atsisiuntimui naudojamas yt-dlp, kurį įdiegi pats; aukščiau esantis mygtukas veikia tik tada, kai jį paspaudi. Norint perskaityti nukopijuotą nuorodą, reikia „Allow“ Scout skiltyje System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 ir naujesnė).";
-"Copy hooks" = "Kopijuoti hooks";
-"Copy hooks instead" = "Vietoj to kopijuoti hooks";
 "Copy something and it shows up here." = "Nukopijuok ką nors ir tai atsiras čia.";
 "Couldn't copy the picture" = "Nepavyko nukopijuoti paveikslėlio";
 "Couldn't copy the polaroid" = "Nepavyko nukopijuoti polaroid";
@@ -399,9 +367,6 @@
 "Delete note" = "Ištrinti pastabą";
 "Delete this chat" = "Ištrinti šį pokalbį";
 "Delete this script" = "Ištrinti šį skriptą";
-"Deny" = "Neleisti";
-"Disconnect" = "Atjungti";
-"Disconnected. Your own hooks are untouched." = "Atjungta. Tavo paties hooks nepaliesti.";
 "Disk" = "Diskas";
 "Dismiss" = "Atmesti";
 "Display" = "Rodymas";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Eksportuoti kaip %@…";
 "Exported %@" = "Eksportuota: %@";
 "Extra large" = "Labai didelis";
-"FAST ASK AI" = "GREITAS DI";
 "FAVOURITES" = "MEGSTAMIAUSI";
 "FROZEN" = "UZSALDYTA";
 "Fahrenheit (°F)" = "Farenheito (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Pamiršti ankstesnius skirtukus";
 "Forget previous tabs" = "Pamiršti ankstesnius skirtukus";
 "Forget recent folders" = "Pamiršti neseniai naudotus aplankus";
-"Found automatically" = "Rasta automatiškai";
 "Found · %@" = "Rasta · %@";
 "Free service, no key" = "Nemokama paslauga, rakto nereikia";
 "Freezing drizzle" = "Užšąlanti dulksna";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "LABAS NUO SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku trumpiems klausimams, Sonnet sudėtingiems";
 "Haptic feedback" = "Haptinis atsakas";
-"Has a question" = "Turi klausimą";
 "Heavy rain" = "Smarkus lietus";
 "Heavy showers" = "Smarkios liūtys";
 "Heavy snow" = "Smarkus sniegas";
@@ -533,9 +495,7 @@
 "Here" = "Čia";
 "Hide completed" = "Slėpti atliktas";
 "Hide it while an app is full screen" = "Slėpti, kai programa visame ekrane";
-"Hide the answer" = "Slėpti atsakymą";
 "Hide the chats" = "Slėpti pokalbius";
-"Hide the paste code" = "Slėpti įklijavimo kodą";
 "History" = "Istorija";
 "History is paused" = "Istorija pristabdyta";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Laikyk ⌥⇧ su garso arba ryškumo klavišu ketvirčio žingsniams.";
@@ -605,15 +565,11 @@
 "Links" = "Nuorodos";
 "List" = "Sąrašas";
 "List name" = "Sąrašo pavadinimas";
-"Listen for AI agents on this Mac" = "Klausytis DI agentų šiame Mac";
-"Listening on 127.0.0.1:%@" = "Klausoma 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Klausoma 127.0.0.1:%@ (%@ buvo užimtas)";
 "Listening…" = "Klausoma…";
 "Lists" = "Sąrašai";
 "Live" = "Gyvai";
 "Live Activities" = "Tiesioginė veikla";
 "Loading…" = "Įkeliama…";
-"Local bridge" = "Vietinis tiltas";
 "Local weather. A chosen city works without it." = "Vietinis oras. Pasirinktas miestas veikia ir be jo.";
 "Location" = "Vieta";
 "Location access" = "Prieiga prie vietos";
@@ -662,7 +618,6 @@
 "Models" = "Modeliai";
 "More" = "Daugiau";
 "More agents: %lld" = "Daugiau agentų: %lld";
-"More…" = "Daugiau…";
 "Most capable, slowest" = "Pajėgiausias, lėčiausias";
 "Most items to keep" = "Daugiausia elementų saugoti";
 "Mostly clear" = "Dažniausiai giedra";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Dar neklausta";
 "Not available on this Mac" = "Šiame Mac nepasiekiama";
 "Not checked yet" = "Dar netikrinta";
-"Not connected" = "Neprijungta";
 "Not found in your login shell's PATH" = "Nerasta tavo login shell PATH";
 "Not found on this Mac" = "Šiame Mac nerasta";
 "Not installed" = "Neįdiegta";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Tik ekranai su išpjova";
 "Only events with a video link" = "Tik įvykiai su vaizdo nuoroda";
 "Only for the Prompter to follow your voice." = "Tik tam, kad Prompteris sektų tavo balsą.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Reikalinga tik norint iš išpjovos Leisti, Neleisti ir atsakyti į klausimus; viskas aukščiau veikia ir be jos. Kiekvienas agentas paleidžia vienos eilutės hook, kuris siunčia žinutę Scout šiame Mac (tik 127.0.0.1, su privačiu raktu). Scout keičia tavo agento nustatymus tik tada, kai spustelėji Prijungti ir pasirenki jo aplanką (pirmiausia sukuriama atsarginė kopija, tik paties Scout įrašai), arba pats įklijuoji hooks. Jei Scout neveikia, hook nieko nedaro, o agentas klausia savo terminale kaip įprasta.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Reikalinga tik norint iš išpjovos Leisti, Neleisti ir atsakyti į klausimus; viskas aukščiau veikia ir be jos. Kiekvienas hook yra vienos eilutės komanda, kuri siunčia žinutę Scout šiame Mac (tik 127.0.0.1, su privačiu raktu). Jei Scout neveikia, hook nieko nedaro, o agentas klausia savo terminale kaip įprasta.";
-"Only the dot beside the notch" = "Tik taškas šalia išpjovos";
 "Only what you choose" = "Tik tai, ką pasirenki";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Tik jei dar grojo, kai Scout buvo uždarytas. Scout visada prisimena paskutinę stotį ir garsumą.";
 "Open" = "Atidaryti";
 "Open %@" = "Atidaryti %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Atidaryk %@ (sukurk, jei jo nėra) ir įklijuok. Jei jame jau yra skiltis „hooks“, pridėk šiuos įrašus į ją.";
 "Open %@ full size" = "Atidaryti %@ visu dydžiu";
 "Open %@ to finish" = "Atidaryk %@, kad užbaigtum";
 "Open %@, full size" = "Atidaryti %@, visu dydžiu";
@@ -808,7 +758,6 @@
 "Open To-do" = "Atidaryti Užduotis";
 "Open a Scout window first, then share" = "Pirmiausia atidaryk Scout langą, tada bendrink";
 "Open a widget full size" = "Atidaryti valdiklį visu dydžiu";
-"Open in Ask AI" = "Atidaryti: Klausti DI";
 "Open or close the notch" = "Atidaryti arba uždaryti išpjovą";
 "Open tasks in total: %lld" = "Iš viso atidarytų užduočių: %lld";
 "Open the Calendar with the To-dos, full size" = "Atidaryti Kalendorių su Užduotimis visu dydžiu";
@@ -817,7 +766,6 @@
 "Open the notch" = "Atidaryti išpjovą";
 "Open the notch on %@ (now: %@)" = "Atidaryti išpjovą rodinyje %@ (dabar: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Visada atidaryti išpjovą rodinyje %@, o ne skydelyje";
-"Open the notch on Agents" = "Atidaryti išpjovą rodinyje Agentai";
 "Open the notch when an agent needs you" = "Atidaryti išpjovą, kai agentui reikia tavęs";
 "Open the player" = "Atidaryti grotuvą";
 "Open the to-do calendar" = "Atidaryti užduočių kalendorių";
@@ -829,9 +777,7 @@
 "Opening" = "Atidaroma";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Atidaro išpjovą su jau išplėstu šiuo valdikliu. Paspausk dar kartą, kad uždarytum. Pati išpjova visada atsidaro skydelyje.";
 "Option" = "Option";
-"Optional: answer from the notch" = "Neprivaloma: atsakyk iš išpjovos";
 "Options" = "Parinktys";
-"Or type your own answer" = "Arba įvesk savo atsakymą";
 "Orange" = "Oranžinė";
 "Output" = "Išvestis";
 "Overcast" = "Apsiniaukę";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Iššokantis";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "Prievadas %u buvo užimtas, todėl šiame bloke nurodomas prievadas %u. Jei Scout vėliau vėl paleidžiamas ties %u, nukopijuok jį dar kartą.";
 "Press a shortcut…" = "Paspausk spartųjį klavišą…";
 "Preview" = "Peržiūra";
 "Preview a card" = "Kortelės peržiūra";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Dėti konvertuotus failus į Dėklą";
 "Put finished videos in the Tray" = "Dėti baigtus vaizdo įrašus į Dėklą";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Grąžina kiekvieną parinktį į tokią, kokia buvo pirmą dieną. Tavo pastabos, iškarpinė ir failai lieka.";
-"Questions go to %@." = "Klausimai siunčiami: %@.";
 "Questions go to %@. The answers stay here." = "Klausimai siunčiami: %@. Atsakymai lieka čia.";
 "Quick" = "Greitas";
 "Quick Apps" = "Greitosios programos";
@@ -920,7 +864,6 @@
 "Reading" = "Skaitymas";
 "Ready" = "Paruošta";
 "Ready for the next focus session" = "Paruošta kitam fokuso seansui";
-"Ready for the next task" = "Paruošta kitai užduočiai";
 "Rec" = "Rec";
 "Recent downloads" = "Neseni atsisiuntimai";
 "Record Shortcut" = "Įrašyti spartųjį klavišą";
@@ -978,19 +921,15 @@
 "Save…" = "Išsaugoti…";
 "Scout Settings" = "Scout nustatymai";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout klausia macOS tik tada, kai įjungi ar atidarai funkciją, kuriai to reikia. Paleidžiant nieko neklausiama.";
-"Scout can no longer open that folder. Connect again." = "Scout nebegali atidaryti to aplanko. Prijunk iš naujo.";
 "Scout can't match what it hears to the script" = "Scout negali suderinti girdimo su skriptu";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout dar nemato tavo agentų aplankų. Leisk tai vieną kartą, ir kiekvienas Claude Code bei Codex seansas apsigyvens pats.";
 "Scout can't use this microphone" = "Scout negali naudoti šio mikrofono";
-"Scout could not open a local port." = "Scout nepavyko atidaryti vietinio prievado.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout nematė tavo ekrano, todėl tas klausimas buvo išsiųstas be paveikslėlio. Leisk Scout skiltyje Screen Recording.";
 "Scout couldn't take the picture this time, so that question went without it." = "Scout šį kartą nepavyko padaryti nuotraukos, todėl tas klausimas buvo išsiųstas be jos.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout pats randa Claude Code ir Codex seansus";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout dabar klauso prievado %u (arba jo hooks yra iš senesnės versijos). Atnaujinimas perrašo tik Scout įrašus.";
 "Scout only watches for connections once you allow it." = "Scout stebi ryšius tik kai tai leidi.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout skaito tavo įvykius šiame Mac, kad užpildytų Kalendoriaus valdiklį ir darbo sritį. Niekur nieko nesiunčiama.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout prisimena, ką nukopijuoji, kad galėtum tai vėl įklijuoti iš išpjovos ar apatinės lentynos. Viskas lieka šiame Mac.";
-"Scout will add its hooks to %@ after backing the file up." = "Scout prideda savo hooks į %@ po to, kai sukuria failo atsarginę kopiją.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Paties Scout kodas, žodžiai ir piktograma yra originalūs. Viskas kita čia naudojama pagal savo licenciją.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Paties Scout langai (Klausti DI, pastabos, užduotys, skaičiuotuvas ir kiti) po išėjimo, naujinimo ar paleidimo iš naujo atsidaro ten, kur buvo, su savo dydžiu ir tekstu. Kai ekrano nebėra, jie atsidaro pagrindiniame.";
 "Scout: my AI agents in my notch. %@" = "Scout: mano DI agentai mano išpjovoje. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Ieškoti internete";
 "Searching the web…" = "Ieškoma internete…";
 "See the month, your agenda and a Join button for video calls." = "Matyk mėnesį, savo dienotvarkę ir mygtuką Jungtis vaizdo skambučiams.";
-"See the whole conversation in the Ask AI tab" = "Matyk visą pokalbį skirtuke Klausti DI";
 "See your day here" = "Matyk savo dieną čia";
 "Select a note or start a new one" = "Pasirink pastabą arba pradėk naują";
 "Select a note or start a new one." = "Pasirink pastabą arba pradėk naują.";
 "Selected: %lld" = "Pasirinkta: %lld";
 "Send" = "Siųsti";
-"Send answers" = "Siųsti atsakymus";
 "Send to Apple Notes" = "Siųsti į Apple Notes";
 "Send to a nearby device" = "Siųsti į netoliese esantį įrenginį";
 "Sensitivity" = "Jautrumas";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Rodyti AirPods ir jų bateriją, kai jie prisijungia";
 "Show Scout in the menu bar" = "Rodyti Scout meniu juostoje";
 "Show a Join card when the meeting starts" = "Rodyti kortelę Jungtis, kai prasideda susitikimas";
-"Show a card under the notch" = "Rodyti kortelę po išpjova";
 "Show a card when a download finishes" = "Rodyti kortelę, kai atsisiuntimas baigiasi";
 "Show a count next to the notch while the Tray holds files" = "Rodyti skaičių šalia išpjovos, kol Dėkle yra failų";
 "Show a countdown" = "Rodyti atvirkštinį skaičiavimą";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Rodyti kiekvieną atidarytą užduotį, nepriklausomai nuo dienos";
 "Show in Finder" = "Rodyti programoje Finder";
 "Show in full screen" = "Rodyti visame ekrane";
-"Show me the paste code" = "Parodyti įklijavimo kodą";
 "Show music from" = "Rodyti muziką iš";
 "Show music next to the notch while it plays" = "Rodyti muziką šalia išpjovos, kol ji groja";
 "Show my calendar in the notch" = "Rodyti mano kalendorių išpjovoje";
@@ -1107,9 +1042,7 @@
 "Square" = "Kvadratas";
 "Start" = "Pradėti";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Paleisk Claude Code ar Codex, ir kiekvienas seansas čia atsiranda pats su savo eiga. Nėra ko prijungti.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Paleisk Codex ir įvesk /hooks, kad pirmą kartą pasitikėtum Scout hooks. Tada pradėk naują seansą.";
 "Start a %lld-minute focus timer for this task" = "Pradėti %lld min fokuso laikmatį šiai užduočiai";
-"Start a new Claude Code session. It appears in the notch." = "Pradėti naują Claude Code seansą. Jis atsiranda išpjovoje.";
 "Start again" = "Pradėti iš naujo";
 "Start folder" = "Pradinis aplankas";
 "Start the camera when the Mirror widget appears" = "Įjungti kamerą, kai atsiranda Veidrodžio valdiklis";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Teksto dydis: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "Šis API raktas buvo atmestas. Patikrink jį skiltyje Nustatymai › Klausti DI.";
 "That didn't work" = "Nepavyko";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "Tai ne aplankas %@ tavo namų aplanke. Prijunk iš naujo ir pasirink jį.";
 "That one did not go through" = "Tai neįvyko";
 "That's the end" = "Čia pabaiga";
 "The %@ uses the camera, so it never opens by itself" = "%@ naudoja kamerą, todėl niekada neatsidaro pats";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Išjungta";
 "Two-finger swipe on the notch" = "Braukimas dviem pirštais per išpjovą";
 "Type a city, region or country, or pick a country." = "Įvesk miestą, regioną ar šalį arba pasirink šalį.";
-"Type your own…" = "Įvesk savo…";
 "Typing: the notch stays open" = "Rašymas: išpjova lieka atidaryta";
 "Unknown format" = "Nežinomas formatas";
 "Unlicense (only if you install it)" = "Unlicense (tik jei ją įdiegi)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Kol tai neįjungta, klausimai siunčiami be paveikslėlio.";
 "Untitled" = "Be pavadinimo";
 "Untitled script" = "Skriptas be pavadinimo";
-"Update" = "Naujinti";
 "Updates" = "Naujinimai";
 "Updating the to-do list" = "Užduočių sąrašo naujinimas";
 "Upload %@" = "Įkelti %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Laukia tavęs";
 "Waiting for your OK" = "Laukia tavo patvirtinimo";
 "Waiting for your voice" = "Laukia tavo balso";
-"Wants to use %@" = "Nori naudoti: %@";
-"Wants to use %@: %@" = "Nori naudoti: %@ (%@)";
-"Wants to use a tool" = "Nori naudoti įrankį";
-"Wants to use a tool: %@" = "Nori naudoti įrankį: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Šiltas popierius, tamsus tekstas ir ryškūs akcentai. Dieną lengva skaityti.";
 "Warn at" = "Įspėti, kai";
 "Warn when the battery is low" = "Įspėti, kai baterija senka";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "Prie ko Scout gali prieiti ir kodėl klausia.";
 "What shows next to the notch while it is closed." = "Kas rodoma šalia išpjovos, kol ji uždaryta.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Kai ateina žinutė, po išpjova nukrenta kortelė su siuntėju, tekstu ir atsakymo laukeliu. Ji lieka tyli, kol priekyje yra programa Messages. Scout niekada nieko nesiunčia, nebent parašai atsakymą ir paspaudi Return.";
-"When an agent needs an answer" = "Kai agentui reikia atsakymo";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Kai keiti garsumą klavišais, meniu juosta ar kita programa, lygis rodomas ir šalia išpjovos.";
 "Where stations come from" = "Iš kur stotys";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Kol groja muzika, veikia laikmatis ar baigiasi atsisiuntimas, išpjova išauga tai parodyti. Nukreipk į ją, ir ji atsidaro į tavo Nook: valdikliai, failai, iškarpinė, kalendorius. Atitrauk, ir ji vėl susitraukia.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Mastelis %@, atgal prie viso vaizdo";
 "Zoom in" = "Priartinti";
 "Zoom out" = "Nutolinti";
-"all edits this session" = "visi šio seanso pakeitimai";
 "charged" = "įkrauta";
 "charging" = "kraunasi";
 "code" = "kodas";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS to nepakeitė: %@";
 "me and my agents" = "aš ir mano agentai";
 "min" = "min";
-"mode %@" = "režimas %@";
 "model name" = "modelio pavadinimas";
 "needs you" = "reikia tavęs";
 "no battery" = "nėra baterijos";

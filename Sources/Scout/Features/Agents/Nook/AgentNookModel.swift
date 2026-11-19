@@ -12,7 +12,7 @@ enum AgentNookLook: CaseIterable, Equatable {
     enum Light: Equatable { case lampOn, amber, daylight, dim, dark }
     /// The little flag on the room's corner.
     enum Flag: Equatable { case amber, green, red }
-    /// Which drawing of the scout.
+    /// Which drawing of the agent.
     enum Pose: Equatable { case typing, doorWave, holdingCheck, dizzy, asleep }
 
     var light: Light {
@@ -57,22 +57,16 @@ enum AgentNookLook: CaseIterable, Equatable {
         }
     }
 
-    /// "Needs you" is the app's one rule, `AgentWingSummary.asks`: a held request, or a session that waits with its turn not finished (a
-    /// question, a permission). A turn that simply ended also waits (for the next prompt) but it FINISHED: the ✓ pose, or stopped when
-    /// its last step failed.
-    static func of(_ s: AgentSession, needsYou: Bool) -> AgentNookLook {
-        if needsYou { return .needsYou }
+    /// "Needs you" is the app's one rule, `AgentWingSummary.asks`: a session that waits with its turn not finished (a question, a
+    /// plan waiting for approval), in the set, the den and the window alike. A turn that simply ended also waits (for the next prompt) but it FINISHED:
+    /// the ✓ pose, or stopped when its last step failed.
+    static func of(_ s: AgentSession) -> AgentNookLook {
         switch s.state {
         case .waiting: return s.finishedAt == nil ? .needsYou : (endedBadly(s) ? .stopped : .finished)
         case .working: return .working
         case .done: return endedBadly(s) ? .stopped : .finished
         case .idle: return endedBadly(s) ? .stopped : .idle
         }
-    }
-
-    /// The look of a session with the held requests of the store (the one rule, everywhere: the set, the den and the window).
-    static func of(_ s: AgentSession, pending: [AgentPending]) -> AgentNookLook {
-        of(s, needsYou: AgentWingSummary.asks(s, pending: pending))
     }
 
     /// The last thing the agent did went wrong and nothing is running now.
@@ -82,7 +76,7 @@ enum AgentNookLook: CaseIterable, Equatable {
     }
 }
 
-/// The tiny object the scout works with, for the kind of step it is on.
+/// The tiny object the agent works with, for the kind of step it is on.
 enum AgentNookProp: CaseIterable, Equatable {
     case wrench, pencil, magnifier, globe
 
@@ -119,11 +113,11 @@ struct AgentNookRoomModel: Equatable, Identifiable {
     var todoDone: Int
     var sentence: String
 
-    init(_ s: AgentSession, needsYou: Bool) {
+    init(_ s: AgentSession) {
         id = s.id
         kind = s.agent
         project = s.project
-        look = AgentNookLook.of(s, needsYou: needsYou)
+        look = AgentNookLook.of(s)
         prop = AgentNookProp.of(s)
         helpers = max(0, s.subagents)
         todoTotal = s.todos.count

@@ -1,6 +1,6 @@
 import SwiftUI
 
-// Gallery scenes `dash90-*`: the whole dashboard row in the 90s look (quiet, busy, the quick answer open, Edit Nook), each restyled
+// Gallery scenes `dash90-*`: the whole dashboard row in the 90s look (quiet, busy, Edit Nook), each restyled
 // panel LARGE (the real 140 pt panel drawn at 2.4 times), and the header at a wide and a narrow width. Synthetic data only.
 // Render with `scripts/gallery.sh dash90`.
 
@@ -31,10 +31,10 @@ enum Dash90Gallery {
     }
 
     private static func scene(_ name: String, height: CGFloat, width: CGFloat = DashGallery.wide, workspace: WorkspaceKind = .nook, agents: Int = 3,
-                              asking: Bool = false, playing: Bool = false, live: [any LivePanelSource] = [], layout: [WidgetKind]? = nil,
+                              playing: Bool = false, live: [any LivePanelSource] = [], layout: [WidgetKind]? = nil,
                               editing: Bool = false, widthCap: CGFloat? = nil, notchRect: Bool = false) {
         Gallery.register("dash90-\(name)", size: CGSize(width: width, height: height)) {
-            let _ = DashGallery.seed(agents: agents, asking: asking, playing: playing, live: live)
+            let _ = DashGallery.seed(agents: agents, playing: playing, live: live)
             NotchScene(size: CGSize(width: width, height: height), open: true, workspace: workspace, editing: editing, layout: layout,
                        live: NookLive(playing: playing, openTodos: 0, agents: agents), widthCap: widthCap, showNotchRect: notchRect)
         }
@@ -43,19 +43,13 @@ enum Dash90Gallery {
     static func register() {
         // The whole row.
         scene("row-quiet", height: 290, agents: 3, notchRect: true)
-        scene("row-busy", height: 290, agents: 3, asking: true, playing: true,
+        scene("row-busy", height: 290, agents: 3, playing: true,
               live: [DashGallery.meeting(in: nil), DashGallery.download(), DashGallery.timer()], layout: [.agents, .askAI, .pulse, .today], notchRect: true)
         scene("row-pinned", height: 290, agents: 2, layout: [.agents, .askAI, .calendar, .weather, .notes, .todo])
         scene("row-pinned2", height: 290, agents: 0, layout: [.clipboard, .timer, .pomodoro, .shortcuts, .quickApps])
         // The live panels beside a default panel (the grid's first lines, both presets).
         scene("row-live", height: 290, agents: 0, live: [DashGallery.meeting(in: 12), DashGallery.download(), DashGallery.timer()], layout: [.pulse])
         scene("row-edit", height: 390, agents: 3, layout: [.agents, .askAI, .today, .weather], editing: true)
-        Gallery.register("dash90-row-quick-answer", size: CGSize(width: DashGallery.wide, height: 520)) {
-            let _ = DashGallery.seed(agents: 2, playing: false)
-            let demo = AIChatStore(demo: .conversation)
-            NotchScene(size: CGSize(width: DashGallery.wide, height: 520), open: true, live: NookLive(playing: false, openTodos: 0, agents: 2))
-                .environment(\.askAIQuickPreview, demo.chats.first.map { AskAIQuickPreview(store: demo, chat: $0) })
-        }
         // The header at a wide and a narrow width (the camera housing outlined).
         scene("header-wide", height: 120, workspace: .calendar, agents: 0, notchRect: true)
         scene("header-narrow", height: 120, width: 760, workspace: .agents, agents: 0, widthCap: 680, notchRect: true)
@@ -91,6 +85,7 @@ enum Dash90Gallery {
             AskAIWidgetView(store: AIChatStore(demo: .conversation), draft: draft)
         }
         panel("askai-busy", span: 4) { AskAIWidgetView(store: AIChatStore(demo: .thinking), draft: AskAINotchDraft()) }
+        panel("askai-answer", span: 4) { AskAIWidgetView(store: AIChatStore(demo: .quick), draft: AskAINotchDraft()) }   // a quick answer, shown inside the panel
         // The live panels.
         panel("live-downloads", span: 4) { DashGallery.download().makeView() }
         panel("live-downloads-unknown", span: 4) { LiveSamples.downloads(LiveDownloadsSnapshot(downloads: [LiveSamples.transfer("Backup.zip", fraction: nil)])).makeView() }

@@ -15,7 +15,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // Scripted checks that must stay invisible: only the Agents store, scanner and bridge run.
+        // Scripted checks that must stay invisible: only the Agents store and scanner run.
         if ScoutRuntime.isHeadless { AgentsFeature.startHeadless(); HeadlessChecks.registerAll(); return }
         // Read before the modules start (they write their own settings at once): has Scout run on this Mac before?
         let usedBefore = ["notch.lastWorkspace", "nook.layout", "agents.nook.migrated"].contains { UserDefaults.standard.object(forKey: $0) != nil }

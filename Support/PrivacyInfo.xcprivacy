@@ -40,7 +40,7 @@
 				<string>85F4.1</string>
 			</array>
 		</dict>
-		<!-- System boot time: ProcessInfo.systemUptime stamps the events the self-test files post, measuring time between events inside the app. -->
+		<!-- System boot time: ProcessInfo.systemUptime is the timestamp of the mouse clicks the built-in self-tests post to the app's own windows (NSEvent.mouseEvent), and the Pockets shake detector reads the timestamp of the pointer's drag events (NSEvent.timestamp, seconds since startup). Both only subtract two timestamps to measure a few seconds between events; nothing reads or stores how long the Mac has been running. -->
 		<dict>
 			<key>NSPrivacyAccessedAPIType</key>
 			<string>NSPrivacyAccessedAPICategorySystemBootTime</string>

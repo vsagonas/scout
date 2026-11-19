@@ -16,7 +16,7 @@ final class MirrorShare: NSObject, @preconcurrency NSSharingServicePickerDelegat
     /// What happens with the finished polaroid; tests put their own here (so no share sheet ever opens in a headless run).
     static var deliver: (NSImage, NSView?) -> Void = { image, _ in MirrorSharePreview.shared.show(image) }
     /// The agents that stand on the picture; tests put theirs here too.
-    static var agentsProvider: () -> [PolaroidAgent] = { MirrorPolaroid.agents(sessions: AgentsStore.shared.sessions, pending: AgentsStore.shared.pending) }
+    static var agentsProvider: () -> [PolaroidAgent] = { MirrorPolaroid.agents(sessions: AgentsStore.shared.sessions) }
 
     private var picker: NSSharingServicePicker?
     private var image: NSImage?

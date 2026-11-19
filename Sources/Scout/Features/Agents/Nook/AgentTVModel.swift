@@ -109,8 +109,8 @@ struct AgentDenStation: Identifiable, Equatable {
     var tookSeconds: TimeInterval?
     var id: String { room.id }
 
-    init(_ s: AgentSession, needsYou: Bool) {
-        room = AgentNookRoomModel(s, needsYou: needsYou)
+    init(_ s: AgentSession) {
+        room = AgentNookRoomModel(s)
         if room.look == .finished || room.look == .stopped, let end = s.finishedAt {
             tookSeconds = max(0, end.timeIntervalSince(s.turnStartedAt))
         } else {
@@ -119,10 +119,8 @@ struct AgentDenStation: Identifiable, Equatable {
     }
 
     /// One station per agent, in the one fixed order the set's rooms and the faces use (the first started on the left).
-    static func stations(_ sessions: [AgentSession], pending: [AgentPending]) -> [AgentDenStation] {
-        AgentTileMetrics.ordered(sessions, pending: pending).map { s in
-            AgentDenStation(s, needsYou: AgentWingSummary.asks(s, pending: pending))
-        }
+    static func stations(_ sessions: [AgentSession]) -> [AgentDenStation] {
+        AgentTileMetrics.ordered(sessions).map(AgentDenStation.init)
     }
 
     /// How long the task took, as the digits for the TV's screen and the unit on its cabinet: "12" "MIN", "45" "SEC", "2" "HRS".
@@ -178,18 +176,11 @@ enum AgentDenLayout {
     /// The shortest the window under the den may be before the den gives up some of its own height (a short screen).
     static let shortestWindow: CGFloat = 160
 
-    /// The island height (header included) for the den, with a bit more when the window shows a request that needs room.
+    /// The island height (header included) for the den, with a bit more when the window shows a banner.
     static func islandHeight(extra: CGFloat = 0) -> CGFloat { baseHeight + extra + chrome }
 
-    /// What the window shows needs more height: a banner, more than one request, a question with several parts.
-    static func extraHeight(pending: [AgentPending], banner: Bool) -> CGFloat {
-        var extra: CGFloat = banner ? 36 : 0
-        for (i, request) in pending.enumerated() {
-            if i > 0 { extra += 120 }
-            if request.kind == .question { extra += CGFloat(max(0, request.questions.count - 1)) * 70 }
-        }
-        return min(extra, 220)
-    }
+    /// What the window shows needs more height: the banner of an automatic opening.
+    static func extraHeight(banner: Bool) -> CGFloat { banner ? 36 : 0 }
 
     /// The width of the window for a den this wide (narrower dens give it less).
     static func windowWidth(for width: CGFloat) -> CGFloat { min(windowWidth, max(300, width * 0.46)) }

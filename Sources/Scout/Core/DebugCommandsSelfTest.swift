@@ -1,8 +1,9 @@
 import AppKit
 
-/// `scout://debug.selftest?out=<file>` (headless runs): a `scout://` link outside automation runs only the app's own
-/// commands (`DebugCommands.publicCommands`), with only the parameters the app passes, and never writes to an `out=` path.
-/// The check calls `DebugCommands.run(url:automation: false)`, which is what a link from a web page reaches in the shipped app.
+/// `scout://debug.selftest?out=<file>` (headless runs): a `scout://` link outside automation runs nothing (`DebugCommands.publicCommands`
+/// is empty) and never writes to an `out=` or `dir=` path. A command on a list would run with only the parameters listed for it: the check
+/// proves that with a list of its own (`listed:`). It calls `DebugCommands.run(url:automation: false)`, which is what a link from a web page
+/// reaches in the shipped app.
 @MainActor
 enum DebugCommandsSelfTest {
     static func register() {
@@ -29,29 +30,42 @@ enum DebugCommandsSelfTest {
         try? fm.removeItem(at: target)
         try? fm.removeItem(at: windows)
 
-        // 1. The app's own link (the menu bar's "Open Ring") is on the list and keeps its x and y.
-        check("the menu bar's own link (ring.open) is allowed outside automation", DebugCommands.publicCommands["ring.open"] != nil)
-        var ringRuns: [[String: String]] = []
-        DebugCommands.withProbe("ring.open", { ringRuns.append($0) }) {
-            DebugCommands.run(url: link("scout://ring.open?x=120&y=340"), automation: false)
-        }
-        check("  it runs and gets its x and y", ringRuns.count == 1 && ringRuns.first == ["x": "120", "y": "340"], "\(ringRuns)")
-        ringRuns = []
-        DebugCommands.withProbe("ring.open", { ringRuns.append($0) }) {
-            DebugCommands.run(url: link("scout://ring.open?x=1&y=2&out=\(target.path)&sticky=1&pin=1&page=3"), automation: false)
-        }
-        check("  every other parameter (out, sticky, pin, page) is dropped", ringRuns.count == 1 && ringRuns.first == ["x": "1", "y": "2"], "\(ringRuns)")
+        // 1. The list of commands a link may run outside automation is empty.
+        check("the list of commands a link may run outside automation is empty", DebugCommands.publicCommands.isEmpty, "\(DebugCommands.publicCommands)")
 
-        // 2. Anything else does nothing outside automation.
+        // 1b. The mechanism, with a list of its own: a listed name runs with only the parameters listed for it, and a name that is not listed does not run.
+        let list: [String: Set<String>] = ["zz.listed": ["x", "y"]]
+        var listedRuns: [[String: String]] = []
+        DebugCommands.withProbe("zz.listed", { listedRuns.append($0) }) {
+            DebugCommands.run(url: link("scout://zz.listed?x=120&y=340"), automation: false, listed: list)
+        }
+        check("a listed command runs outside automation and gets its x and y", listedRuns.count == 1 && listedRuns.first == ["x": "120", "y": "340"], "\(listedRuns)")
+        listedRuns = []
+        DebugCommands.withProbe("zz.listed", { listedRuns.append($0) }) {
+            DebugCommands.run(url: link("scout://zz.listed?x=1&y=2&out=\(target.path)&sticky=1&pin=1&page=3"), automation: false, listed: list)
+        }
+        check("  every other parameter (out, sticky, pin, page) is dropped", listedRuns.count == 1 && listedRuns.first == ["x": "1", "y": "2"], "\(listedRuns)")
+        listedRuns = []
+        DebugCommands.withProbe("zz.listed", { listedRuns.append($0) }) {
+            DebugCommands.run(url: link("scout://zz.listed?x=1"), automation: false)
+        }
+        check("  with the real (empty) list the same link does not run", listedRuns.isEmpty, "\(listedRuns)")
+        var unlistedRuns: [String] = []
+        DebugCommands.withProbe("zz.other", { _ in unlistedRuns.append("ran") }) {
+            DebugCommands.run(url: link("scout://zz.other?x=1"), automation: false, listed: list)
+        }
+        check("  a command that is not on the list does not run", unlistedRuns.isEmpty, "\(unlistedRuns)")
+
+        // 2. Nothing runs outside automation: real commands, test commands, and names that no longer exist (the ring's) or never did.
         var probed: [String] = []
-        let others = ["quit", "ping", "commands", "windows", "notch.open", "ring.close", "clipboard.pause", "tool.screenshot", "agents.demo", "agents.decide",
+        let others = ["ring.open", "quit", "ping", "commands", "windows", "notch.open", "ring.close", "clipboard.pause", "tool.screenshot", "agents.demo", "agents.status",
                       "tray.convert", "ai.selftest", "icon.export", "zz.probe"]
         for name in others {
             DebugCommands.withProbe(name, { _ in probed.append(name) }) {
                 DebugCommands.run(url: link("scout://\(name)?out=\(target.path)&dir=\(folder.path)"), automation: false)
             }
         }
-        check("\(others.count) other commands (quit, ping, windows, recordings, demos, tests…) do not run outside automation", probed.isEmpty, "\(probed)")
+        check("\(others.count) commands (quit, ping, windows, recordings, demos, tests…) do not run outside automation", probed.isEmpty, "\(probed)")
         check("  none of them is on the list", others.allSatisfy { DebugCommands.publicCommands[$0] == nil })
 
         // 3. The real commands that write files: refused outside automation, honoured in automation.

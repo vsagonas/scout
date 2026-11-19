@@ -370,8 +370,6 @@ enum Dash90SelfTest {
         // 5c. The Ask AI terminal: the real field takes text, the send key sends into Fast Ask AI.
         let store = AIChatStore()
         let draft = AskAINotchDraft()
-        let quick = AskAIQuick.shared
-        quick.hide()
         let ask = Rig(layout: [.askAI]) { AnyView(AskAIWidgetView(store: store, draft: draft)) }
         await settle(0.9)
         if let askRect = ask.rect("panel.askAI"), let field = ask.firstTextField() {
@@ -385,10 +383,10 @@ enum Dash90SelfTest {
                 ask.click(CGPoint(x: send.midX, y: send.midY))
                 await settle(0.5)
                 let q = store.quickChat
-                check("a real click on the send key puts the question into Fast Ask AI; the answer stays in the panel (no strip, the dashboard keeps its height)",
-                      q?.title == AIChatStore.quickTitle && q?.messages.first?.text == "What is the capital of Portugal?" && !quick.showing && draft.text.isEmpty
+                check("a real click on the send key puts the question into Fast Ask AI; the answer stays in the panel (the dashboard keeps its height)",
+                      q?.title == AIChatStore.quickTitle && q?.messages.first?.text == "What is the capital of Portugal?" && draft.text.isEmpty
                         && ask.navigator.neededHeight(shown: .nook) == 0,
-                      "quick \(String(describing: q?.messages.first?.text)), showing \(quick.showing), draft \"\(draft.text)\", height \(ask.navigator.neededHeight(shown: .nook))")
+                      "quick \(String(describing: q?.messages.first?.text)), draft \"\(draft.text)\", height \(ask.navigator.neededHeight(shown: .nook))")
                 check("  the notch stays on the dashboard", ask.navigator.expanded == nil, "expanded \(String(describing: ask.navigator.expanded))")
             } else {
                 check("the send key is findable as a control", false, "controls \(ask.controls(in: askRect).map { $0.size })")
@@ -397,7 +395,6 @@ enum Dash90SelfTest {
         } else {
             check("the Ask AI panel and its text field draw", false, "panels \(ask.model.panelRects.keys.sorted())")
         }
-        quick.hide()
         ask.close()
 
         // 5d. Nothing spills past its panel, even when a tight row squeezes a live panel to 3 cells.
@@ -527,8 +524,8 @@ enum Dash90SelfTest {
         let today = PanelProbe(AnyView(TodayWidgetView(events: meetings, tasks: todos, now: noon)))
         let todayEmpty = PanelProbe(AnyView(TodayWidgetView(events: [], tasks: [], now: noon)))
         let ask = PanelProbe(AnyView(AskAIWidgetView(store: AIChatStore(), draft: AskAINotchDraft())))
-        let agentsEmpty = PanelProbe(AnyView(AgentMiniPanel(store: AgentNookSamples.store("grid-empty", AgentNookSamples.sessions(0)))))
-        let agents = PanelProbe(AnyView(AgentMiniPanel(store: AgentNookSamples.store("grid-three", AgentNookSamples.sessions(3)))), width: 6 * NookMetrics.cell)
+        let agentsEmpty = PanelProbe(AnyView(AgentMiniPanel(store: AgentNookSamples.store(AgentNookSamples.sessions(0)))))
+        let agents = PanelProbe(AnyView(AgentMiniPanel(store: AgentNookSamples.store(AgentNookSamples.sessions(3)))), width: 6 * NookMetrics.cell)
         await settle(0.8)
         defer { [pulse, pulseNet, today, todayEmpty, ask, agentsEmpty, agents].forEach { $0.close() } }
 

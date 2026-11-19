@@ -14,7 +14,7 @@ enum LookGallery {
         // The tour's pictures: the real dashboard (three agents, music playing), cut to the island. Render each look and preset with the
         // environment and copy the PNGs to Support/Resources (scripts/tour-pictures.sh does all four).
         Gallery.register("look-tour-dash", size: CGSize(width: pictureWidth, height: pictureHeight), backdrop: .window) {
-            let _ = DashGallery.seed(agents: 3, asking: false, playing: true, live: [])
+            let _ = DashGallery.seed(agents: 3, playing: true, live: [])
             let panel = CGSize(width: pictureWidth + 40, height: 300)
             let model = NotchScreenModel(geometry: .sample16, panelSize: panel)
             let _ = { model.isOpen = true }()
@@ -32,7 +32,7 @@ enum LookGallery {
         }
         // The dashboard and every full view as the size and colours settings draw them (set them with the environment).
         Gallery.register("look-dash", size: CGSize(width: 1540, height: 430)) {
-            let _ = DashGallery.seed(agents: 3, asking: false, playing: true,
+            let _ = DashGallery.seed(agents: 3, playing: true,
                                      live: [DashGallery.meeting(in: nil), DashGallery.download(), DashGallery.timer()])
             NotchScene(size: CGSize(width: 1540, height: 430), open: true, live: NookLive(playing: true, openTodos: 0, agents: 3))
         }

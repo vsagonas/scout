@@ -1,9 +1,9 @@
 import SwiftUI
 
 // The owner's switch between the app's two looks
-//   ON  (the default): the 90s / 8-bit look: bevelled plastic, pixel letters, LCD digits, CRT glass, the pixel scouts and their den.
+//   ON  (the default): the 90s / 8-bit look: bevelled plastic, pixel letters, LCD digits, CRT glass, the pixel agents and their den.
 //   OFF: minimal, normal graphics for everything: flat rounded shapes, hairlines, the system font, plain bars, plain lists.
-// The kit's pieces read `Retro.is8bit` while they draw and draw flat when it is off; the pieces that are pictures (the scouts, the TV set,
+// The kit's pieces read `Retro.is8bit` while they draw and draw flat when it is off; the pieces that are pictures (the agents, the TV set,
 // the boombox, the viewfinder) have a plain version of their own. A window rebuilds itself once when the setting changes (`retroStyleRoot`).
 
 extension Retro {

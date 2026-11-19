@@ -101,7 +101,7 @@ struct NotchHeader: View {
 
     private var faces: (shown: [AgentWingSummary.Face], more: Int) {
         guard Self.showsFaces(current: current) else { return ([], 0) }
-        let summary = AgentWingSummary.make(sessions: agents.sessions, pending: agents.pending)
+        let summary = AgentWingSummary.make(sessions: agents.sessions)
         let shown = Array(summary.faces.prefix(Self.maxFaces))
         return (shown, summary.faces.count + summary.moreFaces - shown.count)
     }
@@ -125,7 +125,7 @@ struct NotchHeader: View {
         } else {
             // The minimal look: the same cpu glyph and counts as the closed notch's wing.
             Button { openAgents(nil) } label: {
-                AgentWingCount(summary: AgentWingSummary.make(sessions: agents.sessions, pending: agents.pending))
+                AgentWingCount(summary: AgentWingSummary.make(sessions: agents.sessions))
                     .frame(height: 24).contentShape(Rectangle())
             }
             .buttonStyle(.plain)

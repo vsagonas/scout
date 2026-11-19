@@ -10,9 +10,7 @@
 "%@ ended." = "%@: ukončené.";
 "%@ failed" = "%@: zlyhalo";
 "%@ finished after %lld min" = "%@: dokončené po %lld min";
-"%@ finished in %@" = "%@: dokončené za %@";
 "%@ free" = "%@ voľných";
-"%@ has a question" = "%@ má otázku";
 "%@ has no sound" = "%@ nemá zvuk";
 "%@ in %@" = "%@ v %@";
 "%@ installed" = "%@: nainštalované";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@ sa nedá zabaliť do súboru ZIP (limit 4 GB)";
 "%@ isn't installed" = "%@: nie je nainštalované";
 "%@ isn't supported on this Mac" = "%@ tento Mac nepodporuje";
-"%@ isn't valid JSON, so Scout left it alone." = "%@ nie je platný JSON, preto sa ho Scout nedotkol.";
 "%@ key" = "Kľúč %@";
 "%@ left" = "Zostáva %@";
 "%@ needs you" = "%@ vás potrebuje";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "Časovač %@ skončil";
 "%@ to full" = "%@ do nabitia";
 "%@ used" = "%@ využité";
-"%@ wants to use %@" = "%@ chce použiť %@";
-"%@ wants to use a tool" = "%@ chce použiť nástroj";
 "%@ · %@ of %@" = "%@ · %@ z %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · spolu otvorených: %lld";
@@ -71,7 +66,6 @@
 "%lld running" = "Beží: %lld";
 "%lld working" = "Pracuje: %lld";
 "%lld wpm" = "%lld slov/min";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+%lld ďalších";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Najprv pridajte kľúč API %@ v Nastaveniach › Opýtajte sa AI.";
 "Add your API key in Settings › Ask AI first." = "Najprv pridajte kľúč API v Nastaveniach › Opýtajte sa AI.";
 "Add your Claude API key in Settings › Ask AI first." = "Najprv pridajte kľúč API Claude v Nastaveniach › Opýtajte sa AI.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Pridá do ~/.claude/settings.json hooky aplikácie Scout (udalosti priebehu, žiadosti o povolenie a otázky) a vaše vlastné hooky nechá na pokoji. Súbor sa najprv zálohuje.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Pridá hooky aplikácie Scout do ~/.codex/hooks.json. Codex vás prvýkrát požiada o kontrolu nových hookov: zadajte v nástroji Codex /hooks a hooky Scout označte ako dôveryhodné.";
 "Agent" = "Agent";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Domček Agent TV";
@@ -164,15 +156,10 @@
 "Allow…" = "Povoliť…";
 "Also show it while an app is full screen" = "Zobraziť aj pri aplikácii na celú obrazovku";
 "Also used for “%@”: only one of them will work." = "Používa sa aj pre „%@“: bude fungovať len jedno z nich.";
-"Always allow" = "Vždy povoliť";
-"Always allow %@" = "Vždy povoliť %@";
-"Always allow adds: %@" = "Vždy povoliť pridá: %@";
 "Amber" = "Jantárová";
 "An agent tab cannot be kept as the opening tab" = "Karta agenta nemôže byť úvodnou kartou";
 "Announcements" = "Hlásenia";
 "Answer copied" = "Odpoveď skopírovaná";
-"Answer in terminal" = "Odpovedať v termináli";
-"Answer permissions and questions from the notch" = "Odpovedať na žiadosti o povolenie a otázky z výrezu";
 "Answers" = "Odpovede";
 "Any country" = "Ľubovoľná krajina";
 "Appearance" = "Vzhľad";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Opýtať sa na obrázok";
 "Ask about your screen" = "Opýtať sa na obrazovku";
 "Ask anything" = "Opýtajte sa";
-"Ask anything above. Questions go to %@. The answer shows here." = "Pýtajte sa hore na čokoľvek. Otázky sa posielajú do %@. Odpoveď sa zobrazí tu.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Pýtajte sa na čokoľvek.\nReturn odošle, ⌥Return pridá riadok.\n\nVaše otázky sa posielajú do %@. Keď je zapnutá Obrazovka, pridá sa k nim snímka vašej obrazovky.";
 "Ask before closing a tab that is still running" = "Opýtať sa pred zatvorením karty, ktorá stále beží";
-"Ask in terminal" = "Opýtať sa v termináli";
 "Ask the same question again on Claude Sonnet 5.5" = "Opýtať sa znova rovnakú otázku v Claude Sonnet 5.5";
-"Asking a question" = "Kladie otázku";
 "Asking you: %@" = "Pýta sa vás: %@";
 "Asleep" = "Spí";
 "Attach a picture" = "Priložiť obrázok";
@@ -241,7 +225,6 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Prístup ku kamere je vypnutý";
 "Camera access is off for Scout." = "Prístup ku kamere je pre Scout vypnutý.";
-"Can't listen (%@)" = "Nedá sa počúvať (%@)";
 "Can't read %@ yet" = "%@ sa zatiaľ nedá prečítať";
 "Can't tell which chat this is" = "Nedá sa zistiť, o aký chat ide";
 "Cancel" = "Zrušiť";
@@ -265,7 +248,6 @@
 "Choose a script" = "Vyberte skript";
 "Choose image…" = "Vybrať obrázok…";
 "Choose shortcuts" = "Vyberte skratky";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Vyberte priečinok %@ vo svojom domovskom priečinku. Scout tam zálohuje %@ a pridá svoje hooky; nič iné sa nemení.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Vyberte priečinok %@, aby Scout videl vaše relácie %@. Scout ho iba číta.";
 "Choose the model" = "Vyberte model";
 "Choose…" = "Vybrať…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Vymazať posledné stanice a miesta";
 "Clear shortcut" = "Vymazať skratku";
 "Clear the clipboard history?" = "Vymazať históriu schránky?";
-"Click Copy hooks." = "Kliknite na Kopírovať hooky.";
 "Click for %@ settings, drag to move" = "Kliknutím otvoríte nastavenia %@, presunúť môžete ťahaním";
 "Click one, or use the arrow keys. Press Return to go on." = "Kliknite na jednu alebo použite šípky. Pokračujte stlačením Return.";
 "Click one, or use the arrow keys. The window grows with it." = "Kliknite na jednu alebo použite šípky. Okno sa tomu prispôsobí.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Zavrieť túto kartu (⌘W)";
 "Close this tab?" = "Zavrieť túto kartu?";
 "Cloudy" = "Oblačno";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex vás raz požiada o kontrolu nových hookov: zadajte v nástroji Codex /hooks a hooky Scout označte ako dôveryhodné.";
 "Color" = "Farba";
 "Colors" = "Farby";
 "Command" = "Command";
 "Compact" = "Kompaktný";
-"Connect" = "Pripojiť";
-"Connect %@?" = "Pripojiť %@?";
-"Connect %@…" = "Pripojiť %@…";
-"Connect Claude Code" = "Pripojiť Claude Code";
-"Connect Claude Code…" = "Pripojiť Claude Code…";
-"Connect Codex" = "Pripojiť Codex";
-"Connect Codex…" = "Pripojiť Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Pripojiť vás raz požiada o výber priečinka %@; Scout zálohuje %@, pridá len vlastné položky a vie ich zasa odstrániť (Odpojiť). Každý hook je jediný príkaz curl na 127.0.0.1; keď je Scout zatvorený, nerobí nič.";
 "Connected" = "Pripojené";
-"Connected, but out of date" = "Pripojené, ale zastarané";
-"Connected. New sessions report to Scout." = "Pripojené. Nové relácie sa hlásia aplikácii Scout.";
 "Connecting" = "Pripájanie";
 "Connecting…" = "Pripájanie…";
 "Contacts" = "Kontakty";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Kópie vytvorené, keď je v popredí niektorá z týchto aplikácií, sa nikdy neukladajú.";
 "Copy" = "Kopírovať";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Skopírujte odkaz z YouTube, X, Instagram, TikTok, Vimeo alebo Reddit, otvorte Zásobník a Scout ponúkne stiahnutie, alebo odkaz presuňte do Zásobníka. Sťahovanie používa yt-dlp, ktorý si inštalujete sami; tlačidlo vyššie sa spustí, len keď naň kliknete. Prečítanie skopírovaného odkazu vyžaduje „Povoliť“ pre Scout v Nastaveniach systému › Súkromie a zabezpečenie › Vložiť z iných aplikácií (macOS 15.4 a novší).";
-"Copy hooks" = "Kopírovať hooky";
-"Copy hooks instead" = "Namiesto toho kopírovať hooky";
 "Copy something and it shows up here." = "Niečo skopírujte a objaví sa to tu.";
 "Couldn't copy the picture" = "Obrázok sa nepodarilo skopírovať";
 "Couldn't copy the polaroid" = "Polaroid sa nepodarilo skopírovať";
@@ -399,9 +367,6 @@
 "Delete note" = "Odstrániť poznámku";
 "Delete this chat" = "Odstrániť tento chat";
 "Delete this script" = "Odstrániť tento skript";
-"Deny" = "Zamietnuť";
-"Disconnect" = "Odpojiť";
-"Disconnected. Your own hooks are untouched." = "Odpojené. Vaše vlastné hooky zostali bez zmeny.";
 "Disk" = "Disk";
 "Dismiss" = "Zavrieť";
 "Display" = "Displej";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Exportovať ako %@…";
 "Exported %@" = "Exportované: %@";
 "Extra large" = "Extra veľké";
-"FAST ASK AI" = "RYCHLA OTAZKA AI";
 "FAVOURITES" = "OBLUBENE";
 "FROZEN" = "ZMRAZENE";
 "Fahrenheit (°F)" = "Fahrenheita (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Zabudnúť predchádzajúce karty";
 "Forget previous tabs" = "Zabudnúť predchádzajúce karty";
 "Forget recent folders" = "Zabudnúť nedávne priečinky";
-"Found automatically" = "Nájdené automaticky";
 "Found · %@" = "Nájdené · %@";
 "Free service, no key" = "Bezplatná služba, bez kľúča";
 "Freezing drizzle" = "Mrznúce mrholenie";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "AHOJ OD SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku pre rýchle otázky, Sonnet pre ťažké";
 "Haptic feedback" = "Haptická odozva";
-"Has a question" = "Má otázku";
 "Heavy rain" = "Silný dážď";
 "Heavy showers" = "Silné prehánky";
 "Heavy snow" = "Silné sneženie";
@@ -533,9 +495,7 @@
 "Here" = "Tu";
 "Hide completed" = "Skryť dokončené";
 "Hide it while an app is full screen" = "Skryť pri aplikácii na celú obrazovku";
-"Hide the answer" = "Skryť odpoveď";
 "Hide the chats" = "Skryť chaty";
-"Hide the paste code" = "Skryť kód na vloženie";
 "History" = "História";
 "History is paused" = "História je pozastavená";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Podržte ⌥⇧ s klávesom hlasitosti alebo jasu pre štvrtinové kroky.";
@@ -605,15 +565,11 @@
 "Links" = "Odkazy";
 "List" = "Zoznam";
 "List name" = "Názov zoznamu";
-"Listen for AI agents on this Mac" = "Počúvať AI agentov na tomto Macu";
-"Listening on 127.0.0.1:%@" = "Počúva na 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Počúva na 127.0.0.1:%@ (%@ bolo obsadené)";
 "Listening…" = "Počúva…";
 "Lists" = "Zoznamy";
 "Live" = "Naživo";
 "Live Activities" = "Živé aktivity";
 "Loading…" = "Načítavanie…";
-"Local bridge" = "Miestny most";
 "Local weather. A chosen city works without it." = "Miestne počasie. Vybrané mesto funguje aj bez toho.";
 "Location" = "Poloha";
 "Location access" = "Prístup k polohe";
@@ -662,7 +618,6 @@
 "Models" = "Modely";
 "More" = "Viac";
 "More agents: %lld" = "Ďalší agenti: %lld";
-"More…" = "Viac…";
 "Most capable, slowest" = "Najschopnejší, najpomalší";
 "Most items to keep" = "Najviac uchovávaných položiek";
 "Mostly clear" = "Prevažne jasno";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Zatiaľ nevyžiadané";
 "Not available on this Mac" = "Na tomto Macu nie je k dispozícii";
 "Not checked yet" = "Zatiaľ neskontrolované";
-"Not connected" = "Nepripojené";
 "Not found in your login shell's PATH" = "Nenájdené v PATH vášho prihlasovacieho shellu";
 "Not found on this Mac" = "Na tomto Macu nenájdené";
 "Not installed" = "Nenainštalované";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Iba displeje s výrezom";
 "Only events with a video link" = "Iba udalosti s odkazom na video";
 "Only for the Prompter to follow your voice." = "Iba aby Teleprompter mohol sledovať váš hlas.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Potrebné len na Povoliť, Zamietnuť a odpovedanie na otázky z výrezu; všetko vyššie funguje aj bez toho. Každý agent spúšťa jednoriadkový hook, ktorý posiela dáta aplikácii Scout na tomto Macu (iba 127.0.0.1, so súkromným kľúčom). Scout mení nastavenia vášho agenta, len keď kliknete na Pripojiť a vyberiete jeho priečinok (najprv sa zálohuje, pridajú sa iba vlastné položky aplikácie Scout), alebo keď hooky vložíte sami. Ak Scout nebeží, hook nerobí nič a agent sa pýta vo svojom termináli ako obvykle.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Potrebné len na Povoliť, Zamietnuť a odpovedanie na otázky z výrezu; všetko vyššie funguje aj bez toho. Každý hook je jednoriadkový príkaz, ktorý posiela dáta aplikácii Scout na tomto Macu (iba 127.0.0.1, so súkromným kľúčom). Ak Scout nebeží, hook nerobí nič a agent sa pýta vo svojom termináli ako obvykle.";
-"Only the dot beside the notch" = "Iba bodka vedľa výrezu";
 "Only what you choose" = "Iba to, čo vyberiete";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Len ak ešte hralo, keď sa Scout zavrel. Scout si vždy pamätá poslednú stanicu a hlasitosť.";
 "Open" = "Otvoriť";
 "Open %@" = "Otvoriť %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Otvorte súbor %@ (ak neexistuje, vytvorte ho) a vložte. Ak už obsahuje sekciu \"hooks\", pridajte tieto položky dovnútra.";
 "Open %@ full size" = "Otvoriť %@ v plnej veľkosti";
 "Open %@ to finish" = "Na dokončenie otvorte %@";
 "Open %@, full size" = "Otvoriť %@ v plnej veľkosti";
@@ -808,7 +758,6 @@
 "Open To-do" = "Otvoriť Úlohy";
 "Open a Scout window first, then share" = "Najprv otvorte okno aplikácie Scout, potom zdieľajte";
 "Open a widget full size" = "Otvoriť widget v plnej veľkosti";
-"Open in Ask AI" = "Otvoriť v Opýtajte sa AI";
 "Open or close the notch" = "Otvoriť alebo zavrieť výrez";
 "Open tasks in total: %lld" = "Otvorených úloh spolu: %lld";
 "Open the Calendar with the To-dos, full size" = "Otvoriť Kalendár s úlohami v plnej veľkosti";
@@ -817,7 +766,6 @@
 "Open the notch" = "Otvoriť výrez";
 "Open the notch on %@ (now: %@)" = "Otvárať výrez na karte %@ (teraz: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Vždy otvárať výrez na karte %@, nie na prehľade";
-"Open the notch on Agents" = "Otvoriť výrez na karte Agenti";
 "Open the notch when an agent needs you" = "Otvoriť výrez, keď vás agent potrebuje";
 "Open the player" = "Otvoriť prehrávač";
 "Open the to-do calendar" = "Otvoriť kalendár úloh";
@@ -829,9 +777,7 @@
 "Opening" = "Otváranie";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Otvorí výrez s už rozbaleným widgetom. Ďalším stlačením zavriete. Samotný výrez sa vždy otvára na prehľade.";
 "Option" = "Option";
-"Optional: answer from the notch" = "Voliteľné: odpovedať z výrezu";
 "Options" = "Možnosti";
-"Or type your own answer" = "Alebo napíšte vlastnú odpoveď";
 "Orange" = "Oranžová";
 "Output" = "Výstup";
 "Overcast" = "Zamračené";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Vyskakovacie okno";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "Port %u bol obsadený, preto tento blok uvádza port %u. Ak sa Scout neskôr znova spustí na %u, skopírujte ho znova.";
 "Press a shortcut…" = "Stlačte skratku…";
 "Preview" = "Náhľad";
 "Preview a card" = "Zobraziť náhľad karty";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Dávať konvertované súbory do Zásobníka";
 "Put finished videos in the Tray" = "Dávať dokončené videá do Zásobníka";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Vráti všetky možnosti do stavu z prvého dňa. Vaše poznámky, schránka a súbory zostanú.";
-"Questions go to %@." = "Otázky sa posielajú do %@.";
 "Questions go to %@. The answers stay here." = "Otázky sa posielajú do %@. Odpovede zostávajú tu.";
 "Quick" = "Rýchlo";
 "Quick Apps" = "Rýchle aplikácie";
@@ -920,7 +864,6 @@
 "Reading" = "Čítanie";
 "Ready" = "Pripravené";
 "Ready for the next focus session" = "Pripravené na ďalší blok sústredenia";
-"Ready for the next task" = "Pripravené na ďalšiu úlohu";
 "Rec" = "Nahr.";
 "Recent downloads" = "Nedávne sťahovania";
 "Record Shortcut" = "Nahrať skratku";
@@ -978,19 +921,15 @@
 "Save…" = "Uložiť…";
 "Scout Settings" = "Nastavenia aplikácie Scout";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout sa macOS pýta, len keď zapnete alebo otvoríte funkciu, ktorá to potrebuje. Pri spustení sa nežiada nič.";
-"Scout can no longer open that folder. Connect again." = "Scout už tento priečinok nemôže otvoriť. Pripojte znova.";
 "Scout can't match what it hears to the script" = "Scout nedokáže priradiť to, čo počuje, ku skriptu";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout zatiaľ nevidí priečinky vašich agentov. Raz to povoľte a každá relácia Claude Code a Codex sa nasťahuje sama.";
 "Scout can't use this microphone" = "Scout nemôže použiť tento mikrofón";
-"Scout could not open a local port." = "Scout nemohol otvoriť miestny port.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout nevidel vašu obrazovku, takže otázka odišla bez snímky. Povoľte Scout v časti Nahrávanie obrazovky.";
 "Scout couldn't take the picture this time, so that question went without it." = "Scout tentoraz nemohol urobiť snímku, takže otázka odišla bez nej.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout nájde relácie Claude Code a Codex sám";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout teraz počúva na porte %u (alebo sú jeho hooky zo staršej verzie). Aktualizácia prepíše iba položky aplikácie Scout.";
 "Scout only watches for connections once you allow it." = "Scout sleduje pripojenia, až keď to povolíte.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout číta vaše udalosti na tomto Macu, aby naplnil widget Kalendár a pracovný priestor. Nič sa nikam neodosiela.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout si pamätá, čo kopírujete, aby ste to mohli znova vložiť z výrezu alebo zo spodnej police. Všetko zostáva na tomto Macu.";
-"Scout will add its hooks to %@ after backing the file up." = "Scout pridá svoje hooky do %@ po zálohovaní súboru.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Vlastný kód, texty a ikona aplikácie Scout sú pôvodné. Všetko ostatné je tu použité podľa vlastnej licencie.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Vlastné okná aplikácie Scout (Opýtajte sa AI, poznámky, úlohy, kalkulačka a ďalšie) sa po ukončení, aktualizácii alebo reštarte znova otvoria tam, kde boli, v rovnakej veľkosti a s rovnakým textom. Ak displej už nie je k dispozícii, otvoria sa na hlavnom.";
 "Scout: my AI agents in my notch. %@" = "Scout: moji AI agenti v mojom výreze. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Hľadať na webe";
 "Searching the web…" = "Hľadanie na webe…";
 "See the month, your agenda and a Join button for video calls." = "Zobrazí mesiac, váš program a tlačidlo Pripojiť pre videohovory.";
-"See the whole conversation in the Ask AI tab" = "Celú konverzáciu uvidíte na karte Opýtajte sa AI";
 "See your day here" = "Tu uvidíte svoj deň";
 "Select a note or start a new one" = "Vyberte poznámku alebo začnite novú";
 "Select a note or start a new one." = "Vyberte poznámku alebo začnite novú.";
 "Selected: %lld" = "Vybrané: %lld";
 "Send" = "Odoslať";
-"Send answers" = "Odoslať odpovede";
 "Send to Apple Notes" = "Odoslať do Poznámok";
 "Send to a nearby device" = "Odoslať na zariadenie v okolí";
 "Sensitivity" = "Citlivosť";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Zobraziť AirPods a ich batériu po pripojení";
 "Show Scout in the menu bar" = "Zobraziť Scout v lište ponuky";
 "Show a Join card when the meeting starts" = "Zobraziť kartu Pripojiť pri začiatku stretnutia";
-"Show a card under the notch" = "Zobraziť kartu pod výrezom";
 "Show a card when a download finishes" = "Zobraziť kartu po dokončení sťahovania";
 "Show a count next to the notch while the Tray holds files" = "Zobraziť počet vedľa výrezu, kým sú v Zásobníku súbory";
 "Show a countdown" = "Zobraziť odpočet";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Zobraziť každú otvorenú úlohu bez ohľadu na deň";
 "Show in Finder" = "Zobraziť vo Finderi";
 "Show in full screen" = "Zobraziť na celú obrazovku";
-"Show me the paste code" = "Ukázať kód na vloženie";
 "Show music from" = "Zobraziť hudbu z";
 "Show music next to the notch while it plays" = "Zobraziť hudbu vedľa výrezu, keď hrá";
 "Show my calendar in the notch" = "Zobraziť môj kalendár vo výreze";
@@ -1107,9 +1042,7 @@
 "Square" = "Štvorec";
 "Start" = "Štart";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Spustite Claude Code alebo Codex a každá relácia sa tu objaví sama so svojím priebehom. Nič nemusíte pripájať.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Spustite Codex a pri prvom použití zadajte /hooks, aby ste hooky Scout označili ako dôveryhodné. Potom spustite novú reláciu.";
 "Start a %lld-minute focus timer for this task" = "Spustiť časovač sústredenia na %lld min pre túto úlohu";
-"Start a new Claude Code session. It appears in the notch." = "Spustiť novú reláciu Claude Code. Objaví sa vo výreze.";
 "Start again" = "Začať znova";
 "Start folder" = "Úvodný priečinok";
 "Start the camera when the Mirror widget appears" = "Spustiť kameru, keď sa objaví widget Zrkadlo";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Veľkosť textu: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "Tento kľúč API bol odmietnutý. Skontrolujte ho v Nastaveniach › Opýtajte sa AI.";
 "That didn't work" = "To sa nepodarilo";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "Toto nie je priečinok %@ vo vašom domovskom priečinku. Pripojte znova a vyberte ho.";
 "That one did not go through" = "Toto neprešlo";
 "That's the end" = "To je koniec";
 "The %@ uses the camera, so it never opens by itself" = "Funkcia %@ používa kameru, preto sa nikdy neotvorí sama";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Vypnuté";
 "Two-finger swipe on the notch" = "Potiahnutie dvoma prstami po výreze";
 "Type a city, region or country, or pick a country." = "Zadajte mesto, región alebo krajinu, alebo vyberte krajinu.";
-"Type your own…" = "Napíšte vlastné…";
 "Typing: the notch stays open" = "Písanie: výrez zostane otvorený";
 "Unknown format" = "Neznámy formát";
 "Unlicense (only if you install it)" = "Unlicense (len ak ho nainštalujete)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Kým to nezapnete, otázky odchádzajú bez obrázka.";
 "Untitled" = "Bez názvu";
 "Untitled script" = "Skript bez názvu";
-"Update" = "Aktualizovať";
 "Updates" = "Aktualizácie";
 "Updating the to-do list" = "Aktualizácia zoznamu úloh";
 "Upload %@" = "Nahrať %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Čaká na vás";
 "Waiting for your OK" = "Čaká na vaše schválenie";
 "Waiting for your voice" = "Čaká na váš hlas";
-"Wants to use %@" = "Chce použiť %@";
-"Wants to use %@: %@" = "Chce použiť %@: %@";
-"Wants to use a tool" = "Chce použiť nástroj";
-"Wants to use a tool: %@" = "Chce použiť nástroj: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Teplý papier, tmavý text a jasné akcenty. Cez deň sa dobre číta.";
 "Warn at" = "Upozorniť pri";
 "Warn when the battery is low" = "Upozorniť na slabú batériu";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "K čomu má Scout prístup a prečo o to žiada.";
 "What shows next to the notch while it is closed." = "Čo sa zobrazuje vedľa výrezu, keď je zatvorený.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Keď príde správa, pod výrezom sa objaví karta s odosielateľom, textom a poľom na odpoveď. Keď je v popredí aplikácia Správy, zostáva tichá. Scout nikdy nič neodošle, kým nenapíšete odpoveď a nestlačíte Return.";
-"When an agent needs an answer" = "Keď agent potrebuje odpoveď";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Keď zmeníte hlasitosť klávesmi, v lište ponuky alebo inou aplikáciou, úroveň sa zobrazí aj vedľa výrezu.";
 "Where stations come from" = "Odkiaľ stanice pochádzajú";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Keď hrá hudba, beží časovač alebo sa dokončí sťahovanie, výrez sa zväčší, aby to ukázal. Nabehnite naň a otvorí sa v ňom váš Nook: widgety, súbory, schránka, kalendár. Odíďte a zase sa schová.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Zoom %@, späť na celý obrázok";
 "Zoom in" = "Priblížiť";
 "Zoom out" = "Oddialiť";
-"all edits this session" = "všetky úpravy v tejto relácii";
 "charged" = "nabité";
 "charging" = "nabíja sa";
 "code" = "kód";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS to nepovolil zmeniť: %@";
 "me and my agents" = "ja a moji agenti";
 "min" = "min";
-"mode %@" = "režim %@";
 "model name" = "názov modelu";
 "needs you" = "potrebuje vás";
 "no battery" = "bez batérie";

@@ -32,7 +32,6 @@ Brand names stay Latin and are not declined: "Scout", "Codex", "Mac" ("на ць
 | den (the agents' room) | будиночок |
 | card / tab | картка / вкладка |
 | shelf | полиця |
-| hooks | хуки |
 | Keychain | Keychain (macOS Ukrainian says Зв'язка ключів) |
 | Calendar / Notes / Messages / Music / Contacts | Календар / Нотатки / Повідомлення / Музика / Контакти |
 | Activity Monitor / Weather / Maps / Clock | Монітор активності / Погода / Карти / Годинник |
@@ -51,8 +50,8 @@ Brand names stay Latin and are not declined: "Scout", "Codex", "Mac" ("на ць
 | menu bar | рядок меню |
 | Appearance / Look / View | Оформлення / Зовнішність / Вигляд |
 | Light / Dark / System | Світлий / Темний / Система |
-| Allow / Deny / Always allow | Дозволити / Відмовити / Завжди дозволяти |
-| Connect / Disconnect / Join | Підключити / Відключити / Увійти (short, for the Join pill) |
+| Allow | Дозволити |
+| Join | Увійти (short, for the Join pill) |
 | Snooze | Відкласти |
 | Mute / Unmute | Вимкнути звук / Увімкнути звук |
 | modifier keys | Command, Option, Control, Shift |

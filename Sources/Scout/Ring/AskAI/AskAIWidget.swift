@@ -10,7 +10,7 @@ import SwiftUI
 struct AskAIWidgetView: View {
     @ObservedObject private var store: AIChatStore
     @ObservedObject private var draft: AskAINotchDraft
-    @ObservedObject private var quick = AskAIQuick.shared
+    private let quick = AskAIQuick.shared
     @Environment(\.notchNavigator) private var navigator
     @AppStorage(AIMonitor.key) private var monitorOn = false
     @State private var windowBox = WindowBox()

@@ -60,7 +60,7 @@ struct PixelSprite: Equatable {
         return PixelSprite(grid: g)
     }
 
-    /// Repeats column `column` `count` more times (a sleeping scout is a wide one).
+    /// Repeats column `column` `count` more times (a sleeping agent is a wide one).
     func widened(atColumn column: Int, by count: Int) -> PixelSprite {
         PixelSprite(grid: grid.map { row in
             var r = row
@@ -92,7 +92,7 @@ struct PixelPalette {
     static func world(_ kind: AgentKind = .claude) -> PixelPalette {
         let tint = kind.tint
         var c: [Character: Color] = [
-            // the scout
+            // the agent
             "o": Retro.shade(tint, -0.78),
             "b": tint,
             "s": Retro.shade(tint, -0.26),
@@ -118,7 +118,7 @@ struct PixelPalette {
         return PixelPalette(colors: c)
     }
 
-    /// Every colour darkened (a sleeping scout in a dark room).
+    /// Every colour darkened (a sleeping agent in a dark room).
     func dimmed(_ amount: Double) -> PixelPalette {
         PixelPalette(colors: colors.mapValues { Retro.shade($0, -amount) })
     }
@@ -190,7 +190,7 @@ enum AgentPixel {
     static func textWidth(_ text: String) -> Int { LEDFont.width(text) }
 }
 
-/// A placed sprite in a picture: grid position, and an optional palette (a dimmed one for a sleeping scout).
+/// A placed sprite in a picture: grid position, and an optional palette (a dimmed one for a sleeping agent).
 struct PixelPlacement {
     var sprite: PixelSprite
     var x: Int
@@ -214,12 +214,12 @@ struct PixelPicture {
 
 // MARK: - The sprites
 
-/// Every sprite table of the scouts and their things (the self-test checks that each is rectangular and uses only the palette).
+/// Every sprite table of the agents and their things (the self-test checks that each is rectangular and uses only the palette).
 enum AgentPixelSprites {
-    // MARK: The scout
+    // MARK: The agent
 
-    /// The scout is a square head on a small body:
-    /// the head is the wing's own 12 x 12 face (`AgentFaceArt.figureHead`: the same outline with its cut corners, the
+    /// The agent is a square head on a small body.
+    /// The head is the wing's own 12 x 12 face (`AgentFaceArt.figureHead`: the same outline with its cut corners, the
     /// highlight, the cheeks, the eyes and mouth of the look, and the headwear of the agent's face), at columns 2 to 13 of a 16 x 16 figure; under
     /// it a cream neckerchief with a knot (the chin is its upper edge) and its lower edge, then two feet. Nothing stands above the head's top row.
     static let figureWidth = 16
@@ -234,7 +234,7 @@ enum AgentPixelSprites {
         "...oooo..oooo...",   // 15
     ]
 
-    /// The figure of `look` (a scout in its pose) wearing `variant`'s headwear: the working one sits at its desk (no feet), the sleeping one
+    /// The figure of `look` (an agent in its pose) wearing `variant`'s headwear: the working one sits at its desk (no feet), the sleeping one
     /// has none either, the others stand. The head is `AgentFaceArt.figureHead`: with a `tick` and `burst` the wing's own frame of that step
     /// (the face moves), without one the face at rest (`eyesShut` is its blink).
     static func figure(_ look: AgentNookLook, tick: Int? = nil, burst: Bool = false, eyesShut: Bool = false, variant: Int = 0) -> PixelSprite {
@@ -243,7 +243,7 @@ enum AgentPixelSprites {
         return look == .working || look == .idle ? sprite.droppingRows(14...15) : sprite
     }
 
-    /// The scout standing, asking (a hand goes up beside it), eyes open and shut.
+    /// The agent standing, asking (a hand goes up beside it), eyes open and shut.
     static let scout: PixelSprite = figure(.needsYou)
     static let scoutBlink: PixelSprite = figure(.needsYou, eyesShut: true)
 
@@ -253,12 +253,12 @@ enum AgentPixelSprites {
     /// Dizzy crosses and a wobbly mouth.
     static let scoutDizzy: PixelSprite = figure(.stopped)
 
-    /// The scout at a desk: no feet (the desk is in front of them), looking at its computer.
+    /// The agent at a desk: no feet (the desk is in front of them), looking at its computer.
     static let scoutSeated: PixelSprite = figure(.working)
 
     static let scoutSeatedBlink: PixelSprite = figure(.working, eyesShut: true)
 
-    /// The scout asleep: eyes shut, a tiny mouth, no feet (the beanbag is under it).
+    /// The agent asleep: eyes shut, a tiny mouth, no feet (the beanbag is under it).
     static let scoutAsleep: PixelSprite = figure(.idle)
 
     /// A raised arm (cheering, asking): 4 wide, 12 tall; the shoulder is the bottom.
@@ -279,7 +279,7 @@ enum AgentPixelSprites {
 
     // MARK: Helpers (8 x 8)
 
-    /// A helper has the scout's square head too, no tuft on top.
+    /// A helper has the agent's square head too, no tuft on top.
     private static let miniRows = [
         "..oooo..",
         ".ohhbbo.",
@@ -400,7 +400,7 @@ enum AgentPixelSprites {
         "........",
     ])
 
-    /// The screen of a scout that is only thinking: lines of text.
+    /// The screen of an agent that is only thinking: lines of text.
     static let textLines = PixelSprite([
         "GGGGGG..",
         "........",
@@ -436,7 +436,7 @@ enum AgentPixelSprites {
         }
     }
 
-    // MARK: Furniture of the scout's room
+    // MARK: Furniture of the agent's room
 
     /// A chunky beige computer: a monitor with an 8 x 8 screen (the prop shows there), a power light, a neck and a foot. 14 x 17.
     static let computer = PixelSprite([

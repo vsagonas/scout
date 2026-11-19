@@ -2,22 +2,17 @@ import SwiftUI
 
 /// The window that opens beside the den when you click an agent: a 90s window with a title bar, a CRT glass that says what the agent
 /// is doing (its latest message in the system font so it reads easily, the step it is on, its to-do progress as an LED bar, the last
-/// steps), a pager for the automatic opening's banner, and below the glass a plastic deck with the answer controls as chunky keys.
-/// The den stays on screen beside it.
+/// steps) and a pager for the automatic opening's banner. The den stays on screen beside it.
 struct AgentDenWindow: View {
     let session: AgentSession
-    @ObservedObject var store: AgentsStore
     var banner: AgentAnnouncement?
-    /// Under the den, across its width: what the agent does and the answer keys at the left, its whole workflow (every step) at the right.
+    /// Under the den, across its width: what the agent does at the left, its whole workflow (every step) at the right.
     var below = false
     var onClose: () -> Void
     @State private var contentHeight: CGFloat = 400
 
-    private var requests: [AgentPending] { store.pending.filter { $0.sessionID == session.id } }
-    private var look: AgentNookLook { Self.look(session, pending: store.pending) }
-
     /// What the window says the agent is: the same one rule as the den and the set.
-    static func look(_ session: AgentSession, pending: [AgentPending]) -> AgentNookLook { AgentNookLook.of(session, pending: pending) }
+    private var look: AgentNookLook { AgentNookLook.of(session) }
 
     /// Which clock the window shows: a running one while the agent works or asks, the fixed duration of a finished or stopped task, none asleep.
     enum ClockMode { case running, fixed, none }
@@ -69,19 +64,17 @@ struct AgentDenWindow: View {
                 AgentBanner(announcement: banner, session: session).denFrame("banner")
             }
             glass(recentSteps: true)
-            if !requests.isEmpty { deck }
         }
         .padding(.horizontal, 8).padding(.top, 8).padding(.bottom, 8)
     }
 
-    /// Under the den: the agent and the answer keys at the left, the workflow at the right (both scroll on their own).
+    /// Under the den: the agent at the left, the workflow at the right (both scroll on their own).
     private var belowBody: some View {
         GeometryReader { geo in
             let left = min(460, max(260, geo.size.width * 0.44))
             HStack(alignment: .top, spacing: 8) {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 8) {
-                        if !requests.isEmpty { deck }   // the answer keys first: always in view
                         if let banner { AgentBanner(announcement: banner, session: session).denFrame("banner") }
                         glass(recentSteps: false)
                     }
@@ -268,19 +261,7 @@ struct AgentDenWindow: View {
         }
     }
 
-    // MARK: The deck
-
-    /// The answer controls on dark plastic, as chunky keys.
-    private var deck: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            ForEach(requests) { request in PendingView(request: request, store: store, retro: true) }
-        }
-        .padding(10)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.clear.retroBevel(.raised, cornerRadius: Self.screenRadius, depth: 1.5, face: Retro.Ink.plasticDark))
-    }
-
-    /// Every screen in the window (the agent's glass, the workflow, the answer deck, the pager) has the Agent TV's glass corner, which is
+    /// Every screen in the window (the agent's glass, the workflow, the pager) has the Agent TV's glass corner, which is
     /// the open notch's own curve, so they all look alike
     static let screenRadius: CGFloat = CRTSetLayout.glassRadius(compact: false)
 }

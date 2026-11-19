@@ -1,9 +1,8 @@
 import AppKit
 
-/// `scout://<command>?key=value` deep links, for scripted checks (`--automation` runs). Outside automation only
-/// `publicCommands` run: the shipped app registers the scheme, so a link on a web page must not be able to do more.
-/// Each module registers its commands in its module's `start()`, e.g. `scout://notch.open?ws=nook`,
-/// `scout://ring.open?x=800&y=500`, `scout://panel.calculator`.
+/// `scout://<command>?key=value` deep links, for scripted checks (`--automation` runs). Outside automation nothing runs
+/// (`publicCommands` is empty): the shipped app registers the scheme, so a link on a web page must not be able to do anything.
+/// Each module registers its commands in its module's `start()`, e.g. `scout://notch.open?ws=nook`.
 @MainActor
 enum DebugCommands {
     typealias Handler = ([String: String]) -> Void
@@ -62,26 +61,29 @@ enum DebugCommands {
     }
 
     /// What a `scout://` link may do OUTSIDE automation runs (the shipped app registers the scheme, so any web page can
-    /// open such a link): only the commands the app itself opens, with only the parameters it passes. Today that is
-    /// the menu bar's "Open Ring" (`ring.open?x=&y=`). Everything else (quit, recording, pausing the clipboard, demo and
-    /// test commands, anything that writes to an `out=` or `dir=` path) runs in `--automation` runs only.
-    static let publicCommands: [String: Set<String>] = ["ring.open": ["x", "y"]]
+    /// open such a link): nothing, because the app opens none of its own windows through a link. Everything (quit, recording,
+    /// pausing the clipboard, demo and test commands, anything that writes to an `out=` or `dir=` path) runs in `--automation`
+    /// runs only. A command the app itself would open through a link goes here, with the only parameters it passes
+    /// (`["name": ["x", "y"]]`).
+    nonisolated static let publicCommands: [String: Set<String>] = [:]
 
-    /// The name and parameters a command is allowed to run with, or nil when it must not run at all.
-    static func permitted(name: String, params: [String: String], automation: Bool) -> [String: String]? {
+    /// The name and parameters a command is allowed to run with, or nil when it must not run at all. `listed` is the list of commands
+    /// a link may run outside automation: `publicCommands`, unless the self-test passes a list of its own.
+    static func permitted(name: String, params: [String: String], automation: Bool,
+                          listed: [String: Set<String>] = DebugCommands.publicCommands) -> [String: String]? {
         if automation { return params }
-        guard let allowedKeys = publicCommands[name] else { return nil }
+        guard let allowedKeys = listed[name] else { return nil }
         return params.filter { allowedKeys.contains($0.key) }
     }
 
-    /// `automation` defaults to this run's flag; only the self-test passes the other value.
-    static func run(url: URL, automation: Bool = ScoutRuntime.isAutomation) {
+    /// `automation` defaults to this run's flag, and `listed` to `publicCommands`; only the self-test passes other values.
+    static func run(url: URL, automation: Bool = ScoutRuntime.isAutomation, listed: [String: Set<String>] = DebugCommands.publicCommands) {
         guard url.scheme?.lowercased() == "scout" else { return }
         let name = url.host ?? url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
         var params: [String: String] = [:]
         URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.forEach { params[$0.name] = $0.value ?? "" }
-        guard let allowed = permitted(name: name, params: params, automation: automation) else {
-            NSLog("Scout: refused command %@ (outside automation a link may only run the app's own commands)", name)
+        guard let allowed = permitted(name: name, params: params, automation: automation, listed: listed) else {
+            NSLog("Scout: refused command %@ (outside automation a link runs only the listed commands)", name)
             return
         }
         if let handler = handlers[name] {

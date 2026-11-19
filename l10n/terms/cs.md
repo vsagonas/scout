@@ -28,7 +28,6 @@ Machine translation, no native reviewer yet. Formal address (vykání) in senten
 | den (the agents' room) | domeček |
 | card (notch card, tab) | karta (tab = karta, never záložka) |
 | shelf | police |
-| hooks | hooky |
 | Keychain | Keychain (macOS Czech says Klíčenka) |
 | Shortcuts (Apple app) / keyboard shortcut | Zkratky / klávesová zkratka |
 | Calendar / Notes / Reminders / Messages / Music / Contacts | Kalendář / Poznámky / Připomínky / Zprávy / Hudba / Kontakty |
@@ -47,15 +46,15 @@ Machine translation, no native reviewer yet. Formal address (vykání) in senten
 | Downloads (macOS folder) / Movies | Stažené / Filmy |
 | menu bar | řádek nabídek |
 | Light / Dark / System | Světlý / Tmavý / Systém |
-| Allow / Deny / Always allow | Povolit / Zamítnout / Vždy povolit |
-| Connect / Disconnect / Join | Připojit / Odpojit / Připojit (short, for the Join pill) |
+| Allow | Povolit |
+| Join | Připojit (short, for the Join pill) |
 | Snooze | Odložit |
 | Mute / Unmute | Ztlumit / Zrušit ztlumení |
 | modifier keys | Command, Option, Control, Shift (as macOS Czech writes them) |
 
 Brand names are never declined: "okna aplikace Scout", "v nástroji Codex", "klíč API Claude".
 
-Pixel labels use capitals and no diacritics (the 5x7 font has none): CELY DEN, SPI, CAU %@ (BYE), PRIPOJOVANI, HOTOVO, RYCHLY DOTAZ AI, OBLIBENE, ZMRAZENO, AHOJ OD SCOUT, POSLEDNI, SEZNAM, POTREBUJE VAS, ZADNI AGENTI, ZADNY SIGNAL, MISTA, POZASTAVENO, PRIPRAVENO, SPOUSTI SE, ZASTAVENO, VITEJ %@, POSTUP, PRACUJE.
+Pixel labels use capitals and no diacritics (the 5x7 font has none): CELY DEN, SPI, CAU %@ (BYE), PRIPOJOVANI, HOTOVO, OBLIBENE, ZMRAZENO, AHOJ OD SCOUT, POSLEDNI, SEZNAM, POTREBUJE VAS, ZADNI AGENTI, ZADNY SIGNAL, MISTA, POZASTAVENO, PRIPRAVENO, SPOUSTI SE, ZASTAVENO, VITEJ %@, POSTUP, PRACUJE.
 
 Style: „ “ quotes, "…" as one character, no dashes as separators (a colon instead: "Soustředění: %@"), Western digits, a space before % ("50 %").
 

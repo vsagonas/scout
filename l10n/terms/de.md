@@ -38,14 +38,14 @@ Machine translation, no native reviewer yet. Informal "du" (as the German App St
 | Focus (macOS) | Fokus |
 | menu bar | Menüleiste |
 | Light / Dark / System | Hell / Dunkel / System |
-| Allow / Deny / Always allow | Erlauben / Ablehnen / Immer erlauben |
+| Allow | Erlauben |
 | Save / saved | Speichern / gespeichert (backup = sichern / gesichert) |
 | Update / Refresh | Aktualisieren / Neu laden |
 | Mute / Unmute | Stumm / Ton an |
 | den (the agents' room) | Höhle |
 | shelf (bottom clipboard shelf) | Regal |
 | Quick Apps | Schnell-Apps |
-| Fast Ask AI | Schnelle KI-Frage (pixel label SCHNELLE KI-FRAGE) |
+| Fast Ask AI | Schnelle KI-Frage |
 | Voice / Steady (Prompter modes) | Stimme / Gleichmäßig |
 | Frozen (Mirror) | Standbild |
 | Home (folder tab) / Home folder | Home / Benutzerordner |

@@ -7,6 +7,25 @@ enum AgentText {
         return flat.count > n ? String(flat.prefix(n - 1)) + "…" : flat
     }
 
+    /// A short line for a tool call: the command, the file, the pattern…
+    static func toolSummary(tool: String, input: [String: Any]?) -> String {
+        guard let input else { return tool }
+        func base(_ key: String) -> String? { (input[key] as? String).map { ($0 as NSString).lastPathComponent } }
+        switch tool {
+        case "Bash": return (input["command"] as? String).map { $0.replacingOccurrences(of: "\n", with: " ") } ?? "Bash"
+        case "Read", "Edit", "Write", "MultiEdit", "NotebookEdit": return base("file_path") ?? base("notebook_path") ?? tool
+        case "Grep", "Glob": return (input["pattern"] as? String) ?? tool
+        case "WebFetch": return (input["url"] as? String) ?? tool
+        case "WebSearch": return (input["query"] as? String) ?? tool
+        case "Task", "Agent": return (input["description"] as? String) ?? (input["subagent_type"] as? String) ?? tool
+        case "TodoWrite": return String(localized: "Updating the to-do list")
+        default:
+            if let command = input["command"] as? String { return command }
+            if let first = input.values.compactMap({ $0 as? String }).first { return String(first.prefix(120)) }
+            return tool
+        }
+    }
+
     /// Words that end in a full stop without ending the sentence.
     private static let abbreviations: Set<String> = ["e.g", "i.e", "etc", "vs", "mr", "mrs", "ms", "dr", "no", "fig", "approx", "cf", "st"]
 
@@ -250,7 +269,7 @@ struct TranscriptState {
                     if name == "Agent" || name == "Task" {
                         if (input?["run_in_background"] as? Bool) == true { backgroundHelpers[id] = when ?? Date() } else { helperIDs.insert(id) }
                     }
-                    open(id, tool: name, summary: AgentEvent.summary(tool: name, input: input), at: when)
+                    open(id, tool: name, summary: AgentText.toolSummary(tool: name, input: input), at: when)
                 }
             default:
                 break
@@ -423,7 +442,6 @@ struct TranscriptState {
         // Helpers at work: the ones the agent waits for, and the background ones (one that never reported back counts for 3 hours at most).
         let latest = lastLineAt ?? mtime
         s.subagents = helperIDs.count + backgroundHelpers.values.filter { latest.timeIntervalSince($0) < 3 * 3600 }.count
-        s.scanned = true
         if let question, questionID != nil {
             s.state = .waiting
             s.note = AgentNote.asking(question)

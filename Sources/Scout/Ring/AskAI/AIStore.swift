@@ -62,7 +62,7 @@ final class AIChatStore: ObservableObject {
         }
     }
 
-    enum Demo { case empty, searching, thinking, error, haikuAnswer, streaming, conversation, monitorSent, monitorCapturing }
+    enum Demo { case empty, searching, thinking, error, haikuAnswer, streaming, conversation, monitorSent, monitorCapturing, quick }
 
     /// Gallery states.
     init(demo: Demo) {
@@ -105,6 +105,13 @@ final class AIChatStore: ObservableObject {
             chat.title = "Capital of Peru"
             chat.messages = [AIChatMessage(role: .user, text: "What's the capital of Peru?"),
                              AIChatMessage(role: .assistant, text: "The capital of Peru is **Lima**. It sits on the Pacific coast and is home to about a third of the country's people.", model: AIModels.haiku)]
+        case .quick:
+            // The dashboard's own conversation with one question answered: what the Ask AI panel shows in its history.
+            chat.title = Self.quickTitle
+            chat.messages = [AIChatMessage(role: .user, text: "What's the capital of Peru?"),
+                             AIChatMessage(role: .assistant, text: "The capital of Peru is **Lima**. It sits on the Pacific coast and is home to about a third of the country's people.", model: AIModels.haiku)]
+            scriptedQuickID = chat.id
+            history = Self.sampleChats()
         case .error:
             chat.messages = [AIChatMessage(role: .user, text: "Summarise this page for me"),
                              { var m = AIChatMessage(role: .assistant, text: "That API key was rejected. Check it in Settings › Ask AI.", model: AIModels.haiku); m.isError = true; return m }()]

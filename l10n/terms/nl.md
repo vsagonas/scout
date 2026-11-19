@@ -51,7 +51,7 @@ Machine translation, no native reviewer yet. Informal "je/jouw" (as the Dutch Ap
 | Lock Screen | Toegangsscherm |
 | home folder | persoonlijke map |
 | Light / Dark / System / Automatic | Licht / Donker / Systeem / Automatisch |
-| Allow / Deny / Always allow | Sta toe / Weiger / Sta altijd toe |
+| Allow | Sta toe |
 | Cancel / Delete / Close / Copy | Annuleer / Verwijder / Sluit / Kopieer |
 | Done | Klaar |
 | Join (meeting button) | Doe mee |
@@ -62,7 +62,7 @@ Machine translation, no native reviewer yet. Informal "je/jouw" (as the Dutch Ap
 | Pin / Unpin / Pinned | Zet vast / Maak los / Vastgezet |
 | Focus (macOS) | Focus |
 
-Pixel labels use capitals and no accents: HELE DAG, SLAAPT, DAG %@ (for BYE), SNELLE VRAAG AI.
+Pixel labels use capitals and no accents: HELE DAG, SLAAPT, DAG %@ (for BYE).
 "Ask anything" (dashboard field placeholder, at most 12 characters): "Vraag maar".
 
 Style: je-form, short labels, imperative buttons as in macOS (Annuleer, Verwijder), "…" as one character, no dashes as separators.

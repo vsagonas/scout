@@ -28,7 +28,6 @@ Machine translation, no native reviewer yet. Formal address (vykanie) in sentenc
 | den (the agents' room) | domček |
 | card (notch card, tab) | karta (tab = karta, never záložka) |
 | shelf | polica |
-| hooks | hooky |
 | Keychain | Keychain (macOS Slovak says Kľúčenka) |
 | Shortcuts (Apple app) / keyboard shortcut | Skratky / klávesová skratka |
 | Calendar / Notes / Reminders / Messages / Music / Contacts | Kalendár / Poznámky / Pripomienky / Správy / Hudba / Kontakty |
@@ -47,8 +46,8 @@ Machine translation, no native reviewer yet. Formal address (vykanie) in sentenc
 | Downloads (macOS folder) / Movies | Stiahnuté / Filmy |
 | menu bar | lišta ponuky |
 | Light / Dark / System | Svetlý / Tmavý / Systém |
-| Allow / Deny / Always allow | Povoliť / Zamietnuť / Vždy povoliť |
-| Connect / Disconnect / Join | Pripojiť / Odpojiť / Pripojiť (short, for the Join pill) |
+| Allow | Povoliť |
+| Join | Pripojiť (short, for the Join pill) |
 | Snooze | Odložiť |
 | Mute / Unmute | Stlmiť / Zrušiť stlmenie |
 | Delete / Remove / Clear | Odstrániť / Odobrať / Vymazať |
@@ -56,7 +55,7 @@ Machine translation, no native reviewer yet. Formal address (vykanie) in sentenc
 
 Brand names are never declined: "okná aplikácie Scout", "v nástroji Codex", "kľúč API Claude".
 
-Pixel labels use capitals and no diacritics (the 5x7 font has none): CELY DEN, SPI, CAU %@ (BYE), PRIPAJANIE, HOTOVO, RYCHLA OTAZKA AI, OBLUBENE, ZMRAZENE, AHOJ OD SCOUT, POSLEDNE, ZOZNAM, POTREBUJE VAS, ZIADNI AGENTI, ZIADNY SIGNAL, MIESTA, POZASTAVENE, PRIPRAVENE, SPUSTA SA, ZASTAVENE, VITAJ %@, POSTUP, PRACUJE.
+Pixel labels use capitals and no diacritics (the 5x7 font has none): CELY DEN, SPI, CAU %@ (BYE), PRIPAJANIE, HOTOVO, OBLUBENE, ZMRAZENE, AHOJ OD SCOUT, POSLEDNE, ZOZNAM, POTREBUJE VAS, ZIADNI AGENTI, ZIADNY SIGNAL, MIESTA, POZASTAVENE, PRIPRAVENE, SPUSTA SA, ZASTAVENE, VITAJ %@, POSTUP, PRACUJE.
 
 Style: „ “ quotes, "…" as one character, no dashes as separators (a colon instead: "Sústredenie: %@"), Western digits, a space before % ("50 %"), "percent" for spoken percentages.
 

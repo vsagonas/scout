@@ -173,7 +173,7 @@ enum NotchGalleryItems {
         // radio's station and song at the outer end; then an agent that waits with its message, and the radio after it.
         for (name, waiting) in [("working", false), ("message", true)] {
             Gallery.register("notch-closed-agents-radio-\(name)", size: CGSize(width: 1000, height: 44), backdrop: .screenTop) {
-                let store = AgentsStore(directory: AppPaths.folder("gallery-agents-radio-\(name)"))
+                let store = AgentsStore()
                 let _ = {
                     var list = Array(AgentSession.synthetic(6).prefix(2))
                     for i in list.indices { list[i].state = .working; list[i].finishedAt = nil }

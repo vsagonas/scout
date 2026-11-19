@@ -10,9 +10,7 @@
 "%@ ended." = "Chríochnaigh %@.";
 "%@ failed" = "Theip ar %@";
 "%@ finished after %lld min" = "Chríochnaigh %@ tar éis %lld nóim";
-"%@ finished in %@" = "Chríochnaigh %@ i %@";
 "%@ free" = "%@ saor";
-"%@ has a question" = "Tá ceist ag %@";
 "%@ has no sound" = "Níl fuaim ag %@";
 "%@ in %@" = "%@ i %@";
 "%@ installed" = "%@ suiteáilte";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "Tá %@ ró-mhór do chomhad ZIP (teorainn 4 GB)";
 "%@ isn't installed" = "Níl %@ suiteáilte";
 "%@ isn't supported on this Mac" = "Ní thacaítear le %@ ar an Mac seo";
-"%@ isn't valid JSON, so Scout left it alone." = "Ní JSON bailí é %@, mar sin d'fhág Scout é.";
 "%@ key" = "Eochair %@";
 "%@ left" = "%@ fágtha";
 "%@ needs you" = "Teastaíonn tú ó %@";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "Chríochnaigh uaineadóir %@";
 "%@ to full" = "%@ go dtí lán";
 "%@ used" = "%@ in úsáid";
-"%@ wants to use %@" = "Ba mhaith le %@ %@ a úsáid";
-"%@ wants to use a tool" = "Ba mhaith le %@ uirlis a úsáid";
 "%@ · %@ of %@" = "%@ · %@ as %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · %lld oscailte san iomlán";
@@ -71,7 +66,6 @@
 "%lld running" = "%lld ag rith";
 "%lld working" = "%lld ag obair";
 "%lld wpm" = "%lld focal/nóim";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+%lld eile";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Cuir d'eochair API %@ leis i Socruithe › Ceist ar AI ar dtús.";
 "Add your API key in Settings › Ask AI first." = "Cuir d'eochair API leis i Socruithe › Ceist ar AI ar dtús.";
 "Add your Claude API key in Settings › Ask AI first." = "Cuir d'eochair API Claude leis i Socruithe › Ceist ar AI ar dtús.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Cuireann sé hooks Scout le ~/.claude/settings.json (imeachtaí dul chun cinn, iarratais ar chead agus ceisteanna) agus fágann sé do hooks féin ina n-aonar. Déantar cúltaca den chomhad ar dtús.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Cuireann sé hooks Scout le ~/.codex/hooks.json. Iarrann Codex ort hooks nua a athbhreithniú an chéad uair: clóscríobh /hooks i Codex agus cuir muinín i hooks Scout.";
 "Agent" = "Gníomhaire";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Pluais Agent TV";
@@ -164,15 +156,10 @@
 "Allow…" = "Ceadaigh…";
 "Also show it while an app is full screen" = "Taispeáin freisin é nuair a bhíonn aip ar scáileán iomlán";
 "Also used for “%@”: only one of them will work." = "Úsáidtear freisin do “%@”: ní oibreoidh ach ceann amháin díobh.";
-"Always allow" = "Ceadaigh i gcónaí";
-"Always allow %@" = "Ceadaigh %@ i gcónaí";
-"Always allow adds: %@" = "Cuireann Ceadaigh i gcónaí leis: %@";
 "Amber" = "Ómra";
 "An agent tab cannot be kept as the opening tab" = "Ní féidir cluaisín gníomhaire a choinneáil mar chluaisín tosaigh";
 "Announcements" = "Fógraí";
 "Answer copied" = "Cóipeáilte an freagra";
-"Answer in terminal" = "Freagair sa teirminéal";
-"Answer permissions and questions from the notch" = "Freagair ceadanna agus ceisteanna ón notch";
 "Answers" = "Freagraí";
 "Any country" = "Aon tír";
 "Appearance" = "Cuma";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Fiafraigh faoi phictiúr";
 "Ask about your screen" = "Fiafraigh faoi do scáileán";
 "Ask anything" = "Cuir ceist";
-"Ask anything above. Questions go to %@. The answer shows here." = "Cuir ceist thuas. Téann ceisteanna chuig %@. Taispeántar an freagra anseo.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Cuir ceist ar bith.\nSeolann Return, cuireann ⌥Return líne leis.\n\nTéann do cheisteanna chuig %@. Nuair a bhíonn Scáileán air, téann pictiúr de do scáileán leo.";
 "Ask before closing a tab that is still running" = "Fiafraigh sula ndúntar cluaisín atá fós ag rith";
-"Ask in terminal" = "Fiafraigh sa teirminéal";
 "Ask the same question again on Claude Sonnet 5.5" = "Cuir an cheist chéanna arís ar Claude Sonnet 5.5";
-"Asking a question" = "Ag cur ceiste";
 "Asking you: %@" = "Ag cur ceiste ort: %@";
 "Asleep" = "Ina chodladh";
 "Attach a picture" = "Cuir pictiúr i gceangal";
@@ -241,7 +225,6 @@
 "Camera" = "Ceamara";
 "Camera access is off" = "Tá rochtain ar an gceamara as";
 "Camera access is off for Scout." = "Tá rochtain ar an gceamara as do Scout.";
-"Can't listen (%@)" = "Ní féidir éisteacht (%@)";
 "Can't read %@ yet" = "Ní féidir %@ a léamh go fóill";
 "Can't tell which chat this is" = "Ní féidir a rá cén comhrá é seo";
 "Cancel" = "Cealaigh";
@@ -265,7 +248,6 @@
 "Choose a script" = "Roghnaigh script";
 "Choose image…" = "Roghnaigh íomhá…";
 "Choose shortcuts" = "Roghnaigh aicearraí";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Roghnaigh an fillteán %@ i d'fhillteán baile. Déanann Scout cúltaca de %@ ansin agus cuireann sé a hooks leis; ní athraíonn aon rud eile.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Roghnaigh an fillteán %@ ionas gur féidir le Scout do sheisiúin %@ a fheiceáil. Ní léann Scout é ach amháin.";
 "Choose the model" = "Roghnaigh an múnla";
 "Choose…" = "Roghnaigh…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Glan na stáisiúin agus na háiteanna is déanaí";
 "Clear shortcut" = "Glan an t-aicearra";
 "Clear the clipboard history?" = "Glan stair an ghearrthaisce?";
-"Click Copy hooks." = "Cliceáil “Cóipeáil hooks”.";
 "Click for %@ settings, drag to move" = "Cliceáil le haghaidh socruithe %@, tarraing chun bogadh";
 "Click one, or use the arrow keys. Press Return to go on." = "Cliceáil ceann amháin, nó úsáid na heochracha saighde. Brúigh Return chun leanúint ar aghaidh.";
 "Click one, or use the arrow keys. The window grows with it." = "Cliceáil ceann amháin, nó úsáid na heochracha saighde. Fásann an fhuinneog leis.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Dún an cluaisín seo (⌘W)";
 "Close this tab?" = "Dún an cluaisín seo?";
 "Cloudy" = "Scamallach";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Iarrann Codex ort hooks nua a athbhreithniú uair amháin: clóscríobh /hooks i Codex agus cuir muinín i hooks Scout.";
 "Color" = "Dath";
 "Colors" = "Dathanna";
 "Command" = "Command";
 "Compact" = "Dlúth";
-"Connect" = "Ceangail";
-"Connect %@?" = "Ceangail %@?";
-"Connect %@…" = "Ceangail %@…";
-"Connect Claude Code" = "Ceangail Claude Code";
-"Connect Claude Code…" = "Ceangail Claude Code…";
-"Connect Codex" = "Ceangail Codex";
-"Connect Codex…" = "Ceangail Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Iarrann Ceangail ort an fillteán %@ a roghnú uair amháin; déanann Scout cúltaca de %@, cuireann sé a iontrálacha féin leis amháin agus is féidir leis iad a bhaint arís (Dícheangail). Is ordú curl amháin chuig 127.0.0.1 é gach hook; nuair a bhíonn Scout dúnta, ní dhéanann sé tada.";
 "Connected" = "Ceangailte";
-"Connected, but out of date" = "Ceangailte, ach as dáta";
-"Connected. New sessions report to Scout." = "Ceangailte. Tuairiscíonn seisiúin nua do Scout.";
 "Connecting" = "Ag ceangal";
 "Connecting…" = "Ag ceangal…";
 "Contacts" = "Teagmhálacha";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Ní shábháiltear cóipeanna a dhéantar agus ceann de na haipeanna seo chun tosaigh.";
 "Copy" = "Cóipeáil";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Cóipeáil nasc ó YouTube, X, Instagram, TikTok, Vimeo nó Reddit, oscail an Tráidire agus tairgeann Scout é a íoslódáil, nó scaoil nasc ar an Tráidire. Úsáideann íoslódálacha yt-dlp, a shuiteálann tú féin; ní ritheann an cnaipe thuas ach nuair a bhrúnn tú é. Chun nasc cóipeáilte a léamh teastaíonn “Allow” do Scout faoi System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 agus níos déanaí).";
-"Copy hooks" = "Cóipeáil hooks";
-"Copy hooks instead" = "Cóipeáil hooks ina áit";
 "Copy something and it shows up here." = "Cóipeáil rud éigin agus taispeánfar anseo é.";
 "Couldn't copy the picture" = "Níorbh fhéidir an pictiúr a chóipeáil";
 "Couldn't copy the polaroid" = "Níorbh fhéidir an polaroid a chóipeáil";
@@ -399,9 +367,6 @@
 "Delete note" = "Scrios an nóta";
 "Delete this chat" = "Scrios an comhrá seo";
 "Delete this script" = "Scrios an script seo";
-"Deny" = "Diúltaigh";
-"Disconnect" = "Dícheangail";
-"Disconnected. Your own hooks are untouched." = "Dícheangailte. Níl do hooks féin tadhlaithe.";
 "Disk" = "Diosca";
 "Dismiss" = "Cuir uait";
 "Display" = "Taispeáint";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Onnmhairigh mar %@…";
 "Exported %@" = "Onnmhairithe: %@";
 "Extra large" = "An-mhór";
-"FAST ASK AI" = "TAPA AI";
 "FAVOURITES" = "IS FEARR LIOM";
 "FROZEN" = "REODHTA";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Déan dearmad ar na cluaisíní roimhe seo";
 "Forget previous tabs" = "Déan dearmad ar na cluaisíní roimhe seo";
 "Forget recent folders" = "Déan dearmad ar fhillteáin le déanaí";
-"Found automatically" = "Aimsithe go huathoibríoch";
 "Found · %@" = "Aimsithe · %@";
 "Free service, no key" = "Seirbhís shaor, gan eochair";
 "Freezing drizzle" = "Ceobhrán reoite";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "DIA DHUIT O SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku do cheisteanna tapa, Sonnet do cheisteanna deacra";
 "Haptic feedback" = "Aiseolas haptach";
-"Has a question" = "Tá ceist aige";
 "Heavy rain" = "Báisteach throm";
 "Heavy showers" = "Ceathanna troma";
 "Heavy snow" = "Sneachta trom";
@@ -533,9 +495,7 @@
 "Here" = "Anseo";
 "Hide completed" = "Folaigh déanta";
 "Hide it while an app is full screen" = "Folaigh é nuair a bhíonn aip ar scáileán iomlán";
-"Hide the answer" = "Folaigh an freagra";
 "Hide the chats" = "Folaigh na comhráite";
-"Hide the paste code" = "Folaigh an cód greamaithe";
 "History" = "Stair";
 "History is paused" = "Tá an stair ar sos";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Coinnigh ⌥⇧ síos le heochair airde fuaime nó gile le haghaidh ceathrú céimeanna.";
@@ -605,15 +565,11 @@
 "Links" = "Naisc";
 "List" = "Liosta";
 "List name" = "Ainm an liosta";
-"Listen for AI agents on this Mac" = "Éist le gníomhairí AI ar an Mac seo";
-"Listening on 127.0.0.1:%@" = "Ag éisteacht ar 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Ag éisteacht ar 127.0.0.1:%@ (bhí %@ gnóthach)";
 "Listening…" = "Ag éisteacht…";
 "Lists" = "Liostaí";
 "Live" = "Beo";
 "Live Activities" = "Gníomhaíochtaí beo";
 "Loading…" = "Ag lódáil…";
-"Local bridge" = "Droichead áitiúil";
 "Local weather. A chosen city works without it." = "Aimsir áitiúil. Oibríonn cathair roghnaithe gan é.";
 "Location" = "Suíomh";
 "Location access" = "Rochtain ar shuíomh";
@@ -662,7 +618,6 @@
 "Models" = "Múnlaí";
 "More" = "Tuilleadh";
 "More agents: %lld" = "Tuilleadh gníomhairí: %lld";
-"More…" = "Tuilleadh…";
 "Most capable, slowest" = "An ceann is cumasaí, is moille";
 "Most items to keep" = "Líon is mó míreanna le coinneáil";
 "Mostly clear" = "Soiléir den chuid is mó";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Níor fiafraíodh go fóill";
 "Not available on this Mac" = "Níl ar fáil ar an Mac seo";
 "Not checked yet" = "Níor seiceáladh go fóill";
-"Not connected" = "Gan cheangal";
 "Not found in your login shell's PATH" = "Níor aimsíodh i PATH do login shell";
 "Not found on this Mac" = "Níor aimsíodh ar an Mac seo";
 "Not installed" = "Gan suiteáil";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Scáileáin le notch amháin";
 "Only events with a video link" = "Imeachtaí le nasc físeáin amháin";
 "Only for the Prompter to follow your voice." = "Chun an Prompter do ghuth a leanúint amháin.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Ní theastaíonn sé ach chun Ceadaigh, Diúltaigh agus ceisteanna a fhreagairt ón notch; oibríonn gach rud thuas gan é. Ritheann gach gníomhaire hook aon líne a phostálann chuig Scout ar an Mac seo (127.0.0.1 amháin, le heochair phríobháideach). Ní athraíonn Scout socruithe do ghníomhaire ach nuair a chliceálann tú Ceangail agus a roghnaíonn tú a fhillteán (cúltaca ar dtús, iontrálacha Scout féin amháin), nó nuair a ghreamaíonn tú na hooks tú féin. Mura bhfuil Scout ag rith, ní dhéanann an hook tada agus fiafraíonn an gníomhaire ina theirminéal mar is gnách.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Ní theastaíonn sé ach chun Ceadaigh, Diúltaigh agus ceisteanna a fhreagairt ón notch; oibríonn gach rud thuas gan é. Is ordú aon líne é gach hook a phostálann chuig Scout ar an Mac seo (127.0.0.1 amháin, le heochair phríobháideach). Mura bhfuil Scout ag rith, ní dhéanann an hook tada agus fiafraíonn an gníomhaire ina theirminéal mar is gnách.";
-"Only the dot beside the notch" = "An pointe in aice leis an notch amháin";
 "Only what you choose" = "An méid a roghnaíonn tú amháin";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Ach amháin má bhí sé fós ag seinm nuair a dúnadh Scout. Cuimhníonn Scout i gcónaí ar an stáisiún deireanach agus ar an airde.";
 "Open" = "Oscail";
 "Open %@" = "Oscail %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Oscail %@ (cruthaigh é mura bhfuil sé ann) agus greamaigh. Má tá rannán “hooks” ann cheana, cuir na hiontrálacha seo isteach ann.";
 "Open %@ full size" = "Oscail %@ ar mhéid iomlán";
 "Open %@ to finish" = "Oscail %@ chun críochnú";
 "Open %@, full size" = "Oscail %@, ar mhéid iomlán";
@@ -808,7 +758,6 @@
 "Open To-do" = "Oscail Tascanna";
 "Open a Scout window first, then share" = "Oscail fuinneog Scout ar dtús, ansin comhroinn";
 "Open a widget full size" = "Oscail giuirléid ar mhéid iomlán";
-"Open in Ask AI" = "Oscail i gCeist ar AI";
 "Open or close the notch" = "Oscail nó dún an notch";
 "Open tasks in total: %lld" = "Tascanna oscailte san iomlán: %lld";
 "Open the Calendar with the To-dos, full size" = "Oscail an Féilire leis na Tascanna ar mhéid iomlán";
@@ -817,7 +766,6 @@
 "Open the notch" = "Oscail an notch";
 "Open the notch on %@ (now: %@)" = "Oscail an notch ar %@ (anois: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Oscail an notch ar %@ gach uair, ní ar an bpainéal";
-"Open the notch on Agents" = "Oscail an notch ar Ghníomhairí";
 "Open the notch when an agent needs you" = "Oscail an notch nuair a theastaíonn tú ó ghníomhaire";
 "Open the player" = "Oscail an seinnteoir";
 "Open the to-do calendar" = "Oscail féilire na dtascanna";
@@ -829,9 +777,7 @@
 "Opening" = "Ag oscailt";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Osclaíonn sé an notch leis an ngiuirléid sin leathnaithe cheana. Brúigh arís chun dúnadh. Osclaíonn an notch féin ar an bpainéal i gcónaí.";
 "Option" = "Option";
-"Optional: answer from the notch" = "Roghnach: freagair ón notch";
 "Options" = "Roghanna";
-"Or type your own answer" = "Nó clóscríobh do fhreagra féin";
 "Orange" = "Oráiste";
 "Output" = "Aschur";
 "Overcast" = "Modartha";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Preabfhuinneog";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "Bhí port %u gnóthach, mar sin ainmníonn an bloc seo port %u. Má thosaíonn Scout ar %u arís ar ball, cóipeáil arís é.";
 "Press a shortcut…" = "Brúigh aicearra…";
 "Preview" = "Réamhamharc";
 "Preview a card" = "Réamhamharc ar chárta";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Cuir comhaid thiontaithe sa Tráidire";
 "Put finished videos in the Tray" = "Cuir físeáin chríochnaithe sa Tráidire";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Cuireann sé gach rogha ar ais mar a bhí sé ar an gcéad lá. Fanann do nótaí, do ghearrthaisce agus do chomhaid.";
-"Questions go to %@." = "Téann ceisteanna chuig %@.";
 "Questions go to %@. The answers stay here." = "Téann ceisteanna chuig %@. Fanann na freagraí anseo.";
 "Quick" = "Tapa";
 "Quick Apps" = "Aipeanna Tapa";
@@ -920,7 +864,6 @@
 "Reading" = "Ag léamh";
 "Ready" = "Réidh";
 "Ready for the next focus session" = "Réidh don chéad seisiún fócais eile";
-"Ready for the next task" = "Réidh don chéad tasc eile";
 "Rec" = "Rec";
 "Recent downloads" = "Íoslódálacha le déanaí";
 "Record Shortcut" = "Taifead aicearra";
@@ -978,19 +921,15 @@
 "Save…" = "Sábháil…";
 "Scout Settings" = "Socruithe Scout";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Ní fhiafraíonn Scout de macOS ach nuair a chuireann tú air nó nuair a osclaíonn tú an ghné a bhfuil sé de dhíth uirthi. Ní fhiafraítear aon rud ag an tosú.";
-"Scout can no longer open that folder. Connect again." = "Ní féidir le Scout an fillteán sin a oscailt a thuilleadh. Ceangail arís.";
 "Scout can't match what it hears to the script" = "Ní féidir le Scout an méid a chloiseann sé a mheaitseáil leis an script";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Ní fheiceann Scout fillteáin do ghníomhairí go fóill. Ceadaigh é uair amháin agus bogann gach seisiún Claude Code agus Codex isteach astu féin.";
 "Scout can't use this microphone" = "Ní féidir le Scout an micreafón seo a úsáid";
-"Scout could not open a local port." = "Níorbh fhéidir le Scout port áitiúil a oscailt.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Ní fhaca Scout do scáileán, mar sin chuaigh an cheist sin gan pictiúr. Ceadaigh Scout faoi Screen Recording.";
 "Scout couldn't take the picture this time, so that question went without it." = "Níorbh fhéidir le Scout an pictiúr a ghlacadh an uair seo, mar sin chuaigh an cheist sin gan é.";
 "Scout finds Claude Code and Codex sessions by itself" = "Aimsíonn Scout seisiúin Claude Code agus Codex astu féin";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Éisteann Scout anois le port %u (nó tá a hooks ó leagan níos sine). Ní athscríobhann Nuashonraigh ach iontrálacha Scout.";
 "Scout only watches for connections once you allow it." = "Ní fhéachann Scout ach amháin ar naisc nuair a cheadaíonn tú é.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Léann Scout do chuid imeachtaí ar an Mac seo chun giuirléid agus spás oibre an Fhéilire a líonadh. Ní sheoltar aon rud áit ar bith.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Cuimhníonn Scout ar an méid a chóipeálann tú ionas gur féidir leat é a ghreamú arís ón notch nó ón seilf íochtair. Fanann gach rud ar an Mac seo.";
-"Scout will add its hooks to %@ after backing the file up." = "Cuirfidh Scout a hooks le %@ tar éis cúltaca den chomhad a dhéanamh.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Tá cód, focail agus deilbhín Scout féin bunaidh. Úsáidtear gach rud eile anseo faoina cheadúnas féin.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Osclaíonn fuinneoga Scout féin (Ceist ar AI, nótaí, tascanna, an áireamhán agus na cinn eile) arís san áit a raibh siad, lena méid agus lena dtéacs, tar éis scoir, nuashonraithe nó atosaithe. Nuair nach bhfuil scáileán ann a thuilleadh, osclaíonn siad ar an bpríomhscáileán.";
 "Scout: my AI agents in my notch. %@" = "Scout: mo ghníomhairí AI i mo notch. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Cuardaigh an gréasán";
 "Searching the web…" = "Ag cuardach an ghréasáin…";
 "See the month, your agenda and a Join button for video calls." = "Féach ar an mí, do chlár oibre agus cnaipe Isteach do ghlaonna físe.";
-"See the whole conversation in the Ask AI tab" = "Féach ar an gcomhrá iomlán sa chluaisín Ceist ar AI";
 "See your day here" = "Féach ar do lá anseo";
 "Select a note or start a new one" = "Roghnaigh nóta nó cuir tús le ceann nua";
 "Select a note or start a new one." = "Roghnaigh nóta nó cuir tús le ceann nua.";
 "Selected: %lld" = "Roghnaithe: %lld";
 "Send" = "Seol";
-"Send answers" = "Seol freagraí";
 "Send to Apple Notes" = "Seol chuig Apple Notes";
 "Send to a nearby device" = "Seol chuig gléas in aice láimhe";
 "Sensitivity" = "Íogaireacht";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Taispeáin AirPods agus a gcadhnra nuair a cheanglaíonn siad";
 "Show Scout in the menu bar" = "Taispeáin Scout sa bharra roghchláir";
 "Show a Join card when the meeting starts" = "Taispeáin cárta Isteach nuair a thosaíonn an cruinniú";
-"Show a card under the notch" = "Taispeáin cárta faoin notch";
 "Show a card when a download finishes" = "Taispeáin cárta nuair a chríochnaíonn íoslódáil";
 "Show a count next to the notch while the Tray holds files" = "Taispeáin áireamh in aice leis an notch fad a bhíonn comhaid sa Tráidire";
 "Show a countdown" = "Taispeáin comhaireamh síos";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Taispeáin gach tasc oscailte, cibé lá é";
 "Show in Finder" = "Taispeáin i Finder";
 "Show in full screen" = "Taispeáin ar scáileán iomlán";
-"Show me the paste code" = "Taispeáin an cód greamaithe dom";
 "Show music from" = "Taispeáin ceol ó";
 "Show music next to the notch while it plays" = "Taispeáin ceol in aice leis an notch agus é ag seinm";
 "Show my calendar in the notch" = "Taispeáin mo fhéilire sa notch";
@@ -1107,9 +1042,7 @@
 "Square" = "Cearnóg";
 "Start" = "Tosaigh";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Tosaigh Claude Code nó Codex agus taispeántar gach seisiún anseo astu féin, lena ndul chun cinn. Níl aon rud le ceangal.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Tosaigh Codex agus clóscríobh /hooks chun muinín a chur i hooks Scout an chéad uair. Ansin tosaigh seisiún nua.";
 "Start a %lld-minute focus timer for this task" = "Tosaigh uaineadóir fócais %lld nóiméad don tasc seo";
-"Start a new Claude Code session. It appears in the notch." = "Tosaigh seisiún nua Claude Code. Feictear sa notch é.";
 "Start again" = "Tosaigh arís";
 "Start folder" = "Fillteán tosaigh";
 "Start the camera when the Mirror widget appears" = "Tosaigh an ceamara nuair a thaispeántar giuirléid an Scátháin";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Méid téacs: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "Diúltaíodh don eochair API sin. Seiceáil í i Socruithe › Ceist ar AI.";
 "That didn't work" = "Níor oibrigh sé sin";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "Ní hé sin an fillteán %@ i d'fhillteán baile. Ceangail arís agus roghnaigh é.";
 "That one did not go through" = "Níor éirigh leis sin";
 "That's the end" = "Sin deireadh";
 "The %@ uses the camera, so it never opens by itself" = "Úsáideann %@ an ceamara, mar sin ní osclaíonn sé uaidh féin";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Múchta";
 "Two-finger swipe on the notch" = "Scuabadh le dhá mhéar ar an notch";
 "Type a city, region or country, or pick a country." = "Clóscríobh cathair, réigiún nó tír, nó roghnaigh tír.";
-"Type your own…" = "Clóscríobh do cheann féin…";
 "Typing: the notch stays open" = "Ag clóscríobh: fanann an notch oscailte";
 "Unknown format" = "Formáid anaithnid";
 "Unlicense (only if you install it)" = "Unlicense (más rud é go suiteálann tú é amháin)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Go dtí go mbíonn sé air, téann ceisteanna gan pictiúr.";
 "Untitled" = "Gan teideal";
 "Untitled script" = "Script gan teideal";
-"Update" = "Nuashonraigh";
 "Updates" = "Nuashonruithe";
 "Updating the to-do list" = "Ag nuashonrú an liosta tascanna";
 "Upload %@" = "Uaslódáil %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Ag fanacht leat";
 "Waiting for your OK" = "Ag fanacht le do cheadú";
 "Waiting for your voice" = "Ag fanacht le do ghuth";
-"Wants to use %@" = "Ba mhaith leis %@ a úsáid";
-"Wants to use %@: %@" = "Ba mhaith leis %@ a úsáid: %@";
-"Wants to use a tool" = "Ba mhaith leis uirlis a úsáid";
-"Wants to use a tool: %@" = "Ba mhaith leis uirlis a úsáid: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Páipéar te, téacs dorcha agus bladhmanna geala. Éasca a léamh i rith an lae.";
 "Warn at" = "Rabhadh ag";
 "Warn when the battery is low" = "Tabhair rabhadh nuair a bhíonn an cadhnra íseal";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "An méid a bhfuil rochtain ag Scout air, agus cén fáth a bhfiafraíonn sé.";
 "What shows next to the notch while it is closed." = "An méid a thaispeántar in aice leis an notch fad a bhíonn sé dúnta.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Nuair a thagann teachtaireacht, titeann cárta faoin notch leis an seoltóir, an téacs agus bosca freagra. Fanann sé ciúin fad a bhíonn an aip Messages chun tosaigh. Ní sheolann Scout aon rud riamh mura scríobhann tú freagra agus mura mbrúnn tú Return.";
-"When an agent needs an answer" = "Nuair a theastaíonn freagra ó ghníomhaire";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Nuair a athraíonn tú airde na fuaime leis na heochracha, an barra roghchláir nó aip eile, taispeántar an leibhéal in aice leis an notch freisin.";
 "Where stations come from" = "Cá dtagann stáisiúin as";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Fad a sheinneann ceol, a ritheann uaineadóir nó a chríochnaíonn íoslódáil, fásann an notch chun é a thaispeáint. Pointeáil air agus osclaíonn sé i do Nook: giuirléidí, comhaid, gearrthaisce, féilire. Bog ar shiúl agus téann sé ar ais isteach.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Súmáil %@, ar ais go dtí an pictiúr iomlán";
 "Zoom in" = "Súmáil isteach";
 "Zoom out" = "Súmáil amach";
-"all edits this session" = "gach athrú sa seisiún seo";
 "charged" = "luchtaithe";
 "charging" = "ag luchtú";
 "code" = "cód";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "Níor athraigh macOS é: %@";
 "me and my agents" = "mé féin agus mo ghníomhairí";
 "min" = "nóim";
-"mode %@" = "mód %@";
 "model name" = "ainm múnla";
 "needs you" = "teastaíonn tú";
 "no battery" = "gan cadhnra";

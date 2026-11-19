@@ -210,8 +210,8 @@ enum RetroGallery {
                     RetroKeyFace { Text("PLAY") }
                     RetroKeyFace(pressed: true) { Text("PLAY") }
                     Button("PLAY") {}.buttonStyle(.retro).disabled(true)
-                    Button("ALLOW") {}.buttonStyle(.retro(tint: Retro.Ink.teal))
-                    Button("DENY") {}.buttonStyle(.retro(tint: Retro.Ink.magenta))
+                    Button("YES") {}.buttonStyle(.retro(tint: Retro.Ink.teal))
+                    Button("NO") {}.buttonStyle(.retro(tint: Retro.Ink.magenta))
                     Button("OK") {}.buttonStyle(.retro(tint: Retro.Ink.yellow))
                     Button("MENU") {}.buttonStyle(.retro(tint: Retro.Ink.purple))
                     Button("REC") {}.buttonStyle(.retro(tint: Retro.Ink.red))

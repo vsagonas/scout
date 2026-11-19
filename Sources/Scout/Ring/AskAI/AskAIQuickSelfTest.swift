@@ -123,18 +123,11 @@ enum AskAIQuickSelfTest {
         await settle(store)
         check("  and the next dashboard question starts a new one", store.quickChat?.messages.count == 2 && store.quickChat?.title == AIChatStore.quickTitle)
 
-        let quick = AskAIQuick.shared
-        quick.hide()
-        quick.show()
-        let shown = quick.showing
-        quick.toggle()
-        check("the answer strip shows when asked for and hides again", shown && !quick.showing)
-
-        // The dashboard's Ask AI line and the answer strip, in the 8-bit look and in the minimal look: drawn (and the two looks differ), the real field
-        // takes typed text, the Screen key switches Monitor, the send key sends into Fast Ask AI, the strip's hide key hides it.
+        // The dashboard's Ask AI line, in the 8-bit look and in the minimal look: drawn (and the two looks differ), the real field
+        // takes typed text, the Screen key switches Monitor, the send key sends into Fast Ask AI.
         let savedLook = UserDefaults.standard.object(forKey: Retro.styleKey)
         let savedMonitor = UserDefaults.standard.object(forKey: AIMonitor.key)
-        var linePictures: [Bool: Data] = [:], stripPictures: [Bool: Data] = [:]
+        var linePictures: [Bool: Data] = [:]
         for eightBit in [true, false] {
             Pref.set(eightBit, Retro.styleKey)
             let look = eightBit ? "[8-bit look] " : "[minimal look] "
@@ -160,9 +153,9 @@ enum AskAIQuickSelfTest {
                     await line.click(send)
                     await pause(0.4)
                     let q = lineStore.quickChat
-                    check(look + "  a real click on the send key puts the question into Fast Ask AI; the answer stays in the panel (no strip)",
-                          q?.title == AIChatStore.quickTitle && q?.messages.first?.text == "What is the capital of Portugal?" && !AskAIQuick.shared.showing && draft.text.isEmpty,
-                          "quick \(String(describing: q?.messages.first?.text)), showing \(AskAIQuick.shared.showing), draft \"\(draft.text)\"")
+                    check(look + "  a real click on the send key puts the question into Fast Ask AI; the answer stays in the panel",
+                          q?.title == AIChatStore.quickTitle && q?.messages.first?.text == "What is the capital of Portugal?" && draft.text.isEmpty,
+                          "quick \(String(describing: q?.messages.first?.text)), draft \"\(draft.text)\"")
                 } else {
                     check(look + "  the send key is findable as a control", false, "controls \(line.controls.map { $0.size })")
                 }
@@ -171,29 +164,11 @@ enum AskAIQuickSelfTest {
                 check(look + "  the Ask AI line has its field and its controls", false, "controls \(line.controls.count)")
             }
             line.close()
-
-            let demo = AIChatStore(demo: .conversation)
-            AskAIQuick.shared.show()
-            let strip = MiniBoomRig(AnyView(AskAIQuickStrip(preview: demo.chats.first.map { AskAIQuickPreview(store: demo, chat: $0) })),
-                                    size: CGSize(width: 1100, height: AskAIQuick.stripHeight))
-            await pause(0.7)
-            check(look + "the answer strip draws in this look", Retro.is8bit == eightBit && (strip.picture()?.busy ?? 0) > 2000)
-            stripPictures[eightBit] = strip.picture()?.bytes
-            let buttons = strip.controls.sorted { $0.midX > $1.midX }
-            if let hide = buttons.first, buttons.count >= 2 {
-                await strip.click(hide)
-                check(look + "  the strip's hide key hides it (it has Open in Ask AI beside it)", !AskAIQuick.shared.showing)
-            } else {
-                check(look + "  the strip's keys are findable as controls", false, "controls \(buttons.count)")
-            }
-            strip.close()
-            AskAIQuick.shared.hide()
         }
         Pref.set(savedLook, Retro.styleKey)
         UserDefaults.standard.set(savedMonitor, forKey: AIMonitor.key)
-        check("the Ask AI line and the answer strip each look different in the minimal look than in the 8-bit one",
-              linePictures[true] != nil && linePictures[false] != nil && linePictures[true] != linePictures[false]
-                && stripPictures[true] != nil && stripPictures[false] != nil && stripPictures[true] != stripPictures[false])
+        check("the Ask AI line looks different in the minimal look than in the 8-bit one",
+              linePictures[true] != nil && linePictures[false] != nil && linePictures[true] != linePictures[false])
 
         lines.append("quick selftest done: \(failed == 0 ? "all passed" : "\(failed) FAILED")")
         return lines

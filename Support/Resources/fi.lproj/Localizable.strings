@@ -10,9 +10,7 @@
 "%@ ended." = "%@ päättyi.";
 "%@ failed" = "%@ epäonnistui";
 "%@ finished after %lld min" = "%@ valmis %lld min jälkeen";
-"%@ finished in %@" = "%@ valmis ajassa %@";
 "%@ free" = "%@ vapaana";
-"%@ has a question" = "%@ kysyy jotain";
 "%@ has no sound" = "Ei ääntä: %@";
 "%@ in %@" = "%@ · %@";
 "%@ installed" = "%@ asennettu";
@@ -24,7 +22,6 @@
 "%@ is too big for a ZIP file (4 GB limit)" = "%@: liian suuri ZIP-tiedostoksi (raja 4 Gt)";
 "%@ isn't installed" = "%@: ei asennettu";
 "%@ isn't supported on this Mac" = "%@ ei ole tuettu tässä Mac-koneessa";
-"%@ isn't valid JSON, so Scout left it alone." = "Tiedosto %@ ei ole kelvollista JSON-tietoa, joten Scout jätti sen koskematta.";
 "%@ key" = "%@-avain";
 "%@ left" = "%@ jäljellä";
 "%@ needs you" = "%@ tarvitsee sinua";
@@ -36,8 +33,6 @@
 "%@ timer finished" = "%@-ajastin valmis";
 "%@ to full" = "%@ täyteen";
 "%@ used" = "%@ käytetty";
-"%@ wants to use %@" = "%@ haluaa käyttää: %@";
-"%@ wants to use a tool" = "%@ haluaa käyttää työkalua";
 "%@ · %@ of %@" = "%@ · %@ / %@";
 "%@ · %@ · %@" = "%@ · %@ · %@";
 "%@ · %lld open in total" = "%@ · yhteensä %lld avointa";
@@ -71,7 +66,6 @@
 "%lld running" = "Käynnissä: %lld";
 "%lld working" = "Työssä: %lld";
 "%lld wpm" = "%lld sanaa/min";
-"%lld." = "%lld.";
 "%lld/%lld" = "%lld/%lld";
 "+%lld" = "+%lld";
 "+%lld more" = "+%lld lisää";
@@ -123,8 +117,6 @@
 "Add your %@ API key in Settings › Ask AI first." = "Lisää ensin %@-API-avaimesi kohdassa Asetukset › Kysy tekoälyltä.";
 "Add your API key in Settings › Ask AI first." = "Lisää ensin API-avaimesi kohdassa Asetukset › Kysy tekoälyltä.";
 "Add your Claude API key in Settings › Ask AI first." = "Lisää ensin Claude-API-avaimesi kohdassa Asetukset › Kysy tekoälyltä.";
-"Adds Scout's hooks to ~/.claude/settings.json (progress events, permission requests and questions) and leaves your own hooks alone. The file is backed up first." = "Lisää Scout-hookit tiedostoon ~/.claude/settings.json (edistymistapahtumat, lupapyynnöt ja kysymykset) ja jättää omat hookisi rauhaan. Tiedostosta tehdään ensin varmuuskopio.";
-"Adds Scout's hooks to ~/.codex/hooks.json. Codex asks you to review new hooks the first time: type /hooks in Codex and trust Scout's." = "Lisää Scout-hookit tiedostoon ~/.codex/hooks.json. Codex pyytää tarkistamaan uudet hookit ensimmäisellä kerralla: kirjoita /hooks Codex-sovelluksessa ja luota Scout-hookeihin.";
 "Agent" = "Agentti";
 "Agent TV" = "Agent TV";
 "Agent TV den" = "Agent TV -pesä";
@@ -164,15 +156,10 @@
 "Allow…" = "Salli…";
 "Also show it while an app is full screen" = "Näytä se myös, kun sovellus on koko näytössä";
 "Also used for “%@”: only one of them will work." = "Käytössä myös kohteelle “%@”: vain toinen toimii.";
-"Always allow" = "Salli aina";
-"Always allow %@" = "Salli aina: %@";
-"Always allow adds: %@" = "Salli aina lisää: %@";
 "Amber" = "Meripihka";
 "An agent tab cannot be kept as the opening tab" = "Agenttivälilehteä ei voi pitää avautuvana välilehtenä";
 "Announcements" = "Tiedotteet";
 "Answer copied" = "Vastaus kopioitu";
-"Answer in terminal" = "Vastaa terminaalissa";
-"Answer permissions and questions from the notch" = "Vastaa lupiin ja kysymyksiin lovesta";
 "Answers" = "Vastaukset";
 "Any country" = "Mikä tahansa maa";
 "Appearance" = "Ulkoasu";
@@ -190,12 +177,9 @@
 "Ask about a picture" = "Kysy kuvasta";
 "Ask about your screen" = "Kysy näytöstäsi";
 "Ask anything" = "Kysy jotain";
-"Ask anything above. Questions go to %@. The answer shows here." = "Kysy mitä tahansa yllä. Kysymykset menevät palvelulle %@. Vastaus näkyy tässä.";
 "Ask anything.\nReturn sends, ⌥Return adds a line.\n\nYour questions go to %@. With Screen on, a picture of your screen goes with them." = "Kysy mitä tahansa.\nReturn lähettää, ⌥Return lisää rivin.\n\nKysymyksesi menevät palvelulle %@. Kun Näyttö on päällä, mukana lähtee kuva näytöstäsi.";
 "Ask before closing a tab that is still running" = "Kysy ennen kuin suljet yhä käynnissä olevan välilehden";
-"Ask in terminal" = "Kysy terminaalissa";
 "Ask the same question again on Claude Sonnet 5.5" = "Kysy sama kysymys uudelleen Claude Sonnet 5.5 -mallilta";
-"Asking a question" = "Esitetään kysymystä";
 "Asking you: %@" = "Kysyy sinulta: %@";
 "Asleep" = "Nukkuu";
 "Attach a picture" = "Liitä kuva";
@@ -241,7 +225,6 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Kameran käyttö on pois päältä";
 "Camera access is off for Scout." = "Kameran käyttö on pois päältä Scout-sovellukselta.";
-"Can't listen (%@)" = "Kuuntelu ei onnistu (%@)";
 "Can't read %@ yet" = "Kohdetta %@ ei voi vielä lukea";
 "Can't tell which chat this is" = "Ei voi päätellä, mikä keskustelu tämä on";
 "Cancel" = "Peruuta";
@@ -265,7 +248,6 @@
 "Choose a script" = "Valitse skripti";
 "Choose image…" = "Valitse kuva…";
 "Choose shortcuts" = "Valitse pikakomennot";
-"Choose the %@ folder in your home folder. Scout backs up %@ there and adds its hooks; nothing else changes." = "Valitse %@-kansio kotikansiostasi. Scout varmuuskopioi tiedoston %@ sinne ja lisää omat hookinsa; mikään muu ei muutu.";
 "Choose the %@ folder so Scout can see your %@ sessions. Scout only reads it." = "Valitse kansio %@, jotta Scout voi nähdä %@-istuntosi. Scout vain lukee sitä.";
 "Choose the model" = "Valitse malli";
 "Choose…" = "Valitse…";
@@ -291,7 +273,6 @@
 "Clear latest stations and places" = "Tyhjennä viimeisimmät asemat ja paikat";
 "Clear shortcut" = "Tyhjennä pikanäppäin";
 "Clear the clipboard history?" = "Tyhjennetäänkö leikepöydän historia?";
-"Click Copy hooks." = "Napsauta Kopioi hookit.";
 "Click for %@ settings, drag to move" = "Napsauta: %@-asetukset, vedä: siirrä";
 "Click one, or use the arrow keys. Press Return to go on." = "Napsauta yhtä tai käytä nuolinäppäimiä. Jatka painamalla Return.";
 "Click one, or use the arrow keys. The window grows with it." = "Napsauta yhtä tai käytä nuolinäppäimiä. Ikkuna kasvaa sen mukana.";
@@ -314,22 +295,11 @@
 "Close this tab (⌘W)" = "Sulje tämä välilehti (⌘W)";
 "Close this tab?" = "Suljetaanko tämä välilehti?";
 "Cloudy" = "Pilvistä";
-"Codex asks you to review new hooks once: type /hooks in Codex and trust Scout's." = "Codex pyytää tarkistamaan uudet hookit kerran: kirjoita /hooks Codex-sovelluksessa ja luota Scout-hookeihin.";
 "Color" = "Väri";
 "Colors" = "Värit";
 "Command" = "Command";
 "Compact" = "Kompakti";
-"Connect" = "Yhdistä";
-"Connect %@?" = "Yhdistetäänkö %@?";
-"Connect %@…" = "Yhdistä %@…";
-"Connect Claude Code" = "Yhdistä Claude Code";
-"Connect Claude Code…" = "Yhdistä Claude Code…";
-"Connect Codex" = "Yhdistä Codex";
-"Connect Codex…" = "Yhdistä Codex…";
-"Connect asks you to choose the %@ folder once; Scout backs up %@, adds only its own entries and can take them out again (Disconnect). Every hook is a single curl command to 127.0.0.1; with Scout closed it does nothing." = "Yhdistä pyytää sinua valitsemaan kansion %@ kerran; Scout varmuuskopioi tiedoston %@, lisää vain omat merkintänsä ja voi poistaa ne uudelleen (Katkaise yhteys). Jokainen hook on yksi curl-komento osoitteeseen 127.0.0.1; kun Scout on suljettu, se ei tee mitään.";
 "Connected" = "Yhdistetty";
-"Connected, but out of date" = "Yhdistetty, mutta vanhentunut";
-"Connected. New sessions report to Scout." = "Yhdistetty. Uudet istunnot raportoivat Scout-sovellukselle.";
 "Connecting" = "Yhdistetään";
 "Connecting…" = "Yhdistetään…";
 "Contacts" = "Yhteystiedot";
@@ -363,8 +333,6 @@
 "Copies made while one of these apps is in front are never saved." = "Kopioita, jotka tehdään, kun jokin näistä sovelluksista on edessä, ei koskaan tallenneta.";
 "Copy" = "Kopioi";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Kopioi linkki palvelusta YouTube, X, Instagram, TikTok, Vimeo tai Reddit, avaa Lokero, niin Scout tarjoutuu lataamaan sen, tai pudota linkki Lokeroon. Lataukset käyttävät yt-dlp-työkalua, jonka asennat itse; yllä oleva painike toimii vain, kun painat sitä. Kopioidun linkin lukeminen vaatii ”Salli”-valinnan Scout-sovellukselle kohdassa Järjestelmäasetukset › Tietosuoja ja turvallisuus › Liitä muista sovelluksista (macOS 15.4 ja uudemmat).";
-"Copy hooks" = "Kopioi hookit";
-"Copy hooks instead" = "Kopioi hookit sen sijaan";
 "Copy something and it shows up here." = "Kopioi jotain, niin se ilmestyy tähän.";
 "Couldn't copy the picture" = "Kuvan kopiointi ei onnistunut";
 "Couldn't copy the polaroid" = "Polaroidin kopiointi ei onnistunut";
@@ -399,9 +367,6 @@
 "Delete note" = "Poista muistiinpano";
 "Delete this chat" = "Poista tämä keskustelu";
 "Delete this script" = "Poista tämä skripti";
-"Deny" = "Estä";
-"Disconnect" = "Katkaise yhteys";
-"Disconnected. Your own hooks are untouched." = "Yhteys katkaistu. Omiin hookeihisi ei ole koskettu.";
 "Disk" = "Levy";
 "Dismiss" = "Sulje";
 "Display" = "Näyttö";
@@ -457,7 +422,6 @@
 "Export as %@…" = "Vie muodossa %@…";
 "Exported %@" = "Viety: %@";
 "Extra large" = "Erittäin suuri";
-"FAST ASK AI" = "PIKAKYSYMYS AI";
 "FAVOURITES" = "SUOSIKIT";
 "FROZEN" = "JAADYTETTY";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
@@ -499,7 +463,6 @@
 "Forget Previous Tabs" = "Unohda aiemmat välilehdet";
 "Forget previous tabs" = "Unohda aiemmat välilehdet";
 "Forget recent folders" = "Unohda viimeisimmät kansiot";
-"Found automatically" = "Löytyi automaattisesti";
 "Found · %@" = "Löytyi · %@";
 "Free service, no key" = "Ilmainen palvelu, ei avainta";
 "Freezing drizzle" = "Jäätävä tihkusade";
@@ -524,7 +487,6 @@
 "HELLO FROM SCOUT ♥" = "TERVEISET: SCOUT ♥";
 "Haiku for quick questions, Sonnet for hard ones" = "Haiku nopeisiin kysymyksiin, Sonnet vaikeisiin";
 "Haptic feedback" = "Haptinen palaute";
-"Has a question" = "Kysymys odottaa";
 "Heavy rain" = "Kova sade";
 "Heavy showers" = "Kovia sadekuuroja";
 "Heavy snow" = "Runsas lumisade";
@@ -533,9 +495,7 @@
 "Here" = "Täällä";
 "Hide completed" = "Piilota valmiit";
 "Hide it while an app is full screen" = "Piilota se, kun sovellus on koko näytössä";
-"Hide the answer" = "Piilota vastaus";
 "Hide the chats" = "Piilota keskustelut";
-"Hide the paste code" = "Piilota liitettävä koodi";
 "History" = "Historia";
 "History is paused" = "Historia on keskeytetty";
 "Hold ⌥⇧ with a volume or brightness key for quarter steps." = "Pidä ⌥⇧ painettuna äänenvoimakkuus- tai kirkkausnäppäimen kanssa neljännesaskelia varten.";
@@ -605,15 +565,11 @@
 "Links" = "Linkit";
 "List" = "Lista";
 "List name" = "Listan nimi";
-"Listen for AI agents on this Mac" = "Kuuntele tekoälyagentteja tässä Mac-koneessa";
-"Listening on 127.0.0.1:%@" = "Kuunnellaan osoitetta 127.0.0.1:%@";
-"Listening on 127.0.0.1:%@ (%@ was busy)" = "Kuunnellaan osoitetta 127.0.0.1:%@ (%@ oli varattu)";
 "Listening…" = "Kuunnellaan…";
 "Lists" = "Listat";
 "Live" = "Live";
 "Live Activities" = "Live-aktiviteetit";
 "Loading…" = "Ladataan…";
-"Local bridge" = "Paikallinen silta";
 "Local weather. A chosen city works without it." = "Paikallinen sää. Valittu kaupunki toimii ilman sitä.";
 "Location" = "Sijainti";
 "Location access" = "Sijainnin käyttö";
@@ -662,7 +618,6 @@
 "Models" = "Mallit";
 "More" = "Lisää";
 "More agents: %lld" = "Lisää agentteja: %lld";
-"More…" = "Lisää…";
 "Most capable, slowest" = "Kyvykkäin, hitain";
 "Most items to keep" = "Eniten säilytettäviä kohteita";
 "Mostly clear" = "Enimmäkseen selkeää";
@@ -736,7 +691,6 @@
 "Not asked yet" = "Ei vielä kysytty";
 "Not available on this Mac" = "Ei käytettävissä tässä Mac-koneessa";
 "Not checked yet" = "Ei vielä tarkistettu";
-"Not connected" = "Ei yhdistetty";
 "Not found in your login shell's PATH" = "Ei löytynyt kirjautumis-shellin PATH-polusta";
 "Not found on this Mac" = "Ei löytynyt tästä Mac-koneesta";
 "Not installed" = "Ei asennettu";
@@ -783,14 +737,10 @@
 "Only displays with a notch" = "Vain näytöt, joissa on lovi";
 "Only events with a video link" = "Vain tapahtumat, joissa on videolinkki";
 "Only for the Prompter to follow your voice." = "Vain jotta Prompter voi seurata ääntäsi.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each agent runs a one-line hook that posts to Scout on this Mac (127.0.0.1 only, with a private key). Scout changes your agent's settings only when you click Connect and choose its folder (backed up first, only Scout's own entries), or you paste the hooks yourself. If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Tarvitaan vain lovesta sallimiseen, estämiseen ja kysymyksiin vastaamiseen; kaikki yllä toimii ilman sitä. Jokainen agentti ajaa yksirivisen hookin, joka lähettää tiedot Scout-sovellukselle tässä Mac-koneessa (vain 127.0.0.1, yksityisellä avaimella). Scout muuttaa agenttisi asetuksia vain, kun napsautat Yhdistä ja valitset sen kansion (varmuuskopio ensin, vain Scout-sovelluksen omat merkinnät), tai kun liität hookit itse. Jos Scout ei ole käynnissä, hook ei tee mitään ja agentti kysyy terminaalissaan kuten tavallisesti.";
-"Only needed to Allow, Deny and answer questions from the notch; everything above works without it. Each hook is a one-line command that posts to Scout on this Mac (127.0.0.1 only, with a private key). If Scout isn't running the hook does nothing and the agent asks in its terminal as usual." = "Tarvitaan vain lovesta sallimiseen, estämiseen ja kysymyksiin vastaamiseen; kaikki yllä toimii ilman sitä. Jokainen hook on yksirivinen komento, joka lähettää tiedot Scout-sovellukselle tässä Mac-koneessa (vain 127.0.0.1, yksityisellä avaimella). Jos Scout ei ole käynnissä, hook ei tee mitään ja agentti kysyy terminaalissaan kuten tavallisesti.";
-"Only the dot beside the notch" = "Vain piste loven vieressä";
 "Only what you choose" = "Vain valitsemasi";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Vain jos se soi vielä, kun Scout suljettiin. Scout muistaa aina viimeisimmän aseman ja äänenvoimakkuuden.";
 "Open" = "Avaa";
 "Open %@" = "Avaa %@";
-"Open %@ (create it if it isn't there) and paste. If it already has a \"hooks\" section, add these entries inside it." = "Avaa %@ (luo se, jos sitä ei ole) ja liitä. Jos siinä on jo \"hooks\"-osio, lisää nämä merkinnät sen sisään.";
 "Open %@ full size" = "Avaa %@ täyskokoisena";
 "Open %@ to finish" = "Avaa %@ viimeistelläksesi";
 "Open %@, full size" = "Avaa %@, täyskokoisena";
@@ -808,7 +758,6 @@
 "Open To-do" = "Avaa Askareet";
 "Open a Scout window first, then share" = "Avaa ensin Scout-ikkuna ja jaa sitten";
 "Open a widget full size" = "Avaa widget täyskokoisena";
-"Open in Ask AI" = "Avaa kohdassa Kysy tekoälyltä";
 "Open or close the notch" = "Avaa tai sulje lovi";
 "Open tasks in total: %lld" = "Avoimia askareita yhteensä: %lld";
 "Open the Calendar with the To-dos, full size" = "Avaa Kalenteri ja Askareet täyskokoisena";
@@ -817,7 +766,6 @@
 "Open the notch" = "Avaa lovi";
 "Open the notch on %@ (now: %@)" = "Avaa lovi kohteessa %@ (nyt: %@)";
 "Open the notch on %@ every time, not the dashboard" = "Avaa lovi aina kohteessa %@, ei koontinäkymässä";
-"Open the notch on Agents" = "Avaa lovi Agentit-näkymässä";
 "Open the notch when an agent needs you" = "Avaa lovi, kun agentti tarvitsee sinua";
 "Open the player" = "Avaa soitin";
 "Open the to-do calendar" = "Avaa askarekalenteri";
@@ -829,9 +777,7 @@
 "Opening" = "Avataan";
 "Opens the notch with that widget already expanded. Press it again to close. The notch itself always opens on the dashboard." = "Avaa loven niin, että widget on jo laajennettu. Paina uudelleen sulkeaksesi. Itse lovi avautuu aina koontinäkymään.";
 "Option" = "Option";
-"Optional: answer from the notch" = "Valinnainen: vastaa lovesta";
 "Options" = "Valinnat";
-"Or type your own answer" = "Tai kirjoita oma vastauksesi";
 "Orange" = "Oranssi";
 "Output" = "Tuloste";
 "Overcast" = "Täysin pilvistä";
@@ -885,7 +831,6 @@
 "Pomo" = "Pomo";
 "Pomodoro" = "Pomodoro";
 "Pop-up" = "Ponnahdus";
-"Port %u was busy, so this block names port %u. If Scout starts on %u again later, copy it again." = "Portti %u oli varattu, joten tämä lohko nimeää portin %u. Jos Scout käynnistyy myöhemmin uudelleen portissa %u, kopioi se uudelleen.";
 "Press a shortcut…" = "Paina pikanäppäintä…";
 "Preview" = "Esikatselu";
 "Preview a card" = "Esikatsele korttia";
@@ -901,7 +846,6 @@
 "Put converted files in the Tray" = "Laita muunnetut tiedostot Lokeroon";
 "Put finished videos in the Tray" = "Laita valmiit videot Lokeroon";
 "Puts every option back to how it was on day one. Your notes, clipboard and files stay." = "Palauttaa jokaisen asetuksen ensimmäisen päivän tilaan. Muistiinpanosi, leikepöytäsi ja tiedostosi säilyvät.";
-"Questions go to %@." = "Kysymykset menevät palvelulle %@.";
 "Questions go to %@. The answers stay here." = "Kysymykset menevät palvelulle %@. Vastaukset pysyvät tässä.";
 "Quick" = "Pika";
 "Quick Apps" = "Pikasovellukset";
@@ -920,7 +864,6 @@
 "Reading" = "Luetaan";
 "Ready" = "Valmis";
 "Ready for the next focus session" = "Valmis seuraavaan keskittymisjaksoon";
-"Ready for the next task" = "Valmis seuraavaan askareeseen";
 "Rec" = "Nauh.";
 "Recent downloads" = "Viimeisimmät lataukset";
 "Record Shortcut" = "Tallenna pikanäppäin";
@@ -978,19 +921,15 @@
 "Save…" = "Tallenna…";
 "Scout Settings" = "Scout-asetukset";
 "Scout asks macOS only when you turn on or open the feature that needs it. Nothing is asked at launch." = "Scout kysyy macOS:ltä vasta, kun kytket päälle tai avaat ominaisuuden, joka sitä tarvitsee. Käynnistyksessä ei kysytä mitään.";
-"Scout can no longer open that folder. Connect again." = "Scout ei voi enää avata sitä kansiota. Yhdistä uudelleen.";
 "Scout can't match what it hears to the script" = "Scout ei osaa yhdistää kuulemaansa skriptiin";
 "Scout can't see your agents' folders yet. Allow it once and every Claude Code and Codex session moves in by itself." = "Scout ei vielä näe agenttiesi kansioita. Salli se kerran, niin jokainen Claude Code- ja Codex-istunto muuttaa sisään itsestään.";
 "Scout can't use this microphone" = "Scout ei voi käyttää tätä mikrofonia";
-"Scout could not open a local port." = "Scout ei voinut avata paikallista porttia.";
 "Scout couldn't see your screen, so that question went without a picture. Allow Scout under Screen Recording." = "Scout ei nähnyt näyttöäsi, joten kysymys meni ilman kuvaa. Salli Scout kohdassa Näytön tallennus.";
 "Scout couldn't take the picture this time, so that question went without it." = "Scout ei voinut ottaa kuvaa tällä kertaa, joten kysymys meni ilman sitä.";
 "Scout finds Claude Code and Codex sessions by itself" = "Scout löytää Claude Code- ja Codex-istunnot itse";
-"Scout now listens on port %u (or its hooks are from an older version). Update rewrites only Scout's entries." = "Scout kuuntelee nyt porttia %u (tai sen hookit ovat vanhemmasta versiosta). Päivitys kirjoittaa uudelleen vain Scout-merkinnät.";
 "Scout only watches for connections once you allow it." = "Scout seuraa yhteyksiä vasta, kun sallit sen.";
 "Scout reads your events on this Mac to fill the Calendar widget and workspace. Nothing is sent anywhere." = "Scout lukee tapahtumasi tässä Mac-koneessa täyttääkseen Kalenteri-widgetin ja työtilan. Mitään ei lähetetä minnekään.";
 "Scout remembers what you copy so you can paste it again from the notch or the bottom shelf. Everything stays on this Mac." = "Scout muistaa, mitä kopioit, jotta voit liittää sen uudelleen lovesta tai alahyllystä. Kaikki pysyy tässä Mac-koneessa.";
-"Scout will add its hooks to %@ after backing the file up." = "Scout lisää hookinsa tiedostoon %@ varmuuskopioituaan tiedoston.";
 "Scout's own code, words and icon are original. Everything else here is used under its own license." = "Scout-sovelluksen oma koodi, sanat ja kuvake ovat alkuperäisiä. Kaikki muu täällä on käytössä omalla lisenssillään.";
 "Scout's own windows (Ask AI, notes, to-dos, the calculator and the others) reopen where they were, with their size and their text, after a quit, an update or a restart. When a display is no longer there they open on the main one." = "Scout-sovelluksen omat ikkunat (Kysy tekoälyltä, muistiinpanot, askareet, laskin ja muut) avautuvat uudelleen samaan paikkaan, kokoon ja tekstiin, kun sovellus on lopetettu, päivitetty tai käynnistetty uudelleen. Kun näyttöä ei enää ole, ne avautuvat päänäytölle.";
 "Scout: my AI agents in my notch. %@" = "Scout: tekoälyagenttini lovessani. %@";
@@ -1011,13 +950,11 @@
 "Search the web" = "Hae verkosta";
 "Searching the web…" = "Haetaan verkosta…";
 "See the month, your agenda and a Join button for video calls." = "Näe kuukausi, kalenterisi ja Liity-painike videopuheluille.";
-"See the whole conversation in the Ask AI tab" = "Näe koko keskustelu Kysy tekoälyltä -välilehdellä";
 "See your day here" = "Näe päiväsi täällä";
 "Select a note or start a new one" = "Valitse muistiinpano tai aloita uusi";
 "Select a note or start a new one." = "Valitse muistiinpano tai aloita uusi.";
 "Selected: %lld" = "Valittu: %lld";
 "Send" = "Lähetä";
-"Send answers" = "Lähetä vastaukset";
 "Send to Apple Notes" = "Lähetä Muistiinpanoihin";
 "Send to a nearby device" = "Lähetä lähellä olevalle laitteelle";
 "Sensitivity" = "Herkkyys";
@@ -1044,7 +981,6 @@
 "Show AirPods and their battery when they connect" = "Näytä AirPods ja niiden akku, kun ne yhdistyvät";
 "Show Scout in the menu bar" = "Näytä Scout valikkorivillä";
 "Show a Join card when the meeting starts" = "Näytä Liity-kortti, kun kokous alkaa";
-"Show a card under the notch" = "Näytä kortti loven alla";
 "Show a card when a download finishes" = "Näytä kortti, kun lataus valmistuu";
 "Show a count next to the notch while the Tray holds files" = "Näytä määrä loven vieressä, kun Lokerossa on tiedostoja";
 "Show a countdown" = "Näytä lähtölaskenta";
@@ -1057,7 +993,6 @@
 "Show every open to-do, whatever its day" = "Näytä jokainen avoin askare päivästä riippumatta";
 "Show in Finder" = "Näytä Finderissa";
 "Show in full screen" = "Näytä koko näytössä";
-"Show me the paste code" = "Näytä liitettävä koodi";
 "Show music from" = "Näytä musiikki lähteestä";
 "Show music next to the notch while it plays" = "Näytä musiikki loven vieressä, kun se soi";
 "Show my calendar in the notch" = "Näytä kalenterini lovessa";
@@ -1107,9 +1042,7 @@
 "Square" = "Neliö";
 "Start" = "Aloita";
 "Start Claude Code or Codex and every session shows up here by itself, with its progress. Nothing to connect." = "Käynnistä Claude Code tai Codex, niin jokainen istunto ilmestyy tänne itsestään edistymisineen. Ei mitään yhdistettävää.";
-"Start Codex and type /hooks to trust Scout's hooks the first time. Then start a new session." = "Käynnistä Codex ja kirjoita /hooks luottaaksesi Scout-hookeihin ensimmäisellä kerralla. Aloita sitten uusi istunto.";
 "Start a %lld-minute focus timer for this task" = "Aloita %lld minuutin keskittymisajastin tälle askareelle";
-"Start a new Claude Code session. It appears in the notch." = "Aloita uusi Claude Code -istunto. Se ilmestyy lovessa.";
 "Start again" = "Aloita alusta";
 "Start folder" = "Aloituskansio";
 "Start the camera when the Mirror widget appears" = "Käynnistä kamera, kun Peili-widget ilmestyy";
@@ -1153,7 +1086,6 @@
 "Text size: %lld pt" = "Tekstin koko: %lld pt";
 "That API key was rejected. Check it in Settings › Ask AI." = "Tuo API-avain hylättiin. Tarkista se kohdassa Asetukset › Kysy tekoälyltä.";
 "That didn't work" = "Se ei toiminut";
-"That isn't the %@ folder in your home folder. Connect again and choose it." = "Tämä ei ole kansio %@ kotikansiossasi. Yhdistä uudelleen ja valitse se.";
 "That one did not go through" = "Se ei mennyt läpi";
 "That's the end" = "Siinä kaikki";
 "The %@ uses the camera, so it never opens by itself" = "%@ käyttää kameraa, joten se ei koskaan avaudu itsestään";
@@ -1246,7 +1178,6 @@
 "Turned off" = "Kytketty pois";
 "Two-finger swipe on the notch" = "Kahden sormen pyyhkäisy lovessa";
 "Type a city, region or country, or pick a country." = "Kirjoita kaupunki, alue tai maa tai valitse maa.";
-"Type your own…" = "Kirjoita omasi…";
 "Typing: the notch stays open" = "Kirjoitetaan: lovi pysyy auki";
 "Unknown format" = "Tuntematon muoto";
 "Unlicense (only if you install it)" = "Unlicense (vain jos asennat sen)";
@@ -1255,7 +1186,6 @@
 "Until it is on, questions go without a picture." = "Kunnes se on päällä, kysymykset menevät ilman kuvaa.";
 "Untitled" = "Nimetön";
 "Untitled script" = "Nimetön skripti";
-"Update" = "Päivitä";
 "Updates" = "Päivitykset";
 "Updating the to-do list" = "Päivitetään askarelistaa";
 "Upload %@" = "Lähetä %@";
@@ -1287,10 +1217,6 @@
 "Waiting for you" = "Odottaa sinua";
 "Waiting for your OK" = "Odottaa hyväksyntääsi";
 "Waiting for your voice" = "Odottaa ääntäsi";
-"Wants to use %@" = "Haluaa käyttää: %@";
-"Wants to use %@: %@" = "Haluaa käyttää: %@ (%@)";
-"Wants to use a tool" = "Haluaa käyttää työkalua";
-"Wants to use a tool: %@" = "Haluaa käyttää työkalua: %@";
 "Warm paper, dark text and bright accents. Easy to read by day." = "Lämmin paperi, tumma teksti ja kirkkaat korostukset. Helppo lukea päivällä.";
 "Warn at" = "Varoita kun";
 "Warn when the battery is low" = "Varoita, kun akku on vähissä";
@@ -1310,7 +1236,6 @@
 "What Scout can reach, and why it asks." = "Mihin Scout pääsee käsiksi ja miksi se kysyy.";
 "What shows next to the notch while it is closed." = "Mitä näkyy loven vieressä, kun se on suljettu.";
 "When a message arrives, a card drops below the notch with the sender, the text and a reply box. It stays quiet while the Messages app is in front. Scout never sends anything unless you type a reply and press Return." = "Kun viesti saapuu, loven alle putoaa kortti, jossa on lähettäjä, teksti ja vastauskenttä. Se pysyy hiljaa, kun Viestit-appi on edessä. Scout ei koskaan lähetä mitään, ellet kirjoita vastausta ja paina Return.";
-"When an agent needs an answer" = "Kun agentti tarvitsee vastauksen";
 "When you change the volume with the keys, the menu bar or another app, the level also shows next to the notch." = "Kun muutat äänenvoimakkuutta näppäimillä, valikkorivillä tai toisella sovelluksella, taso näkyy myös loven vieressä.";
 "Where stations come from" = "Mistä asemat tulevat";
 "While music plays, a timer runs or a download finishes, the notch grows to show it. Point at it and it opens into your Nook: widgets, files, clipboard, calendar. Move away and it tucks back in." = "Kun musiikki soi, ajastin käy tai lataus valmistuu, lovi kasvaa näyttääkseen sen. Osoita sitä, niin se avautuu Nook-näkymäksi: widgetit, tiedostot, leikepöytä, kalenteri. Poistu, niin se vetäytyy takaisin.";
@@ -1352,7 +1277,6 @@
 "Zoom %@, back to the whole picture" = "Zoomaa %@, takaisin koko kuvaan";
 "Zoom in" = "Lähennä";
 "Zoom out" = "Loitonna";
-"all edits this session" = "kaikki muokkaukset tässä istunnossa";
 "charged" = "ladattu";
 "charging" = "latautuu";
 "code" = "koodi";
@@ -1381,7 +1305,6 @@
 "macOS would not change it: %@" = "macOS ei muuttanut sitä: %@";
 "me and my agents" = "minä ja agenttini";
 "min" = "min";
-"mode %@" = "tila %@";
 "model name" = "mallin nimi";
 "needs you" = "tarvitsee sinua";
 "no battery" = "ei akkua";

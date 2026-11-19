@@ -8,8 +8,8 @@ enum ScoutRuntime {
     /// and should show sample data. Data lives in a separate folder (see `AppPaths`).
     static let isAutomation = arguments.contains("--automation")
 
-    /// `--headless` (with `--automation` only): no notch, ring, panels, menu-bar item or hotkeys; only the Agents store,
-    /// scanner and bridge run, for checks that must never show anything on the owner's screen.
+    /// `--headless` (with `--automation` only): no notch, ring, panels, menu-bar item or hotkeys; only the Agents store
+    /// and scanner run, for checks that must never show anything on the owner's screen.
     static let isHeadless = isAutomation && arguments.contains("--headless")
 
     /// `--gallery <dir>`: render every registered view to PNG and quit.

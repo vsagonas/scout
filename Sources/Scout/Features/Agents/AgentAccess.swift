@@ -77,12 +77,6 @@ enum AgentAccess {
         return picked
     }
 
-    static func forget(_ agent: AgentKind) {
-        openScopes[agent]?.stopAccessingSecurityScopedResource()
-        openScopes[agent] = nil
-        UserDefaults.standard.removeObject(forKey: key(agent))
-    }
-
     /// "Allow Scout to see your agents": an open panel at `~/.claude` (or `~/.codex`); keeps a read-only bookmark.
     @MainActor
     static func requestAccess(for agent: AgentKind, completion: @escaping @MainActor (Bool) -> Void) {

@@ -5,7 +5,7 @@
 #
 # Usage: scripts/live.sh <out.png> <region> [command ...]
 #   region:  notch | top | full | x,y,w,h   (points, origin top-left of the main screen)
-#   command: anything after scout://, e.g.  "notch.open?ws=nook"  "ring.open?x=860&y=560"  "wait=1.5"
+#   command: anything after scout://, e.g.  "notch.open?ws=nook"  "wait=1.5"
 # Example: scripts/live.sh /tmp/nook.png notch "notch.open?ws=nook" "wait=1"
 set -euo pipefail
 

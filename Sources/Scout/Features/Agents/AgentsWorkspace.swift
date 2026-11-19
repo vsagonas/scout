@@ -29,19 +29,14 @@ struct AgentsWorkspaceView: View {
         return a
     }
 
-    /// The island height (header included) this workspace needs: the den, and a little more while the open window shows a request that
-    /// needs room (its answer keys must be fully in view).
+    /// The island height (header included) this workspace needs: the den, and a little more while the open window shows a banner.
     private var neededHeight: CGFloat {
-        let mine = inDetail ? store.pending.filter { $0.sessionID == detailID } : []
-        let extra = inDetail ? AgentDenLayout.extraHeight(pending: mine, banner: banner != nil) : 0
-        // The minimal look: the list and one agent's history, the den's height (answer keys fully in view); pulling the notch down gives more.
+        let extra = inDetail ? AgentDenLayout.extraHeight(banner: banner != nil) : 0
+        // The minimal look: the list and one agent's history, the den's height; pulling the notch down gives more.
         if !Retro.is8bit { return (store.sessions.isEmpty ? 200 : AgentDenLayout.baseHeight + extra) + AgentDenLayout.chrome }
         guard inDetail else { return AgentDenLayout.islandHeight() }
         return AgentDenLayout.islandHeight(extra: AgentDenLayout.drawerHeight + extra)   // the window lies under the den
     }
-
-    /// What the banner of an automatic opening adds to the island's height.
-    static let bannerExtra: CGFloat = 36
 
     private func syncHeight() {
         guard store === AgentsStore.shared else { return }

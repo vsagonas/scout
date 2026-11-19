@@ -1,14 +1,14 @@
 # Turkish (tr): term list
 
 Machine translation, no native reviewer yet. Same words as the App Store text. Informal "sen" as the store text does (bare imperatives: Seç, Aç, Ekle), labels as short imperatives or nouns the way macOS writes them.
-Suffixes after Latin names and abbreviations take an apostrophe: widget'lar, Tepsi'ye, Nook'ta, YZ'ye, hook'lar. After a number the noun stays singular (3 ajan).
+Suffixes after Latin names and abbreviations take an apostrophe: widget'lar, Tepsi'ye, Nook'ta, YZ'ye. After a number the noun stays singular (3 ajan).
 
 | English | Turkish |
 |---|---|
 | agent / agents | ajan / ajanlar (never "izci", "bot") |
 | AI | YZ |
 | Ask AI | YZ'ye Sor |
-| Fast Ask AI | Hızlı YZ'ye Sor (pixel label HIZLI YZ'YE SOR) |
+| Fast Ask AI | Hızlı YZ'ye Sor |
 | widget / widgets | widget / widget'lar |
 | notch | çentik |
 | dashboard | özet ekranı |
@@ -21,9 +21,7 @@ Suffixes after Latin names and abbreviations take an apostrophe: widget'lar, Tep
 | chat / chats | sohbet / sohbetler |
 | API key, key | API anahtarı, anahtar |
 | clipboard | pano |
-| hooks | hook'lar |
-| Connect / Disconnect | Bağla / Bağlantıyı kes |
-| Allow / Deny | İzin ver / Reddet |
+| Allow | İzin ver |
 | tab | sekme |
 | Prompter | Teleprompter |
 | Mirror | Ayna |
@@ -39,7 +37,7 @@ Kamera, Mikrofon, Gizlilik ve Güvenlik, Tam Disk Erişimi, Erişilebilirlik, Ek
 Oturum Açma Öğeleri (Login Items), Genel, İndirilenler, Filmler, Dikte, Klavye, Hareketi Azalt (Reduce Motion), Sistem Ayarları. Finder, Spotlight, Keychain stay as they are.
 
 Pixel-font keys (l10n/PIXEL-LABELS.txt) are translated in capitals with only the characters that file allows, so Ç Ğ İ Ö Ş Ü are written C G I O S U and the dotless ı as I:
-AGENT TV = AJAN TV, ALL DAY = TUM GUN, ASLEEP = UYUYOR, CONNECTING = BAGLANIYOR, DONE = TAMAM, FAST ASK AI = HIZLI YZ'YE SOR, FAVOURITES = FAVORILER, FROZEN = DONDU,
+AGENT TV = AJAN TV, ALL DAY = TUM GUN, ASLEEP = UYUYOR, CONNECTING = BAGLANIYOR, DONE = TAMAM, FAVOURITES = FAVORILER, FROZEN = DONDU,
 LATEST = EN SON, LIST = LISTE, LISTS = LISTELER, NEEDS YOU = SANA GEREK, NO AGENTS = AJAN YOK, NO SIGNAL = SINYAL YOK, PAUSED = DURAKLATILDI, PLACES = YERLER, RADIO = RADYO,
 READY = HAZIR, STARTING = BASLIYOR, STOPPED = DURDU, WORKFLOW = IS AKISI, WORKING = CALISIYOR.
 The LED board texts use the same rule: MERHABA %@ ♥, GULE GULE %@, %@ TAMAM ✓, SCOUT'TAN MERHABA ♥.

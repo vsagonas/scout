@@ -52,7 +52,7 @@ Machine translation, no native reviewer yet. Informal "du" (as the Danish App St
 | Lock Screen | Låseskærm |
 | home folder | hjemmemappe |
 | Light / Dark / System / Automatic | Lys / Mørk / System / Automatisk |
-| Allow / Deny / Always allow | Tillad / Afvis / Tillad altid |
+| Allow | Tillad |
 | Cancel / Delete / Close / Copy | Annuller / Slet / Luk / Kopier |
 | Save | Gem |
 | Done | Færdig |
@@ -61,7 +61,7 @@ Machine translation, no native reviewer yet. Informal "du" (as the Danish App St
 | Pin / Unpin | Fastgør / Frigør |
 | Focus (macOS) | Fokus |
 
-Pixel labels use capitals and no æ ø å (the 5x7 font has none): the usual ASCII spelling or a word without them, e.g. HELE DAGEN, SOVER, HEJ HEJ %@ (for BYE), BRUG FOR DIG, HURTIG SPOERG AI.
+Pixel labels use capitals and no æ ø å (the 5x7 font has none): the usual ASCII spelling or a word without them, e.g. HELE DAGEN, SOVER, HEJ HEJ %@ (for BYE), BRUG FOR DIG.
 "Ask anything" (dashboard field placeholder, at most 12 characters): "Spørg løs".
 
 Style: du-form, short labels, imperative buttons as in macOS (Åbn, Luk), "…" as one character, no dashes as separators. Words per minute: "ord/min".

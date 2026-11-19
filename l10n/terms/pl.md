@@ -1,6 +1,6 @@
 # Scout in Polish (pl): term list
 
-Machine translation, no native reviewer yet. Words match the App Store text, except Tray (see below). Pronouns Ty/Twój/Cię are capitalised as in the store text; the UI avoids pronouns where it can (imperative buttons as in macOS). Brand names (Scout, Mac, Claude Code, Codex...) are never declined: the text is built around them ("hooki Scout", "tego komputera Mac").
+Machine translation, no native reviewer yet. Words match the App Store text, except Tray (see below). Pronouns Ty/Twój/Cię are capitalised as in the store text; the UI avoids pronouns where it can (imperative buttons as in macOS). Brand names (Scout, Mac, Claude Code, Codex...) are never declined: the text is built around them ("tego komputera Mac").
 
 | English | Polish |
 |---|---|
@@ -53,7 +53,7 @@ Machine translation, no native reviewer yet. Words match the App Store text, exc
 | Downloads (folder) / Downloads (feature) | Pobrane / Pobieranie |
 | home folder | folder domowy |
 | Light / Dark / System / Automatic | Jasny / Ciemny / System / Automatycznie |
-| Allow / Deny / Always allow | Zezwól / Odmów / Zawsze zezwalaj |
+| Allow | Zezwól |
 | Cancel / Delete / Close / Copy | Anuluj / Usuń / Zamknij / Kopiuj |
 | Done | Gotowe |
 | Join (meeting button) | Dołącz |
