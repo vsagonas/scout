@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@ 실패";
 "%@ + %lld more" = "%@ 외 %lld개";
 "%@ DONE ✓" = "%@ DONE ✓";
 "%@ and %lld more" = "%@ 외 %lld개";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@ 종료됨(코드 %d).";
 "%@ ended." = "%@ 종료됨.";
 "%@ failed" = "%@ 실패";
-"%@ finished after %lld min" = "%@ 완료(%lld분 후)";
 "%@ free" = "%@ 사용 가능";
 "%@ has no sound" = "%@에는 소리가 없습니다";
 "%@ in %@" = "%@(%@)";
@@ -29,7 +27,6 @@
 "%@ resume command" = "%@ 재개 명령";
 "%@ settings…" = "%@ 설정…";
 "%@ so far" = "지금까지 %@";
-"%@ stopped with an error" = "%@이(가) 오류로 중지되었습니다";
 "%@ timer finished" = "%@ 타이머 완료";
 "%@ to full" = "완전 충전까지 %@";
 "%@ used" = "%@ 사용 중";
@@ -100,7 +97,6 @@
 "Add" = "추가";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "개인정보 보호 및 보안 › 전체 디스크 접근 권한에서 Scout를 추가하고 켠 다음, Scout를 종료했다가 다시 여세요. 그때까지 macOS는 메시지 데이터베이스를 잠가 둡니다. Scout는 읽기만 하며, 새 메시지만 읽습니다.";
 "Add a key to start" = "시작하려면 키를 추가하세요";
-"Add a notch to displays that have none" = "노치가 없는 디스플레이에 노치 추가";
 "Add a task" = "할 일 추가";
 "Add a task (no day)" = "할 일 추가(날짜 없음)";
 "Add a task for this day" = "이 날짜에 할 일 추가";
@@ -124,6 +120,7 @@
 "Agent tabs" = "에이전트 탭";
 "Agents" = "에이전트";
 "Agents & AI Usage" = "에이전트 및 AI 사용량";
+"Agents beside the notch" = "노치 옆 에이전트";
 "Agents settings" = "에이전트 설정";
 "Agents show up here by themselves." = "에이전트가 자동으로 여기에 나타납니다.";
 "Agents: %lld" = "에이전트: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "카메라";
 "Camera access is off" = "카메라 접근이 꺼져 있습니다";
 "Camera access is off for Scout." = "Scout의 카메라 접근이 꺼져 있습니다.";
+"Camera cutout" = "카메라 홀";
 "Can't read %@ yet" = "%@을(를) 아직 읽을 수 없습니다";
 "Can't tell which chat this is" = "어떤 채팅인지 알 수 없습니다";
 "Cancel" = "취소";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "이 앱 중 하나가 맨 앞에 있을 때 한 복사는 저장되지 않습니다.";
 "Copy" = "복사";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "YouTube, X, Instagram, TikTok, Vimeo 또는 Reddit의 링크를 복사한 뒤 트레이를 열면 Scout가 다운로드를 제안합니다. 링크를 트레이에 끌어다 놓아도 됩니다. 다운로드에는 직접 설치하는 yt-dlp를 사용하며, 위의 버튼은 누를 때만 실행됩니다. 복사한 링크를 읽으려면 시스템 설정 › 개인정보 보호 및 보안 › 다른 앱에서 붙여넣기에서 Scout를 ‘허용’해야 합니다(macOS 15.4 이상).";
+"Copy display details" = "디스플레이 세부 정보 복사";
 "Copy something and it shows up here." = "무언가를 복사하면 여기에 나타납니다.";
 "Couldn't copy the picture" = "사진을 복사할 수 없습니다";
 "Couldn't copy the polaroid" = "폴라로이드를 복사할 수 없습니다";
@@ -424,6 +423,7 @@
 "Extra large" = "매우 크게";
 "FAVOURITES" = "FAVOURITES";
 "FROZEN" = "FROZEN";
+"Faces in the notch" = "노치 안의 얼굴";
 "Fahrenheit (°F)" = "화씨(°F)";
 "Fast Ask AI" = "빠른 AI 질문";
 "Fastest, for short questions" = "가장 빠름, 짧은 질문용";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Homebrew로 yt-dlp와 deno를 설치할까요?";
 "Installing…" = "설치 중…";
 "Internet speed right now: down (received) and up (sent)" = "현재 인터넷 속도: 다운로드(수신)와 업로드(송신)";
+"Island" = "섬";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "이제 목소리의 소리를 따라갑니다. 언어는 설정 › 텔레프롬프터에서 선택하세요.";
 "It stays in your Mac's Keychain." = "Mac의 키체인에 저장됩니다.";
 "Items in the Tray: %lld" = "트레이의 항목: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "동기화된 가사 없음";
 "No widgets yet" = "아직 위젯 없음";
 "Nobody home yet. Agents move in by themselves." = "아직 아무도 없습니다. 에이전트는 스스로 입주합니다.";
+"None" = "없음";
 "None chosen yet" = "아직 선택 안 함";
 "None found" = "찾지 못함";
 "None yet" = "아직 없음";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "메모 및 할 일";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "메모와 할 일은 이 Mac에 저장되며 노치의 위젯과 보기에 표시됩니다.";
 "Notes saved: %lld" = "저장된 메모: %lld";
+"Nothing" = "표시 안 함";
 "Nothing (click to open)" = "없음(클릭하여 열기)";
 "Nothing copied yet" = "아직 복사한 항목이 없습니다";
 "Nothing copied yet.\nCopy something and it will show up here." = "아직 복사한 항목이 없습니다.\n무언가를 복사하면 여기에 나타납니다.";
@@ -729,13 +732,15 @@
 "On" = "켬";
 "On air" = "방송 중";
 "On battery" = "배터리 사용 중";
+"On displays without a camera cutout" = "카메라 홀이 없는 디스플레이에서";
 "On the dashboard now" = "현재 대시보드에 있는 항목";
 "One day" = "하루";
 "One hour" = "1시간";
 "One month" = "1개월";
 "One week" = "1주일";
-"Only displays with a notch" = "노치가 있는 디스플레이만";
+"Only displays with a camera cutout" = "카메라 홀이 있는 디스플레이만";
 "Only events with a video link" = "비디오 링크가 있는 이벤트만";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Scout가 잘못 인식하는 Mac에만 해당합니다. 노치가 있는 Mac에서는 알약 미리 보기를 할 수 없습니다.";
 "Only for the Prompter to follow your voice." = "텔레프롬프터가 목소리를 따라가는 용도로만 사용합니다.";
 "Only what you choose" = "선택한 것만";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Scout를 종료할 때 아직 재생 중이었던 경우에만. Scout는 마지막 방송국과 음량을 항상 기억합니다.";
@@ -811,6 +816,7 @@
 "Pick your look" = "모양 선택";
 "Picking an item" = "항목을 선택하면";
 "Picture" = "사진";
+"Pill" = "알약";
 "Pin" = "고정";
 "Pin apps" = "앱 고정";
 "Pink" = "분홍";
@@ -857,6 +863,7 @@
 "READY" = "READY";
 "Radio" = "라디오";
 "Radio stations by place, and what the Radio tab remembers." = "장소별 라디오 방송국과 라디오 탭이 기억하는 것.";
+"Radio stations in the Radio tab" = "라디오 탭의 라디오 방송국";
 "Rain" = "비";
 "Ran %@" = "%@ 실행함";
 "Read incoming messages. macOS does not tell apps whether it is on." = "수신 메시지를 읽습니다. macOS는 이 기능이 켜져 있는지 앱에 알려 주지 않습니다.";
@@ -904,6 +911,7 @@
 "Ring" = "링";
 "Ring when time is up" = "시간이 되면 울리기";
 "Rings" = "링";
+"Round bubbles" = "둥근 버블";
 "Rounded" = "둥근 모서리";
 "Run the short introduction again." = "짧은 소개를 다시 실행합니다.";
 "STARTING" = "STARTING";
@@ -936,7 +944,6 @@
 "Screen" = "화면";
 "Screen Recording" = "화면 기록";
 "Screen Recording is off for Scout" = "Scout의 화면 기록이 꺼져 있습니다";
-"Screen recordings and the music visualizer." = "화면 녹화와 음악 비주얼라이저.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "화면: 질문할 때마다 화면 사진을 찍어 질문과 함께 %@에 전송합니다";
 "Screenshots and screen recordings." = "스크린샷과 화면 녹화.";
 "Scripts" = "스크립트";

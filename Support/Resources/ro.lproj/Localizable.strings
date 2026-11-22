@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@: eșuat";
 "%@ + %lld more" = "%@ + încă %lld";
 "%@ DONE ✓" = "%@ GATA ✓";
 "%@ and %lld more" = "%@ și încă %lld";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@: încheiat (cod %d).";
 "%@ ended." = "%@: încheiat.";
 "%@ failed" = "%@: eșuat";
-"%@ finished after %lld min" = "%@: terminat după %lld min";
 "%@ free" = "%@ liber";
 "%@ has no sound" = "%@ nu are sunet";
 "%@ in %@" = "%@ în %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "Comanda de reluare %@";
 "%@ settings…" = "Setări %@…";
 "%@ so far" = "%@ până acum";
-"%@ stopped with an error" = "%@: oprit cu o eroare";
 "%@ timer finished" = "Temporizatorul %@ s-a încheiat";
 "%@ to full" = "%@ până la plin";
 "%@ used" = "%@ folosit";
@@ -100,7 +97,6 @@
 "Add" = "Adaugă";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Adaugă Scout la Confidențialitate și securitate › Acces complet la disc, activează-l, apoi închide și redeschide Scout. Până atunci, macOS ține blocată baza de date Mesaje. Scout doar o citește, și doar pentru mesajele noi.";
 "Add a key to start" = "Adaugă o cheie ca să începi";
-"Add a notch to displays that have none" = "Adaugă un notch pe afișajele care nu au unul";
 "Add a task" = "Adaugă o sarcină";
 "Add a task (no day)" = "Adaugă o sarcină (fără zi)";
 "Add a task for this day" = "Adaugă o sarcină pentru această zi";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Filele agenților";
 "Agents" = "Agenți";
 "Agents & AI Usage" = "Agenți și utilizare AI";
+"Agents beside the notch" = "Agenți lângă notch";
 "Agents settings" = "Setări agenți";
 "Agents show up here by themselves." = "Agenții apar aici singuri.";
 "Agents: %lld" = "Agenți: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Cameră";
 "Camera access is off" = "Accesul la cameră este dezactivat";
 "Camera access is off for Scout." = "Accesul la cameră este dezactivat pentru Scout.";
+"Camera cutout" = "Decupaj pentru cameră";
 "Can't read %@ yet" = "%@ nu poate fi citit încă";
 "Can't tell which chat this is" = "Nu se poate stabili despre ce chat este vorba";
 "Cancel" = "Anulează";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Copiile făcute cât timp una dintre aceste aplicații este în față nu sunt salvate niciodată.";
 "Copy" = "Copiază";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Copiază un link de pe YouTube, X, Instagram, TikTok, Vimeo sau Reddit, deschide Tava și Scout se oferă să-l descarce, sau lasă un link în Tavă. Descărcările folosesc yt-dlp, pe care îl instalezi tu; butonul de mai sus rulează doar când îl apeși. Citirea unui link copiat necesită „Permite” pentru Scout în Setări de sistem › Confidențialitate și securitate › Lipește din alte aplicații (macOS 15.4 și mai nou).";
+"Copy display details" = "Copiază detaliile afișajului";
 "Copy something and it shows up here." = "Copiază ceva și apare aici.";
 "Couldn't copy the picture" = "Nu s-a putut copia imaginea";
 "Couldn't copy the polaroid" = "Nu s-a putut copia polaroidul";
@@ -424,6 +423,7 @@
 "Extra large" = "Foarte mare";
 "FAVOURITES" = "FAVORITE";
 "FROZEN" = "INGHETAT";
+"Faces in the notch" = "Fețe în notch";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
 "Fast Ask AI" = "Întrebare AI rapidă";
 "Fastest, for short questions" = "Cel mai rapid, pentru întrebări scurte";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Instalezi yt-dlp și deno cu Homebrew?";
 "Installing…" = "Se instalează…";
 "Internet speed right now: down (received) and up (sent)" = "Viteza internetului acum: descărcare (primit) și încărcare (trimis)";
+"Island" = "Insulă";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Acum urmărește sunetul vocii tale. Alege limba în Setări › Teleprompter.";
 "It stays in your Mac's Keychain." = "Rămâne în Keychain, pe acest Mac.";
 "Items in the Tray: %lld" = "Elemente în Tavă: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Fără versuri sincronizate";
 "No widgets yet" = "Încă nu există widgeturi";
 "Nobody home yet. Agents move in by themselves." = "Nu e nimeni acasă încă. Agenții se mută singuri.";
+"None" = "Niciunul";
 "None chosen yet" = "Încă nu ai ales nimic";
 "None found" = "Nu s-a găsit nimic";
 "None yet" = "Încă nimic";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Notițe și sarcini";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Notițele și sarcinile sunt salvate pe acest Mac și afișate în widgeturile și vizualizările notch-ului.";
 "Notes saved: %lld" = "Notițe salvate: %lld";
+"Nothing" = "Nimic";
 "Nothing (click to open)" = "Nimic (clic pentru a deschide)";
 "Nothing copied yet" = "Încă nu s-a copiat nimic";
 "Nothing copied yet.\nCopy something and it will show up here." = "Încă nu s-a copiat nimic.\nCopiază ceva și apare aici.";
@@ -729,13 +732,15 @@
 "On" = "Pornit";
 "On air" = "În direct";
 "On battery" = "Pe baterie";
+"On displays without a camera cutout" = "Pe afișajele fără decupaj pentru cameră";
 "On the dashboard now" = "Acum în tabloul de bord";
 "One day" = "O zi";
 "One hour" = "O oră";
 "One month" = "O lună";
 "One week" = "O săptămână";
-"Only displays with a notch" = "Doar afișajele cu notch";
+"Only displays with a camera cutout" = "Doar afișajele cu decupaj pentru cameră";
 "Only events with a video link" = "Doar evenimentele cu link video";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Doar pentru un Mac pe care Scout îl citește greșit. Un Mac cu notch nu poate arăta o previzualizare a unei pastile.";
 "Only for the Prompter to follow your voice." = "Doar pentru ca Teleprompterul să-ți urmeze vocea.";
 "Only what you choose" = "Doar ce alegi tu";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Doar dacă încă mai cânta când Scout a fost închis. Scout ține minte mereu ultimul post și volumul.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Alege-ți aspectul";
 "Picking an item" = "Alegerea unui element";
 "Picture" = "Imagine";
+"Pill" = "Pastilă";
 "Pin" = "Fixează";
 "Pin apps" = "Fixează aplicații";
 "Pink" = "Roz";
@@ -857,6 +863,7 @@
 "READY" = "PREGATIT";
 "Radio" = "Radio";
 "Radio stations by place, and what the Radio tab remembers." = "Stații radio după loc și ce ține minte fila Radio.";
+"Radio stations in the Radio tab" = "Stații radio în fila Radio";
 "Rain" = "Ploaie";
 "Ran %@" = "Rulat %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Citește mesajele primite. macOS nu spune aplicațiilor dacă este pornit.";
@@ -904,6 +911,7 @@
 "Ring" = "Inel";
 "Ring when time is up" = "Sună când timpul s-a terminat";
 "Rings" = "Inele";
+"Round bubbles" = "Bule rotunde";
 "Rounded" = "Rotunjit";
 "Run the short introduction again." = "Rulează din nou scurta introducere.";
 "STARTING" = "PORNESTE";
@@ -936,7 +944,6 @@
 "Screen" = "Ecran";
 "Screen Recording" = "Înregistrare ecran";
 "Screen Recording is off for Scout" = "Înregistrarea ecranului este dezactivată pentru Scout";
-"Screen recordings and the music visualizer." = "Înregistrări de ecran și vizualizatorul de muzică.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Ecran: fiecare întrebare face o imagine a ecranului tău și o trimite la %@ odată cu întrebarea";
 "Screenshots and screen recordings." = "Capturi de ecran și înregistrări de ecran.";
 "Scripts" = "Scripturi";

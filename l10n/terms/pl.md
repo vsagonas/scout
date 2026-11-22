@@ -7,6 +7,10 @@ Machine translation, no native reviewer yet. Words match the App Store text, exc
 | agent / agents | agent / agenci (agentów, agentom...) |
 | widget / widgets | widżet / widżety |
 | notch | wycięcie |
+| camera cutout (the general word, whatever the shape) | otwór na kamerę (wycięcie stays the notch) |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | pigułka |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | wyspa |
+| round bubbles (the agents beside the camera) | okrągłe bąbelki |
 | dashboard | pulpit |
 | Settings | Ustawienia |
 | Tray | Tacka (Tacce, Tacki, Tackę; Tray is translated) |

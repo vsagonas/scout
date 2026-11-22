@@ -47,6 +47,8 @@ struct AgentDenView: View {
     var onSelect: (String?) -> Void = { _ in }
     /// The tallest the open island can be (nil in pictures and tests): the den keeps its height when the window fits under it.
     @Environment(\.notchOpenMaxHeight) private var openMax
+    /// What the island spends on its header and gaps (nil in pictures and tests): the den is laid out to everything the island gives it.
+    @Environment(\.notchBodyInset) private var bodyInset
     /// Gallery and tests: draw this one moment instead of running the clock, and a fixed reading of the Mac's load.
     var fixedClock: AgentNookClock?
     var fixedLoad: (cpu: Double, memory: Double)?
@@ -98,10 +100,19 @@ struct AgentDenView: View {
             // Where the island cannot grow enough (a short screen, a picture's fixed panel) the den gives the window room, down to 200 pt.
             // Picking an agent never moves the others: the den keeps its full height while the window opens under it, and only where the
             // island cannot hold even a short window (160 pt) does it give room
-            let room = openMax.map { $0 - AgentDenLayout.chrome } ?? full.height
-            let closedDen = min(full.height, AgentDenLayout.baseHeight)
+            let room = openMax.map { $0 - (bodyInset ?? AgentDenLayout.chrome) } ?? full.height
+            // The room fills the island's whole body, down to its bottom edge.
+            // It is drawn in whole cells, so what is left over under one cell
+            // (`lift`, at most 2 pt) stays above the room, between the island's header and the crown moulding, and the rug's border ends exactly
+            // `bottomMargin` above the island's bottom edge. While the island gives less (still growing, or a short screen cuts it) the room is
+            // as tall as that, as it always was, so no strip of the island shows under it; while it shrinks back from an open window the den
+            // keeps this height instead of following it.
+            let fill = AgentDenLayout.fillHeight(inset: bodyInset)
+            let atRest = full.height >= fill - 0.01
+            let closedDen = atRest ? AgentDenLayout.wholeCells(fill) : full.height
+            let lift = atRest ? fill - closedDen : 0
             let size = CGSize(width: full.width, height: detail == nil ? closedDen
-                              : min(closedHeight ?? closedDen, max(200, room - AgentDenLayout.shortestWindow)))
+                              : min(closedHeight ?? closedDen, max(200, room - AgentDenLayout.shortestWindow - lift)))
             let spots = AgentDenLayout.spots(count: stations.count, size: size, rightEdge: AgentDenLayout.rightEdge(width: size.width, window: false))
             VStack(spacing: 0) {
             ZStack(alignment: .topLeading) {
@@ -135,11 +146,12 @@ struct AgentDenView: View {
             }
             .frame(width: size.width, height: size.height, alignment: .topLeading)
             .clipShape(Rectangle())
+            .padding(.top, lift)
                 if let detail {
                     // Edge to edge under the den, down to the island's bottom (its rounded corners trim the window): an 8 pt margin showed a
                     // strip of the island under it, a black line on dark
                     AgentDenWindow(session: detail, banner: banner?.sessionID == detail.id ? banner : nil, below: true) { onSelect(nil) }
-                        .frame(width: full.width, height: max(80, full.height - size.height), alignment: .top)
+                        .frame(width: full.width, height: max(80, full.height - lift - size.height), alignment: .top)
                         .denFrame("window")
                         .transition(.opacity)
                 }

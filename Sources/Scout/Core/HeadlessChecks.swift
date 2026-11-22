@@ -28,6 +28,12 @@ enum HeadlessChecks {
         AppLanguageSelfTest.register()   // language.selftest: Settings › General › Language (names, choosing, back to the Mac's); language.selftest.restart: the real restart
         L10nSelfTest.register()   // l10n.selftest: the translations (keys, placeholders, CFBundleLocalizations, lookups) and, in the pseudo build, no unwrapped English in sample views
         SettingsNotchSelfTest.register()   // settings.selftest.notch: the notch opens and stays held behind the Settings window, which floats above it; closing releases it
+        IslandModeSelfTest.register()   // island.selftest.mode: what the closed notch draws per geometry and activity, the sample geometries, the Reduce Motion rule of scripted runs
+        IslandGeometrySelfTest.register()   // island.selftest.geometry: how each display's cutout is found (the table of cases)
+        IslandSettingsSelfTest.register()   // island.selftest.settings: the new settings, the one-time move from the old switch, what rebuilds the panels, the display report
+        IslandHitSelfTest.register()   // island.selftest.hit: which shapes take the pointer, hover and click per kind of display
+        IslandLayoutSelfTest.register()   // island.selftest.layout: where bubbles and capsules stand beside the housing, in numbers
+        AgentBubbleSelfTest.register()   // island.selftest.bubbles: the round agent bubbles and the news capsule, pixels and clicks
         #if !APPSTORE
         AgentTabSelfTest.registerHeadless()   // termtab.selftest.relaunch: agent tabs come back in their folders and resume
         #endif

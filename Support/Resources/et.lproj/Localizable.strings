@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@ nurjus";
 "%@ + %lld more" = "%@ + veel %lld";
 "%@ DONE ✓" = "%@ VALMIS ✓";
 "%@ and %lld more" = "%@ ja veel %lld";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@ lõppes (kood %d).";
 "%@ ended." = "%@ lõppes.";
 "%@ failed" = "%@ nurjus";
-"%@ finished after %lld min" = "%@ lõpetas %lld min pärast";
 "%@ free" = "%@ vaba";
 "%@ has no sound" = "%@: heli puudub";
 "%@ in %@" = "%@ kohas %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "%@ jätkamiskäsk";
 "%@ settings…" = "%@ seaded…";
 "%@ so far" = "%@ seni";
-"%@ stopped with an error" = "%@ peatus veaga";
 "%@ timer finished" = "%@ taimer lõppes";
 "%@ to full" = "%@ täis laadimiseni";
 "%@ used" = "%@ kasutatud";
@@ -100,7 +97,6 @@
 "Add" = "Lisa";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Lisa Scout jaotises Privacy & Security › Full Disk Access, lülita see sisse, seejärel sule ja ava Scout uuesti. macOS hoiab Messages'i andmebaasi lukus, kuni seda teed. Scout ainult loeb seda ja ainult uute sõnumite jaoks.";
 "Add a key to start" = "Alustamiseks lisa võti";
-"Add a notch to displays that have none" = "Lisa sälk ekraanidele, millel seda pole";
 "Add a task" = "Lisa ülesanne";
 "Add a task (no day)" = "Lisa ülesanne (päevata)";
 "Add a task for this day" = "Lisa ülesanne sellele päevale";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Agentide vahelehed";
 "Agents" = "Agendid";
 "Agents & AI Usage" = "Agendid ja TI kasutus";
+"Agents beside the notch" = "Agendid sälgu kõrval";
 "Agents settings" = "Agentide seaded";
 "Agents show up here by themselves." = "Agendid ilmuvad siia ise.";
 "Agents: %lld" = "Agendid: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Kaamera";
 "Camera access is off" = "Ligipääs kaamerale on välja lülitatud";
 "Camera access is off for Scout." = "Ligipääs kaamerale on Scoutile välja lülitatud.";
+"Camera cutout" = "Kaamera väljalõige";
 "Can't read %@ yet" = "%@ pole veel loetav";
 "Can't tell which chat this is" = "Ei selgu, milline vestlus see on";
 "Cancel" = "Tühista";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Kopeerimisi, mis tehakse siis, kui üks neist rakendustest on ees, ei salvestata kunagi.";
 "Copy" = "Kopeeri";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Kopeeri link teenusest YouTube, X, Instagram, TikTok, Vimeo või Reddit, ava Salv ja Scout pakub selle allalaadimist, või lohista link Salve peale. Allalaadimine kasutab yt-dlp-d, mille paigaldad ise; ülal olev nupp töötab ainult siis, kui seda vajutad. Kopeeritud lingi lugemiseks on vaja Scoutile „Allow“ jaotises System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 ja uuem).";
+"Copy display details" = "Kopeeri ekraani andmed";
 "Copy something and it shows up here." = "Kopeeri midagi ja see ilmub siia.";
 "Couldn't copy the picture" = "Pildi kopeerimine ebaõnnestus";
 "Couldn't copy the polaroid" = "Polaroidi kopeerimine ebaõnnestus";
@@ -424,6 +423,7 @@
 "Extra large" = "Eriti suur";
 "FAVOURITES" = "LEMMIKUD";
 "FROZEN" = "KINNI";
+"Faces in the notch" = "Näod sälgus";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
 "Fast Ask AI" = "Kiire TI";
 "Fastest, for short questions" = "Kiireim, lühikeste küsimuste jaoks";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Kas paigaldada yt-dlp ja deno Homebrew'ga?";
 "Installing…" = "Paigaldan…";
 "Internet speed right now: down (received) and up (sent)" = "Interneti kiirus praegu: alla (saadud) ja üles (saadetud)";
+"Island" = "Saar";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "See järgib nüüd sinu hääle kõla. Vali keel jaotises Seaded › Prompter.";
 "It stays in your Mac's Keychain." = "See jääb sinu Maci Keychaini.";
 "Items in the Tray: %lld" = "Üksused Salves: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Sünkroonitud laulusõnu pole";
 "No widgets yet" = "Vidinaid pole veel";
 "Nobody home yet. Agents move in by themselves." = "Keegi pole veel kodus. Agendid kolivad ise sisse.";
+"None" = "Puudub";
 "None chosen yet" = "Midagi pole veel valitud";
 "None found" = "Ei leitud";
 "None yet" = "Pole veel";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Märkmed ja ülesanded";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Märkmed ja ülesanded salvestatakse sellesse Maci ning need kuvatakse sälgu vidinates ja vaadetes.";
 "Notes saved: %lld" = "Märkmed salvestatud: %lld";
+"Nothing" = "Mitte midagi";
 "Nothing (click to open)" = "Mitte midagi (klõpsa avamiseks)";
 "Nothing copied yet" = "Midagi pole veel kopeeritud";
 "Nothing copied yet.\nCopy something and it will show up here." = "Midagi pole veel kopeeritud.\nKopeeri midagi ja see ilmub siia.";
@@ -729,13 +732,15 @@
 "On" = "Sees";
 "On air" = "Eetris";
 "On battery" = "Akutoitel";
+"On displays without a camera cutout" = "Ekraanidel ilma kaamera väljalõiketa";
 "On the dashboard now" = "Armatuurlaual praegu";
 "One day" = "Üks päev";
 "One hour" = "Üks tund";
 "One month" = "Üks kuu";
 "One week" = "Üks nädal";
-"Only displays with a notch" = "Ainult sälguga ekraanid";
+"Only displays with a camera cutout" = "Ainult kaamera väljalõikega ekraanid";
 "Only events with a video link" = "Ainult videolingiga sündmused";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Ainult Mac-arvuti jaoks, mida Scout loeb valesti. Sälguga Mac-arvuti ei saa kapslit eelvaatena näidata.";
 "Only for the Prompter to follow your voice." = "Ainult selleks, et Prompter sinu häält jälgiks.";
 "Only what you choose" = "Ainult see, mille valid";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Ainult siis, kui see Scouti sulgemisel veel mängis. Scout mäletab alati viimast jaama ja helitugevust.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Vali oma ilme";
 "Picking an item" = "Üksuse valimine";
 "Picture" = "Pilt";
+"Pill" = "Kapsel";
 "Pin" = "Kinnita";
 "Pin apps" = "Kinnita rakendus";
 "Pink" = "Roosa";
@@ -857,6 +863,7 @@
 "READY" = "VALMIS";
 "Radio" = "Raadio";
 "Radio stations by place, and what the Radio tab remembers." = "Raadiojaamad asukoha järgi ja see, mida vaheleht Raadio mäletab.";
+"Radio stations in the Radio tab" = "Raadiojaamad vahelehel Raadio";
 "Rain" = "Vihm";
 "Ran %@" = "Töötas %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Loe sissetulevaid sõnumeid. macOS ei ütle rakendustele, kas see on sees.";
@@ -904,6 +911,7 @@
 "Ring" = "Rõngas";
 "Ring when time is up" = "Helise, kui aeg on läbi";
 "Rings" = "Rõngad";
+"Round bubbles" = "Ümarad mullid";
 "Rounded" = "Ümardatud";
 "Run the short introduction again." = "Käivita lühike tutvustus uuesti.";
 "STARTING" = "KAIVITUB";
@@ -936,7 +944,6 @@
 "Screen" = "Ekraan";
 "Screen Recording" = "Ekraanisalvestus";
 "Screen Recording is off for Scout" = "Ekraanisalvestus on Scoutile välja lülitatud";
-"Screen recordings and the music visualizer." = "Ekraanisalvestused ja muusikavisualiseerija.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Ekraan: iga küsimus teeb pildi sinu ekraanist ja saadab selle koos küsimusega teenusele %@";
 "Screenshots and screen recordings." = "Ekraanipildid ja ekraanisalvestused.";
 "Scripts" = "Skriptid";

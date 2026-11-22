@@ -1,8 +1,6 @@
 "CFBundleDisplayName" = "Scout";
 "NSAppleEventsUsageDescription" = "A Scout csak akkor kommunikál a Spotify, a Zene, az Üzenetek és a Jegyzetek appokkal, ha Ön használja ezeket a funkciókat: a lejátszott tartalom megjelenítéséhez és vezérléséhez, egy begépelt válasz elküldéséhez vagy jegyzet mentéséhez.";
 "NSAppleEventsUsageDescription~appstore" = "A Scout csak akkor kommunikál a Zene és a Spotify appokkal, ha Ön bekapcsolja a lejátszásvezérlést, hogy megjelenítse és vezérelje a lejátszott tartalmat.";
-"NSAppleMusicUsageDescription" = "A Scout megjeleníti, mi szól a Zene appban.";
-"NSAudioCaptureUsageDescription" = "A Scout a lejátszó app hangját figyeli, hogy animálja a zenevizualizációt, és appenként állítsa a hangerőt. A hangot soha nem menti és nem küldi el.";
 "NSBluetoothAlwaysUsageDescription" = "A Scout csatlakozáskor megjeleníti az AirPods és más eszközök adatait, az akkumulátor töltöttségével együtt.";
 "NSBluetoothAlwaysUsageDescription~appstore" = "A Scout csatlakozáskor név szerint megjeleníti az AirPods és más Bluetooth-eszközök adatait.";
 "NSCalendarsFullAccessUsageDescription" = "A Scout megjeleníti a közelgő eseményeit a notchban, és hozzáadja az Ön által létrehozott eseményeket.";

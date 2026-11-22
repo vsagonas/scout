@@ -266,7 +266,20 @@ final class PulseSampler: ObservableObject {
                    .disk: wave(0.55, 0.002, 0), .battery: wave(0.78, 0.01, 0), .network: wave(0.30, 0.28, 3)]
         netDownHistory = history[.network]!.map { $0 * 3_200_000 }
         netUpHistory = history[.network]!.map { $0 * 420_000 }
-        latest = PulseSample(cpu: 0.37, memory: 0.64, memoryUsedBytes: 16_400_000_000, gpu: 0.21, disk: 0.55, diskFreeBytes: 210_000_000_000,
-                             battery: 0.78, charging: false, netDown: 1_450_000, netUp: 310_000)
+        latest = Self.sample()
+    }
+
+    /// Tests: forget the sample data again (the readings and the graphs' history), as before `loadSamples()`.
+    func clearSamples() {
+        latest = PulseSample()
+        history = [:]
+        netDownHistory = []
+        netUpHistory = []
+    }
+
+    /// The reading the pictures and tests show (CPU 37 %, memory 64 %, GPU 21 %); a Mac that reports no GPU load is `gpu: nil`.
+    static func sample(cpu: Double = 0.37, memory: Double = 0.64, gpu: Double? = 0.21) -> PulseSample {
+        PulseSample(cpu: cpu, memory: memory, memoryUsedBytes: 16_400_000_000, gpu: gpu, disk: 0.55, diskFreeBytes: 210_000_000_000,
+                    battery: 0.78, charging: false, netDown: 1_450_000, netUp: 310_000)
     }
 }

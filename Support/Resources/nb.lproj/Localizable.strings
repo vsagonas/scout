@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@ mislyktes";
 "%@ + %lld more" = "%@ + %lld til";
 "%@ DONE ✓" = "%@ FERDIG ✓";
 "%@ and %lld more" = "%@ og %lld til";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@ avsluttet (kode %d).";
 "%@ ended." = "%@ avsluttet.";
 "%@ failed" = "%@ mislyktes";
-"%@ finished after %lld min" = "%@ ferdig etter %lld min";
 "%@ free" = "%@ ledig";
 "%@ has no sound" = "%@ har ingen lyd";
 "%@ in %@" = "%@ i %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "%@-kommando for å fortsette";
 "%@ settings…" = "%@-innstillinger…";
 "%@ so far" = "%@ så langt";
-"%@ stopped with an error" = "%@ stoppet med en feil";
 "%@ timer finished" = "%@-tidtakeren er ferdig";
 "%@ to full" = "%@ til full";
 "%@ used" = "%@ brukt";
@@ -100,7 +97,6 @@
 "Add" = "Legg til";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Legg til Scout under Personvern og sikkerhet › Full diskadgang, slå det på, og avslutt og åpne deretter Scout igjen. macOS holder databasen til Meldinger låst til du gjør det. Scout leser den bare, og bare for nye meldinger.";
 "Add a key to start" = "Legg til nøkkel for å starte";
-"Add a notch to displays that have none" = "Legg til en notch på skjermer som ikke har noen";
 "Add a task" = "Legg til en oppgave";
 "Add a task (no day)" = "Legg til en oppgave (ingen dag)";
 "Add a task for this day" = "Legg til en oppgave for denne dagen";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Agentfaner";
 "Agents" = "Agenter";
 "Agents & AI Usage" = "Agenter og KI-bruk";
+"Agents beside the notch" = "Agenter ved siden av notchen";
 "Agents settings" = "Agentinnstillinger";
 "Agents show up here by themselves." = "Agenter dukker opp her av seg selv.";
 "Agents: %lld" = "Agenter: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Kameratilgang er av";
 "Camera access is off for Scout." = "Kameratilgang er av for Scout.";
+"Camera cutout" = "Kamerautsparing";
 "Can't read %@ yet" = "Kan ikke lese %@ ennå";
 "Can't tell which chat this is" = "Kan ikke se hvilken chat dette er";
 "Cancel" = "Avbryt";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Kopier som gjøres mens en av disse appene er i forgrunnen, lagres aldri.";
 "Copy" = "Kopier";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Kopier en lenke fra YouTube, X, Instagram, TikTok, Vimeo eller Reddit, åpne brettet, så tilbyr Scout å laste den ned, eller slipp en lenke på brettet. Nedlastinger bruker yt-dlp, som du installerer selv; knappen ovenfor kjører bare når du trykker på den. For å lese en kopiert lenke trenger Scout “Tillat” under Systeminnstillinger › Personvern og sikkerhet › Lim inn fra andre apper (macOS 15.4 og nyere).";
+"Copy display details" = "Kopier skjermdetaljer";
 "Copy something and it shows up here." = "Kopier noe, så dukker det opp her.";
 "Couldn't copy the picture" = "Kunne ikke kopiere bildet";
 "Couldn't copy the polaroid" = "Kunne ikke kopiere polaroiden";
@@ -424,6 +423,7 @@
 "Extra large" = "Ekstra stor";
 "FAVOURITES" = "FAVORITTER";
 "FROZEN" = "FRYST";
+"Faces in the notch" = "Ansikter i notchen";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
 "Fast Ask AI" = "Rask Spør KI";
 "Fastest, for short questions" = "Raskest, for korte spørsmål";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Installere yt-dlp og deno med Homebrew?";
 "Installing…" = "Installerer…";
 "Internet speed right now: down (received) and up (sent)" = "Internetthastighet akkurat nå: ned (mottatt) og opp (sendt)";
+"Island" = "Øy";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Den følger nå lyden av stemmen din. Velg språk i Innstillinger › Prompter.";
 "It stays in your Mac's Keychain." = "Den blir liggende i Keychain på Mac-en din.";
 "Items in the Tray: %lld" = "Elementer i brettet: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Ingen synkronisert tekst";
 "No widgets yet" = "Ingen widgeter ennå";
 "Nobody home yet. Agents move in by themselves." = "Ingen er hjemme ennå. Agenter flytter inn av seg selv.";
+"None" = "Ingen";
 "None chosen yet" = "Ingen valgt ennå";
 "None found" = "Ingen funnet";
 "None yet" = "Ingen ennå";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Notater og oppgaver";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Notater og oppgaver lagres på denne Mac-en og vises i notchens widgeter og visninger.";
 "Notes saved: %lld" = "Lagrede notater: %lld";
+"Nothing" = "Ingenting";
 "Nothing (click to open)" = "Ingenting (klikk for å åpne)";
 "Nothing copied yet" = "Ingenting kopiert ennå";
 "Nothing copied yet.\nCopy something and it will show up here." = "Ingenting kopiert ennå.\nKopier noe, så dukker det opp her.";
@@ -729,13 +732,15 @@
 "On" = "På";
 "On air" = "On air";
 "On battery" = "På batteri";
+"On displays without a camera cutout" = "På skjermer uten kamerautsparing";
 "On the dashboard now" = "På oversikten nå";
 "One day" = "Én dag";
 "One hour" = "Én time";
 "One month" = "Én måned";
 "One week" = "Én uke";
-"Only displays with a notch" = "Bare skjermer med notch";
+"Only displays with a camera cutout" = "Bare skjermer med kamerautsparing";
 "Only events with a video link" = "Bare hendelser med en videolenke";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Bare for en Mac som Scout leser feil. En Mac med notch kan ikke vise en forhåndsvisning av en pille.";
 "Only for the Prompter to follow your voice." = "Bare slik at Prompter kan følge stemmen din.";
 "Only what you choose" = "Bare det du velger";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Bare hvis den fortsatt spilte da Scout ble lukket. Scout husker alltid den siste stasjonen og volumet.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Velg utseendet ditt";
 "Picking an item" = "Valg av element";
 "Picture" = "Bilde";
+"Pill" = "Pille";
 "Pin" = "Fest";
 "Pin apps" = "Fest apper";
 "Pink" = "Rosa";
@@ -857,6 +863,7 @@
 "READY" = "KLAR";
 "Radio" = "Radio";
 "Radio stations by place, and what the Radio tab remembers." = "Radiostasjoner etter sted og det Radio-fanen husker.";
+"Radio stations in the Radio tab" = "Radiostasjoner i Radio-fanen";
 "Rain" = "Regn";
 "Ran %@" = "Kjørte %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Les innkommende meldinger. macOS forteller ikke apper om dette er på.";
@@ -904,6 +911,7 @@
 "Ring" = "Ring";
 "Ring when time is up" = "Ring når tiden er ute";
 "Rings" = "Ringer";
+"Round bubbles" = "Runde bobler";
 "Rounded" = "Avrundet";
 "Run the short introduction again." = "Kjør den korte introduksjonen igjen.";
 "STARTING" = "STARTER";
@@ -936,7 +944,6 @@
 "Screen" = "Skjerm";
 "Screen Recording" = "Skjermopptak";
 "Screen Recording is off for Scout" = "Skjermopptak er av for Scout";
-"Screen recordings and the music visualizer." = "Skjermopptak og musikkvisualisereren.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Skjerm: hvert spørsmål tar et bilde av skjermen din og sender det med spørsmålet til %@";
 "Screenshots and screen recordings." = "Skjermbilder og skjermopptak.";
 "Scripts" = "Skript";

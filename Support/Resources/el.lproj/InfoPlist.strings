@@ -1,8 +1,6 @@
 "CFBundleDisplayName" = "Scout";
 "NSAppleEventsUsageDescription" = "Το Scout επικοινωνεί με το Spotify, τη Μουσική, τα Μηνύματα και τις Σημειώσεις μόνο όταν χρησιμοποιείς αυτές τις λειτουργίες: για να δείχνει και να ελέγχει τι παίζει, να στέλνει μια απάντηση που έγραψες ή να αποθηκεύει μια σημείωση.";
 "NSAppleEventsUsageDescription~appstore" = "Το Scout επικοινωνεί με τη Μουσική και το Spotify μόνο όταν ενεργοποιείς τον έλεγχο αναπαραγωγής, για να δείχνει και να ελέγχει τι παίζει.";
-"NSAppleMusicUsageDescription" = "Το Scout δείχνει τι παίζει στη Μουσική.";
-"NSAudioCaptureUsageDescription" = "Το Scout ακούει τον ήχο της εφαρμογής που παίζει για να κινεί την οπτικοποίηση μουσικής και να ρυθμίζει την ένταση ανά εφαρμογή. Ο ήχος δεν αποθηκεύεται ούτε στέλνεται ποτέ.";
 "NSBluetoothAlwaysUsageDescription" = "Το Scout δείχνει τα AirPods και άλλες συσκευές όταν συνδέονται, μαζί με την μπαταρία τους.";
 "NSBluetoothAlwaysUsageDescription~appstore" = "Το Scout δείχνει τα AirPods και άλλες συσκευές Bluetooth με το όνομά τους όταν συνδέονται.";
 "NSCalendarsFullAccessUsageDescription" = "Το Scout δείχνει τα επερχόμενα γεγονότα σου στην εγκοπή και προσθέτει τα γεγονότα που δημιουργείς.";

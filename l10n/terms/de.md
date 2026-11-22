@@ -7,6 +7,10 @@ Machine translation, no native reviewer yet. Informal "du" (as the German App St
 | agent / agents | Agent / Agenten (KI-Agenten for "AI agents") |
 | widget / widgets | Widget / Widgets |
 | notch | Notch (die Notch, as in the store text) |
+| camera cutout (the general word, whatever the shape) | Kameraaussparung |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | Kapsel |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | Insel |
+| round bubbles (the agents beside the camera) | Runde Blasen |
 | dashboard | Dashboard |
 | Settings | Einstellungen |
 | Tray | Ablage |

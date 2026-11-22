@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@ failed";
 "%@ + %lld more" = "%@ + %lld more";
 "%@ DONE ✓" = "%@ DONE ✓";
 "%@ and %lld more" = "%@ and %lld more";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@ ended (code %d).";
 "%@ ended." = "%@ ended.";
 "%@ failed" = "%@ failed";
-"%@ finished after %lld min" = "%@ finished after %lld min";
 "%@ free" = "%@ free";
 "%@ has no sound" = "%@ has no sound";
 "%@ in %@" = "%@ in %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "%@ resume command";
 "%@ settings…" = "%@ settings…";
 "%@ so far" = "%@ so far";
-"%@ stopped with an error" = "%@ stopped with an error";
 "%@ timer finished" = "%@ timer finished";
 "%@ to full" = "%@ to full";
 "%@ used" = "%@ used";
@@ -100,7 +97,6 @@
 "Add" = "Add";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages.";
 "Add a key to start" = "Add a key to start";
-"Add a notch to displays that have none" = "Add a notch to displays that have none";
 "Add a task" = "Add a task";
 "Add a task (no day)" = "Add a task (no day)";
 "Add a task for this day" = "Add a task for this day";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Agent tabs";
 "Agents" = "Agents";
 "Agents & AI Usage" = "Agents & AI Usage";
+"Agents beside the notch" = "Agents beside the notch";
 "Agents settings" = "Agents settings";
 "Agents show up here by themselves." = "Agents show up here by themselves.";
 "Agents: %lld" = "Agents: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Camera";
 "Camera access is off" = "Camera access is off";
 "Camera access is off for Scout." = "Camera access is off for Scout.";
+"Camera cutout" = "Camera cutout";
 "Can't read %@ yet" = "Can't read %@ yet";
 "Can't tell which chat this is" = "Can't tell which chat this is";
 "Cancel" = "Cancel";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Copies made while one of these apps is in front are never saved.";
 "Copy" = "Copy";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later).";
+"Copy display details" = "Copy display details";
 "Copy something and it shows up here." = "Copy something and it shows up here.";
 "Couldn't copy the picture" = "Couldn't copy the picture";
 "Couldn't copy the polaroid" = "Couldn't copy the polaroid";
@@ -424,6 +423,7 @@
 "Extra large" = "Extra large";
 "FAVOURITES" = "FAVOURITES";
 "FROZEN" = "FROZEN";
+"Faces in the notch" = "Faces in the notch";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
 "Fast Ask AI" = "Fast Ask AI";
 "Fastest, for short questions" = "Fastest, for short questions";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Install yt-dlp and deno with Homebrew?";
 "Installing…" = "Installing…";
 "Internet speed right now: down (received) and up (sent)" = "Internet speed right now: down (received) and up (sent)";
+"Island" = "Island";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "It follows the sound of your voice now. Pick the language in Settings › Prompter.";
 "It stays in your Mac's Keychain." = "It stays in your Mac's Keychain.";
 "Items in the Tray: %lld" = "Items in the Tray: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "No synced lyrics";
 "No widgets yet" = "No widgets yet";
 "Nobody home yet. Agents move in by themselves." = "Nobody home yet. Agents move in by themselves.";
+"None" = "None";
 "None chosen yet" = "None chosen yet";
 "None found" = "None found";
 "None yet" = "None yet";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Notes & To-dos";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views.";
 "Notes saved: %lld" = "Notes saved: %lld";
+"Nothing" = "Nothing";
 "Nothing (click to open)" = "Nothing (click to open)";
 "Nothing copied yet" = "Nothing copied yet";
 "Nothing copied yet.\nCopy something and it will show up here." = "Nothing copied yet.\nCopy something and it will show up here.";
@@ -729,13 +732,15 @@
 "On" = "On";
 "On air" = "On air";
 "On battery" = "On battery";
+"On displays without a camera cutout" = "On displays without a camera cutout";
 "On the dashboard now" = "On the dashboard now";
 "One day" = "One day";
 "One hour" = "One hour";
 "One month" = "One month";
 "One week" = "One week";
-"Only displays with a notch" = "Only displays with a notch";
+"Only displays with a camera cutout" = "Only displays with a camera cutout";
 "Only events with a video link" = "Only events with a video link";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill.";
 "Only for the Prompter to follow your voice." = "Only for the Prompter to follow your voice.";
 "Only what you choose" = "Only what you choose";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Pick your look";
 "Picking an item" = "Picking an item";
 "Picture" = "Picture";
+"Pill" = "Pill";
 "Pin" = "Pin";
 "Pin apps" = "Pin apps";
 "Pink" = "Pink";
@@ -857,6 +863,7 @@
 "READY" = "READY";
 "Radio" = "Radio";
 "Radio stations by place, and what the Radio tab remembers." = "Radio stations by place, and what the Radio tab remembers.";
+"Radio stations in the Radio tab" = "Radio stations in the Radio tab";
 "Rain" = "Rain";
 "Ran %@" = "Ran %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Read incoming messages. macOS does not tell apps whether it is on.";
@@ -904,6 +911,7 @@
 "Ring" = "Ring";
 "Ring when time is up" = "Ring when time is up";
 "Rings" = "Rings";
+"Round bubbles" = "Round bubbles";
 "Rounded" = "Rounded";
 "Run the short introduction again." = "Run the short introduction again.";
 "STARTING" = "STARTING";
@@ -936,7 +944,6 @@
 "Screen" = "Screen";
 "Screen Recording" = "Screen Recording";
 "Screen Recording is off for Scout" = "Screen Recording is off for Scout";
-"Screen recordings and the music visualizer." = "Screen recordings and the music visualizer.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Screen: each question takes a picture of your screen and sends it to %@ with the question";
 "Screenshots and screen recordings." = "Screenshots and screen recordings.";
 "Scripts" = "Scripts";

@@ -7,6 +7,10 @@ Machine translation, no native reviewer yet. Informal "tú" (as the Spanish App 
 | agent / agents | agente / agentes (agentes de IA for "AI agents") |
 | widget / widgets | widget / widgets |
 | notch | notch (el notch, as in the store text) |
+| camera cutout (the general word, whatever the shape) | recorte de la cámara |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | píldora |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | isla |
+| round bubbles (the agents beside the camera) | burbujas redondas |
 | dashboard | tablero |
 | Settings | Ajustes |
 | Tray | Bandeja |

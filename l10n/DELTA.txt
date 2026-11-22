@@ -1,3 +1,4 @@
 Open the notch when an agent needs you, finishes a long task or fails => Open the notch when an agent needs you
 Start the radio again when Scout opens => Play the last station again when Scout opens
 Off by default. Scout always remembers the last station and the volume, and shows the station ready, never playing. => Only when it was still playing as Scout quit. Scout always remembers the last station and the volume.
+Only displays with a notch => Only displays with a camera cutout

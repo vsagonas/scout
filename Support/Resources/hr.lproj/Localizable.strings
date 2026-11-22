@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@: nije uspjelo";
 "%@ + %lld more" = "%@ + još %lld";
 "%@ DONE ✓" = "%@ GOTOVO ✓";
 "%@ and %lld more" = "%@ i još %lld";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@: završeno (kod %d).";
 "%@ ended." = "%@: završeno.";
 "%@ failed" = "%@: nije uspjelo";
-"%@ finished after %lld min" = "%@: dovršeno nakon %lld min";
 "%@ free" = "%@ slobodno";
 "%@ has no sound" = "%@ nema zvuk";
 "%@ in %@" = "%@ u %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "Naredba za nastavak %@";
 "%@ settings…" = "Postavke %@…";
 "%@ so far" = "%@ do sada";
-"%@ stopped with an error" = "%@: zaustavljeno s pogreškom";
 "%@ timer finished" = "Mjerač vremena %@ je završio";
 "%@ to full" = "%@ do punog";
 "%@ used" = "%@ iskorišteno";
@@ -100,7 +97,6 @@
 "Add" = "Dodaj";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Dodajte Scout u Privatnost i sigurnost › Potpuni pristup disku, uključite ga, zatim zatvorite i ponovno otvorite Scout. Do tada macOS drži bazu podataka Poruka zaključanom. Scout je samo čita, i to samo za nove poruke.";
 "Add a key to start" = "Dodajte ključ za početak";
-"Add a notch to displays that have none" = "Dodaj notch na zaslone koji ga nemaju";
 "Add a task" = "Dodaj zadatak";
 "Add a task (no day)" = "Dodaj zadatak (bez dana)";
 "Add a task for this day" = "Dodaj zadatak za ovaj dan";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Kartice agenata";
 "Agents" = "Agenti";
 "Agents & AI Usage" = "Agenti i AI upotreba";
+"Agents beside the notch" = "Agenti pokraj notcha";
 "Agents settings" = "Postavke agenata";
 "Agents show up here by themselves." = "Agenti se ovdje pojavljuju sami.";
 "Agents: %lld" = "Agenti: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Pristup kameri je isključen";
 "Camera access is off for Scout." = "Pristup kameri je isključen za Scout.";
+"Camera cutout" = "Izrez za kameru";
 "Can't read %@ yet" = "%@ se još ne može pročitati";
 "Can't tell which chat this is" = "Ne može se utvrditi o kojem je razgovoru riječ";
 "Cancel" = "Odustani";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Kopije napravljene dok je jedna od ovih aplikacija u prvom planu nikad se ne spremaju.";
 "Copy" = "Kopiraj";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Kopirajte poveznicu (YouTube, X, Instagram, TikTok, Vimeo ili Reddit), otvorite Pladanj i Scout će ponuditi preuzimanje, ili ispustite poveznicu na Pladanj. Preuzimanja koriste yt-dlp, koji instalirate sami; gumb gore pokreće se samo kad ga pritisnete. Čitanje kopirane poveznice zahtijeva „Dopusti” za Scout u Postavkama sustava › Privatnost i sigurnost › Zalijepi iz drugih aplikacija (macOS 15.4 i novije).";
+"Copy display details" = "Kopiraj podatke o zaslonu";
 "Copy something and it shows up here." = "Kopirajte nešto i pojavit će se ovdje.";
 "Couldn't copy the picture" = "Slika se nije mogla kopirati";
 "Couldn't copy the polaroid" = "Polaroid se nije mogao kopirati";
@@ -424,6 +423,7 @@
 "Extra large" = "Vrlo veliko";
 "FAVOURITES" = "OMILJENO";
 "FROZEN" = "ZAMRZNUTO";
+"Faces in the notch" = "Lica u notchu";
 "Fahrenheit (°F)" = "Fahrenheitovi (°F)";
 "Fast Ask AI" = "Brzo pitanje AI";
 "Fastest, for short questions" = "Najbrže, za kratka pitanja";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Instalirati yt-dlp i deno putem Homebrew?";
 "Installing…" = "Instaliranje…";
 "Internet speed right now: down (received) and up (sent)" = "Brzina interneta sada: preuzimanje (primljeno) i slanje (poslano)";
+"Island" = "Otok";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Sada prati zvuk vašeg glasa. Jezik odaberite u Postavke › Teleprompter.";
 "It stays in your Mac's Keychain." = "Ostaje u Keychain na ovom Macu.";
 "Items in the Tray: %lld" = "Stavke u Pladnju: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Nema sinkroniziranog teksta";
 "No widgets yet" = "Još nema widgeta";
 "Nobody home yet. Agents move in by themselves." = "Još nikoga nema doma. Agenti se useljavaju sami.";
+"None" = "Nijedan";
 "None chosen yet" = "Još ništa nije odabrano";
 "None found" = "Ništa nije pronađeno";
 "None yet" = "Još ništa";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Bilješke i zadaci";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Bilješke i zadaci spremaju se na ovom Macu i prikazuju u widgetima i prikazima notcha.";
 "Notes saved: %lld" = "Spremljene bilješke: %lld";
+"Nothing" = "Ništa";
 "Nothing (click to open)" = "Ništa (kliknite za otvaranje)";
 "Nothing copied yet" = "Još ništa nije kopirano";
 "Nothing copied yet.\nCopy something and it will show up here." = "Još ništa nije kopirano.\nKopirajte nešto i pojavit će se ovdje.";
@@ -729,13 +732,15 @@
 "On" = "Uključeno";
 "On air" = "U eteru";
 "On battery" = "Na bateriji";
+"On displays without a camera cutout" = "Na zaslonima bez izreza za kameru";
 "On the dashboard now" = "Sada na nadzornoj ploči";
 "One day" = "Jedan dan";
 "One hour" = "Jedan sat";
 "One month" = "Jedan mjesec";
 "One week" = "Jedan tjedan";
-"Only displays with a notch" = "Samo zasloni s notchem";
+"Only displays with a camera cutout" = "Samo zasloni s izrezom za kameru";
 "Only events with a video link" = "Samo događaji s poveznicom na video";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Samo za Mac koji Scout pogrešno čita. Mac s notchom ne može prikazati pregled kapsule.";
 "Only for the Prompter to follow your voice." = "Samo da Teleprompter prati vaš glas.";
 "Only what you choose" = "Samo ono što odaberete";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Samo ako je još sviralo kad se Scout zatvorio. Scout uvijek pamti zadnju postaju i glasnoću.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Odaberite izgled";
 "Picking an item" = "Odabir stavke";
 "Picture" = "Slika";
+"Pill" = "Kapsula";
 "Pin" = "Prikvači";
 "Pin apps" = "Prikvači aplikacije";
 "Pink" = "Ružičasta";
@@ -857,6 +863,7 @@
 "READY" = "SPREMNO";
 "Radio" = "Radio";
 "Radio stations by place, and what the Radio tab remembers." = "Radijske postaje po mjestu i ono što pamti kartica Radio.";
+"Radio stations in the Radio tab" = "Radijske postaje na kartici Radio";
 "Rain" = "Kiša";
 "Ran %@" = "Pokrenuto %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Čitaj dolazne poruke. macOS aplikacijama ne govori je li uključeno.";
@@ -904,6 +911,7 @@
 "Ring" = "Prsten";
 "Ring when time is up" = "Zazvoni kad vrijeme istekne";
 "Rings" = "Prstenovi";
+"Round bubbles" = "Okrugli mjehurići";
 "Rounded" = "Zaobljeno";
 "Run the short introduction again." = "Ponovno pokreni kratki uvod.";
 "STARTING" = "POKRECE SE";
@@ -936,7 +944,6 @@
 "Screen" = "Zaslon";
 "Screen Recording" = "Snimanje zaslona";
 "Screen Recording is off for Scout" = "Snimanje zaslona je isključeno za Scout";
-"Screen recordings and the music visualizer." = "Snimke zaslona i glazbeni vizualizator.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Zaslon: svako pitanje snima sliku vašeg zaslona i šalje je na %@ zajedno s pitanjem";
 "Screenshots and screen recordings." = "Snimke zaslona i snimanja zaslona.";
 "Scripts" = "Skripte";

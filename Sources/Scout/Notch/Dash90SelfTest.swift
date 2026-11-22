@@ -487,6 +487,42 @@ enum Dash90SelfTest {
             return nil
         }
 
+        /// Where the bright ink inside `rect` (in points) lies, as the smallest rectangle around it (nil when there is none).
+        func inkBounds(in rect: CGRect, threshold: Double = 130) -> CGRect? {
+            guard let px = pixels() else { return nil }
+            let x0 = max(0, Int(rect.minX * 2)), x1 = min(px.w, Int(rect.maxX * 2))
+            let y0 = max(0, Int(rect.minY * 2)), y1 = min(px.h, Int(rect.maxY * 2))
+            guard x0 < x1, y0 < y1 else { return nil }
+            var box: (minX: Int, minY: Int, maxX: Int, maxY: Int)?
+            for y in y0..<y1 {
+                for x in x0..<x1 {
+                    let i = (y * px.w + x) * 4
+                    guard 0.299 * Double(px.data[i]) + 0.587 * Double(px.data[i + 1]) + 0.114 * Double(px.data[i + 2]) > threshold else { continue }
+                    box = box.map { (min($0.minX, x), min($0.minY, y), max($0.maxX, x), max($0.maxY, y)) } ?? (x, y, x, y)
+                }
+            }
+            return box.map { CGRect(x: CGFloat($0.minX) / 2, y: CGFloat($0.minY) / 2, width: CGFloat($0.maxX - $0.minX + 1) / 2, height: CGFloat($0.maxY - $0.minY + 1) / 2) }
+        }
+
+        /// The mean colour (red, green, blue, 0 to 1) of the bright ink inside `rect` (in points): the colour a reading is drawn in.
+        func inkColor(in rect: CGRect, threshold: Double = 130) -> (r: Double, g: Double, b: Double)? {
+            guard let px = pixels() else { return nil }
+            let x0 = max(0, Int(rect.minX * 2)), x1 = min(px.w, Int(rect.maxX * 2))
+            let y0 = max(0, Int(rect.minY * 2)), y1 = min(px.h, Int(rect.maxY * 2))
+            guard x0 < x1, y0 < y1 else { return nil }
+            var sum = (0.0, 0.0, 0.0), n = 0.0
+            for y in y0..<y1 {
+                for x in x0..<x1 {
+                    let i = (y * px.w + x) * 4
+                    let r = Double(px.data[i]), g = Double(px.data[i + 1]), b = Double(px.data[i + 2])
+                    guard 0.299 * r + 0.587 * g + 0.114 * b > threshold else { continue }
+                    sum = (sum.0 + r / 255, sum.1 + g / 255, sum.2 + b / 255)
+                    n += 1
+                }
+            }
+            return n > 0 ? (sum.0 / n, sum.1 / n, sum.2 / n) : nil
+        }
+
         func close() {
             window.contentView = nil
             window.orderOut(nil)
@@ -644,6 +680,200 @@ enum Dash90SelfTest {
                   "panel \(describe(panel)), graph \(describe(graph)), network \(describe(net)), rows \(box.rows.keys.sorted())")
             rig.close()
         }
+
+        await gpuChecks(eightBit: eightBit, battery: battery, check)
+    }
+
+    // MARK: CPU, memory and GPU
+
+    /// The width a reading takes by itself (its name, digits and unit as drawn, nothing around it).
+    @MainActor private static func naturalWidth(_ metric: PulseMetric, _ headline: String, smallestDigits: Bool = false) -> CGFloat {
+        NSHostingView(rootView: PulseReadout(metric: metric, headline: headline, smallestDigits: smallestDigits).fixedSize()).fittingSize.width
+    }
+
+    /// The GPU as the third reading of the CPU & Memory panel, in the look
+    /// being checked: with a GPU reading the panel shows three readings with their graphs, all three fit inside it (measured, nothing touches
+    /// or spills), at every Size; with no GPU reading, or in a row too tight for the wider panel, it is the panel of CPU and memory as it was.
+    @MainActor private static func gpuChecks(eightBit: Bool, battery: BatteryState, _ check: (String, Bool, String) -> Void) async {
+        let look = eightBit ? "[8-bit] " : "[minimal] "
+        let inset = DashGrid.inset
+        func near(_ a: CGFloat?, _ b: CGFloat?, _ tolerance: CGFloat = 0.5) -> Bool {
+            guard let a, let b else { return false }
+            return abs(a - b) <= tolerance
+        }
+        func describe(_ r: CGRect?) -> String { r.map { "\(Int($0.minX)),\($0.minY) \(Int($0.width))x\($0.height)" } ?? "none" }
+        let span = WidgetKind.pulse.defaultSpan
+        let width = CGFloat(span) * NookMetrics.cell
+        let oldWidth = 4 * NookMetrics.cell
+        let content = width - inset.leading - inset.trailing
+        func panel(_ metrics: [PulseMetric], _ sample: PulseSample, width w: CGFloat) -> PanelProbe {
+            PanelProbe(AnyView(PulseWidgetView(style: .cards, metrics: metrics, battery: battery).environment(\.pulseSampleOverride, sample)), width: w)
+        }
+        PulseSampler.shared.loadSamples()   // the graphs' history (the readings themselves come from each panel's own sample)
+        let reading = PulseSampler.sample()
+        let withGPU = panel([.cpu, .memory, .gpu], reading, width: width)
+        let none = panel([.cpu, .memory, .gpu], PulseSampler.sample(gpu: nil), width: width)
+        let two = panel([.cpu, .memory], reading, width: width)
+        let full = panel([.cpu, .memory, .gpu], PulseSampler.sample(cpu: 1, memory: 1, gpu: 1), width: width)
+        let tight = panel([.cpu, .memory, .gpu], reading, width: oldWidth)
+        let noneOld = panel([.cpu, .memory, .gpu], PulseSampler.sample(gpu: nil), width: oldWidth)
+        let twoOld = panel([.cpu, .memory], reading, width: oldWidth)
+        await settle(0.8)
+        defer {
+            [withGPU, none, two, full, tight, noneOld, twoOld].forEach { $0.close() }
+            PulseSampler.shared.clearSamples()
+        }
+
+        // The panel is as wide as the look needs: 5 cells for the pixel letters, 6 for the minimal look's system text.
+        check("\(look)the CPU & Memory panel is \(span) cells (\(Int(width)) pt) wide by default in this look",
+              span == (eightBit ? 5 : 6) && WidgetKind.pulse.defaultSpan == span, "span \(span)")
+
+        // Without the GPU among the chosen metrics (Settings › Pulse), or with it in the first two, there is no third reading and no extra width.
+        let savedMetrics = UserDefaults.standard.object(forKey: PulsePrefs.metricsKey)
+        Pref.set(PulsePrefs.raw([.cpu, .memory, .network, .disk]), PulsePrefs.metricsKey)
+        let withoutGPU = WidgetKind.pulse.defaultSpan
+        Pref.set(PulsePrefs.raw([.cpu, .gpu, .network]), PulsePrefs.metricsKey)
+        let gpuSecond = WidgetKind.pulse.defaultSpan
+        Pref.set(PulsePrefs.raw([.cpu, .network, .gpu]), PulsePrefs.metricsKey)
+        let networkSecond = WidgetKind.pulse.defaultSpan
+        Pref.set(savedMetrics, PulsePrefs.metricsKey)
+        check("\(look)  with GPU switched off in Settings (or among the first two, or after a network reading) the panel is the old 4 cells",
+              withoutGPU == 4 && gpuSecond == 4 && networkSecond == 4 && WidgetKind.pulse.defaultSpan == span, "\(withoutGPU) \(gpuSecond) \(networkSecond)")
+
+        // The third reading: in row 1 of the grid like the other two, its graph under it like theirs.
+        let rs = (0..<3).map { withGPU.row("pulse.readout.\($0)") }
+        let gs = (0..<3).map { withGPU.row("pulse.scope.\($0)") }
+        check("\(look)with a GPU reading the panel shows three readings, CPU, memory and GPU, each with its own graph under it",
+              rs.allSatisfy { $0 != nil } && gs.allSatisfy { $0 != nil } && withGPU.row("pulse.readout.3") == nil, "readouts \(rs.map(describe)), graphs \(gs.map(describe))")
+        check("\(look)  the three readings stand in row 1 of the grid: the same top (\(Int(inset.top)) pt) and height (\(Int(DashGrid.readoutHeight)) pt)",
+              rs.allSatisfy { near($0?.minY, inset.top) && near($0?.height, DashGrid.readoutHeight) }, rs.map(describe).joined(separator: " "))
+        check("\(look)  each graph stands right under its own reading: the same left edge and width, the grid's normal gap",
+              (0..<3).allSatisfy { near(gs[$0]?.minX, rs[$0]?.minX) && near(gs[$0]?.width, rs[$0]?.width) && near(gs[$0]?.minY, DashGrid.infoTop) },
+              "readouts \(rs.map(describe)), graphs \(gs.map(describe))")
+        let twoGraph = two.row("pulse.scope.0")
+        check("\(look)  the graphs are as tall and as high as the two readings' were (\(String(format: "%.1f", twoGraph?.height ?? 0)) pt, at least 24), all three equal",
+              (twoGraph?.height ?? 0) >= 24 && gs.allSatisfy { near($0?.height, twoGraph?.height) && near($0?.maxY, twoGraph?.maxY) }, gs.map(describe).joined(separator: " "))
+        check("\(look)  the SSD and battery line and the network line stand where they stood with two readings",
+              near(withGPU.row("pulse.status")?.minY, two.row("pulse.status")?.minY) && near(withGPU.row("pulse.network")?.minY, two.row("pulse.network")?.minY)
+                && near(withGPU.row("pulse.network")?.maxY, NookMetrics.widgetHeight - inset.bottom),
+              "status \(describe(withGPU.row("pulse.status"))) / \(describe(two.row("pulse.status"))), network \(describe(withGPU.row("pulse.network"))) / \(describe(two.row("pulse.network")))")
+
+        // Fit, measured: the readings' own widths against the room, and the columns against each other and the panel's edges.
+        let natural = [naturalWidth(.cpu, "37%"), naturalWidth(.memory, "64%"), naturalWidth(.gpu, "21%")]
+        let gap: CGFloat = 6
+        let need = natural.reduce(0, +) + 2 * gap
+        let worst = [naturalWidth(.cpu, "100%", smallestDigits: true), naturalWidth(.memory, "100%", smallestDigits: true), naturalWidth(.gpu, "100%", smallestDigits: true)]
+        let worstNeed = worst.reduce(0, +) + 2 * gap
+        check("\(look)  the three readings fit side by side: \(Int(need)) pt of \(Int(content)) pt (37 / 64 / 21 %), and \(Int(worstNeed)) pt at 100 / 100 / 100 % with the smallest digits",
+              need <= content && worstNeed <= content, "natural \(natural), worst \(worst), room \(content)")
+        let fits = zip(rs, natural).allSatisfy { r, n in (r?.width ?? 0) >= n - 0.5 }
+        let apart = rs[0].flatMap { a in rs[1].map { b in b.minX - a.maxX >= gap - 0.5 } } == true && rs[1].flatMap { a in rs[2].map { b in b.minX - a.maxX >= gap - 0.5 } } == true
+        check("\(look)  every reading has the room its own width needs, the columns are \(Int(gap)) pt apart and the last ends inside the panel's right inset",
+              fits && apart && near(rs[0]?.minX, inset.leading) && (rs[2]?.maxX ?? 999) <= width - inset.trailing + 0.5,
+              "readouts \(rs.map(describe)), natural \(natural), panel \(Int(width))")
+        // Pixels: ink in every reading and its graph, none in the gaps between the readings, nothing past the panel's box.
+        let band = { (r: CGRect?) in r.map { CGRect(x: $0.minX, y: $0.minY, width: $0.width, height: $0.height) } }
+        let inks = (0..<3).map { i in band(rs[i]).flatMap { withGPU.inkTop(in: $0) } != nil && gs[i].flatMap { withGPU.inkTop(in: $0, threshold: 60) } != nil }
+        let gapRects = (0..<2).compactMap { i in rs[i].flatMap { a in rs[i + 1].map { b in CGRect(x: a.maxX, y: a.minY, width: b.minX - a.maxX, height: a.height).insetBy(dx: 1, dy: 0) } } }   // a point in from each side: pixel letters snap to half points
+        let inkInGaps = gapRects.compactMap { withGPU.inkBounds(in: $0, threshold: 40) }
+        check("\(look)  each reading and its graph draw (the GPU's digits and its line too), and nothing is drawn in the gaps between the readings",
+              inks.allSatisfy { $0 } && gapRects.count == 2 && inkInGaps.isEmpty, "ink \(inks), gaps \(gapRects.map(describe)), ink in gaps \(inkInGaps.map(describe))")
+        check("\(look)  nothing of the panel is drawn outside its \(Int(width)) x \(Int(NookMetrics.widgetHeight)) pt box",
+              spills(withGPU.view, width: width) == false, "")
+        // Colour: the GPU's digits in teal in the 8-bit look (CPU green, memory amber), plain soft white in the minimal one; every graph one line colour.
+        if let c = rs[0].flatMap({ withGPU.inkColor(in: band($0)!) }), let m = rs[1].flatMap({ withGPU.inkColor(in: band($0)!) }), let g = rs[2].flatMap({ withGPU.inkColor(in: band($0)!) }) {
+            let apartFromCPU = abs(g.r - c.r) + abs(g.g - c.g) + abs(g.b - c.b), apartFromMemory = abs(g.r - m.r) + abs(g.g - m.g) + abs(g.b - m.b)
+            if eightBit {
+                check("\(look)  the GPU's digits are teal (blue as bright as green, little red), not the CPU's green or the memory's amber",
+                      g.b >= g.g * 0.7 && g.r <= g.g * 0.6 && apartFromCPU > 0.2 && apartFromMemory > 0.4,
+                      "GPU \(g), CPU \(c), memory \(m)")
+            } else {
+                check("\(look)  the GPU's digits are plain ink like the CPU's and the memory's (the minimal look has no colour in its numbers)",
+                      apartFromCPU < 0.15 && apartFromMemory < 0.15, "GPU \(g), CPU \(c), memory \(m)")
+            }
+        } else {
+            check("\(look)  the readings' colours could be measured", false, "no ink")
+        }
+        if let g0 = gs[0].flatMap({ withGPU.inkColor(in: $0, threshold: 60) }), let g2 = gs[2].flatMap({ withGPU.inkColor(in: $0, threshold: 60) }) {
+            check("\(look)  the GPU's graph is drawn in the same line colour as the CPU's and the memory's",
+                  abs(g0.r - g2.r) + abs(g0.g - g2.g) + abs(g0.b - g2.b) < 0.08, "CPU line \(g0), GPU line \(g2)")
+        } else {
+            check("\(look)  the graphs' colours could be measured", false, "no ink")
+        }
+
+        // Three readings at 100 %: the smallest digits, still all inside.
+        let fr = (0..<3).map { full.row("pulse.readout.\($0)") }
+        let fullGaps = (0..<2).compactMap { i in fr[i].flatMap { a in fr[i + 1].map { b in CGRect(x: a.maxX, y: a.minY, width: b.minX - a.maxX, height: a.height).insetBy(dx: 1, dy: 0) } } }
+        let fullInk = fullGaps.compactMap { full.inkBounds(in: $0, threshold: 40) }
+        let fullSpills = spills(full.view, width: width)
+        check("\(look)all three readings at 100 % still fit: three columns inside the panel, apart, nothing drawn between them or outside the panel",
+              fr.allSatisfy { $0 != nil } && (fr[2]?.maxX ?? 999) <= width - inset.trailing + 0.5 && fullGaps.count == 2 && fullGaps.allSatisfy { $0.width >= gap - 2.5 }
+                && fullInk.isEmpty && fullSpills == false,
+              "readouts \(fr.map(describe)), gaps \(fullGaps.map(describe)), ink \(fullInk.map(describe)), spills \(String(describing: fullSpills))")
+
+        // No GPU reading: the panel as it is today, with no empty slot and no dash; the same in a row too tight for the wider panel.
+        check("\(look)a Mac that reports no GPU load shows CPU and memory alone: no third reading, no third graph, and the panel's pixels equal the two-reading panel's",
+              none.row("pulse.readout.2") == nil && none.row("pulse.scope.2") == nil && none.row("pulse.readout.1") != nil
+                && none.pixels().map { n in two.pixels().map { n.data == $0.data } ?? false } == true,
+              "readouts \(describe(none.row("pulse.readout.2"))), graphs \(describe(none.row("pulse.scope.2")))")
+        check("\(look)  at the old width (4 cells) with no GPU reading the panel's pixels equal the two-reading panel's",
+              noneOld.row("pulse.readout.2") == nil && noneOld.pixels().map { n in twoOld.pixels().map { n.data == $0.data } ?? false } == true, "")
+        check("\(look)  at the old width (4 cells) with a GPU reading there is no room: CPU and memory alone, exactly the old panel, nothing cut off",
+              tight.row("pulse.readout.2") == nil && tight.row("pulse.scope.2") == nil && tight.row("pulse.readout.1") != nil
+                && tight.pixels().map { n in twoOld.pixels().map { n.data == $0.data } ?? false } == true && spills(tight.view, width: oldWidth) == false, "")
+
+        // The real notch at each Size: the panel takes its default width, the three readings stand inside it.
+        let forcedScale = ProcessInfo.processInfo.environment["SCOUT_SCALE"] != nil
+        let savedSize = UserDefaults.standard.object(forKey: Look.scaleKey)
+        defer { if let savedSize { UserDefaults.standard.set(savedSize, forKey: Look.scaleKey) } else { UserDefaults.standard.removeObject(forKey: Look.scaleKey) } }
+        for size in forcedScale ? [Look.size] : Look.Size.allCases {
+            if !forcedScale { Pref.set(size.rawValue, Look.scaleKey) }
+            let box = PanelProbe.Box()
+            let rig = Rig(layout: [.pulse]) {
+                AnyView(PulseWidgetView(style: .cards, metrics: [.cpu, .memory, .gpu], battery: battery).environment(\.pulseSampleOverride, reading)
+                    .coordinateSpace(name: "dashpanel").onPreferenceChange(DashRowKey.self) { box.rows = $0 })
+            }
+            await settle(0.9)
+            let f = size.factor
+            let panelRect = rig.rect("panel.pulse")
+            let r = (0..<3).map { box.rows["pulse.readout.\($0)"] }, g = (0..<3).map { box.rows["pulse.scope.\($0)"] }
+            let inside = r.allSatisfy { $0 != nil } && g.allSatisfy { $0 != nil } && (r[2]?.maxX ?? 999) <= width - inset.trailing + 0.5 && near(r[0]?.minX, inset.leading)
+            let ordered = zip(r, r.dropFirst()).allSatisfy { a, b in (b?.minX ?? 0) - (a?.maxX ?? 999) >= gap - 0.5 }
+            check("\(look)at size \(size.title) (x\(f)) the panel is \(Int((width * f).rounded())) x \(Int((NookMetrics.widgetHeight * f).rounded())) pt on screen and holds the three readings and their graphs, apart, inside its insets",
+                  near(panelRect?.width, width * f, 1.5) && near(panelRect?.height, NookMetrics.widgetHeight * f, 1.5) && inside && ordered && (g[2]?.height ?? 0) >= 24,
+                  "panel \(describe(panelRect)), readouts \(r.map(describe)), graphs \(g.map(describe))")
+            rig.close()
+        }
+
+        // The row around the panel: the extra cells come only out of room the row has to spare, so no widget is pushed out or hidden, and a
+        // row that was tight before is laid out exactly as it was (the panel keeps four cells and shows CPU and memory alone).
+        func layout(_ live: NookLive, _ islandWidth: CGFloat) -> (rows: [[NookItem]], hidden: Int, spans: [NookItem: Int])? {
+            let store = NookStore(persist: false, layout: [.agents, .askAI, .pulse, .today])
+            store.tabIDs = { [] }
+            store.liveOverride = live
+            let grid = store.rows(in: islandWidth - 52, maxRows: NookStore.maxRows)
+            guard let first = grid.rows.first else { return nil }
+            return (grid.rows, grid.hidden, store.spans(for: first, width: islandWidth - 52))
+        }
+        let defaultRow = NookStore(persist: false, layout: [.agents, .askAI, .pulse, .today])
+        defaultRow.tabIDs = { [] }
+        defaultRow.liveOverride = NookLive(playing: false, agents: 2)
+        let cells = defaultRow.sizingSpans.reduce(0, +), items = defaultRow.sizingSpans.count
+        let rowWidth = CGFloat(cells) * NookMetrics.cell + CGFloat(items - 1) * NookMetrics.spacing + 2 * (12 + 14)
+        let calm = layout(NookLive(playing: false, agents: 2), min(rowWidth, 1040))
+        check("\(look)the default dashboard (Agents, Ask AI, CPU & Memory, Today) is \(Int(rowWidth)) pt wide, inside the default 1040 pt, on one row with every panel shown, the Pulse panel \(span) cells and the Agents panel 4",
+              rowWidth <= 1040 && calm?.rows.count == 1 && calm?.rows.first?.count == 4 && calm?.hidden == 0
+                && calm?.spans[.panel(.pulse)] == span && calm?.spans[.panel(.agents)] == 4 && calm?.spans[.panel(.askAI)] == 4 && calm?.spans[.panel(.today)] == 4,
+              "width \(rowWidth), rows \(String(describing: calm?.rows.map { $0.map(\.id) })), spans \(String(describing: calm?.spans.map { "\($0.key.id) \($0.value)" }))")
+        let music = layout(NookLive(playing: true, agents: 2), 1040)
+        check("\(look)  with music playing at 1040 pt every panel is still shown on one row, laid out as before the GPU reading: CPU & Memory 4 cells, the Agents panel 3",
+              music?.rows.count == 1 && music?.rows.first?.count == 5 && music?.hidden == 0 && music?.spans[.panel(.pulse)] == 4 && music?.spans[.panel(.agents)] == 3,
+              "rows \(String(describing: music?.rows.map { $0.map(\.id) })), spans \(String(describing: music?.spans.map { "\($0.key.id) \($0.value)" }))")
+        let narrow = layout(NookLive(playing: false, agents: 2), 680)
+        check("\(look)  at the narrowest notch (680 pt) the rows are as they were (Agents, Ask AI, CPU & Memory, then Today below), CPU & Memory 4 cells and the Agents panel keeps its 4",
+              narrow?.rows.count == 2 && narrow?.rows.first?.map(\.id) == ["agents", "askAI", "pulse"] && narrow?.rows.last?.map(\.id) == ["today"] && narrow?.hidden == 0
+                && narrow?.spans[.panel(.pulse)] == 4 && narrow?.spans[.panel(.agents)] == 4,
+              "rows \(String(describing: narrow?.rows.map { $0.map(\.id) })), spans \(String(describing: narrow?.spans.map { "\($0.key.id) \($0.value)" }))")
     }
 
     private static func finish(_ lines: [String], _ failed: Int, out file: URL) {

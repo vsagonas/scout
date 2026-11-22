@@ -1,8 +1,6 @@
 "CFBundleDisplayName" = "Scout";
 "NSAppleEventsUsageDescription" = "Scout ottaa yhteyttä Spotify-, Musiikki-, Viestit- ja Muistiinpanot-sovelluksiin vain, kun käytät näitä ominaisuuksia: näyttääkseen ja ohjatakseen soivaa musiikkia, lähettääkseen kirjoittamasi vastauksen tai tallentaakseen muistiinpanon.";
 "NSAppleEventsUsageDescription~appstore" = "Scout ottaa yhteyttä Musiikki- ja Spotify-sovelluksiin vain, kun kytket toiston ohjauksen päälle, näyttääkseen ja ohjatakseen soivaa musiikkia.";
-"NSAppleMusicUsageDescription" = "Scout näyttää, mitä Musiikki-sovelluksessa soi.";
-"NSAudioCaptureUsageDescription" = "Scout kuuntelee soivan sovelluksen ääntä animoidakseen musiikin visualisoijan ja säätääkseen sovelluskohtaisen äänenvoimakkuuden. Ääntä ei koskaan tallenneta tai lähetetä.";
 "NSBluetoothAlwaysUsageDescription" = "Scout näyttää AirPods-kuulokkeesi ja muut laitteesi, kun ne yhdistyvät, akkutietoineen.";
 "NSBluetoothAlwaysUsageDescription~appstore" = "Scout näyttää AirPods-kuulokkeesi ja muut Bluetooth-laitteesi nimellä, kun ne yhdistyvät.";
 "NSCalendarsFullAccessUsageDescription" = "Scout näyttää tulevat tapahtumasi lovessa ja lisää luomasi tapahtumat.";

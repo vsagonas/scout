@@ -8,15 +8,16 @@ struct NotchSettingsPane: View {
     @AppStorage("notch.hoverDelay") private var hoverDelay = 0.15
     @AppStorage("notch.clickToOpen") private var clickToOpen = true
     @AppStorage("notch.openWidth") private var width = 1040.0
-    @AppStorage("notch.screens") private var screens = NotchScreenMode.main.rawValue
-    @AppStorage("notch.virtual") private var virtualNotch = true
-    @AppStorage("notch.hideInFullscreen") private var hideInFullscreen = true
     @AppStorage("notch.gestures") private var gestures = true
     @AppStorage("notch.gestureInvert") private var gestureInvert = false
     @AppStorage("notch.haptics") private var openTick = true
     @AppStorage("notch.workspaces") private var tabsRaw = ""
     @AppStorage("notch.tabsEdited") private var tabsEdited = false
     @ObservedObject private var nook = NookStore.shared
+
+    /// The real page reads the connected displays; a picture of the page names the kinds of display it pretends to have.
+    var shownKinds: [CutoutKind]?
+    init(shownKinds: [CutoutKind]? = nil) { self.shownKinds = shownKinds }
 
     var body: some View {
         Form {
@@ -50,14 +51,7 @@ struct NotchSettingsPane: View {
                 SettingsFootnote("The open notch is as wide as the widgets on your dashboard, up to this width.")
             }
 
-            Section("Displays") {
-                Picker("Show the notch on", selection: $screens) {
-                    ForEach(NotchScreenMode.allCases) { Text($0.title).tag($0.rawValue) }
-                }
-                Toggle("Add a notch to displays that have none", isOn: $virtualNotch).toggleStyle(.switch)
-                    .disabled(screens == NotchScreenMode.notched.rawValue)
-                Toggle("Hide it while an app is full screen", isOn: $hideInFullscreen).toggleStyle(.switch)
-            }
+            NotchCutoutSections(shownKinds: shownKinds)
 
             Section {
                 Toggle("Two-finger swipe on the notch", isOn: $gestures).toggleStyle(.switch)
@@ -92,6 +86,96 @@ struct NotchSettingsPane: View {
         .scrollDisabled(true)
     }
 
+}
+
+/// Settings › Notch › Displays and Camera cutout: which displays get the notch, what the Mac's camera cutout is, what Scout draws where there is
+/// none, and the button that copies what the system says about the displays (for a Mac Scout reads wrongly). A short section that fits the window
+/// without scrolling.
+struct NotchCutoutSections: View {
+    @AppStorage("notch.screens") private var screens = NotchScreenMode.main.rawValue
+    @AppStorage("notch.hideInFullscreen") private var hideInFullscreen = true
+    @AppStorage("notch.cutout") private var cutout = CutoutOverride.automatic.rawValue
+    @AppStorage("notch.shape") private var noneShape = NoneShape.tab.rawValue
+    @AppStorage("notch.agentStyle") private var agentStyle = AgentWingStyle.faces.rawValue
+    @State private var copied = false
+    @State private var displayChange = 0
+
+    var shownKinds: [CutoutKind]?
+
+    /// Whether a display with a classic notch is connected (the choice of agent style is about it).
+    private var hasNotch: Bool {
+        _ = displayChange
+        let kinds = shownKinds ?? NSScreen.screens.map { NotchGeometry.make(for: $0).kind }
+        return kinds.contains(.notch)
+    }
+
+    var body: some View {
+        Section("Displays") {
+            Picker("Show the notch on", selection: $screens) {
+                ForEach(NotchScreenMode.allCases) { Text($0.title).tag($0.rawValue) }
+            }
+            Picker("On displays without a camera cutout", selection: $noneShape) {
+                ForEach(NoneShape.allCases) { Text($0.title).tag($0.rawValue) }
+            }
+            .disabled(screens == NotchScreenMode.notched.rawValue)
+            if hasNotch {
+                Picker("Agents beside the notch", selection: $agentStyle) {
+                    ForEach(AgentWingStyle.allCases) { Text($0.title).tag($0.rawValue) }
+                }
+            }
+            Toggle("Hide it while an app is full screen", isOn: $hideInFullscreen).toggleStyle(.switch)
+        }
+
+        // Its own section, so its footnote reads as being about these two rows only.
+        Section {
+            Picker("Camera cutout", selection: $cutout) {
+                ForEach(CutoutOverride.allCases) { Text($0.title).tag($0.rawValue) }
+            }
+            HStack {
+                Spacer()
+                if copied { Image(systemName: "checkmark").foregroundStyle(.green).accessibilityHidden(true) }
+                Button("Copy display details") {
+                    guard DisplayReport.copyToClipboard() else { return }
+                    copied = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) { copied = false }
+                }
+            }
+        } header: {
+            Text("Camera cutout")
+        } footer: {
+            SettingsFootnote("Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill.")
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didChangeScreenParametersNotification)) { _ in displayChange += 1 }
+        .onChange(of: agentStyle) { _, _ in showClosedNotch() }
+        .onChange(of: noneShape) { _, _ in showClosedNotch() }
+    }
+
+    /// These two choices change the CLOSED notch, and Settings holds the notch open behind its window: the notch steps aside for a few seconds
+    /// so the change can be seen, then opens again behind Settings.
+    private func showClosedNotch() {
+        guard !ScoutRuntime.isScripted else { return }
+        let until = Date().addingTimeInterval(6)
+        SettingsWindowController.shared.notchHold.stepAside { Date() < until }
+    }
+}
+
+/// Pictures of the Camera cutout section at the Settings window's real size (the page is 660 pt wide beside the 240 pt sidebar of the 900 pt
+/// window, 28 pt of margin on both sides), with and without a classic notch among the displays.
+@MainActor
+enum NotchSettingsGallery {
+    static func register() {
+        let window: [(name: String, kinds: [CutoutKind])] = [("settings-notch-cutout", [.notch]), ("settings-notch-cutout-nonotch", [.pill, .none])]
+        for (name, kinds) in window {
+            Gallery.register(name, size: CGSize(width: 660, height: 420), backdrop: .window) {
+                Form { NotchCutoutSections(shownKinds: kinds) }
+                    .formStyle(.grouped)
+                    .scrollDisabled(true)
+                    .padding(.horizontal, 28)
+                    .padding(.top, 8)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            }
+        }
+    }
 }
 
 /// Settings › Appearance › Notch: the notch style, the size and the lines between panels (the 8-bit switch and the one light/dark setting

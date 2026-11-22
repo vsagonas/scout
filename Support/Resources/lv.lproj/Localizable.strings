@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@: neizdevās";
 "%@ + %lld more" = "%@ + vēl %lld";
 "%@ DONE ✓" = "%@ PABEIGTS ✓";
 "%@ and %lld more" = "%@ un vēl %lld";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@ beidzās (kods %d).";
 "%@ ended." = "%@ beidzās.";
 "%@ failed" = "%@: neizdevās";
-"%@ finished after %lld min" = "%@ pabeidza pēc %lld min";
 "%@ free" = "Brīvs: %@";
 "%@ has no sound" = "%@ nav skaņas";
 "%@ in %@" = "%@ šeit: %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "%@ atsākšanas komanda";
 "%@ settings…" = "%@ iestatījumi…";
 "%@ so far" = "%@ līdz šim";
-"%@ stopped with an error" = "%@ apstājās ar kļūdu";
 "%@ timer finished" = "%@ taimeris pabeigts";
 "%@ to full" = "%@ līdz pilnam";
 "%@ used" = "Izmantots: %@";
@@ -100,7 +97,6 @@
 "Add" = "Pievienot";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Pievieno Scout sadaļā Privacy & Security › Full Disk Access, ieslēdz to, pēc tam aizver un atver Scout vēlreiz. macOS tur Messages datubāzi bloķētu, kamēr to nedari. Scout to tikai lasa un tikai jaunām ziņām.";
 "Add a key to start" = "Lai sāktu, pievieno atslēgu";
-"Add a notch to displays that have none" = "Pievienot izgriezumu displejiem, kuriem tā nav";
 "Add a task" = "Pievienot uzdevumu";
 "Add a task (no day)" = "Pievienot uzdevumu (bez dienas)";
 "Add a task for this day" = "Pievienot uzdevumu šai dienai";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Aģentu cilnes";
 "Agents" = "Aģenti";
 "Agents & AI Usage" = "Aģenti un MI izmantošana";
+"Agents beside the notch" = "Aģenti blakus izgriezumam";
 "Agents settings" = "Aģentu iestatījumi";
 "Agents show up here by themselves." = "Aģenti šeit parādās paši.";
 "Agents: %lld" = "Aģenti: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Piekļuve kamerai ir izslēgta";
 "Camera access is off for Scout." = "Piekļuve kamerai Scout ir izslēgta.";
+"Camera cutout" = "Kameras atvērums";
 "Can't read %@ yet" = "%@ vēl nevar nolasīt";
 "Can't tell which chat this is" = "Nevar noteikt, kurš čats tas ir";
 "Cancel" = "Atcelt";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Kopijas, kas veiktas, kamēr priekšplānā ir kāda no šīm lietotnēm, netiek saglabātas nekad.";
 "Copy" = "Kopēt";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Nokopē saiti no YouTube, X, Instagram, TikTok, Vimeo vai Reddit, atver Paplāti, un Scout piedāvā to lejupielādēt, vai ievelc saiti Paplātē. Lejupielāde izmanto yt-dlp, ko instalē pats; augstāk esošā poga darbojas tikai tad, kad to nospied. Lai nolasītu nokopētu saiti, Scout vajag „Allow“ sadaļā System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 un jaunāks).";
+"Copy display details" = "Kopēt displeja datus";
 "Copy something and it shows up here." = "Nokopē ko un tas parādīsies šeit.";
 "Couldn't copy the picture" = "Neizdevās nokopēt attēlu";
 "Couldn't copy the polaroid" = "Neizdevās nokopēt polaroid";
@@ -424,6 +423,7 @@
 "Extra large" = "Ļoti liels";
 "FAVOURITES" = "IZLASE";
 "FROZEN" = "SASALIS";
+"Faces in the notch" = "Sejas izgriezumā";
 "Fahrenheit (°F)" = "Fārenheita (°F)";
 "Fast Ask AI" = "Ātrais MI";
 "Fastest, for short questions" = "Visātrākais, īsiem jautājumiem";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Instalēt yt-dlp un deno ar Homebrew?";
 "Installing…" = "Instalē…";
 "Internet speed right now: down (received) and up (sent)" = "Interneta ātrums tagad: lejupielāde (saņemts) un augšupielāde (nosūtīts)";
+"Island" = "Sala";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Tagad tas seko tavas balss skaņai. Izvēlies valodu sadaļā Iestatījumi › Prompters.";
 "It stays in your Mac's Keychain." = "Tā paliek tava Mac Keychain.";
 "Items in the Tray: %lld" = "Vienumi Paplātē: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Nav sinhronizētu dziesmas vārdu";
 "No widgets yet" = "Logrīku vēl nav";
 "Nobody home yet. Agents move in by themselves." = "Neviena vēl nav mājās. Aģenti ievācas paši.";
+"None" = "Nav";
 "None chosen yet" = "Vēl nekas nav izvēlēts";
 "None found" = "Nav atrasts";
 "None yet" = "Vēl nav";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Piezīmes un uzdevumi";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Piezīmes un uzdevumi tiek saglabāti šajā Mac un parādīti izgriezuma logrīkos un skatos.";
 "Notes saved: %lld" = "Saglabātās piezīmes: %lld";
+"Nothing" = "Nekas";
 "Nothing (click to open)" = "Nekas (klikšķini, lai atvērtu)";
 "Nothing copied yet" = "Vēl nekas nav nokopēts";
 "Nothing copied yet.\nCopy something and it will show up here." = "Vēl nekas nav nokopēts.\nNokopē ko un tas parādīsies šeit.";
@@ -729,13 +732,15 @@
 "On" = "Iesl.";
 "On air" = "Ēterā";
 "On battery" = "No akumulatora";
+"On displays without a camera cutout" = "Displejos bez kameras atvēruma";
 "On the dashboard now" = "Panelī tagad";
 "One day" = "Viena diena";
 "One hour" = "Viena stunda";
 "One month" = "Viens mēnesis";
 "One week" = "Viena nedēļa";
-"Only displays with a notch" = "Tikai displeji ar izgriezumu";
+"Only displays with a camera cutout" = "Tikai displeji ar kameras atvērumu";
 "Only events with a video link" = "Tikai notikumi ar video saiti";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Tikai Mac datoram, ko Scout nolasa nepareizi. Mac dators ar izgriezumu nevar parādīt kapsulas priekšskatījumu.";
 "Only for the Prompter to follow your voice." = "Tikai, lai Prompters sekotu tavai balsij.";
 "Only what you choose" = "Tikai tas, ko izvēlies";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Tikai tad, ja tas vēl skanēja, kad Scout tika aizvērts. Scout vienmēr atceras pēdējo staciju un skaļumu.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Izvēlies savu izskatu";
 "Picking an item" = "Vienuma izvēle";
 "Picture" = "Attēls";
+"Pill" = "Kapsula";
 "Pin" = "Piespraust";
 "Pin apps" = "Piespraust lietotnes";
 "Pink" = "Rozā";
@@ -857,6 +863,7 @@
 "READY" = "GATAVS";
 "Radio" = "Radio";
 "Radio stations by place, and what the Radio tab remembers." = "Radiostacijas pēc vietas un tas, ko atceras cilne Radio.";
+"Radio stations in the Radio tab" = "Radiostacijas cilnē Radio";
 "Rain" = "Lietus";
 "Ran %@" = "Darbojās %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Lasīt ienākošās ziņas. macOS nesaka lietotnēm, vai tas ir ieslēgts.";
@@ -904,6 +911,7 @@
 "Ring" = "Gredzens";
 "Ring when time is up" = "Zvanīt, kad laiks beidzies";
 "Rings" = "Gredzeni";
+"Round bubbles" = "Apaļi burbuļi";
 "Rounded" = "Noapaļots";
 "Run the short introduction again." = "Palaist īso ievadu vēlreiz.";
 "STARTING" = "SAKAS";
@@ -936,7 +944,6 @@
 "Screen" = "Ekrāns";
 "Screen Recording" = "Ekrāna ierakstīšana";
 "Screen Recording is off for Scout" = "Ekrāna ierakstīšana Scout ir izslēgta";
-"Screen recordings and the music visualizer." = "Ekrāna ieraksti un mūzikas vizualizators.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Ekrāns: katrs jautājums uzņem tava ekrāna attēlu un nosūta to uz %@ kopā ar jautājumu";
 "Screenshots and screen recordings." = "Ekrānuzņēmumi un ekrāna ieraksti.";
 "Scripts" = "Skripti";

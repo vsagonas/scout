@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@ nepavyko";
 "%@ + %lld more" = "%@ + dar %lld";
 "%@ DONE ✓" = "%@ ATLIKTA ✓";
 "%@ and %lld more" = "%@ ir dar %lld";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@ baigėsi (kodas %d).";
 "%@ ended." = "%@ baigėsi.";
 "%@ failed" = "%@ nepavyko";
-"%@ finished after %lld min" = "%@ baigė po %lld min";
 "%@ free" = "Laisva: %@";
 "%@ has no sound" = "%@ neturi garso";
 "%@ in %@" = "%@ (%@)";
@@ -29,7 +27,6 @@
 "%@ resume command" = "%@ tęsimo komanda";
 "%@ settings…" = "%@ nustatymai…";
 "%@ so far" = "%@ iki šiol";
-"%@ stopped with an error" = "%@ sustojo su klaida";
 "%@ timer finished" = "%@ laikmatis baigėsi";
 "%@ to full" = "%@ iki pilno";
 "%@ used" = "Panaudota: %@";
@@ -100,7 +97,6 @@
 "Add" = "Pridėti";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Pridėk Scout skiltyje Privacy & Security › Full Disk Access, įjunk jį, tada uždaryk ir vėl atidaryk Scout. macOS laiko Messages duomenų bazę užrakintą, kol to nepadarai. Scout ją tik skaito ir tik naujoms žinutėms.";
 "Add a key to start" = "Norėdamas pradėti, pridėk raktą";
-"Add a notch to displays that have none" = "Pridėti išpjovą ekranams, kurie jos neturi";
 "Add a task" = "Pridėti užduotį";
 "Add a task (no day)" = "Pridėti užduotį (be dienos)";
 "Add a task for this day" = "Pridėti užduotį šiai dienai";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Agentų skirtukai";
 "Agents" = "Agentai";
 "Agents & AI Usage" = "Agentai ir DI naudojimas";
+"Agents beside the notch" = "Agentai šalia išpjovos";
 "Agents settings" = "Agentų nustatymai";
 "Agents show up here by themselves." = "Agentai čia atsiranda patys.";
 "Agents: %lld" = "Agentai: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Prieiga prie kameros išjungta";
 "Camera access is off for Scout." = "Prieiga prie kameros išjungta Scout.";
+"Camera cutout" = "Kameros anga";
 "Can't read %@ yet" = "Dar negalima perskaityti %@";
 "Can't tell which chat this is" = "Neaišku, kuris tai pokalbis";
 "Cancel" = "Atšaukti";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Kopijos, padarytos, kai viena iš šių programų yra priekyje, niekada nesaugomos.";
 "Copy" = "Kopijuoti";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Nukopijuok nuorodą iš YouTube, X, Instagram, TikTok, Vimeo ar Reddit, atidaryk Dėklą, ir Scout pasiūlys ją atsisiųsti, arba numesk nuorodą ant Dėklo. Atsisiuntimui naudojamas yt-dlp, kurį įdiegi pats; aukščiau esantis mygtukas veikia tik tada, kai jį paspaudi. Norint perskaityti nukopijuotą nuorodą, reikia „Allow“ Scout skiltyje System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 ir naujesnė).";
+"Copy display details" = "Kopijuoti ekrano informaciją";
 "Copy something and it shows up here." = "Nukopijuok ką nors ir tai atsiras čia.";
 "Couldn't copy the picture" = "Nepavyko nukopijuoti paveikslėlio";
 "Couldn't copy the polaroid" = "Nepavyko nukopijuoti polaroid";
@@ -424,6 +423,7 @@
 "Extra large" = "Labai didelis";
 "FAVOURITES" = "MEGSTAMIAUSI";
 "FROZEN" = "UZSALDYTA";
+"Faces in the notch" = "Veidai išpjovoje";
 "Fahrenheit (°F)" = "Farenheito (°F)";
 "Fast Ask AI" = "Greitas DI";
 "Fastest, for short questions" = "Greičiausias, trumpiems klausimams";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Įdiegti yt-dlp ir deno su Homebrew?";
 "Installing…" = "Diegiama…";
 "Internet speed right now: down (received) and up (sent)" = "Interneto greitis dabar: atsisiuntimas (gauta) ir išsiuntimas (išsiųsta)";
+"Island" = "Sala";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Dabar jis seka tavo balso garsą. Pasirink kalbą skiltyje Nustatymai › Prompteris.";
 "It stays in your Mac's Keychain." = "Jis lieka tavo Mac Keychain.";
 "Items in the Tray: %lld" = "Elementai Dėkle: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Nėra sinchronizuotų žodžių";
 "No widgets yet" = "Valdiklių dar nėra";
 "Nobody home yet. Agents move in by themselves." = "Namuose dar niekas negyvena. Agentai apsigyvena patys.";
+"None" = "Nėra";
 "None chosen yet" = "Dar nieko nepasirinkta";
 "None found" = "Nerasta";
 "None yet" = "Dar nėra";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Pastabos ir užduotys";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Pastabos ir užduotys saugomos šiame Mac ir rodomos išpjovos valdikliuose bei rodiniuose.";
 "Notes saved: %lld" = "Išsaugotos pastabos: %lld";
+"Nothing" = "Nieko";
 "Nothing (click to open)" = "Nieko (spustelėk, kad atidarytum)";
 "Nothing copied yet" = "Dar nieko nenukopijuota";
 "Nothing copied yet.\nCopy something and it will show up here." = "Dar nieko nenukopijuota.\nNukopijuok ką nors ir tai atsiras čia.";
@@ -729,13 +732,15 @@
 "On" = "Įj.";
 "On air" = "Eteryje";
 "On battery" = "Naudojama baterija";
+"On displays without a camera cutout" = "Ekranuose be kameros angos";
 "On the dashboard now" = "Skydelyje dabar";
 "One day" = "Viena diena";
 "One hour" = "Viena valanda";
 "One month" = "Vienas mėnuo";
 "One week" = "Viena savaitė";
-"Only displays with a notch" = "Tik ekranai su išpjova";
+"Only displays with a camera cutout" = "Tik ekranai su kameros anga";
 "Only events with a video link" = "Tik įvykiai su vaizdo nuoroda";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Tik Mac kompiuteriui, kurį Scout nuskaito neteisingai. Mac kompiuteris su išpjova negali parodyti kapsulės peržiūros.";
 "Only for the Prompter to follow your voice." = "Tik tam, kad Prompteris sektų tavo balsą.";
 "Only what you choose" = "Tik tai, ką pasirenki";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Tik jei dar grojo, kai Scout buvo uždarytas. Scout visada prisimena paskutinę stotį ir garsumą.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Pasirink savo išvaizdą";
 "Picking an item" = "Elemento pasirinkimas";
 "Picture" = "Paveikslėlis";
+"Pill" = "Kapsulė";
 "Pin" = "Prisegti";
 "Pin apps" = "Prisegti programas";
 "Pink" = "Rožinė";
@@ -857,6 +863,7 @@
 "READY" = "PARUOSTA";
 "Radio" = "Radijas";
 "Radio stations by place, and what the Radio tab remembers." = "Radijo stotys pagal vietą ir tai, ką prisimena skirtukas Radijas.";
+"Radio stations in the Radio tab" = "Radijo stotys skirtuke Radijas";
 "Rain" = "Lietus";
 "Ran %@" = "Veikė %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Skaityti gaunamas žinutes. macOS nepasako programoms, ar tai įjungta.";
@@ -904,6 +911,7 @@
 "Ring" = "Žiedas";
 "Ring when time is up" = "Skambėti, kai laikas baigiasi";
 "Rings" = "Žiedai";
+"Round bubbles" = "Apvalūs burbulai";
 "Rounded" = "Suapvalintas";
 "Run the short introduction again." = "Dar kartą paleisti trumpą įvadą.";
 "STARTING" = "PALEIDZIAMA";
@@ -936,7 +944,6 @@
 "Screen" = "Ekranas";
 "Screen Recording" = "Ekrano įrašymas";
 "Screen Recording is off for Scout" = "Ekrano įrašymas išjungtas Scout";
-"Screen recordings and the music visualizer." = "Ekrano įrašai ir muzikos vizualizatorius.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Ekranas: kiekvienas klausimas nufotografuoja tavo ekraną ir kartu su klausimu išsiunčia į %@";
 "Screenshots and screen recordings." = "Ekrano nuotraukos ir ekrano įrašai.";
 "Scripts" = "Skriptai";

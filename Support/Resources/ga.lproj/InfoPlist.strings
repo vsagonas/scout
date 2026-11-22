@@ -1,8 +1,6 @@
 "CFBundleDisplayName" = "Scout";
 "NSAppleEventsUsageDescription" = "Ní labhraíonn Scout le Spotify, Music, Messages agus Notes ach nuair a úsáideann tú na gnéithe sin: chun an méid atá ag seinm a thaispeáint agus a rialú, freagra a chlóscríobh tú a sheoladh, nó nóta a shábháil.";
 "NSAppleEventsUsageDescription~appstore" = "Ní labhraíonn Scout le Music agus Spotify ach nuair a chuireann tú rialú seinnte air, chun an méid atá ag seinm a thaispeáint agus a rialú.";
-"NSAppleMusicUsageDescription" = "Taispeánann Scout an méid atá ag seinm i Music.";
-"NSAudioCaptureUsageDescription" = "Éisteann Scout le fuaim na haipe atá ag seinm chun amharcléiritheoir an cheoil a bheochan agus airde fuaime gach aipe a shocrú. Ní shábháiltear ná ní sheoltar fuaim riamh.";
 "NSBluetoothAlwaysUsageDescription" = "Taispeánann Scout do AirPods agus gléasanna eile nuair a cheanglaíonn siad, lena gcadhnra.";
 "NSBluetoothAlwaysUsageDescription~appstore" = "Taispeánann Scout do AirPods agus gléasanna Bluetooth eile de réir ainm nuair a cheanglaíonn siad.";
 "NSCalendarsFullAccessUsageDescription" = "Taispeánann Scout d'imeachtaí atá le teacht sa notch agus cuireann sé leis na himeachtaí a chruthaíonn tú.";

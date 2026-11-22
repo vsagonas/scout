@@ -9,6 +9,10 @@ Brand names are never declined or merged with prepositions beyond the article: "
 | agent / agents | agente / agentes ("agentes de IA") |
 | widget / widgets | widget / widgets |
 | notch | notch (no notch, as in the store text) |
+| camera cutout (the general word, whatever the shape) | recorte da câmara |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | pílula |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | ilha |
+| round bubbles (the agents beside the camera) | bolhas redondas |
 | dashboard | painel |
 | Settings / System Settings | Definições / Definições do Sistema |
 | Tray | Bandeja (Tray is translated) |

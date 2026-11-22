@@ -6,8 +6,6 @@ import SwiftUI
 struct AgentAnnouncement: Equatable {
     enum Kind: Equatable {
         case needsYou
-        case finished(minutes: Int)
-        case error
     }
 
     var sessionID: String
@@ -251,9 +249,8 @@ extension View {
     func agentLit(_ lit: Bool, radius: CGFloat = 6) -> some View { modifier(AgentLitModifier(lit: lit, radius: radius)) }
 }
 
-/// What the notch says when it opens by itself for an agent, as a 90s pager: a little plastic body with an LCD that says who and what
-/// happened in pixel capitals ("INFRA NEEDS YOU", "SITE FINISHED AFTER 12 MIN", "API STOPPED WITH AN ERROR"), the failed step for an
-/// error, and the first words of the agent's latest message in the system font so they read easily.
+/// What the notch says when it opens by itself for an agent, as a 90s pager: a little plastic body with an LCD that says who needs you in
+/// pixel capitals ("INFRA NEEDS YOU") and the first words of the agent's latest message in the system font so they read easily.
 struct AgentBanner: View {
     let announcement: AgentAnnouncement
     let session: AgentSession
@@ -261,32 +258,20 @@ struct AgentBanner: View {
     static func headline(_ announcement: AgentAnnouncement, project: String) -> String {
         switch announcement.kind {
         case .needsYou: String(localized: "\(project) needs you")
-        case .finished(let minutes): String(localized: "\(project) finished after \(minutes) min")
-        case .error: String(localized: "\(project) stopped with an error")
         }
     }
 
-    /// The colour of the LCD: amber asks, green is done, red stopped.
+    /// The colour of the LCD: amber asks.
     static func lcd(_ kind: AgentAnnouncement.Kind) -> Color {
         switch kind {
         case .needsYou: Retro.Ink.phosphorAmber
-        case .finished: Retro.Ink.phosphorGreen
-        case .error: Color(red: 1.0, green: 0.38, blue: 0.32)
         }
     }
 
     private var glyph: String {
         switch announcement.kind {
         case .needsYou: "?"
-        case .finished: "✓"
-        case .error: "!"
         }
-    }
-
-    /// The failed step, for an error (what it was doing when it stopped).
-    private var failedStep: String? {
-        guard announcement.kind == .error, let step = session.steps.last(where: { $0.failed }) else { return nil }
-        return String(localized: "\(step.tool) \(step.summary) failed")
     }
 
     var body: some View {
@@ -311,9 +296,6 @@ struct AgentBanner: View {
                     } else {   // a headline the pixel font cannot draw (another script, or a project name in one): the system font
                         Text(verbatim: Self.headline(announcement, project: session.project)).font(.system(size: 12, weight: .bold)).foregroundStyle(ink).lineLimit(1)
                     }
-                }
-                if let failedStep {
-                    Text(failedStep).font(.system(size: 10.5, design: .monospaced)).foregroundStyle(ink.opacity(0.85)).lineLimit(1)
                 }
                 if !session.lastMessage.isEmpty {
                     Text(session.lastMessage).font(.system(size: 11)).foregroundStyle(Retro.Ink.osdWhite.opacity(0.92)).lineLimit(3)

@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "Error de %@ %@";
 "%@ + %lld more" = "%@ + %lld más";
 "%@ DONE ✓" = "%@ LISTO ✓";
 "%@ and %lld more" = "%@ y %lld más";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@ terminó (código %d).";
 "%@ ended." = "%@ terminó.";
 "%@ failed" = "%@ falló";
-"%@ finished after %lld min" = "%@ terminó tras %lld min";
 "%@ free" = "%@ libre";
 "%@ has no sound" = "%@ no tiene sonido";
 "%@ in %@" = "%@ en %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "Comando para reanudar %@";
 "%@ settings…" = "Ajustes de %@…";
 "%@ so far" = "%@ hasta ahora";
-"%@ stopped with an error" = "%@ se detuvo con un error";
 "%@ timer finished" = "Temporizador de %@ terminado";
 "%@ to full" = "%@ hasta cargar";
 "%@ used" = "%@ usado";
@@ -100,7 +97,6 @@
 "Add" = "Añadir";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Añade Scout en Privacidad y seguridad › Acceso total al disco, actívalo y luego cierra y vuelve a abrir Scout. Hasta entonces, macOS mantiene bloqueada la base de datos de Mensajes. Scout solo la lee, y solo para mensajes nuevos.";
 "Add a key to start" = "Añade una clave para empezar";
-"Add a notch to displays that have none" = "Añadir un notch a las pantallas que no lo tienen";
 "Add a task" = "Añadir una tarea";
 "Add a task (no day)" = "Añadir una tarea (sin día)";
 "Add a task for this day" = "Añadir una tarea para este día";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Pestañas de agente";
 "Agents" = "Agentes";
 "Agents & AI Usage" = "Agentes y uso de IA";
+"Agents beside the notch" = "Agentes junto al notch";
 "Agents settings" = "Ajustes de agentes";
 "Agents show up here by themselves." = "Los agentes aparecen aquí solos.";
 "Agents: %lld" = "Agentes: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Cámara";
 "Camera access is off" = "El acceso a la cámara está desactivado";
 "Camera access is off for Scout." = "El acceso a la cámara está desactivado para Scout.";
+"Camera cutout" = "Recorte de la cámara";
 "Can't read %@ yet" = "Aún no se puede leer %@";
 "Can't tell which chat this is" = "No se sabe de qué chat se trata";
 "Cancel" = "Cancelar";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Las copias hechas mientras una de estas apps está al frente no se guardan nunca.";
 "Copy" = "Copiar";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Copia un enlace de YouTube, X, Instagram, TikTok, Vimeo o Reddit, abre la Bandeja y Scout se ofrece a descargarlo, o suelta un enlace en la Bandeja. Las descargas usan yt-dlp, que instalas tú mismo; el botón de arriba solo actúa cuando lo pulsas. Leer un enlace copiado requiere «Permitir» para Scout en Ajustes del Sistema › Privacidad y seguridad › Pegar desde otras apps (macOS 15.4 y posterior).";
+"Copy display details" = "Copiar detalles de la pantalla";
 "Copy something and it shows up here." = "Copia algo y aparecerá aquí.";
 "Couldn't copy the picture" = "No se pudo copiar la imagen";
 "Couldn't copy the polaroid" = "No se pudo copiar la polaroid";
@@ -424,6 +423,7 @@
 "Extra large" = "Extragrande";
 "FAVOURITES" = "FAVORITOS";
 "FROZEN" = "CONGELADO";
+"Faces in the notch" = "Caras en el notch";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
 "Fast Ask AI" = "Pregunta rápida a la IA";
 "Fastest, for short questions" = "El más rápido, para preguntas cortas";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "¿Instalar yt-dlp y deno con Homebrew?";
 "Installing…" = "Instalando…";
 "Internet speed right now: down (received) and up (sent)" = "Velocidad de internet ahora: bajada (recibido) y subida (enviado)";
+"Island" = "Isla";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Ahora sigue el sonido de tu voz. Elige el idioma en Ajustes › Teleprompter.";
 "It stays in your Mac's Keychain." = "Permanece en el Keychain de tu Mac.";
 "Items in the Tray: %lld" = "Elementos en la Bandeja: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Sin letras sincronizadas";
 "No widgets yet" = "Aún no hay widgets";
 "Nobody home yet. Agents move in by themselves." = "Todavía no hay nadie en casa. Los agentes se mudan solos.";
+"None" = "Ninguno";
 "None chosen yet" = "Ninguno elegido aún";
 "None found" = "Ninguno encontrado";
 "None yet" = "Ninguno aún";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Notas y tareas";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Las notas y las tareas se guardan en este Mac y se muestran en los widgets y las vistas del notch.";
 "Notes saved: %lld" = "Notas guardadas: %lld";
+"Nothing" = "Nada";
 "Nothing (click to open)" = "Nada (clic para abrir)";
 "Nothing copied yet" = "Aún no se ha copiado nada";
 "Nothing copied yet.\nCopy something and it will show up here." = "Aún no se ha copiado nada.\nCopia algo y aparecerá aquí.";
@@ -729,13 +732,15 @@
 "On" = "Activado";
 "On air" = "En el aire";
 "On battery" = "Con batería";
+"On displays without a camera cutout" = "En pantallas sin recorte de cámara";
 "On the dashboard now" = "En el tablero ahora";
 "One day" = "Un día";
 "One hour" = "Una hora";
 "One month" = "Un mes";
 "One week" = "Una semana";
-"Only displays with a notch" = "Solo pantallas con notch";
+"Only displays with a camera cutout" = "Solo pantallas con recorte de cámara";
 "Only events with a video link" = "Solo eventos con enlace de video";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Solo para un Mac que Scout lee mal. Un Mac con notch no puede mostrar una vista previa de la píldora.";
 "Only for the Prompter to follow your voice." = "Solo para que el Teleprompter siga tu voz.";
 "Only what you choose" = "Solo lo que elijas";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Solo si seguía sonando cuando se cerró Scout. Scout siempre recuerda la última emisora y el volumen.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Elige tu aspecto";
 "Picking an item" = "Al elegir un elemento";
 "Picture" = "Imagen";
+"Pill" = "Píldora";
 "Pin" = "Fijar";
 "Pin apps" = "Fijar apps";
 "Pink" = "Rosa";
@@ -857,6 +863,7 @@
 "READY" = "LISTO";
 "Radio" = "Radio";
 "Radio stations by place, and what the Radio tab remembers." = "Emisoras de radio por lugar, y lo que recuerda la pestaña Radio.";
+"Radio stations in the Radio tab" = "Emisoras de radio en la pestaña Radio";
 "Rain" = "Lluvia";
 "Ran %@" = "%@ ejecutado";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Leer los mensajes entrantes. macOS no indica a las apps si esto está activado.";
@@ -904,6 +911,7 @@
 "Ring" = "Anillo";
 "Ring when time is up" = "Sonar cuando se acabe el tiempo";
 "Rings" = "Anillos";
+"Round bubbles" = "Burbujas redondas";
 "Rounded" = "Redondeado";
 "Run the short introduction again." = "Volver a ver la breve introducción.";
 "STARTING" = "INICIANDO";
@@ -936,7 +944,6 @@
 "Screen" = "Pantalla";
 "Screen Recording" = "Grabación de pantalla";
 "Screen Recording is off for Scout" = "La grabación de pantalla está desactivada para Scout";
-"Screen recordings and the music visualizer." = "Grabaciones de pantalla y el visualizador de música.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Pantalla: cada pregunta toma una imagen de tu pantalla y la envía a %@ junto con la pregunta";
 "Screenshots and screen recordings." = "Capturas de pantalla y grabaciones de pantalla.";
 "Scripts" = "Guiones";

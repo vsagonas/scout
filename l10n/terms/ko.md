@@ -8,6 +8,10 @@ Style: 합니다/하세요 in sentences, short noun phrase or imperative for men
 | agent / agents | 에이전트 (AI agents: AI 에이전트) |
 | widget(s) | 위젯 |
 | notch | 노치 |
+| camera cutout (the general word, whatever the shape) | 카메라 홀 |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | 알약 |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | 섬 |
+| round bubbles (the agents beside the camera) | 둥근 버블 |
 | dashboard | 대시보드 |
 | Nook | Nook (never translated) |
 | Tray | 트레이 |

@@ -1,8 +1,6 @@
 "CFBundleDisplayName" = "Scout";
 "NSAppleEventsUsageDescription" = "Scout sazinās ar Spotify, Music, Messages un Notes tikai tad, kad izmanto šīs funkcijas: lai rādītu un vadītu, kas skan, nosūtītu tevis uzrakstītu atbildi vai saglabātu piezīmi.";
 "NSAppleEventsUsageDescription~appstore" = "Scout sazinās ar Music un Spotify tikai tad, kad ieslēdz atskaņošanas vadību, lai rādītu un vadītu, kas skan.";
-"NSAppleMusicUsageDescription" = "Scout rāda, kas skan lietotnē Music.";
-"NSAudioCaptureUsageDescription" = "Scout klausās atskaņojošās lietotnes skaņu, lai animētu mūzikas vizualizatoru un iestatītu skaļumu katrai lietotnei. Audio nekad netiek saglabāts vai nosūtīts.";
 "NSBluetoothAlwaysUsageDescription" = "Scout rāda tavus AirPods un citas ierīces, kad tās savienojas, kopā ar to akumulatoru.";
 "NSBluetoothAlwaysUsageDescription~appstore" = "Scout rāda tavus AirPods un citas Bluetooth ierīces pēc nosaukuma, kad tās savienojas.";
 "NSCalendarsFullAccessUsageDescription" = "Scout rāda tavus gaidāmos notikumus izgriezumā un pievieno notikumus, ko tu izveido.";

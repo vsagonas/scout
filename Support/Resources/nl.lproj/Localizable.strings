@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@ mislukt";
 "%@ + %lld more" = "%@ + nog %lld";
 "%@ DONE ✓" = "%@ KLAAR ✓";
 "%@ and %lld more" = "%@ en nog %lld";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@ is beëindigd (code %d).";
 "%@ ended." = "%@ is beëindigd.";
 "%@ failed" = "%@ mislukt";
-"%@ finished after %lld min" = "%@ klaar na %lld min";
 "%@ free" = "%@ vrij";
 "%@ has no sound" = "%@ heeft geen geluid";
 "%@ in %@" = "%@ in %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "Hervatcommando voor %@";
 "%@ settings…" = "%@-instellingen…";
 "%@ so far" = "%@ tot nu toe";
-"%@ stopped with an error" = "%@ is gestopt met een fout";
 "%@ timer finished" = "%@-timer klaar";
 "%@ to full" = "%@ tot vol";
 "%@ used" = "%@ gebruikt";
@@ -100,7 +97,6 @@
 "Add" = "Voeg toe";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Voeg Scout toe onder Privacy en beveiliging › Volledige schijftoegang, zet het aan en sluit Scout daarna af en open het opnieuw. macOS houdt de database van Berichten vergrendeld totdat je dat doet. Scout leest die alleen, en alleen voor nieuwe berichten.";
 "Add a key to start" = "Voeg een sleutel toe om te starten";
-"Add a notch to displays that have none" = "Voeg een notch toe aan schermen die er geen hebben";
 "Add a task" = "Taak toevoegen";
 "Add a task (no day)" = "Taak toevoegen (zonder dag)";
 "Add a task for this day" = "Taak toevoegen voor deze dag";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Agenttabbladen";
 "Agents" = "Agents";
 "Agents & AI Usage" = "Agents & AI-gebruik";
+"Agents beside the notch" = "Agents naast de notch";
 "Agents settings" = "Agent-instellingen";
 "Agents show up here by themselves." = "Agents verschijnen hier vanzelf.";
 "Agents: %lld" = "Agents: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Camera";
 "Camera access is off" = "Cameratoegang staat uit";
 "Camera access is off for Scout." = "Cameratoegang staat uit voor Scout.";
+"Camera cutout" = "Camera-uitsparing";
 "Can't read %@ yet" = "Kan %@ nog niet lezen";
 "Can't tell which chat this is" = "Kan niet zien welke chat dit is";
 "Cancel" = "Annuleer";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Kopieën die worden gemaakt terwijl een van deze apps vooraan staat, worden nooit bewaard.";
 "Copy" = "Kopieer";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Kopieer een link van YouTube, X, Instagram, TikTok, Vimeo of Reddit, open het Bakje en Scout biedt aan hem te downloaden, of zet een link op het Bakje. Downloads gebruiken yt-dlp, dat je zelf installeert; de knop hierboven werkt alleen als je erop drukt. Voor het lezen van een gekopieerde link is “Sta toe” voor Scout nodig onder Systeeminstellingen › Privacy en beveiliging › Plakken vanuit andere apps (macOS 15.4 en later).";
+"Copy display details" = "Kopieer schermdetails";
 "Copy something and it shows up here." = "Kopieer iets en het verschijnt hier.";
 "Couldn't copy the picture" = "Kon de afbeelding niet kopiëren";
 "Couldn't copy the polaroid" = "Kon de polaroid niet kopiëren";
@@ -424,6 +423,7 @@
 "Extra large" = "Extra groot";
 "FAVOURITES" = "FAVORIETEN";
 "FROZEN" = "BEVROREN";
+"Faces in the notch" = "Gezichten in de notch";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
 "Fast Ask AI" = "Snelle Vraag AI";
 "Fastest, for short questions" = "Snelst, voor korte vragen";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "yt-dlp en deno installeren met Homebrew?";
 "Installing…" = "Installeren…";
 "Internet speed right now: down (received) and up (sent)" = "Internetsnelheid nu: download (ontvangen) en upload (verzonden)";
+"Island" = "Eiland";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Het volgt nu het geluid van je stem. Kies de taal in Instellingen › Prompter.";
 "It stays in your Mac's Keychain." = "Het blijft in de Keychain van je Mac.";
 "Items in the Tray: %lld" = "Items in het Bakje: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Geen sync-songtekst";
 "No widgets yet" = "Nog geen widgets";
 "Nobody home yet. Agents move in by themselves." = "Er is nog niemand thuis. Agents trekken er vanzelf in.";
+"None" = "Geen";
 "None chosen yet" = "Nog niets gekozen";
 "None found" = "Niets gevonden";
 "None yet" = "Nog niets";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Notities & taken";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Notities en taken worden op deze Mac bewaard en getoond in de widgets en weergaven van de notch.";
 "Notes saved: %lld" = "Notities bewaard: %lld";
+"Nothing" = "Niets";
 "Nothing (click to open)" = "Niets (klik om te openen)";
 "Nothing copied yet" = "Nog niets gekopieerd";
 "Nothing copied yet.\nCopy something and it will show up here." = "Nog niets gekopieerd.\nKopieer iets en het verschijnt hier.";
@@ -729,13 +732,15 @@
 "On" = "Aan";
 "On air" = "On air";
 "On battery" = "Op batterij";
+"On displays without a camera cutout" = "Op schermen zonder camera-uitsparing";
 "On the dashboard now" = "Nu op het dashboard";
 "One day" = "Eén dag";
 "One hour" = "Eén uur";
 "One month" = "Eén maand";
 "One week" = "Eén week";
-"Only displays with a notch" = "Alleen schermen met een notch";
+"Only displays with a camera cutout" = "Alleen schermen met een camera-uitsparing";
 "Only events with a video link" = "Alleen evenementen met een videolink";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Alleen voor een Mac die Scout verkeerd leest. Een Mac met notch kan geen voorbeeld van een pil tonen.";
 "Only for the Prompter to follow your voice." = "Alleen zodat de Prompter je stem kan volgen.";
 "Only what you choose" = "Alleen wat je kiest";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Alleen als hij nog speelde toen Scout werd gesloten. Scout onthoudt altijd de laatste zender en het volume.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Kies je look";
 "Picking an item" = "Een item kiezen";
 "Picture" = "Afbeelding";
+"Pill" = "Pil";
 "Pin" = "Zet vast";
 "Pin apps" = "Zet apps vast";
 "Pink" = "Roze";
@@ -857,6 +863,7 @@
 "READY" = "GEREED";
 "Radio" = "Radio";
 "Radio stations by place, and what the Radio tab remembers." = "Radiozenders per plaats, en wat het tabblad Radio onthoudt.";
+"Radio stations in the Radio tab" = "Radiozenders in het tabblad Radio";
 "Rain" = "Regen";
 "Ran %@" = "%@ uitgevoerd";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Lees binnenkomende berichten. macOS vertelt apps niet of dit aan staat.";
@@ -904,6 +911,7 @@
 "Ring" = "Ring";
 "Ring when time is up" = "Laat overgaan als de tijd om is";
 "Rings" = "Ringen";
+"Round bubbles" = "Ronde bellen";
 "Rounded" = "Afgerond";
 "Run the short introduction again." = "Doorloop de korte introductie opnieuw.";
 "STARTING" = "STARTEN";
@@ -936,7 +944,6 @@
 "Screen" = "Scherm";
 "Screen Recording" = "Schermopname";
 "Screen Recording is off for Scout" = "Schermopname staat uit voor Scout";
-"Screen recordings and the music visualizer." = "Schermopnamen en de muziekvisualizer.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Scherm: elke vraag maakt een afbeelding van je scherm en stuurt die met de vraag naar %@";
 "Screenshots and screen recordings." = "Schermafbeeldingen en schermopnamen.";
 "Scripts" = "Scripts";

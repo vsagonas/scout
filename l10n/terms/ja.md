@@ -8,6 +8,10 @@ Style: です・ます in sentences, plain noun or verb phrase for menu items an
 | agent / agents | エージェント (AI agent: AIエージェント) |
 | widget(s) | ウィジェット |
 | notch | ノッチ |
+| camera cutout (the general word, whatever the shape) | カメラの切り欠き |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | カプセル (ピル alone means the contraceptive) |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | 島 |
+| round bubbles (the agents beside the camera) | 丸いバブル |
 | dashboard | ダッシュボード |
 | Nook | Nook (never translated) |
 | Tray | トレイ |

@@ -272,6 +272,7 @@ final class NookStore: ObservableObject {
         guard !isEditing else { return item.defaultSpan }
         switch item {
         case .panel(.agents): return 3
+        case .panel(.pulse): return 4   // its extra cell (two in the minimal look) holds the GPU reading; without it the panel is what it was (CPU and memory)
         case .live, .nowPlaying: return item.defaultSpan > 3 ? item.defaultSpan - 1 : item.defaultSpan
         default: return item.defaultSpan
         }
@@ -287,6 +288,13 @@ final class NookStore: ObservableObject {
         let gaps = CGFloat(max(0, shown.count - 1)) * NookMetrics.spacing
         func used() -> CGFloat { CGFloat(spans.values.reduce(0, +)) * NookMetrics.cell + gaps }
         let livePanels = shown.filter { if case .live = $0 { return true } else { return false } }
+        // The Pulse panel's extra cells (the GPU reading) come only out of room the row has to spare: they are the first to go, before the Agents
+        // panel's fourth cell, the music or a live panel has to give up anything, so a row that fitted before this reading is laid out as it was.
+        let pulse = NookItem.panel(.pulse)
+        if let pulseSpan = spans[pulse], pulseSpan > minSpan(pulse) {
+            let agentsRoom = spans[.panel(.agents)] != nil ? NookMetrics.cell : 0
+            if used() + agentsRoom > width + 0.5 { spans[pulse] = minSpan(pulse) }
+        }
         for item in shown.filter({ $0 == .nowPlaying }) + livePanels.reversed() where used() > width + 0.5 {
             spans[item] = minSpan(item)
         }

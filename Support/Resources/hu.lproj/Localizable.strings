@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@: sikertelen";
 "%@ + %lld more" = "%@ + még %lld";
 "%@ DONE ✓" = "%@ KESZ ✓";
 "%@ and %lld more" = "%@ és még %lld";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@: leállt (kód: %d).";
 "%@ ended." = "%@: leállt.";
 "%@ failed" = "%@: sikertelen";
-"%@ finished after %lld min" = "%@: kész %lld perc után";
 "%@ free" = "%@ szabad";
 "%@ has no sound" = "%@: nincs hang";
 "%@ in %@" = "%@ itt: %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "%@ folytatási parancs";
 "%@ settings…" = "%@ beállításai…";
 "%@ so far" = "Eddig: %@";
-"%@ stopped with an error" = "%@: hibával leállt";
 "%@ timer finished" = "%@ időzítő lejárt";
 "%@ to full" = "%@ a feltöltésig";
 "%@ used" = "%@ használt";
@@ -100,7 +97,6 @@
 "Add" = "Hozzáad";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Adja hozzá a Scout appot az Adatvédelem és biztonság › Teljes lemezhozzáférés alatt, kapcsolja be, majd lépjen ki az appból, és nyissa meg újra. Addig a macOS zárolva tartja az Üzenetek adatbázisát. A Scout csak olvassa, és csak az új üzenetekhez.";
 "Add a key to start" = "Kezdéshez adjon hozzá egy kulcsot";
-"Add a notch to displays that have none" = "Notch hozzáadása a notch nélküli kijelzőkhöz";
 "Add a task" = "Teendő hozzáadása";
 "Add a task (no day)" = "Teendő hozzáadása (nap nélkül)";
 "Add a task for this day" = "Teendő hozzáadása erre a napra";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Ügynöklapok";
 "Agents" = "Ügynökök";
 "Agents & AI Usage" = "Ügynökök és AI-használat";
+"Agents beside the notch" = "Ügynökök a notch mellett";
 "Agents settings" = "Ügynökök beállításai";
 "Agents show up here by themselves." = "Az ügynökök maguktól megjelennek itt.";
 "Agents: %lld" = "Ügynökök: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Kamera";
 "Camera access is off" = "A kamerahozzáférés ki van kapcsolva";
 "Camera access is off for Scout." = "A Scout kamerahozzáférése ki van kapcsolva.";
+"Camera cutout" = "Kameranyílás";
 "Can't read %@ yet" = "%@ még nem olvasható";
 "Can't tell which chat this is" = "Nem állapítható meg, melyik chatről van szó";
 "Cancel" = "Mégse";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Azok a másolatok, amelyek akkor készülnek, amikor ezen appok egyike van előtérben, soha nem kerülnek mentésre.";
 "Copy" = "Másolás";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Másoljon egy hivatkozást (YouTube, X, Instagram, TikTok, Vimeo vagy Reddit), nyissa meg a Tálcát, és a Scout felajánlja a letöltést, vagy dobjon egy hivatkozást a Tálcára. A letöltéshez a yt-dlp szükséges, amelyet Ön telepít; a fenti gomb csak akkor fut le, ha megnyomja. A másolt hivatkozás olvasásához a Rendszerbeállítások › Adatvédelem és biztonság › Beillesztés más appokból részben engedélyezni kell a Scout appot (macOS 15.4 és újabb).";
+"Copy display details" = "Kijelzőadatok másolása";
 "Copy something and it shows up here." = "Másoljon valamit, és itt megjelenik.";
 "Couldn't copy the picture" = "A képet nem sikerült kimásolni";
 "Couldn't copy the polaroid" = "A polaroidot nem sikerült kimásolni";
@@ -424,6 +423,7 @@
 "Extra large" = "Extra nagy";
 "FAVOURITES" = "KEDVENCEK";
 "FROZEN" = "ALLOKEP";
+"Faces in the notch" = "Arcok a notchban";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
 "Fast Ask AI" = "Gyors AI-kérdés";
 "Fastest, for short questions" = "A leggyorsabb, rövid kérdésekhez";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Telepíti a yt-dlp és a deno eszközt a Homebrew segítségével?";
 "Installing…" = "Telepítés…";
 "Internet speed right now: down (received) and up (sent)" = "Az internet sebessége most: letöltés (fogadott) és feltöltés (elküldött)";
+"Island" = "Sziget";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Most a hangja hangzását követi. A nyelvet a Beállítások › Teleprompter részben választhatja ki.";
 "It stays in your Mac's Keychain." = "A kulcs a Mac Keychain tárolójában marad.";
 "Items in the Tray: %lld" = "Elemek a Tálcán: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Nincs szinkronizált szöveg";
 "No widgets yet" = "Még nincsenek widgetek";
 "Nobody home yet. Agents move in by themselves." = "Még senki sincs otthon. Az ügynökök maguktól beköltöznek.";
+"None" = "Nincs";
 "None chosen yet" = "Még nincs kiválasztva semmi";
 "None found" = "Nem található";
 "None yet" = "Még nincs";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Jegyzetek és teendők";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "A jegyzetek és a teendők ezen a Macen vannak mentve, és a notch widgetjeiben és nézeteiben jelennek meg.";
 "Notes saved: %lld" = "Mentett jegyzetek: %lld";
+"Nothing" = "Semmi";
 "Nothing (click to open)" = "Semmi (kattintson a megnyitáshoz)";
 "Nothing copied yet" = "Még nincs semmi kimásolva";
 "Nothing copied yet.\nCopy something and it will show up here." = "Még nincs semmi kimásolva.\nMásoljon valamit, és itt megjelenik.";
@@ -729,13 +732,15 @@
 "On" = "Be";
 "On air" = "Adásban";
 "On battery" = "Akkumulátorról";
+"On displays without a camera cutout" = "Kameranyílás nélküli kijelzőkön";
 "On the dashboard now" = "Most az irányítópulton";
 "One day" = "Egy nap";
 "One hour" = "Egy óra";
 "One month" = "Egy hónap";
 "One week" = "Egy hét";
-"Only displays with a notch" = "Csak a notchos kijelzők";
+"Only displays with a camera cutout" = "Csak a kameranyílással rendelkező kijelzők";
 "Only events with a video link" = "Csak a videólinkkel rendelkező események";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Csak olyan Mac-gépre, amelyet a Scout rosszul olvas. Egy notchos Mac-gép nem tud kapszulaelőnézetet mutatni.";
 "Only for the Prompter to follow your voice." = "Csak azért, hogy a Teleprompter követhesse a hangját.";
 "Only what you choose" = "Csak amit kiválaszt";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Csak ha még szólt, amikor a Scout bezárult. A Scout mindig megjegyzi az utolsó állomást és a hangerőt.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Válassza ki a megjelenését";
 "Picking an item" = "Elem kiválasztása";
 "Picture" = "Kép";
+"Pill" = "Kapszula";
 "Pin" = "Kitűzés";
 "Pin apps" = "Appok kitűzése";
 "Pink" = "Rózsaszín";
@@ -857,6 +863,7 @@
 "READY" = "KESZEN ALL";
 "Radio" = "Rádió";
 "Radio stations by place, and what the Radio tab remembers." = "Rádióállomások hely szerint, és amit a Rádió lap megjegyez.";
+"Radio stations in the Radio tab" = "Rádióállomások a Rádió lapon";
 "Rain" = "Eső";
 "Ran %@" = "Lefutott: %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Beérkező üzenetek olvasása. A macOS nem közli az appokkal, hogy be van-e kapcsolva.";
@@ -904,6 +911,7 @@
 "Ring" = "Gyűrű";
 "Ring when time is up" = "Csörgés, ha lejár az idő";
 "Rings" = "Gyűrűk";
+"Round bubbles" = "Kerek buborékok";
 "Rounded" = "Lekerekített";
 "Run the short introduction again." = "A rövid bemutató újbóli lejátszása.";
 "STARTING" = "INDUL";
@@ -936,7 +944,6 @@
 "Screen" = "Képernyő";
 "Screen Recording" = "Képernyőfelvétel";
 "Screen Recording is off for Scout" = "A Scout képernyőfelvétele ki van kapcsolva";
-"Screen recordings and the music visualizer." = "Képernyőfelvételek és a zenevizualizáció.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Képernyő: minden kérdés képet készít a képernyőjéről, és elküldi a kérdéssel együtt ide: %@";
 "Screenshots and screen recordings." = "Képernyőképek és képernyőfelvételek.";
 "Scripts" = "Szkriptek";

@@ -20,6 +20,11 @@ final class NotchScreenModel: ObservableObject {
     var cardRects: [CGRect] = []
     /// The dashboard's panels ("panel.<id>") and the back control ("back"), in the same space (self-tests click them).
     var panelRects: [String: CGRect] = [:]
+    /// The closed island's own shapes by name (`IslandHit`: "bubble.<agent id>", "capsule.news", "drawn"…), in the same space: what takes
+    /// the pointer while separate shapes are drawn beside the housing.
+    var hitRects: [String: CGRect] = [:]
+    /// The name of the shape under the pointer (the manager writes it; that shape is highlighted).
+    @Published var hoveredHit: String?
 
     init(geometry: NotchGeometry, panelSize: CGSize = CGSize(width: 1400, height: 720)) {
         self.geometry = geometry

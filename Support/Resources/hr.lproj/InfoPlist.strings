@@ -1,8 +1,6 @@
 "CFBundleDisplayName" = "Scout";
 "NSAppleEventsUsageDescription" = "Scout komunicira sa Spotify, Glazbom, Porukama i Bilješkama samo kad koristite te značajke: da prikaže i upravlja onim što svira, pošalje odgovor koji ste upisali ili spremi bilješku.";
 "NSAppleEventsUsageDescription~appstore" = "Scout komunicira s Glazbom i Spotify samo kad uključite upravljanje reprodukcijom, da prikaže i upravlja onim što svira.";
-"NSAppleMusicUsageDescription" = "Scout prikazuje što svira u Glazbi.";
-"NSAudioCaptureUsageDescription" = "Scout sluša zvuk aplikacije koja reproducira da animira glazbeni vizualizator i postavi glasnoću po aplikaciji. Zvuk se nikad ne sprema niti šalje.";
 "NSBluetoothAlwaysUsageDescription" = "Scout prikazuje vaše AirPods i druge uređaje kad se povežu, s njihovom baterijom.";
 "NSBluetoothAlwaysUsageDescription~appstore" = "Scout prikazuje vaše AirPods i druge Bluetooth uređaje po imenu kad se povežu.";
 "NSCalendarsFullAccessUsageDescription" = "Scout prikazuje vaše nadolazeće događaje u notchu i dodaje događaje koje stvorite.";

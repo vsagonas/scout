@@ -11,6 +11,10 @@ Greek question mark ; . Quotation marks « ». Percent is written without a spac
 | Fast Ask AI | Γρήγορο Ρώτα το AI |
 | widget / widgets | widget / widgets (Latin, as in the store keywords; shorter than γραφικά στοιχεία for the small notch) |
 | notch | εγκοπή |
+| camera cutout (the general word, whatever the shape) | οπή κάμερας |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | κάψουλα |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | νησί |
+| round bubbles (the agents beside the camera) | στρογγυλές φυσαλίδες |
 | dashboard | πίνακας ελέγχου |
 | Nook | Nook (Latin, never translated) |
 | Tray | Θήκη |

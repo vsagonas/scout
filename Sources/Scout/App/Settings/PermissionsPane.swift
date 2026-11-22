@@ -54,13 +54,7 @@ struct PermissionInfo: Identifiable {
         #endif
     }
 
-    private static var screenWhy: String {
-        #if APPSTORE
-        String(localized: "Screenshots and screen recordings.")
-        #else
-        String(localized: "Screen recordings and the music visualizer.")
-        #endif
-    }
+    private static var screenWhy: String { String(localized: "Screenshots and screen recordings.") }   // both editions: screenshots, screen recordings and the screen picture of Ask AI
 
     @MainActor static let all: [PermissionInfo] = shared + fullEditionOnly
 

@@ -1,8 +1,6 @@
 "CFBundleDisplayName" = "Scout";
 "NSAppleEventsUsageDescription" = "Scout는 Spotify, 음악, 메시지, 메모 기능을 사용할 때만 해당 앱과 통신하며, 재생 중인 항목을 표시하고 제어하거나, 입력한 답장을 보내거나, 메모를 저장하는 데 사용합니다.";
 "NSAppleEventsUsageDescription~appstore" = "Scout는 재생 제어를 켰을 때만 음악 및 Spotify와 통신하며, 재생 중인 항목을 표시하고 제어합니다.";
-"NSAppleMusicUsageDescription" = "Scout는 음악에서 재생 중인 항목을 표시합니다.";
-"NSAudioCaptureUsageDescription" = "Scout는 재생 중인 앱의 소리를 듣고 음악 비주얼라이저를 움직이며 앱별 음량을 설정합니다. 오디오는 저장되거나 전송되지 않습니다.";
 "NSBluetoothAlwaysUsageDescription" = "Scout는 AirPods와 다른 기기가 연결될 때 배터리와 함께 표시합니다.";
 "NSBluetoothAlwaysUsageDescription~appstore" = "Scout는 AirPods와 다른 Bluetooth 기기가 연결될 때 이름을 표시합니다.";
 "NSCalendarsFullAccessUsageDescription" = "Scout는 다가오는 이벤트를 노치에 표시하고 내가 만든 이벤트를 추가합니다.";

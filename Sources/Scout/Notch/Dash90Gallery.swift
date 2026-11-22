@@ -126,5 +126,6 @@ enum Dash90Gallery {
         panel("tray", span: 3) { TrayWidgetView() }
         panel("weather", span: 3) { WeatherWidgetView() }
         panel("volume", span: 3, stripe: Retro.Ink.lime) { VolumeWidgetView() }
+        Dash90GPUGallery.register()
     }
 }

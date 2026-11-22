@@ -10,6 +10,16 @@ import SwiftUI
 final class NotchManager {
     static let shared = NotchManager()
 
+    /// The app's one manager uses the shared navigator and activity centre; a self-test makes its own (with controllers that show no panel) and runs
+    /// the closed flow headless (`install(controllers:)`, `bindNavigator()`, `evaluate(at:)`).
+    init(navigator: NotchNavigator? = nil, center: LiveActivityCenter? = nil) {
+        self.navigator = navigator ?? .shared
+        self.center = center ?? .shared
+    }
+
+    private let navigator: NotchNavigator
+    private let center: LiveActivityCenter
+
     private(set) var controllers: [NotchController] = []
     private(set) var active: NotchController?
 
@@ -21,6 +31,8 @@ final class NotchManager {
     /// (an "Open Notch" from the menu bar or a scout:// command must not close before the pointer arrives).
     private var pointerVisited = false
     private var hoverPending: NotchController?
+    /// What the pending hover will do (nil: the pointer was on the notch when it closed, so nothing restarts until the pointer has left).
+    private var hoverPendingAction: HoverAction?
     private var hoverWork: DispatchWorkItem?
     private var closeWork: DispatchWorkItem?
     /// A tab or panel switch can shrink the island away from a pointer that did not move (see `NotchSwitchGrace`).
@@ -41,7 +53,16 @@ final class NotchManager {
     private var swipe = CGSize.zero
     private var swipeHandled = false
 
-    private var navigator: NotchNavigator { .shared }
+    // Headless tests: where the pointer is (instead of the real one), and what a click on a shape does.
+    var pointerOverride: CGPoint?
+    var pressedButtonsOverride: Int?
+    /// A click on a named shape: `IslandHit.perform` with this manager's own navigator and centre. A test counts the calls.
+    lazy var onShapeClick: (String, NotchGeometry) -> Bool = { [unowned self] name, geometry in
+        IslandHit.perform(name, geometry: geometry, navigator: self.navigator, center: self.center)
+    }
+    /// The timestamps of the last click the panel got and of the last one the fallback ran, so one click never runs twice.
+    private var lastPanelClickStamp: TimeInterval = -1
+    private var lastFallbackStamp: TimeInterval = -1
 
     // MARK: Start
 
@@ -61,33 +82,38 @@ final class NotchManager {
 
     // MARK: Screens
 
+    /// The screens that get a notch: the mode says which displays are candidates (the main one, all of them), the kind of each says whether Scout
+    /// draws there (`NotchScreenPolicy.keeps`).
     private func desiredScreens() -> [NSScreen] {
         let all = NSScreen.screens
         guard let main = all.first else { return [] }
         let mode = NotchPrefs.screens
-        let candidates: [NSScreen]
-        switch mode {
-        case .main: candidates = [main]
-        case .all: candidates = all
-        case .notched: candidates = all.filter(\.hasHardwareNotch)
-        }
-        return candidates.filter { $0.hasHardwareNotch || (mode != .notched && NotchPrefs.virtualNotch) }
+        let candidates = mode == .main ? [main] : all
+        let shape = NotchPrefs.noneShape
+        return candidates.filter { NotchScreenPolicy.keeps(kind: NotchGeometry.make(for: $0).kind, shape: shape, mode: mode) }
     }
 
-    private func signature() -> String {
-        let screens = NSScreen.screens.map { "\($0.displayID):\(NSStringFromRect($0.frame)):\($0.safeAreaInsets.top)" }.joined(separator: ",")
-        return "\(NotchPrefs.screens.rawValue)|\(NotchPrefs.virtualNotch)|\(screens)"
-    }
+    private func signature() -> String { NotchScreenPolicy.currentSignature() }
 
     func rebuild() {
+        // A hover that was about to act belongs to a controller that is torn down now: it must not open "its" notch afterwards.
+        hoverWork?.cancel(); hoverWork = nil
+        hoverPending = nil
+        hoverPendingAction = nil
         controllers.forEach { $0.teardown() }
         controllers = desiredScreens().map { NotchController(screen: $0) }
         active = nil
-        if navigator.isOpen, let first = controllers.first {
-            active = first
-            first.model.isOpen = true
-            first.panel.allowsKey = true
-            first.panel.ignoresMouseEvents = false
+        if navigator.isOpen {
+            // The dashboard comes back on the first display where it opens; none (only pills left) closes it, as the central refusal would.
+            if let i = Self.dashboardIndex(among: controllers.map(\.model.geometry)) {
+                let first = controllers[i]
+                active = first
+                first.model.isOpen = true
+                first.panel.allowsKey = true
+                first.panel.ignoresMouseEvents = false
+            } else if !controllers.isEmpty {
+                navigator.forceClose()
+            }
         }
         updateFullscreen()
     }
@@ -137,6 +163,15 @@ final class NotchManager {
             }
         })
 
+        bindNavigator()
+        center.$activities.sink { [weak self] _ in
+            DispatchQueue.main.async { self?.updateFullscreen() }
+        }.store(in: &cancellables)
+    }
+
+    /// The manager follows the navigator: it opens and closes its controllers when `isOpen` flips. Split out so a test can bind a manager of its own
+    /// to its own navigator without any system observer or monitor.
+    func bindNavigator() {
         navigator.$isOpen.removeDuplicates().sink { [weak self] open in
             DispatchQueue.main.async { self?.openChanged(open) }
         }.store(in: &cancellables)
@@ -155,9 +190,12 @@ final class NotchManager {
         navigator.$isDropTargeting.removeDuplicates().sink { [weak self] _ in
             DispatchQueue.main.async { self?.evaluate() }
         }.store(in: &cancellables)
-        LiveActivityCenter.shared.$activities.sink { [weak self] _ in
-            DispatchQueue.main.async { self?.updateFullscreen() }
-        }.store(in: &cancellables)
+    }
+
+    /// For tests: the controllers the manager works with, none of them on the screen.
+    func install(controllers list: [NotchController]) {
+        controllers = list
+        active = nil
     }
 
     private func installMonitors() {
@@ -169,11 +207,11 @@ final class NotchManager {
             MainActor.assumeIsolated { self?.pointerChanged() }
             return event
         }) { monitors.append(m) }
-        if let m = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown], handler: { [weak self] _ in
-            MainActor.assumeIsolated { self?.globalMouseDown() }
+        if let m = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown], handler: { [weak self] event in
+            MainActor.assumeIsolated { self?.globalMouseDown(stamp: event.timestamp) }
         }) { monitors.append(m) }
         if let m = NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown], handler: { [weak self] event in
-            MainActor.assumeIsolated { self?.localMouseDown() }
+            MainActor.assumeIsolated { self?.localMouseDown(stamp: event.timestamp) }
             return event
         }) { monitors.append(m) }
         if let m = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseUp], handler: { [weak self] _ in
@@ -190,14 +228,33 @@ final class NotchManager {
 
     // MARK: Pointer logic
 
+    /// What the closed notch of `c` draws now (the same rule the root view asks): the classic shape, separate shapes beside the housing, or nothing.
+    func closedDrawing(of c: NotchController) -> ClosedDrawing {
+        IslandMode.closed(geometry: c.model.geometry, primary: center.primary?.kind, cardsUp: !center.cards.isEmpty, detailUp: c.model.detailVisible)
+    }
+
     private func isInside(_ c: NotchController, _ p: CGPoint, includingCards: Bool = true) -> Bool {
+        // Closed with separate shapes: only a shape (or a claimed housing) counts, never the rect around the whole island.
+        if !navigator.isOpen, !c.model.isOpen, closedDrawing(of: c) == .rows {
+            if c.hitTarget(at: p) != .none { return true }
+            return includingCards && c.cardScreenRects.contains { $0.contains(p) }
+        }
+        // Just opened from a bubble or a capsule: until the open island has reported its frame, the pointer that opened it still counts as
+        // on it (the housing's rect alone would say "outside" for a moment and the fresh dashboard would let a click fall through).
+        if c.model.isOpen, c.model.geometry.hasRows, c.model.islandRect.width <= 0, c.hitTarget(at: p) != .none { return true }
         if c.islandScreenRect.contains(p) { return true }
         return includingCards && c.cardScreenRects.contains { $0.contains(p) }
+    }
+
+    /// The pointer is over one of the separate shapes (or the claimed housing) a closed notch draws beside its housing.
+    private func restsOnShape(_ c: NotchController, at p: CGPoint) -> Bool {
+        closedDrawing(of: c) == .rows && c.hitTarget(at: p) != .none
     }
 
     /// How far the pointer is from the island (0 inside it).
     private func islandDistance(_ c: NotchController, _ p: CGPoint) -> CGFloat {
         let r = c.islandScreenRect
+        guard !r.isNull else { return .greatestFiniteMagnitude }
         return hypot(max(r.minX - p.x, 0, p.x - r.maxX), max(r.minY - p.y, 0, p.y - r.maxY))
     }
 
@@ -212,9 +269,12 @@ final class NotchManager {
         evaluate()
     }
 
-    /// Looks at the pointer and the notch state and flips mouse capture, hover timers and close timers.
-    func evaluate() {
-        let p = NSEvent.mouseLocation
+    private var pointerLocation: CGPoint { pointerOverride ?? NSEvent.mouseLocation }
+    private var pressedButtons: Int { pressedButtonsOverride ?? Int(NSEvent.pressedMouseButtons) }
+
+    /// Looks at the pointer and the notch state and flips mouse capture, hover timers and close timers. `pointer` is passed in by tests.
+    func evaluate(at pointer: CGPoint? = nil) {
+        let p = pointer ?? pointerLocation
         if navigator.isOpen {
             guard let a = active else { return }
             hoverPending = nil
@@ -222,7 +282,7 @@ final class NotchManager {
             let inside = isInside(a, p)
             // The panel only catches the mouse over the island and cards, so clicks anywhere else reach the app
             // underneath (and our global monitors see them). A held button keeps whatever it started with.
-            if navigator.isDropTargeting || NSEvent.pressedMouseButtons != 0 {
+            if navigator.isDropTargeting || pressedButtons != 0 {
                 a.panel.ignoresMouseEvents = false
             } else {
                 a.panel.ignoresMouseEvents = !inside
@@ -239,21 +299,54 @@ final class NotchManager {
             }
             return
         }
-        let hit = controllers.first { !$0.model.hiddenForFullscreen && $0.islandScreenRect.contains(p) }
+        // Closed. A notch that draws the classic shape takes the pointer over its island rect, exactly as before; one that draws separate shapes
+        // takes it only over a shape (and its housing where it claims it); one that draws nothing takes none.
+        var hit: NotchController?
+        var rowsTarget: IslandTarget?
+        for c in controllers where !c.model.hiddenForFullscreen {
+            switch closedDrawing(of: c) {
+            case .classic:
+                if c.islandScreenRect.contains(p) { hit = c }
+            case .rows:
+                let target = c.hitTarget(at: p)
+                if target != .none { hit = c; rowsTarget = target }
+            case .nothing:
+                break
+            }
+            if hit != nil { break }
+        }
         for c in controllers {
             let overCard = c.cardScreenRects.contains { $0.contains(p) }
             c.panel.ignoresMouseEvents = !(c === hit || overCard) || c.model.hiddenForFullscreen
+            if c !== hit, c.model.hoveredHit != nil { c.model.hoveredHit = nil }
         }
         guard let hit else {
             hoverPending = nil
+            hoverPendingAction = nil
             hoverWork?.cancel()
             controllers.forEach { if $0.model.detailVisible { $0.model.detailVisible = false } }
             return
         }
-        guard hoverPending !== hit else { return }
+        // The shape under the pointer lights up as the pointer moves from one to the next, whatever the setting says.
+        let lit = rowsTarget.flatMap { IslandHitAreas.highlightName(for: $0) }
+        if hit.model.hoveredHit != lit { hit.model.hoveredHit = lit }
+        let action: HoverAction
+        if let rowsTarget, let kind = IslandHitAreas.hoverTarget(for: rowsTarget, geometry: hit.model.geometry) {
+            action = IslandHitAreas.hoverAction(setting: NotchPrefs.hover, target: kind, geometry: hit.model.geometry)
+        } else {
+            switch NotchPrefs.hover {
+            case .open: action = .open
+            case .details: action = .showDetail
+            case .off: action = .nothing
+            }
+        }
+        // One hover per visit: moving from one shape to the next does not start another, unless what hover does there is something else (from a bubble that
+        // only lights up to the notch itself that shows its detail).
+        guard hoverPending !== hit || (rowsTarget != nil && hoverPendingAction != nil && hoverPendingAction != action) else { return }
         hoverPending = hit
+        hoverPendingAction = action
         hoverWork?.cancel()
-        switch NotchPrefs.hover {
+        switch action {
         case .open:
             let work = DispatchWorkItem { [weak self] in
                 guard let self, self.hoverPending === hit, !self.navigator.isOpen else { return }
@@ -262,14 +355,14 @@ final class NotchManager {
             }
             hoverWork = work
             DispatchQueue.main.asyncAfter(deadline: .now() + NotchPrefs.hoverDelay, execute: work)
-        case .details:
+        case .showDetail:
             let work = DispatchWorkItem { [weak self] in
                 guard let self, self.hoverPending === hit, !self.navigator.isOpen else { return }
                 hit.model.detailVisible = true
             }
             hoverWork = work
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.45, execute: work)
-        case .off:
+            DispatchQueue.main.asyncAfter(deadline: .now() + IslandHitAreas.detailDelay, execute: work)
+        case .highlight, .nothing:
             break
         }
     }
@@ -280,8 +373,8 @@ final class NotchManager {
             guard let self else { return }
             self.closeWork = nil
             guard self.navigator.isOpen, self.navigator.holdOpenReasons.isEmpty, !self.navigator.isDropTargeting else { return }
-            if let a = self.active, !self.isInside(a, NSEvent.mouseLocation),
-               !self.switchGrace.keepsOpen(distance: self.islandDistance(a, NSEvent.mouseLocation)) {
+            if let a = self.active, !self.isInside(a, self.pointerLocation),
+               !self.switchGrace.keepsOpen(distance: self.islandDistance(a, self.pointerLocation)) {
                 // A text field with the cursor in it keeps the notch open until focus leaves.
                 if a.panel.isKeyWindow, a.panel.firstResponder is NSText { self.scheduleClose(); return }
                 self.navigator.close()
@@ -291,21 +384,53 @@ final class NotchManager {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.35, execute: work)
     }
 
-    private func localMouseDown() {
+    /// The panel got a click: it is the panel's to handle (a shape's own tap runs `IslandHit.perform`), never the fallback's.
+    func localMouseDown(stamp: TimeInterval = ProcessInfo.processInfo.systemUptime) {
         dragBaseline = NSPasteboard(name: .drag).changeCount
         dragStartedInNotch = true
+        lastPanelClickStamp = stamp
     }
 
-    private func globalMouseDown() {
+    /// A click only the global monitor saw: it went to another app's window. Open, it ends the visit when it lands outside the notch. Closed, a
+    /// click that landed on one of Scout's shapes the panel did not get (the system's own island may swallow clicks near the camera: unknown) runs
+    /// the same action the shape's tap would.
+    func globalMouseDown(at p: CGPoint? = nil, stamp: TimeInterval = ProcessInfo.processInfo.systemUptime) {
+        let p = p ?? pointerLocation
         dragBaseline = NSPasteboard(name: .drag).changeCount
         dragStartedInNotch = false
-        guard navigator.isOpen, let a = active, !navigator.isDropTargeting else { return }
+        if !navigator.isOpen { fallbackClick(at: p, stamp: stamp); return }
+        guard let a = active, !navigator.isDropTargeting else { return }
         // A click in another app or on the desktop ends the visit (unless something holds the notch open). The Ask AI tab's holds end with
         // that click: they mean "until you click away".
-        if !isInside(a, NSEvent.mouseLocation) {
+        if !isInside(a, p) {
             AskAITabHold.ended(navigator: navigator)
             navigator.close()
         }
+    }
+
+    /// Runs the click on the shape under `p` when the panel did not get it. A click runs once: the panel's own click (same timestamp) and an
+    /// earlier run of the fallback for the same click both stop it. Returns whether an action ran.
+    @discardableResult
+    func fallbackClick(at p: CGPoint, stamp: TimeInterval) -> Bool {
+        guard NotchPrefs.clickToOpen, stamp != lastPanelClickStamp, stamp != lastFallbackStamp else { return false }
+        for c in controllers where !c.model.hiddenForFullscreen && closedDrawing(of: c) == .rows {
+            switch c.hitTarget(at: p) {
+            case .shape(let name):
+                lastFallbackStamp = stamp
+                if IslandMode.opens(geometry: c.model.geometry) { active = c }   // a refused click (a pill) must not leave that screen as the one to open on
+                return onShapeClick(name, c.model.geometry)
+            case .housing:
+                // The housing a display claims (a classic notch between its bubbles): a click opens the notch, as it always did.
+                guard IslandMode.opens(geometry: c.model.geometry) else { continue }
+                lastFallbackStamp = stamp
+                active = c
+                navigator.open()
+                return true
+            case .none:
+                continue
+            }
+        }
+        return false
     }
 
     private func mouseUp() {
@@ -324,6 +449,9 @@ final class NotchManager {
         return displayIDs.isEmpty ? nil : 0
     }
 
+    /// The index of the first display where the dashboard opens (a pill, in this build, is not one); nil when there is none.
+    static func dashboardIndex(among geometries: [NotchGeometry]) -> Int? { geometries.firstIndex { IslandMode.opens(geometry: $0) } }
+
     /// Opens the notch for the Settings window (it stays open behind it, see `SettingsNotchHold`): on the screen the window is on, else the main
     /// notched screen. A notch that is already open stays where it is.
     func openBehind(_ window: NSWindow?) {
@@ -340,16 +468,25 @@ final class NotchManager {
         switchGrace.end()
         if open {
             if active == nil {
-                let p = NSEvent.mouseLocation
+                let p = pointerLocation
                 active = controllers.first { $0.screenFrame.contains(p) } ?? controllers.first
+            }
+            // The dashboard never opens on a display where it does not (a pill, in this build), whatever asked: the hover, a click, the menu, a
+            // hotkey, a drop, a command. One log line, nothing else.
+            if let a = active, !IslandMode.opens(geometry: a.model.geometry) {
+                NSLog("Scout: the dashboard does not open on this display yet (the camera pill)")
+                active = nil
+                navigator.forceClose()
+                return
             }
             for c in controllers {
                 c.model.isOpen = (c === active)
                 c.model.detailVisible = false
+                if c.model.hoveredHit != nil { c.model.hoveredHit = nil }   // nothing stays lit under an open dashboard
             }
             active?.panel.allowsKey = true
             active?.panel.ignoresMouseEvents = false
-            pointerVisited = active.map { isInside($0, NSEvent.mouseLocation) } ?? false
+            pointerVisited = active.map { isInside($0, pointerLocation) } ?? false
             if NotchPrefs.haptics { Haptics.tick() }
         } else {
             for c in controllers { c.model.isOpen = false }
@@ -363,9 +500,11 @@ final class NotchManager {
                 guard let self, !self.navigator.isOpen else { return }
                 self.returnKeyToUser(closing)
                 closing?.panel.allowsKey = false
-                // Closed with the pointer still on the notch (Esc, a click on the gear): no instant re-open.
-                let p = NSEvent.mouseLocation
-                self.hoverPending = self.controllers.first { $0.fallbackNotchRect.insetBy(dx: -6, dy: -6).contains(p) }
+                // Closed with the pointer still on the notch (Esc, a click on the gear): no instant re-open. Where separate shapes are drawn, a
+                // pointer resting on one of them counts as well (the housing's rect and 6 pt around it do not reach a bubble or a capsule).
+                let p = self.pointerLocation
+                self.hoverPending = self.controllers.first { $0.housingScreenRect.insetBy(dx: -6, dy: -6).contains(p) || self.restsOnShape($0, at: p) }
+                self.hoverPendingAction = nil
                 self.evaluate()
             }
         }
@@ -409,17 +548,21 @@ final class NotchManager {
         return types.contains(.fileURL) || types.contains(.URL) || types.contains(.string)
     }
 
-    private func updateDrop(_ p: CGPoint) {
+    /// The notch a dragged file at `p` is nearest to and how far it is from its anchor (the housing). A display where the dashboard does not open (a
+    /// pill, in this build) takes no drop. While this notch is the open one its whole island counts.
+    func dropCandidate(at p: CGPoint) -> (controller: NotchController, distance: CGFloat)? {
         var best: (NotchController, CGFloat)?
-        for c in controllers where !c.model.hiddenForFullscreen {
-            let r = navigator.isOpen && active === c ? c.islandScreenRect : c.fallbackNotchRect
-            let dx = max(r.minX - p.x, 0, p.x - r.maxX)
-            let dy = max(r.minY - p.y, 0, p.y - r.maxY)
-            let d = hypot(dx, dy)
+        for c in controllers where !c.model.hiddenForFullscreen && IslandHitAreas.dropOpens(geometry: c.model.geometry) {
+            let r = navigator.isOpen && active === c ? c.islandScreenRect : c.housingScreenRect
+            let d = IslandHitAreas.distance(from: p, to: r)
             if best == nil || d < best!.1 { best = (c, d) }
         }
-        guard let (c, distance) = best else { return }
-        let limit: CGFloat = navigator.isDropTargeting ? 240 : 120
+        return best.map { (controller: $0.0, distance: $0.1) }
+    }
+
+    private func updateDrop(_ p: CGPoint) {
+        guard let (c, distance) = dropCandidate(at: p) else { return }
+        let limit = IslandHitAreas.dropReach(targeting: navigator.isDropTargeting)
         if distance <= limit {
             dropEndWork?.cancel()
             guard !navigator.isDropTargeting || active !== c else { return }
@@ -444,7 +587,7 @@ final class NotchManager {
         dropEndWork?.cancel()
         guard navigator.isDropTargeting else { return }
         navigator.isDropTargeting = false
-        if navigator.isOpen, let a = active, !isInside(a, NSEvent.mouseLocation) { navigator.close() }
+        if navigator.isOpen, let a = active, !isInside(a, pointerLocation) { navigator.close() }
     }
 
     // MARK: Fullscreen
@@ -462,7 +605,7 @@ final class NotchManager {
                                     rect: rect, alpha: w[kCGWindowAlpha as String] as? Double ?? 1)
         }
         let mine = getpid()
-        let allowed = LiveActivityCenter.shared.primary.map { Pref.bool("activity.\($0.kind.rawValue).fullscreen", false) } ?? false
+        let allowed = center.primary.map { Pref.bool("activity.\($0.kind.rawValue).fullscreen", false) } ?? false
         for c in controllers {
             let covered = Self.coversScreen(windows, bounds: CGDisplayBounds(c.displayID), mine: mine)
             let hidden = covered && !allowed
@@ -496,12 +639,11 @@ final class NotchManager {
 
     private func scrolled(_ event: NSEvent) {
         guard NotchPrefs.gestures, event.hasPreciseScrollingDeltas else { return }
-        let p = NSEvent.mouseLocation
+        let p = pointerLocation
         guard let c = controllers.first(where: { isInside($0, p, includingCards: false) }) else { return }
         // While the notch is open only its top strip counts: scrolling the content below must never close it.
         if navigator.isOpen {
-            let strip = c.screenFrame.maxY - c.model.geometry.size.height - 6
-            guard p.y >= strip else { return }
+            guard p.y >= IslandHitAreas.swipeStripTop(geometry: c.model.geometry, screenFrame: c.screenFrame) else { return }
         }
         if event.phase == .began { swipe = .zero; swipeHandled = false }
         guard !swipeHandled else { return }
@@ -512,6 +654,7 @@ final class NotchManager {
         if vertical, abs(swipe.height) > 36 {
             swipeHandled = true
             if swipe.height > 0, !navigator.isOpen {
+                guard IslandMode.opens(geometry: c.model.geometry) else { return }   // a pill opens nothing here
                 active = c
                 navigator.open()
             } else if swipe.height < 0, navigator.isOpen {

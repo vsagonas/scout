@@ -8,6 +8,10 @@ Style: 你 (informal, as in the store text), short labels. Full-width ，。：�
 | agent / agents | 智能体 (AI agents: AI 智能体) |
 | widget(s) | 小组件 |
 | notch | 刘海 |
+| camera cutout (the general word, whatever the shape) | 摄像头开孔 |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | 药丸 |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | 岛 |
+| round bubbles (the agents beside the camera) | 圆形气泡 |
 | dashboard | 仪表板 |
 | Nook | Nook (never translated) |
 | Tray | 托盘 |

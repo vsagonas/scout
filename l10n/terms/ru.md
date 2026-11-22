@@ -11,6 +11,10 @@ Menu items and buttons are infinitives or nouns the way macOS writes them (От�
 | Fast Ask AI | Быстрый ИИ |
 | widget / widgets | виджет / виджеты |
 | notch | вырез |
+| camera cutout (the general word, whatever the shape) | отверстие для камеры (вырез stays the notch) |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | капсула |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | остров |
+| round bubbles (the agents beside the camera) | круглые пузырьки |
 | dashboard | дашборд |
 | Nook | Nook (Latin, never translated) |
 | Tray | Лоток |

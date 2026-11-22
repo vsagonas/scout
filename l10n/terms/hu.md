@@ -9,6 +9,10 @@ Hungarian adds suffixes to words, so brand names are never declined: "a Scout ap
 | agent / agents | ügynök / ügynökök ("AI-ügynökök") |
 | widget / widgets | widget / widgetek |
 | notch | notch (a notchban, as in the store text) |
+| camera cutout (the general word, whatever the shape) | kameranyílás |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | kapszula |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | sziget |
+| round bubbles (the agents beside the camera) | kerek buborékok |
 | dashboard | irányítópult |
 | Settings / System Settings | Beállítások / Rendszerbeállítások |
 | Tray | Tálca (Tray is translated) |

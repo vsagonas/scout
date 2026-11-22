@@ -8,6 +8,10 @@ Typography as macOS: narrow no-break space (U+202F) before ? ! : ; and inside «
 | agent / agents | agent / agents (agents IA for "AI agents") |
 | widget / widgets | widget / widgets |
 | notch | encoche |
+| camera cutout (the general word, whatever the shape) | découpe de la caméra |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | pilule |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | île |
+| round bubbles (the agents beside the camera) | bulles rondes |
 | dashboard | tableau de bord |
 | Settings | Réglages |
 | Tray | Plateau |

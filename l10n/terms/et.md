@@ -12,6 +12,10 @@ Informal singular imperative for buttons and menu items (Ava, Sule, Salvesta, Li
 | Fast Ask AI | Kiire TI |
 | widget / widgets | vidin / vidinad |
 | notch | sälk (gen. sälgu) |
+| camera cutout (the general word, whatever the shape) | kaamera väljalõige |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | kapsel |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | saar |
+| round bubbles (the agents beside the camera) | ümarad mullid |
 | dashboard | armatuurlaud |
 | Nook | Nook (Latin, never translated) |
 | Tray | Salv |

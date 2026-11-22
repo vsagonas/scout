@@ -317,9 +317,6 @@ enum AgentDenGallery {
         // The banner of an automatic opening, on the same window.
         den("auto-needsyou", AgentNookSamples.store(Array(sessions.prefix(6))), detail: "nk-3",
             banner: AgentAnnouncement(sessionID: "nk-3", kind: .needsYou, at: Date()), height: AgentDenLayout.baseHeight + AgentDenLayout.extraHeight(banner: true))
-        den("auto-finished", AgentNookSamples.store(Array(sessions.prefix(6))), detail: "nk-5",
-            banner: AgentAnnouncement(sessionID: "nk-5", kind: .finished(minutes: 12), at: Date()), height: AgentDenLayout.baseHeight + 36)
-        den("auto-error", AgentNookSamples.store(Array(sessions.prefix(7))), detail: "nk-7",
-            banner: AgentAnnouncement(sessionID: "nk-7", kind: .error, at: Date()), height: AgentDenLayout.baseHeight + 36)
+        AgentDenFillGallery.register()   // the den inside the real open notch, at the island height the app gives it
     }
 }

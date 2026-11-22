@@ -33,8 +33,30 @@ enum ScoutRuntime {
     static let version = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "dev"
     static let build = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "0"
 
-    /// Reduce Motion may be ON. Every animation must have a calm version.
-    static var reduceMotion: Bool { NSWorkspace.shared.accessibilityDisplayShouldReduceMotion }
+    /// Reduce Motion may be ON. Every animation must have a calm version. Scripted runs can pin either version, so pictures
+    /// and tests show and measure both on any Mac: a test sets `reduceMotionOverride`, a gallery run reads `SCOUT_REDUCE_MOTION=1` or `=0`.
+    /// The real app always follows the Mac.
+    static var reduceMotion: Bool {
+        reduceMotion(override: reduceMotionOverride, environment: isScripted ? motionEnvironment : nil,
+                     scripted: isScripted, system: NSWorkspace.shared.accessibilityDisplayShouldReduceMotion)
+    }
+
+    /// `SCOUT_REDUCE_MOTION` as the run was started with it, read once (this property is asked on every animation).
+    private static let motionEnvironment: String? = ProcessInfo.processInfo.environment["SCOUT_REDUCE_MOTION"]
+
+    /// Tests only (scripted runs): true or false pins the calm or the moving version, nil gives the choice back.
+    static var reduceMotionOverride: Bool?
+
+    /// The rule behind `reduceMotion`, as a pure function: outside scripted runs only the Mac's own setting counts.
+    static func reduceMotion(override: Bool?, environment: String?, scripted: Bool, system: Bool) -> Bool {
+        guard scripted else { return system }
+        if let override { return override }
+        switch environment {
+        case "1": return true
+        case "0": return false
+        default: return system
+        }
+    }
 }
 
 /// Where Scout keeps its files. Scripted runs use a separate folder so they never touch real data.

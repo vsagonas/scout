@@ -39,12 +39,15 @@ enum AgentTVSelfTest {
         oneRule(&r)
         widths(&r)
         spots(&r)
+        fills(&r)
         sky(&r)
         pure(&r)
         await MainActor.run { helpersUnder(&r) }
         await renders(&r)
         await clicks(&r)
         await stayPut(&r)
+        await stayPutInIsland(&r)
+        await fillsIsland(&r)
         await automatic(&r)
         await minimal(&r)
         r.lines.append("agenttv selftest done: \(r.failed == 0 ? "all passed" : "\(r.failed) FAILED")")
@@ -189,6 +192,184 @@ enum AgentTVSelfTest {
         r.check("the den's height holds the notch's rule: about 340 to 380 pt", AgentDenLayout.baseHeight >= 340 && AgentDenLayout.baseHeight <= 380
                 && AgentDenLayout.islandHeight() == AgentDenLayout.baseHeight + AgentDenLayout.chrome && AgentDenLayout.islandHeight() >= 320)
         r.check("a banner asks the island for more room", AgentDenLayout.extraHeight(banner: true) > AgentDenLayout.extraHeight(banner: false))
+    }
+
+    // MARK: The room fills the island
+
+    /// The den fills the whole open notch down to its bottom edge (the owner asked twice, 2026-11-22): the
+    /// island is asked for the base height plus `chrome`, and under its real header the den is given more than the base height. The room is laid
+    /// out to all of it in whole cells; the stations keep their sizes, a single or front row stands on the longer floor, a back row stays put.
+    private static func fills(_ r: inout Report) {
+        let header = NotchGeometry.sample16.classicSize.height
+        let inset = header + 2   // the open island's header and the gap above the den (the den takes the island edge to edge under it)
+        let fill = AgentDenLayout.fillHeight(inset: inset)
+        let whole = AgentDenLayout.wholeCells(fill)
+        let cell = AgentDenArt.roomCell
+        r.check("a picture or a test with no island keeps the base height; the notch's header leaves the den more, and the island holds exactly that",
+                AgentDenLayout.fillHeight(inset: nil) == AgentDenLayout.baseHeight && AgentDenLayout.wholeCells(AgentDenLayout.baseHeight) == AgentDenLayout.baseHeight
+                && fill > AgentDenLayout.baseHeight && fill + inset == AgentDenLayout.islandHeight(), "fill \(fill) inset \(inset) island \(AgentDenLayout.islandHeight())")
+        r.check("a header taller than the island's own allowance never makes the den shorter than the base height", AgentDenLayout.fillHeight(inset: AgentDenLayout.chrome + 10) == AgentDenLayout.baseHeight)
+        r.check("the room is drawn in whole cells: \(Int(fill)) pt becomes \(Int(whole)) pt (\(Int(whole / cell)) rows), under one cell is left over, a hair under a whole number still counts",
+                whole.truncatingRemainder(dividingBy: cell) == 0 && fill - whole >= 0 && fill - whole < cell && AgentDenPlan(size: CGSize(width: 960, height: whole)).rows == Int(whole / cell)
+                && AgentDenLayout.wholeCells(whole - 0.001) == whole && AgentDenLayout.wholeCells(whole + cell - 0.5) == whole, "whole \(whole) rows \(AgentDenPlan(size: CGSize(width: 960, height: whole)).rows)")
+        for width in [CGFloat(960), 640, 1040] {
+            for count in [1, 3, 6, 9] {
+                let base = AgentDenLayout.spots(count: count, size: CGSize(width: width, height: AgentDenLayout.baseHeight))
+                let size = CGSize(width: width, height: whole)
+                let tall = AgentDenLayout.spots(count: count, size: size)
+                let sameSize = base.count == tall.count && zip(base, tall).allSatisfy { $0.px == $1.px && $0.rect.size == $1.rect.size && $0.rect.minX == $1.rect.minX && $0.row == $1.row }
+                let front = tall.filter { $0.row == 0 }, back = tall.filter { $0.row == 1 }
+                let frontOnBottom = !front.isEmpty && front.allSatisfy { abs($0.rect.maxY - (whole - AgentDenLayout.bottomMargin)) < 0.01 }
+                let backStays = zip(base.filter { $0.row == 1 }, back).allSatisfy { $0.rect == $1.rect }
+                let crisp = tall.allSatisfy { AgentPixel.isCrisp($0.px) }
+                r.check("room \(Int(width)) x \(Int(whole)), \(count) agent\(count == 1 ? "" : "s"): the sizes and spacing of the base den, the front row \(Int(AgentDenLayout.bottomMargin)) pt above the new bottom, a back row where it stood, whole-pixel sizes",
+                        sameSize && frontOnBottom && backStays && crisp && AgentDenLayout.isValid(tall, in: size),
+                        "pixel \(tall.first?.px ?? 0) vs \(base.first?.px ?? 0), lowest \(tall.map(\.rect.maxY).max() ?? 0) of \(whole), rows \(Set(tall.map(\.row)))")
+            }
+        }
+    }
+
+    /// The den inside the island's own numbers (its header 32 pt and 2 pt above the den, an island of 419 pt), on a rig as tall as an open window needs:
+    /// the closed den is the whole 384 pt room, 1 pt under the island's header, and picking an agent leaves every agent where it stood while the
+    /// window takes the 250 pt the island gives it.
+    private static func stayPutInIsland(_ r: inout Report) async {
+        guard Retro.is8bit else { return }
+        let inset = NotchGeometry.sample16.classicSize.height + 2
+        let store = AgentNookSamples.store(AgentNookSamples.sessions(5))
+        let tall = AgentDenLayout.islandHeight(extra: AgentDenLayout.drawerHeight) - inset
+        let rig = Rig(size: CGSize(width: 960, height: tall)) { rig in
+            AgentsWorkspaceView(store: store).reportingFrames { rig.frames = $0 }
+                .environment(\.notchBodyInset, inset).environment(\.notchOpenMaxHeight, AgentDenLayout.islandHeight(extra: AgentDenLayout.drawerHeight) + 40)
+        }
+        defer { rig.close() }
+        await settle(0.8)
+        let whole = AgentDenLayout.wholeCells(AgentDenLayout.fillHeight(inset: inset))
+        let lift = AgentDenLayout.fillHeight(inset: inset) - whole
+        let ids = AgentDenStation.stations(store.sessions).map(\.id)
+        let before = ids.compactMap { rig.frames[$0] }
+        guard ids.count >= 3, let target = rig.frames[ids[1]] else { r.check("in the island's own numbers, picking an agent keeps the others in place", false, "no frames"); return }
+        let lowest = before.map(\.maxY).max() ?? 0
+        r.check("in the island's own numbers the closed den's plates stand \(Int(AgentDenLayout.bottomMargin)) pt above the room's bottom (\(Int(whole)) pt, \(lift) pt under the header)",
+                abs(lowest - (lift + whole - AgentDenLayout.bottomMargin)) < 0.5, "lowest \(lowest) want \(lift + whole - AgentDenLayout.bottomMargin)")
+        rig.click(CGPoint(x: target.midX, y: target.minY + target.height * 0.4))
+        await settle(0.6)
+        let after = ids.compactMap { rig.frames[$0] }
+        let moved = zip(before, after).map { abs($0.minY - $1.minY) + abs($0.minX - $1.minX) }.max() ?? 99
+        let window = rig.frames["window"]
+        r.check("in the island's own numbers, picking an agent opens its window and leaves every agent where it stood; the window takes the island's 250 pt",
+                window != nil && before.count == after.count && moved < 0.5 && abs((window?.height ?? 0) - AgentDenLayout.drawerHeight) < 0.5 && abs((window?.maxY ?? 0) - tall) < 0.5,
+                "moved up to \(moved) pt, window \(String(describing: window)) of \(tall)")
+        // A short screen cuts the island below the den's height: the room still ends exactly at the island's bottom edge (what is left over under a
+        // cell goes above it), so no strip of the island's own black shows under it.
+        for short in [CGFloat(236), 237, 238, 301] {
+            let shortRig = Rig(size: CGSize(width: 960, height: short)) { _ in AgentsWorkspaceView(store: store).environment(\.notchBodyInset, inset).environment(\.notchOpenMaxHeight, short + inset) }
+            await settle(0.6)
+            let bottom = shortRig.brightness(CGRect(x: 100, y: short - 1.5, width: 700, height: 1.4))   // the last row of points: the panelling or the carpet, never the rig's black
+            r.check("a short island (\(Int(short)) pt for the den, \(Int(short + inset)) pt in all): the room reaches its bottom edge", bottom > 0.08, "brightness of the last points \(bottom)")
+            shortRig.close()
+        }
+    }
+
+    /// The den in the REAL open notch (its header, its navigator, the height the Agents view asks for), read pixel by pixel, with 0, 1, 3 and 9
+    /// agents at the three sizes, and under an open window: the rows at the bottom of the island are the room's art and never the island's flat
+    /// surface, and the room ends in whole cells (the rug's dark border lies exactly two cells, 6 points of the content, above the bottom edge).
+    private static func fillsIsland(_ r: inout Report) async {
+        guard Retro.is8bit else { return }
+        let forced = ProcessInfo.processInfo.environment["SCOUT_SCALE"] != nil
+        let savedSize = UserDefaults.standard.object(forKey: Look.scaleKey)
+        defer { if let savedSize { UserDefaults.standard.set(savedSize, forKey: Look.scaleKey) } else { UserDefaults.standard.removeObject(forKey: Look.scaleKey) } }
+        let nav = NotchNavigator.shared
+        let store = AgentsStore.shared
+        // The shared store's scanner reads the scripted run's own, empty folders and would empty the made-up agents within seconds: it is switched off here.
+        let scanWas = UserDefaults.standard.object(forKey: AgentsStore.Key.scan)
+        Pref.set(false, AgentsStore.Key.scan)
+        defer { Pref.set(scanWas, AgentsStore.Key.scan) }
+        try? await Task.sleep(nanoseconds: 400_000_000)
+        defer { store.focusID = nil; store.announcement = nil; store.clearSamples(); nav.forceClose(); nav.workspace = .nook }
+        func srgb(_ color: Color) -> NSColor { NSColor(color).usingColorSpace(.sRGB) ?? .black }
+        func same(_ a: NSColor, _ b: NSColor, _ tolerance: CGFloat) -> Bool {
+            max(abs(a.redComponent - b.redComponent), abs(a.greenComponent - b.greenComponent), abs(a.blueComponent - b.blueComponent)) <= tolerance
+        }
+        let surface = srgb(Look.surface)
+        let border = srgb(PixelPalette.world(.claude).color("o") ?? .black)   // the rug's dark outer border, the last art before the carpet's two rows
+        for size in forced ? [Look.size] : Look.Size.allCases {
+            if !forced { Pref.set(size.rawValue, Look.scaleKey) }
+            let f = size.factor
+            for (count, window) in [(0, false), (1, false), (3, false), (9, false), (6, true)] {
+                store.focusID = nil
+                store.announcement = nil
+                store.loadSessions(AgentNookSamples.sessions(count))
+                // The window opens the way an automatic opening does: the store holds that agent's banner and focus, so there is no click to time.
+                if window { store.announcement = AgentAnnouncement(sessionID: "nk-1", kind: .needsYou, at: Date()); store.focusID = "nk-1" }
+                nav.open(.agents)
+                let panelSize = CGSize(width: 1560, height: 1200)
+                let model = NotchScreenModel(geometry: .sample16, panelSize: panelSize)
+                model.isOpen = true
+                let root = NotchRootView(model: model, center: LiveActivityCenter(), navigator: nav, nook: NookStore(persist: false, layout: nil), styleOverride: .classic)
+                let panel = NSPanel(contentRect: CGRect(x: -20000, y: -20000, width: panelSize.width, height: panelSize.height), styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
+                panel.isReleasedWhenClosed = false
+                let hosting = NSHostingView(rootView: AnyView(root.environment(\.agentDenTime, AgentTVGallery.day)))   // the day's colours, whatever the hour
+                hosting.frame = CGRect(origin: .zero, size: panelSize)
+                panel.contentView = hosting
+                panel.orderFrontRegardless()
+                for _ in 0..<(window ? 20 : 12) { try? await Task.sleep(nanoseconds: 100_000_000); hosting.layoutSubtreeIfNeeded() }
+                let want = (window ? AgentDenLayout.islandHeight(extra: AgentDenLayout.drawerHeight + AgentDenLayout.extraHeight(banner: true)) : AgentDenLayout.islandHeight()) * f
+                let island = model.islandRect
+                var flat: [String] = []
+                var cells = ""
+                var whole = true
+                if let rep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(panelSize.width * 2), pixelsHigh: Int(panelSize.height * 2), bitsPerSample: 8, samplesPerPixel: 4,
+                                              hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0) {
+                    rep.size = panelSize
+                    hosting.cacheDisplay(in: hosting.bounds, to: rep)
+                    let pixels = LookSelfTest.Pixels(rep: rep, points: panelSize)
+                    // Rows 2, 6, 12 and 20 content points above the island's bottom edge (the old strip was 25 tall), across the middle of the
+                    // island (the rounded corners are not in it): the share of pixels that are not the island's own surface. Under a window only the
+                    // first two (its black glass screens end 12 pt above the bottom).
+                    for above in window ? [2.0, 6.0] : [2.0, 6.0, 12.0, 20.0] {
+                        let y = island.maxY - CGFloat(above) * f
+                        var art = 0, total = 0
+                        var x = island.minX + island.width * 0.2
+                        while x < island.maxX - island.width * 0.2 {
+                            total += 1
+                            if let c = pixels.color(CGPoint(x: x, y: y)), !same(c, surface, 0.06) { art += 1 }
+                            x += 3
+                        }
+                        let share = total == 0 ? 0 : Double(art) / Double(total)
+                        if share < 0.9 { flat.append("\(Int(above)) pt above the bottom: \(Int(share * 100)) % art") }
+                    }
+                    // Whole cells: walking up from the bottom edge, the first row of the rug's dark border is 2 cells (6 content points) above it.
+                    if !window {
+                        var measured: [String] = []
+                        for fraction in [0.3, 0.5, 0.7] {
+                            let x = island.minX + island.width * fraction
+                            var above = 0.25
+                            var found: Double?
+                            while above < 30 * Double(f) {
+                                if let c = pixels.color(CGPoint(x: x, y: island.maxY - CGFloat(above))), same(c, border, 0.05) { found = above; break }
+                                above += 0.25
+                            }
+                            let distance = (found ?? 99) / Double(f)   // in content points: 6 is two whole cells (the pixel row's own width is 0.5 pt at 1x)
+                            measured.append(String(format: "%.1f", distance))
+                            if abs(distance - 2 * Double(AgentDenArt.roomCell)) > 0.9 { whole = false }
+                        }
+                        cells = measured.joined(separator: ", ")
+                    }
+                }
+                let label = "the real notch at size \(size.title), \(count) agent\(count == 1 ? "" : "s")\(window ? ", a window open under the den" : "")"
+                r.check("\(label): the island is \(Int(want)) pt tall and the picture reaches its bottom edge (no flat strip under it)",
+                        abs(island.height - want) <= 2 && flat.isEmpty && store.sessions.count == count && (!window || store.shownDetailID == "nk-1"),
+                        "island \(Int(island.height)) want \(Int(want)); shown \(String(describing: store.shownDetailID)) asked \(nav.workspaceHeight.map { String(Int($0)) } ?? "nil"); agents \(store.sessions.count), focus \(String(describing: store.focusID)), banner \(store.announcement != nil), workspace \(nav.workspace); \(flat.joined(separator: "; "))")
+                if !window {
+                    r.check("\(label): the room ends in whole cells (the rug's border 6 pt above the bottom edge)", whole, "distances in content points \(cells)")
+                }
+                // The view goes away for good before the next one starts: a view that lingers would still answer to the store and to the navigator.
+                hosting.rootView = AnyView(EmptyView())
+                panel.orderOut(nil)
+                panel.contentView = nil
+                try? await Task.sleep(nanoseconds: 300_000_000)
+            }
+        }
     }
 
     // MARK: The window and the clock
@@ -558,22 +739,19 @@ enum AgentTVSelfTest {
     // MARK: The automatic opening
 
     private static func automatic(_ r: inout Report) async {
-        let automatic: [(String, AgentAnnouncement.Kind, String)] = [("needs you", .needsYou, "nk-3"), ("finished after 12 min", .finished(minutes: 12), "nk-5"), ("stopped with an error", .error, "nk-7")]
-        for (name, kind, id) in automatic {
-            let store = AgentNookSamples.store(Array(AgentNookSamples.sessions(7)))
-            store.announcement = AgentAnnouncement(sessionID: id, kind: kind, at: Date())
-            store.focusID = id
-            let rig = Rig(size: CGSize(width: 960, height: 480)) { rig in AgentsWorkspaceView(store: store).reportingFrames { rig.frames = $0 } }
-            await settle(0.8)
-            r.check("automatic opening (\(name)): the den lands on its agent with the banner", store.shownDetailID == id && store.focusID == nil && rig.frames["window"] != nil && rig.frames["banner"] != nil,
-                    "shown \(String(describing: store.shownDetailID)) frames \(rig.frames.keys.sorted())")
-            r.check("  the den is still there, and the agent's spot too", rig.frames[id] != nil && rig.frames.keys.filter { $0.hasPrefix("nk-") }.count == 7)
-            rig.close()
-        }
-        let kinds: [AgentAnnouncement.Kind] = [.needsYou, .finished(minutes: 12), .error]
-        let heads = kinds.map { AgentBanner.headline(AgentAnnouncement(sessionID: "x", kind: $0, at: Date()), project: "infra") }
-        r.check("the pager says who and what happened", heads == ["infra needs you", "infra finished after 12 min", "infra stopped with an error"], "\(heads)")
-        r.check("the pager's LCD is amber for a question, green for a finish, red for an error", AgentBanner.lcd(.needsYou) != AgentBanner.lcd(.finished(minutes: 1)) && AgentBanner.lcd(.finished(minutes: 1)) != AgentBanner.lcd(.error))
+        let id = "nk-3"
+        let store = AgentNookSamples.store(Array(AgentNookSamples.sessions(7)))
+        store.announcement = AgentAnnouncement(sessionID: id, kind: .needsYou, at: Date())
+        store.focusID = id
+        let rig = Rig(size: CGSize(width: 960, height: 480)) { rig in AgentsWorkspaceView(store: store).reportingFrames { rig.frames = $0 } }
+        await settle(0.8)
+        r.check("automatic opening (needs you): the den lands on its agent with the banner", store.shownDetailID == id && store.focusID == nil && rig.frames["window"] != nil && rig.frames["banner"] != nil,
+                "shown \(String(describing: store.shownDetailID)) frames \(rig.frames.keys.sorted())")
+        r.check("  the den is still there, and the agent's spot too", rig.frames[id] != nil && rig.frames.keys.filter { $0.hasPrefix("nk-") }.count == 7)
+        rig.close()
+        let head = AgentBanner.headline(AgentAnnouncement(sessionID: "x", kind: .needsYou, at: Date()), project: "infra")
+        r.check("the pager says who needs you", head == "infra needs you", head)
+        r.check("the pager's LCD is amber for a question", AgentBanner.lcd(.needsYou) == Retro.Ink.phosphorAmber)
     }
 
     // MARK: The minimal look (8-bit style off)
@@ -617,8 +795,7 @@ enum AgentTVSelfTest {
         r.check("a taller notch gives the history all of it", heights.count == 2 && heights[1] >= heights[0] + 200, "\(heights)")
         r.check("the list column is about a third, 220 to 340 pt", AgentMiniView.listWidth(for: 960) >= 220 && AgentMiniView.listWidth(for: 960) <= 340 && AgentMiniView.listWidth(for: 500) == 220)
         // The flat banner says the same words as the pager.
-        let kinds: [AgentAnnouncement.Kind] = [.needsYou, .finished(minutes: 12), .error]
-        let heads = kinds.map { AgentBanner.headline(AgentAnnouncement(sessionID: "x", kind: $0, at: Date()), project: "infra") }
-        r.check("the flat banner uses the same headlines", heads == ["infra needs you", "infra finished after 12 min", "infra stopped with an error"], "\(heads)")
+        let head = AgentBanner.headline(AgentAnnouncement(sessionID: "x", kind: .needsYou, at: Date()), project: "infra")
+        r.check("the flat banner uses the same headline", head == "infra needs you", head)
     }
 }

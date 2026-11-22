@@ -8,6 +8,7 @@ enum NotchModule {
     static func start() {
         NotchPrefs.applyDefaultTabOrderOnce()
         registerCommands()
+        DisplayReport.register()   // scout://display.report?out=<file> in a scripted run
         NowPlayingService.shared.start()
         MediaActivityController.shared.start()
         VolumeService.shared.start()
@@ -27,6 +28,8 @@ enum NotchModule {
         SystemGalleryItems.register()
         LivePanelsGallery.register()
         LookGallery.register()   // look-*: the size and colours settings
+        IslandGallery.register()   // island-*: the closed island for each kind of display (faked geometry)
+        NotchSettingsGallery.register()   // settings-notch-cutout*: the Camera cutout section at the Settings window's real size
     }
 
     private static func registerCommands() {

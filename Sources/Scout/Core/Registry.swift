@@ -139,7 +139,8 @@ enum WidgetKind: String, CaseIterable, Codable, Identifiable {
     var defaultSpan: Int {
         switch self {
         case .media, .clipboard: 5
-        case .calendar, .pulse, .todo, .notes, .tray, .agents, .askAI, .prompter, .today: 4
+        case .pulse: PulsePrefs.cardsShowGPU(PulsePrefs.selected) ? (Retro.is8bit ? 5 : 6) : 4   // CPU, memory and GPU side by side (2026-11-22): the pixel letters fit in 5 cells, the minimal look's system text needs 6; a tight row takes the extra cells back (`NookStore.minSpan`) and shows CPU and memory alone
+        case .calendar, .todo, .notes, .tray, .agents, .askAI, .prompter, .today: 4
         case .volume, .weather, .mirror, .timer, .pomodoro, .shortcuts, .aiUsage, .quickApps: 3
         }
     }

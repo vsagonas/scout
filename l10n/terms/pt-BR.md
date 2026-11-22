@@ -14,6 +14,10 @@ STOPPED = PARADO, WELCOME = OLA, WORKFLOW = FLUXO, WORKING = TRABALHANDO.
 | agent / agents | agente / agentes (AI agents: agentes de IA) |
 | widget(s) | widget / widgets |
 | notch | notch |
+| camera cutout (the general word, whatever the shape) | recorte da câmera |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | pílula |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | ilha |
+| round bubbles (the agents beside the camera) | bolhas redondas |
 | dashboard | dashboard |
 | Nook | Nook (never translated) |
 | Tray | Bandeja |

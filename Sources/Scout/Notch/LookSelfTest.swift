@@ -25,12 +25,20 @@ enum LookSelfTest {
         let nook: NookStore
         let panel: NotchPanel
 
+        /// `geometry`, `center` and `store` default to what the rig always used (the classic 16 inch notch, an empty center, no agents). With a `store`
+        /// the center shows the agents' activity of that store (`AgentsStore.wings`), as the real app does.
+        let center: LiveActivityCenter
+
         init(size: CGSize = CGSize(width: 1500, height: 900), open: Bool = true, layout: [WidgetKind] = [.agents, .askAI, .pulse, .today],
-             view: ((WidgetKind) -> AnyView?)? = nil, widthCap: CGFloat? = nil) {
+             view: ((WidgetKind) -> AnyView?)? = nil, widthCap: CGFloat? = nil, geometry: NotchGeometry = .sample16,
+             center: LiveActivityCenter? = nil, store: AgentsStore? = nil) {
             self.size = size
-            model = NotchScreenModel(geometry: .sample16, panelSize: size)
+            let center = center ?? LiveActivityCenter()
+            self.center = center
+            model = NotchScreenModel(geometry: geometry, panelSize: size)
             model.isOpen = open
             navigator.isOpen = open
+            if let store { center.show(AgentsStore.wings(store: store, expiresAfter: nil)) }
             nook = NookStore(persist: false, layout: layout)
             nook.liveOverride = NookLive(playing: false, agents: 0)
             nook.tabIDs = { [] }
@@ -39,7 +47,7 @@ enum LookSelfTest {
                                styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
             panel.navigatorOverride = navigator
             panel.isReleasedWhenClosed = false
-            let root = NotchRootView(model: model, center: LiveActivityCenter(), navigator: navigator, nook: nook, styleOverride: .classic, widthCapOverride: widthCap)
+            let root = NotchRootView(model: model, center: center, navigator: navigator, nook: nook, styleOverride: .classic, widthCapOverride: widthCap)
             let hosting = NSHostingView(rootView: root)
             hosting.frame = CGRect(origin: .zero, size: size)
             panel.contentView = hosting
@@ -72,8 +80,19 @@ enum LookSelfTest {
         }
 
         /// The picture as the panel draws it (panel-local points, top-left origin).
-        func snapshot() -> Pixels? {
-            guard let view = panel.contentView, let rep = view.bitmapImageRepForCachingDisplay(in: view.bounds) else { return nil }
+        /// With a `scale` the picture is drawn at that many pixels per point (the island's own checks read it at 2x, where half points are whole pixels).
+        func snapshot(scale: CGFloat? = nil) -> Pixels? {
+            guard let view = panel.contentView else { return nil }
+            let rep: NSBitmapImageRep
+            if let scale {
+                guard let made = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(view.bounds.width * scale), pixelsHigh: Int(view.bounds.height * scale), bitsPerSample: 8,
+                                                  samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0) else { return nil }
+                made.size = view.bounds.size
+                rep = made
+            } else {
+                guard let made = view.bitmapImageRepForCachingDisplay(in: view.bounds) else { return nil }
+                rep = made
+            }
             view.layoutSubtreeIfNeeded()
             view.cacheDisplay(in: view.bounds, to: rep)
             return Pixels(rep: rep, points: view.bounds.size)
@@ -89,6 +108,31 @@ enum LookSelfTest {
     struct Pixels {
         let rep: NSBitmapImageRep
         let points: CGSize
+
+        /// The pixel under a point (nil outside the picture).
+        func color(_ p: CGPoint) -> NSColor? {
+            guard p.x >= 0, p.y >= 0, p.x < points.width, p.y < points.height else { return nil }
+            let x = min(rep.pixelsWide - 1, Int(p.x / points.width * CGFloat(rep.pixelsWide)))
+            let y = min(rep.pixelsHigh - 1, Int(p.y / points.height * CGFloat(rep.pixelsHigh)))
+            return rep.colorAt(x: x, y: y)?.usingColorSpace(.sRGB)
+        }
+
+        /// The opacity of the pixel under a point: 0 where nothing is drawn (outside the picture too).
+        func alpha(_ p: CGPoint) -> Double { color(p).map { Double($0.alphaComponent) } ?? 0 }
+
+        /// How many pixels lying wholly inside `r` (points) have an opacity above `threshold`.
+        func opaqueCount(in r: CGRect, threshold: Double = 0.02) -> Int {
+            let x0 = max(0, Int((r.minX / points.width * CGFloat(rep.pixelsWide) - 1e-6).rounded(.up)))
+            let x1 = min(rep.pixelsWide, Int((r.maxX / points.width * CGFloat(rep.pixelsWide) + 1e-6).rounded(.down)))
+            let y0 = max(0, Int((r.minY / points.height * CGFloat(rep.pixelsHigh) - 1e-6).rounded(.up)))
+            let y1 = min(rep.pixelsHigh, Int((r.maxY / points.height * CGFloat(rep.pixelsHigh) + 1e-6).rounded(.down)))
+            var count = 0
+            guard x0 < x1, y0 < y1 else { return 0 }
+            for y in y0..<y1 {
+                for x in x0..<x1 where Double(rep.colorAt(x: x, y: y)?.alphaComponent ?? 0) > threshold { count += 1 }
+            }
+            return count
+        }
 
         func luminance(_ p: CGPoint) -> Double {
             let x = min(rep.pixelsWide - 1, max(0, Int(p.x / points.width * CGFloat(rep.pixelsWide))))

@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@ 失败";
 "%@ + %lld more" = "%@ 及其他 %lld 项";
 "%@ DONE ✓" = "%@ DONE ✓";
 "%@ and %lld more" = "%@ 及其他 %lld 项";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@ 已结束（代码 %d）。";
 "%@ ended." = "%@ 已结束。";
 "%@ failed" = "%@ 失败";
-"%@ finished after %lld min" = "%@ 在 %lld 分钟后完成";
 "%@ free" = "%@ 可用";
 "%@ has no sound" = "%@ 没有声音";
 "%@ in %@" = "%@（%@）";
@@ -29,7 +27,6 @@
 "%@ resume command" = "%@ 恢复命令";
 "%@ settings…" = "%@ 设置…";
 "%@ so far" = "目前为止 %@";
-"%@ stopped with an error" = "%@ 因错误而停止";
 "%@ timer finished" = "%@ 计时器已完成";
 "%@ to full" = "距充满还需 %@";
 "%@ used" = "已用 %@";
@@ -100,7 +97,6 @@
 "Add" = "添加";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "在“隐私与安全性 › 完全磁盘访问权限”中添加 Scout 并打开，然后退出并重新打开 Scout。在此之前，macOS 会一直锁定“信息”的数据库。Scout 只读取它，而且只读取新信息。";
 "Add a key to start" = "添加密钥即可开始";
-"Add a notch to displays that have none" = "为没有刘海的显示器添加刘海";
 "Add a task" = "添加待办";
 "Add a task (no day)" = "添加待办（不限日期）";
 "Add a task for this day" = "为这一天添加待办";
@@ -124,6 +120,7 @@
 "Agent tabs" = "智能体标签页";
 "Agents" = "智能体";
 "Agents & AI Usage" = "智能体与 AI 用量";
+"Agents beside the notch" = "刘海旁的智能体";
 "Agents settings" = "智能体设置";
 "Agents show up here by themselves." = "智能体会自动出现在这里。";
 "Agents: %lld" = "智能体：%lld";
@@ -225,6 +222,7 @@
 "Camera" = "相机";
 "Camera access is off" = "相机访问已关闭";
 "Camera access is off for Scout." = "Scout 的相机访问已关闭。";
+"Camera cutout" = "摄像头开孔";
 "Can't read %@ yet" = "暂时无法读取 %@";
 "Can't tell which chat this is" = "无法判断这是哪个聊天";
 "Cancel" = "取消";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "当这些 App 位于最前面时进行的拷贝不会被保存。";
 "Copy" = "拷贝";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "拷贝 YouTube、X、Instagram、TikTok、Vimeo 或 Reddit 的链接后打开托盘，Scout 会提议下载它；也可以把链接拖到托盘上。下载使用 yt-dlp，需要你自己安装；上面的按钮只在你按下时才会运行。读取拷贝的链接需要在“系统设置 › 隐私与安全性 › 从其他 App 粘贴”中为 Scout 选择“允许”（macOS 15.4 及更高版本）。";
+"Copy display details" = "拷贝显示器信息";
 "Copy something and it shows up here." = "拷贝一些内容，它就会出现在这里。";
 "Couldn't copy the picture" = "无法拷贝图片";
 "Couldn't copy the polaroid" = "无法拷贝拍立得";
@@ -424,6 +423,7 @@
 "Extra large" = "特大";
 "FAVOURITES" = "FAVOURITES";
 "FROZEN" = "FROZEN";
+"Faces in the notch" = "刘海里的面孔";
 "Fahrenheit (°F)" = "华氏度（°F）";
 "Fast Ask AI" = "快问 AI";
 "Fastest, for short questions" = "最快，适合简短问题";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "要用 Homebrew 安装 yt-dlp 和 deno 吗？";
 "Installing…" = "正在安装…";
 "Internet speed right now: down (received) and up (sent)" = "当前网速：下载（接收）和上传（发送）";
+"Island" = "岛";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "现在它会跟随你的声音。请在“设置 › 提词器”中选择语言。";
 "It stays in your Mac's Keychain." = "它会保存在你 Mac 的钥匙串中。";
 "Items in the Tray: %lld" = "托盘中的项目：%lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "没有同步歌词";
 "No widgets yet" = "还没有小组件";
 "Nobody home yet. Agents move in by themselves." = "还没有人在家。智能体会自己搬进来。";
+"None" = "无";
 "None chosen yet" = "还未选择";
 "None found" = "未找到";
 "None yet" = "暂无";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "备忘录与待办";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "备忘录和待办存储在这台 Mac 上，并显示在刘海的小组件和视图中。";
 "Notes saved: %lld" = "已存储的备忘录：%lld";
+"Nothing" = "不显示";
 "Nothing (click to open)" = "无（点击打开）";
 "Nothing copied yet" = "还没有拷贝任何内容";
 "Nothing copied yet.\nCopy something and it will show up here." = "还没有拷贝任何内容。\n拷贝一些内容，它就会出现在这里。";
@@ -729,13 +732,15 @@
 "On" = "开";
 "On air" = "直播中";
 "On battery" = "使用电池";
+"On displays without a camera cutout" = "在没有摄像头开孔的显示器上";
 "On the dashboard now" = "当前在仪表板上";
 "One day" = "一天";
 "One hour" = "一小时";
 "One month" = "一个月";
 "One week" = "一周";
-"Only displays with a notch" = "仅限带刘海的显示器";
+"Only displays with a camera cutout" = "仅限有摄像头开孔的显示器";
 "Only events with a video link" = "仅限带视频链接的事件";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "仅适用于 Scout 识别有误的 Mac。带刘海的 Mac 无法预览药丸。";
 "Only for the Prompter to follow your voice." = "仅用于让提词器跟随你的声音。";
 "Only what you choose" = "仅你选择的内容";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "仅当 Scout 退出时仍在播放。Scout 总会记住上一个电台和音量。";
@@ -811,6 +816,7 @@
 "Pick your look" = "选择你的外观";
 "Picking an item" = "选取项目时";
 "Picture" = "图片";
+"Pill" = "药丸";
 "Pin" = "固定";
 "Pin apps" = "固定 App";
 "Pink" = "粉色";
@@ -857,6 +863,7 @@
 "READY" = "READY";
 "Radio" = "电台";
 "Radio stations by place, and what the Radio tab remembers." = "按地点分类的电台，以及“电台”标签页记住的内容。";
+"Radio stations in the Radio tab" = "“电台”标签页里的电台";
 "Rain" = "雨";
 "Ran %@" = "已运行 %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "读取收到的消息。macOS 不会告诉 App 它是否已开启。";
@@ -904,6 +911,7 @@
 "Ring" = "圆环";
 "Ring when time is up" = "时间到时响铃";
 "Rings" = "圆环";
+"Round bubbles" = "圆形气泡";
 "Rounded" = "圆角";
 "Run the short introduction again." = "再次运行简短的介绍。";
 "STARTING" = "STARTING";
@@ -936,7 +944,6 @@
 "Screen" = "屏幕";
 "Screen Recording" = "屏幕录制";
 "Screen Recording is off for Scout" = "Scout 的屏幕录制已关闭";
-"Screen recordings and the music visualizer." = "屏幕录制和音乐可视化。";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "屏幕：每次提问都会拍一张屏幕图片，并连同问题一起发送给 %@";
 "Screenshots and screen recordings." = "截屏和屏幕录制。";
 "Scripts" = "脚本";

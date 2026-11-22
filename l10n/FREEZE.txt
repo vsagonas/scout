@@ -1,7 +1,7 @@
-Localizable.strings keys=1320 sha256=ca8df0afbdc135dabff429bb5c1c4ad236767cb768af55c8a4029f050dcd2193
-InfoPlist.strings keys=16 sha256=2fcad137491f09fe1c57400e5e442d8d7b84c7b7a4cb1a0b7a78bb3d850580bb
+Localizable.strings keys=1327 sha256=3f7d6c895aa082e5dcb351906c5be918c8b719903ee9dc8d0d38ca6ceecc2204
+InfoPlist.strings keys=14 sha256=f4db61e6089938c4d26c97c91bdb59fef2dfd5e2d73e189cdca7abdf38b2f7d1
 PIXEL-LABELS.txt keys=25 sha256=9fbf15ddbada98885d122884fa7d1af0114ca7af5277260965645d1c45780f12
-frozen 2026-11-20T00:44:43+0200
+frozen 2026-11-20T04:32:23+0200
 From now on no English key changes or is added; a key that must change gets one line 'old key => new key' in l10n/DELTA.txt.
 2026-11-18: two keys added for Settings › General › Language: "Same as the Mac", "Restart Scout to show it in the new language." (33 languages).
 2026-11-18: an agent that finishes or fails no longer opens the notch: "Open the notch when an agent needs you, finishes a long task or fails" => "Open the notch when an agent needs you"; "A long task is one that took %lld min or more" removed (33 languages).
@@ -11,3 +11,4 @@ From now on no English key changes or is added; a key that must change gets one 
 2026-11-19: the feature of answering agents from the notch is gone with its code: 67 keys removed (33 languages), none renamed.
 2026-11-19: the retired Fast Ask AI strip is gone with its code: 5 keys removed (33 languages), among them the pixel label "FAST ASK AI"; the conversation keeps its name "Fast Ask AI".
 2026-11-20: five keys removed with the code that was their only user (33 languages), none renamed: "Asking a question" (a branch of the tool summary that could never run), "%@ finished in %@" and "Ready for the next task" (the finished-agent card, which the app no longer drops), "Found automatically" (an agents view nothing showed), "Questions go to %@." (an unused helper).
+2026-11-20: the first island build and the retired banners: 13 keys new in 33 languages (the Settings › Notch words "Camera cutout", "Pill", "None", "Island", "Nothing", "Faces in the notch", "Round bubbles", "Agents beside the notch", "On displays without a camera cutout", "Copy display details", its footnote, "Radio stations in the Radio tab", and "Only displays with a camera cutout", which replaces "Only displays with a notch"); 5 keys removed (33 languages), none renamed besides that one: "Add a notch to displays that have none", "%@ finished after %lld min", "%@ stopped with an error", "%@ %@ failed" (the finished and error banners, which the app no longer makes) and "Screen recordings and the music visualizer."; InfoPlist: NSAudioCaptureUsageDescription and NSAppleMusicUsageDescription removed (nothing in the app captures another app's sound or reads the Music library).

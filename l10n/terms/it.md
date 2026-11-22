@@ -7,6 +7,10 @@ Machine translation, no native reviewer yet. Informal "tu" (as the Italian App S
 | agent / agents | agente / agenti (agenti IA for "AI agents") |
 | widget / widgets | widget (invariable) |
 | notch | notch (il notch, as in the store text) |
+| camera cutout (the general word, whatever the shape) | ritaglio della fotocamera |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | pillola |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | isola |
+| round bubbles (the agents beside the camera) | bolle rotonde |
 | dashboard | dashboard |
 | Settings | Impostazioni |
 | Tray | Vassoio |

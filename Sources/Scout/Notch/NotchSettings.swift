@@ -1,3 +1,4 @@
+import AppKit
 import SwiftUI
 
 // Settings keys of the notch (the notch code prefix `notch.*`, `nook.*`).
@@ -15,7 +16,7 @@ enum NotchScreenMode: String, CaseIterable, Identifiable {
         switch self {
         case .main: String(localized: "Main display")
         case .all: String(localized: "All displays")
-        case .notched: String(localized: "Only displays with a notch")
+        case .notched: String(localized: "Only displays with a camera cutout")
         }
     }
 }
@@ -32,10 +33,48 @@ enum NotchHover: String, CaseIterable, Identifiable {
     }
 }
 
+extension CutoutOverride {
+    var title: String {
+        switch self {
+        case .automatic: String(localized: "Automatic")
+        case .pill: String(localized: "Pill")
+        case .notch: String(localized: "Notch")
+        case .none: String(localized: "None")
+        }
+    }
+}
+
+extension NoneShape: Identifiable {
+    var id: String { rawValue }
+    var title: String {
+        switch self {
+        case .island: String(localized: "Island")
+        case .tab: String(localized: "Notch")
+        case .nothing: String(localized: "Nothing")
+        }
+    }
+}
+
+extension AgentWingStyle: Identifiable {
+    var id: String { rawValue }
+    var title: String {
+        switch self {
+        case .faces: String(localized: "Faces in the notch")
+        case .bubbles: String(localized: "Round bubbles")
+        }
+    }
+}
+
 enum NotchPrefs {
     static var style: NotchStyle { NotchStyle(rawValue: Pref.string("notch.style", "classic")) ?? .classic }
     static var screens: NotchScreenMode { NotchScreenMode(rawValue: Pref.string("notch.screens", "main")) ?? .main }
-    static var virtualNotch: Bool { Pref.bool("notch.virtual", true) }
+    /// `notch.cutout`: Automatic reads the display; the others say what the Mac has when Scout reads it wrongly (built-in displays only).
+    static var cutoutOverride: CutoutOverride { CutoutOverride(rawValue: Pref.string("notch.cutout", CutoutOverride.automatic.rawValue)) ?? .automatic }
+    /// `notch.shape`: what Scout draws on a display without a camera cutout. UNSET means the tab, as every version before 1.0.20 drew it (a real
+    /// run decides it once before the modules start, see `NoneShapeMigration`).
+    static var noneShape: NoneShape { NoneShape(rawValue: Pref.string("notch.shape", NoneShape.tab.rawValue)) ?? .tab }
+    /// `notch.agentStyle`: how the agents show beside a classic notch (it matters for a display of kind notch only).
+    static var agentStyle: AgentWingStyle { AgentWingStyle(rawValue: Pref.string("notch.agentStyle", AgentWingStyle.faces.rawValue)) ?? .faces }
     static var hover: NotchHover { NotchHover(rawValue: Pref.string("notch.hover", "open")) ?? .open }
     static var hoverDelay: Double { max(0, min(1.5, Pref.double("notch.hoverDelay", 0.15))) }
     static var clickToOpen: Bool { Pref.bool("notch.clickToOpen", true) }
@@ -180,5 +219,74 @@ enum NotchPrefs {
         let kind = merged(shown)
         if lockedTab == kind { Pref.set(nil, lockedTabKey) }
         else if canLock(kind) { Pref.set(kind.rawValue, lockedTabKey) }
+    }
+}
+
+// MARK: - What no cutout draws: the one-time move from the old switch
+
+/// `notch.shape` replaced the switch "Add a notch to displays that have none" (`notch.virtual`). Decided ONCE, before the modules start, in real runs
+/// only, so nobody sees a change they did not choose.
+enum NoneShapeMigration {
+    /// The shape to store, or nil to leave things as they are. `stored` is what `notch.shape` holds now (nil when unset; a word that is no shape counts
+    /// as unset); `usedBefore` says Scout ran on this Mac before; `virtual` is the old switch (nil when it was never written).
+    /// - Already set: keep.
+    /// - Used before, or the old switch exists: switch on becomes the tab (what such a display showed), off becomes nothing.
+    /// - A new install: the island.
+    static func decide(stored: String?, usedBefore: Bool, virtual: Bool?) -> NoneShape? {
+        if let stored, NoneShape(rawValue: stored) != nil { return nil }
+        if usedBefore || virtual != nil { return (virtual ?? true) ? .tab : .nothing }
+        return .island
+    }
+
+    /// Real runs only (never a scripted run, which has its own empty settings): reads the stored words, decides, writes. A test passes a settings
+    /// suite of its own and `forceReal`, so the real reading and writing run on a temporary suite and never on the owner's settings.
+    @MainActor
+    static func runOnce(usedBefore: Bool, defaults: UserDefaults = .standard, forceReal: Bool = false) {
+        guard forceReal || !ScoutRuntime.isScripted else { return }
+        let virtual = defaults.object(forKey: "notch.virtual") as? Bool
+        guard let shape = decide(stored: defaults.string(forKey: "notch.shape"), usedBefore: usedBefore, virtual: virtual) else { return }
+        defaults.set(shape.rawValue, forKey: "notch.shape")
+    }
+}
+
+// MARK: - Which displays get a notch, and when the panels are rebuilt
+
+enum NotchScreenPolicy {
+    /// A display with a notch or a pill always gets Scout's notch; a display without a cutout when its shape is not Nothing and the mode is not
+    /// "Only displays with a camera cutout".
+    static func keeps(kind: CutoutKind, shape: NoneShape, mode: NotchScreenMode) -> Bool {
+        switch kind {
+        case .notch, .pill: true
+        case .none: shape != .nothing && mode != .notched
+        }
+    }
+
+    /// Whether the notch is there to open the dashboard on (what Ask AI asks of the main screen): the display keeps a notch and the dashboard opens
+    /// on it (not on a pill, in this build).
+    static func holdsDashboard(geometry: NotchGeometry, shape: NoneShape, mode: NotchScreenMode) -> Bool {
+        IslandMode.opens(geometry: geometry) && keeps(kind: geometry.kind, shape: shape, mode: mode)
+    }
+
+    /// What the manager compares to know that the panels must be rebuilt: it changes when the display mode (which displays), the override, the
+    /// two choices, a display's kind inputs (its frame, its hidden top, the two areas beside the housing, whether it is built in, its model, touch)
+    /// or, for a display without a cutout only, the menu bar's height in whole points change. Nothing else (a display's name, a pointer move) does.
+    static func signature(displays: [DisplayFacts], mode: NotchScreenMode, override: CutoutOverride, noneShape: NoneShape,
+                          agentStyle: AgentWingStyle) -> String {
+        let parts = displays.map { d -> String in
+            let rect = d.frame
+            var part = "\(d.displayID):\(rect.origin.x),\(rect.origin.y),\(rect.width),\(rect.height):\(d.safeTop):\(d.auxLeft.width):\(d.auxRight.width)"
+            part += ":\(d.isBuiltIn ? "b" : "x"):\(d.modelID ?? "-"):\(d.isTouch ? "t" : "f")"
+            let kind = NotchGeometry.make(facts: d, override: override, noneShape: noneShape, agentStyle: agentStyle).geometry.kind
+            if kind == .none { part += ":bar\(Int(d.noneBar.rounded()))" }
+            return part
+        }
+        return "\(mode.rawValue)|\(override.rawValue)|\(noneShape.rawValue)|\(agentStyle.rawValue)|" + parts.joined(separator: ",")
+    }
+
+    /// The signature of the displays connected now.
+    @MainActor
+    static func currentSignature() -> String {
+        signature(displays: NSScreen.screens.map(DisplayFacts.gather), mode: NotchPrefs.screens, override: NotchPrefs.cutoutOverride,
+                  noneShape: NotchPrefs.noneShape, agentStyle: NotchPrefs.agentStyle)
     }
 }

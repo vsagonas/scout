@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@ başarısız oldu";
 "%@ + %lld more" = "%@ + %lld tane daha";
 "%@ DONE ✓" = "%@ TAMAM ✓";
 "%@ and %lld more" = "%@ ve %lld tane daha";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@ sona erdi (kod %d).";
 "%@ ended." = "%@ sona erdi.";
 "%@ failed" = "%@ başarısız oldu";
-"%@ finished after %lld min" = "%@ %lld dk sonra bitti";
 "%@ free" = "%@ boş";
 "%@ has no sound" = "%@ sesi yok";
 "%@ in %@" = "%@, %@ içinde";
@@ -29,7 +27,6 @@
 "%@ resume command" = "%@ devam komutu";
 "%@ settings…" = "%@ ayarları…";
 "%@ so far" = "Şimdiye dek %@";
-"%@ stopped with an error" = "%@ bir hatayla durdu";
 "%@ timer finished" = "%@ zamanlayıcısı bitti";
 "%@ to full" = "Dolmasına %@";
 "%@ used" = "%@ dolu";
@@ -100,7 +97,6 @@
 "Add" = "Ekle";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Scout'u Gizlilik ve Güvenlik › Tam Disk Erişimi altına ekle, aç, sonra Scout'tan çıkıp yeniden aç. Sen bunu yapana kadar macOS, Mesajlar veritabanını kilitli tutar. Scout onu yalnızca okur, o da yalnızca yeni mesajlar için.";
 "Add a key to start" = "Başlamak için bir anahtar ekle";
-"Add a notch to displays that have none" = "Çentiği olmayan ekranlara çentik ekle";
 "Add a task" = "Görev ekle";
 "Add a task (no day)" = "Görev ekle (günsüz)";
 "Add a task for this day" = "Bu gün için görev ekle";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Ajan sekmeleri";
 "Agents" = "Ajanlar";
 "Agents & AI Usage" = "Ajanlar ve YZ Kullanımı";
+"Agents beside the notch" = "Çentiğin yanındaki ajanlar";
 "Agents settings" = "Ajan ayarları";
 "Agents show up here by themselves." = "Ajanlar buraya kendiliğinden gelir.";
 "Agents: %lld" = "Ajanlar: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Kamera erişimi kapalı";
 "Camera access is off for Scout." = "Scout için kamera erişimi kapalı.";
+"Camera cutout" = "Kamera deliği";
 "Can't read %@ yet" = "%@ henüz okunamıyor";
 "Can't tell which chat this is" = "Bunun hangi sohbet olduğu anlaşılamıyor";
 "Cancel" = "İptal";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Bu uygulamalardan biri öndeyken yapılan kopyalar asla kaydedilmez.";
 "Copy" = "Kopyala";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "YouTube, X, Instagram, TikTok, Vimeo ya da Reddit'ten bir bağlantı kopyala, Tepsi'yi aç; Scout onu indirmeyi önerir. Ya da bir bağlantıyı Tepsi'ye bırak. İndirmeler, kendi kurduğun yt-dlp'yi kullanır; yukarıdaki düğme yalnızca sen basınca çalışır. Kopyalanan bağlantıyı okumak için Sistem Ayarları › Gizlilik ve Güvenlik › Diğer Uygulamalardan Yapıştır altında Scout için “İzin ver” gerekir (macOS 15.4 ve sonrası).";
+"Copy display details" = "Ekran ayrıntılarını kopyala";
 "Copy something and it shows up here." = "Bir şey kopyala, burada görünür.";
 "Couldn't copy the picture" = "Resim kopyalanamadı";
 "Couldn't copy the polaroid" = "Polaroid kopyalanamadı";
@@ -424,6 +423,7 @@
 "Extra large" = "Çok büyük";
 "FAVOURITES" = "FAVORILER";
 "FROZEN" = "DONDU";
+"Faces in the notch" = "Çentikteki yüzler";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
 "Fast Ask AI" = "Hızlı YZ'ye Sor";
 "Fastest, for short questions" = "En hızlısı, kısa sorular için";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "yt-dlp ve deno Homebrew ile yüklensin mi?";
 "Installing…" = "Yükleniyor…";
 "Internet speed right now: down (received) and up (sent)" = "Şu anki internet hızı: indirme (alınan) ve yükleme (gönderilen)";
+"Island" = "Ada";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Artık sesinin tınısını izliyor. Dili Ayarlar › Teleprompter'dan seç.";
 "It stays in your Mac's Keychain." = "Mac'inin Keychain'inde kalır.";
 "Items in the Tray: %lld" = "Tepsi'deki öğeler: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Eşzamanlı söz yok";
 "No widgets yet" = "Henüz widget yok";
 "Nobody home yet. Agents move in by themselves." = "Evde henüz kimse yok. Ajanlar kendiliğinden taşınır.";
+"None" = "Yok";
 "None chosen yet" = "Henüz seçilmedi";
 "None found" = "Hiçbiri bulunamadı";
 "None yet" = "Henüz yok";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Notlar ve Yapılacaklar";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Notlar ve yapılacaklar bu Mac'te kaydedilir ve çentiğin widget'larında ve görünümlerinde gösterilir.";
 "Notes saved: %lld" = "Kaydedilen notlar: %lld";
+"Nothing" = "Hiçbir şey";
 "Nothing (click to open)" = "Hiçbir şey (açmak için tıkla)";
 "Nothing copied yet" = "Henüz bir şey kopyalanmadı";
 "Nothing copied yet.\nCopy something and it will show up here." = "Henüz bir şey kopyalanmadı.\nBir şey kopyala, burada görünür.";
@@ -729,13 +732,15 @@
 "On" = "Açık";
 "On air" = "Yayında";
 "On battery" = "Pilde";
+"On displays without a camera cutout" = "Kamera deliği olmayan ekranlarda";
 "On the dashboard now" = "Şu an özet ekranında";
 "One day" = "Bir gün";
 "One hour" = "Bir saat";
 "One month" = "Bir ay";
 "One week" = "Bir hafta";
-"Only displays with a notch" = "Yalnızca çentiği olan ekranlar";
+"Only displays with a camera cutout" = "Yalnızca kamera deliği olan ekranlar";
 "Only events with a video link" = "Yalnızca video bağlantısı olan etkinlikler";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Yalnızca Scout'un yanlış okuduğu bir Mac için. Çentikli bir Mac hap önizlemesi gösteremez.";
 "Only for the Prompter to follow your voice." = "Yalnızca Teleprompter'ın sesini izlemesi için.";
 "Only what you choose" = "Yalnızca seçtiklerin";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Yalnızca Scout kapanırken hâlâ çalıyorsa. Scout son istasyonu ve ses düzeyini her zaman hatırlar.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Görünümünü seç";
 "Picking an item" = "Öğe seçerken";
 "Picture" = "Resim";
+"Pill" = "Hap";
 "Pin" = "Sabitle";
 "Pin apps" = "Uygulama sabitle";
 "Pink" = "Pembe";
@@ -857,6 +863,7 @@
 "READY" = "HAZIR";
 "Radio" = "Radyo";
 "Radio stations by place, and what the Radio tab remembers." = "Yere göre radyo istasyonları ve Radyo sekmesinin hatırladıkları.";
+"Radio stations in the Radio tab" = "Radyo sekmesindeki radyo istasyonları";
 "Rain" = "Yağmur";
 "Ran %@" = "Çalıştı: %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Gelen mesajları oku. macOS bunun açık olup olmadığını uygulamalara bildirmez.";
@@ -904,6 +911,7 @@
 "Ring" = "Halka";
 "Ring when time is up" = "Süre dolunca çal";
 "Rings" = "Halkalar";
+"Round bubbles" = "Yuvarlak baloncuklar";
 "Rounded" = "Yuvarlak";
 "Run the short introduction again." = "Kısa tanıtımı yeniden çalıştır.";
 "STARTING" = "BASLIYOR";
@@ -936,7 +944,6 @@
 "Screen" = "Ekran";
 "Screen Recording" = "Ekran Kaydı";
 "Screen Recording is off for Scout" = "Scout için Ekran Kaydı kapalı";
-"Screen recordings and the music visualizer." = "Ekran kayıtları ve müzik görselleştirici.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Ekran: her soru ekranının bir görüntüsünü alır ve soruyla birlikte %@ hizmetine gönderir";
 "Screenshots and screen recordings." = "Ekran görüntüleri ve ekran kayıtları.";
 "Scripts" = "Metinler";

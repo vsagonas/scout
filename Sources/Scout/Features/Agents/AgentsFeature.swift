@@ -662,13 +662,6 @@ enum AgentsFeature {
             let _ = AgentsStore.shared.loadSamples(selecting: "demo-1")
             NotchScene(size: CGSize(width: 1120, height: 330), open: true, workspace: .agents, openHeight: 200)
         }
-        // The CPU tab with an agent's window open under the den, at its real height (the den 419 + the window 250).
-        Gallery.register("agents-notch-open-window", size: CGSize(width: 1120, height: 720)) {
-            let _ = AgentsStore.shared.loadSamples(selecting: "demo-1")
-            // An announcement opens its agent's window from the first frame (a focus id is only taken once the view is on screen, after the picture).
-            let _ = { AgentsStore.shared.announcement = AgentAnnouncement(sessionID: "demo-1", kind: .finished(minutes: 2), at: Date()) }()
-            NotchScene(size: CGSize(width: 1120, height: 720), open: true, workspace: .agents, openHeight: AgentDenLayout.islandHeight(extra: AgentDenLayout.drawerHeight))
-        }
         // The closed notch: left the glyph and counts, right the most important session, and (hovering) one line per agent.
         let all6 = AgentSession.synthetic(6)
         func wingsStore(_ picks: [Int], done: Bool = false) -> AgentsStore {

@@ -7,6 +7,10 @@ Machine translation, no native reviewer yet. Formal address (vykanie) in sentenc
 | agent / agents | agent / agenti (agentov, agentov; "AI agenti") |
 | widget / widgets | widget / widgety |
 | notch | výrez (vo výreze, as in the store text) |
+| camera cutout (the general word, whatever the shape) | otvor pre kameru (výrez stays the notch) |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | kapsula |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | ostrov |
+| round bubbles (the agents beside the camera) | okrúhle bubliny |
 | dashboard | prehľad |
 | Settings / System Settings | Nastavenia / Nastavenia systému |
 | Tray | Zásobník (Tray is translated) |

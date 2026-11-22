@@ -14,6 +14,7 @@ enum AboutCredits {
     static let entries: [Entry] = {
         let shared = [
             Entry(id: "openmeteo", name: "Open-Meteo", license: "CC BY 4.0", use: String(localized: "Weather forecasts and city search"), url: "https://open-meteo.com"),
+            Entry(id: "radiobrowser", name: "Radio Browser", license: String(localized: "Free service, no key"), use: String(localized: "Radio stations in the Radio tab"), url: "https://www.radio-browser.info"),
             Entry(id: "frankfurter", name: "Frankfurter", license: String(localized: "Free service, no key"), use: String(localized: "Currency rates in the Units tool"), url: "https://frankfurter.dev"),
         ]
         #if APPSTORE

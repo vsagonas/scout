@@ -12,6 +12,10 @@ Informal singular imperative for buttons, menu items and sentences (Odpri, Zapri
 | Fast Ask AI | Hitri UI |
 | widget / widgets | pripomoček / pripomočki |
 | notch | izrez (the camera cut-out) |
+| camera cutout (the general word, whatever the shape) | odprtina za kamero (izrez stays the notch) |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | kapsula |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | otok |
+| round bubbles (the agents beside the camera) | okrogli mehurčki |
 | dashboard | nadzorna plošča |
 | Nook | Nook (Latin, never translated) |
 | Tray | Pladenj |

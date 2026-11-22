@@ -7,6 +7,10 @@ Machine translation, no native reviewer yet. Informal "sinä" (as the Finnish Ap
 | agent / agents | agentti / agentit (tekoälyagentit) |
 | widget / widgets | widget / widgetit |
 | notch | lovi (loven, lovessa, as in the store text) |
+| camera cutout (the general word, whatever the shape) | kameran aukko |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | pilleri |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | saari |
+| round bubbles (the agents beside the camera) | pyöreät kuplat |
 | dashboard | koontinäkymä (as in the store text) |
 | Settings | Asetukset |
 | Tray | Lokero / Lokerossa (Tray is translated) |

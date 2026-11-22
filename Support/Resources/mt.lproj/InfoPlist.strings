@@ -1,8 +1,6 @@
 "CFBundleDisplayName" = "Scout";
 "NSAppleEventsUsageDescription" = "Scout jitkellem ma' Spotify, Music, Messages u Notes biss meta tuża dawk il-funzjonijiet: biex juri u jikkontrolla dak li qed idoqq, jibgħat tweġiba li kont ktibt, jew isalva nota.";
 "NSAppleEventsUsageDescription~appstore" = "Scout jitkellem ma' Music u Spotify biss meta tixgħel il-kontroll tal-playback, biex juri u jikkontrolla dak li qed idoqq.";
-"NSAppleMusicUsageDescription" = "Scout juri dak li qed idoqq f'Music.";
-"NSAudioCaptureUsageDescription" = "Scout jisma' l-ħoss tal-app li qed iddoqq biex janima l-visualizer tal-mużika u jistabbilixxi l-volum għal kull app. L-awdjo qatt ma jiġi ssalvat jew mibgħut.";
 "NSBluetoothAlwaysUsageDescription" = "Scout juri l-AirPods u apparati oħra tiegħek meta jikkonnettjaw, bil-batterija tagħhom.";
 "NSBluetoothAlwaysUsageDescription~appstore" = "Scout juri l-AirPods u apparati Bluetooth oħra tiegħek b'isimhom meta jikkonnettjaw.";
 "NSCalendarsFullAccessUsageDescription" = "Scout juri l-avvenimenti li ġejjin tiegħek fin-notch u jżid l-avvenimenti li toħloq.";

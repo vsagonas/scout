@@ -19,6 +19,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         if ScoutRuntime.isHeadless { AgentsFeature.startHeadless(); HeadlessChecks.registerAll(); return }
         // Read before the modules start (they write their own settings at once): has Scout run on this Mac before?
         let usedBefore = ["notch.lastWorkspace", "nook.layout", "agents.nook.migrated"].contains { UserDefaults.standard.object(forKey: $0) != nil }
+        NoneShapeMigration.runOnce(usedBefore: usedBefore)   // what a display without a camera cutout shows, decided once, before any module reads it
         StatusMenu.shared.install()
         Modules.startAll()
         WorkspaceHotKeys.shared.start()

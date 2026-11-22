@@ -25,7 +25,7 @@ enum AskAIPlace {
 
     static var mainScreenHasNotch: Bool {
         guard let main = NSScreen.screens.first else { return false }
-        return main.hasHardwareNotch || (NotchPrefs.virtualNotch && NotchPrefs.screens != .notched)
+        return NotchScreenPolicy.holdsDashboard(geometry: NotchGeometry.make(for: main), shape: NotchPrefs.noneShape, mode: NotchPrefs.screens)
     }
 
     /// False when the owner switched Ask AI off in Settings › Notch › Workspaces (older saved lists lack it).
@@ -35,7 +35,7 @@ enum AskAIPlace {
     private static var targetController: NotchController? {
         let mouse = NSEvent.mouseLocation
         guard let c = NotchManager.shared.controllers.first(where: { $0.screenFrame.contains(mouse) }) else { return nil }
-        return c.model.hiddenForFullscreen ? nil : c
+        return c.model.hiddenForFullscreen || !IslandMode.opens(geometry: c.model.geometry) ? nil : c   // a pill cannot open the dashboard: Ask AI uses its window there
     }
 
     static var notchAvailable: Bool { enabledInNotch && targetController != nil }

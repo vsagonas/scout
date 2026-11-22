@@ -582,8 +582,8 @@ private struct AgentMiniHeightKey: PreferenceKey {
 
 // MARK: - The automatic opening's banner
 
-/// What the notch says when it opens by itself, in the minimal look: a flat card with the state's symbol and one bold line ("infra needs you",
-/// "site finished after 12 min", "api stopped with an error"), the failed step for an error, and the first words of the latest message.
+/// What the notch says when it opens by itself, in the minimal look: a flat card with a question mark and one bold line ("infra needs you")
+/// and the first words of the latest message.
 struct AgentMiniBanner: View {
     let announcement: AgentAnnouncement
     let session: AgentSession
@@ -591,22 +591,13 @@ struct AgentMiniBanner: View {
     private var symbol: String {
         switch announcement.kind {
         case .needsYou: "questionmark.circle.fill"
-        case .finished: "checkmark.circle.fill"
-        case .error: "exclamationmark.triangle.fill"
         }
     }
 
     private var tint: Color {
         switch announcement.kind {
         case .needsYou: .orange
-        case .finished: .green
-        case .error: .red
         }
-    }
-
-    private var failedStep: String? {
-        guard announcement.kind == .error, let step = session.steps.last(where: { $0.failed }) else { return nil }
-        return String(localized: "\(step.tool) \(step.summary) failed")
     }
 
     var body: some View {
@@ -614,7 +605,6 @@ struct AgentMiniBanner: View {
             Image(systemName: symbol).font(.system(size: 14)).foregroundStyle(tint).padding(.top, 1)
             VStack(alignment: .leading, spacing: 3) {
                 Text(AgentBanner.headline(announcement, project: session.project)).font(.system(size: 12, weight: .semibold)).foregroundStyle(tint).lineLimit(1)
-                if let failedStep { Text(failedStep).font(.system(size: 10.5, design: .monospaced)).foregroundStyle(NotchInk.secondary).lineLimit(1) }
                 if !session.lastMessage.isEmpty {
                     Text(session.lastMessage).font(.system(size: 11)).foregroundStyle(NotchInk.primary.opacity(0.9)).lineLimit(3).fixedSize(horizontal: false, vertical: true)
                 }

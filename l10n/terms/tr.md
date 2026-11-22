@@ -11,6 +11,10 @@ Suffixes after Latin names and abbreviations take an apostrophe: widget'lar, Tep
 | Fast Ask AI | Hızlı YZ'ye Sor |
 | widget / widgets | widget / widget'lar |
 | notch | çentik |
+| camera cutout (the general word, whatever the shape) | kamera deliği |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | hap |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | ada |
+| round bubbles (the agents beside the camera) | yuvarlak baloncuklar |
 | dashboard | özet ekranı |
 | Nook | Nook (Latin, never translated) |
 | Tray | Tepsi |

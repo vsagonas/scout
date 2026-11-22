@@ -11,6 +11,10 @@ Addressing the user: plain masculine imperative (اسأل، افتح), labels an
 | Fast Ask AI | اسأل الذكاء الاصطناعي السريع |
 | widget / widgets | ويدجت (the same word for one and many: الويدجت) |
 | notch | النوتش |
+| camera cutout (the general word, whatever the shape) | فتحة الكاميرا |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | كبسولة |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | جزيرة |
+| round bubbles (the agents beside the camera) | فقاعات مستديرة |
 | dashboard | لوحة المعلومات |
 | Nook | Nook (Latin, never translated) |
 | Tray | الدرج |

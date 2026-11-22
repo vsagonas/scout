@@ -12,6 +12,10 @@ Buttons and menu items are infinitives, as Latvian software writes them (Atvērt
 | Fast Ask AI | Ātrais MI |
 | widget / widgets | logrīks / logrīki |
 | notch | izgriezums (the camera cut-out) |
+| camera cutout (the general word, whatever the shape) | kameras atvērums (izgriezums stays the notch) |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | kapsula |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | sala |
+| round bubbles (the agents beside the camera) | apaļi burbuļi |
 | dashboard | panelis |
 | Nook | Nook (Latin, never translated) |
 | Tray | Paplāte |

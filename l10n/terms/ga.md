@@ -12,6 +12,10 @@ Buttons and menu items are the imperative ("Oscail", "Dún", "Sábháil", "Cuir 
 | Fast Ask AI | AI Tapa |
 | widget / widgets | giuirléid / giuirléidí |
 | notch | notch (kept, as Irish speakers say it) |
+| camera cutout (the general word, whatever the shape) | oscailt ceamara |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | piolla |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | oileán |
+| round bubbles (the agents beside the camera) | boilgeoga cruinne |
 | dashboard | painéal |
 | Nook | Nook (Latin, never translated) |
 | Tray | Tráidire |

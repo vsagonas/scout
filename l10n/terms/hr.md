@@ -9,6 +9,10 @@ Brand names are never declined: "aplikacije Scout", "u alatu Codex", "u Keychain
 | agent / agents | agent / agenti ("AI agenti") |
 | widget / widgets | widget / widgeti |
 | notch | notch (u notchu, as in the store text) |
+| camera cutout (the general word, whatever the shape) | izrez za kameru |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | kapsula |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | otok |
+| round bubbles (the agents beside the camera) | okrugli mjehurići |
 | dashboard | nadzorna ploča |
 | Settings / System Settings | Postavke / Postavke sustava |
 | Tray | Pladanj (Tray is translated) |

@@ -123,9 +123,8 @@ enum AgentsAutoOpenSelfTest {
         AgentsAutoOpen.migrateOldSetting(off)
         check("  and it happens once: a later choice is not undone", off.object(forKey: AgentsAutoOpen.enabledKey) as? Bool == true)
         for name in ["a", "b", "c"] { UserDefaults(suiteName: "com.vsag.Scout.autotest.\(name)")?.removePersistentDomain(forName: "com.vsag.Scout.autotest.\(name)") }
-        let kinds: [AgentAnnouncement.Kind] = [.needsYou, .finished(minutes: 12), .error]
-        let heads = kinds.map { AgentBanner.headline(AgentAnnouncement(sessionID: "x", kind: $0, at: Date()), project: ["infra", "docs", "scout"][kinds.firstIndex(of: $0) ?? 0]) }
-        check("the banner says who and what happened", heads == ["infra needs you", "docs finished after 12 min", "scout stopped with an error"], "\(heads)")
+        let head = AgentBanner.headline(AgentAnnouncement(sessionID: "x", kind: .needsYou, at: Date()), project: "infra")
+        check("the banner says who needs you", head == "infra needs you", head)
     }
 
     // MARK: 2. The rules, with the real notch and the real Agents view

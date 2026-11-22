@@ -10,6 +10,10 @@ Brand names stay Latin and are not declined: "Scout", "Codex", "Mac" ("на ць
 | AI | ШІ |
 | widget / widgets | віджет / віджети |
 | notch | виріз (у вирізі, as in the store text) |
+| camera cutout (the general word, whatever the shape) | отвір для камери (виріз stays the notch) |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | капсула |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | острів |
+| round bubbles (the agents beside the camera) | круглі бульбашки |
 | dashboard | огляд (as the store text's "огляд") |
 | Settings / System Settings | Параметри / Параметри системи (as macOS and the store text) |
 | Tray | Лоток (Tray is translated) |

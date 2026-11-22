@@ -7,6 +7,10 @@ Machine translation, no native reviewer yet. Informal "du" (as the Danish App St
 | agent / agents | agent / agenter (AI-agenter) |
 | widget / widgets | widget / widgets |
 | notch | notch (en notch, notchen) |
+| camera cutout (the general word, whatever the shape) | kameraudskæring |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | pille |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | øen (the menu label "Øen": the plain word is ø, but one letter alone reads like a symbol) |
+| round bubbles (the agents beside the camera) | runde bobler |
 | dashboard | overblik (as in the store text) |
 | Settings | Indstillinger |
 | Tray | Bakke / bakken (Tray is translated) |

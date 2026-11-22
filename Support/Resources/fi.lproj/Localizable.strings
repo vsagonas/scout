@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "Epäonnistui: %@ %@";
 "%@ + %lld more" = "%@ + %lld lisää";
 "%@ DONE ✓" = "%@ VALMIS ✓";
 "%@ and %lld more" = "%@ ja %lld lisää";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@ päättyi (koodi %d).";
 "%@ ended." = "%@ päättyi.";
 "%@ failed" = "%@ epäonnistui";
-"%@ finished after %lld min" = "%@ valmis %lld min jälkeen";
 "%@ free" = "%@ vapaana";
 "%@ has no sound" = "Ei ääntä: %@";
 "%@ in %@" = "%@ · %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "%@-jatkokomento";
 "%@ settings…" = "%@-asetukset…";
 "%@ so far" = "%@ tähän mennessä";
-"%@ stopped with an error" = "%@ pysähtyi virheeseen";
 "%@ timer finished" = "%@-ajastin valmis";
 "%@ to full" = "%@ täyteen";
 "%@ used" = "%@ käytetty";
@@ -100,7 +97,6 @@
 "Add" = "Lisää";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Lisää Scout kohtaan Tietosuoja ja turvallisuus › Koko levyn käyttö, kytke se päälle ja lopeta sitten Scout ja avaa se uudelleen. macOS pitää Viestit-tietokannan lukittuna, kunnes teet niin. Scout vain lukee sitä, ja vain uusia viestejä varten.";
 "Add a key to start" = "Aloita lisäämällä avain";
-"Add a notch to displays that have none" = "Lisää lovi näytöille, joilla sitä ei ole";
 "Add a task" = "Lisää askare";
 "Add a task (no day)" = "Lisää askare (ei päivää)";
 "Add a task for this day" = "Lisää askare tälle päivälle";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Agenttivälilehdet";
 "Agents" = "Agentit";
 "Agents & AI Usage" = "Agentit ja tekoälyn käyttö";
+"Agents beside the notch" = "Agentit loven vieressä";
 "Agents settings" = "Agenttien asetukset";
 "Agents show up here by themselves." = "Agentit ilmestyvät tänne itsestään.";
 "Agents: %lld" = "Agentit: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Kameran käyttö on pois päältä";
 "Camera access is off for Scout." = "Kameran käyttö on pois päältä Scout-sovellukselta.";
+"Camera cutout" = "Kameran aukko";
 "Can't read %@ yet" = "Kohdetta %@ ei voi vielä lukea";
 "Can't tell which chat this is" = "Ei voi päätellä, mikä keskustelu tämä on";
 "Cancel" = "Peruuta";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Kopioita, jotka tehdään, kun jokin näistä sovelluksista on edessä, ei koskaan tallenneta.";
 "Copy" = "Kopioi";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Kopioi linkki palvelusta YouTube, X, Instagram, TikTok, Vimeo tai Reddit, avaa Lokero, niin Scout tarjoutuu lataamaan sen, tai pudota linkki Lokeroon. Lataukset käyttävät yt-dlp-työkalua, jonka asennat itse; yllä oleva painike toimii vain, kun painat sitä. Kopioidun linkin lukeminen vaatii ”Salli”-valinnan Scout-sovellukselle kohdassa Järjestelmäasetukset › Tietosuoja ja turvallisuus › Liitä muista sovelluksista (macOS 15.4 ja uudemmat).";
+"Copy display details" = "Kopioi näytön tiedot";
 "Copy something and it shows up here." = "Kopioi jotain, niin se ilmestyy tähän.";
 "Couldn't copy the picture" = "Kuvan kopiointi ei onnistunut";
 "Couldn't copy the polaroid" = "Polaroidin kopiointi ei onnistunut";
@@ -424,6 +423,7 @@
 "Extra large" = "Erittäin suuri";
 "FAVOURITES" = "SUOSIKIT";
 "FROZEN" = "JAADYTETTY";
+"Faces in the notch" = "Kasvot lovessa";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
 "Fast Ask AI" = "Pikakysymys AI";
 "Fastest, for short questions" = "Nopein, lyhyisiin kysymyksiin";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Asennetaanko yt-dlp ja deno Homebrew-työkalulla?";
 "Installing…" = "Asennetaan…";
 "Internet speed right now: down (received) and up (sent)" = "Internetin nopeus juuri nyt: alas (vastaanotettu) ja ylös (lähetetty)";
+"Island" = "Saari";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Se seuraa nyt äänesi ääntä. Valitse kieli kohdassa Asetukset › Prompter.";
 "It stays in your Mac's Keychain." = "Se pysyy Mac-koneesi Keychain-palvelussa.";
 "Items in the Tray: %lld" = "Kohteita Lokerossa: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Ei synkattua sanoitusta";
 "No widgets yet" = "Ei vielä widgetejä";
 "Nobody home yet. Agents move in by themselves." = "Ketään ei ole vielä kotona. Agentit muuttavat sisään itsestään.";
+"None" = "Ei aukkoa";
 "None chosen yet" = "Ei vielä valittu";
 "None found" = "Ei löytynyt";
 "None yet" = "Ei vielä";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Muistiinpanot ja askareet";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Muistiinpanot ja askareet tallennetaan tähän Mac-koneeseen ja näytetään loven widgeteissä ja näkymissä.";
 "Notes saved: %lld" = "Tallennettuja muistiinpanoja: %lld";
+"Nothing" = "Ei mitään";
 "Nothing (click to open)" = "Ei mitään (napsauta avataksesi)";
 "Nothing copied yet" = "Ei vielä mitään kopioitu";
 "Nothing copied yet.\nCopy something and it will show up here." = "Ei vielä mitään kopioitu.\nKopioi jotain, niin se ilmestyy tähän.";
@@ -729,13 +732,15 @@
 "On" = "Päällä";
 "On air" = "On air";
 "On battery" = "Akulla";
+"On displays without a camera cutout" = "Näytöillä, joissa ei ole kameran aukkoa";
 "On the dashboard now" = "Koontinäkymässä nyt";
 "One day" = "Yksi päivä";
 "One hour" = "Yksi tunti";
 "One month" = "Yksi kuukausi";
 "One week" = "Yksi viikko";
-"Only displays with a notch" = "Vain näytöt, joissa on lovi";
+"Only displays with a camera cutout" = "Vain näytöt, joissa on kameran aukko";
 "Only events with a video link" = "Vain tapahtumat, joissa on videolinkki";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Vain Mac-koneelle, jonka Scout lukee väärin. Lovellinen Mac-kone ei voi näyttää pillerin esikatselua.";
 "Only for the Prompter to follow your voice." = "Vain jotta Prompter voi seurata ääntäsi.";
 "Only what you choose" = "Vain valitsemasi";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Vain jos se soi vielä, kun Scout suljettiin. Scout muistaa aina viimeisimmän aseman ja äänenvoimakkuuden.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Valitse ulkoasusi";
 "Picking an item" = "Kohteen valinta";
 "Picture" = "Kuva";
+"Pill" = "Pilleri";
 "Pin" = "Kiinnitä";
 "Pin apps" = "Kiinnitä sovelluksia";
 "Pink" = "Pinkki";
@@ -857,6 +863,7 @@
 "READY" = "VALMIINA";
 "Radio" = "Radio";
 "Radio stations by place, and what the Radio tab remembers." = "Radioasemat paikan mukaan ja se, mitä Radio-välilehti muistaa.";
+"Radio stations in the Radio tab" = "Radioasemat Radio-välilehdellä";
 "Rain" = "Sade";
 "Ran %@" = "Suoritettu: %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Lue saapuvat viestit. macOS ei kerro sovelluksille, onko tämä päällä.";
@@ -904,6 +911,7 @@
 "Ring" = "Rengas";
 "Ring when time is up" = "Soi, kun aika loppuu";
 "Rings" = "Renkaat";
+"Round bubbles" = "Pyöreät kuplat";
 "Rounded" = "Pyöristetty";
 "Run the short introduction again." = "Suorita lyhyt esittely uudelleen.";
 "STARTING" = "ALKAA";
@@ -936,7 +944,6 @@
 "Screen" = "Näyttö";
 "Screen Recording" = "Näytön tallennus";
 "Screen Recording is off for Scout" = "Näytön tallennus on pois päältä Scout-sovellukselta";
-"Screen recordings and the music visualizer." = "Näyttötallenteet ja musiikin visualisoija.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Näyttö: jokainen kysymys ottaa kuvan näytöstäsi ja lähettää sen kysymyksen mukana palvelulle %@";
 "Screenshots and screen recordings." = "Näyttökuvat ja näyttötallenteet.";
 "Scripts" = "Skriptit";

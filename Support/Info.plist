@@ -85,10 +85,6 @@
 	</dict>
 	<key>NSAppleEventsUsageDescription</key>
 	<string>Scout talks to Spotify, Music, Messages and Notes only when you use those features: to show and control what's playing, send a reply you typed, or save a note.</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>Scout shows what's playing in Music.</string>
-	<key>NSAudioCaptureUsageDescription</key>
-	<string>Scout listens to the playing app's sound to animate the music visualizer and set per-app volume. Audio is never saved or sent.</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Scout shows your AirPods and other devices when they connect, with their battery.</string>
 	<key>NSCalendarsFullAccessUsageDescription</key>

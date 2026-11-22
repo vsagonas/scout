@@ -7,6 +7,10 @@ Machine translation, no native reviewer yet. Informal "je/jouw" (as the Dutch Ap
 | agent / agents | agent / agents (AI-agents) |
 | widget / widgets | widget / widgets |
 | notch | notch (de notch, as in the store text) |
+| camera cutout (the general word, whatever the shape) | camera-uitsparing |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | pil |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | eiland |
+| round bubbles (the agents beside the camera) | ronde bellen |
 | dashboard | dashboard |
 | Settings | Instellingen |
 | Tray | Bakje (Tray is translated) |

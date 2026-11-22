@@ -1,8 +1,6 @@
 "CFBundleDisplayName" = "Scout";
 "NSAppleEventsUsageDescription" = "只有在你使用相关功能时，Scout 才会与 Spotify、“音乐”、“信息”和“备忘录”通信：用于显示和控制正在播放的内容、发送你输入的回复，或保存备忘录。";
 "NSAppleEventsUsageDescription~appstore" = "只有在你打开播放控制时，Scout 才会与“音乐”和 Spotify 通信，用于显示和控制正在播放的内容。";
-"NSAppleMusicUsageDescription" = "Scout 会显示“音乐”中正在播放的内容。";
-"NSAudioCaptureUsageDescription" = "Scout 会聆听正在播放的 App 的声音，用来驱动音乐可视化并设置各 App 的音量。音频绝不会被保存或发送。";
 "NSBluetoothAlwaysUsageDescription" = "AirPods 和其他设备连接时，Scout 会显示它们及其电池电量。";
 "NSBluetoothAlwaysUsageDescription~appstore" = "AirPods 和其他蓝牙设备连接时，Scout 会按名称显示它们。";
 "NSCalendarsFullAccessUsageDescription" = "Scout 会在刘海中显示你即将到来的事件，并添加你创建的事件。";

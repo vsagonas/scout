@@ -1,8 +1,6 @@
 "CFBundleDisplayName" = "Scout";
 "NSAppleEventsUsageDescription" = "O Scout comunica com o Spotify, a Música, as Mensagens e as Notas apenas quando usa essas funcionalidades: para mostrar e controlar o que está a tocar, enviar uma resposta que escreveu ou guardar uma nota.";
 "NSAppleEventsUsageDescription~appstore" = "O Scout comunica com a Música e o Spotify apenas quando ativa o controlo de reprodução, para mostrar e controlar o que está a tocar.";
-"NSAppleMusicUsageDescription" = "O Scout mostra o que está a tocar na Música.";
-"NSAudioCaptureUsageDescription" = "O Scout escuta o som da app que está a reproduzir para animar o visualizador de música e definir o volume por app. O áudio nunca é guardado nem enviado.";
 "NSBluetoothAlwaysUsageDescription" = "O Scout mostra os seus AirPods e outros dispositivos quando ligam, com a respetiva bateria.";
 "NSBluetoothAlwaysUsageDescription~appstore" = "O Scout mostra os seus AirPods e outros dispositivos Bluetooth pelo nome quando ligam.";
 "NSCalendarsFullAccessUsageDescription" = "O Scout mostra os seus próximos eventos no notch e adiciona os eventos que criar.";

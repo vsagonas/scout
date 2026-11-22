@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "Απέτυχε: %@ %@";
 "%@ + %lld more" = "%@ + %lld ακόμα";
 "%@ DONE ✓" = "%@ ΤΕΛΟΣ ✓";
 "%@ and %lld more" = "%@ και %lld ακόμα";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "Το %@ τερματίστηκε (κωδικός %d).";
 "%@ ended." = "%@: τέλος.";
 "%@ failed" = "Το %@ απέτυχε";
-"%@ finished after %lld min" = "Το %@ ολοκληρώθηκε μετά από %lld λ";
 "%@ free" = "%@ ελεύθερα";
 "%@ has no sound" = "Το %@ δεν έχει ήχο";
 "%@ in %@" = "%@ σε %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "Εντολή συνέχισης %@";
 "%@ settings…" = "Ρυθμίσεις %@…";
 "%@ so far" = "%@ μέχρι τώρα";
-"%@ stopped with an error" = "Το %@ σταμάτησε με σφάλμα";
 "%@ timer finished" = "Ο χρονοδιακόπτης %@ ολοκληρώθηκε";
 "%@ to full" = "Γεμίζει σε %@";
 "%@ used" = "%@ σε χρήση";
@@ -100,7 +97,6 @@
 "Add" = "Προσθήκη";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Πρόσθεσε το Scout στο Απόρρητο και ασφάλεια › Πλήρης πρόσβαση στον δίσκο, ενεργοποίησέ το και μετά κλείσε και άνοιξε ξανά το Scout. Το macOS κρατά κλειδωμένη τη βάση δεδομένων των Μηνυμάτων μέχρι να το κάνεις. Το Scout την διαβάζει μόνο, και μόνο για νέα μηνύματα.";
 "Add a key to start" = "Πρόσθεσε κλειδί για αρχή";
-"Add a notch to displays that have none" = "Πρόσθεσε εγκοπή σε οθόνες που δεν έχουν";
 "Add a task" = "Προσθήκη εργασίας";
 "Add a task (no day)" = "Προσθήκη εργασίας (χωρίς ημέρα)";
 "Add a task for this day" = "Προσθήκη εργασίας για αυτή την ημέρα";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Καρτέλες πρακτόρων";
 "Agents" = "Πράκτορες";
 "Agents & AI Usage" = "Πράκτορες και χρήση AI";
+"Agents beside the notch" = "Πράκτορες δίπλα στην εγκοπή";
 "Agents settings" = "Ρυθμίσεις πρακτόρων";
 "Agents show up here by themselves." = "Οι πράκτορες εμφανίζονται εδώ μόνοι τους.";
 "Agents: %lld" = "Πράκτορες: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Κάμερα";
 "Camera access is off" = "Κάμερα: χωρίς πρόσβαση";
 "Camera access is off for Scout." = "Η πρόσβαση στην κάμερα είναι απενεργοποιημένη για το Scout.";
+"Camera cutout" = "Οπή κάμερας";
 "Can't read %@ yet" = "Το %@ δεν διαβάζεται ακόμα";
 "Can't tell which chat this is" = "Δεν είναι δυνατός ο προσδιορισμός της συνομιλίας";
 "Cancel" = "Ακύρωση";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Τα αντίγραφα που γίνονται ενώ μία από αυτές τις εφαρμογές είναι μπροστά δεν αποθηκεύονται ποτέ.";
 "Copy" = "Αντιγραφή";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Αντίγραψε έναν σύνδεσμο από YouTube, X, Instagram, TikTok, Vimeo ή Reddit, άνοιξε τη Θήκη και το Scout προτείνει να τον κατεβάσει, ή άφησε έναν σύνδεσμο στη Θήκη. Οι λήψεις χρησιμοποιούν το yt-dlp, που το εγκαθιστάς εσύ· το παραπάνω κουμπί λειτουργεί μόνο όταν το πατήσεις. Για να διαβαστεί ένας αντιγραμμένος σύνδεσμος χρειάζεται «Να επιτρέπεται» για το Scout στις Ρυθμίσεις συστήματος › Απόρρητο και ασφάλεια › Επικόλληση από άλλες εφαρμογές (macOS 15.4 και νεότερο).";
+"Copy display details" = "Αντιγραφή στοιχείων οθόνης";
 "Copy something and it shows up here." = "Αντίγραψε κάτι και θα εμφανιστεί εδώ.";
 "Couldn't copy the picture" = "Δεν ήταν δυνατή η αντιγραφή της εικόνας";
 "Couldn't copy the polaroid" = "Δεν ήταν δυνατή η αντιγραφή του Polaroid";
@@ -424,6 +423,7 @@
 "Extra large" = "Πολύ μεγάλο";
 "FAVOURITES" = "FAVOURITES";
 "FROZEN" = "FROZEN";
+"Faces in the notch" = "Πρόσωπα στην εγκοπή";
 "Fahrenheit (°F)" = "Φαρενάιτ (°F)";
 "Fast Ask AI" = "Γρήγορο Ρώτα το AI";
 "Fastest, for short questions" = "Ο πιο γρήγορος, για σύντομες ερωτήσεις";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Εγκατάσταση των yt-dlp και deno με Homebrew;";
 "Installing…" = "Εγκατάσταση…";
 "Internet speed right now: down (received) and up (sent)" = "Ταχύτητα διαδικτύου τώρα: λήψη (ληφθέντα) και αποστολή (σταλθέντα)";
+"Island" = "Νησί";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Τώρα ακολουθεί τον ήχο της φωνής σου. Διάλεξε τη γλώσσα στις Ρυθμίσεις › Teleprompter.";
 "It stays in your Mac's Keychain." = "Μένει στο Keychain του Mac σου.";
 "Items in the Tray: %lld" = "Στοιχεία στη Θήκη: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Χωρίς συγχρονισμένους στίχους";
 "No widgets yet" = "Κανένα widget ακόμα";
 "Nobody home yet. Agents move in by themselves." = "Δεν είναι κανείς σπίτι ακόμα. Οι πράκτορες μετακομίζουν μόνοι τους.";
+"None" = "Καμία";
 "None chosen yet" = "Δεν έχει επιλεγεί τίποτα ακόμα";
 "None found" = "Δεν βρέθηκε τίποτα";
 "None yet" = "Τίποτα ακόμα";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Σημειώσεις και εργασίες";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Οι σημειώσεις και οι εργασίες αποθηκεύονται σε αυτό το Mac και εμφανίζονται στα widgets και τις προβολές της εγκοπής.";
 "Notes saved: %lld" = "Σημειώσεις που αποθηκεύτηκαν: %lld";
+"Nothing" = "Τίποτα";
 "Nothing (click to open)" = "Τίποτα (κλικ για άνοιγμα)";
 "Nothing copied yet" = "Δεν έχει αντιγραφεί τίποτα ακόμα";
 "Nothing copied yet.\nCopy something and it will show up here." = "Δεν έχει αντιγραφεί τίποτα ακόμα.\nΑντίγραψε κάτι και θα εμφανιστεί εδώ.";
@@ -729,13 +732,15 @@
 "On" = "Ενεργό";
 "On air" = "Στον αέρα";
 "On battery" = "Με μπαταρία";
+"On displays without a camera cutout" = "Σε οθόνες χωρίς οπή κάμερας";
 "On the dashboard now" = "Στον πίνακα ελέγχου τώρα";
 "One day" = "Μία ημέρα";
 "One hour" = "Μία ώρα";
 "One month" = "Ένας μήνας";
 "One week" = "Μία εβδομάδα";
-"Only displays with a notch" = "Μόνο οθόνες με εγκοπή";
+"Only displays with a camera cutout" = "Μόνο οθόνες με οπή κάμερας";
 "Only events with a video link" = "Μόνο γεγονότα με σύνδεσμο βίντεο";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Μόνο για Mac που το Scout δεν αναγνωρίζει σωστά. Ένα Mac με εγκοπή δεν μπορεί να δείξει προεπισκόπηση κάψουλας.";
 "Only for the Prompter to follow your voice." = "Μόνο για να ακολουθεί το Teleprompter τη φωνή σου.";
 "Only what you choose" = "Μόνο ό,τι διαλέξεις";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Μόνο αν έπαιζε ακόμα όταν έκλεισε το Scout. Το Scout θυμάται πάντα τον τελευταίο σταθμό και την ένταση.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Διάλεξε εμφάνιση";
 "Picking an item" = "Επιλογή στοιχείου";
 "Picture" = "Εικόνα";
+"Pill" = "Κάψουλα";
 "Pin" = "Καρφίτσωμα";
 "Pin apps" = "Καρφίτσωμα εφαρμογών";
 "Pink" = "Ροζ";
@@ -857,6 +863,7 @@
 "READY" = "READY";
 "Radio" = "Ραδιόφωνο";
 "Radio stations by place, and what the Radio tab remembers." = "Ραδιοφωνικοί σταθμοί ανά τοποθεσία και ό,τι θυμάται η καρτέλα Ραδιόφωνο.";
+"Radio stations in the Radio tab" = "Ραδιοφωνικοί σταθμοί στην καρτέλα Ραδιόφωνο";
 "Rain" = "Βροχή";
 "Ran %@" = "Έτρεξε: %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Ανάγνωση εισερχόμενων μηνυμάτων. Το macOS δεν λέει στις εφαρμογές αν είναι ενεργό.";
@@ -904,6 +911,7 @@
 "Ring" = "Δακτύλιος";
 "Ring when time is up" = "Χτύπημα όταν λήξει ο χρόνος";
 "Rings" = "Δακτύλιοι";
+"Round bubbles" = "Στρογγυλές φυσαλίδες";
 "Rounded" = "Στρογγυλεμένο";
 "Run the short introduction again." = "Εκτέλεση της σύντομης εισαγωγής ξανά.";
 "STARTING" = "STARTING";
@@ -936,7 +944,6 @@
 "Screen" = "Οθόνη";
 "Screen Recording" = "Εγγραφή οθόνης";
 "Screen Recording is off for Scout" = "Η Εγγραφή οθόνης είναι απενεργοποιημένη για το Scout";
-"Screen recordings and the music visualizer." = "Εγγραφές οθόνης και οπτικοποίηση μουσικής.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Οθόνη: κάθε ερώτηση τραβά μια εικόνα της οθόνης σου και την στέλνει με την ερώτηση στο %@";
 "Screenshots and screen recordings." = "Στιγμιότυπα και εγγραφές οθόνης.";
 "Scripts" = "Κείμενα";

@@ -65,10 +65,19 @@ struct NotchRootView: View {
     @State private var gripHover = false
 
     private var style: NotchStyle { styleOverride ?? NotchStyle(rawValue: styleRaw) ?? .classic }
-    private var hw: CGSize { model.geometry.size }
+    /// The housing the CLASSIC drawing uses (one black shape flush with the top edge): the notch, or the tab when a display without a cutout
+    /// falls back to it; the island's own housing (`geometry.size`) is the closed view's business.
+    private var hw: CGSize { model.geometry.classicSize }
     private var isOpen: Bool { model.isOpen }
     private var showsDrop: Bool { isOpen && navigator.isDropTargeting }
     private var primary: LiveActivity? { center.primary }
+    /// What the closed notch draws now (`IslandMode`): the classic shape with the wings inside it, separate round shapes beside the housing
+    /// (the agents' bubbles, capsules), or nothing. The open notch is always the classic drawing in this build.
+    private var closedDrawing: ClosedDrawing {
+        isOpen ? .classic : IslandMode.closed(geometry: model.geometry, primary: primary?.kind, cardsUp: !center.cards.isEmpty, detailUp: model.detailVisible)
+    }
+    /// Cards hang from the classic drawing only, and never on a pill (they wait for the build that hangs them below the housing).
+    private var drawsCards: Bool { closedDrawing == .classic && IslandMode.drawsCards(geometry: model.geometry) }
     /// How much bigger the open notch is drawn (Settings › Appearance › Notch › Size; 1 = as designed). The open content is laid out at the island's
     /// size divided by this and scaled up from the top edge, so the island grows to match and stays flush with the screen edge.
     private var scale: CGFloat { isOpen ? Look.scale : 1 }
@@ -201,13 +210,27 @@ struct NotchRootView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            island
-            NotchCardsView(center: center, width: cardWidth, scale: wingScale)
-                // The same sideways shift as the island: the card's middle is the island's middle.
-                .padding(.leading, max(0, islandShift))
-                .padding(.trailing, max(0, -islandShift))
-                .animation(resizeStart == nil ? Theme.spring : nil, value: CardLayout(width: cardWidth, shift: islandShift, count: center.cards.count))
+            switch closedDrawing {
+            case .classic:
+                island.transition(.opacity)
+            case .rows:
+                IslandClosedView(geometry: model.geometry, panelWidth: model.panelSize.width, primary: primary, companion: companion,
+                                 hovered: model.hoveredHit, sizeFactor: wingScale, navigator: navigator, center: center)
+                    .overlay(alignment: .topLeading) { rowsHousingTarget }
+                    .contextMenu { islandMenu }
+                    .transition(.opacity)
+            case .nothing:
+                Color.clear.frame(width: model.panelSize.width, height: 0).transition(.opacity)
+            }
+            if drawsCards {
+                NotchCardsView(center: center, width: cardWidth, scale: wingScale)
+                    // The same sideways shift as the island: the card's middle is the island's middle.
+                    .padding(.leading, max(0, islandShift))
+                    .padding(.trailing, max(0, -islandShift))
+                    .animation(resizeStart == nil ? Theme.spring : nil, value: CardLayout(width: cardWidth, shift: islandShift, count: center.cards.count))
+            }
         }
+        .animation(Theme.quick, value: closedDrawing)   // the switch between the classic shape and the round rows fades (a fade only when calm); it never changes on a classic notch
         .frame(width: model.panelSize.width, height: model.panelSize.height, alignment: .top)
         // A picture flying into a tab key (the camera's Snap into Clipboard), over everything, taking no clicks.
         .overlay(alignment: .topLeading) { NotchFlyLayer(rects: { [model] in model.panelRects }, island: { [model] in model.islandRect }) }
@@ -215,6 +238,7 @@ struct NotchRootView: View {
         .onPreferenceChange(NotchRectKey.self) { rects in
             model.islandRect = rects["island"] ?? .zero
             model.cardRects = rects.filter { $0.key.hasPrefix("card.") }.map(\.value)
+            model.hitRects = rects.filter { IslandHit.isHitName($0.key) }
             model.panelRects = rects.filter { $0.key.hasPrefix("panel.") || $0.key.hasPrefix("tab.") || $0.key.hasPrefix("cal.") || $0.key.hasPrefix("mirror.") }   // "cal.": the Calendar view's columns (self-tests); "mirror.": where Snap's picture starts
         }
         .onPreferenceChange(CardNaturalKey.self) { widths in
@@ -233,6 +257,21 @@ struct NotchRootView: View {
         // The window's own appearance follows the notch (dark closed; open: the colours preset), so what AppKit draws by itself (an SF Symbol
         // that SwiftUI draws through a CGDrawingView, a text field's text, a menu) reads on the surface whatever the Mac's light or dark mode is.
         .background(WindowAppearance(dark: contentScheme == .dark))
+    }
+
+    /// In rows the classic island is not drawn, so a classic notch between its bubbles gets an invisible target of its own: a click on the
+    /// notch opens it as it always did (the drawn island has its own capsule; a pill's housing is never a target).
+    @ViewBuilder
+    private var rowsHousingTarget: some View {
+        if model.geometry.kind == .notch {
+            let housing = model.geometry.housingRect(panelWidth: model.panelSize.width)
+            Color.clear
+                .frame(width: housing.width, height: housing.height)
+                .contentShape(Rectangle())
+                .onTapGesture { if NotchPrefs.clickToOpen { navigator.open() } }
+                .padding(.leading, housing.minX)
+                .padding(.top, housing.minY)
+        }
     }
 
     // MARK: Island
@@ -427,6 +466,7 @@ struct NotchRootView: View {
             .padding(.bottom, fillsIsland ? 0 : 16)
             .animation(Theme.quick, value: expandedKind)
         }
+        .environment(\.notchBodyInset, hw.height + (fillsIsland ? 2 : 6 + 16))   // what the header and the gaps take: the view gets the rest
     }
 
     /// What the island shows besides the dashboard: a detail a panel expanded into, or (full edition) an agent tab's terminal.
@@ -594,6 +634,20 @@ extension EnvironmentValues {
     var notchOpenMaxHeight: CGFloat? {
         get { self[NotchOpenMaxHeightKey.self] }
         set { self[NotchOpenMaxHeightKey.self] = newValue }
+    }
+}
+
+private struct NotchBodyInsetKey: EnvironmentKey {
+    static let defaultValue: CGFloat? = nil
+}
+
+extension EnvironmentValues {
+    /// How much of the open island's content height is NOT the view's: the header and the gaps above and under the view, in the content's own
+    /// points (nil outside the open island, in pictures and tests). It does not move while the island grows or shrinks, so a view can work out the
+    /// height it will have at rest from the height it asked for (the Agents den fills all of it).
+    var notchBodyInset: CGFloat? {
+        get { self[NotchBodyInsetKey.self] }
+        set { self[NotchBodyInsetKey.self] = newValue }
     }
 }
 

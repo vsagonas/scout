@@ -175,13 +175,16 @@ enum DashGrid {
 /// Row 1 of a panel: the readout, `DashGrid.readoutHeight` tall, its pieces standing on one baseline (the digits' bottom in the 8-bit look, the
 /// text baseline in the minimal one).
 struct DashReadout<Content: View>: View {
+    /// False for a readout whose first piece stands clear of the remove key anyway (CPU & Memory's three readings: the labels sit on the digits'
+    /// baseline, under the key).
+    var clearsRemoveKey = true
     @ViewBuilder var content: () -> Content
     @Environment(\.dash90Editing) private var editing
 
     var body: some View {
         HStack(alignment: .lastTextBaseline, spacing: 3) { content() }
             .reportBaseline("readout.baseline", .lastTextBaseline)
-            .padding(.leading, editing ? DashGrid.editClearance : 0)   // Edit Nook: clear of the red remove key, like a title
+            .padding(.leading, editing && clearsRemoveKey ? DashGrid.editClearance : 0)   // Edit Nook: clear of the red remove key, like a title
             .frame(maxWidth: .infinity, alignment: .leading)
             .frame(height: DashGrid.readoutHeight, alignment: .bottomLeading)
             .reportDashRow("readout")

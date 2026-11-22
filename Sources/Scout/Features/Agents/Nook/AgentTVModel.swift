@@ -179,6 +179,16 @@ enum AgentDenLayout {
     /// The island height (header included) for the den, with a bit more when the window shows a banner.
     static func islandHeight(extra: CGFloat = 0) -> CGFloat { baseHeight + extra + chrome }
 
+    /// The room the island gives the den when it spends `inset` points on its header and the gaps above and under the view (`notchBodyInset`;
+    /// nil in a picture or a test with no island: the base height). The island is asked for `baseHeight + chrome`, but the den fills the island
+    /// edge to edge under a header that is shorter than `chrome` (the old gaps around a framed den), so more than `baseHeight` is left.
+    /// The island itself keeps its height; the den is laid out to everything it gives.
+    static func fillHeight(inset: CGFloat?) -> CGFloat { baseHeight + max(0, chrome - (inset ?? chrome)) }
+
+    /// `height` cut down to whole cells of the room's pixel (`AgentDenArt.roomCell`): the room is drawn in whole cells, so the rug's border ends
+    /// exactly `bottomMargin` above the bottom edge and no cell is cut in half there. The few points left over (less than one cell) stay above the room.
+    static func wholeCells(_ height: CGFloat) -> CGFloat { ((height + 0.01) / AgentDenArt.roomCell).rounded(.down) * AgentDenArt.roomCell }   // 0.01: a height a hair under a whole number of cells counts as that number
+
     /// What the window shows needs more height: the banner of an automatic opening.
     static func extraHeight(banner: Bool) -> CGFloat { banner ? 36 : 0 }
 
@@ -230,7 +240,10 @@ enum AgentDenLayout {
         let left = sideMargin
         let right = max(left + 40, min(size.width - sideMargin, rightEdge ?? (size.width - sideMargin)))
         let top = bandTop, bottom = size.height - bottomMargin
-        let bandH = max(80, bottom - top)
+        // The pixel size and the back row are the base den's (a den taller than that, which the island's full height makes, stands a single or
+        // front row lower on its longer floor and keeps the sizes; a back row stays where it stood, at the foot of the wall).
+        let baseBottom = min(size.height, baseHeight) - bottomMargin
+        let bandH = max(80, baseBottom - top)
         let usableW = right - left
         let cw = CGFloat(cells.w), ch = CGFloat(cells.h)
 
@@ -267,7 +280,7 @@ enum AgentDenLayout {
             place(Array(0..<count), row: 0, bottomY: bottom)
         } else {
             place(Array(0..<frontCount), row: 0, bottomY: bottom)
-            place(Array(frontCount..<count), row: 1, bottomY: bottom - h - 4)
+            place(Array(frontCount..<count), row: 1, bottomY: baseBottom - h - 4)
         }
         return out.sorted { $0.index < $1.index }
     }

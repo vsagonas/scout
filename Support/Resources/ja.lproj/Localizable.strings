@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@は失敗しました";
 "%@ + %lld more" = "%@ ほか%lld件";
 "%@ DONE ✓" = "%@ DONE ✓";
 "%@ and %lld more" = "%@ ほか%lld件";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@は終了しました（コード%d）。";
 "%@ ended." = "%@は終了しました。";
 "%@ failed" = "%@は失敗しました";
-"%@ finished after %lld min" = "%@は%lld分後に完了しました";
 "%@ free" = "空き%@";
 "%@ has no sound" = "%@には音がありません";
 "%@ in %@" = "%@（%@）";
@@ -29,7 +27,6 @@
 "%@ resume command" = "%@の再開コマンド";
 "%@ settings…" = "%@の設定…";
 "%@ so far" = "ここまで%@";
-"%@ stopped with an error" = "%@はエラーで停止しました";
 "%@ timer finished" = "%@のタイマーが終了しました";
 "%@ to full" = "満充電まで%@";
 "%@ used" = "%@使用中";
@@ -100,7 +97,6 @@
 "Add" = "追加";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "「プライバシーとセキュリティ › フルディスクアクセス」でScoutを追加してオンにし、Scoutを終了してからもう一度開いてください。それまでmacOSはメッセージのデータベースをロックしたままです。Scoutは読み取るだけで、読み取るのも新しいメッセージだけです。";
 "Add a key to start" = "キーを追加して開始";
-"Add a notch to displays that have none" = "ノッチのないディスプレイにノッチを追加";
 "Add a task" = "タスクを追加";
 "Add a task (no day)" = "タスクを追加（日付なし）";
 "Add a task for this day" = "この日のタスクを追加";
@@ -124,6 +120,7 @@
 "Agent tabs" = "エージェントタブ";
 "Agents" = "エージェント";
 "Agents & AI Usage" = "エージェントとAI使用量";
+"Agents beside the notch" = "ノッチの横のエージェント";
 "Agents settings" = "エージェントの設定";
 "Agents show up here by themselves." = "エージェントは自動的にここに表示されます。";
 "Agents: %lld" = "エージェント：%lld";
@@ -225,6 +222,7 @@
 "Camera" = "カメラ";
 "Camera access is off" = "カメラへのアクセスがオフです";
 "Camera access is off for Scout." = "Scoutのカメラへのアクセスがオフです。";
+"Camera cutout" = "カメラの切り欠き";
 "Can't read %@ yet" = "%@をまだ読み取れません";
 "Can't tell which chat this is" = "どのチャットか判別できません";
 "Cancel" = "キャンセル";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "これらのAppが前面にあるときに行ったコピーは保存されません。";
 "Copy" = "コピー";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "YouTube、X、Instagram、TikTok、Vimeo、Redditのリンクをコピーしてトレイを開くと、Scoutがダウンロードを提案します。リンクをトレイにドロップすることもできます。ダウンロードにはご自身でインストールするyt-dlpを使い、上のボタンは押したときだけ実行されます。コピーしたリンクを読み取るには、「システム設定 › プライバシーとセキュリティ › 他のAppからペースト」でScoutを「許可」にする必要があります（macOS 15.4以降）。";
+"Copy display details" = "ディスプレイの詳細をコピー";
 "Copy something and it shows up here." = "何かをコピーすると、ここに表示されます。";
 "Couldn't copy the picture" = "画像をコピーできませんでした";
 "Couldn't copy the polaroid" = "ポラロイドをコピーできませんでした";
@@ -424,6 +423,7 @@
 "Extra large" = "特大";
 "FAVOURITES" = "FAVOURITES";
 "FROZEN" = "FROZEN";
+"Faces in the notch" = "ノッチ内の顔";
 "Fahrenheit (°F)" = "華氏（°F）";
 "Fast Ask AI" = "AIにすばやく質問";
 "Fastest, for short questions" = "最速。短い質問向け";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Homebrewでyt-dlpとdenoをインストールしますか？";
 "Installing…" = "インストール中…";
 "Internet speed right now: down (received) and up (sent)" = "現在のインターネット速度：ダウン（受信）とアップ（送信）";
+"Island" = "島";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "声の音に合わせて動くようになりました。言語は「設定 › テレプロンプター」で選べます。";
 "It stays in your Mac's Keychain." = "Macのキーチェーンに保存されます。";
 "Items in the Tray: %lld" = "トレイ内の項目：%lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "同期歌詞なし";
 "No widgets yet" = "ウィジェットはまだありません";
 "Nobody home yet. Agents move in by themselves." = "まだだれもいません。エージェントは自動的に引っ越してきます。";
+"None" = "なし";
 "None chosen yet" = "まだ選択されていません";
 "None found" = "見つかりません";
 "None yet" = "まだありません";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "メモとToDo";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "メモとToDoはこのMacに保存され、ノッチのウィジェットとビューに表示されます。";
 "Notes saved: %lld" = "保存したメモ：%lld";
+"Nothing" = "表示しない";
 "Nothing (click to open)" = "なし（クリックで開く）";
 "Nothing copied yet" = "コピーしたものはまだありません";
 "Nothing copied yet.\nCopy something and it will show up here." = "コピーしたものはまだありません。\n何かをコピーすると、ここに表示されます。";
@@ -729,13 +732,15 @@
 "On" = "オン";
 "On air" = "放送中";
 "On battery" = "バッテリー駆動";
+"On displays without a camera cutout" = "カメラの切り欠きがないディスプレイでは";
 "On the dashboard now" = "現在ダッシュボードにあるもの";
 "One day" = "1日";
 "One hour" = "1時間";
 "One month" = "1か月";
 "One week" = "1週間";
-"Only displays with a notch" = "ノッチのあるディスプレイのみ";
+"Only displays with a camera cutout" = "カメラの切り欠きがあるディスプレイのみ";
 "Only events with a video link" = "ビデオリンクのあるイベントのみ";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Scoutが誤って認識するMac専用です。ノッチのあるMacでは、カプセルのプレビューはできません。";
 "Only for the Prompter to follow your voice." = "テレプロンプターが声に追従するためだけに使います。";
 "Only what you choose" = "選んだものだけ";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Scoutを終了したときにまだ再生していた場合のみ。Scoutは最後の局と音量をいつも覚えています。";
@@ -811,6 +816,7 @@
 "Pick your look" = "見た目を選ぶ";
 "Picking an item" = "項目を選んだとき";
 "Picture" = "画像";
+"Pill" = "カプセル";
 "Pin" = "ピン留め";
 "Pin apps" = "Appをピン留め";
 "Pink" = "ピンク";
@@ -857,6 +863,7 @@
 "READY" = "READY";
 "Radio" = "ラジオ";
 "Radio stations by place, and what the Radio tab remembers." = "場所別のラジオ局と、ラジオタブが覚えているもの。";
+"Radio stations in the Radio tab" = "ラジオタブのラジオ局";
 "Rain" = "雨";
 "Ran %@" = "%@を実行しました";
 "Read incoming messages. macOS does not tell apps whether it is on." = "受信メッセージを読み取ります。オンかどうかをmacOSはAppに教えません。";
@@ -904,6 +911,7 @@
 "Ring" = "リング";
 "Ring when time is up" = "時間になったら鳴らす";
 "Rings" = "リング";
+"Round bubbles" = "丸いバブル";
 "Rounded" = "角丸";
 "Run the short introduction again." = "短い紹介をもう一度実行します。";
 "STARTING" = "STARTING";
@@ -936,7 +944,6 @@
 "Screen" = "画面";
 "Screen Recording" = "画面収録";
 "Screen Recording is off for Scout" = "Scoutの画面収録がオフです";
-"Screen recordings and the music visualizer." = "画面収録とミュージックビジュアライザ。";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "画面：質問のたびに画面の画像を撮影し、質問と一緒に%@へ送信します";
 "Screenshots and screen recordings." = "スクリーンショットと画面収録。";
 "Scripts" = "スクリプト";

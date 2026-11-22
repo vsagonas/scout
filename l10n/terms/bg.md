@@ -12,6 +12,10 @@ Informal "ти" imperative for buttons and menu items (Добави, Отвор�
 | Fast Ask AI | Бърз ИИ |
 | widget / widgets | уиджет / уиджети |
 | notch | изрез (the camera cut-out) |
+| camera cutout (the general word, whatever the shape) | отвор за камерата (изрез stays the notch) |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | капсула |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | остров |
+| round bubbles (the agents beside the camera) | кръгли мехурчета |
 | dashboard | табло |
 | Nook | Nook (Latin, never translated) |
 | Tray | Поднос |

@@ -37,7 +37,17 @@ BIN_DIR="$(swift build "${SWIFT_ARGS[@]}" --show-bin-path)"
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources" "$APP/Contents/Frameworks"
 cp "$BIN_DIR/Scout" "$APP/Contents/MacOS/Scout"
-sed -e "s/__VERSION__/$VERSION/" -e "s/__BUILD__/$BUILD_NUMBER/" Support/Info.plist > "$APP/Contents/Info.plist"
+if [ "$EDITION" = "appstore" ]; then
+  # The store edition's own Info.plist, the one the store archive uses: its permission texts, and no keys of the features it leaves out
+  # (Contacts for Messages, …). Until 1.0.20 this script put the development plist into both editions, so a store edition built here
+  # asked with other words than the released app.
+  sed -e 's/\$(MARKETING_VERSION)/'"$VERSION"'/' -e 's/\$(CURRENT_PROJECT_VERSION)/'"$BUILD_NUMBER"'/' Support/Info-AppStore.plist > "$APP/Contents/Info.plist"
+  # No asset catalog in a script build: the icon comes from AppIcon.icns (CFBundleIconFile).
+  /usr/libexec/PlistBuddy -c "Delete :CFBundleIconName" "$APP/Contents/Info.plist" >/dev/null 2>&1 || true
+  if /usr/bin/grep -q '\$(' "$APP/Contents/Info.plist"; then echo "Refusing: Support/Info-AppStore.plist has a build setting this script does not fill." >&2; exit 4; fi
+else
+  sed -e "s/__VERSION__/$VERSION/" -e "s/__BUILD__/$BUILD_NUMBER/" Support/Info.plist > "$APP/Contents/Info.plist"
+fi
 printf 'APPL????' > "$APP/Contents/PkgInfo"
 
 # Resources: everything in Support/Resources is copied as-is into Contents/Resources.

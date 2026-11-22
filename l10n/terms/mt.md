@@ -12,6 +12,10 @@ Buttons and menu items are the informal singular imperative (Iftaħ, Agħlaq, Sa
 | Fast Ask AI | AI Mgħaġġel |
 | widget / widgets | widget / widgets (kept, as Maltese speakers say it) |
 | notch | notch (kept) |
+| camera cutout (the general word, whatever the shape) | fetħa tal-kamera |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | pillola |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | gżira |
+| round bubbles (the agents beside the camera) | bżieżaq tondi |
 | dashboard | dashboard (kept) |
 | Nook | Nook (Latin, never translated) |
 | Tray | Vassoj |

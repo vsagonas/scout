@@ -1,8 +1,6 @@
 "CFBundleDisplayName" = "Scout";
 "NSAppleEventsUsageDescription" = "Scout, Spotify, Müzik, Mesajlar ve Notlar ile yalnızca sen bu özellikleri kullandığında konuşur: çalanı göstermek ve denetlemek, yazdığın bir yanıtı göndermek ya da bir not kaydetmek için.";
 "NSAppleEventsUsageDescription~appstore" = "Scout, Müzik ve Spotify ile yalnızca sen oynatma denetimini açtığında konuşur: çalanı göstermek ve denetlemek için.";
-"NSAppleMusicUsageDescription" = "Scout, Müzik'te çalanı gösterir.";
-"NSAudioCaptureUsageDescription" = "Scout, müzik görselleştiriciyi canlandırmak ve uygulama başına ses düzeyini ayarlamak için çalan uygulamanın sesini dinler. Ses asla kaydedilmez ya da gönderilmez.";
 "NSBluetoothAlwaysUsageDescription" = "Scout, AirPods'unu ve diğer aygıtları bağlandıklarında pilleriyle birlikte gösterir.";
 "NSBluetoothAlwaysUsageDescription~appstore" = "Scout, AirPods'unu ve diğer Bluetooth aygıtlarını bağlandıklarında adlarıyla gösterir.";
 "NSCalendarsFullAccessUsageDescription" = "Scout, yaklaşan etkinliklerini çentikte gösterir ve oluşturduğun etkinlikleri ekler.";

@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@ falla";
 "%@ + %lld more" = "%@ + %lld oħra";
 "%@ DONE ✓" = "%@ LEST ✓";
 "%@ and %lld more" = "%@ u %lld oħra";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@ spiċċa (kodiċi %d).";
 "%@ ended." = "%@ spiċċa.";
 "%@ failed" = "%@ falla";
-"%@ finished after %lld min" = "%@ spiċċa wara %lld min";
 "%@ free" = "%@ ħieles";
 "%@ has no sound" = "%@ m'għandux ħoss";
 "%@ in %@" = "%@ f'%@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "Kmand biex titkompla %@";
 "%@ settings…" = "Issettjar ta' %@…";
 "%@ so far" = "%@ s'issa";
-"%@ stopped with an error" = "%@ waqaf b'żball";
 "%@ timer finished" = "It-tajmer %@ spiċċa";
 "%@ to full" = "%@ sa mili";
 "%@ used" = "%@ użat";
@@ -100,7 +97,6 @@
 "Add" = "Żid";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Żid lil Scout taħt Privacy & Security › Full Disk Access, ixgħelha, imbagħad oħroġ u erġa' iftaħ Scout. macOS iżomm id-database ta' Messages maqfula sakemm tagħmel dan. Scout biss taqrah, u biss għal messaġġi ġodda.";
 "Add a key to start" = "Żid ċavetta biex tibda";
-"Add a notch to displays that have none" = "Żid notch ma' wirjiet li m'għandhomx";
 "Add a task" = "Żid kompitu";
 "Add a task (no day)" = "Żid kompitu (mingħajr jum)";
 "Add a task for this day" = "Żid kompitu għal dan il-jum";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Tabs tal-aġenti";
 "Agents" = "Aġenti";
 "Agents & AI Usage" = "Aġenti u użu tal-AI";
+"Agents beside the notch" = "Aġenti ħdejn in-notch";
 "Agents settings" = "Issettjar tal-aġenti";
 "Agents show up here by themselves." = "L-aġenti jidhru hawn waħedhom.";
 "Agents: %lld" = "Aġenti: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Kamera";
 "Camera access is off" = "L-aċċess għall-kamera huwa mitfi";
 "Camera access is off for Scout." = "L-aċċess għall-kamera huwa mitfi għal Scout.";
+"Camera cutout" = "Fetħa tal-kamera";
 "Can't read %@ yet" = "%@ għadu ma jistax jinqara";
 "Can't tell which chat this is" = "Ma nistax ngħid liema chat hija din";
 "Cancel" = "Ikkanċella";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Kopji magħmula waqt li waħda minn dawn l-apps tkun quddiem qatt ma jinħażnu.";
 "Copy" = "Ikkopja";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Ikkopja link minn YouTube, X, Instagram, TikTok, Vimeo jew Reddit, iftaħ il-Vassoj u Scout joffri li jniżżlu, jew waqqa' link fuq il-Vassoj. It-tniżżil juża yt-dlp, li tinstalla int stess; il-buttuna ta' hawn fuq taħdem biss meta tagħfasha. Biex taqra link ikkupjat teħtieġ “Allow” għal Scout taħt System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 u aktar tard).";
+"Copy display details" = "Ikkopja d-dettalji tal-iskrin";
 "Copy something and it shows up here." = "Ikkopja xi ħaġa u tidher hawn.";
 "Couldn't copy the picture" = "Ma setgħetx tiġi kkupjata l-istampa";
 "Couldn't copy the polaroid" = "Ma setgħetx tiġi kkupjata l-polaroid";
@@ -424,6 +423,7 @@
 "Extra large" = "Kbir ħafna";
 "FAVOURITES" = "FAVORITI";
 "FROZEN" = "IFFRIZAT";
+"Faces in the notch" = "Uċuħ fin-notch";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
 "Fast Ask AI" = "AI Mgħaġġel";
 "Fastest, for short questions" = "L-iktar mgħaġġel, għal mistoqsijiet qosra";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Tinstalla yt-dlp u deno b'Homebrew?";
 "Installing…" = "Qed jinstalla…";
 "Internet speed right now: down (received) and up (sent)" = "Veloċità tal-internet issa: 'l isfel (riċevut) u 'l fuq (mibgħut)";
+"Island" = "Gżira";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Issa jsegwi l-ħoss ta' leħnek. Agħżel il-lingwa f'Issettjar › Prompter.";
 "It stays in your Mac's Keychain." = "Jibqa' fil-Keychain tal-Mac tiegħek.";
 "Items in the Tray: %lld" = "Oġġetti fil-Vassoj: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "L-ebda lirika sinkronizzata";
 "No widgets yet" = "Għad m'hemm l-ebda widgets";
 "Nobody home yet. Agents move in by themselves." = "Għad m'hemm ħadd id-dar. L-aġenti jidħlu waħedhom.";
+"None" = "L-ebda";
 "None chosen yet" = "Għadu ma ntgħażel xejn";
 "None found" = "Ma nstab xejn";
 "None yet" = "Għadu xejn";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Noti u kompiti";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "In-noti u l-kompiti jinħażnu fuq dan il-Mac u jidhru fil-widgets u fid-dehriet tan-notch.";
 "Notes saved: %lld" = "Noti ssalvati: %lld";
+"Nothing" = "Xejn";
 "Nothing (click to open)" = "Xejn (ikklikkja biex tiftaħ)";
 "Nothing copied yet" = "Għad ma ġie kkupjat xejn";
 "Nothing copied yet.\nCopy something and it will show up here." = "Għad ma ġie kkupjat xejn.\nIkkopja xi ħaġa u tidher hawn.";
@@ -729,13 +732,15 @@
 "On" = "On";
 "On air" = "Fl-arja";
 "On battery" = "Fuq il-batterija";
+"On displays without a camera cutout" = "Fuq skrins mingħajr fetħa tal-kamera";
 "On the dashboard now" = "Fuq id-dashboard issa";
 "One day" = "Jum wieħed";
 "One hour" = "Siegħa waħda";
 "One month" = "Xahar wieħed";
 "One week" = "Ġimgħa waħda";
-"Only displays with a notch" = "Skrins bin-notch biss";
+"Only displays with a camera cutout" = "Skrins b'fetħa tal-kamera biss";
 "Only events with a video link" = "Avvenimenti b'link tal-vidjo biss";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Għal Mac biss li Scout jaqrah ħażin. Mac b'notch ma jistax juri previżjoni ta' pillola.";
 "Only for the Prompter to follow your voice." = "Biss biex il-Prompter isegwi leħnek.";
 "Only what you choose" = "Dak biss li tagħżel";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Biss jekk kien għadu jdoqq meta Scout ingħalaq. Scout dejjem jiftakar l-aħħar stazzjon u l-volum.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Agħżel id-dehra tiegħek";
 "Picking an item" = "Għażla ta' oġġett";
 "Picture" = "Stampa";
+"Pill" = "Pillola";
 "Pin" = "Waħħal";
 "Pin apps" = "Waħħal apps";
 "Pink" = "Roża";
@@ -857,6 +863,7 @@
 "READY" = "PRONTU";
 "Radio" = "Radju";
 "Radio stations by place, and what the Radio tab remembers." = "Stazzjonijiet tar-radju skont il-post, u dak li jiftakar it-tab Radju.";
+"Radio stations in the Radio tab" = "Stazzjonijiet tar-radju fit-tab Radju";
 "Rain" = "Xita";
 "Ran %@" = "Ħadem %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Aqra l-messaġġi li jidħlu. macOS ma jgħidx lill-apps jekk dan huwiex mixgħul.";
@@ -904,6 +911,7 @@
 "Ring" = "Ċirku";
 "Ring when time is up" = "Idoqq meta jaqbeż il-ħin";
 "Rings" = "Ċrieki";
+"Round bubbles" = "Bżieżaq tondi";
 "Rounded" = "Mdawwar";
 "Run the short introduction again." = "Erġa' ħaddem l-introduzzjoni qasira.";
 "STARTING" = "QED JIBDA";
@@ -936,7 +944,6 @@
 "Screen" = "Skrin";
 "Screen Recording" = "Reġistrazzjoni tal-iskrin";
 "Screen Recording is off for Scout" = "Ir-reġistrazzjoni tal-iskrin hija mitfija għal Scout";
-"Screen recordings and the music visualizer." = "Reġistrazzjonijiet tal-iskrin u l-visualizer tal-mużika.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Skrin: kull mistoqsija tieħu stampa tal-iskrin tiegħek u tibgħatha lil %@ mal-mistoqsija";
 "Screenshots and screen recordings." = "Screenshots u reġistrazzjonijiet tal-iskrin.";
 "Scripts" = "Scripts";

@@ -7,6 +7,10 @@ Machine translation, no native reviewer yet. Informal "du" (as the Swedish App S
 | agent / agents | agent / agenter (AI-agenter) |
 | widget / widgets | widget / widgetar (as in the store keywords) |
 | notch | notch (en notch, notchen) |
+| camera cutout (the general word, whatever the shape) | kameraurtag |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | piller |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | ön (the menu label "Ön": the plain word is ö, but one letter alone reads like a symbol) |
+| round bubbles (the agents beside the camera) | runda bubblor |
 | dashboard | översikt (as in the store text) |
 | Settings | Inställningar |
 | Tray | Bricka / brickan (Tray is translated) |

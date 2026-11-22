@@ -1,8 +1,6 @@
 "CFBundleDisplayName" = "Scout";
 "NSAppleEventsUsageDescription" = "Scout se comunica con Spotify, Música, Mensajes y Notas solo cuando usas esas funciones: para mostrar y controlar lo que suena, enviar una respuesta que escribiste o guardar una nota.";
 "NSAppleEventsUsageDescription~appstore" = "Scout se comunica con Música y Spotify solo cuando activas el control de reproducción, para mostrar y controlar lo que suena.";
-"NSAppleMusicUsageDescription" = "Scout muestra lo que suena en Música.";
-"NSAudioCaptureUsageDescription" = "Scout escucha el sonido de la app que está reproduciendo para animar el visualizador de música y ajustar el volumen por app. El audio nunca se guarda ni se envía.";
 "NSBluetoothAlwaysUsageDescription" = "Scout muestra tus AirPods y otros dispositivos cuando se conectan, con su batería.";
 "NSBluetoothAlwaysUsageDescription~appstore" = "Scout muestra tus AirPods y otros dispositivos Bluetooth por su nombre cuando se conectan.";
 "NSCalendarsFullAccessUsageDescription" = "Scout muestra tus próximos eventos en el notch y añade los eventos que creas.";

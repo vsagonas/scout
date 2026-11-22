@@ -9,6 +9,10 @@ Brand names are never declined: "aplicația Scout", "în Codex". "notch" takes t
 | agent / agents | agent / agenți ("agenți AI") |
 | widget / widgets | widget / widgeturi |
 | notch | notch (notch-ul, as in the store text) |
+| camera cutout (the general word, whatever the shape) | decupaj pentru cameră |
+| pill (the small pill-shaped cutout of the new MacBook Pro) | pastilă |
+| island (what Scout draws on a display without a cutout; never "Dynamic Island") | insulă |
+| round bubbles (the agents beside the camera) | bule rotunde |
 | dashboard | tablou de bord |
 | Settings / System Settings | Setări / Setări de sistem |
 | Tray | Tavă (Tray is translated) |

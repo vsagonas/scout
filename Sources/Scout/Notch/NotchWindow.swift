@@ -39,16 +39,26 @@ final class NotchController {
     static func panelHeight(for screen: NSScreen) -> CGFloat { min(max(720, screen.frame.height - 60), 1000) }
     static let panelWidth: CGFloat = 1400
 
-    init(screen: NSScreen) {
-        displayID = screen.displayID
-        screenFrame = screen.frame
+    /// The panel of a screen: as wide as the notch's panel width allows, as tall as `panelHeight(for:)`, centred, flush with the top.
+    static func panelFrame(for screen: NSScreen) -> CGRect {
         let width = min(Self.panelWidth, screen.frame.width)
         let height = Self.panelHeight(for: screen)
-        let size = CGSize(width: width, height: height)
-        model = NotchScreenModel(geometry: NotchGeometry.make(for: screen), panelSize: size)
-        let frame = CGRect(x: screen.frame.midX - width / 2, y: screen.frame.maxY - height,
-                           width: width, height: height)
-        panel = NotchPanel(contentRect: frame, styleMask: [.borderless, .nonactivatingPanel],
+        return CGRect(x: screen.frame.midX - width / 2, y: screen.frame.maxY - height, width: width, height: height)
+    }
+
+    convenience init(screen: NSScreen) {
+        self.init(geometry: NotchGeometry.make(for: screen), screenFrame: screen.frame, panelFrame: Self.panelFrame(for: screen), showsPanel: true,
+                  displayID: screen.displayID)
+    }
+
+    /// A notch for a given geometry and frames. With `showsPanel` false no view is made and nothing is ever put on the screen, so a self-test can
+    /// run the closed flow (the manager, the pointer rules) headless: it sets `model.hitRects` and the like itself.
+    init(geometry: NotchGeometry, screenFrame: CGRect, panelFrame: CGRect, showsPanel: Bool, displayID: CGDirectDisplayID = 0) {
+        self.displayID = displayID
+        self.screenFrame = screenFrame
+        let size = panelFrame.size
+        model = NotchScreenModel(geometry: geometry, panelSize: size)
+        panel = NotchPanel(contentRect: panelFrame, styleMask: [.borderless, .nonactivatingPanel],
                            backing: .buffered, defer: false)
         panel.level = NotchPanel.notchLevel
         panel.collectionBehavior = [.canJoinAllSpaces, .stationary, .fullScreenAuxiliary, .ignoresCycle]
@@ -61,13 +71,14 @@ final class NotchController {
         panel.acceptsMouseMovedEvents = true
         panel.ignoresMouseEvents = true
         panel.animationBehavior = .none
+        guard showsPanel else { return }
         let root = NotchRootView(model: model, center: .shared, navigator: .shared, nook: .shared)
         let hosting = NSHostingView(rootView: root.retroStyleRoot().modifier(NotchLeftToRight()))   // drawn around the physical camera notch: never mirrored (Arabic text inside still reads right to left)
         hosting.frame = CGRect(origin: .zero, size: size)
         hosting.autoresizingMask = [.width, .height]
         if #available(macOS 13.0, *) { hosting.sizingOptions = [] }
         panel.contentView = hosting
-        panel.setFrame(frame, display: false)
+        panel.setFrame(panelFrame, display: false)
         panel.orderFrontRegardless()
     }
 
@@ -80,6 +91,8 @@ final class NotchController {
 
     /// The closed or open island in screen coordinates, a little generous (and reaching above the screen edge).
     var islandScreenRect: CGRect {
+        // A closed camera pill is never a target (the system's own island lives there): no rect, so the housing fallback below cannot make one.
+        if !model.geometry.claimsHousing, !model.isOpen { return .null }
         var r = screenRect(of: model.islandRect)
         if r == .zero { r = fallbackNotchRect }
         return r.insetBy(dx: -4, dy: -3).union(CGRect(x: r.minX - 4, y: r.minY, width: r.width + 8, height: r.height + 8))
@@ -87,11 +100,9 @@ final class NotchController {
 
     var cardScreenRects: [CGRect] { model.cardRects.map { screenRect(of: $0).insetBy(dx: -4, dy: -4) } }
 
-    /// Where the hardware notch is, used before the view has reported its first layout.
-    var fallbackNotchRect: CGRect {
-        let size = model.geometry.size
-        return CGRect(x: screenFrame.midX - size.width / 2, y: screenFrame.maxY - size.height, width: size.width, height: size.height)
-    }
+    /// Where the housing is (the hardware notch or pill, or the drawn shape), used before the view has reported its first layout, as the anchor of a
+    /// dragged file and of the hold after a close. For a classic notch (inset 0) the rect of every version before the island work.
+    var fallbackNotchRect: CGRect { housingScreenRect }
 
     func teardown() {
         panel.ignoresMouseEvents = true

@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "%@ %@: selhalo";
 "%@ + %lld more" = "%@ + %lld dalších";
 "%@ DONE ✓" = "%@ HOTOVO ✓";
 "%@ and %lld more" = "%@ a %lld dalších";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "%@: ukončeno (kód %d).";
 "%@ ended." = "%@: ukončeno.";
 "%@ failed" = "%@: selhalo";
-"%@ finished after %lld min" = "%@: dokončeno po %lld min";
 "%@ free" = "%@ volných";
 "%@ has no sound" = "%@ nemá zvuk";
 "%@ in %@" = "%@ v %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "Příkaz %@ pro obnovení";
 "%@ settings…" = "Nastavení %@…";
 "%@ so far" = "%@ zatím";
-"%@ stopped with an error" = "%@: zastaveno s chybou";
 "%@ timer finished" = "Časovač %@ skončil";
 "%@ to full" = "%@ do nabití";
 "%@ used" = "%@ využito";
@@ -100,7 +97,6 @@
 "Add" = "Přidat";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Přidejte Scout v části Soukromí a zabezpečení › Úplný přístup k disku, zapněte přepínač, pak Scout ukončete a znovu otevřete. Do té doby macOS drží databázi Zpráv uzamčenou. Scout ji jen čte, a to pouze kvůli novým zprávám.";
 "Add a key to start" = "Pro začátek přidejte klíč";
-"Add a notch to displays that have none" = "Přidat výřez na displeje, které ho nemají";
 "Add a task" = "Přidat úkol";
 "Add a task (no day)" = "Přidat úkol (bez dne)";
 "Add a task for this day" = "Přidat úkol na tento den";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Karty agentů";
 "Agents" = "Agenti";
 "Agents & AI Usage" = "Agenti a využití AI";
+"Agents beside the notch" = "Agenti vedle výřezu";
 "Agents settings" = "Nastavení agentů";
 "Agents show up here by themselves." = "Agenti se tu objeví sami.";
 "Agents: %lld" = "Agenti: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Kamera";
 "Camera access is off" = "Přístup ke kameře je vypnutý";
 "Camera access is off for Scout." = "Přístup ke kameře je pro Scout vypnutý.";
+"Camera cutout" = "Otvor pro kameru";
 "Can't read %@ yet" = "%@ zatím nelze přečíst";
 "Can't tell which chat this is" = "Nelze poznat, o jaký chat jde";
 "Cancel" = "Zrušit";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Kopie pořízené, když je v popředí některá z těchto aplikací, se nikdy neukládají.";
 "Copy" = "Kopírovat";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Zkopírujte odkaz z YouTube, X, Instagram, TikTok, Vimeo nebo Reddit, otevřete Zásobník a Scout nabídne stažení, nebo odkaz přetáhněte do Zásobníku. Stahování používá yt-dlp, který si instalujete sami; tlačítko výše se spustí, jen když na něj kliknete. Přečtení zkopírovaného odkazu vyžaduje „Povolit“ pro Scout v Nastavení systému › Soukromí a zabezpečení › Vložit z jiných aplikací (macOS 15.4 a novější).";
+"Copy display details" = "Kopírovat údaje o displeji";
 "Copy something and it shows up here." = "Něco zkopírujte a objeví se to tady.";
 "Couldn't copy the picture" = "Obrázek se nepodařilo zkopírovat";
 "Couldn't copy the polaroid" = "Polaroid se nepodařilo zkopírovat";
@@ -424,6 +423,7 @@
 "Extra large" = "Extra velké";
 "FAVOURITES" = "OBLIBENE";
 "FROZEN" = "ZMRAZENO";
+"Faces in the notch" = "Tváře ve výřezu";
 "Fahrenheit (°F)" = "Fahrenheita (°F)";
 "Fast Ask AI" = "Rychlý dotaz AI";
 "Fastest, for short questions" = "Nejrychlejší, pro krátké otázky";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Nainstalovat yt-dlp a deno přes Homebrew?";
 "Installing…" = "Instalace…";
 "Internet speed right now: down (received) and up (sent)" = "Aktuální rychlost internetu: příjem (stahování) a odesílání";
+"Island" = "Ostrov";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Teď sleduje zvuk vašeho hlasu. Jazyk vyberete v Nastavení › Teleprompter.";
 "It stays in your Mac's Keychain." = "Zůstane v Keychain vašeho Macu.";
 "Items in the Tray: %lld" = "Položky v Zásobníku: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Žádný synchronizovaný text";
 "No widgets yet" = "Zatím žádné widgety";
 "Nobody home yet. Agents move in by themselves." = "Zatím tu nikdo není. Agenti se nastěhují sami.";
+"None" = "Žádný";
 "None chosen yet" = "Zatím nic nevybráno";
 "None found" = "Nic nenalezeno";
 "None yet" = "Zatím žádné";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Poznámky a úkoly";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Poznámky a úkoly se ukládají v tomto Macu a zobrazují se ve widgetech a zobrazeních výřezu.";
 "Notes saved: %lld" = "Uložené poznámky: %lld";
+"Nothing" = "Nic";
 "Nothing (click to open)" = "Nic (kliknutím otevřete)";
 "Nothing copied yet" = "Zatím nic nezkopírováno";
 "Nothing copied yet.\nCopy something and it will show up here." = "Zatím nic nezkopírováno.\nNěco zkopírujte a objeví se to tady.";
@@ -729,13 +732,15 @@
 "On" = "Zapnuto";
 "On air" = "Vysílá se";
 "On battery" = "Na baterii";
+"On displays without a camera cutout" = "Na displejích bez otvoru pro kameru";
 "On the dashboard now" = "Teď v přehledu";
 "One day" = "Jeden den";
 "One hour" = "Jedna hodina";
 "One month" = "Jeden měsíc";
 "One week" = "Jeden týden";
-"Only displays with a notch" = "Jen displeje s výřezem";
+"Only displays with a camera cutout" = "Jen displeje s otvorem pro kameru";
 "Only events with a video link" = "Jen události s odkazem na video";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Jen pro Mac, který Scout čte špatně. Mac s výřezem nemůže zobrazit náhled pilulky.";
 "Only for the Prompter to follow your voice." = "Jen aby Teleprompter mohl sledovat váš hlas.";
 "Only what you choose" = "Jen to, co vyberete";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Jen pokud ještě hrálo, když se Scout zavřel. Scout si vždy pamatuje poslední stanici a hlasitost.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Vyberte si vzhled";
 "Picking an item" = "Výběr položky";
 "Picture" = "Obrázek";
+"Pill" = "Pilulka";
 "Pin" = "Připnout";
 "Pin apps" = "Připnout aplikace";
 "Pink" = "Růžová";
@@ -857,6 +863,7 @@
 "READY" = "PRIPRAVENO";
 "Radio" = "Rádio";
 "Radio stations by place, and what the Radio tab remembers." = "Rozhlasové stanice podle místa a to, co si pamatuje karta Rádio.";
+"Radio stations in the Radio tab" = "Rozhlasové stanice na kartě Rádio";
 "Rain" = "Déšť";
 "Ran %@" = "Spuštěno: %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Číst příchozí zprávy. macOS aplikacím neříká, zda je zapnuto.";
@@ -904,6 +911,7 @@
 "Ring" = "Kroužek";
 "Ring when time is up" = "Zazvonit po uplynutí času";
 "Rings" = "Kroužky";
+"Round bubbles" = "Kulaté bubliny";
 "Rounded" = "Zaoblené";
 "Run the short introduction again." = "Spustit krátký úvod znovu.";
 "STARTING" = "SPOUSTI SE";
@@ -936,7 +944,6 @@
 "Screen" = "Obrazovka";
 "Screen Recording" = "Nahrávání obrazovky";
 "Screen Recording is off for Scout" = "Nahrávání obrazovky je pro Scout vypnuté";
-"Screen recordings and the music visualizer." = "Nahrávky obrazovky a hudební vizualizér.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Obrazovka: každá otázka pořídí snímek obrazovky a odešle ho spolu s otázkou do %@";
 "Screenshots and screen recordings." = "Snímky obrazovky a nahrávky obrazovky.";
 "Scripts" = "Skripty";

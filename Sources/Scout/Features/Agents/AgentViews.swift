@@ -49,6 +49,10 @@ struct AgentWingSummary: Equatable {
     /// and sleeping ones; four at most, `moreFaces` are left out.
     var faces: [Face] = []
     var moreFaces = 0
+    /// True when an agent that has no face of its own (the "+N") needs you: the round "+N" carries the amber ring then.
+    var moreNeeds = false
+    /// The agent whose question the right side shows (the latest to ask): the amber bubble of the minimal look focuses it.
+    var firstAsking: String?
     static let maxFaces = 4
 
     static func shortName(_ s: String) -> String { s.count > 9 ? String(s.prefix(8)) + "…" : s }
@@ -74,6 +78,7 @@ struct AgentWingSummary: Equatable {
             .sorted { ($0.finishedAt ?? $0.lastEventAt) > ($1.finishedAt ?? $1.lastEventAt) }
         out.working = busy.count
         out.needs = asking.count
+        out.firstAsking = asking.first?.id
         if let first = asking.first {
             out.right = .message(waitingLine(first), asks: true)
         } else if let turn = yourTurn.first {
@@ -90,6 +95,8 @@ struct AgentWingSummary: Equatable {
         let variants = AgentFaceArt.variants(for: sessions.map(\.id))
         out.faces = faced.map { Face(id: $0.id, agent: $0.agent, mood: AgentFaceMood(AgentNookLook.of($0)), variant: variants[$0.id] ?? 0) }
         out.moreFaces = max(0, sessions.count - faced.count)
+        let shown = Set(out.faces.map(\.id))
+        out.moreNeeds = sessions.contains { !shown.contains($0.id) && asks($0) }
         func text(_ s: AgentSession) -> String {
             if asks(s) { return s.note.isEmpty ? String(localized: "Needs you") : AgentNote.text(s.note) }
             if s.state == .waiting { return String(localized: "Finished: your move") }
@@ -113,10 +120,61 @@ struct AgentWingLeft: View {
     @ObservedObject var store: AgentsStore
     /// Gallery and tests: draw one still moment of the faces (seconds).
     var frozenAt: Double?
+    /// Where the closed island is drawn as separate round shapes (`rows`), the agents are round bubbles; everywhere else this view is what it was.
+    @Environment(\.cutout) private var cutout
+    @Environment(\.notchNavigator) private var navigator
 
     var body: some View {
         let summary = AgentWingSummary.make(sessions: store.sessions)
-        if Retro.is8bit { faces(summary) } else { plain(summary) }
+        if cutout.rows { bubbles(summary) } else if Retro.is8bit { faces(summary) } else { plain(summary) }
+    }
+
+    // MARK: Round bubbles (the island's rows)
+
+    /// The first agent started is outermost, the newest next to the housing, "+N" at the housing's end (the row is right-aligned to it by
+    /// `IslandClosedView`); the minimal look shows a bubble with the number at work and, when some need you, a second amber one.
+    private func bubbles(_ summary: AgentWingSummary) -> some View {
+        let d = cutout.rowHeight
+        let hovered = cutout.hovered
+        let grow: AnyTransition = ScoutRuntime.reduceMotion ? .opacity : .scale(scale: IslandTuning.growStart).combined(with: .opacity)
+        return HStack(spacing: IslandTuning.gap) {
+            if Retro.is8bit {
+                ForEach(summary.faces) { face in
+                    let name = IslandHit.bubblePrefix + face.id
+                    AgentBubble(face: face, label: NotchHeader.faceHelp(face, sessions: store.sessions), diameter: d, displayScale: cutout.displayScale,
+                                hovered: hovered == name, frozenAt: frozenAt)
+                        .reportRect(name)
+                        .onTapGesture { tap(name) }
+                        .transition(grow)
+                }
+                if summary.moreFaces > 0 {
+                    AgentMoreBubble(count: summary.moreFaces, needs: summary.moreNeeds, diameter: d, hovered: hovered == IslandHit.more)
+                        .reportRect(IslandHit.more)
+                        .onTapGesture { tap(IslandHit.more) }
+                        .transition(grow)
+                }
+            } else {
+                AgentCountBubble(count: (summary.working > 0 || summary.needs > 0) ? summary.working : nil, diameter: d, hovered: hovered == IslandHit.more)
+                    .reportRect(IslandHit.more)
+                    .onTapGesture { tap(IslandHit.more) }
+                if summary.needs > 0, let asking = summary.firstAsking {
+                    // The amber bubble stands for the agent whose question the news shows: its name is that agent's, so a click focuses it.
+                    let name = IslandHit.bubblePrefix + asking
+                    AgentCountBubble(count: summary.needs, needs: true, diameter: d, hovered: hovered == name)
+                        .reportRect(name)
+                        .onTapGesture { tap(name) }
+                        .transition(grow)
+                }
+            }
+        }
+        .animation(Theme.spring, value: summary.faces.map(\.id) + ["+\(summary.moreFaces)", "w\(summary.working)", "n\(summary.needs)"])
+    }
+
+    /// A click on a bubble: the island's one click function (it does nothing where the dashboard does not open yet, nor while Settings says
+    /// that clicking the notch does not open it).
+    private func tap(_ name: String) {
+        guard NotchPrefs.clickToOpen else { return }
+        IslandHit.perform(name, geometry: cutout.geometry ?? NotchGeometry(kind: cutout.kind, size: .zero), navigator: navigator, agents: store)
     }
 
     private func faces(_ summary: AgentWingSummary) -> some View {
@@ -201,10 +259,15 @@ struct AgentWingRight: View {
     }
 
     /// The message as the wing draws it (the self-test measures the same view).
-    static func messageText(_ text: String, asks: Bool) -> some View {
+    static func messageText(_ text: String, asks: Bool, oneLine: Bool = false) -> some View {
         Text(verbatim: text).font(.system(size: 9.5, weight: .medium)).foregroundStyle(asks ? Color.orange : Color.white.opacity(0.9))
-            .lineLimit(2).truncationMode(.tail).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
-            .frame(width: textWidth(text), alignment: .leading)
+            .lineLimit(oneLine ? 1 : 2).truncationMode(.tail).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+            .frame(width: oneLine ? oneLineWidth(text) : textWidth(text), alignment: .leading)
+    }
+
+    /// The width of the message on ONE line (a capsule lower than `IslandTuning.oneLineBelow`), at most `maxTextWidth`: what the words take.
+    static func oneLineWidth(_ text: String) -> CGFloat {
+        min(maxTextWidth, max(8, ceil((text as NSString).size(withAttributes: [.font: font]).width) + 1))
     }
 
     static func messageProbe(_ text: String) -> some View { messageText(text, asks: false) }
@@ -225,6 +288,8 @@ struct AgentWingRight: View {
     var alwaysShown = false
     @State private var showing: Bool
     @State private var shownKey = ""
+    /// Where the closed island is drawn as separate round shapes (`rows`), the readout is one capsule; everywhere else this view is what it was.
+    @Environment(\.cutout) private var cutout
 
     /// The readout this wing last revealed. The wing is built anew each time the notch closes, so without this a message that had come and
     /// gone came back after every open and close:
@@ -255,7 +320,9 @@ struct AgentWingRight: View {
         // question never came back to the wing.
         ZStack {
             Color.clear.frame(width: 0, height: 0)
-            if showing || alwaysShown { readout(summary.right) }
+            if showing || alwaysShown {
+                if cutout.rows { capsule(summary.right) } else { readout(summary.right) }
+            }
         }
         .onAppear { reveal(key) }
         .onChange(of: key) { _, new in reveal(new) }
@@ -289,7 +356,16 @@ struct AgentWingRight: View {
         }
     }
 
-    @ViewBuilder private func readout(_ right: AgentWingSummary.Right) -> some View {
+    /// The readout in a capsule as tall as a bubble and exactly as wide as the readout plus its padding; two lines of news, one when the
+    /// capsule is lower than `IslandTuning.oneLineBelow`.
+    private func capsule(_ right: AgentWingSummary.Right) -> some View {
+        IslandCapsule(height: cutout.rowHeight, scale: cutout.contentScale, hovered: cutout.hovered == "capsule.news") {
+            readout(right, oneLine: cutout.rowHeight < IslandTuning.oneLineBelow)
+        }
+        .transition(ScoutRuntime.reduceMotion ? .opacity : .scale(scale: IslandTuning.growStart, anchor: .leading).combined(with: .opacity))
+    }
+
+    @ViewBuilder private func readout(_ right: AgentWingSummary.Right, oneLine: Bool = false) -> some View {
         Group {
             switch right {
             case .message(let text, let asks):
@@ -299,7 +375,7 @@ struct AgentWingRight: View {
                     } else {
                         Image(systemName: "checkmark").font(.system(size: 9, weight: .bold)).foregroundStyle(Color.green)
                     }
-                    Self.messageText(text, asks: asks)
+                    Self.messageText(text, asks: asks, oneLine: oneLine)
                 }
             case .progress(let done, let total):
                 HStack(spacing: 4) {

@@ -1,5 +1,4 @@
 "%@" = "%@";
-"%@ %@ failed" = "Theip ar %@ %@";
 "%@ + %lld more" = "%@ + %lld eile";
 "%@ DONE ✓" = "%@ DEANTA ✓";
 "%@ and %lld more" = "%@ agus %lld eile";
@@ -9,7 +8,6 @@
 "%@ ended (code %d)." = "Chríochnaigh %@ (cód %d).";
 "%@ ended." = "Chríochnaigh %@.";
 "%@ failed" = "Theip ar %@";
-"%@ finished after %lld min" = "Chríochnaigh %@ tar éis %lld nóim";
 "%@ free" = "%@ saor";
 "%@ has no sound" = "Níl fuaim ag %@";
 "%@ in %@" = "%@ i %@";
@@ -29,7 +27,6 @@
 "%@ resume command" = "Ordú atosaithe %@";
 "%@ settings…" = "Socruithe %@…";
 "%@ so far" = "%@ go dtí seo";
-"%@ stopped with an error" = "Stop %@ le earráid";
 "%@ timer finished" = "Chríochnaigh uaineadóir %@";
 "%@ to full" = "%@ go dtí lán";
 "%@ used" = "%@ in úsáid";
@@ -100,7 +97,6 @@
 "Add" = "Cuir leis";
 "Add Scout under Privacy & Security › Full Disk Access, switch it on, then quit and reopen Scout. macOS keeps Messages' database locked until you do. Scout only reads it, and only for new messages." = "Cuir Scout leis faoi Privacy & Security › Full Disk Access, cuir air é, ansin scoir agus oscail Scout arís. Coimeádann macOS bunachar sonraí Messages faoi ghlas go dtí go ndéanann tú sin. Ní léann Scout é ach amháin do theachtaireachtaí nua.";
 "Add a key to start" = "Cuir eochair leis chun tosú";
-"Add a notch to displays that have none" = "Cuir notch le scáileáin nach bhfuil ceann acu";
 "Add a task" = "Cuir tasc leis";
 "Add a task (no day)" = "Cuir tasc leis (gan lá)";
 "Add a task for this day" = "Cuir tasc leis don lá seo";
@@ -124,6 +120,7 @@
 "Agent tabs" = "Cluaisíní gníomhairí";
 "Agents" = "Gníomhairí";
 "Agents & AI Usage" = "Gníomhairí agus úsáid AI";
+"Agents beside the notch" = "Gníomhairí in aice leis an notch";
 "Agents settings" = "Socruithe gníomhairí";
 "Agents show up here by themselves." = "Tagann gníomhairí anseo astu féin.";
 "Agents: %lld" = "Gníomhairí: %lld";
@@ -225,6 +222,7 @@
 "Camera" = "Ceamara";
 "Camera access is off" = "Tá rochtain ar an gceamara as";
 "Camera access is off for Scout." = "Tá rochtain ar an gceamara as do Scout.";
+"Camera cutout" = "Oscailt ceamara";
 "Can't read %@ yet" = "Ní féidir %@ a léamh go fóill";
 "Can't tell which chat this is" = "Ní féidir a rá cén comhrá é seo";
 "Cancel" = "Cealaigh";
@@ -333,6 +331,7 @@
 "Copies made while one of these apps is in front are never saved." = "Ní shábháiltear cóipeanna a dhéantar agus ceann de na haipeanna seo chun tosaigh.";
 "Copy" = "Cóipeáil";
 "Copy a link from YouTube, X, Instagram, TikTok, Vimeo or Reddit, open the Tray and Scout offers to download it, or drop a link on the Tray. Downloads use yt-dlp, which you install yourself; the button above only runs when you press it. Reading a copied link needs “Allow” for Scout under System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 and later)." = "Cóipeáil nasc ó YouTube, X, Instagram, TikTok, Vimeo nó Reddit, oscail an Tráidire agus tairgeann Scout é a íoslódáil, nó scaoil nasc ar an Tráidire. Úsáideann íoslódálacha yt-dlp, a shuiteálann tú féin; ní ritheann an cnaipe thuas ach nuair a bhrúnn tú é. Chun nasc cóipeáilte a léamh teastaíonn “Allow” do Scout faoi System Settings › Privacy & Security › Paste from Other Apps (macOS 15.4 agus níos déanaí).";
+"Copy display details" = "Cóipeáil sonraí an scáileáin";
 "Copy something and it shows up here." = "Cóipeáil rud éigin agus taispeánfar anseo é.";
 "Couldn't copy the picture" = "Níorbh fhéidir an pictiúr a chóipeáil";
 "Couldn't copy the polaroid" = "Níorbh fhéidir an polaroid a chóipeáil";
@@ -424,6 +423,7 @@
 "Extra large" = "An-mhór";
 "FAVOURITES" = "IS FEARR LIOM";
 "FROZEN" = "REODHTA";
+"Faces in the notch" = "Aghaidheanna sa notch";
 "Fahrenheit (°F)" = "Fahrenheit (°F)";
 "Fast Ask AI" = "AI Tapa";
 "Fastest, for short questions" = "An ceann is tapúla, do cheisteanna gearra";
@@ -522,6 +522,7 @@
 "Install yt-dlp and deno with Homebrew?" = "Suiteáil yt-dlp agus deno le Homebrew?";
 "Installing…" = "Ag suiteáil…";
 "Internet speed right now: down (received) and up (sent)" = "Luas idirlín anois: síos (faighte) agus suas (seolta)";
+"Island" = "Oileán";
 "It follows the sound of your voice now. Pick the language in Settings › Prompter." = "Leanann sé fuaim do ghutha anois. Roghnaigh an teanga i Socruithe › Prompter.";
 "It stays in your Mac's Keychain." = "Fanann sé i Keychain do Mac.";
 "Items in the Tray: %lld" = "Míreanna sa Tráidire: %lld";
@@ -683,6 +684,7 @@
 "No synced lyrics" = "Gan focail shioncronaithe";
 "No widgets yet" = "Gan giuirléidí go fóill";
 "Nobody home yet. Agents move in by themselves." = "Níl aon duine sa bhaile go fóill. Bogann gníomhairí isteach astu féin.";
+"None" = "Gan aon";
 "None chosen yet" = "Gan aon cheann roghnaithe";
 "None found" = "Níor aimsíodh";
 "None yet" = "Tada fós";
@@ -701,6 +703,7 @@
 "Notes & To-dos" = "Nótaí agus tascanna";
 "Notes and to-dos are saved on this Mac and shown in the notch's widgets and views." = "Sábháiltear nótaí agus tascanna ar an Mac seo agus taispeántar iad i ngiuirléidí agus i radharcanna an notch.";
 "Notes saved: %lld" = "Nótaí sábháilte: %lld";
+"Nothing" = "Tada";
 "Nothing (click to open)" = "Tada (cliceáil chun oscailt)";
 "Nothing copied yet" = "Níor cóipeáladh aon rud go fóill";
 "Nothing copied yet.\nCopy something and it will show up here." = "Níor cóipeáladh aon rud go fóill.\nCóipeáil rud éigin agus taispeánfar anseo é.";
@@ -729,13 +732,15 @@
 "On" = "Air";
 "On air" = "Ag craoladh";
 "On battery" = "Ar chadhnra";
+"On displays without a camera cutout" = "Ar scáileáin gan oscailt ceamara";
 "On the dashboard now" = "Ar an bpainéal anois";
 "One day" = "Lá amháin";
 "One hour" = "Uair an chloig";
 "One month" = "Mí amháin";
 "One week" = "Seachtain amháin";
-"Only displays with a notch" = "Scáileáin le notch amháin";
+"Only displays with a camera cutout" = "Scáileáin le hoscailt ceamara amháin";
 "Only events with a video link" = "Imeachtaí le nasc físeáin amháin";
+"Only for a Mac that Scout reads wrongly. A Mac with a notch cannot preview a pill." = "Ní bhaineann sé ach le Mac a léann Scout go mícheart. Ní féidir le Mac le notch réamhamharc ar phiolla a thaispeáint.";
 "Only for the Prompter to follow your voice." = "Chun an Prompter do ghuth a leanúint amháin.";
 "Only what you choose" = "An méid a roghnaíonn tú amháin";
 "Only when it was still playing as Scout quit. Scout always remembers the last station and the volume." = "Ach amháin má bhí sé fós ag seinm nuair a dúnadh Scout. Cuimhníonn Scout i gcónaí ar an stáisiún deireanach agus ar an airde.";
@@ -811,6 +816,7 @@
 "Pick your look" = "Roghnaigh do chuma";
 "Picking an item" = "Mír a roghnú";
 "Picture" = "Pictiúr";
+"Pill" = "Piolla";
 "Pin" = "Bioráin";
 "Pin apps" = "Bioráin aipeanna";
 "Pink" = "Bándearg";
@@ -857,6 +863,7 @@
 "READY" = "REIDH";
 "Radio" = "Raidió";
 "Radio stations by place, and what the Radio tab remembers." = "Stáisiúin raidió de réir áite, agus an méid a chuimhníonn an cluaisín Raidió.";
+"Radio stations in the Radio tab" = "Stáisiúin raidió sa chluaisín Raidió";
 "Rain" = "Báisteach";
 "Ran %@" = "Rith %@";
 "Read incoming messages. macOS does not tell apps whether it is on." = "Léigh teachtaireachtaí isteach. Ní insíonn macOS d'aipeanna an bhfuil sé air.";
@@ -904,6 +911,7 @@
 "Ring" = "Fáinne";
 "Ring when time is up" = "Buail nuair a bhíonn an t-am istigh";
 "Rings" = "Fáinní";
+"Round bubbles" = "Boilgeoga cruinne";
 "Rounded" = "Cruinn";
 "Run the short introduction again." = "Rith an réamhrá gearr arís.";
 "STARTING" = "AG TOSU";
@@ -936,7 +944,6 @@
 "Screen" = "Scáileán";
 "Screen Recording" = "Taifeadadh scáileáin";
 "Screen Recording is off for Scout" = "Tá taifeadadh scáileáin as do Scout";
-"Screen recordings and the music visualizer." = "Taifeadtaí scáileáin agus amharcléiritheoir ceoil.";
 "Screen: each question takes a picture of your screen and sends it to %@ with the question" = "Scáileán: glacann gach ceist pictiúr de do scáileán agus seolann sé é chuig %@ leis an gceist";
 "Screenshots and screen recordings." = "Seatanna scáileáin agus taifeadtaí scáileáin.";
 "Scripts" = "Scripteanna";
